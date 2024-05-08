@@ -9,9 +9,45 @@
 		<title>Themenwoche Hybride Lehre 2024: Programm</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/calendar.css" />
+		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+    <link rel="stylesheet" href="assets/css/calendar.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="programm-themenwoche.js"></script>
+    
+     <style>
+      .event-info {
+        padding: 5% 5% 5% 5%; 
+        width: 90%;
+        overflow: scroll
+      }
+      .event-info > p {
+        margin-bottom: 1em;
+      }
+      div.tabstops {
+        height: fit-content !important;
+        margin-bottom: 2em;
+        display:block;
+      }
+      div.tabstops span{
+        position: absolute;
+        text-align: left;
+      }
+      div.tabstops span:nth-child(1){
+        left: 5%;
+        width: 20%;
+      }
+      div.tabstops span:nth-child(2){
+        left: 25%;
+        width: 75%;
+      }
+      div.tabstops strong {
+        font-weight: 600;
+        color: rgb(65, 64, 64)
+      }
+      div.tabstops em {
+        font-style: italic
+      }
+     </style> 
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -22,163 +58,134 @@
 						<div class="inner">
 
 							<!-- Logo -->
-								<a href="index.html" class="logo">
+								<!-- <a href="index.html" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">bologna.lab</span>
-								</a>
-
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
+								</a> -->
 						</div>
 					</header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Ipsum veroeros</a></li>
-							<li><a href="generic.html">Tempus etiam</a></li>
-							<li><a href="generic.html">Consequat dolor</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav>
-
 				<!-- Main -->
                 <div id="main">
-                    <div class="inner">
-                        <div class="calendar">
-                            <div class="timeline">
-                              <div class="spacer"></div>
-                              <div class="time-marker">9:00</div>
-                              <div class="time-marker">10:00</div>
-                              <div class="time-marker">11:00</div>
-                              <div class="time-marker">12:00</div>
-                              <div class="time-marker">13:00</div>
-                              <div class="time-marker">13:00</div>
-                              <div class="time-marker">15:00</div>
-                              <div class="time-marker">16:00</div>
-                              <div class="time-marker">17:00</div>
-                              <div class="time-marker">18:00</div>
-                            </div>
-                            <div class="days">
-                              <div class="day mon">
-                                <div class="date">
-                                  <p class="date-num">9</p>
-                                  <p class="date-day">Mon</p>
-                                </div>
-                                <div class="events">
-                                  <div class="event start-2 end-5 securities">
-                                    <p class="title">Securities Regulation</p>
-                                    <p class="time">2 PM - 5 PM</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="day tues">
-                                <div class="date">
-                                  <p class="date-num">12</p>
-                                  <p class="date-day">Tues</p>
-                                </div>
-                                <div class="events">
-                                  <div class="event start-10 end-12 corp-fi">
-                                    <p class="title">Corporate Finance</p>
-                                    <p class="time">10 AM - 12 PM</p>
-                                  </div>
-                                  <div class="event start-1 end-4 ent-law">
-                                    <p class="title">Entertainment Law</p>
-                                    <p class="time">1PM - 4PM</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="day wed">
-                                <div class="date">
-                                  <p class="date-num">11</p>
-                                  <p class="date-day">Wed</p>
-                                </div>
-                                <div class="events">
-                                  <div class="event start-12 end-1 writing">
-                                    <p class="title">Writing Seminar</p>
-                                    <p class="time">11 AM - 12 PM</p>
-                                  </div>
-                                  <div class="event start-2 end-5 securities">
-                                    <p class="title">Securities Regulation</p>
-                                    <p class="time">2 PM - 5 PM</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="day thurs">
-                                <div class="date">
-                                  <p class="date-num">12</p>
-                                  <p class="date-day">Thurs</p>
-                                </div>
-                                <div class="events">
-                                  <div class="event start-10 end-12 corp-fi">
-                                    <p class="title">Corporate Finance</p>
-                                    <p class="time">10 AM - 12 PM</p>
-                                  </div>
-                                  <div class="event start-1 end-4 ent-law">
-                                    <p class="title">Entertainment Law</p>
-                                    <p class="time">1PM - 4PM</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="day fri">
-                                <div class="date">
-                                  <p class="date-num">13</p>
-                                  <p class="date-day">Fri</p>
-                                </div>
-                                <div class="events">
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                  <br />
+                  <p class="codyhouse">link to the site of Codyhouse: <a href="https://codyhouse.co/gem/schedule-template/">https://codyhouse.co/gem/schedule-template/</a></p>
+                  <div class="cd-schedule loading">
+                    <div class="timeline">
+                      <ul>
+                        <li><span>09:00</span></li>
+                        <li><span>09:30</span></li>
+                        <li><span>10:00</span></li>
+                        <li><span>10:30</span></li>
+                        <li><span>11:00</span></li>
+                        <li><span>11:30</span></li>
+                        <li><span>12:00</span></li>
+                        <li><span>12:30</span></li>
+                        <li><span>13:00</span></li>
+                        <li><span>13:30</span></li>
+                        <li><span>14:00</span></li>
+                        <li><span>14:30</span></li>
+                        <li><span>15:00</span></li>
+                        <li><span>15:30</span></li>
+                        <li><span>16:00</span></li>
+                        <li><span>16:30</span></li>
+                        <li><span>17:00</span></li>
+                        <li><span>17:30</span></li>
+                        <li><span>18:00</span></li>
+                      </ul>
+                    </div> <!-- .timeline -->
+                  
+                    <div class="events">
+                      <ul class="wrap">
+                        <li class="events-group" datestring="Mo. 24.06.2024" id="monday">
+                          <div class="top-info"><span>Montag</span></div>
+                          <ul>
+                            <li class="single-event" data-start="16:30" data-end="18:00" data-loc = "Senatsaal der Humboldt-Universität" data-content="event-auftakt" data-event="event-1">
+                              <a href="#0">
+                                <em class="event-name">Auftaktveranstaltung</em>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                  
+                        <li class="events-group" datestring="Di. 25.06.2024" id="tuesday">
+                          <div class="top-info"><span>Dienstag</span></div>
+                  
+                          <ul>
+                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
+                              <a href="#0">
+                                <em class="event-name">Event2</em>
+                              </a>
+                            </li>
+                  
+                          </ul>
+                        </li>
+                  
+                        <li class="events-group" datestring="Mi. 26.06.2024" id="wednesday">
+                          <div class="top-info"><span>Mittwoch</span></div>
+                  
+                          <ul>
+                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
+                              <a href="#0">
+                                <em class="event-name">Event2</em>
+                              </a>
+                            </li>
+                  
+                          </ul>
+                        </li>
+                  
+                        <li class="events-group" datestring="Do. 27.06.2024" id="thursday">
+                          <div class="top-info"><span>Donnerstag</span></div>
+                  
+                          <ul>
+                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
+                              <a href="#0">
+                                <em class="event-name">Event2</em>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                  
+                        <li class="events-group" datestring="Fr. 28.06.2024" id="friday">
+                          <div class="top-info"><span>Freitag</span></div>
+                  
+                          <ul>
+                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
+                              <a href="#0">
+                                <em class="event-name">Event2</em>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                  <!--        -->
+                      </ul>
                     </div>
-                </div>
+                  
+                    <div class="event-modal">
+                      <header class="header">
+                        <div class="content">
+                          <span class="event-name"></span>
+                          <span class="event-date"></span>
+                          <span class="extraSpaces">&nbsp; &nbsp; &nbsp;</span>
+                          <span class="event-time"></span>
+                          <span class="event-loc"></span>
+                          <!-- <div class="event-links"></div> -->
+                        </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+                        <div class="header-bg"></div>
+                      </header>
+                  
+                      <div class="body">
+                        <div class="event-info"></div>
+                        <div class="body-bg"></div>
+                        
+                      </div>
+                  
+                      <a href="#0" class="close">Close</a>
+                    </div>
+                  
+                    <div class="cover-layer"></div>
+                  </div> <!-- .cd-schedule -->
+                  
+                </div>
 
 			</div>
 
@@ -188,6 +195,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+      <script src="assets/js/calendarEvents.js"></script>
+      <script>
+        eventCalendar.forEach((e)=> {
+          console.log(e["event-name"])
+          eventName = e["event-name"]
+          day = e["day"]
+          start = e["start"]
+          end = e["end"]
+          loc = e["loc"]
+          id = e["id"]
+
+          let groupToAppendTo = document.getElementById(day)
+          // let listToAppendTo = groupToAppendTo.childNodes[0].childNodes[0]
+          let listToAppendTo = document.querySelector('#'+day+' ul')
+          let item = document.createElement("li")
+          item.classList.add("single-event")
+          item.innerHTML= "<a href='#0'><em class='event-name'>Event2</em></a>"
+          listToAppendTo.append(item)
+
+        })
+      </script>
 
 	</body>
 </html>
