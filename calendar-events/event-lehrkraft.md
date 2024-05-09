@@ -1,0 +1,1 @@
+# Synchron-hybride Lehrformate in der Lehrkräftebildung - Erfahrungen und Evaluationsergebnisse zu Akzeptanz, Interaktion und Kompetenzentwicklung der Studierenden  
