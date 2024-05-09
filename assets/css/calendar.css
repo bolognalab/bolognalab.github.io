@@ -254,6 +254,7 @@ Main Components
     display: table;
     height: 50px;
     border-bottom: 1px solid #EAEAEA;
+    background: #585858;
     /* reset style */
     padding: 0;
   }
@@ -264,7 +265,9 @@ Main Components
     padding: 0 .5em;
     text-align: center;
     /* reset style */
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: white;
     margin-bottom: 0;
   }
   .cd-schedule .events .events-group > ul {

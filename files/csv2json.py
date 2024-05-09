@@ -4,9 +4,12 @@ Convert CSV to json
 """
 import csv
 import json
+import os
 
 csv_file = 'programm-themenwoche.csv'
 json_file = 'programm-themenwoche.json'
+names_list = []
+titles = {}
 
 with open(csv_file, mode='r', encoding='utf-8') as csv_file:
     csvfiledata = csv.DictReader(csv_file)
@@ -21,8 +24,20 @@ with open(csv_file, mode='r', encoding='utf-8') as csv_file:
         # fixed_data['id']=s
         # print(fixed_data)
         json_list.append(fixed_data)
+        names_list.append(fixed_data["id"])
+        titles[fixed_data["id"]]=fixed_data["long-event-name"]
+        
+def makeMD(names):
+    for name in names:
+        fname = "../calendar-events/" + name + ".md"
+        print(fname, os.path.exists(fname))
+        if not os.path.exists(fname):
+            with open(fname, 'w') as file:
+                file.write("# " + titles[name] + '  ')
+                pass
+        
 # print(json_list)
-with open(json_file, 'w') as json_file:
-    json_file.write(json.dumps(json_list, indent=4))
+# with open(json_file, 'w') as json_file:
+#     json_file.write(json.dumps(json_list, indent=4))
 
     

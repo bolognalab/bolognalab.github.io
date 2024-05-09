@@ -127,15 +127,15 @@ jQuery(document).ready(function($){
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
 		//update event content
-		// this.modalBody.find('.event-info').load('calendar-events/'+event.parent().attr('data-content')+'.html .event-info > *', function(data){
-		// 	//once the event content has been loaded
-		// 	self.element.addClass('content-loaded');
-		// });
-		// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')
-		this.modalBody.find('#currentEventInfo').load('calendar-events/'+event.parent().attr('data-content')+'.md', function(data){
+		this.modalBody.find('.event-info').load('calendar-events/events-dir.html #'+ event.parent().attr('data-content') + ' > *', function(data){
 			//once the event content has been loaded
 			self.element.addClass('content-loaded');
 		});
+		// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')
+		// this.modalBody.find('#currentEventInfo').load('calendar-events/'+event.parent().attr('data-content')+'.md', function(data){
+		// 	//once the event content has been loaded
+		// 	self.element.addClass('content-loaded');
+		// });
 
 
 		this.element.addClass('modal-is-open');
