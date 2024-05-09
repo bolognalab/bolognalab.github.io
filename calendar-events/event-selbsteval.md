@@ -1,1 +1,1 @@
-# Selbsteinsch‰tzungstool zum Lernfortschritt  
+# Selbsteinsch√§tzungstool zum Lernfortschritt  

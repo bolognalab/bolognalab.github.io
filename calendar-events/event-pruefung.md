@@ -1,1 +1,1 @@
-# Prüfungskultur(en) im Wandel  
+# PrÃ¼fungskultur(en) im Wandel  

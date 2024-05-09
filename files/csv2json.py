@@ -32,7 +32,7 @@ def makeMD(names):
         fname = "../calendar-events/" + name + ".md"
         print(fname, os.path.exists(fname))
         if not os.path.exists(fname):
-            with open(fname, 'w') as file:
+            with open(fname, 'w', encoding="utf-8") as file:
                 file.write("# " + titles[name] + '  ')
                 pass
         

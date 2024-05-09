@@ -1,1 +1,1 @@
-# Medientechnische Pr‰sentation: Vorlesungsaufzeichnung mit Autotracking und Untertitelung  
+# Medientechnische Pr√§sentation: Vorlesungsaufzeichnung mit Autotracking und Untertitelung  
