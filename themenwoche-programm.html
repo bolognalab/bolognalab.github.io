@@ -8,44 +8,81 @@
 	<head>
 		<title>Themenwoche Hybride Lehre 2024: Programm</title>
 		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
     <link rel="stylesheet" href="assets/css/calendar.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <script src="programm-themenwoche.js"></script>
-    
+    <link rel="stylesheet" href="assets/css/md.css" />
+ 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+      $.getJSON("files/programm-themenwoche.json", function(json) {
+        let eventCalendar = json
+        eventCalendar.forEach((e)=> {
+          eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"]
+          let groupToAppendTo = document.getElementById(day)
+          let listToAppendTo = document.querySelector('#'+day+' ul')
+          let item = document.createElement("li")
+          item.classList.add("single-event")
+          item.setAttribute("data-start", start)
+          item.setAttribute("data-end", end)
+          item.setAttribute("data-loc", loc)
+          item.setAttribute("data-content", id)
+          item.setAttribute("id", id)
+          item.setAttribute("data-event", "event-1")
+          item.setAttribute("data-web", web)
+          item.innerHTML= "<a href='#0'><em class='event-name'>"+ eventName +"</em></a>"
+          listToAppendTo.append(item)
+          
+        });
+        console.log("makingEvents")
+      }).then(function(){
+        console.log("conflicts")
+        // resolving conflicts
+        document.querySelector("#event-genderingMINT").classList.add("conflict", "l")
+        document.querySelector("#event-hype").classList.add("conflict", "r")
+      })
+
+    </script>
      <style>
+      .single-event a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
       .event-info {
-        padding: 5% 5% 5% 5%; 
-        width: 90%;
-        overflow: scroll
+        padding: 2em 6%; 
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
       }
       .event-info > p {
         margin-bottom: 1em;
       }
-      div.tabstops {
-        height: fit-content !important;
-        margin-bottom: 2em;
-        display:block;
-      }
-      div.tabstops span{
-        position: absolute;
-        text-align: left;
-      }
-      div.tabstops span:nth-child(1){
-        left: 5%;
-        width: 20%;
-      }
-      div.tabstops span:nth-child(2){
-        left: 25%;
-        width: 75%;
-      }
-      div.tabstops strong {
+
+      .event-info strong {
         font-weight: 600;
         color: rgb(65, 64, 64)
       }
-      div.tabstops em {
-        font-style: italic
+
+      /* resolving conflicts */
+      @media only screen and (min-width: 800px) {
+
+        .single-event.conflict {
+          width: 49% !important;
+        }
+        .single-event.conflict.r {
+          margin-left: 50%;
+        }
+
+        .single-event.conflict > a {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding: 0.9em 0.8em 0.2em 0em !important;
+        font-size: 0.9em;
+      }
+      .single-event.conflict .event-loc {
+        display: none;
+      }
       }
      </style> 
 	</head>
@@ -56,7 +93,6 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
 							<!-- Logo -->
 								<!-- <a href="index.html" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">bologna.lab</span>
@@ -66,13 +102,13 @@
 
 				<!-- Main -->
                 <div id="main">
-                  <br />
-                  <p class="codyhouse">link to the site of Codyhouse: <a href="https://codyhouse.co/gem/schedule-template/">https://codyhouse.co/gem/schedule-template/</a></p>
+                  <!-- <br /> -->
+                  <!-- <p class="codyhouse">link to the site of Codyhouse: <a href="https://codyhouse.co/gem/schedule-template/">https://codyhouse.co/gem/schedule-template/</a></p> -->
                   <div class="cd-schedule loading">
                     <div class="timeline">
                       <ul>
-                        <li><span>09:00</span></li>
-                        <li><span>09:30</span></li>
+                        <!-- <li><span>09:00</span></li>
+                        <li><span>09:30</span></li> -->
                         <li><span>10:00</span></li>
                         <li><span>10:30</span></li>
                         <li><span>11:00</span></li>
@@ -88,7 +124,7 @@
                         <li><span>16:00</span></li>
                         <li><span>16:30</span></li>
                         <li><span>17:00</span></li>
-                        <li><span>17:30</span></li>
+                        <li><span>17:30</span></li> 
                         <li><span>18:00</span></li>
                       </ul>
                     </div> <!-- .timeline -->
@@ -98,62 +134,32 @@
                         <li class="events-group" datestring="Mo. 24.06.2024" id="monday">
                           <div class="top-info"><span>Montag</span></div>
                           <ul>
-                            <li class="single-event" data-start="16:30" data-end="18:00" data-loc = "Senatsaal der Humboldt-Universität" data-content="event-auftakt" data-event="event-1">
+                            <!-- <li class="single-event" data-start="16:30" data-end="18:00" data-loc = "Senatsaal der Humboldt-Universität" data-content="event-auftakt" data-event="event-1">
                               <a href="#0">
                                 <em class="event-name">Auftaktveranstaltung</em>
                               </a>
-                            </li>
+                            </li> -->
                           </ul>
                         </li>
                   
                         <li class="events-group" datestring="Di. 25.06.2024" id="tuesday">
-                          <div class="top-info"><span>Dienstag</span></div>
-                  
-                          <ul>
-                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Event2</em>
-                              </a>
-                            </li>
-                  
-                          </ul>
+                          <div class="top-info"><span>Dienstag</span></div>         
+                          <ul></ul>
                         </li>
                   
                         <li class="events-group" datestring="Mi. 26.06.2024" id="wednesday">
                           <div class="top-info"><span>Mittwoch</span></div>
-                  
-                          <ul>
-                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Event2</em>
-                              </a>
-                            </li>
-                  
-                          </ul>
+                          <ul></ul>
                         </li>
                   
                         <li class="events-group" datestring="Do. 27.06.2024" id="thursday">
                           <div class="top-info"><span>Donnerstag</span></div>
-                  
-                          <ul>
-                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Event2</em>
-                              </a>
-                            </li>
-                          </ul>
+                          <ul></ul>
                         </li>
                   
                         <li class="events-group" datestring="Fr. 28.06.2024" id="friday">
                           <div class="top-info"><span>Freitag</span></div>
-                  
-                          <ul>
-                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Event2</em>
-                              </a>
-                            </li>
-                          </ul>
+                          <ul></ul>
                         </li>
                   <!--        -->
                       </ul>
@@ -162,11 +168,10 @@
                     <div class="event-modal">
                       <header class="header">
                         <div class="content">
-                          <span class="event-name"></span>
+                          <span class="event-name" style="display:none"></span>
                           <span class="event-date"></span>
-                          <span class="extraSpaces">&nbsp; &nbsp; &nbsp;</span>
                           <span class="event-time"></span>
-                          <span class="event-loc"></span>
+                          <!-- <span class="event-loc"></span> -->
                           <!-- <div class="event-links"></div> -->
                         </div>
 
@@ -174,7 +179,11 @@
                       </header>
                   
                       <div class="body">
-                        <div class="event-info"></div>
+                        <div class="event-info">
+                          <div class="md-container white-fade">
+                              <md-block id="currentEventInfo"></md-block>
+                          </div>
+                        </div>
                         <div class="body-bg"></div>
                         
                       </div>
@@ -183,39 +192,16 @@
                     </div>
                   
                     <div class="cover-layer"></div>
-                  </div> <!-- .cd-schedule -->
-                  
+                  </div> <!-- .cd-schedule -->     
                 </div>
-
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+      <script type="module" src="/assets/js/md-block.js"></script>
       <script src="assets/js/calendarEvents.js"></script>
-      <script>
-        eventCalendar.forEach((e)=> {
-          console.log(e["event-name"])
-          eventName = e["event-name"]
-          day = e["day"]
-          start = e["start"]
-          end = e["end"]
-          loc = e["loc"]
-          id = e["id"]
-
-          let groupToAppendTo = document.getElementById(day)
-          // let listToAppendTo = groupToAppendTo.childNodes[0].childNodes[0]
-          let listToAppendTo = document.querySelector('#'+day+' ul')
-          let item = document.createElement("li")
-          item.classList.add("single-event")
-          item.innerHTML= "<a href='#0'><em class='event-name'>Event2</em></a>"
-          listToAppendTo.append(item)
-
-        })
-      </script>
-
 	</body>
 </html>

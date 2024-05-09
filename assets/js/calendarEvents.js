@@ -43,7 +43,7 @@ jQuery(document).ready(function($){
 		if( mq == 'desktop' && !this.element.hasClass('js-full') ) {
 			//in this case you are on a desktop version (first load or resize from mobile)
 			this.eventSlotHeight = $('.timeline').children(0).children()[0].offsetHeight
-			console.log(this.eventSlotHeight)
+			
 			// this.eventsGroup.eq(0).children('.top-info').outerHeight();
 			this.element.addClass('js-full');
 			this.placeEvents();
@@ -77,9 +77,8 @@ jQuery(document).ready(function($){
 
 			//create the .event-loc element for each event
 			var locLabel = '<span class="event-loc">'+$(this).data('loc')+'</span>';
-			console.log(locLabel)
 				$(this).children('a').append($(locLabel));
-			
+
 			//detect click on the event and open the modal
 			$(this).on('click', 'a', function(event){
 				event.preventDefault();
@@ -128,16 +127,15 @@ jQuery(document).ready(function($){
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
 		//update event content
-		this.modalBody.find('.event-info').load('calendar-events/'+event.parent().attr('data-content')+'.html .event-info > *', function(data){
-			//once the event content has been loaded
-			self.element.addClass('content-loaded');
-		});
-		//update event links
-		// this.modalHeader.find('.event-links').load('calendar-events/'+event.parent().attr('data-content')+'.html .event-links > *', function(data){
+		// this.modalBody.find('.event-info').load('calendar-events/'+event.parent().attr('data-content')+'.html .event-info > *', function(data){
 		// 	//once the event content has been loaded
 		// 	self.element.addClass('content-loaded');
 		// });
-
+		// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')
+		this.modalBody.find('#currentEventInfo').load('calendar-events/'+event.parent().attr('data-content')+'.md', function(data){
+			//once the event content has been loaded
+			self.element.addClass('content-loaded');
+		});
 
 
 		this.element.addClass('modal-is-open');
@@ -155,8 +153,8 @@ jQuery(document).ready(function($){
 		} else {
 			var eventTop = event.offset().top - $(window).scrollTop(),
 				eventLeft = event.offset().left,
-				eventHeight = event.innerHeight(),
-				eventWidth = event.innerWidth()*1.1;
+				eventHeight = event.innerHeight(), 
+				eventWidth = event[0].parentElement.classList.contains("conflict") ? event.innerWidth()*100/49*1.1 : event.innerWidth()*1.1; //keep modal header width if event width has been halved
 
 			var windowWidth = $(window).width(),
 				windowHeight = $(window).height();
