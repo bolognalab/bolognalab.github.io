@@ -199,6 +199,7 @@ async function formatEvents() {
 						self.element.addClass('content-loaded');
 						setTimeout(function(){
 							document.querySelector(".event-info").style.visibility="visible"
+							document.querySelector("#addToCalendar").parentElement.setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
 						}, 250)
 					});
 					// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')

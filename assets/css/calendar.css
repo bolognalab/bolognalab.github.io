@@ -462,7 +462,7 @@ Main Components
 
 .event-links {
   display:block;
-  margin-top: 1.2em;
+  margin-top: 1.1em;
   font-size: 1em;
   color: rgb(53, 53, 53);
 }
@@ -471,7 +471,12 @@ Main Components
   color: #1672f9;
   font-weight: bold;
   font-size: 1.1em;
+  display:block;
+  line-height: 1.7em;
   /* border-bottom: solid 1px white */
+}
+#addToCalendar {
+  font-size: 0.9em;
 }
 
 .cd-schedule .event-modal .header .event-loc,
@@ -614,18 +619,6 @@ Main Components
     display: block;
     padding: .8em;
   }
-
-  /* .event-links {
-    margin-top: 0;
-    position: absolute;
-    top:50%;
-    left:0%;
-    height: 50%;
-    width: 100%;
-    font-size: 0.9em;
-    padding: 1.2em;
-    background: rgba(255, 255, 255, 0.2)
-  } */
 
   .cd-schedule .event-modal .event-info > div {
     padding: 0 2.27% 0 0;
