@@ -69,13 +69,15 @@ async function formatEvents() {
 					this.timelineItems = this.timeline.find('li');
 					this.timelineItemsNumber = this.timelineItems.length;
 					this.timelineStart = getScheduleTimestamp(this.timelineItems.eq(0).text());
+
 					//need to store delta (in our case half hour) timestamp
 					this.timelineUnitDuration = getScheduleTimestamp(this.timelineItems.eq(1).text()) - getScheduleTimestamp(this.timelineItems.eq(0).text());
-	
+					
+
 					this.eventsWrapper = this.element.find('.events');
 					this.eventsGroup = this.eventsWrapper.find('.events-group');
 					this.singleEvents = this.eventsGroup.find('.single-event');
-					this.eventSlotHeight = this.eventsGroup.eq(0).children('.top-info').outerHeight();
+					// this.eventSlotHeight = this.eventsGroup.eq(0).children('.top-info').outerHeight();
 	
 					this.modal = this.element.find('.event-modal');
 					this.modalHeader = this.modal.find('.header');
@@ -100,7 +102,15 @@ async function formatEvents() {
 					if( mq == 'desktop' && !this.element.hasClass('js-full') ) {
 						//in this case you are on a desktop version (first load or resize from mobile)
 						this.eventSlotHeight = $('.timeline').children(0).children()[0].offsetHeight
-						
+						this.eventsWrapper.css({
+							height: (this.eventSlotHeight*(this.timelineItemsNumber+1))+'px',
+							overflow: "hidden",
+							borderBottom: "solid 1px #EAEAEA"
+						})
+						this.timeline.css({
+							height: (this.eventSlotHeight*(this.timelineItemsNumber+1))+'px',
+							overflow: "hidden"
+						})
 						// this.eventsGroup.eq(0).children('.top-info').outerHeight();
 						this.element.addClass('js-full');
 						this.placeEvents();
@@ -225,8 +235,7 @@ async function formatEvents() {
 							modalTranslateY = parseInt((windowHeight - modalHeight)/2 - eventTop);
 						
 						var HeaderBgScaleY = modalHeight/eventHeight,
-							BodyBgScaleX = (modalWidth - eventWidth);
-	
+							BodyBgScaleX = (modalWidth - eventWidth)*1.5;
 						//change modal height/width and translate it
 						self.modal.css({
 							top: eventTop+'px',
@@ -250,6 +259,7 @@ async function formatEvents() {
 							height: eventHeight+'px',
 							width: '1px',
 						});
+						
 						transformElement(self.modalBodyBg, 'scaleY('+HeaderBgScaleY+') scaleX('+BodyBgScaleX+')');
 	
 						//change modal modalHeaderBg height/width and scale it
@@ -365,8 +375,8 @@ async function formatEvents() {
 							modalHeight = ( windowHeight*.8 > self.modalMaxHeight ) ? self.modalMaxHeight : windowHeight*.8;
 	
 						var HeaderBgScaleY = modalHeight/eventHeight,
-							BodyBgScaleX = (modalWidth - eventWidth);
-	
+							BodyBgScaleX = (modalWidth - eventWidth)*1.5;
+						
 						setTimeout(function(){
 							self.modal.css({
 								width: modalWidth+'px',

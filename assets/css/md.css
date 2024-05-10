@@ -1,11 +1,11 @@
 .md-container {
-    height: 22em;
+    height: 26em;
     padding-right: 2.27%;
     box-shadow: inset 0 -28px 30px -28px rgba(255, 255, 255, 1);
 }
 .white-fade::before {
     position: absolute;
-    top: 19em; 
+    top: 23em; 
     left: 6%;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
     margin-top: 0;
@@ -13,6 +13,14 @@
     width: 84%;
     content: '';
   }
+@media only screen and (min-width: 800px) {
+    .md-container {
+        height: 22em;
+    }
+    .white-fade::before {
+        top: 19em;
+    }
+}
 md-block > *:last-child{
     margin-bottom: 5em;
 }

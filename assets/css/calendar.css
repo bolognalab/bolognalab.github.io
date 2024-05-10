@@ -240,7 +240,7 @@ Main Components
     width: 100%;
   }
   .cd-schedule .events .events-group {
-    width: 19.6%;
+    width: 20%;
     float: left;
     border: 1px solid #EAEAEA;
     /* reset style */
@@ -461,13 +461,14 @@ Main Components
 }
 
 .event-links {
-  margin-top: 1.5em;
+  display:block;
+  margin-top: 1.2em;
   font-size: 1em;
   color: rgb(53, 53, 53);
 }
 
 .event-links a {
-  color: #024e96;
+  color: #1672f9;
   font-weight: bold;
   font-size: 1.1em;
   /* border-bottom: solid 1px white */
