@@ -395,7 +395,7 @@ Main Components
 
 .cd-schedule .single-event[data-event="event-2"],
 .cd-schedule [data-event="event-2"] .header-bg {
-  background: #443453;
+  background: #1672f9;
 }
 
 .cd-schedule .single-event[data-event="event-2"]:hover {
@@ -413,7 +413,7 @@ Main Components
 
 .cd-schedule .single-event[data-event="event-4"],
 .cd-schedule [data-event="event-4"] .header-bg {
-  background: #f6b067;
+  background: #f59645;
 }
 
 .cd-schedule .single-event[data-event="event-4"]:hover {
@@ -731,4 +731,23 @@ Main Components
 .cd-schedule.modal-is-open .cover-layer {
   opacity: 1;
   visibility: visible;
+}
+
+
+.cd-schedule .mobile-fading-layer {
+  /* layer showing the boxes fade to white for mobile devices */
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 75%;
+  height: 100%;
+  width: 25%;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, #ffffff 110%);
+  opacity: 1;
+}
+@media only screen and (min-width: 800px) {
+  .cd-schedule .mobile-fading-layer {
+    /* layer showing the boxes fade to white for mobile devices */
+    display:none;
+  }
 }
