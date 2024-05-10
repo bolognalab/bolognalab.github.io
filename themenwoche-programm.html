@@ -3,6 +3,7 @@
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  https://codepen.io/oltika/pen/GNvdgV
 -->
 <html>
 	<head>
@@ -57,15 +58,45 @@
       div.event-modal {
         overflow: hidden;
       }
-      #header .inner {
-        text-align: center;
-        
+      .inner {
+        padding-left: 5%;
+        padding-bottom: 10%;
       }
-      header > * > h1 {
+      .inner h1 {
         font-size:2em;
         font-weight: bold;
         color: #00376c;
         margin-top: 2em;
+      }
+      .inner h2 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 1.5em;
+      }
+      #credits {
+        color: #969494;
+      }
+      #credits h2 {
+        margin-top: 3em;
+      }
+      #credits p {
+        margin-top: 1em;
+      }
+      @media only screen and (min-width: 800px) {
+        .inner {
+        width: 90%;
+        margin: auto;
+        max-width: 1400px;
+        padding-left: 60px;
+      }
+      .inner h1 {
+        text-align: center;
+        font-size:2em;
+        font-weight: bold;
+        color: #00376c;
+        margin-top: 2em;
+      }
+
       }
       /* .event-modal .body {
         background: white;
@@ -164,7 +195,6 @@
                       <div class="body">
                         <div class="event-info" style="visibility:hidden"></div>
                         <div class="body-bg"></div>
-                        
                       </div>
                   
                       <a href="#0" class="close">Close</a>
@@ -174,41 +204,15 @@
                   </div> <!-- .cd-schedule -->     
                 </div>
 			</div>
-
+      <div class="inner" id="credits">
+        <hr>
+        <h2>Credits</h2>
+        <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> mithilfe von Github Pages</p>
+        <p>Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">https://github.com/bolognalab/bolognalab.github.io</a></p>
+        <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
+      </div>
 		<!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
-    <!-- <script>
-      async function makeEvents() {
-        $.getJSON("files/programm-themenwoche.json", function(json) {
-        setTimeout(()=>{
-          console.log("taking my time making events")
-          let eventCalendar = json
-          eventCalendar.forEach((e)=> {
-          eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"]
-          let groupToAppendTo = document.getElementById(day)
-          let listToAppendTo = document.querySelector('#'+day+' ul')
-          let item = document.createElement("li")
-          item.classList.add("single-event")
-          item.setAttribute("data-start", start)
-          item.setAttribute("data-end", end)
-          item.setAttribute("data-loc", loc)
-          item.setAttribute("data-content", id)
-          item.setAttribute("id", id)
-          item.setAttribute("data-event", "event-1")
-          item.setAttribute("data-web", web)
-          item.innerHTML= "<a href='#0'><em class='event-name'>"+ eventName +"</em></a>"
-          listToAppendTo.append(item)
-        }, 1000)          
-        });
-      })
-      }
-      async function squeezeConflicts() {
-        console.log("conflicts")
-        // resolving conflicts
-        document.querySelector("#event-genderingMINT").classList.add("conflict", "l")
-        document.querySelector("#event-hype").classList.add("conflict", "r")
-      }
-    </script> -->
     <script src="assets/js/calendarEvents.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>

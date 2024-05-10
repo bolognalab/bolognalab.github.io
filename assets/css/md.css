@@ -28,7 +28,7 @@ md-block {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-md-block > h1, h2, h3, h4 {
+md-block > h1, md-block > h2, md-block > h3, md-block > h4 {
     font-weight: bold;
 }
 md-block > h1 {
