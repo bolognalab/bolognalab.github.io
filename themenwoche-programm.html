@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/calendar.css" />
     <link rel="stylesheet" href="assets/css/md.css" />
  		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-     <style>
+    <style>
       .single-event a {
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -36,7 +36,6 @@
 
       /* resolving conflicts */
       @media only screen and (min-width: 800px) {
-
         .single-event.conflict {
           width: 49% !important;
         }
@@ -55,12 +54,14 @@
         display: none;
       }
       }
+      
       div.event-modal {
         overflow: hidden;
       }
       .inner {
+        width: 100%;
         padding-left: 5%;
-        padding-bottom: 10%;
+        padding-right: 5%;
       }
       .inner h1 {
         font-size:2em;
@@ -74,20 +75,26 @@
         margin-top: 1.5em;
       }
       #credits {
-        color: #969494;
+        color: #777;
+        padding-bottom: 10%;
       }
       #credits h2 {
         margin-top: 3em;
       }
       #credits p {
+        font-size:70%;
         margin-top: 1em;
+      }
+      #credits a {
+        color: inherit;
+        border-bottom: solid 1px
       }
       @media only screen and (min-width: 800px) {
         .inner {
-        width: 90%;
         margin: auto;
         max-width: 1400px;
         padding-left: 60px;
+        padding-right: 60px;
       }
       .inner h1 {
         text-align: center;
@@ -96,12 +103,53 @@
         color: #00376c;
         margin-top: 2em;
       }
-
+      #credits p {
+        font-size: 100%;
+      }
       }
       /* .event-modal .body {
         background: white;
       } */
      </style> 
+     <style>
+        .accordion, .panel {
+          max-width: 700px;
+        }
+        .accordion {
+          background-color: #ddd;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+        }
+        .accordion::before {
+          content: '\2B9E';
+          font-size: 1.1em;
+          font-weight: bold;
+          color: #aaa; 
+          padding-right: 1em;
+        }
+        .active, .accordion:hover {
+          background-color: #eee;
+        }
+        .active::before {
+          content: '\'
+        }
+        .panel {
+          padding: 0 18px;
+          max-height: 0;
+          background-color: #eee;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+        }
+        .panel > *:last-child {
+          margin-bottom: 1.2em;
+        }
+     </style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -205,19 +253,36 @@
                 </div>
 			</div>
       <div class="inner" id="credits">
-        <hr>
-        <h2>Credits</h2>
-        <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> mithilfe von Github Pages</p>
-        <p>Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">https://github.com/bolognalab/bolognalab.github.io</a></p>
-        <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
+        <h2 class="accordion">Credits</h2>
+        <div class="panel">
+          <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> mithilfe von Github Pages</p>
+          <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+          <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
+      </div>
       </div>
 		<!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/calendarEvents.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } 
+        });
+      }
+    </script>
       <script type="module" src="assets/js/md-block.js"></script>
 	</body>
 </html>
