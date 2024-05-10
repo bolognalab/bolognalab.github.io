@@ -7,5 +7,5 @@
 Moderation: \
 **Judith Schütze**  
 ##### Zentrum für Transdisziplinäre Geschlechterstudien
-**Name 2**  
+**Dr. Sigrid Schmitz**  
 ##### Zentrum für Transdisziplinäre Geschlechterstudien 
