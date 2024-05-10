@@ -736,6 +736,7 @@ Main Components
 
 .cd-schedule .mobile-fading-layer {
   /* layer showing the boxes fade to white for mobile devices */
+  pointer-events: none;
   position: absolute;
   z-index: 2;
   top: 0;
