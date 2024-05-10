@@ -1,14 +1,14 @@
 ﻿short-event-name,long-event-name,day,start,end,loc,id,web
 Auftakt,Auftaktveranstaltung der Themenwoche Hybride Lehre,monday,10:30,13:00,Senatsaal der Humboldt-Universität,event-auftakt,https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/anmeldung-thl-auftakt
 Blended Learning mit H5P zum Thema Inklusion,Blended Learning mit H5P am Beispiel einer digitalen Lehr-Lerneinheit zum Thema Inklusion,tuesday,10:30,12:00,bologna.lab,event-FDQI,https://hu-berlin.de/hybride-woche
-Selbsteinschätzungstool zum Lernfortschritt,Selbsteinschätzungstool zum Lernfortschritt,tuesday,13:00,14:00,Campus-Mitte,event-selbsteval,https://hu-berlin.de/hybride-woche
-Prüfungskultur(en) im Wandel,Prüfungskultur(en) im Wandel,tuesday,14:00,15:00,Campus-Mitte,event-pruefung,https://hu-berlin.de/hybride-woche
+Self-Assessment-Tool zum Lernfortschritt,Selbsteinschätzungstool zum Lernfortschritt,tuesday,13:00,14:00,Campus-Mitte,event-selbsteval,https://hu-berlin.de/hybride-woche
+Prüfungskultur im Wandel,Prüfungskultur(en) im Wandel,tuesday,14:00,15:00,Campus-Mitte,event-pruefung,https://hu-berlin.de/hybride-woche
 Projekt COIL,Projekt Collaborative Online International Learning (COIL),tuesday,15:00,16:00,Campus-Mitte,event-coil,https://hu-berlin.de/hybride-woche
-Hybride Ringvorlesung: Herausforderungen & Rezepte,Hybride Ringvorlesung: Herausforderungen und Rezepte,tuesday,16:00,17:00,Campus-Mitte,event-ring,https://hu-berlin.de/hybride-woche
+Hybride Ringvorlesungen,Hybride Ringvorlesung: Herausforderungen und Rezepte,tuesday,16:00,17:00,Campus-Mitte,event-ring,https://hu-berlin.de/hybride-woche
 Lehrwerkstatt: Projekt Gendering MINT,Lehrwerkstatt Projekt Gendering MINT didaktisch-digital,wednesday,10:30,12:30,Campus-Mitte,event-genderingMINT,https://hu-berlin.de/hybride-woche
 "Projekt ""HyPE Visor""","Projekt HyPE Visor: Hybride, Präsenz, E-Learning und Online Lehrkonzepte",wednesday,11:00,12:00,Campus-Mitte,event-hype,https://hu-berlin.de/hybride-woche
 Journal Club Hybride Lehre,Journal Club Hybride Lehre,wednesday,13:00,14:00,bologna.lab,event-journalClub,https://hu-berlin.de/hybride-woche
-Hybride Lehre in der Lehrkräftebildung,"Synchron-hybride Lehrformate in der Lehrkräftebildung - Erfahrungen und Evaluationsergebnisse zu Akzeptanz, Interaktion und Kompetenzentwicklung der Studierenden",wednesday,14:00,15:00,Campus-Mitte,event-lehrkraft,https://hu-berlin.de/hybride-woche
+Hybride Lehre in Lehrkräftebildung,"Synchron-hybride Lehrformate in der Lehrkräftebildung - Erfahrungen und Evaluationsergebnisse zu Akzeptanz, Interaktion und Kompetenzentwicklung der Studierenden",wednesday,14:00,15:00,Campus-Mitte,event-lehrkraft,https://hu-berlin.de/hybride-woche
 Digitales Editieren als kollaborativer Workflow,"Projekt ""Digitales Editieren als Kollaborativer Workflow",friday,13:00,14:00,Campus-Mitte,event-digitaledit,https://hu-berlin.de/hybride-woche
 VL-Aufzeichnung mit Autotracking und Untertitelung,Medientechnische Präsentation: Vorlesungsaufzeichnung mit Autotracking und Untertitelung,friday,14:00,15:30,Campus-Adlershof,event-medientechnik,https://hu-berlin.de/hybride-woche
 Diskussion mit Studierenden,"Diskussion mit Studierenden: Hybride Lehre im Kontext von Studierbarkeit, Barrierefreiheit und familiengerechter Hochschule",friday,16:00,17:00,Campus-Adlershof,event-refrat,https://hu-berlin.de/hybride-woche
