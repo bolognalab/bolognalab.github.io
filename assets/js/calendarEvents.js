@@ -130,13 +130,15 @@ jQuery(document).ready(function($){
 		this.modalBody.find('.event-info').load('calendar-events/events-dir.html #'+ event.parent().attr('data-content') + ' > *', function(data){
 			//once the event content has been loaded
 			self.element.addClass('content-loaded');
+			setTimeout(function(){
+				document.querySelector(".event-info").style.visibility="visible"
+			}, 250)
 		});
 		// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')
 		// this.modalBody.find('#currentEventInfo').load('calendar-events/'+event.parent().attr('data-content')+'.md', function(data){
 		// 	//once the event content has been loaded
 		// 	self.element.addClass('content-loaded');
 		// });
-
 
 		this.element.addClass('modal-is-open');
 
@@ -217,7 +219,7 @@ jQuery(document).ready(function($){
 		var mq = self.mq();
 
 		this.animating = true;
-
+		document.querySelector(".event-info").style.visibility="hidden"
 		if( mq == 'mobile' ) {
 			this.element.removeClass('modal-is-open');
 			this.modal.one(transitionEnd, function(){
