@@ -14,35 +14,6 @@
     <link rel="stylesheet" href="assets/css/calendar.css" />
     <link rel="stylesheet" href="assets/css/md.css" />
  		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <script src="assets/js/jquery.min.js"></script>
-    <script>
-      $.getJSON("files/programm-themenwoche.json", function(json) {
-        let eventCalendar = json
-        eventCalendar.forEach((e)=> {
-          eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"]
-          let groupToAppendTo = document.getElementById(day)
-          let listToAppendTo = document.querySelector('#'+day+' ul')
-          let item = document.createElement("li")
-          item.classList.add("single-event")
-          item.setAttribute("data-start", start)
-          item.setAttribute("data-end", end)
-          item.setAttribute("data-loc", loc)
-          item.setAttribute("data-content", id)
-          item.setAttribute("id", id)
-          item.setAttribute("data-event", "event-1")
-          item.setAttribute("data-web", web)
-          item.innerHTML= "<a href='#0'><em class='event-name'>"+ eventName +"</em></a>"
-          listToAppendTo.append(item)
-          
-        });
-        console.log("makingEvents")
-      }).then(function(){
-        console.log("conflicts")
-        // resolving conflicts
-        document.querySelector("#event-genderingMINT").classList.add("conflict", "l")
-        document.querySelector("#event-hype").classList.add("conflict", "r")
-      })
-    </script>
      <style>
       .single-event a {
         word-wrap: break-word;
@@ -201,11 +172,44 @@
 			</div>
 
 		<!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- <script>
+      async function makeEvents() {
+        $.getJSON("files/programm-themenwoche.json", function(json) {
+        setTimeout(()=>{
+          console.log("taking my time making events")
+          let eventCalendar = json
+          eventCalendar.forEach((e)=> {
+          eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"]
+          let groupToAppendTo = document.getElementById(day)
+          let listToAppendTo = document.querySelector('#'+day+' ul')
+          let item = document.createElement("li")
+          item.classList.add("single-event")
+          item.setAttribute("data-start", start)
+          item.setAttribute("data-end", end)
+          item.setAttribute("data-loc", loc)
+          item.setAttribute("data-content", id)
+          item.setAttribute("id", id)
+          item.setAttribute("data-event", "event-1")
+          item.setAttribute("data-web", web)
+          item.innerHTML= "<a href='#0'><em class='event-name'>"+ eventName +"</em></a>"
+          listToAppendTo.append(item)
+        }, 1000)          
+        });
+      })
+      }
+      async function squeezeConflicts() {
+        console.log("conflicts")
+        // resolving conflicts
+        document.querySelector("#event-genderingMINT").classList.add("conflict", "l")
+        document.querySelector("#event-hype").classList.add("conflict", "r")
+      }
+    </script> -->
+    <script src="assets/js/calendarEvents.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-      <script src="assets/js/calendarEvents.js"></script>
       <script type="module" src="assets/js/md-block.js"></script>
 	</body>
 </html>

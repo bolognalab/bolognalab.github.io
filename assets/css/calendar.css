@@ -277,7 +277,6 @@ Main Components
     /* reset style */
     display: block;
     overflow: visible;
-    padding: 0;
   }
   .cd-schedule .events .events-group > ul::after {
     clear: both;
@@ -288,13 +287,15 @@ Main Components
     /* reset style */
     display: none;
   }
+
   .cd-schedule .events .single-event {
     position: absolute;
     z-index: 3;
     /* top position and height will be set using js */
-    width: calc(100% - 2px);
-    left: 1px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    width: calc(100% - 1px);
+    left: 0.5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2); */
     /* reset style */
     -ms-flex-negative: 1;
         flex-shrink: 1;
