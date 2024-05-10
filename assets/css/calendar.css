@@ -96,7 +96,7 @@ Main Components
 
 @media only screen and (min-width: 800px) {
   .cd-schedule {
-    width: 90%;
+    /* width: 90%; */
     max-width: 1400px;
     margin: 2em auto;
   }
@@ -245,6 +245,7 @@ Main Components
     border: 1px solid #EAEAEA;
     /* reset style */
     margin-bottom: 0;
+    padding: 0 1px;
   }
   .cd-schedule .events .events-group:not(:first-of-type) {
     border-left-width: 0;
@@ -254,7 +255,8 @@ Main Components
     display: table;
     height: 50px;
     border-bottom: 1px solid #EAEAEA;
-    background: #585858;
+    background: #1672f9;
+    border-radius: 4px;
     /* reset style */
     padding: 0;
   }
