@@ -2,8 +2,8 @@
 Pages and widgets to be embedded into projects of the bologna.lab at HU-Berlin.
 
 ## dependencies and attributions
-* Initial calendar template: https://codepen.io/oltika/pen/GNvdgV
-* Markdown embedding: [md-block by Lea Verou](https://md-block.verou.me/md-block.js) & custom CSS
+* initial calendar template: https://codepen.io/oltika/pen/GNvdgV
+* markdown embedding: [md-block by Lea Verou](https://md-block.verou.me/md-block.js) & custom CSS
 
 ## design template
 Phantom by HTML5 UP
