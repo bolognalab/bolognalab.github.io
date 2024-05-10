@@ -219,7 +219,7 @@ Main Components
 }
 
 .cd-schedule .events .single-event:last-of-type {
-  margin-right: 5%;
+  margin-right: 25%;
 }
 
 .cd-schedule .events .single-event a {
@@ -733,10 +733,10 @@ Main Components
   position: absolute;
   z-index: 2;
   top: 0;
-  left: 75%;
+  left: 70%;
   height: 100%;
-  width: 25%;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 70%, #ffffff 110%);
+  width: 30%;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255,255,255,0.4) 100%);
   opacity: 1;
 }
 @media only screen and (min-width: 800px) {
