@@ -6,5 +6,5 @@
 Sprecher:innen: \
 **Prof. Dr. Matthias Ziegler**  
 ##### Institut für Psychologie 
-**Ann-Catherine Liebsch**  
+**Sandra von Sydow**  
 ##### Stabsstelle Qualitätsmanagement   
