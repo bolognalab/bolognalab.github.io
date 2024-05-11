@@ -28,7 +28,7 @@ def makeMD(names):
         if not os.path.exists(fname):
             with open(fname, 'w', encoding="utf-8") as file:
                 file.write("# " + titles[name] + '  \n')
-                file.write("## Ort (z.B, Senatsaal)  \n##### Adresse und Raum \n--- \n### Art der Veranstaltung (z.B. Workshop) \nLeitung: \ \n**Name 1**  \n##### Einrichtung 1\ ")
+                file.write("## Ort (z.B, Senatsaal)  \n##### Adresse und Raum \n--- \n### Art der Veranstaltung (z.B. Workshop) \nLeitung: \\n**Name 1**  \n##### Einrichtung 1\ ")
                 pass
         
 def updateJSON(json_list):
