@@ -3,6 +3,6 @@
 ##### Adresse und Raum 
 --- 
 ### Art der Veranstaltung (z.B. Workshop) 
-Leitung: \ 
+Leitung: \
 **Name 1**  
 ##### Einrichtung 1\ 
