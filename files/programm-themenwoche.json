@@ -1,0 +1,132 @@
+[
+    {
+        "short-event-name": "Auftakt",
+        "long-event-name": "Auftaktveranstaltung der Themenwoche Hybride Lehre",
+        "day": "monday",
+        "start": "10:30",
+        "end": "13:00",
+        "loc": "Senatsaal der Humboldt-Universität",
+        "id": "event-auftakt",
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/anmeldung-thl-auftakt"
+    },
+    {
+        "short-event-name": "Blended Learning mit H5P zum Thema Inklusion",
+        "long-event-name": "Blended Learning mit H5P am Beispiel einer digitalen Lehr-Lerneinheit zum Thema Inklusion",
+        "day": "tuesday",
+        "start": "10:30",
+        "end": "12:00",
+        "loc": "bologna.lab",
+        "id": "event-FDQI",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Self-Assessment-Tool zum Lernfortschritt",
+        "long-event-name": "Selbsteinschätzungstool zum Lernfortschritt",
+        "day": "tuesday",
+        "start": "13:00",
+        "end": "14:00",
+        "loc": "Campus-Mitte",
+        "id": "event-selbsteval",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Prüfungskultur im Wandel",
+        "long-event-name": "Prüfungskultur(en) im Wandel",
+        "day": "tuesday",
+        "start": "14:00",
+        "end": "15:00",
+        "loc": "Campus-Mitte",
+        "id": "event-pruefung",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Projekt COIL",
+        "long-event-name": "Projekt Collaborative Online International Learning (COIL)",
+        "day": "tuesday",
+        "start": "15:00",
+        "end": "16:00",
+        "loc": "Campus-Mitte",
+        "id": "event-coil",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Hybride Ringvorlesungen",
+        "long-event-name": "Hybride Ringvorlesungen",
+        "day": "tuesday",
+        "start": "16:00",
+        "end": "17:00",
+        "loc": "Campus-Mitte",
+        "id": "event-ring",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Lehrwerkstatt: Projekt Gendering MINT",
+        "long-event-name": "Lehrwerkstatt Projekt Gendering MINT didaktisch-digital",
+        "day": "wednesday",
+        "start": "10:30",
+        "end": "12:30",
+        "loc": "Campus-Mitte",
+        "id": "event-genderingMINT",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Projekt \"HyPE Visor\"",
+        "long-event-name": "Projekt HyPE Visor: Hybride, Präsenz, E-Learning und Online Lehrkonzepte",
+        "day": "wednesday",
+        "start": "11:00",
+        "end": "12:00",
+        "loc": "Campus-Mitte",
+        "id": "event-hype",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Journal Club Hybride Lehre",
+        "long-event-name": "Journal Club Hybride Lehre",
+        "day": "wednesday",
+        "start": "13:00",
+        "end": "14:00",
+        "loc": "bologna.lab",
+        "id": "event-journalClub",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Hybride Lehre in Lehrkräftebildung",
+        "long-event-name": "Synchron-hybride Lehrformate in der Lehrkräftebildung - Erfahrungen und Evaluationsergebnisse zu Akzeptanz, Interaktion und Kompetenzentwicklung der Studierenden",
+        "day": "wednesday",
+        "start": "14:00",
+        "end": "15:00",
+        "loc": "Campus-Mitte",
+        "id": "event-lehrkraft",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Digitales Editieren als kollaborativer Workflow",
+        "long-event-name": "Projekt \"Digitales Editieren als Kollaborativer Workflow",
+        "day": "friday",
+        "start": "13:00",
+        "end": "14:00",
+        "loc": "Campus-Mitte",
+        "id": "event-digitaledit",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "VL-Aufzeichnung mit Autotracking und Untertitelung",
+        "long-event-name": "Medientechnische Präsentation: Vorlesungsaufzeichnung mit Autotracking und Untertitelung",
+        "day": "friday",
+        "start": "14:00",
+        "end": "15:30",
+        "loc": "Campus-Adlershof",
+        "id": "event-medientechnik",
+        "web": "https://hu-berlin.de/hybride-woche"
+    },
+    {
+        "short-event-name": "Diskussion mit Studierenden",
+        "long-event-name": "Diskussion mit Studierenden: Hybride Lehre im Kontext von Studierbarkeit, Barrierefreiheit und familiengerechter Hochschule",
+        "day": "friday",
+        "start": "16:00",
+        "end": "17:00",
+        "loc": "Campus-Adlershof",
+        "id": "event-refrat",
+        "web": "https://hu-berlin.de/hybride-woche"
+    }
+]

@@ -3,51 +3,153 @@
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  https://codepen.io/oltika/pen/GNvdgV
 -->
 <html>
 	<head>
 		<title>Themenwoche Hybride Lehre 2024: Programm</title>
 		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
     <link rel="stylesheet" href="assets/css/calendar.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <script src="programm-themenwoche.js"></script>
-    
-     <style>
+    <link rel="stylesheet" href="assets/css/md.css" />
+ 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      .single-event a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
       .event-info {
-        padding: 5% 5% 5% 5%; 
-        width: 90%;
-        overflow: scroll
+        padding: 2em 6%; 
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
       }
       .event-info > p {
         margin-bottom: 1em;
       }
-      div.tabstops {
-        height: fit-content !important;
-        margin-bottom: 2em;
-        display:block;
-      }
-      div.tabstops span{
-        position: absolute;
-        text-align: left;
-      }
-      div.tabstops span:nth-child(1){
-        left: 5%;
-        width: 20%;
-      }
-      div.tabstops span:nth-child(2){
-        left: 25%;
-        width: 75%;
-      }
-      div.tabstops strong {
+      .event-info strong {
         font-weight: 600;
         color: rgb(65, 64, 64)
       }
-      div.tabstops em {
-        font-style: italic
+
+      /* resolving conflicts */
+      @media only screen and (min-width: 800px) {
+        .single-event.conflict {
+          width: 49% !important;
+        }
+        .single-event.conflict.r {
+          margin-left: 50%;
+        }
+
+        .single-event.conflict > a {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding: 0.9em 0.8em 0.2em 0em !important;
+        font-size: 0.9em;
+        width: 100%;
       }
+      .single-event.conflict .event-loc {
+        display: none;
+      }
+      }
+      
+      div.event-modal {
+        overflow: hidden;
+      }
+      .inner {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      .inner h1 {
+        font-size:2em;
+        font-weight: bold;
+        color: #00376c;
+        margin-top: 2em;
+      }
+      .inner h2 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 1.5em;
+      }
+      #credits {
+        color: #777;
+        padding-bottom: 10%;
+      }
+      #credits h2 {
+        margin-top: 3em;
+      }
+      #credits p {
+        font-size:70%;
+        margin-top: 1em;
+      }
+      #credits a {
+        color: inherit;
+        border-bottom: solid 1px
+      }
+      @media only screen and (min-width: 800px) {
+        .inner {
+        margin: auto;
+        max-width: 1400px;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      .inner h1 {
+        text-align: center;
+        font-size:2em;
+        font-weight: bold;
+        color: #00376c;
+        margin-top: 2em;
+      }
+      #credits p {
+        font-size: 100%;
+      }
+      }
+      /* .event-modal .body {
+        background: white;
+      } */
      </style> 
+     <style>
+        .accordion, .panel {
+          max-width: 700px;
+        }
+        .accordion {
+          background-color: #ddd;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+        }
+        .accordion::before {
+          content: '\2B9E';
+          font-size: 1.1em;
+          font-weight: bold;
+          color: #aaa; 
+          padding-right: 1em;
+        }
+        .active, .accordion:hover {
+          background-color: #eee;
+        }
+        .active::before {
+          content: '\'
+        }
+        .panel {
+          padding: 0 18px;
+          max-height: 0;
+          background-color: #eee;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+        }
+        .panel > *:last-child {
+          margin-bottom: 1.2em;
+        }
+     </style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -56,7 +158,7 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-
+              <h1>Programm Themenwoche Lehre 2024</h1>
 							<!-- Logo -->
 								<!-- <a href="index.html" class="logo">
 									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">bologna.lab</span>
@@ -66,13 +168,12 @@
 
 				<!-- Main -->
                 <div id="main">
-                  <br />
-                  <p class="codyhouse">link to the site of Codyhouse: <a href="https://codyhouse.co/gem/schedule-template/">https://codyhouse.co/gem/schedule-template/</a></p>
+                  <!-- <br /> -->
                   <div class="cd-schedule loading">
                     <div class="timeline">
                       <ul>
-                        <li><span>09:00</span></li>
-                        <li><span>09:30</span></li>
+                        <!-- <li><span>09:00</span></li>
+                        <li><span>09:30</span></li> -->
                         <li><span>10:00</span></li>
                         <li><span>10:30</span></li>
                         <li><span>11:00</span></li>
@@ -88,72 +189,42 @@
                         <li><span>16:00</span></li>
                         <li><span>16:30</span></li>
                         <li><span>17:00</span></li>
-                        <li><span>17:30</span></li>
-                        <li><span>18:00</span></li>
+                        <!-- <li><span>17:30</span></li> -->
                       </ul>
+                      
+                        
                     </div> <!-- .timeline -->
                   
                     <div class="events">
                       <ul class="wrap">
+                        <div class="mobile-fading-layer"></div>
                         <li class="events-group" datestring="Mo. 24.06.2024" id="monday">
-                          <div class="top-info"><span>Montag</span></div>
-                          <ul>
-                            <li class="single-event" data-start="16:30" data-end="18:00" data-loc = "Senatsaal der Humboldt-Universität" data-content="event-auftakt" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Auftaktveranstaltung</em>
-                              </a>
-                            </li>
-                          </ul>
+                          <div class="top-info"><span>Montag 24.6.</span></div>
+                          <ul></ul>
                         </li>
                   
                         <li class="events-group" datestring="Di. 25.06.2024" id="tuesday">
-                          <div class="top-info"><span>Dienstag</span></div>
-                  
-                          <ul>
-                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Event2</em>
-                              </a>
-                            </li>
-                  
-                          </ul>
+                          <div class="top-info"><span>Dienstag 25.6.</span></div>         
+                          <ul></ul>
                         </li>
                   
                         <li class="events-group" datestring="Mi. 26.06.2024" id="wednesday">
-                          <div class="top-info"><span>Mittwoch</span></div>
-                  
-                          <ul>
-                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Event2</em>
-                              </a>
-                            </li>
-                  
-                          </ul>
+                          <div class="top-info"><span>Mittwoch 26.6.</span></div>
+                          <ul></ul>
                         </li>
                   
                         <li class="events-group" datestring="Do. 27.06.2024" id="thursday">
-                          <div class="top-info"><span>Donnerstag</span></div>
-                  
+                          <div class="top-info"><span>Donnerstag 27.6.</span></div>
                           <ul>
-                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Event2</em>
-                              </a>
+                            <li class="single-event" data-start="13:30" data-end="20:00" data-loc="Humboldt-Universität" data-content="event-tdl" id="event-tdl" data-event="event-4" style="top: 57px; height: 278px;">
+                              <a href="#0"><em class="event-name">Tag der Lehre 2024</em><span class="event-loc">Senatsaal der Humboldt-Universität</span></a>
                             </li>
                           </ul>
                         </li>
                   
                         <li class="events-group" datestring="Fr. 28.06.2024" id="friday">
-                          <div class="top-info"><span>Freitag</span></div>
-                  
-                          <ul>
-                            <li class="single-event" data-start="10:30" data-end="12:00"  data-content="event-rowing-workout" data-event="event-1">
-                              <a href="#0">
-                                <em class="event-name">Event2</em>
-                              </a>
-                            </li>
-                          </ul>
+                          <div class="top-info"><span>Freitag  28.6.</span></div>
+                          <ul></ul>
                         </li>
                   <!--        -->
                       </ul>
@@ -162,11 +233,10 @@
                     <div class="event-modal">
                       <header class="header">
                         <div class="content">
-                          <span class="event-name"></span>
+                          <span class="event-name" style="display:none"></span>
                           <span class="event-date"></span>
-                          <span class="extraSpaces">&nbsp; &nbsp; &nbsp;</span>
                           <span class="event-time"></span>
-                          <span class="event-loc"></span>
+                          <!-- <span class="event-loc"></span> -->
                           <!-- <div class="event-links"></div> -->
                         </div>
 
@@ -174,48 +244,53 @@
                       </header>
                   
                       <div class="body">
-                        <div class="event-info"></div>
+                        <div class="event-info" style="visibility:hidden"></div>
                         <div class="body-bg"></div>
-                        
                       </div>
                   
                       <a href="#0" class="close">Close</a>
                     </div>
-                  
+                    
                     <div class="cover-layer"></div>
-                  </div> <!-- .cd-schedule -->
-                  
+                  </div> <!-- .cd-schedule -->     
                 </div>
-
 			</div>
-
+      <div class="inner" id="credits">
+        <h2 class="accordion">Credits</h2>
+        <div class="panel">
+          <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> mithilfe von Github Pages</p>
+          <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+          <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
+      </div>
+      </div>
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-      <script src="assets/js/calendarEvents.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/calendarEvents.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } 
+        });
+      }
+    </script>
+      <script type="module" src="assets/js/md-block.js"></script>
       <script>
-        eventCalendar.forEach((e)=> {
-          console.log(e["event-name"])
-          eventName = e["event-name"]
-          day = e["day"]
-          start = e["start"]
-          end = e["end"]
-          loc = e["loc"]
-          id = e["id"]
-
-          let groupToAppendTo = document.getElementById(day)
-          // let listToAppendTo = groupToAppendTo.childNodes[0].childNodes[0]
-          let listToAppendTo = document.querySelector('#'+day+' ul')
-          let item = document.createElement("li")
-          item.classList.add("single-event")
-          item.innerHTML= "<a href='#0'><em class='event-name'>Event2</em></a>"
-          listToAppendTo.append(item)
-
-        })
+        var pythonScriptPath = "files/csv2json.py"
+        subprocess.run(["python", pythonScriptPath]);
       </script>
-
+      
 	</body>
 </html>

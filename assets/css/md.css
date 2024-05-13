@@ -1,0 +1,95 @@
+.md-container {
+    height: 26em;
+    padding-right: 2.27%;
+    box-shadow: inset 0 -28px 30px -28px rgba(255, 255, 255, 1);
+}
+.white-fade::before {
+    position: absolute;
+    top: 23em; 
+    left: 6%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+    margin-top: 0;
+    height: 5em;
+    width: 84%;
+    content: '';
+  }
+@media only screen and (min-width: 800px) {
+    .md-container {
+        height: 22em;
+    }
+    .white-fade::before {
+        top: 19em;
+    }
+}
+md-block > *:last-child{
+    margin-bottom: 5em;
+}
+md-block {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+md-block > h1, md-block > h2, md-block > h3, md-block > h4 {
+    font-weight: bold;
+}
+md-block > h1 {
+    font-size: 1.4em;
+    color: #00376c; 
+    /* margin-top: 1em;  */
+}
+md-block > h2 {
+    color: rgb(58, 58, 58);
+}
+
+md-block > h3 {
+    color: #239bfe; 
+}
+md-block > h4 {
+    color: rgb(58, 58, 58);
+}
+md-block > h5 {
+    font-style: italic;
+    margin-bottom: 1em;
+}
+md-block > h3 {
+    margin-top: 2em;
+}
+md-block > h6 {
+    font-size: 0.9em;
+    margin-top: 1em;
+}
+.event-info strong {
+    font-weight: 600;
+    color: rgb(65, 64, 64)
+  }
+.event-info em {
+    font-style: italic;
+}
+md-block > blockquote {
+    margin: 1em 2em;
+    max-width: 476px;
+}
+md-block > blockquote p {
+    color: #666;
+    max-width: 460px;
+}
+md-block > hr {
+    border: 0;
+    border-bottom: solid 1px #c9c9c9;
+    margin: 0.1em 0 1em ;
+}
+md-block > ul, md-block > ol {
+    padding: 0;
+    margin: 0;
+}
+md-block > li {
+    line-height: 24px;
+}
+md-block > li ul {
+    margin-left: 24px;
+}
+md-block > ul li::marker {
+    content: '· ';
+    color: black;
+    font-weight: 1000;
+    padding-right: 0.5em;
+}
