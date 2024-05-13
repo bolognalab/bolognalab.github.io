@@ -12,11 +12,14 @@
 
 ### Podiumdiskussion 
 Panelist:innen: 
-> **Ali Mertens** 
-> ##### Referat für Lehre und Studium (RefRat) 
+> **Prof. Dr. Niels Pinkwart** 
+> ##### Vizepräsident für Lehre und Studium 
 >  \
 > **Martina Mörth** 
 > ##### Berliner Zentrum für Hochschullehre (RefRat) 
 >  \
 > **Annette Upmeier zu Belzen** 
 > ##### Institut für Biologie (RefRat)
+>  \
+> **Ali Mertens** 
+> ##### Referat für Lehre und Studium (RefRat) 
