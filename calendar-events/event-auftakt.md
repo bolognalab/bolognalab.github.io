@@ -18,8 +18,8 @@ Panelist:innen:
 > **Martina Mörth** 
 > ##### Berliner Zentrum für Hochschullehre (RefRat) 
 >  \
-> **Annette Upmeier zu Belzen** 
-> ##### Institut für Biologie (RefRat)
+> **Prof. Dr. Annette Upmeier zu Belzen** 
+> ##### Institut für Biologie 
 >  \
 > **Ali Mertens** 
 > ##### Referat für Lehre und Studium (RefRat) 
