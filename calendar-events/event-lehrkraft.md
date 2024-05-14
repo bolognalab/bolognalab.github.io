@@ -3,6 +3,6 @@
 ##### Geschwister-Scholl-Straße 7, 10117 Berlin, Raum 311 
 --- 
 ### Impulsvortrag & Diskussion 
-Leitung: 
+Leitung: \
 **Dr. Cornelia Wagner-Herrbach**  
 ##### Institut für Erziehungswissenschaften 
