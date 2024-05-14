@@ -4,7 +4,6 @@
 ---
 ### Workshop
 Leitung: \
- \ 
 **Dr. Julia Frohn**  
 ##### Professional School of Education 
 **Ann-Catherine Liebsch**  
