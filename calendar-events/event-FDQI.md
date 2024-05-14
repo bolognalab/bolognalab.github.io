@@ -4,9 +4,10 @@
 ---
 ### Workshop
 Leitung: \
+\ 
 **Dr. Julia Frohn**  
-Projektoodrinatorin 
+Projektkoordinatorin 
 ##### Professional School of Education 
 **Ann-Catherine Liebsch**  
-Koordination Querschnittsthemen in der Lehrkräftebildung
+Koordinatorin Querschnittsthemen in der Lehrkräftebildung
 ##### Professional School of Education 
