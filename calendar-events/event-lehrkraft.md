@@ -5,4 +5,4 @@
 ### Impulsvortrag & Diskussion 
 Leitung: 
 **Dr. Cornelia Wagner-Herrbach**  
-##### Institut für Erziehungswissenschaften \ 
+##### Institut für Erziehungswissenschaften 
