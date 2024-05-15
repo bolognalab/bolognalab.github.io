@@ -1,8 +1,10 @@
 # Prüfungskultur(en) im Wandel  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum 
+## bologna.lab / Zoom  
+##### Hausvogteiplatz 5-7, 10117 Berlin, Raum 0101-0103 
 --- 
-### Art der Veranstaltung (z.B. Workshop) 
-Leitung: \ 
-**Name 1**  
-##### Einrichtung 1\
+### Impulsvortrag & Diskussion  
+Sprecher:innen: \ 
+**Dr. Andrea Beyer**  
+##### Zentraleinrichtung Computer- und Medienservice \ 
+**Andreas Erbe**  
+##### Zentraleinrichtung Computer- und Medienservice \ 
