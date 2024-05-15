@@ -1,6 +1,6 @@
 # Selbsteinschätzungstool zum Lernfortschritt  
-## Ort TBA  
-##### Anreise TBA
+## bologna.lab  
+##### Hausvogteiplatz 5-7, 10117 Berlin, Raum 0101-0103
 ---
 ### Impulsvortrag & Diskussion
 Sprecher:innen: \
