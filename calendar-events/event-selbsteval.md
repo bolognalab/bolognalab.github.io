@@ -1,8 +1,8 @@
 # Selbsteinschätzungstool zum Lernfortschritt  
-## Ort TBA  
-##### Anreise TBA
+## bologna.lab  
+##### Hausvogteiplatz 5-7, 10117 Berlin, Raum 0101-0103
 ---
-### Impuls & Diskussion
+### Impulsvortrag & Diskussion
 Sprecher:innen: \
 **Prof. Dr. Matthias Ziegler**  
 ##### Institut für Psychologie 

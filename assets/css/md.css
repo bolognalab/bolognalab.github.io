@@ -46,7 +46,7 @@ md-block > h3 {
 md-block > h4 {
     color: rgb(58, 58, 58);
 }
-md-block > h5 {
+md-block > h5, md-block > * > h5 {
     font-style: italic;
     margin-bottom: 1em;
 }

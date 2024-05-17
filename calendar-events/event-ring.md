@@ -1,7 +1,8 @@
 # Hybride Ringvorlesung: Herausforderungen und Rezepte  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum 
+## bologna.lab / Zoom
+##### Hausvogteiplatz 5-7, 10117 Berlin, Raum 0101-0103 
 --- 
-### Art der Veranstaltung (z.B. Workshop) 
-Leitung: \n**Name 1**  
-##### Einrichtung 1\ 
+### Impulsvortrag & Diskussion 
+Leitung: \
+**Jens Nachtwei**  
+##### Institut für Psychologie 

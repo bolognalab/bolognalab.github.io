@@ -1,7 +1,8 @@
 # Projekt HyPE Visor: Hybride, Präsenz, E-Learning und Online Lehrkonzepte  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum 
+## Ort TBA
+##### Adresse und Raum TBA
 --- 
-### Art der Veranstaltung (z.B. Workshop) 
-Leitung: \n**Name 1**  
-##### Einrichtung 1\ 
+### Impulsvortrag & Diskussion 
+Sprecher: \
+**Dr. Oliver Bunk**  
+##### Institut für deutsche Sprache und Linguistik 

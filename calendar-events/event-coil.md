@@ -1,7 +1,8 @@
 # Projekt Collaborative Online International Learning (COIL)  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum 
+## bologna.lab  
+##### Hausvogteiplatz 5-7,10117 Berlin, Raum 0101-0103 
 --- 
-### Art der Veranstaltung (z.B. Workshop) 
-Leitung: \n**Name 1**  
-##### Einrichtung 1\ 
+### Impulsvortrag & Diskussion 
+Sprecher: \
+**Christian Wilhelm**  
+##### Institut für Sozialwissenschaften 

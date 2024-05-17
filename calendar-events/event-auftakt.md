@@ -1,5 +1,5 @@
 # Auftakt der HU-Themenwoche Hybride Lehre
-## Senatsaal, HU-Hauptgebäude   
+## Senatsaal, HU-Hauptgebäude / Zoom 
 ##### Unter den Linden 6, 10117 Berlin
 ---
 ### Eröffnung
@@ -18,8 +18,8 @@ Panelist:innen:
 > **Martina Mörth** 
 > ##### Berliner Zentrum für Hochschullehre (RefRat) 
 >  \
-> **Annette Upmeier zu Belzen** 
-> ##### Institut für Biologie (RefRat)
+> **Prof. Dr. Annette Upmeier zu Belzen** 
+> ##### Institut für Biologie 
 >  \
 > **Ali Mertens** 
 > ##### Referat für Lehre und Studium (RefRat) 
