@@ -93,3 +93,6 @@ md-block > ul li::marker {
     font-weight: 1000;
     padding-right: 0.5em;
 }
+md-block > p > br {
+    margin-bottom: 0.5em;
+}

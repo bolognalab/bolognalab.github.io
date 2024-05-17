@@ -1,0 +1,56 @@
+BEGIN:VCALENDAR
+PRODID:-//Inverse inc./SOGo 5.10.0//EN
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+LAST-MODIFIED:20240220T101645Z
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:294002-66391180-6C9-2D339E80
+SUMMARY:Journal Club Hybride Lehre
+CLASS:PUBLIC
+TRANSP:OPAQUE
+DTSTART;TZID=Europe/Berlin:20240626T130000
+DTEND;TZID=Europe/Berlin:20240626T140000
+CREATED:20240506T172146Z
+DTSTAMP:20240506T172146Z
+LAST-MODIFIED:20240517T130828Z
+LOCATION:bologna.lab (Hausvogteiplatz 5-7\, 10117 Berlin\, Raum 0101-0103) 
+ und online
+DESCRIPTION:Der Journal Club Hybride Lehre ist eine regelmäßige Diskussions
+ veranstaltung des Berliner Netzwerks Hybride Lehre\, die Lehrende und Stud
+ ierende berlinweit die Möglichkeit bietet\, sich in Konzepte und Praktiken
+  rund um hybride Lehr-\, Lern- und Prüfungsszenarien anhand aktueller Verö
+ ffentlichungen zu vertiefen. In dieser Sitzung werden wir folgenden Artike
+ l besprechen:\n\nDetyna\, M.  & Koch\, M. (2023). An Overview of Student P
+ erceptions of Hybrid Flexible Learning at a London HEI\, in: Journal of In
+ teractive Media in Education\, 2023(1)\nDOI: https://doi.org/10.5334/jime.
+ 784\n\nDie Sitzung beginnt mit einer kurzen inhaltichen Präsentation des A
+ rtikels auf English und wir werden dann die Diskussion für alle eröffnen\,
+  um zu überlegen\, wie die Erkenntnisse aus dem Artikel auf unseren Unterr
+ icht angewendet werden könnten. Teilnehmende sind eingeladen\, sich auf En
+ glish oder Deutsch an der Diskussion zu beteiligen.\n\nLeitung: Dr. Natali
+ a Spitha\, bologna.lab\n\nOrt: bologna.lab (Hausvogteiplatz 5-7\, 10117 Be
+ rlin\, Raum 0101-0103) und Zoom\nAnmeldung ist für Online- und Präsenzteil
+ nahme empfohlen bzw. erforderlich:\nhttps://www.digitale-lehre.hu-berlin.d
+ e/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/journalclub \
+ n\nZoom-Link: https://hu-berlin.zoom-x.de/j/65220794851?pwd=K2Z3QmNSWVN4OH
+ lTOWdkUDl0YXpsUT09 \n(Meeting-ID 652 2079 4851\, Kenncode 631384)
+SEQUENCE:1
+END:VEVENT
+END:VCALENDAR

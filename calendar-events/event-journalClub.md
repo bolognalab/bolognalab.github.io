@@ -1,7 +1,9 @@
 # Journal Club Hybride Lehre  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum 
+## bologna.lab   
+##### Hausvogteiplatz 5-7, 10117 Berlin, Raum 0101-0103 
 --- 
-### Art der Veranstaltung (z.B. Workshop) 
-Leitung: \n**Name 1**  
-##### Einrichtung 1\ 
+### Impulsvortrag & Diskussion
+Besprochener Artikel: 
+ 
+  
+Detyna, M.  & Koch, M. (2023). An Overview of Student Perceptions of Hybrid Flexible Learning at a London HEI, in: Journal of Interactive Media in Education, 2023(1) 
