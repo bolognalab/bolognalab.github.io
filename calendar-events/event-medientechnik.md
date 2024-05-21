@@ -1,7 +1,8 @@
 # Medientechnische Präsentation: Vorlesungsaufzeichnung mit Autotracking und Untertitelung  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum 
+## Erwin-Schrödinger-Zentrum (Adlershof)  
+##### Rudower Ch. 26, 12489 Berlin, Kleiner Hörsaal 0'110 
 --- 
-### Art der Veranstaltung (z.B. Workshop) 
-Leitung: \n**Name 1**  
-##### Einrichtung 1\ 
+### Schulung 
+Leitung: \
+**Andreas Goroncy**  
+##### Zentraleinrichtung Computer- und Medienservice 

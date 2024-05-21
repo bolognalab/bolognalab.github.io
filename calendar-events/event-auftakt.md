@@ -21,5 +21,5 @@ Panelist:innen:
 > **Prof. Dr. Annette Upmeier zu Belzen** 
 > ##### Institut für Biologie 
 >  \
-> **Ali Mertens** 
+> **Ali Mehrens** 
 > ##### Referat für Lehre und Studium (RefRat) 
