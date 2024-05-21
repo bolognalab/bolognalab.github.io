@@ -39,15 +39,25 @@
         .single-event.conflict {
           width: 49% !important;
         }
+        .single-event.conflict:hover {
+          width: 100% !important;
+          margin-left: 0% !important;
+          z-index: 10;
+        }
         .single-event.conflict.r {
           margin-left: 50%;
         }
-
+        .single-event.conflict:hover > a{
+          font-size: 1em;
+          padding: 1.2em 0.9em 1.2em 1.2em !important;
+        }
         .single-event.conflict > a {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        padding: 0.9em 0.8em 0.2em 0em !important;
-        font-size: 0.9em;
+        /* writing-mode: vertical-rl; */
+        /* transform: rotate(180deg); */
+        /* padding: 0.9em 0.8em 0.2em 0em !important; */
+        padding: 0.9em 0.5em 0.2em 0.5em !important;
+        font-size: 0.8em;
+        line-height: 1.4em;
         width: 100%;
       }
       .single-event.conflict .event-loc {
@@ -260,6 +270,7 @@
         <h2 class="accordion">Credits</h2>
         <div class="panel">
           <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> mithilfe von Github Pages</p>
+          <p>Programmorganisation: Daria Dydzinskaya</p>
           <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
           <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
       </div>
@@ -288,10 +299,5 @@
       }
     </script>
       <script type="module" src="assets/js/md-block.js"></script>
-      <script>
-        var pythonScriptPath = "files/csv2json.py"
-        subprocess.run(["python", pythonScriptPath]);
-      </script>
-      
 	</body>
 </html>

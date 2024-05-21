@@ -57,6 +57,9 @@ md-block > h6 {
     font-size: 0.9em;
     margin-top: 1em;
 }
+md-block > p+p {
+    margin-top: 1em;
+}
 .event-info strong {
     font-weight: 600;
     color: rgb(65, 64, 64)

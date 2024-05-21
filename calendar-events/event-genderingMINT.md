@@ -1,8 +1,8 @@
-# Lehrwerkstatt Projekt Gendering MINT didaktisch-digital
+# Lehrwekrstatt "Kollaborative Textarbeit in hybriden Lehr-Lern-Settings kennenlernen und ausprobieren" 
 ## bolgona.lab / Zoom  
 ##### Hausvogteiplatz 5-7, 10117 Berlin, Raum 0101-0103
 ---
-## Kollaborative Textarbeit in hybriden Lehr-Lern-Settings kennenlernen und ausprobieren 
+## Projekt Gendering MINT didaktisch-digital 
 ### Workshop
 Moderation: \
 **Judith Schütze**  

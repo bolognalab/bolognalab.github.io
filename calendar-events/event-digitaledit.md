@@ -1,7 +1,10 @@
 # Projekt "Digitales Editieren als Kollaborativer Workflow  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum 
+## Institut für Musikwissenschaft und Medienwissenschaft  
+##### Am Kupfergraben 5, Raum 401 
 --- 
-### Art der Veranstaltung (z.B. Workshop) 
-Leitung: \n**Name 1**  
-##### Einrichtung 1\ 
+### Impulsvortrag & Diskussion
+Leitung: \
+**Dr. Ulrich Scheideler**  
+##### Institut für Musikwissenschaft und Medienwissenschaft
+**Dr. Christian Schaper**
+##### Institut für Musikwissenschaft und Medienwissenschaft
