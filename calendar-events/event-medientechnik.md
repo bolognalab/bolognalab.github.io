@@ -1,5 +1,5 @@
 # Medientechnische Präsentation: Vorlesungsaufzeichnung mit Autotracking und Untertitelung  
-## Erwin-Schrödinger-Zentrum (Adlershof)  
+## Erwin-Schrödinger-Zentrum (Adlershof) & Zoom 
 ##### Rudower Ch. 26, 12489 Berlin, Kleiner Hörsaal 0'110 
 --- 
 ### Schulung 

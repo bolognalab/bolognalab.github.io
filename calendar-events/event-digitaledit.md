@@ -1,5 +1,5 @@
 # Projekt "Digitales Editieren als Kollaborativer Workflow  
-## Institut für Musikwissenschaft und Medienwissenschaft  
+## Institut für Musikwissenschaft und Medienwissenschaft & Zoom 
 ##### Am Kupfergraben 5, Raum 401 
 --- 
 ### Impulsvortrag & Diskussion

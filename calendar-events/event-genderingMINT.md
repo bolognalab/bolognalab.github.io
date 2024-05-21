@@ -1,5 +1,5 @@
 # Lehrwekrstatt "Kollaborative Textarbeit in hybriden Lehr-Lern-Settings kennenlernen und ausprobieren" 
-## bolgona.lab / Zoom  
+## bolgona.lab & Zoom 
 ##### Hausvogteiplatz 5-7, 10117 Berlin, Raum 0101-0103
 ---
 ## Projekt Gendering MINT didaktisch-digital 
