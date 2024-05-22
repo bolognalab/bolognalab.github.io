@@ -15,61 +15,9 @@
     <link rel="stylesheet" href="assets/css/calendar.css" />
     <link rel="stylesheet" href="assets/css/md.css" />
  		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script src="assets/js/jquery.min.js"></script>
     <style>
-      .single-event a {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-      }
-      .event-info {
-        padding: 2em 6%; 
-        width: 100%;
-        overflow-y: scroll;
-        overflow-x: hidden;
-      }
-      .event-info > p {
-        margin-bottom: 1em;
-      }
-      .event-info strong {
-        font-weight: 600;
-        color: rgb(65, 64, 64)
-      }
-
-      /* resolving conflicts */
-      @media only screen and (min-width: 800px) {
-        .single-event.conflict {
-          width: 49% !important;
-        }
-        .single-event.conflict:hover {
-          width: 100% !important;
-          margin-left: 0% !important;
-          z-index: 10;
-        }
-        .single-event.conflict.r {
-          margin-left: 50%;
-        }
-        .single-event.conflict:hover > a{
-          font-size: 1em;
-          padding: 1.2em 0.9em 1.2em 1.2em !important;
-          writing-mode: horizontal-tb;
-          transform: rotate(0);
-        }
-        .single-event.conflict > a {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        padding: 0.9em 0.8em 0.2em 0em !important;
-        /* padding: 0.9em 0.5em 0.2em 0.5em !important; */
-        /* font-size: 0.8em; */
-        /* line-height: 1.4em; */
-        width: 100%;
-      }
-      .single-event.conflict .event-loc {
-        display: none;
-      }
-      }
-      
-      div.event-modal {
-        overflow: hidden;
-      }
+      /* Title */
       .inner {
         width: 100%;
         padding-left: 5%;
@@ -86,21 +34,6 @@
         font-weight: bold;
         margin-top: 1.5em;
       }
-      #credits {
-        color: #777;
-        padding-bottom: 10%;
-      }
-      #credits h2 {
-        margin-top: 3em;
-      }
-      #credits p {
-        font-size:70%;
-        margin-top: 1em;
-      }
-      #credits a {
-        color: inherit;
-        border-bottom: solid 1px
-      }
       @media only screen and (min-width: 800px) {
         .inner {
         margin: auto;
@@ -115,171 +48,35 @@
         color: #00376c;
         margin-top: 2em;
       }
-      #credits p {
-        font-size: 100%;
       }
-      }
-      /* .event-modal .body {
-        background: white;
-      } */
+
      </style> 
-     <style>
-        .accordion, .panel {
-          max-width: 700px;
-        }
-        .accordion {
-          background-color: #ddd;
-          cursor: pointer;
-          padding: 18px;
-          width: 100%;
-          border: none;
-          text-align: left;
-          outline: none;
-          font-size: 15px;
-          transition: 0.4s;
-        }
-        .accordion::before {
-          content: '+';
-          font-size: 1.1em;
-          font-weight: bold;
-          color: #aaa; 
-          padding-right: 1em;
-        }
-        .active, .accordion:hover {
-          background-color: #eee;
-        }
-        .active::before {
-          content: '-'
-        }
-        .panel {
-          padding: 0 18px;
-          max-height: 0;
-          background-color: #eee;
-          overflow: hidden;
-          transition: max-height 0.2s ease-out;
-        }
-        .panel > *:last-child {
-          margin-bottom: 1.2em;
-        }
-     </style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Header -->
-					<header id="header">
-						<div class="inner">
-              <h1>Programm Themenwoche Lehre 2024</h1>
-              <h2 style="margin: auto; text-align: center">(in Bearbeitung)</h2>
-							<!-- Logo -->
-								<!-- <a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">bologna.lab</span>
-								</a> -->
-						</div>
-					</header>
+        <header id="header">
+          <div class="inner">
+            <h1>Programm Themenwoche Lehre 2024</h1>
+            <!-- <h2 style="margin: auto; text-align: center">(in Bearbeitung)</h2> -->
+            <!-- Logo -->
+              <!-- <a href="index.html" class="logo">
+                <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">bologna.lab</span>
+              </a> -->
+          </div>
+        </header>
 
 				<!-- Main -->
-                <div id="main">
-                  <!-- <br /> -->
-                  <div class="cd-schedule loading">
-                    <div class="timeline">
-                      <ul>
-                        <!-- <li><span>09:00</span></li>
-                        <li><span>09:30</span></li> -->
-                        <li><span>10:00</span></li>
-                        <li><span>10:30</span></li>
-                        <li><span>11:00</span></li>
-                        <li><span>11:30</span></li>
-                        <li><span>12:00</span></li>
-                        <li><span>12:30</span></li>
-                        <li><span>13:00</span></li>
-                        <li><span>13:30</span></li>
-                        <li><span>14:00</span></li>
-                        <li><span>14:30</span></li>
-                        <li><span>15:00</span></li>
-                        <li><span>15:30</span></li>
-                        <li><span>16:00</span></li>
-                        <li><span>16:30</span></li>
-                        <li><span>17:00</span></li>
-                        <!-- <li><span>17:30</span></li> -->
-                      </ul>
-                      
-                        
-                    </div> <!-- .timeline -->
-                  
-                    <div class="events">
-                      <ul class="wrap">
-                        <div class="mobile-fading-layer"></div>
-                        <li class="events-group" datestring="Mo. 24.06.2024" id="monday">
-                          <div class="top-info"><span>Montag 24.6.</span></div>
-                          <ul></ul>
-                        </li>
-                  
-                        <li class="events-group" datestring="Di. 25.06.2024" id="tuesday">
-                          <div class="top-info"><span>Dienstag 25.6.</span></div>         
-                          <ul></ul>
-                        </li>
-                  
-                        <li class="events-group" datestring="Mi. 26.06.2024" id="wednesday">
-                          <div class="top-info"><span>Mittwoch 26.6.</span></div>
-                          <ul></ul>
-                        </li>
-                  
-                        <li class="events-group" datestring="Do. 27.06.2024" id="thursday">
-                          <div class="top-info"><span>Donnerstag 27.6.</span></div>
-                          <ul>
-                            <li class="single-event" data-start="13:30" data-end="20:00" data-loc="Humboldt-Universität" data-content="event-tdl" id="event-tdl" data-event="event-4" style="top: 57px; height: 278px;">
-                              <a href="#0"><em class="event-name">Tag der Lehre 2024</em><span class="event-loc">Senatsaal der Humboldt-Universität</span></a>
-                            </li>
-                          </ul>
-                        </li>
-                  
-                        <li class="events-group" datestring="Fr. 28.06.2024" id="friday">
-                          <div class="top-info"><span>Freitag  28.6.</span></div>
-                          <ul></ul>
-                        </li>
-                  <!--        -->
-                      </ul>
-                    </div>
-                  
-                    <div class="event-modal">
-                      <header class="header">
-                        <div class="content">
-                          <span class="event-name" style="display:none"></span>
-                          <span class="event-date"></span>
-                          <span class="event-time"></span>
-                          <!-- <span class="event-loc"></span> -->
-                          <!-- <div class="event-links"></div> -->
-                        </div>
-
-                        <div class="header-bg"></div>
-                      </header>
-                  
-                      <div class="body">
-                        <div class="event-info" style="visibility:hidden"></div>
-                        <div class="body-bg"></div>
-                      </div>
-                  
-                      <a href="#0" class="close">Close</a>
-                    </div>
-                    
-                    <div class="cover-layer"></div>
-                  </div> <!-- .cd-schedule -->     
-                </div>
+        <div id="main">
+          <script>$("#main").load("themenwoche-programm_cal.html"); </script>   
+        </div>
 			</div>
-      <div class="inner" id="credits">
-        <h2 class="accordion">Credits</h2>
-        <div class="panel">
-          <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> mithilfe von Github Pages</p>
-          <p>Programmorganisation: Daria Dydzinskaya</p>
-          <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
-          <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
-      </div>
-      </div>
+
 		<!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/calendarEvents.js"></script>
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <!-- <script src="assets/js/calendarEvents.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
@@ -300,6 +97,6 @@
         });
       }
     </script>
-      <script type="module" src="assets/js/md-block.js"></script>
+      <script type="module" src="assets/js/md-block.js"></script> -->
 	</body>
 </html>
