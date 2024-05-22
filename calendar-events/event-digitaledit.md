@@ -4,7 +4,7 @@
 --- 
 ### Impulsvortrag & Diskussion
 Leitung: \
-**Dr. Ulrich Scheideler**  
+**Dr. Ullrich Scheideler**  
 ##### Institut für Musikwissenschaft und Medienwissenschaft
 **Dr. Christian Schaper**
 ##### Institut für Musikwissenschaft und Medienwissenschaft
