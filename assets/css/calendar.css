@@ -475,8 +475,9 @@ Main Components
   line-height: 1.7em;
   /* border-bottom: solid 1px white */
 }
-#addToCalendar {
+a.addToCalendar {
   font-size: 0.9em;
+  line-height: 1.4em;
 }
 
 .cd-schedule .event-modal .header .event-loc,
