@@ -9,4 +9,4 @@ Sprecher: \
 **Dr. Antje Sauermann**  
 ##### Institut für deutsche Sprache und Linguistik 
 **Fynn R. Dobler, MSc.**  
-##### FU Berlin Institut für Deutsche und Niederländische Philologie
+##### FU Berlin Institut für deutsche und niederländische Philologie

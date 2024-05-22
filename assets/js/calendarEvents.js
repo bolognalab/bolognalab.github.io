@@ -199,7 +199,8 @@ async function formatEvents() {
 						self.element.addClass('content-loaded');
 						setTimeout(function(){
 							document.querySelector(".event-info").style.visibility="visible"
-							document.querySelector("#addToCalendar").parentElement.setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
+							document.querySelectorAll(".event-info .moreInfoLink")[0].setAttribute("href", event.parent().attr('data-web'))
+							document.querySelectorAll(".event-info .addToCalendar")[0].setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
 						}, 250)
 					});
 					// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')
@@ -224,8 +225,9 @@ async function formatEvents() {
 						var eventTop = event.offset().top - $(window).scrollTop(),
 							eventLeft = event.offset().left,
 							eventHeight = event.innerHeight(), 
-							eventWidth = event[0].parentElement.classList.contains("conflict") ? event.innerWidth()*100/49*1.1 : event.innerWidth()*1.1; //keep modal header width if event width has been halved
-	
+							// eventWidth = event[0].parentElement.classList.contains("conflict") ? event.innerWidth()*100/49*1.1 : event.innerWidth()*1.1; //keep modal header width if event width has been halved
+							eventWidth = event.innerWidth()*1.1;
+
 						var windowWidth = $(window).width(),
 							windowHeight = $(window).height();
 	
