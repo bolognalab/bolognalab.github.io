@@ -49,8 +49,73 @@
         margin-top: 2em;
       }
       }
+      /* credits */
+      #credits {
+        color: #777;
+        padding-bottom: 10%;
+        font-size: 80%
+      }
+      #credits h2 {
+        margin-top: 3em;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #aaa
+      }
+      #credits p {
+        font-size:70%;
+        margin-top: 1em;
+      }
+      #credits a {
+        color: inherit;
+        border-bottom: solid 1px
+      }
+      @media only screen and (min-width: 800px) {
+      #credits p {
+        font-size: 100%;
+      }
+      }
+      .accordion, .panel {
+              max-width: 700px;
+            }
+            .accordion {
+              background-color: #ddd;
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              border: none;
+              text-align: left;
+              outline: none;
+              font-size: 15px;
+              transition: 0.4s;
+            }
+            .accordion::before {
+              content: '+';
+              font-size: 1.1em;
+              font-weight: bold;
+              color: #aaa; 
+              padding-right: 1em;
+            }
+            .active, .accordion:hover {
+              background-color: #eee;
+            }
+            h2.active {
+              color: #777 !important;
+            }
+            .active::before {
+              content: '-'
+            }
+            .panel {
+              padding: 0 18px;
+              max-height: 0;
+              background-color: #eee;
+              overflow: hidden;
+              transition: max-height 0.2s ease-out;
+            }
+            .panel > *:last-child {
+              margin-bottom: 1.2em;
+            }
+     </style>
 
-     </style> 
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -72,6 +137,15 @@
         <div id="main">
           <script>$("#main").load("themenwoche-programm_cal.html"); </script>   
         </div>
+        <div class="inner" id="credits">
+          <h2 class="accordion">Credits</h2>
+          <div class="panel">
+            <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> mithilfe von Github Pages</p>
+            <p>Programmorganisation: Daria Dydzinskaya</p>
+            <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+            <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
+          </div>
+        </div>  
 			</div>
 
 		<!-- Scripts -->
@@ -80,6 +154,9 @@
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
+
+
+    
     <script src="assets/js/main.js"></script>
     <script>
       var acc = document.getElementsByClassName("accordion");
