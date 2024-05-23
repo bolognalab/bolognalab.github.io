@@ -5,7 +5,8 @@
 ## Projekt Gendering MINT didaktisch-digital 
 ### Workshop
 Moderation: \
-**Judith Schütze**  
-##### Zentrum für Transdisziplinäre Geschlechterstudien
 **Dr. habil. Sigrid Schmitz**  
 ##### Zentrum für Transdisziplinäre Geschlechterstudien 
+**Judith Schütze**  
+##### Zentrum für Transdisziplinäre Geschlechterstudien
+
