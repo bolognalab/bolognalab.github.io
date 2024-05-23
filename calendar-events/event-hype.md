@@ -1,6 +1,5 @@
 # Projekt HyPE Visor: Hybride Präsenz- und E-Lehrkonzepte zur Vielseitigkeit von Sprache 
-## Ort TBA & Zoom 
-##### Adresse und Raum TBA
+## Online via Zoom 
 --- 
 ### Impulsvortrag & Diskussion 
 Sprecher: \
