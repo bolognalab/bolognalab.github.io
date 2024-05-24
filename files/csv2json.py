@@ -45,5 +45,5 @@ def updateJSON(json_list, json_file):
     with open(json_file, 'w') as json_file:
         json_file.write(json.dumps(json_list, indent=4))
 
-# updateJSON(json_list, json_file)
-makeEmptyICS(names_list)
+updateJSON(json_list, json_file)
+# makeEmptyICS(names_list)

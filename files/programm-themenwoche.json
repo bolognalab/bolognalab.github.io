@@ -37,7 +37,7 @@
         "end": "15:00",
         "loc": "Campus-Mitte",
         "id": "event-pruefung",
-        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb2 "
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb2"
     },
     {
         "short-event-name": "Projekt COIL",
@@ -51,7 +51,7 @@
     },
     {
         "short-event-name": "Hybride Ringvorlesungen",
-        "long-event-name": "Hybride Ringvorlesung: Herausforderungen und Rezepte",
+        "long-event-name": "Hybride Ringvorlesungen: Herausforderungen & Rezepte",
         "day": "tuesday",
         "start": "16:00",
         "end": "17:00",
@@ -70,8 +70,8 @@
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-lw2 "
     },
     {
-        "short-event-name": "Projekt HyPE Visor",
-        "long-event-name": "Projekt HyPE Visor: Hybride, Pr\u00e4senz, E-Learning und Online Lehrkonzepte",
+        "short-event-name": "Projekt HyPE ViSOR",
+        "long-event-name": "HyPE ViSOR - Hybride Pr\u00e4senz- und E-Lehrkonzepte zur Vielseitigkeit von Sprache",
         "day": "wednesday",
         "start": "11:00",
         "end": "12:00",
@@ -111,7 +111,7 @@
     },
     {
         "short-event-name": "VL-Aufzeichnung und Videokonferenzen",
-        "long-event-name": "Medientechnische Pr\u00e4sentation: Vorlesungsaufzeichnung und Videokonferenzen im Hörsaal",
+        "long-event-name": "Medientechnische Pr\u00e4sentation: Vorlesungsaufzeichnung und Videokonferenzen im H\u00f6rsaal",
         "day": "friday",
         "start": "14:00",
         "end": "15:30",

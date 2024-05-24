@@ -1,4 +1,4 @@
-# Projekt HyPE Visor: Hybride Präsenz- und E-Lehrkonzepte zur Vielseitigkeit von Sprache 
+# Projekt HyPE ViSOR: Hybride Präsenz- und E-Lehrkonzepte zur Vielseitigkeit von Sprache 
 ## Online via Zoom 
 --- 
 ### Impulsvortrag & Diskussion 
