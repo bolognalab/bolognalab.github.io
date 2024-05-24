@@ -1,7 +1,15 @@
 .tableHeading {
-    color: #003366;
-    font-weight: bold;
+	color: #003366;
+	font-weight: bold;
 }
+.tabStop {
+	margin-left: 2em;
+}
+.colorfulHeading {
+	color: #003366;
+	font-weight: bold;
+}
+
 
 /* external hosting for styling HU content*/
 
