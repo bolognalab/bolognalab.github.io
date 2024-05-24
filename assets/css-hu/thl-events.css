@@ -2,10 +2,12 @@
 	color: #003366;
 	font-weight: bold;
 }
-.tabStopHeading {
+.tabStop {
+	margin-left: 2em;
+}
+.colorfulHeading {
 	color: #003366;
 	font-weight: bold;
-	margin-left: 2em;	
 }
 
 
