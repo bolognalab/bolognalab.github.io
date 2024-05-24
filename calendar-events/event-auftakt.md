@@ -17,9 +17,10 @@
 Panelist:innen: 
 > **Prof. Dr. Niels Pinkwart** 
 > ##### Vizepräsident für Lehre und Studium 
-> **Martina Mörth** 
-> ##### Leiterin des Berliner Zentrums für Hochschullehre
 > **Prof. Dr. Annette Upmeier zu Belzen** 
 > ##### Lehrende am Institut für Biologie 
 > **Ali Mehrens** 
 > ##### Referent für Lehre und Studium (RefRat) 
+> **N.N.** 
+
+
