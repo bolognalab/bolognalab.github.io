@@ -4,11 +4,11 @@
 ---
 ### Eröffnung
 **Prof. Dr. Niels Pinkwart**  
-##### Vizepräsident für Lehre und Studium 
+##### Vizepräsident für Lehre und Studium, <br> Humboldt-Universität zu Berlin 
 
 ### Gastvorträge 
 **Prof. Dr. Christian Kohls**
-##### Dekan, Fakultät für Informatik und Ingenieurwissenschaften der TH Köln 
+##### Dekan, Fakultät für Informatik und Ingenieurwissenschaften,<br> TH Köln 
 **Claudia Bremer**
 ##### E-Learning Specialist, Wilhelm-Büchner Hochschule 
 
@@ -16,11 +16,13 @@
 ### Podiumdiskussion 
 Panelist:innen: 
 > **Prof. Dr. Niels Pinkwart** 
-> ##### Vizepräsident für Lehre und Studium 
-> **Prof. Dr. Annette Upmeier zu Belzen** 
-> ##### Lehrende am Institut für Biologie 
+> #####  
+> **Claudia Bremer** 
+> #####   
+> **Prof.in Dr. Annette Upmeier zu Belzen** 
+> ##### Lehrende am Institut für Biologie,<br> Leiterin AG Fachdidaktik und Lehr-/Lernforschung Biologie
 > **Ali Mehrens** 
-> ##### Referent für Lehre und Studium (RefRat) 
-> **N.N.** 
+> ##### Referent für Lehre und Studium des RefRats
+
 
 
