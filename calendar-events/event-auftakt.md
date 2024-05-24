@@ -20,7 +20,7 @@ Panelist:innen:
 > **Claudia Bremer** 
 > #####   
 > **Prof.in Dr. Annette Upmeier zu Belzen** 
-> ##### Lehrende am Institut für Biologie,<br> Leiterin AG Fachdidaktik und Lehr-/Lernforschung Biologie
+> ##### Professorin am Institut für Biologie
 > **Ali Mehrens** 
 > ##### Referent für Lehre und Studium des RefRats
 
