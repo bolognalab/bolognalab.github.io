@@ -1,3 +1,5 @@
+/* external hosting for styling HU content*/
+
 .tableHeading {
 	color: #003366;
 	font-weight: bold;
@@ -10,8 +12,6 @@
 	font-weight: bold;
 }
 
-
-/* external hosting for styling HU content*/
 
 .fleximg {
 	width: 45%;
@@ -49,4 +49,19 @@
 	.flexp {
 		width: 100%;
 	} 
+}
+
+/* iFrame fürs Hybride-Woche-Programm  */
+.wrapperScheduleTHL {
+	overflow: hidden; 
+	height: 650px
+}
+@media screen and (max-width: 600px) {
+	.wrapperScheduleTHL {
+	overflow: scroll; 
+	height: 1000px
+}
+	
+.scheduleTHL {
+	transform: scale(0.6667, 06667) translate(-25%, -25%);
 }
