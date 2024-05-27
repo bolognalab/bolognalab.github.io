@@ -16,7 +16,7 @@ async function makeEvents() {
 			console.log("taking my time making events")
 			let eventCalendar = json
 			eventCalendar.forEach((e)=> {
-			eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"]
+			eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"], category = e["category"]
 			let groupToAppendTo = document.getElementById(day)
 			let listToAppendTo = document.querySelector('#'+day+' ul')
 			let item = document.createElement("li")
@@ -26,7 +26,7 @@ async function makeEvents() {
 			item.setAttribute("data-loc", loc)
 			item.setAttribute("data-content", id)
 			item.setAttribute("id", id)
-			item.setAttribute("data-event", "event-1")
+			item.setAttribute("data-event", category)
 			item.setAttribute("data-web", web)
 			item.innerHTML= "<a href='#0'><em class='event-name'>"+ eventName +"</em></a>"
 			listToAppendTo.append(item)
@@ -201,6 +201,7 @@ async function formatEvents() {
 							document.querySelector(".event-info").style.visibility="visible"
 							document.querySelectorAll(".event-info .moreInfoLink")[0].setAttribute("href", event.parent().attr('data-web'))
 							document.querySelectorAll(".event-info .addToCalendar")[0].setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
+							// 
 						}, 250)
 					});
 					// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')

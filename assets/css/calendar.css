@@ -128,6 +128,11 @@ Main Components
     position: relative;
     height: 3.5em;
   }
+  .cd-schedule .timeline li:nth-child(2n){
+    background: rgba(0,0,0,0.05);
+    margin-left: 60px;
+  }
+  
   .cd-schedule .timeline li::after {
     /* this is used to create the table horizontal lines */
     content: '';
@@ -192,6 +197,7 @@ Main Components
   display: flex;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  background: rgba(0,0,0,0.01)
 }
 
 .cd-schedule .events .events-group > ul::after {
@@ -250,12 +256,13 @@ Main Components
   .cd-schedule .events .events-group:not(:first-of-type) {
     border-left-width: 0;
   }
+  
   .cd-schedule .events .top-info {
     /* vertically center its content */
     display: table;
     height: 50px;
     border-bottom: 1px solid #EAEAEA;
-    background: #1672f9;
+    background: #00376c;
     border-radius: 4px;
     /* reset style */
     padding: 0;
@@ -373,7 +380,19 @@ Main Components
   }
 }
 
-
+/* topic hashtags */
+md-block::before {
+  background: #ee4694;
+  display:block;
+  width:fit-content;
+  font-size:1.2em;
+  /* font-style: italic; */
+  font-weight: bold;
+  color: rgba(255,255,255,0.9);
+  padding: 0.2em 0.5em;
+  margin-bottom: 0.2em;
+  content: "#Diskussion"
+}
 
 .cd-schedule .event-date, .cd-schedule .event-time {
   /* they are not included in the the HTML but added using JavScript */
@@ -383,37 +402,43 @@ Main Components
   margin-bottom: .2em;
 }
 
+/* event-1: diskussion, event-2: impuls für die Praxis, event-3: Kompetenzentwicklung */
 .cd-schedule .single-event[data-event="event-1"],
-.cd-schedule [data-event="event-1"] .header-bg {
-  /* this is used to set a background color for the event and the modal window */
-  background: #00376c;
-}
-
-.cd-schedule .single-event[data-event="event-1"]:hover {
-  background: #618da1;
-}
-
+.cd-schedule [data-event="event-1"] .header-bg,
 .cd-schedule .single-event[data-event="event-2"],
-.cd-schedule [data-event="event-2"] .header-bg {
-  background: #1672f9;
-}
-
-.cd-schedule .single-event[data-event="event-2"]:hover {
-  background: #513e63;
-}
-
+.cd-schedule [data-event="event-2"] .header-bg,
 .cd-schedule .single-event[data-event="event-3"],
 .cd-schedule [data-event="event-3"] .header-bg {
-  background: #A2B9B2;
+  /* this is used to set a background color for the event and the modal window */
+  background: #00376c;
+  /* border-radius: 5px; */
+  border-radius: 0;
+  
+}
+.cd-schedule .single-event[data-event="event-1"]{
+  border-top: solid 12px #ee4694;
+}
+.cd-schedule .single-event[data-event="event-2"]{
+  border-top: solid 12px #1672f9;
+}
+.cd-schedule .single-event[data-event="event-3"]{
+  border-top: solid 12px #f59645;
 }
 
+.cd-schedule .single-event[data-event="event-1"]:hover,
+.cd-schedule .single-event[data-event="event-2"]:hover,
 .cd-schedule .single-event[data-event="event-3"]:hover {
-  background: #b1c4be;
+  background: #618da1;
+  border-top: solid 12px rgba(255,255,255,0.4);
 }
 
+/* event-4 is Tag Der Lehre */
 .cd-schedule .single-event[data-event="event-4"],
 .cd-schedule [data-event="event-4"] .header-bg {
   background: #f59645;
+}
+.cd-schedule .single-event[data-event="event-4"] {
+  border-top: solid 12px rgba(255,255,255,0.4);
 }
 
 .cd-schedule .single-event[data-event="event-4"]:hover {
