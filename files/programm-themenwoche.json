@@ -25,7 +25,7 @@
         "day": "tuesday",
         "start": "13:00",
         "end": "14:00",
-        "loc": "Campus-Mitte",
+        "loc": "bologna.lab",
         "id": "event-selbsteval",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb1 "
     },
@@ -35,7 +35,7 @@
         "day": "tuesday",
         "start": "14:00",
         "end": "15:00",
-        "loc": "Campus-Mitte",
+        "loc": "bologna.lab",
         "id": "event-pruefung",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb2"
     },
@@ -45,7 +45,7 @@
         "day": "tuesday",
         "start": "15:00",
         "end": "16:00",
-        "loc": "Campus-Mitte",
+        "loc": "bologna.lab",
         "id": "event-coil",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb3 "
     },
@@ -55,7 +55,7 @@
         "day": "tuesday",
         "start": "16:00",
         "end": "17:00",
-        "loc": "Campus-Mitte",
+        "loc": "Online",
         "id": "event-ring",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb4 "
     },
@@ -65,7 +65,7 @@
         "day": "wednesday",
         "start": "10:30",
         "end": "12:30",
-        "loc": "Campus-Mitte",
+        "loc": "bologna.lab",
         "id": "event-genderingMINT",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-lw2 "
     },
@@ -75,7 +75,7 @@
         "day": "wednesday",
         "start": "11:00",
         "end": "12:00",
-        "loc": "Campus-Mitte",
+        "loc": "Online",
         "id": "event-hype",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb6"
     },
@@ -95,7 +95,7 @@
         "day": "wednesday",
         "start": "14:00",
         "end": "15:00",
-        "loc": "Campus-Mitte",
+        "loc": "Institut f\u00fcr Erziehungswissenschaften",
         "id": "event-lehrkraft",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb5"
     },
@@ -105,17 +105,17 @@
         "day": "friday",
         "start": "13:00",
         "end": "14:00",
-        "loc": "Campus-Mitte",
+        "loc": "Institut f\u00fcr Musikwissenschaft & Medienwissenschaft",
         "id": "event-digitaledit",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb7"
     },
     {
-        "short-event-name": "Workshop: Vorlesungs-aufzeichnung und Videokonferenzen",
+        "short-event-name": "Workshop: \nVL-Aufzeichnung und Videokonferenzen",
         "long-event-name": "Workshop: Vorlesungsaufzeichnung und Videokonferenzen im H\u00f6rsaal",
         "day": "friday",
         "start": "14:00",
         "end": "15:30",
-        "loc": "Campus-Adlershof",
+        "loc": "Erwin Schr\u00f6dinger-Zentrum",
         "id": "event-medientechnik",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb8 "
     },
@@ -125,7 +125,7 @@
         "day": "friday",
         "start": "16:00",
         "end": "17:00",
-        "loc": "Campus-Adlershof",
+        "loc": "Erwin Schr\u00f6dinger-Zentrum",
         "id": "event-refrat",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-diskussion-studierende "
     }

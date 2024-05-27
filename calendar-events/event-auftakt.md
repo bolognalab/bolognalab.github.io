@@ -1,4 +1,4 @@
-# Auftakt der HU-Themenwoche Hybride Lehre
+# Auftaktveranstaltung der HU-Themenwoche Hybride Lehre
 ## Senatsaal, HU-Hauptgebäude & Zoom 
 ##### Unter den Linden 6, 10117 Berlin
 ---
