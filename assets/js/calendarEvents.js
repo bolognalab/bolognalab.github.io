@@ -62,7 +62,11 @@ async function formatEvents() {
 				if( !transitionsSupported ) transitionEnd = 'noTransition';
 				
 				//should add a loding while the events are organized 
-	
+				const eventTypes = {
+					"event-1": "Diskussion",
+					"event-2": "ImpulsFürDiePraxis",
+					"event-3": "Kompetenzentwicklung"
+				}
 				function SchedulePlan( element ) {
 					this.element = element;
 					this.timeline = this.element.find('.timeline');
@@ -192,7 +196,8 @@ async function formatEvents() {
 					this.modalHeader.find('.event-time').text(event.find('.event-time').text());
 					this.modalHeader.find('.event-loc').text(event.find('.event-loc').text());
 					this.modal.attr('data-event', event.parent().attr('data-event'));
-	
+					
+
 					//update event content
 					this.modalBody.find('.event-info').load('calendar-events/events-dir.html #'+ event.parent().attr('data-content') + ' > *', function(data){
 						//once the event content has been loaded
@@ -201,7 +206,8 @@ async function formatEvents() {
 							document.querySelector(".event-info").style.visibility="visible"
 							document.querySelectorAll(".event-info .moreInfoLink")[0].setAttribute("href", event.parent().attr('data-web'))
 							document.querySelectorAll(".event-info .addToCalendar")[0].setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
-							// 
+							document.querySelectorAll(".event-info .hashtag")[0].classList.value = "hashtag " + event.parent().attr("data-event")
+							document.querySelectorAll(".event-info .hashtag")[0].innerHTML = "#" + eventTypes[event.parent().attr("data-event")]
 						}, 250)
 					});
 					// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')

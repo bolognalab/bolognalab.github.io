@@ -381,17 +381,26 @@ Main Components
 }
 
 /* topic hashtags */
-md-block::before {
-  background: #ee4694;
+.hashtag {
   display:block;
   width:fit-content;
-  font-size:1.2em;
+  font-size:1em;
   /* font-style: italic; */
-  font-weight: bold;
+  /* font-weight: bold; */
+  letter-spacing: 1px;
   color: rgba(255,255,255,0.9);
   padding: 0.2em 0.5em;
-  margin-bottom: 0.2em;
-  content: "#Diskussion"
+  /* margin-top:-1.4em; */
+  margin-bottom: 0.8em;
+}
+.hashtag.event-1 {
+  background: #ee4694;
+}
+.hashtag.event-2 {
+  background: #1672f9;
+}
+.hashtag.event-3 {
+  background: #f59645;
 }
 
 .cd-schedule .event-date, .cd-schedule .event-time {

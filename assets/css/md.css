@@ -18,7 +18,7 @@
         height: 22em;
     }
     .white-fade::before {
-        top: 19em;
+        top: 20em;
     }
 }
 md-block > *:last-child{
