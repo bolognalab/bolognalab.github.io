@@ -208,6 +208,7 @@ async function formatEvents() {
 							document.querySelectorAll(".event-info .addToCalendar")[0].setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
 							document.querySelectorAll(".event-info .hashtag")[0].classList.value = "hashtag " + event.parent().attr("data-event")
 							document.querySelectorAll(".event-info .hashtag")[0].innerHTML = "#" + eventTypes[event.parent().attr("data-event")]
+							document.querySelectorAll(".event-info .moreInfoLink")[0].focus()
 						}, 250)
 					});
 					// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')
@@ -474,6 +475,7 @@ async function formatEvents() {
 						'transform': value
 					});
 				}
+				document.getElementById("schedule").focus()
 			resolve();
 			});
 		},100)
