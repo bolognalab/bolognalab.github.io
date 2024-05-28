@@ -96,7 +96,7 @@ Main Components
 
 @media only screen and (min-width: 800px) {
   .cd-schedule {
-    width: 90%;
+    width: 95%;
     max-width: 1400px;
     margin: 2em auto;
   }
@@ -199,9 +199,7 @@ Main Components
   -webkit-overflow-scrolling: touch;
   /* background: rgba(0,0,0,0.01) */
 }
-.cd-schedule .events .events-group:nth-child(2n) > ul{
-  background: rgba(0,0,0,0.05);
-}
+
 
 .cd-schedule .events .events-group > ul::after {
   /* never visible - used to add a right padding to .events-group > ul */
@@ -321,6 +319,9 @@ Main Components
   .cd-schedule .events .single-event.selected-event {
     /* the .selected-event class is added when an user select the event */
     visibility: hidden;
+  }
+  .cd-schedule .events .events-group:nth-child(2n) > ul{
+    background: rgba(0,0,0,0.05);
   }
 }
 
