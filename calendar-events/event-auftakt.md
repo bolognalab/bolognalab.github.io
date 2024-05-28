@@ -2,6 +2,8 @@
 ## Senatsaal, HU-Hauptgebäude & Zoom 
 ##### Unter den Linden 6, 10117 Berlin
 ---
+### Welcome-Kaffee
+ab 10:00
 ### Eröffnung
 **Prof. Dr. Niels Pinkwart**  
 ##### Vizepräsident für Lehre und Studium, <br> Humboldt-Universität zu Berlin 
