@@ -20,7 +20,9 @@
 	float: right;
 	display: block;
 }
-
+.thumbnail {
+	width: 30%;
+}
 .flexp {
 	width: 55%;
 } 
@@ -49,6 +51,9 @@
 	.flexp {
 		width: 100%;
 	} 
+	.thumbnail {
+	width: 100%;
+	}
 }
 
 /* iFrame fürs Hybride-Woche-Programm  */
