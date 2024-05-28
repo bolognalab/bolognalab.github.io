@@ -69,7 +69,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Source Sans Pro", sans-serif;
-  color: #222222;
+  color: #626161;
   background-color: white;
 }
 
@@ -129,7 +129,7 @@ Main Components
     height: 3.5em;
   }
   .cd-schedule .timeline li:nth-child(2n){
-    background: rgba(0,0,0,0.05);
+    /* background: rgba(0,0,0,0.05); */
     margin-left: 60px;
   }
   
@@ -140,7 +140,7 @@ Main Components
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 1px;
+    /* height: 1px; */
     background: #EAEAEA;
   }
   .cd-schedule .timeline li:last-of-type::after {
@@ -197,7 +197,10 @@ Main Components
   display: flex;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
-  background: rgba(0,0,0,0.01)
+  /* background: rgba(0,0,0,0.01) */
+}
+.cd-schedule .events .events-group:nth-child(2n) > ul{
+  background: rgba(0,0,0,0.05);
 }
 
 .cd-schedule .events .events-group > ul::after {
@@ -262,21 +265,19 @@ Main Components
     display: table;
     height: 50px;
     border-bottom: 1px solid #EAEAEA;
-    background: #00376c;
+    background: #d2d2d2;
     border-radius: 4px;
     /* reset style */
     padding: 0;
   }
   .cd-schedule .events .top-info > span {
-    /* vertically center inside its parent */
     display: table-cell;
     vertical-align: middle;
     padding: 0 .5em;
     text-align: center;
-    /* reset style */
-    font-weight: bold;
-    font-size: 1.1em;
-    color: white;
+    font-weight: normal;
+    font-size: 1.3em;
+    color: #626161;
     margin-bottom: 0;
   }
   .cd-schedule .events .events-group > ul {
@@ -381,26 +382,17 @@ Main Components
 }
 
 /* topic hashtags */
-.hashtag {
+md-block::before {
+  background: #ee4694;
   display:block;
   width:fit-content;
-  font-size:1em;
+  font-size:1.2em;
   /* font-style: italic; */
-  /* font-weight: bold; */
-  letter-spacing: 1px;
+  font-weight: bold;
   color: rgba(255,255,255,0.9);
   padding: 0.2em 0.5em;
-  /* margin-top:-1.4em; */
-  margin-bottom: 0.8em;
-}
-.hashtag.event-1 {
-  background: #ee4694;
-}
-.hashtag.event-2 {
-  background: #1672f9;
-}
-.hashtag.event-3 {
-  background: #f59645;
+  margin-bottom: 0.2em;
+  content: "#Diskussion"
 }
 
 .cd-schedule .event-date, .cd-schedule .event-time {
