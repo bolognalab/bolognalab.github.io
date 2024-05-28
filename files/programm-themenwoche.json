@@ -141,5 +141,16 @@
         "id": "event-refrat",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-diskussion-studierende ",
         "category": "event-1"
+    },
+    {
+        "short-event-name": "Tag der Lehre 2024",
+        "long-event-name": "Tag der Lehre 2024",
+        "day": "thursday",
+        "start": "13:30",
+        "end": "20:00",
+        "loc": "Senatsaal der Humboldt-Universit\u00e4t",
+        "id": "event-tdl",
+        "web": "https://bolognalab.hu-berlin.de/de/humboldt-tag-der-lehre",
+        "category": "event-4"
     }
 ]
