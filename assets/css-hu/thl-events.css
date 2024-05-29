@@ -13,6 +13,11 @@
 }
 .colorfulHeading2 {
 	color: #003366;
+	font-style: italic;
+}
+.colorfulHeading3 {
+	color: #d2d2d2;
+	font-weight:bold;
 }
 
 .fleximg {
