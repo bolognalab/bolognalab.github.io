@@ -70,3 +70,10 @@
 .scheduleTHL {
 	transform: scale(0.6667, 06667) translate(-25%, -25%);
 }
+
+/* hiding elements on desktop-mode */
+@media screen and (min-width: 736px) {
+	.mobileOnly {
+		display: none
+	}
+}
