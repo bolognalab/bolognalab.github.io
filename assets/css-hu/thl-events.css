@@ -11,7 +11,14 @@
 	color: #003366;
 	font-weight: bold;
 }
-
+.colorfulHeading2 {
+	color: #003366;
+	font-style: italic;
+}
+.colorfulHeading3 {
+	color: #575757;
+	font-weight:bold;
+}
 
 .fleximg {
 	width: 45%;
@@ -69,4 +76,11 @@
 	
 .scheduleTHL {
 	transform: scale(0.6667, 06667) translate(-25%, -25%);
+}
+
+/* hiding elements on desktop-mode */
+@media screen and (min-width: 736px) {
+	.mobileOnly {
+		display: none
+	}
 }
