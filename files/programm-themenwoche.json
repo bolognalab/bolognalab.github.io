@@ -8,7 +8,9 @@
         "loc": "Senatsaal der Humboldt-Universit\u00e4t",
         "id": "event-auftakt",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/anmeldung-thl-auftakt",
-        "category": "event-1"
+        "category": "event-1",
+        "start-ovr": "-",
+        "end-ovr": "-"
     },
     {
         "short-event-name": "Blended Learning mit H5P zum Thema Inklusion",
@@ -19,7 +21,9 @@
         "loc": "bologna.lab",
         "id": "event-FDQI",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-lw1 ",
-        "category": "event-3"
+        "category": "event-3",
+        "start-ovr": "-",
+        "end-ovr": "-"
     },
     {
         "short-event-name": "Self-Assessment-Tool zum Lernfortschritt",
@@ -30,7 +34,9 @@
         "loc": "bologna.lab",
         "id": "event-selbsteval",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb1 ",
-        "category": "event-2"
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "13:50"
     },
     {
         "short-event-name": "Pr\u00fcfungskultur im Wandel",
@@ -41,7 +47,9 @@
         "loc": "bologna.lab",
         "id": "event-pruefung",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb2",
-        "category": "event-2"
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "14:50"
     },
     {
         "short-event-name": "Projekt COIL",
@@ -52,7 +60,9 @@
         "loc": "bologna.lab",
         "id": "event-coil",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb3 ",
-        "category": "event-2"
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "15:50"
     },
     {
         "short-event-name": "Hybride Ringvorlesungen",
@@ -63,7 +73,9 @@
         "loc": "Online",
         "id": "event-ring",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb4 ",
-        "category": "event-2"
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "16:50"
     },
     {
         "short-event-name": "Workshop: \nKollab. Textarbeit in hybriden Settings ",
@@ -74,7 +86,9 @@
         "loc": "bologna.lab",
         "id": "event-genderingMINT",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-lw2 ",
-        "category": "event-3"
+        "category": "event-3",
+        "start-ovr": "-",
+        "end-ovr": "-"
     },
     {
         "short-event-name": "Projekt HyPE ViSOR",
@@ -85,7 +99,9 @@
         "loc": "Online",
         "id": "event-hype",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb6",
-        "category": "event-2"
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "-"
     },
     {
         "short-event-name": "Journal Club Hybride Lehre",
@@ -96,7 +112,9 @@
         "loc": "bologna.lab",
         "id": "event-journalClub",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/journalclub ",
-        "category": "event-1"
+        "category": "event-1",
+        "start-ovr": "-",
+        "end-ovr": "13:50"
     },
     {
         "short-event-name": "Hybride Lehre in Lehrkr\u00e4ftebildung",
@@ -107,7 +125,9 @@
         "loc": "Institut f\u00fcr Erziehungswissenschaften",
         "id": "event-lehrkraft",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb5",
-        "category": "event-2"
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "-"
     },
     {
         "short-event-name": "Digitales Editieren als kollaborativer Workflow",
@@ -118,7 +138,9 @@
         "loc": "Institut f\u00fcr Musikwissenschaft & Medienwissenschaft",
         "id": "event-digitaledit",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb7",
-        "category": "event-2"
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "13:50"
     },
     {
         "short-event-name": "Workshop: \nVL-Aufzeichnung und Videokonferenzen",
@@ -129,7 +151,9 @@
         "loc": "Erwin Schr\u00f6dinger-Zentrum",
         "id": "event-medientechnik",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb8 ",
-        "category": "event-3"
+        "category": "event-3",
+        "start-ovr": "-",
+        "end-ovr": "-"
     },
     {
         "short-event-name": "Diskussion mit Studierenden",
@@ -140,7 +164,9 @@
         "loc": "Erwin Schr\u00f6dinger-Zentrum",
         "id": "event-refrat",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-diskussion-studierende ",
-        "category": "event-1"
+        "category": "event-1",
+        "start-ovr": "-",
+        "end-ovr": "-"
     },
     {
         "short-event-name": "Tag der Lehre 2024",
@@ -151,6 +177,8 @@
         "loc": "Senatsaal der Humboldt-Universit\u00e4t",
         "id": "event-tdl",
         "web": "https://bolognalab.hu-berlin.de/de/humboldt-tag-der-lehre",
-        "category": "event-4"
+        "category": "event-4",
+        "start-ovr": "-",
+        "end-ovr": "-"
     }
 ]

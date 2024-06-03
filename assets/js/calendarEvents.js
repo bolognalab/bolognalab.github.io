@@ -16,7 +16,7 @@ async function makeEvents() {
 			console.log("taking my time making events")
 			let eventCalendar = json
 			eventCalendar.forEach((e)=> {
-			eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"], category = e["category"]
+			eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"], category = e["category"], start_ovr = e["start-ovr"], end_ovr = e["end-ovr"]
 			let groupToAppendTo = document.getElementById(day)
 			let listToAppendTo = document.querySelector('#'+day+' ul')
 			let item = document.createElement("li")
@@ -28,6 +28,8 @@ async function makeEvents() {
 			item.setAttribute("id", id)
 			item.setAttribute("data-event", category)
 			item.setAttribute("data-web", web)
+			item.setAttribute("start-override", start_ovr)
+			item.setAttribute("end-override", end_ovr)
 			item.innerHTML= "<a href='#0'><em class='event-name'>"+ eventName +"</em></a>"
 			listToAppendTo.append(item)
 			resolve();
@@ -139,7 +141,11 @@ async function formatEvents() {
 	
 					this.singleEvents.each(function(){
 						//create the .event-time element for each event
-						var durationLabel = '<span class="event-time">'+$(this).data('start')+' - '+$(this).data('end')+'</span>';
+						var startTime = this.attributes['start-override'].value != "-" ? this.attributes['start-override'].value : $(this).data('start')
+						var endTime = this.attributes['end-override'].value != "-" ? this.attributes['end-override'].value : $(this).data('end')
+						console.log(startTime, endTime)
+						var durationLabel = '<span class="event-time">'+ startTime+' - ' + endTime + '</span>';
+						// var durationLabel = '<span class="event-time">'+$(this).data('start')+' - '+$(this).data('end')+'</span>';
 						$(this).children('a').prepend($(durationLabel));
 	
 						//create the .event-date element for each event
