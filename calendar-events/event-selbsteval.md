@@ -3,7 +3,7 @@
 ##### Hausvogteiplatz 5-7, 10117 Berlin, Raum 0101-0103
 ---
 ### Impulsvortrag & Diskussion
-Sprecher:innen: \
+Leitung: \
 **Prof. Dr. Matthias Ziegler**  
 ##### Institut für Psychologie 
 **Sandra von Sydow**  

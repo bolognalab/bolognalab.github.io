@@ -2,7 +2,7 @@
 ## Online via Zoom 
 --- 
 ### Impulsvortrag & Diskussion 
-Sprecher: \
+Leitung: \
 **Dr. Oliver Bunk**  
 ##### Institut für deutsche Sprache und Linguistik 
 **Dr. Antje Sauermann**  
