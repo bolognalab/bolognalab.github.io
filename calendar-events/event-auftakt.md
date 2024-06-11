@@ -1,5 +1,5 @@
 # Auftaktveranstaltung der HU-Themenwoche Hybride Lehre
-## Senatsaal, HU-Hauptgebäude & Zoom 
+## Senatssaal, HU-Hauptgebäude & Zoom 
 ##### Unter den Linden 6, 10117 Berlin
 ---
 ### Welcome-Kaffee

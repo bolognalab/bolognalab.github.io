@@ -5,7 +5,7 @@
         "day": "monday",
         "start": "10:30",
         "end": "13:00",
-        "loc": "Senatsaal der Humboldt-Universit\u00e4t",
+        "loc": "Senatssaal der Humboldt-Universit\u00e4t",
         "id": "event-auftakt",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/anmeldung-thl-auftakt",
         "category": "event-1",
@@ -182,12 +182,12 @@
         "": ""
     },
     {
-        "short-event-name": "Tag der Lehre 2024",
+        "short-event-name": "Tag der Lehre 2024: \nInternationales Lehren und Lernen",
         "long-event-name": "Tag der Lehre 2024",
         "day": "thursday",
         "start": "13:30",
         "end": "20:00",
-        "loc": "Senatsaal der Humboldt-Universit\u00e4t",
+        "loc": "Senatssaal der Humboldt-Universit\u00e4t",
         "id": "event-tdl",
         "web": "https://bolognalab.hu-berlin.de/de/humboldt-tag-der-lehre",
         "category": "event-4",
@@ -197,7 +197,7 @@
     },
     {
         "short-event-name": "Hybride Lehre in Sprachkursen",
-        "long-event-name": "Hybride Lehre in Sprachkursen",
+        "long-event-name": "Hybride Lehre am Sprachenzentrum: Umsetzung und Erfahrungen",
         "day": "wednesday",
         "start": "15:00",
         "end": "16:00",

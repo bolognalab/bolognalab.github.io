@@ -23,7 +23,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:1C8DBC-66391100-7-43836A80
 SUMMARY:Auftaktveranstaltung der HU-Themenwoche Hybride Lehre
-LOCATION:Senatsaal\, Unter den Linden 6\, 10117 Berlin
+LOCATION:Senatssaal\, Unter den Linden 6\, 10117 Berlin
 CLASS:PUBLIC
 TRANSP:OPAQUE
 DTSTART;TZID=Europe/Berlin:20240624T103000

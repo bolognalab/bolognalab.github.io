@@ -40,7 +40,6 @@ def makeEmptyICS(names):
             with open(fname, 'w', encoding="utf-8") as file:
                 file.write("ICS File not created yet - please check back later!")
                 pass
-
 def updateJSON(json_list, json_file):
     with open(json_file, 'w') as json_file:
         json_file.write(json.dumps(json_list, indent=4))
