@@ -12,7 +12,7 @@ ab 10:00
 **Prof. Dr. Christian Kohls**
 ##### Dekan, Fakultät für Informatik und Ingenieurwissenschaften,<br> TH Köln 
 **Claudia Bremer**
-##### E-Learning Specialist, Wilhelm-Büchner Hochschule 
+##### E-Learning Spezialistin, Wilhelm-Büchner Hochschule 
 
 
 ### Podiumdiskussion 
