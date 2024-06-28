@@ -12,7 +12,7 @@ ab 10:00
 **Prof. Dr. Christian Kohls**
 ##### Dekan, Fakultät für Informatik und Ingenieurwissenschaften,<br> TH Köln 
 **Claudia Bremer**
-##### E-Learning Spezialistin, Wilhelm-Büchner Hochschule 
+##### Vorstandsmitglied, Gesellschaft für Medien in der Wissenschaft e.V. 
 
 
 ### Podiumdiskussion 
@@ -23,8 +23,8 @@ Panelist:innen:
 > #####   
 > **Prof.in Dr. Annette Upmeier zu Belzen** 
 > ##### Professorin am Institut für Biologie
-> **Ali Mehrens** 
-> ##### Referent für Lehre und Studium des RefRats
+> **Susanne Scheja** 
+> ##### Referat für politisches Mandat und Datenschutz
 
 
 
