@@ -211,7 +211,12 @@ async function formatEvents() {
 						setTimeout(function(){
 							document.querySelector(".event-info").style.visibility="visible"
 							document.querySelectorAll(".event-info .moreInfoLink")[0].setAttribute("href", event.parent().attr('data-web'))
-							document.querySelectorAll(".event-info .addToCalendar")[0].setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
+							if (document.querySelectorAll(".event-info md-block").length != 0){
+								document.querySelectorAll(".event-info md-block")[0].setAttribute("src", "calendar-events/" + event.parent().attr('data-content')+".md")
+							}
+							if (document.querySelectorAll(".event-info .addToCalendar").length !=0){
+								document.querySelectorAll(".event-info .addToCalendar")[0].setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
+							}
 							document.querySelectorAll(".event-info .hashtag")[0].classList.value = "hashtag " + event.parent().attr("data-event")
 							document.querySelectorAll(".event-info .hashtag")[0].innerHTML = "#" + eventTypes[event.parent().attr("data-event")]
 							document.querySelectorAll(".event-info .moreInfoLink")[0].focus()
