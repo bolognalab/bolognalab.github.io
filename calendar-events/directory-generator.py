@@ -32,7 +32,8 @@ body = ET.Element('body')
 html.append(body)
 
 for event_id in events_list:
-    div0 = ET.Element('div', attrib={'class': 'event-info'})
+    div0 = ET.Element('div', attrib={'class': 'event-info',
+                                     'id': event_id})
     
     
     div1 = ET.Element('div', attrib={'class': 'md-container white-fade'})
@@ -56,9 +57,8 @@ for event_id in events_list:
     body.append(div0)
     
 ET.indent(html, '  ')
-# with open("edir-test.html", "w") as f:
-# ET.ElementTree(html).write(sys.stdout, encoding='unicode',
-#                            method='html')
+ET.ElementTree(html).write(sys.stdout, encoding='unicode',
+                            method='html')
 with open("edir-test.html", "w") as f:
     ET.ElementTree(html).write(f, encoding='unicode',
                             method='html')
