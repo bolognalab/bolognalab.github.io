@@ -3,13 +3,11 @@
 Convert CSV to json
 """
 import csv
-import json
 import os
 
 os.chdir(os.path.dirname(__file__))
 
 csv_file = 'programm-themenwoche.csv'
-json_file = 'programm-themenwoche.json'
 names_list = []
 titles = {}
 
@@ -32,17 +30,4 @@ def makeMD(names):
                 file.write("## Ort (z.B, Senatsaal)  \n##### Adresse und Raum \n--- \n### Art der Veranstaltung (z.B. Workshop) \nLeitung: \\n**Name 1**  \n##### Einrichtung 1\ ")
                 pass
 
-def makeEmptyICS(names):
-    for name in names:
-        fname = "../calendar-events/" + name + ".ics"
-        print(fname, os.path.exists(fname))
-        if not os.path.exists(fname):
-            with open(fname, 'w', encoding="utf-8") as file:
-                file.write("ICS File not created yet - please check back later!")
-                pass
-def updateJSON(json_list, json_file):
-    with open(json_file, 'w') as json_file:
-        json_file.write(json.dumps(json_list, indent=4))
-
-updateJSON(json_list, json_file)
-# makeEmptyICS(names_list)
+#makeMD(names_list)

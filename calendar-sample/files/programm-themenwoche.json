@@ -1,0 +1,93 @@
+[
+    {
+        "short-event-name": "Auftakt",
+        "long-event-name": "Auftaktveranstaltung der Themenwoche Lehre",
+        "day": "monday",
+        "start": "10:30",
+        "end": "13:00",
+        "loc": "Senatssaal der Humboldt-Universit\u00e4t",
+        "id": "event-auftakt",
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/anmeldung-thl-auftakt",
+        "category": "event-1",
+        "start-ovr": "-",
+        "end-ovr": "-"
+    },
+    {
+        "short-event-name": "Erster Workshop",
+        "long-event-name": "Langer Titel eines spannenden Workshops",
+        "day": "wednesday",
+        "start": "10:30",
+        "end": "12:00",
+        "loc": "bologna.lab",
+        "id": "event-coolworkshop",
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-lw1 ",
+        "category": "event-3",
+        "start-ovr": "10:45",
+        "end-ovr": "11:50"
+    },
+    {
+        "short-event-name": "Zweiter Workshop",
+        "long-event-name": "Workshop, der leider mit einer anderen Veranstaltung \u00fcberschneidet",
+        "day": "thursday",
+        "start": "13:30",
+        "end": "15:30",
+        "loc": "bologna.lab",
+        "id": "event-bigworkshop",
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-lw2 ",
+        "category": "event-3",
+        "start-ovr": "-",
+        "end-ovr": "-"
+    },
+    {
+        "short-event-name": "Erstes Praxisbeispiel",
+        "long-event-name": "Praxisbeispiel, der leider mit einem Workshop",
+        "day": "thursday",
+        "start": "15:00",
+        "end": "16:00",
+        "loc": "bologna.lab",
+        "id": "event-musik",
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb6",
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "-"
+    },
+    {
+        "short-event-name": "Journal Club",
+        "long-event-name": "Journal Club Hybride Lehre",
+        "day": "wednesday",
+        "start": "13:00",
+        "end": "14:00",
+        "loc": "bologna.lab",
+        "id": "event-journalClub",
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/journalclub ",
+        "category": "event-1",
+        "start-ovr": "-",
+        "end-ovr": "13:50"
+    },
+    {
+        "short-event-name": "Zweites Praxisbeispiel",
+        "long-event-name": "Langer Titel eines spannenden Praxisbeispiels",
+        "day": "friday",
+        "start": "13:00",
+        "end": "14:00",
+        "loc": "bologna.lab",
+        "id": "event-chemie",
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb7",
+        "category": "event-2",
+        "start-ovr": "-",
+        "end-ovr": "13:50"
+    },
+    {
+        "short-event-name": "Tag der Lehre",
+        "long-event-name": "Tag der Lehre, der aus mehreren Events besteht",
+        "day": "tuesday",
+        "start": "13:30",
+        "end": "19:00",
+        "loc": "universit\u00e4tsweit",
+        "id": "event-tdl",
+        "web": "https://bolognalab.hu-berlin.de/de/humboldt-tag-der-lehre",
+        "category": "event-4",
+        "start-ovr": "-",
+        "end-ovr": "-"
+    }
+]
