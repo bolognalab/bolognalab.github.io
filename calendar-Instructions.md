@@ -48,6 +48,8 @@ The rest of the steps require a script editor such as VSCode.
 
 * Open the repository's root folder on the "File Explorer" of VSCode. Navigate to the file ``/[YOUR FOLDER]/index.html`` and open it. Click on "Go Live" on the bottom right of the VSCode window (which should appear if you have installed the **LiveServer** extension). A browser webpage should now open with an empty calendar. The "URL" of this local "live preview" page should be something like ``http://127.0.0.1:5500/[YOUR FOLDER]/index.html``. If you want to change the dates of the calendar, you can do it later (see [Setting the days of the week](#setting-the-days-of-the-week)).
 
+* In the file ``/[YOUR FOLDER]/index.html``, find the first ``<h1>`` element in the ``<body>`` and change the title of the calendar to what you would like.
+
 ### 2. &nbsp; Placing the events on the calendar
 * Open the file ``/[YOUR FOLDER]/files/csv2json.py`` and run it (this requires the Python extension as mentioned above). 
 
@@ -116,17 +118,6 @@ const conflictsLeft = ["event-bigworkshop", "event-coolworkshop"]
 const conflictsRight = ["event-musik", "event-chemie"]
 ```
 
-### Changing or removing the topic hashtags
-If you don't like the topics Diskussion, #ImpulsFürDiePraxis and #Kompetenzentwicklung, you can change them. In the ``/[YOUR FOLDER]/programm_cal.html`` file, right below the code for "squeezing" conflicting events, you will find an object matching each event category to a topic. If no topic is defined for an event category (as is the case for Tag der Lehre (``event-4``), then no hashtag will appear.)
-```js
-//define hashtags/topics for each event
-const eventTypes = {
-    "event-1": "Diskussion",
-    "event-2": "ImpulsFürDiePraxis",
-    "event-3": "Kompetenzentwicklung"
-    }
-```
-
 ### Editing or removing the links for "More Information" and "Adding to Calendar"
 You can edit the file ``[YOUR FOLDER]/calendar-events/events-dir.html`` directly to more precisely define what appears on the white part of the modal of each event. Here are some examples.
 * If you don't have an ICS file for an event (e.g. Tag der Lehre), you will want to remove the link "Zum Kalender Hinzufügen." To do so, scroll down on the event directory file until you find the event, and **remove** the following line:
@@ -138,6 +129,17 @@ You can edit the file ``[YOUR FOLDER]/calendar-events/events-dir.html`` directly
 <a class="moreInfoLink" href="#0">&#128279; Mehr Infos & Anmeldung</a>
 ```
 * If you have some HTML knowledge, you can also add other elements to the modal. The contents of the the ``events-dir.html`` file define what goes on the white part of the modal, whereas the colorful part of the modal is defined in the ``programm_cal.html`` file.
+
+### Changing or removing the topic hashtags
+If you don't like the topics Diskussion, #ImpulsFürDiePraxis and #Kompetenzentwicklung, you can change them. In the ``/[YOUR FOLDER]/programm_cal.html`` file, right below the code for "squeezing" conflicting events, you will find an object matching each event category to a topic. If no topic is defined for an event category (as is the case for Tag der Lehre (``event-4``), then no hashtag will appear.)
+```js
+//define hashtags/topics for each event
+const eventTypes = {
+    "event-1": "Diskussion",
+    "event-2": "ImpulsFürDiePraxis",
+    "event-3": "Kompetenzentwicklung"
+    }
+```
 
 ### Don't like the colors or appearance of the calendar?
 If you have some CSS knowledge, you can change more things about the appearance of the calendar. However, because all calendars on this webpage use the CSS stylesheet ``/assets/css/calendar.css``, you should NOT edit that file directly as it will impact all other calendars. Instead, you can make a copy of the CSS file, link it to the calendar you are working on, and then make any changes on the copy. To do this:
