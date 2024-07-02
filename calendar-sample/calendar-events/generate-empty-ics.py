@@ -3,13 +3,11 @@
 Convert CSV to json
 """
 import csv
-import json
 import os
 
 os.chdir(os.path.dirname(__file__))
 
-csv_file = 'programm-themenwoche.csv'
-json_file = 'programm-themenwoche.json'
+csv_file = '../files/programm-themenwoche.csv'
 names_list = []
 titles = {}
 
@@ -22,19 +20,10 @@ with open(csv_file, mode='r', encoding='utf-8') as csv_file:
         names_list.append(fixed_data["id"])
         titles[fixed_data["id"]]=fixed_data["long-event-name"]
 
-def makeEmptyICS(names):
-    for name in names:
+for name in names_list:
         fname = "../calendar-events/" + name + ".ics"
         print(fname, os.path.exists(fname))
         if not os.path.exists(fname):
             with open(fname, 'w', encoding="utf-8") as file:
-                file.write("ICS File not created yet - please check back later!")
+                file.write("ICS File not created yet - please copy and paste the contents of a calendar event here.")
                 pass
-            
-def updateJSON(json_list, json_file):
-    with open(json_file, 'w') as json_file:
-        json_file.write(json.dumps(json_list, indent=4))
-        print("json file created or updated successfully")
-
-updateJSON(json_list, json_file)
-# makeEmptyICS(names_list)

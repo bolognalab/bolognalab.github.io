@@ -63,15 +63,21 @@ for event_id in events_list:
 ET.indent(html, '   ')
 ET.ElementTree(html).write(sys.stdout, encoding='unicode',
                             method='html')
-with open("events-dir.html", "w") as f:
-    ET.ElementTree(html).write(f, encoding='unicode',
-                            method='html')
 
-# replace &amp; with "&"
-with open('events-dir.html', 'r') as f:
-    filedata = f.read()
-filedata = filedata.replace('&amp;', '&')
+fname = "events-dir.html"
+if not os.path.exists(fname):
+    with open(fname, "w") as f:
+        ET.ElementTree(html).write(f, encoding='unicode',
+                                method='html')
 
-with open('events-dir.html', 'w') as f:
-    f.write(filedata)
-    f.close()
+    # replace &amp; with "&"
+    with open(fname, 'r') as f:
+        filedata = f.read()
+    filedata = filedata.replace('&amp;', '&')
+
+    with open(fname, 'w') as f:
+        f.write(filedata)
+        f.close()
+else:
+    print("\n \n The file 'events-dir.html' already exists. If you really want to replace it with an automatically generated one, please delete the existing file and run this script again. \n \n",
+          "Die Datei 'events-dir.html' existiert bereits. Wenn Sie sie wirklich durch eine automatisch generierte Datei ersetzen wollen, löschen Sie bitte die bestehende Datei und führen Sie dieses Python-Skript erneut aus. \n \n")

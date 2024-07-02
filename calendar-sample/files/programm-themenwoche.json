@@ -7,7 +7,7 @@
         "end": "13:00",
         "loc": "Senatssaal der Humboldt-Universit\u00e4t",
         "id": "event-auftakt",
-        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/anmeldung-thl-auftakt",
+        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-auftakt",
         "category": "event-1",
         "start-ovr": "-",
         "end-ovr": "-"
@@ -17,13 +17,13 @@
         "long-event-name": "Langer Titel eines spannenden Workshops",
         "day": "wednesday",
         "start": "10:30",
-        "end": "12:00",
+        "end": "13:00",
         "loc": "bologna.lab",
         "id": "event-coolworkshop",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-lw1 ",
         "category": "event-3",
         "start-ovr": "10:45",
-        "end-ovr": "11:50"
+        "end-ovr": "12:50"
     },
     {
         "short-event-name": "Zweiter Workshop",
@@ -55,14 +55,14 @@
         "short-event-name": "Journal Club",
         "long-event-name": "Journal Club Hybride Lehre",
         "day": "wednesday",
-        "start": "13:00",
-        "end": "14:00",
+        "start": "14:00",
+        "end": "15:00",
         "loc": "bologna.lab",
         "id": "event-journalClub",
         "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/journalclub ",
         "category": "event-1",
         "start-ovr": "-",
-        "end-ovr": "13:50"
+        "end-ovr": "14:50"
     },
     {
         "short-event-name": "Zweites Praxisbeispiel",
