@@ -91,6 +91,8 @@ This step is optional but, if you choose **not** to include ICS files, you shoul
 
 https://github.com/bolognalab/bolognalab.github.io/assets/23509977/c04472a5-8e69-469f-a0ff-ecb0fd44b979
 
+https://github.com/bolognalab/bolognalab.github.io/images/instructions/00ia.mp4
+
 Congratulations! The basic mechanics of the calendar are ready! Now on to fine-tuning and updating:
 
 
