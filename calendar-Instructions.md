@@ -89,7 +89,7 @@ This step is optional but, if you choose **not** to include ICS files, you shoul
 * In your calendar program of choice, export each event as an ICS file. How you can do this varies from software to software. On Thunderbird, you can simply select an event, right-click on an event (Ctrl+Click on Mac), select "Copy", and then paste what you just copied in a text file. If you save that text file with the extension ``.ics``, you have successfully created the ICS file! In this project, we already have empty ICS files to work with, so simply paste the content you copied from your Thunderbird calendar into the corresponding ICS text file. 
 * Save the ICS text file and repeat for all the events you want to add this feature to.
 
-
+![Video-Anleitung, wie ICS-Dateien erstellt werden](images/instructions/00ia.mp4)
 
 Congratulations! The basic mechanics of the calendar are ready! Now on to fine-tuning and updating:
 
