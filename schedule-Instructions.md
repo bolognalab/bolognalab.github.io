@@ -11,7 +11,7 @@
 ### List of events as CSV
 You need a CSV file similar to ``/themenwoche-2024/files/programm-themenwoche.csv`` that lists your events. The file should be called ``programm-themenwoche.csv``. For each event you should define:
 
-* A short title ``short-event-name``, which should fit nicely in the rectangles of the program. After setting up the calendar, you may want to adjust the ``short-event-name`` further, so that the title takes up no more than 3 lines and the words are divided meaningfully.
+* A short title ``short-event-name``, which should fit nicely in the rectangles of the program. After setting up the schedule, you may want to adjust the ``short-event-name`` further, so that the title takes up no more than 3 lines and the words are divided meaningfully.
 
 * The full event title (``long-event-name``).
 
@@ -25,7 +25,7 @@ You need a CSV file similar to ``/themenwoche-2024/files/programm-themenwoche.cs
 
 ![alt text](images/instructions/00bb.png)
 
-* Each event should be assigned an ``id``, e.g. "Auftaktveranstaltung" has the id ``event-auftakt`` defined in the CSV file. The ``id`` does not appear on the calendar but connects all information about the event together.
+* Each event should be assigned an ``id``, e.g. "Auftaktveranstaltung" has the id ``event-auftakt`` defined in the CSV file. The ``id`` does not appear on the schedule but connects all information about the event together.
 
 * The ``web`` property, which should be the URL where more information on the event is available (see [Individual pages for each event](#individual-pages-for-each-event)). If you don't know this yet, you can use a dummy URL such as the homepage of the HU and come back to edit it later.
 
@@ -35,22 +35,22 @@ You need a CSV file similar to ``/themenwoche-2024/files/programm-themenwoche.cs
 * You can complete this step later, but it's good to already decide on the URLs of the pages (on the HU webpage) that will contain information on each event. After you decide on these URLs (whether the pages are ready or not), you can place them in the CSV file under the ``web`` column.
 
 ### Calendar Events
-* If you want the ability for the user to add the events to the calendar: Create calendar entries for all of the events in your Calendar software of choice (e.g. Thunderbird). The calendar events should include the location and time and, ideally, a description that contains a link to event page on the HU webpage. It's best not to write any additional details in the calendar events, so that, if any information changes, it can all be edited in one place (the HU page).
+* If you want the ability for the user to add the events to their calendar: Create calendar entries for all of the events in your Calendar software of choice (e.g. Thunderbird). The calendar events should include the location and time and, ideally, a description that contains a link to event page on the HU webpage. It's best not to write any additional details in the calendar events, so that, if any information changes, it can all be edited in one place (the HU page).
 You will later convert these calendar events to ICS files.
 
 ## Instructions
 ### 1. &nbsp; Setting up the new folder
-* Make a copy of the folder ``calendar-sample`` and all of its contents, keep it in the root directory, and rename it according to your event (e.g. ``/themenwoche-2025``). The URL of your new calendar will be: ``https://bolognalab.github.io/[YOUR FOLDER]``
-* In the subfolder ``/[YOUR FOLDER]/calendar-events``, delete all files  **except** the files ``template.md`` and ``directory-generator.py``. If you accidentally delete these files, you can find them in the ``calendar-sample`` folder.  
+* Make a copy of the folder ``sample-schedule`` and all of its contents, keep it in the root directory, and rename it according to your event (e.g. ``/themenwoche-2025``). The URL of your new schedule will be: ``https://bolognalab.github.io/[YOUR FOLDER]``
+* In the subfolder ``/[YOUR FOLDER]/calendar-events``, delete all files  **except** the files ``template.md`` and ``directory-generator.py``. If you accidentally delete these files, you can find them in the ``sample-schedule`` folder.  
 * In the subfolder ``/[YOUR FOLDER]/files``, delete the file ``programm-themenwoche.json`` and replace the file ``programm-themenwoche.csv`` with your own list of events. The file name and extension should stay the same!
 
 The rest of the steps require a script editor such as VSCode.
 
-* Open the repository's root folder on the "File Explorer" of VSCode. Navigate to the file ``/[YOUR FOLDER]/index.html`` and open it. Click on "Go Live" on the bottom right of the VSCode window (which should appear if you have installed the **LiveServer** extension). A browser webpage should now open with an empty calendar. The "URL" of this local "live preview" page should be something like ``http://127.0.0.1:5500/[YOUR FOLDER]/index.html``. If you want to change the dates of the calendar, you can do it later (see [Setting the days of the week](#setting-the-days-of-the-week)).
+* Open the repository's root folder on the "File Explorer" of VSCode. Navigate to the file ``/[YOUR FOLDER]/index.html`` and open it. Click on "Go Live" on the bottom right of the VSCode window (which should appear if you have installed the **LiveServer** extension). A browser webpage should now open with an empty schedule. The "URL" of this local "live preview" page should be something like ``http://127.0.0.1:5500/[YOUR FOLDER]/index.html``. If you want to change the dates that appear on the schedule, you can do it later (see [Setting the days of the week](#setting-the-days-of-the-week)).
 
-* In the file ``/[YOUR FOLDER]/index.html``, find the first ``<h1>`` element in the ``<body>`` and change the title of the calendar to what you would like.
+* In the file ``/[YOUR FOLDER]/index.html``, find the first ``<h1>`` element in the ``<body>`` and change the title of the schedule to what you would like.
 
-### 2. &nbsp; Placing the events on the calendar
+### 2. &nbsp; Placing the events on the schedule
 * Open the file ``/[YOUR FOLDER]/files/csv2json.py`` and run it (this requires the Python extension as mentioned above). 
 
 ![Run Python file "csv2json.py" in dedicated](images/instructions/00ca.png)
@@ -59,7 +59,7 @@ The message "json file created or updated successfully" should appear in the Pyt
 
 * If you cannot run Python, you'll have to create the ``programm-themenwoche.json`` file manually, which is easy but tedious and time-consuming.
 
-* After completing this step, all your events should now appear on the calendar in the live preview.  If you see errors in the calendar or if the Python file didn't run successfully, check your CSV file for errors.
+* After completing this step, all your events should now appear on the schedule in the live preview.  If you see errors in the schedule or if the Python file didn't run successfully, check your CSV file for errors.
 
 * **Important: At this point, clicking on the event should bring up a blank modal window with just the date and time.** This is normal!
 
@@ -68,16 +68,16 @@ The message "json file created or updated successfully" should appear in the Pyt
 * If two of the events are coinciding with each other, they will appear on top of each other (also normal!). You can resolve this at a later stage, see [Showing conflicting events](#showing-conflicting-events), but you need to complete steps 3 & 4 beforehand.
 
 ### 3. &nbsp; Adding links to the event modal
-* Clicking on each event in the calendar brings up the "modal" of the event, which should contain the time, title, location, and basic details of the event, as well as a link to "more information" and (optionally) a link for adding the event to the calendar. The structure of all that information lies in the file ``/[YOUR FOLDER]/calendar-events/events-dir.html`` and in markdown (``*.md``) files in the same folder, one for each event. In the next step, you will be creating these files.
+* Clicking on each event in the schedule brings up the "modal" of the event, which should contain the time, title, location, and basic details of the event, as well as a link to "more information" and (optionally) a link for adding the event to the calendar. The structure of all that information lies in the file ``/[YOUR FOLDER]/calendar-events/events-dir.html`` and in markdown (``*.md``) files in the same folder, one for each event. In the next step, you will be creating these files.
 
-* Create an "events directory" HTML file similar to ``/calendar-sample/calendar-events/events-dir.html``. In that file, there should be a ``div`` element for each event, and the ``id`` attribute of each ``div`` should match the ``id`` of the event exactly. The content of each event should also follow a very specific structure, which can be seen in the examples. **Doing this manually takes time and has lots of room for error, so it's recommended to do it automatically by running the script ``/[YOUR FOLDER]/calendar-events/directory-generator.py`` once.**
+* Create an "events directory" HTML file similar to ``/sample-schedule/calendar-events/events-dir.html``. In that file, there should be a ``div`` element for each event, and the ``id`` attribute of each ``div`` should match the ``id`` of the event exactly. The content of each event should also follow a very specific structure, which can be seen in the examples. **Doing this manually takes time and has lots of room for error, so it's recommended to do it automatically by running the script ``/[YOUR FOLDER]/calendar-events/directory-generator.py`` once.**
 
 * After generating the file ``events-dir.html``, check the live preview. When clicking on an event, the modal window should open. The white space of the modal should be mostly empty, but there should now be a working link to "Mehr Infos & Anmeldung." Below it should also be a link "zum Kalender hinzufügen (.ics)", which doesn't work for now, because it's looking for an ``.ics`` file that doesn't exist yet. There may also be a hashtag depending on the event category (e.g. #Diskussion for ``event-1``).
 
 ![alt text](images/instructions/00da.png)
 
 ### 4. &nbsp; Adding event details to the event modal
-* This calendar uses [Markdown language](https://www.markdownguide.org/) to write event details (e.g. title, place, address, type of event, and people presenting). You will need one Markdown file for each event called ``[Event ID].md``. You can do this automatically in the next step!
+* This schedule uses [Markdown language](https://www.markdownguide.org/) to write event details (e.g. title, place, address, type of event, and people presenting). You will need one Markdown file for each event called ``[Event ID].md``. You can do this automatically in the next step!
 * Run the script ``/[YOUR FOLDER]/calendar-events/generate-empty-md.py`` to generate templates of all events at once - this will use the ``long event name`` and ``id`` you defined for each event in your CSV file and will name the files correctly. In the live preview, if you click on an event, you should also now be able to see a title and more content in the modal window.
 
 ![alt text](images/instructions/00db.png)
@@ -88,12 +88,13 @@ The message "json file created or updated successfully" should appear in the Pyt
 This step is optional but, if you choose **not** to include ICS files, you should manually delete the links "zum Kalender Hinzufügen" that appear on the modal of each event, see [Editing or removing the links for "More Information" and "Adding to Calendar"](#editing-or-removing-the-links-for-more-information-and-adding-to-calendar)! Here are the steps for including ICS files:
 
 * Run the Python script ``/[YOUR FOLDER]/calendar-events/generate-empty-ics.py`` to generate an ICS file for each of your events. ICS files are basically just text files with a "special" file extension and syntax. The files we just created have the correct file extension, but are still empty, so they are not useful yet.
+
 * In your calendar program of choice, export each event as an ICS file. How you can do this varies from software to software. On Thunderbird, you can simply select an event, right-click on an event (Ctrl+Click on Mac), select "Copy", and then paste what you just copied in a text file. If you save that text file with the extension ``.ics``, you have successfully created the ICS file! In this project, we already have empty ICS files to work with, so simply paste the content you copied from your Thunderbird calendar into the corresponding ICS text file. 
 * Save the ICS text file and repeat for all the events you want to add this feature to.
 
 https://github.com/bolognalab/bolognalab.github.io/assets/23509977/c04472a5-8e69-469f-a0ff-ecb0fd44b979
 
-Congratulations! The basic mechanics of the calendar are ready! Now on to fine-tuning and updating:
+Congratulations! The basic mechanics of your events schedule are ready! Now on to fine-tuning and updating:
 
 
 ### Setting the days of the week
@@ -104,7 +105,7 @@ What you write as the ``datestring`` attribute will appear on the "modal" of the
 ![alt text](images/instructions/00ea.png)
 
 ### Showing conflicting events
-If two events are coinciding, you need to decide which one you will place on the left vs. the right (hopefully, you don't have more than 2 coinciding events)! The calendar is not smart enough to know which events are coinciding, so you need to specify it yourself:
+If two events are coinciding, you need to decide which one you will place on the left vs. the right (hopefully, you don't have more than 2 coinciding events)! The schedule is not smart enough to know which events are coinciding, so you need to specify it yourself:
 
 * In the file ``/[YOUR FOLDER]/programm_cal.html``, navigate towards the bottom of the file, where most of the scripts are located. You will find two comments (``// Conflicts to place on the left/right``) that indicate the area of the code you need to edit. 
 
@@ -141,11 +142,11 @@ const eventTypes = {
     }
 ```
 
-### Don't like the colors or appearance of the calendar?
-If you have some CSS knowledge, you can change more things about the appearance of the calendar. However, because all calendars on this webpage use the CSS stylesheet ``/assets/css/calendar.css``, you should NOT edit that file directly as it will impact all other calendars. Instead, you can make a copy of the CSS file, link it to the calendar you are working on, and then make any changes on the copy. To do this:
+### Don't like the colors or appearance of the schedule?
+If you have some CSS knowledge, you can change more things about the appearance of the schedule. However, because all schedules on this webpage use the CSS stylesheet ``/assets/css/calendar.css``, you should NOT edit that file directly as it will impact all other schedules (e.g. Themenwoche 2024). Instead, you can make a copy of the CSS file, link it to the calendar you are working on, and then make any changes on the copy. To do this:
 * Make a copy of the file ``calendar.css`` and rename it (e.g. ``calendar2025.css``)
 * In both the files ``[YOUR FOLDER]/index.html`` and ``[YOUR FOLDER]/programm_cal.html``, edit the following line with the name of the new CSS file:
 ```html
 <link rel="stylesheet" href="../assets/css/calendar.css" />
 ```
-* Feel free to play around with the CSS as you wish, but be careful when changing the size of any element, as the calendar should stay responsive for mobile devices!
+* Feel free to play around with the CSS as you wish, but be careful when changing the size of any element, as the events schedule should stay responsive for mobile devices!
