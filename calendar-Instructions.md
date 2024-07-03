@@ -1,4 +1,4 @@
-# Instructions for creating a new calendar
+# Instructions for creating a new time schedule
 
 ## Preparation: 
 ### Tools needed:
