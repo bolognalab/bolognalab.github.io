@@ -1,4 +1,4 @@
-# Instructions for creating a new time schedule
+# Instructions for creating a new events schedule
 
 ## Preparation: 
 ### Tools needed:
