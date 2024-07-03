@@ -1,0 +1,45 @@
+BEGIN:VCALENDAR
+PRODID:-//Mozilla.org/NONSGML Mozilla Calendar V1.1//EN
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+LAST-MODIFIED:20240220T101645Z
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+CREATED:20240506T172146Z
+LAST-MODIFIED:20240522T101004Z
+DTSTAMP:20240522T101004Z
+UID:294002-66391180-6C9-2D339E80
+SUMMARY:Journal Club Hybride Lehre
+DTSTART;TZID=Europe/Berlin:20240626T130000
+DTEND;TZID=Europe/Berlin:20240626T140000
+CLASS:PUBLIC
+TRANSP:OPAQUE
+LOCATION:bologna.lab (Hausvogteiplatz 5-7\, 10117 Berlin\, Raum 0101-0103) 
+  & online
+DESCRIPTION;ALTREP="data:text/html,Info%3A%20%3Ca%20class%3D%22moz-txt-link
+ -freetext%22%20href%3D%22https%3A%2F%2Fwww.digitale-lehre.hu-berlin.de%2Fde
+ %2Fveranstaltungen%2Fthemenwoche-zur-hybriden-lehre%2Fprogramm%2Fjournalclu
+ b%22%3Ehttps%3A%2F%2Fwww.digitale-lehre.hu-berlin.de%2Fde%2Fveranstaltungen
+ %2Fthemenwoche-zur-hybriden-lehre%2Fprogramm%2Fjournalclub%3C%2Fa%3E":Info:
+  https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur
+ -hybriden-lehre/programm/journalclub
+SEQUENCE:2
+X-MOZ-GENERATION:2
+END:VEVENT
+END:VCALENDAR

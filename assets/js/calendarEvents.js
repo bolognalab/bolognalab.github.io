@@ -41,12 +41,19 @@ async function makeEvents() {
 }
 
 async function squeezeConflicts() {
+	// const conflictsLeft and conflictsRight defined in the corresponding programm_cal.html
 	await new Promise((resolve, reject) => {
 		setTimeout(()=>{
 			console.log("squeezing conflicts")
 			// resolving conflicts
-			document.querySelector("#event-genderingMINT").classList.add("conflict", "l")
-			document.querySelector("#event-hype").classList.add("conflict", "r")
+			conflictsLeft.forEach(function(m){
+				document.querySelector("#"+ m).classList.add("conflict", "l")
+			}
+			)
+			conflictsRight.forEach(function(m){
+				document.querySelector("#"+ m).classList.add("conflict", "r")
+			}
+			)
 			resolve();
 		}, 10)
 	});
@@ -63,12 +70,6 @@ async function formatEvents() {
 				//if browser does not support transitions - use a different event to trigger them
 				if( !transitionsSupported ) transitionEnd = 'noTransition';
 				
-				//should add a loding while the events are organized 
-				const eventTypes = {
-					"event-1": "Diskussion",
-					"event-2": "ImpulsFürDiePraxis",
-					"event-3": "Kompetenzentwicklung"
-				}
 				function SchedulePlan( element ) {
 					this.element = element;
 					this.timeline = this.element.find('.timeline');
@@ -143,7 +144,6 @@ async function formatEvents() {
 						//create the .event-time element for each event
 						var startTime = this.attributes['start-override'].value != "-" ? this.attributes['start-override'].value : $(this).data('start')
 						var endTime = this.attributes['end-override'].value != "-" ? this.attributes['end-override'].value : $(this).data('end')
-						console.log(startTime, endTime)
 						var durationLabel = '<span class="event-time">'+ startTime+' - ' + endTime + '</span>';
 						// var durationLabel = '<span class="event-time">'+$(this).data('start')+' - '+$(this).data('end')+'</span>';
 						$(this).children('a').prepend($(durationLabel));
@@ -211,9 +211,18 @@ async function formatEvents() {
 						setTimeout(function(){
 							document.querySelector(".event-info").style.visibility="visible"
 							document.querySelectorAll(".event-info .moreInfoLink")[0].setAttribute("href", event.parent().attr('data-web'))
-							document.querySelectorAll(".event-info .addToCalendar")[0].setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
-							document.querySelectorAll(".event-info .hashtag")[0].classList.value = "hashtag " + event.parent().attr("data-event")
-							document.querySelectorAll(".event-info .hashtag")[0].innerHTML = "#" + eventTypes[event.parent().attr("data-event")]
+							if (document.querySelectorAll(".event-info .addToCalendar").length !=0){
+								document.querySelectorAll(".event-info .addToCalendar")[0].setAttribute("href", "calendar-events/" + event.parent().attr('data-content')+".ics")
+							}
+							
+							if (document.querySelectorAll(".event-info md-block").length !=0){
+								document.querySelectorAll(".event-info md-block")[0].setAttribute("src", "calendar-events/" + event.parent().attr('data-content')+".md")
+							}
+							if (eventTypes[event.parent().attr("data-event")]){
+								document.querySelectorAll(".event-info .hashtag")[0].classList.value = "hashtag " + event.parent().attr("data-event")
+								document.querySelectorAll(".event-info .hashtag")[0].innerHTML = "#" + eventTypes[event.parent().attr("data-event")]
+							}
+							
 							document.querySelectorAll(".event-info .moreInfoLink")[0].focus()
 						}, 250)
 					});

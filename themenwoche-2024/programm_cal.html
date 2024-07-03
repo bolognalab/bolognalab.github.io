@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  https://codepen.io/oltika/pen/GNvdgV
+-->
+<html lang="de">
+	<head>
+		<title>Themenwoche Hybride Lehre 2024: Programm</title>
+		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
+    <link rel="stylesheet" href="../assets/css/calendar.css" />
+    <link rel="stylesheet" href="../assets/css/md.css" />
+ 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <style>
+      /* calendar */
+      .single-event a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      .event-info {
+        padding: 2em 6%; 
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+      .event-info > p {
+        margin-bottom: 1em;
+      }
+      .event-info strong {
+        font-weight: 600;
+        color: rgb(65, 64, 64)
+      }
+
+      /* resolving conflicts */
+      @media only screen and (min-width: 800px) {
+        .single-event.conflict {
+          width: 49% !important;
+        }
+        .single-event.conflict:hover {
+          width: 100% !important;
+          margin-left: 0% !important;
+          z-index: 10 !important;
+        }
+        .single-event.conflict.r {
+          margin-left: 50%;
+        }
+        .single-event.conflict > a {
+        /* writing-mode: vertical-rl; */
+        /* transform: rotate(180deg); */
+        padding: 0.5em 0.5em 1em 0.5em !important;
+        /* padding: 0.9em 0.5em 0.2em 0.5em !important; */
+        font-size: 0.9em;
+        /* line-height: 1.4em; */
+        width: 100%;
+      }
+      .single-event.conflict:hover > a{
+          font-size: 1em;
+          padding: 0.7em 0.9em 1em 0.7em !important;
+          writing-mode: horizontal-tb;
+          transform: rotate(0);
+        }
+      .single-event.conflict .event-loc {
+        display: none;
+      }
+      }
+      div.event-modal {
+        overflow: hidden;
+      }
+
+     </style> 
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+    <div class="cd-schedule loading" id="schedule">
+      <div class="timeline">
+        <ul>
+          <!-- <li><span>09:00</span></li>
+          <li><span>09:30</span></li> -->
+          <li><span>10:00</span></li>
+          <li><span>10:30</span></li>
+          <li><span>11:00</span></li>
+          <li><span>11:30</span></li>
+          <li><span>12:00</span></li>
+          <li><span>12:30</span></li>
+          <li><span>13:00</span></li>
+          <li><span>13:30</span></li>
+          <li><span>14:00</span></li>
+          <li><span>14:30</span></li>
+          <li><span>15:00</span></li>
+          <li><span>15:30</span></li>
+          <li><span>16:00</span></li>
+          <li><span>16:30</span></li>
+          <li><span>17:00</span></li>
+          <!-- <li><span>17:30</span></li> -->
+        </ul>
+        
+          
+      </div> <!-- .timeline -->
+    
+      <div class="events">
+        <ul class="wrap">
+          <div class="mobile-fading-layer"></div>
+          <li class="events-group" datestring="Mo. 24.06.2024" id="monday" >
+            <div class="top-info"><span>Montag 24.6.</span></div>
+            <ul aria-label="montag"></ul>
+          </li>
+    
+          <li class="events-group" datestring="Di. 25.06.2024" id="tuesday">
+            <div class="top-info"><span>Dienstag 25.6.</span></div>         
+            <ul aria-label="dienstag"></ul>
+          </li>
+    
+          <li class="events-group" datestring="Mi. 26.06.2024" id="wednesday">
+            <div class="top-info"><span>Mittwoch 26.6.</span></div>
+            <ul aria-label="mittwoch"></ul>
+          </li>
+    
+          <li class="events-group" datestring="Do. 27.06.2024" id="thursday">
+            <div class="top-info"><span>Donnerstag 27.6.</span></div>
+            <ul aria-label="donnerstag">
+            </ul>
+          </li>
+    
+          <li class="events-group" datestring="Fr. 28.06.2024" id="friday">
+            <div class="top-info"><span>Freitag  28.6.</span></div>
+            <ul aria-label="freitag"></ul>
+          </li>
+        </ul>
+      </div>
+    
+      <div class="event-modal">
+        <header class="header">
+          <div class="content">
+            <span class="event-name" style="display:none"></span>
+            <span class="event-date"></span>
+            <span class="event-time"></span>
+            <!-- <span class="event-loc"></span> -->
+            <!-- <div class="event-links"></div> -->
+          </div>
+
+          <div class="header-bg"></div>
+        </header>
+    
+        <div class="body">
+          <div class="event-info" style="visibility:hidden"></div>
+          <div class="body-bg"></div>
+        </div>
+    
+        <a href="#0" class="close">Close</a>
+      </div>
+      
+      <div class="cover-layer"></div>
+    </div> <!-- .cd-schedule -->  
+ 
+    
+		<!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script>
+      // Conflicts to place on the left
+      const conflictsLeft = ["event-genderingMINT"]
+      // Conflicts to place on the right
+      const conflictsRight = ["event-hype"]
+
+      //define hashtags/topics for each event
+      const eventTypes = {
+					"event-1": "Diskussion",
+					"event-2": "ImpulsFürDiePraxis",
+					"event-3": "Kompetenzentwicklung"
+				}
+    </script>
+    <script src="../assets/js/calendarEvents.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+      // Accordion-menu for credits
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } 
+        });
+      }
+    </script>
+    <script type="module" src="../assets/js/md-block.js"></script>
+	</body>
+</html>
