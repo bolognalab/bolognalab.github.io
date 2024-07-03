@@ -2,7 +2,9 @@
 
 ## Preparation: 
 ### Tools needed:
-* Download and install [Github for Desktop](https://github.com/apps/desktop) and clone the repository ``bolognalab.github.io``. You should now have a folder structure on your PC that exactly matches this repository. The "root" of the repository is the folder in which this instructions file exists.
+* Download and install [Github for Desktop](https://github.com/apps/desktop) and clone the repository ``bolognalab.github.io``. You should now have a folder structure on your PC, in the path that you specified, which exactly matches the folder structure of the Github repository. The "root" of the repository is the folder where the instructions you are reading right now are located!
+
+![github cloning](images/instructions/00aa.png)
 
 * Download and install [Visual Studio Code](https://code.visualstudio.com/) (VSCode).
 
@@ -19,11 +21,11 @@ You need a CSV file similar to ``/themenwoche-2024/files/programm-themenwoche.cs
 
 * The ``start`` and ``end`` times, which are not always the true start and end times of the event, but they dictate the position and the height of the event block on the program. **The ``start`` and ``end`` times only work in 30-minute increments!** The actual start and end times of the event, if they are different from the ``start`` and ``end``  values, should be written in the ``start-ovr`` and ``end-ovr`` columns ("ovr" stands for "overwrite").
 
-![alt text](images/instructions/00ba.png)
+![start end times](images/instructions/00ba.png)
 
 * The location (``loc``) for the event; this should be a relatively short name. This will appear only on the mobile version under the short event title.
 
-![alt text](images/instructions/00bb.png)
+![mobile version showing location](images/instructions/00bb.png)
 
 * Each event should be assigned an ``id``, e.g. "Auftaktveranstaltung" has the id ``event-auftakt`` defined in the CSV file. The ``id`` does not appear on the schedule but connects all information about the event together.
 
@@ -40,8 +42,13 @@ You will later convert these calendar events to ICS files.
 
 ## Instructions
 ### 1. &nbsp; Setting up the new folder
-* Make a copy of the folder ``sample-schedule`` and all of its contents, keep it in the root directory, and rename it according to your event (e.g. ``/themenwoche-2025``). The URL of your new schedule will be: ``https://bolognalab.github.io/[YOUR FOLDER]``
-* In the subfolder ``/[YOUR FOLDER]/calendar-events``, delete all files  **except** the files ``template.md`` and ``directory-generator.py``. If you accidentally delete these files, you can find them in the ``sample-schedule`` folder.  
+* Make a copy of the folder ``sample-schedule`` and all of its contents, keep it in the root directory, and rename it according to your event (e.g. ``themenwoche-2025``). The URL of your new schedule will be: ``https://bolognalab.github.io/[YOUR FOLDER]``
+* In the subfolder ``/[YOUR FOLDER]/calendar-events``, delete all files  **except** the following:
+    * ``directory-generator.py``
+    * ``generate-empty-ics.py``
+    * ``generate-empty-md.py``. 
+    * ``template.md`` 
+* If you accidentally delete those files, you can find them in the ``sample-schedule`` folder.  
 * In the subfolder ``/[YOUR FOLDER]/files``, delete the file ``programm-themenwoche.json`` and replace the file ``programm-themenwoche.csv`` with your own list of events. The file name and extension should stay the same!
 
 The rest of the steps require a script editor such as VSCode.
@@ -52,19 +59,19 @@ The rest of the steps require a script editor such as VSCode.
 
 ### 2. &nbsp; Placing the events on the schedule
 
-* Open the file ``/[YOUR FOLDER]/files/csv2json.py`` and run it (this requires the Python extension as mentioned above). The message "json file created or updated successfully" should appear in the Python terminal, and the file ``programm-themenwoche.json`` should be generated.
+* Open the file ``/[YOUR FOLDER]/files/csv2json.py`` and run it (this requires the Python extension as mentioned above). The message "json file created or updated successfully" should appear in the Python terminal, and the file ``programm-themenwoche.json`` should be generated again.
 
-![Run Python file "csv2json.py" in dedicated](images/instructions/00ca.png)
+![Run Python file "csv2json.py" in dedicated terminal](images/instructions/00ca.png)
 
 **Note: if you later want to change details about the events such as titles, location, or URL (which will most certainly happen!), you will need to update your CSV file and then repeat this step! As long as the ``id`` of each event stays the same, simply running the ``csv2json.py`` script should make the changes effective without any further steps needed.**
 
-* If you cannot run Python, you'll have to create the ``programm-themenwoche.json`` file manually, which is easy but tedious and time-consuming. Also, if you do this manually, you will need to manually update the .json file and the .csv file every time you need to make small changes.
+* If you cannot run Python, you'll have to create the ``programm-themenwoche.json`` file manually, which is easy but tedious and time-consuming. Also, if you do this manually, you will need to manually update the .json file and the .csv file every time you need to make small changes. Please use Python!
 
 * After completing this step, all your events should now appear on the schedule in the live preview.  If you see errors in the schedule or if the Python file didn't run successfully, check your CSV file for errors.
 
 * **Important: At this point, clicking on the event should bring up a blank modal window with just the date and time.** This is normal!
 
-![alt text](images/instructions/00cb.png)
+![an empty modal](images/instructions/00cb.png)
 
 * If two of the events are coinciding with each other, they will appear on top of each other (also normal!). You can resolve this at a later stage, see [Showing conflicting events](#showing-conflicting-events), but you need to complete steps 3 & 4 beforehand.
 
@@ -75,13 +82,13 @@ The rest of the steps require a script editor such as VSCode.
 
 * After generating the file ``events-dir.html``, check the live preview. When clicking on an event, the modal window should open. The white space of the modal should be mostly empty, but there should now be a working link to "Mehr Infos & Anmeldung." Below it should also be a link "zum Kalender hinzufügen (.ics)", which doesn't work for now, because it's looking for an ``.ics`` file that doesn't exist yet. There may also be a hashtag depending on the event category (e.g. #Diskussion for ``event-1``).
 
-![alt text](images/instructions/00da.png)
+![a mostly empty modal containing two links](images/instructions/00da.png)
 
 ### 4. &nbsp; Adding event details to the event modal
 * This schedule uses [Markdown language](https://www.markdownguide.org/) to write event details (e.g. title, place, address, type of event, and people presenting). You will need one Markdown file for each event called ``[Event ID].md``. You can do this automatically in the next step!
 * Run the script ``/[YOUR FOLDER]/calendar-events/generate-empty-md.py`` to generate templates of all events at once - this will use the ``long event name`` and ``id`` you defined for each event in your CSV file and will name the files correctly. In the live preview, if you click on an event, you should also now be able to see a title and more content in the modal window.
 
-![alt text](images/instructions/00db.png)
+![event modal complete with information from a markdown file](images/instructions/00db.png)
 
 * Edit the individual Markdown files with the relevant information. The basic template should cover most of your needs, but you can take a look at ``/themenwoche-2024/calendar-events/event-auftakt.md`` and ``/themenwoche-2024/calendar-events/event-tdl.md`` for some other options.
 
@@ -102,14 +109,14 @@ In the file ``/[YOUR FOLDER]/programm_cal.html``, find ``<div class="events">`` 
 
 What you write as the ``datestring`` attribute will appear on the "modal" of the event, whereas what you write as text inside the ``div`` will appear on top of the program.
 
-![alt text](images/instructions/00ea.png)
+![how the text for the displayed date shows up in the code](images/instructions/00ea.png)
 
 ### Showing conflicting events
 If two events are coinciding, you need to decide which one you will place on the left vs. the right (hopefully, you don't have more than 2 coinciding events)! The schedule is not smart enough to know which events are coinciding, so you need to specify it yourself:
 
 * In the file ``/[YOUR FOLDER]/programm_cal.html``, navigate towards the bottom of the file, where most of the scripts are located. You will find two comments (``// Conflicts to place on the left/right``) that indicate the area of the code you need to edit. 
 
-![alt text](images/instructions/00fa.png)
+![handling conflicting events](images/instructions/00fa.png)
 
 * Simply replace the strings inside the lists  ``conflictsLeft`` and ``conflictsRight`` with the ``id``'s of the events you want to squeeze to the left or to the right, respectively. If there are more than one pair of conflicting events, you want to add strings to both lists, e.g. if you also had the event "coolworkshop" coincide with the event "chemie" you would write:
 ```js 
@@ -118,14 +125,22 @@ const conflictsLeft = ["event-bigworkshop", "event-coolworkshop"]
 // Conflicts to place on the right
 const conflictsRight = ["event-musik", "event-chemie"]
 ```
+* If there are no conflicting events (first of all, congratulations on your excellent planning!), you should redefine the variables ``conflictsLeft`` and ``conflictsRight`` as empty lists:
+```js 
+// Conflicts to place on the left
+const conflictsLeft = []
+// Conflicts to place on the right
+const conflictsRight = []
+```
+
 
 ### Editing or removing the links for "More Information" and "Adding to Calendar"
 You can edit the file ``[YOUR FOLDER]/calendar-events/events-dir.html`` directly to more precisely define what appears on the white part of the modal of each event. Here are some examples.
-* If you don't have an ICS file for an event (e.g. Tag der Lehre), you will want to remove the link "Zum Kalender Hinzufügen." To do so, scroll down on the event directory file until you find the event, and **remove** the following line:
+* If you don't have an ICS file for an event (e.g. Tag der Lehre), you will want to remove the link "Zum Kalender Hinzufügen." To do so, scroll down on the event directory file until you find the event, and **remove** the following element:
 ```html
 <a class="addToCalendar" href="#0">&#x1F4C5; &nbsp; zum Kalender hinzuf&#xFC;gen (.ics)</a>
 ```
-* If an event doesn't have a pre-registration, then you can change the text "Mehr Infos & Anmeldung" to "Mehr Informationen", by **editing** the following line:
+* If an event doesn't have a pre-registration, then you can change the text "Mehr Infos & Anmeldung" to "Mehr Informationen", by **editing** the following element:
 ```html
 <a class="moreInfoLink" href="#0">&#128279; Mehr Infos & Anmeldung</a>
 ```
@@ -150,3 +165,5 @@ If you have some CSS knowledge, you can change more things about the appearance 
 <link rel="stylesheet" href="../assets/css/calendar.css" />
 ```
 * Feel free to play around with the CSS as you wish, but be careful when changing the size of any element, as the events schedule should stay responsive for mobile devices!
+
+* The same is true for the functionality of the event schedules: the functionality of all scheduules is controlled in ``/assets/js/calendarEvents.js`` - if you want to make changes, please make a copy of that file and edit ``[YOUR FOLDER]/programm_cal.html`` to link to the new file.
