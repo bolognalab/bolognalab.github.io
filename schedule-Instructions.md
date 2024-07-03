@@ -9,7 +9,7 @@
 * Install the VSCode extensions [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) and [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python). **LiveServer** helps you preview the website before it's published and Python is used to automate some processes (which you can also do yourself by spending a lot more time).
 
 ### List of events as CSV
-You need a CSV file similar to ``/themenwoche-2024/files/programm-themenwoche.csv`` that lists your events. The file should be called ``programm-themenwoche.csv``. For each event you should define:
+You need a CSV file similar to ``/themenwoche-2024/files/programm-themenwoche.csv`` that lists your events. The file should be called ``programm-themenwoche.csv`` and have the same exact columns as the example files. For each event you should define:
 
 * A short title ``short-event-name``, which should fit nicely in the rectangles of the program. After setting up the schedule, you may want to adjust the ``short-event-name`` further, so that the title takes up no more than 3 lines and the words are divided meaningfully.
 
@@ -27,7 +27,7 @@ You need a CSV file similar to ``/themenwoche-2024/files/programm-themenwoche.cs
 
 * Each event should be assigned an ``id``, e.g. "Auftaktveranstaltung" has the id ``event-auftakt`` defined in the CSV file. The ``id`` does not appear on the schedule but connects all information about the event together.
 
-* The ``web`` property, which should be the URL where more information on the event is available (see [Individual pages for each event](#individual-pages-for-each-event)). If you don't know this yet, you can use a dummy URL such as the homepage of the HU and come back to edit it later.
+* The ``web`` property, which should be the URL where more information on the event is available (see [Individual pages for each event](#individual-pages-for-each-event)). If you don't know the URL yet, you can use a dummy URL such as the homepage of the HU and come back to edit it later.
 
 * The ``category`` can be either ``event-1``, ``event-2``, ``event-3`` or ``event-4``. The colors of the event as well as the hashtag that appears on top of it is defined by the ``category`` variable. Currently, ``event-1`` is accented with pink and is assigned to #Diskussion, ``event-2`` is accented with blue and is assigned to #ImpulsFürDiePraxis and ``event-3`` is accented with orange and assigned to #Kompetenzentwicklung. To distinguish the events of the Themenwoche from "Tag der Lehre" we use the category ``event-4`` which looks different from the other 3. If you don't want to use the existing hashtags, you can change that later (See [Changing or removing the topic hashtags](#changing-or-removing-the-topic-hashtags))
 
@@ -51,13 +51,14 @@ The rest of the steps require a script editor such as VSCode.
 * In the file ``/[YOUR FOLDER]/index.html``, find the first ``<h1>`` element in the ``<body>`` and change the title of the schedule to what you would like.
 
 ### 2. &nbsp; Placing the events on the schedule
-* Open the file ``/[YOUR FOLDER]/files/csv2json.py`` and run it (this requires the Python extension as mentioned above). 
+
+* Open the file ``/[YOUR FOLDER]/files/csv2json.py`` and run it (this requires the Python extension as mentioned above). The message "json file created or updated successfully" should appear in the Python terminal, and the file ``programm-themenwoche.json`` should be generated.
 
 ![Run Python file "csv2json.py" in dedicated](images/instructions/00ca.png)
 
-The message "json file created or updated successfully" should appear in the Python terminal, and the file ``programm-themenwoche.json`` should be generated.
+**Note: if you later want to change details about the events such as titles, location, or URL (which will most certainly happen!), you will need to update your CSV file and then repeat this step! As long as the ``id`` of each event stays the same, simply running the ``csv2json.py`` script should make the changes effective without any further steps needed.**
 
-* If you cannot run Python, you'll have to create the ``programm-themenwoche.json`` file manually, which is easy but tedious and time-consuming.
+* If you cannot run Python, you'll have to create the ``programm-themenwoche.json`` file manually, which is easy but tedious and time-consuming. Also, if you do this manually, you will need to manually update the .json file and the .csv file every time you need to make small changes.
 
 * After completing this step, all your events should now appear on the schedule in the live preview.  If you see errors in the schedule or if the Python file didn't run successfully, check your CSV file for errors.
 
@@ -95,7 +96,6 @@ This step is optional but, if you choose **not** to include ICS files, you shoul
 https://github.com/bolognalab/bolognalab.github.io/assets/23509977/c04472a5-8e69-469f-a0ff-ecb0fd44b979
 
 Congratulations! The basic mechanics of your events schedule are ready! Now on to fine-tuning and updating:
-
 
 ### Setting the days of the week
 In the file ``/[YOUR FOLDER]/programm_cal.html``, find ``<div class="events">`` - inside it you will find a list of empty lists (``li``) items grouped by the day of the week. Adjust the ``datestring`` attribute of the ``li`` items as well as the text of the ``div`` element inside it to match the dates of the event.
