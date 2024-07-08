@@ -39,7 +39,7 @@
 
 /* für Einbettung der TOC-Seite mit "allen Inhalten aus dem Ordner": TOC sichtbar */
 .hiddenTOC {
-	display:block
+	display:block !important;
 }
 
 @media screen and (max-width: 980px) {
