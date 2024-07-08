@@ -1,0 +1,91 @@
+/* external hosting for styling HU content*/
+
+.tableHeading {
+	color: #003366;
+	font-weight: bold;
+}
+.tabStop {
+	margin-left: 2em;
+}
+.colorfulHeading {
+	color: #003366;
+	font-weight: bold;
+}
+.colorfulHeading2 {
+	color: #003366;
+	font-style: italic;
+}
+.colorfulHeading3 {
+	color: #575757;
+	font-weight:bold;
+}
+
+.fleximg {
+	width: 45%;
+	max-width: 300px;
+	padding-left: 1.5em;
+	float: right;
+	display: block;
+}
+.thumbnail {
+	width: 30%;
+}
+.flexp {
+	width: 55%;
+} 
+.sectionContainer {
+	overflow: auto
+}
+
+/* für Einbettung der TOC-Seite mit "allen Inhalten aus dem Ordner": TOC sichtbar */
+.hiddenTOC {
+	display:block
+}
+
+@media screen and (max-width: 980px) {
+	.fleximg {
+		width: 35%;
+	}
+	.flexp {
+		width: 65%;
+	} 
+}
+
+
+@media screen and (max-width: 736px) {
+	.fleximg {		
+		width: 100%;
+		float: none;
+		padding-bottom: 1.5em;
+		padding-left: 0;
+		margin: auto;
+	}
+	.flexp {
+		width: 100%;
+	} 
+	.thumbnail {
+	width: 100%;
+	}
+}
+
+/* iFrame fürs Hybride-Woche-Programm  */
+.wrapperScheduleTHL {
+	overflow: hidden; 
+	height: 650px
+}
+@media screen and (max-width: 600px) {
+	.wrapperScheduleTHL {
+	overflow: scroll; 
+	height: 1000px
+}
+	
+.scheduleTHL {
+	transform: scale(0.6667, 06667) translate(-25%, -25%);
+}
+
+/* hiding elements on desktop-mode */
+@media screen and (min-width: 736px) {
+	.mobileOnly {
+		display: none
+	}
+}
