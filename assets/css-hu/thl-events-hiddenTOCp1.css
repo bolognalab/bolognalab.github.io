@@ -38,7 +38,7 @@
 }
 
 /* für einzelansicht der TOC-Seite: TOC nicht sichtbar */
-.hiddenTOC {
+#hiddenTOC {
 	display:none
 }
 
