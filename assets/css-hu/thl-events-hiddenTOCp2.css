@@ -38,7 +38,7 @@
 }
 
 /* für Einbettung der TOC-Seite mit "allen Inhalten aus dem Ordner": TOC sichtbar */
-.hiddenTOC {
+#hiddenTOC {
 	display:block !important;
 }
 
