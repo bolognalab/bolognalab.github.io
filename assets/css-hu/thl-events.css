@@ -63,6 +63,12 @@
 	}
 }
 
+/* Für Gallerie */
+.galleryImage {
+	cursor: pointer;
+	}
+
+
 /* iFrame fürs Hybride-Woche-Programm  */
 .wrapperScheduleTHL {
 	overflow: hidden; 
