@@ -58,7 +58,7 @@
 }
 #closeImg:hover {
 	color: rgba(255, 255, 255, 1);
-	font-size: 2.1em;
+	font-size: 1.1em;
 }
 
 @media screen and (max-width: 736px) {
