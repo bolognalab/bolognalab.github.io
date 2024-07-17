@@ -26,11 +26,11 @@
     position: absolute;
 }
 
-.theme, .infoContainer, .mainIcon {
-    -moz-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+div.theme, div.infoContainer, img.mainIcon {
+    -moz-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease;
+    -webkit-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease;
+    -ms-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease;
+    transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease;
 }
 
 .theme > h2 {
@@ -62,10 +62,13 @@
     position: absolute;
     top: 0;
     display: none;
+    opacity: 0;
     padding: 5%;
     text-align: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
+    transition: opacity 0.6s ease;
+    -moz-trasition: opacity 0.6s ease;
 }
 
 .theme .infoContent > .narrowLeft {
@@ -76,11 +79,6 @@
 .theme .infoContent > p {
     width: 100%;
     margin-right: -20%;
-}
-
-.theme .infoContent > * {
-    opacity: 0; 
-    transition: opacity 1s ease;
 }
 
 .theme .infoContent .moreInfo {
@@ -95,42 +93,6 @@
     -webkit-clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
     clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
 }
-
-/* Hovering Transitions */
-.theme:hover {
-    width: calc(100% - 2.4em);
-    left: 0%;
-    top: 0%; 
-    z-index: 5;
-    align-items: top;
-    border-radius: 0;
-}
-
-.theme:hover > h2 {
-    height: 10%;
-}
-
-.theme:hover > .infoContainer {
-    height: 80%;
-    background-color: rgba(255,255,255,0.9);
-    z-index: 7;
-}
-
-.theme:hover > * > .infoContent {
-    z-index: 8;
-    display: flex;
-    color: #00376c
-}
-.theme:hover > * >  .mainIcon {
-    height: 80%;
-    opacity: 1;
-    z-index: 6;
-}
-
-.theme:hover .infoContent > * {
-    opacity: 1;
-}
-
 
 
 .tl, .tr {
@@ -167,3 +129,34 @@
     border-radius: 2.5em 0.5em 2.5em 0em ;
 }
 
+
+/* Hovering Transitions */
+.theme:hover {
+    width: calc(100% - 2.4em);
+    left: 0%;
+    top: 0%; 
+    z-index: 5;
+    align-items: top;
+    border-radius: 0;
+}
+
+.theme:hover > h2 {
+    height: 10%;
+}
+
+.theme:hover > .infoContainer {
+    height: 80%;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 7;
+}
+
+.theme:hover > * > .infoContent {
+    z-index: 8;
+    display: flex;
+    color: #00376c
+}
+.theme:hover > * >  .mainIcon {
+    height: 80%;
+    opacity: 1;
+    z-index: 6;
+}
