@@ -46,6 +46,10 @@
 	} 
 }
 
+/* Für Gallerie */
+.galleryImage {
+	cursor: pointer;
+	}
 
 @media screen and (max-width: 736px) {
 	.fleximg {		
