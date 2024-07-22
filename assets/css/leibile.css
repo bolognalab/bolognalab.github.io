@@ -1,3 +1,4 @@
+/* First page (4 containers) */
 .themesContainer {
     width: 80%;
     max-width: 740px;
@@ -77,23 +78,27 @@ div.theme, div.infoContainer, img.mainIcon {
     height: 2em;
 }
 .theme .infoContent > p {
-    width: 100%;
+    width: 95%;
     margin-right: -20%;
 }
 
 .theme .infoContent .moreInfo {
     margin-top: 60%;
     margin-left: -60%;
-    padding: 0.8em 3em 0.8em 2em;
+    padding: 0.8em 1.6em 0.8em 1.6em;
     background: #f59645;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #ffffff;
     border-radius: 1em;
-    -webkit-clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
-    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    /* -webkit-clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); */
 }
 
+.moreInfo > a {
+    text-decoration: none;
+    color: inherit;
+}
 
 .tl, .tr {
     top: 0%;
@@ -168,4 +173,307 @@ div.theme, div.infoContainer, img.mainIcon {
 }
 .moreInfo:hover {
     transform: scale(105%, 105%);
+}
+
+/* Individual Pages */
+.diagramContainer {
+    width: 1200px;
+    height: 80em;
+    position: relative;
+    background-color: rgb(240,240,240)
+}
+
+#fadeCover {
+    position: absolute;
+    left:0; top: 0;
+    width:100%; height:100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 5;
+    pointer-events:none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#decCircle {
+    position: absolute;
+    margin: 10% 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#decCircle > img {
+    width: 70%; 
+    aspect-ratio:1; 
+    padding: 15%;
+    opacity: 0.05;
+}
+
+.bigNode, .smallNode {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bigNode > .title {
+    border-radius: 1.5em;
+    font-size: 1.2em;
+    padding: 1em 2em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.bigNode > * {
+    transition: all 0.4s ease, border-radius 0.1s ease;
+}
+
+.bigNode > .description, .smallNode > .description {
+    background-color: rgba(255,255,255,0.9);
+    color: rgb(10,10,10);
+    font-weight:normal;
+    font-size: 0.7em;
+    padding: 1em 1em;
+    border-radius: 1em;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    opacity: 0;
+    text-align: left;
+    font-size: 0.9em;
+    border-radius: 1.5em;
+}
+
+.smallNode {
+    border-radius: 1.5em;
+    transition: all 0.4s ease;
+}
+.smallNode > * {
+    transition: all 0.4s ease, opacity 0.3s ease;
+}
+.smallNode > .title {
+    width: 3em;
+    height: 3em;
+    max-width: 3em;
+    max-height: 3em;
+    border-radius: 1.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgba(255,255,255,0);
+    text-align: center;
+}
+
+/* Hovering animations (Ind. pages)w */
+.bigNode:hover {
+    z-index: 6;
+    transform: scale(105%, 105%) translate(-50%, -25%);
+}
+
+.bigNode:hover > .title {
+    border-radius: 1.5em 1.5em 0em 0em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.bigNode:hover > .description {
+    border-radius: 0em 0em 1.5em 1.5em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.smallNode:hover {
+    z-index: 6;
+    transform: scale(105%, 105%) translate(-50%, -25%);
+}
+.smallNode:hover > * {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.smallNode:hover > .title {
+    color: rgba(255,255,255,1);
+    width: fit-content;
+    max-width: 18em;
+    height: fit-content;
+    max-height: 4em;
+    padding: 1em 1em;
+}
+
+/* exceptions: big nodes */
+#fambuero:hover {
+    transform: scale(105%, 105%) translate(-50%, -25%);
+}
+#fgb:hover {
+    transform: scale(105%, 105%) translate(-50%, -45%);
+}
+#psych:hover {
+    transform: scale(105%, 105%) translate(-50%, -70%);
+}
+#kkp:hover {
+    transform: scale(105%, 105%) translate(-50%, -65%);
+}
+#refrat:hover {
+    transform: scale(105%, 105%) translate(-50%, -36%);
+}
+#sbv:hover {
+    transform: scale(105%, 105%) translate(-50%, -65%);
+}
+#stmB:hover {
+    transform: scale(105%, 105%) translate(-50%, -65%);
+}
+/* exceptions: small nodes */
+#kagna:hover {
+    transform: scale(105%, 105%) translate(-0%, -50%);
+}
+#kfh:hover {
+    transform: scale(105%, 105%) translate(-10%, -50%);
+}
+#kff:hover {
+    transform: scale(105%, 105%) translate(-5%, -50%);
+}
+
+/* INKLUSION: BIG NODES */
+
+/* Familienbüro */
+#fambuero {
+    left: 29%; 
+    top: 18%;
+    width: 25em;
+}
+#fambuero > .title {
+    background-color: #069A32;
+}
+
+
+/* FGB */
+#fgb {
+    left: 74%; 
+    top: 28%;
+    width: 25em;
+}
+#fgb > .title {
+    background-color: #eda60d;
+}
+
+
+/* Psychologische Beratung Studierende */
+#psych {
+    left: 81%; 
+    top: 43%;
+    width: 22em;
+}
+#psych > .title {
+    background-color: #5B89B0;
+}
+
+
+/* Psychologische Beratung Beschäftigte*/
+#psychosoz{
+    left: 84%; 
+    top: 55%;
+    width: 22em;
+}
+#psychosoz > .title {
+    background-color: #004C90;
+}
+
+
+/* RefRat */
+#refrat{
+    left: 81%; 
+    top: 67%;
+    width: 22em;
+}
+#refrat > .title {
+    background-color: #822071;
+}
+
+/* Schwerbehindertenvertretung */
+#sbv{
+    left: 68%; 
+    top: 80%;
+    width: 22em;
+}
+#sbv > .title {
+    background-color: #7D6D99;
+}
+
+/* Kommission zur Konfliktprävention */
+#kkp {
+    left: 45%; 
+    top: 92%;
+    width: 29em;
+}
+#kkp > .title {
+    background-color: #069A32;
+}
+
+/* Studium mit Beeinträchtigung */
+#stmB {
+    left: 27%; 
+    top: 70%;
+    width: 22em;
+}
+#stmB > .title {
+    background-color: #eda60d;
+}
+
+
+/* INKLUSION: SMALL NODES */
+/* KFH */
+#kfh {
+    left: 10%;
+    top: 45%;
+}
+#kfh > .title {
+    background-color: rgb(80, 117, 94)
+}
+/* Kommissionsübergreifende AG Nachteilsausgleich */
+#kagna {
+    left: 15%;
+    top: 54%;
+}
+#kagna > .title {
+    background-color: rgb(162, 208, 138)
+}
+
+/* AG Barrierefreie Lehre */
+#agbfl {
+    left: 32%;
+    top: 77%;
+}
+#agbfl > .title {
+    background-color: #e3c85d
+}
+/* Kommission Barrierefreie Hochschule (KBH) */
+#kbfhs {
+    left: 22%;
+    top: 84%;
+}
+#kbfhs > .title {
+    background-color: #d3c484;
+}
+
+/* Kommission für Frauenförderung (KFF) */
+#kff {
+    left: 74%;
+    top: 18%;
+}
+#kff > .title {
+    background-color: #d48f26;
+}
+/* AG Diversität / Zentrale Frauen- und Gleichstellungsbeauftragte */
+#agdiv {
+    left: 62%;
+    top: 14%;
+}
+#agdiv > .title {
+    background-color: #d3c484;
+}
+/* Dezentrale FGB */
+#dezfgb {
+    left: 51%;
+    top: 9%;
+}
+#dezfgb > .title {
+    background-color: #d3c484;
 }
