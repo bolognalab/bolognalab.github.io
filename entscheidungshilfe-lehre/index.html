@@ -139,7 +139,11 @@
                     srHeader.innerHTML = aKey
                     srHeader.addEventListener("click", function(event){showHideInfo(event,json)})
                     srVal.classList.add("answerVal")
-                    var score = sVal[qKey][aKey]
+                    try {
+                        var score = sVal[qKey][aKey]
+                    } catch (error) {
+                        var score = "null"
+                    }
                     srVal.innerHTML = score
                     try {
                         var backgroundColor = colorMapping[score]
