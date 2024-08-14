@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entscheidungshilfe: Tabelle</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="de">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  <style>
+    th, td {
+        text-align: center;
+        min-width: 20px;
+        /* border: 0.5px dotted gray; */
+    }
+    table {
+        border-spacing: 0px;
+        margin: 20px 5px;
+    }
+    .sHeader, .rowHeader {
+        padding: 5px 7px;
+        cursor: pointer;
+        z-index: 3;
+    }
+    .clickable {
+        cursor: pointer;
+        margin: 2px 2px;
+        border: 1px solid rgb(255, 255, 255);
+        background: #cdeefc;
+    }
+    .clickable:hover {
+        background: #e7f8ff;
+    }
+    .active {
+        border: 0px;
+        background: white;
+    }
+
+    .answerKey, .answerVal {
+        padding: 5px 7px;
+    }
+    .answerKey {
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .answerKey:nth-child(4n+5), .answerVal:nth-child(4n), .sHeader {
+        border-right: 2px solid black;
+    }
+    .answerVal {
+        z-index: 1;
+        border: 1px solid rgb(255, 255, 255);
+    }
+    .blankCell {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzgnPgogIDxyZWN0IHdpZHRoPSc4JyBoZWlnaHQ9JzgnIGZpbGw9JyNmZmYnLz4KICA8cGF0aCBkPSdNMCAwTDggOFpNOCAwTDAgOFonIHN0cm9rZS13aWR0aD0nMC41JyBzdHJva2U9JyNhYWEnLz4KPC9zdmc+Cg=="); 
+        background-repeat: repeat;
+        pointer-events: none;
+    }
+    #textBox {
+        border-radius: 5px; 
+        border: solid 1px gray; 
+        width: 40%;
+        margin: 5px;
+        padding: 10px;
+        
+    }
+    #infoText {
+        color: gray;
+        margin-top: 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 0.8em;
+    }
+
+  </style>
+<script src="../assets/js/jquery.min.js"></script>
+</head>
+<body class="is-preload" lang="de">
+    <div id="textBox">
+        <p id="infoText">Klicken Sie auf eine blaue Zelle, um Details anzuzeigen...</p>
+    </div>
+
+<table class="tree" id="tRegular"></table>
+<script>
+    var questionInfo, scenarios;
+    var table = document.getElementById("tRegular")
+    var colorMapping = {
+        "-100": "#C00000",
+        "-1": "#ff8c69",
+        "0": "#FFEB84",
+        "1": "#D4DE89",
+        "2": "#A9D08E",
+    }
+
+    $.getJSON("szenarien.json", function(json){
+        questionInfo = json['questions']
+        scenarios = json['scenarios']
+        // first table row, one blank cell followed by headers
+        var firstRow = document.createElement("tr")
+        firstRow.classList.add("firstRow")
+        firstRow.append(document.createElement("th"))
+        Object.entries(scenarios).forEach(entry => {
+                var sHeader = document.createElement("th")
+                sHeader.innerHTML = entry[0]
+                sHeader.setAttribute("colspan", 4)
+                sHeader.setAttribute("id", entry[0])
+                sHeader.classList.add("sHeader", "clickable")
+                sHeader.addEventListener("click", function(event){showHideInfo(event,json)})
+                firstRow.append(sHeader)
+            })
+        table.append(firstRow)
+
+        // making rows for each "question"
+        Object.entries(questionInfo).forEach(entry=>{
+            var qKey = entry[0]
+            var qInf = entry[1]
+            var row0 = document.createElement("tr")
+            var row1 = document.createElement("tr")
+            row0.classList.add("row0")
+            row1.classList.add("row1")
+            var rowHeader = document.createElement("th")
+            rowHeader.classList.add("rowHeader", "clickable")
+            rowHeader.setAttribute("id", qKey)
+            rowHeader.setAttribute("rowspan", 2)
+            rowHeader.addEventListener("click", function(event){showHideInfo(event,json)})
+            rowHeader.innerHTML = qKey // qInf["text"]
+            row0.append(rowHeader)
+            // adding row entries for each "scenario"
+            Object.entries(scenarios).forEach(entry => {
+                var sKey = entry[0]
+                var sVal = entry[1]
+                //adding sub-cells for each possible answer and the corresponding points
+                var numAnswers = Object.keys(qInf["antworten"]).length
+                Object.entries(qInf["antworten"]).forEach(function(entry, idx){
+                    var aKey = entry[0]
+                    var aText = entry[1]
+                    srHeader = document.createElement("td")
+                    srVal = document.createElement("td")
+                    srHeader.classList.add("answerKey", "clickable")
+                    srHeader.setAttribute("id", qKey + "_" + aKey)
+                    srHeader.innerHTML = aKey
+                    srHeader.addEventListener("click", function(event){showHideInfo(event,json)})
+                    srVal.classList.add("answerVal")
+                    var score = sVal[qKey][aKey]
+                    srVal.innerHTML = score
+                    try {
+                        var backgroundColor = colorMapping[score]
+                        srVal.style.background = backgroundColor
+                        if (score=="-100"){
+                            srVal.style.color = "#ee9999"
+                        }
+                    } catch (error) {
+                        console.log("No color this score")
+                    }
+                    row0.append(srHeader)
+                    row1.append(srVal)
+                })
+                for (i=0; i<(4-numAnswers); i++){
+                    var blankCellH = document.createElement("td")
+                    blankCellH.classList.add("blankCell", "answerKey")
+                    var blankCellD = document.createElement("td")
+                    blankCellD.classList.add("blankCell", "answerVal")
+                    row0.append(blankCellH)
+                    row1.append(blankCellD)
+                }
+            })
+            table.append(row0)
+            table.append(row1)
+        })
+        })
+
+        function showHideInfo(event, json){
+            const defaultText = "Klicken Sie auf eine blaue Zelle, um Details anzuzeigen..."
+            var text
+            var targetId = event.target.id
+            var infoText = document.querySelector("#infoText")
+
+            if (event.target.className.includes("active")){
+                infoText.innerHTML = defaultText
+                infoText.style.color = "gray"
+                event.target.classList.remove("active")
+            } else {
+                try {
+                    document.getElementsByClassName("active")[0].classList.remove("active")
+                } catch (error) {
+                    
+                }
+                if (event.target.className.includes("rowHeader")){
+                    text = "<b>Frage:</b> " + json["questions"][targetId]["text"]
+                } else if (event.target.className.includes("sHeader")){
+                    text = "<b>Lehrszenario:</b> " + json["scenarios"][targetId]["name"]
+                } else if (event.target.className.includes("answerKey")){
+                    let qa = event.target.id.split("_")
+                    text = "<b>Frage:</b> " + json["questions"][qa[0]]["text"] + "<br><b>Antwort:</b> " + json["questions"][qa[0]]["antworten"][qa[1]]
+                }
+                infoText.innerHTML = text
+                infoText.style.color = "black"
+                event.target.classList.add("active")
+
+            }
+            
+            }
+            
+        
+</script>
+</body>
+</html>
