@@ -190,7 +190,7 @@
                 if (event.target.className.includes("rowHeader")){
                     text = "<b>Frage:</b> " + json["questions"][targetId]["text"]
                 } else if (event.target.className.includes("sHeader")){
-                    text = "<b>Lehrszenario:</b> " + json["scenarios"][targetId]["name"]
+                    text = "<b>Lehr-/Lernszenario:</b> " + json["scenarios"][targetId]["name"]
                 } else if (event.target.className.includes("answerKey")){
                     let qa = event.target.id.split("_")
                     text = "<b>Frage:</b> " + json["questions"][qa[0]]["text"] + "<br><b>Antwort:</b> " + json["questions"][qa[0]]["antworten"][qa[1]]
