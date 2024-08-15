@@ -199,10 +199,28 @@ div.theme, div.infoContainer, img.mainIcon {
     position: absolute;
     transform: translate(-50%, 0);
     font-size: 12px;
+    width: 4em;
+    height: 4em;
+    border-radius: 2em;
+}
+.node.big {
+    background: rgb(247, 98, 98);
+}
+.node.mid {
+    background: rgb(89, 65, 226);
+}
+.node.small {
+    background: rgb(244, 247, 112);
+}
+.node > .title {
     display: none;
 }
 
+/* activated node */
 .node.active {
+    width: fit-content;
+}
+.node.active > .title {
     display: block;
 }
 #fadeCover {

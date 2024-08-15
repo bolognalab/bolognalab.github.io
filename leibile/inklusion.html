@@ -15,7 +15,7 @@
     <div class="inner">
       <p>Registerkarten werden hier erscheinen</p>
       <div id="toggleButtons">
-        <button id="toggleBig">Anlaufstellen</button><button id="toggleMid">Kommissionen</button><button id="toggleBig">AGs</button>
+        <button id="toggleBig">Anlaufstellen</button><button id="toggleMid">Kommissionen</button><button id="toggleSmall">AGs</button>
       </div>
       <div class="diagramContainer" id="dCont1">
         <!-- decorative elements -->
@@ -126,7 +126,7 @@
       
       var angInitBig = 0
       var angInitMid = 2*Math.PI / 12
-      var angInitSmall = 2*Math.PI / 6
+      var angInitSmall = 2*Math.PI / 3
 
       var angStepBig = 2*Math.PI / numBig
       var angStepMid = 2*Math.PI / numMid
@@ -137,11 +137,17 @@
           let theta = angInitBig + i*angStepBig
           let xBig = radiusBig*Math.cos(theta) + diagramWidth/2
           let yBig = radiusBig*Math.sin(theta) + diagramWidth/2
-          let thisNode = document.createElement("p")
+          let thisNode = document.createElement("div")
+
           thisNode.classList.add("node", "big")
           thisNode.style["left"] = xBig + "px"
           thisNode.style["top"] = yBig + "px"
-          thisNode.innerHTML = entry[1]["name"]
+
+          let title = document.createElement("p")
+          title.classList.add("title")
+          title.innerHTML = entry[1]["name"]
+
+          thisNode.append(title)
           dCont1.append(thisNode)
           i += 1
       })
@@ -154,7 +160,12 @@
           thisNode.classList.add("node", "mid")
           thisNode.style["left"] = xMid + "px"
           thisNode.style["top"] = yMid + "px"
-          thisNode.innerHTML = entry[1]["name"]
+
+          let title = document.createElement("p")
+          title.classList.add("title")
+          title.innerHTML = entry[1]["name"]
+          
+          thisNode.append(title)
           dCont1.append(thisNode)
           j += 1
       })
@@ -167,7 +178,12 @@
           thisNode.classList.add("node", "small")
           thisNode.style["left"] = xSmall + "px"
           thisNode.style["top"] = ySmall + "px"
-          thisNode.innerHTML = entry[1]["name"]
+          
+          let title = document.createElement("p")
+          title.classList.add("title")
+          title.innerHTML = entry[1]["name"]
+          
+          thisNode.append(title)
           dCont1.append(thisNode)
           k += 1
       })
@@ -195,6 +211,17 @@
         else {
           activeClass = null
         }
+      })
+    }
+
+    // Hover effects
+    for (let item of document.getElementsByClassName("node")){
+      console.log(item)
+      item.addEventListener("mouseenter", function(){
+        item.classList.add("active")
+      })
+      item.addEventListener("mouseleave", function(){
+        item.classList.remove("active")
       })
     }
     </script>
