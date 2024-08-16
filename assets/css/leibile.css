@@ -176,53 +176,15 @@ div.theme, div.infoContainer, img.mainIcon {
 }
 
 /* Individual Pages */
-.inner {
-    width: 50%;
-    max-width: 1200px;
-    margin: auto;
-    border-right: solid 1px gray;
-    border-left: solid 1px gray;
-}
-.inner > * {
-    width: 90%;
+.innerWindow {
+    width: 98%;
     margin: auto;
 }
+
 #toggleButtons > * {
     margin: 10px;
 }
-.diagramContainer {
-    height: 80em;
-    position: relative;
-    background-color: rgb(240,240,240)
-}
-.node {
-    position: absolute;
-    transform: translate(-50%, 0);
-    font-size: 12px;
-    width: 4em;
-    height: 4em;
-    border-radius: 2em;
-}
-.node.big {
-    background: rgb(247, 98, 98);
-}
-.node.mid {
-    background: rgb(89, 65, 226);
-}
-.node.small {
-    background: rgb(244, 247, 112);
-}
-.node > .title {
-    display: none;
-}
 
-/* activated node */
-.node.active {
-    width: fit-content;
-}
-.node.active > .title {
-    display: block;
-}
 #fadeCover {
     position: absolute;
     left:0; top: 0;
@@ -236,48 +198,155 @@ div.theme, div.infoContainer, img.mainIcon {
 
 #decCircle {
     position: absolute;
-    margin: 10% 10%;
-    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9%;
     aspect-ratio:1;
     border-radius: 50%;
-    background-color: white;
+    background: #585858;
+    overflow: hidden;
+}
+#decCircle.activeC {
+    background: white;
+    border: 5px solid
 }
 
 #decCircle > img {
     width: 70%; 
     aspect-ratio:1; 
     padding: 15%;
-    opacity: 0.05;
+    opacity: 1;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(59deg) brightness(103%) contrast(103%);
 }
 
-/* INKLUSION: SMALL NODES */
-/* KFH */
-#kfh > .title {
-    background-color: rgb(80, 117, 94)
+#decCircle.activeC > img {
+    filter: brightness(0) saturate(100%) invert(6%) sepia(0%) saturate(1445%) hue-rotate(158deg) brightness(113%) contrast(70%);
 }
-/* Kommissionsübergreifende AG Nachteilsausgleich */
-#kagna > .title {
-    background-color: rgb(162, 208, 138)
-}
-
-/* AG Barrierefreie Lehre */
-#agbfl > .title {
-    background-color: #e3c85d
-}
-/* Kommission Barrierefreie Hochschule (KBH) */
-#kbfhs > .title {
-    background-color: #d3c484;
+.diagramContainer {
+    height: 28em;
+    position: relative;
+    background-color: rgb(240,240,240)
 }
 
-/* Kommission für Frauenförderung (KFF) */
-#kff > .title {
-    background-color: #d48f26;
+@media only screen and (min-width: 600px){
+    .innerWindow {
+        width: 95%;
+        margin: auto;
+    }
+    .innerWindow > * {
+        width: 95%;
+        margin: auto;
+    }
+    .diagramContainer {
+        height: 80em;
+        position: relative;
+        background-color: rgb(240,240,240)
+    }
 }
-/* AG Diversität / Zentrale Frauen- und Gleichstellungsbeauftragte */
 
-#agdiv > .title {
-    background-color: #d3c484;
+@media only screen and (min-width: 1200px){
+    .innerWindow {
+        width: 70%;
+        min-width: 800px;
+        max-width: 1200px;
+        border-right: solid 1px gray;
+        border-left: solid 1px gray;
+    }
 }
-#dezfgb > .title {
-    background-color: #d3c484;
+
+#invisibleNode {
+    width: 10em;
+    height: 5em;
+    pointer-events: none;
+    visibility: hidden;
 }
+
+.node {
+    margin: 2px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: calc(33% - 10px);
+    border-radius: 1em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
+}
+
+/* activated node */
+div.node.active {
+    background: white;
+    display: table;
+    z-index: 3;
+}
+div.node.outer.active {
+    transform: translate(calc(-50% + 0.5em), -50%); 
+}
+div.node.inner.active {
+    transform: translate(calc(-50% - 0.5em), -50%); 
+}
+
+.node.outer {
+    background: rgb(247, 98, 98);
+    border: 2px solid rgb(247, 98, 98)
+}
+.node.mid {
+    background: rgb(89, 65, 226);
+    border: 2px solid rgb(89, 65, 226);
+}
+.node.inner {
+    background: rgb(244, 199, 53);
+    border: 2px solid rgb(244, 199, 53);
+}
+.node > .title {
+    display: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0em 2em;
+    color: #585858
+}
+
+.node.active > .title {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 600px){
+    .node {
+        width: 3em;
+        height: 3em;
+        border-radius: 4em;
+    }
+
+    div.node.active {
+        border-radius: 8em;
+        width: 8em;
+        height: 8em;
+        background: white;
+        display: table;
+        z-index: 3;
+    }
+    div.node.outer.active, div.node.inner.active {
+        transform: translate(-50%, -50%)
+    }
+
+    .node > .title {
+        padding: 0em 0.5em;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 800px){
+    div.node.active {
+        border-radius: 10em;
+        width: 10em;
+        height: 10em;
+    }
+
+    .node > .title {
+        padding: 0em 2em;
+        font-size: 12px;
+    }
+}
+
+
+

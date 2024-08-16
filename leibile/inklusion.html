@@ -12,16 +12,16 @@
     <link rel="stylesheet" href="../assets/css/leibile.css" /> 
 	</head>
 	<body class="is-preload">
-    <div class="inner">
+    <div class="innerWindow">
       <p>Registerkarten werden hier erscheinen</p>
       <div id="toggleButtons">
-        <button id="toggleBig">Anlaufstellen</button><button id="toggleMid">Kommissionen</button><button id="toggleSmall">AGs</button>
+        <button id="toggleOuter">Anlaufstellen</button><button id="toggleMid">Kommissionen</button><button id="toggleInner">AGs</button>
       </div>
       <div class="diagramContainer" id="dCont1">
         <!-- decorative elements -->
         <div id="fadeCover"></div>
         <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div>
-        <!-- big nodes -->
+        <div id="invisibleNode"></div>
       </div>
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
@@ -38,8 +38,8 @@
             "nodes": []
           },
           "fgb": {
-            "name": "Zentrale und dezentrale Frauen- und Gleichstellungsbeauftragte (FGB)",
-            "desc": "Vertrauliche Beratung und Unterstützung in Fällen sexualisierter Belästigung, Diskriminierung und Gewalt sowie Karriereberatung für Frauen aller Statusgruppen; Beratung der Leitungsebene und Gremien in Fragen von Gleichstellung und Chancengerechtigkeit,",
+            "name": "Frauen- und Gleichstellungs-beauftragte (FGB)",
+            "desc": "Die Zentrale FGB sowie die denzentralen FGB an den Instituten bieten vertrauliche Beratung und Unterstützung in Fällen sexualisierter Belästigung, Diskriminierung und Gewalt sowie Karriereberatung für Frauen aller Statusgruppen an; Beratung der Leitungsebene und Gremien in Fragen von Gleichstellung und Chancengerechtigkeit,",
             "nodes": []
           },
           "psych": {
@@ -58,7 +58,7 @@
             "nodes": []
           },
           "sbv": {
-            "name": "Schwerbehindertenvertretung",
+            "name": "Schwerbehinderten-vertretung",
             "desc": "Interessenvertretung für schwerbehinderte und gleichgestellte Mitarbeiter*innen an der HU.",
             "nodes": []
           },
@@ -92,7 +92,7 @@
         },
         "ags": {
           "agdiv": {
-            "name": "AG Diversität/ Zentrale Frauen- und Gleichstellungsbeauftragte",
+            "name": "AG Diversität",
             "desc": "Mehr Informationen folgen.",
             "nodes": []
           },
@@ -102,7 +102,7 @@
             "nodes": []
           },
           "kagna": {
-              "name": "Kommissionsübergreifende AG Nachteilsauschleich",
+              "name": "Kommissions- übergreifende AG Nachteilsauschleich",
               "desc": "Mehr Informationen folgen.",
               "nodes": []
             }
@@ -111,82 +111,74 @@
 
       // Berechnung der Position der Pünkte
       const dCont1 = document.getElementById("dCont1")
+      var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
       var diagramWidth = dCont1.offsetWidth
       var radiusMax = 0.5 * diagramWidth * 0.9
-
-      var activeClass = null
-
-      var numBig = Object.keys(strukturen["anlaufstellen"]).length
-      var numMid = Object.keys(strukturen["kommissionen"]).length
-      var numSmall = Object.keys(strukturen["ags"]).length
-
-      var radiusBig = radiusMax * 0.75
-      var radiusMid = radiusMax * 0.5
-      var radiusSmall = radiusMax * 0.25
+      var activeClass = null // "mid"
+      var nodeWidth = document.getElementById("invisibleNode").offsetWidth, nodeHeight = document.getElementById("invisibleNode").offsetHeight
       
-      var angInitBig = 0
-      var angInitMid = 2*Math.PI / 12
-      var angInitSmall = 2*Math.PI / 3
+      var dC = document.getElementById("decCircle")
+      dC.style["top"] = diagramWidth/2 + "px"
 
-      var angStepBig = 2*Math.PI / numBig
-      var angStepMid = 2*Math.PI / numMid
-      var angStepSmall = 2*Math.PI / numSmall
 
-      var i = 0
-      Object.entries(strukturen["anlaufstellen"]).forEach(function(entry){
-          let theta = angInitBig + i*angStepBig
-          let xBig = radiusBig*Math.cos(theta) + diagramWidth/2
-          let yBig = radiusBig*Math.sin(theta) + diagramWidth/2
+      var nodes = {
+        "outer" : {
+          "struktur": "anlaufstellen",
+          "radius": radiusMax * 0.85,
+          "angInit": - 2*Math.PI / 4 // - 2*Math.PI / 2.3
+        },
+        "mid" : {
+          "struktur": "kommissionen",
+          "radius": radiusMax * 0.55,
+          "angInit": - 2*Math.PI / 4 //- 2*Math.PI / 6
+        },
+        "inner" : {
+          "struktur": "ags",
+          "radius": radiusMax * 0.3,
+          "angInit": - 2*Math.PI / 4 // - 2*Math.PI / 12
+        },
+      }
+
+      Object.entries(nodes).forEach(function(nodeEntry, j){
+        let category = strukturen[nodeEntry[1]["struktur"]]
+        let radius = nodeEntry[1]["radius"]
+        let angInit = nodeEntry[1]["angInit"]
+        console.log(category)
+        let num = Object.keys(category).length
+        let angStep = 2*Math.PI / num
+        
+        Object.entries(category).forEach(function(catEntry, i){
+          let theta = angInit + i*angStep
+          
           let thisNode = document.createElement("div")
+          thisNode.classList.add("node", nodeEntry[0])
 
-          thisNode.classList.add("node", "big")
-          thisNode.style["left"] = xBig + "px"
-          thisNode.style["top"] = yBig + "px"
-
+          let x, y
+          if (window.innerWidth > thresholdWidth){
+            x = (radius*Math.cos(theta) + diagramWidth/2)+"px"
+            y = (radius*Math.sin(theta) + diagramWidth/2)+"px"
+          } else {
+            let nodeHeight = dCont1.offsetHeight/num 
+            x = ["16.667%", "50%", "83.333%"][j]
+            y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
+            thisNode.style.height = (nodeHeight-10)+"px"
+          }
+          thisNode.style["left"] = x 
+          thisNode.style["top"]  = y 
+          thisNode.setAttribute("r", radius)
+          thisNode.setAttribute("theta", theta)
+          thisNode.setAttribute("theta_init", angInit)
           let title = document.createElement("p")
           title.classList.add("title")
-          title.innerHTML = entry[1]["name"]
-
+          title.innerHTML = catEntry[1]["name"]
           thisNode.append(title)
           dCont1.append(thisNode)
-          i += 1
+        })
       })
-      var j = 0
-      Object.entries(strukturen["kommissionen"]).forEach(function(entry){
-          let theta = angInitMid + j*angStepMid
-          let xMid = radiusMid*Math.cos(theta) + diagramWidth/2
-          let yMid = radiusMid*Math.sin(theta) + diagramWidth/2
-          let thisNode = document.createElement("p")
-          thisNode.classList.add("node", "mid")
-          thisNode.style["left"] = xMid + "px"
-          thisNode.style["top"] = yMid + "px"
-
-          let title = document.createElement("p")
-          title.classList.add("title")
-          title.innerHTML = entry[1]["name"]
-          
-          thisNode.append(title)
-          dCont1.append(thisNode)
-          j += 1
-      })
-      var k = 0
-      Object.entries(strukturen["ags"]).forEach(function(entry){
-          let theta = angInitSmall + k*angStepSmall
-          let xSmall = radiusSmall*Math.cos(theta) + diagramWidth/2
-          let ySmall = radiusSmall*Math.sin(theta) + diagramWidth/2
-          let thisNode = document.createElement("p")
-          thisNode.classList.add("node", "small")
-          thisNode.style["left"] = xSmall + "px"
-          thisNode.style["top"] = ySmall + "px"
-          
-          let title = document.createElement("p")
-          title.classList.add("title")
-          title.innerHTML = entry[1]["name"]
-          
-          thisNode.append(title)
-          dCont1.append(thisNode)
-          k += 1
-      })
+    // // for testing: pre-activate a set of nodes by setting activeClass
+    // for (let node of document.getElementsByClassName(activeClass)){
+    //   node.classList.add("active")
+    // }
 
     // Button/Tab functionalities
     for (let item of document.getElementById("toggleButtons").children){
@@ -196,15 +188,40 @@
         // clear all to start with, in either case
         for(let node of allNodes){
             if (node.classList.contains("active")){
+              let xOrig = (node.getAttribute("r") * Math.cos(node.getAttribute("theta")) + diagramWidth/2) + "px"
+              let yOrig = (node.getAttribute("r") * Math.sin(node.getAttribute("theta")) + diagramWidth/2) + "px"
+              node.style["left"] = xOrig
+              node.style["top"] = yOrig
               node.classList.remove("active")
             }
           }
+          dC.classList.remove("activeC")
         // activate nodes if they were hidden before
         let theseNodes = document.getElementsByClassName(class_id)
         if (activeClass != class_id){
-
           for(let node of theseNodes){
+            console.log(node.getAttribute("r"), node.offsetWidth, radiusMax)
+            if (window.innerWidth > thresholdWidth){
+              let rNew
+              let thetaNew = node.getAttribute("theta") - node.getAttribute("theta_init")
+              if (node.getAttribute("r") < 2*node.offsetWidth + dC.offsetWidth*0.8){
+                rNew = 2*node.offsetWidth + dC.offsetWidth*0.8
+              } else if (node.getAttribute("r") > radiusMax - node.offsetWidth){
+                console.log('too big')
+                rNew = radiusMax - node.offsetWidth
+                // rNew = node.getAttribute("r")
+              } else {
+                rNew = node.getAttribute("r")
+              }
+              
+              let xNew = (rNew*Math.cos(thetaNew) + diagramWidth/2)+"px"
+              let yNew = (rNew*Math.sin(thetaNew) + diagramWidth/2)+"px"
+
+              node.style["left"] = xNew
+              node.style["top"] = yNew
+            }
             node.classList.add("active")
+            dC.classList.add("activeC")
           }
           activeClass = class_id
         }
@@ -214,16 +231,76 @@
       })
     }
 
-    // Hover effects
+    // Hover and click effects
     for (let item of document.getElementsByClassName("node")){
-      console.log(item)
       item.addEventListener("mouseenter", function(){
-        item.classList.add("active")
+        if (!activeClass){
+          item.classList.add("active")
+        }
       })
       item.addEventListener("mouseleave", function(){
-        item.classList.remove("active")
+        if (!activeClass){
+          item.classList.remove("active")
+        }
+        
       })
     }
+
+    var n1 = document.getElementsByClassName(activeClass)[1]
+    var n0 = document.getElementsByClassName(activeClass)[0]
+    var n2 = document.getElementsByClassName(activeClass)[2]
+    // position optimization functions
+    function getPositionArguments(n){
+      let result = {
+        "node": n,
+        "x": n.style.left.split("px")[0],
+        "y": n.style.top.split("px")[0],
+        "r": n.getAttribute("r"),
+      }
+      result["theta_temp"] = Math.acos((result["x"]-diagramWidth/2)/result["r"])
+      result["left"] = result["x"] - nodeWidth/2
+      result["right"] = result["x"] + nodeWidth/2
+      result["top"] = result["y"] - nodeHeight/2
+      result["bottom"] = result["y"] + nodeHeight/2
+
+      return result
+    }
+
+    function makeActive(class_id){
+      
+    }
+    makeActive("outer")
+
+    // function getLine(start, end){
+    //   let startNode = getPositionArguments(start)
+    //   let endNode = getPositionArguments(end)
+
+    //   let slope = (endNode.y-startNode.y)/(endNode.x-startNode.x)
+    //   let intercept = startNode.y - slope * startNode.x
+    //   // calculate line between centers of nodes
+    //   return {"slope": slope, "intercept": intercept}
+    // }
+
+    // function getIntersectionPoints(start, end){
+    //   let startNode = getPositionArguments(start)
+    //   let endNode = getPositionArguments(end)
+
+    //   let line = getLine(start, end)
+      
+    //   //chosing which sides to check
+    //   if (startNode.x < endNode.x){
+    //     startSideX = "right"; endSideX = "left"
+    //   } else {
+    //     startSideX = "left"; endSideX = "right"
+    //   }
+      
+    //   if (startNode.y < endNode.y){
+
+    //   }
+    // }
+
+    // l01 = getLine(n1, n0)
+    // l12 = getLine(n1, n2)
     </script>
 	</body>
 </html>
