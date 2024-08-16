@@ -205,10 +205,11 @@ div.theme, div.infoContainer, img.mainIcon {
     border-radius: 50%;
     background: #585858;
     overflow: hidden;
+    display: none;
 }
 #decCircle.activeC {
     background: white;
-    border: 5px solid
+    border: 5px solid;
 }
 
 #decCircle > img {
@@ -242,6 +243,9 @@ div.theme, div.infoContainer, img.mainIcon {
         position: relative;
         background-color: rgb(240,240,240)
     }
+    #decCircle {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 1200px){
@@ -264,25 +268,35 @@ div.theme, div.infoContainer, img.mainIcon {
 .node {
     margin: 2px;
     position: absolute;
-    transform: translate(-50%, -50%);
     width: calc(33% - 10px);
     border-radius: 1em;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
+    overflow: show;
+}
+.node.outer {
+    transform: translate(0, -50%);
+}
+.node.mid {
+    transform: translate(-50%, -50%)
+}
+.node.inner {
+    transform: translate(-100%, -50%)
 }
 
 /* activated node */
 div.node.active {
+    width: 40%;
     background: white;
     display: table;
     z-index: 3;
 }
-div.node.outer.active {
+/* div.node.outer.active {
     transform: translate(calc(-50% + 0.5em), -50%); 
 }
 div.node.inner.active {
     transform: translate(calc(-50% - 0.5em), -50%); 
-}
+} */
 
 .node.outer {
     background: rgb(247, 98, 98);
@@ -316,7 +330,10 @@ div.node.inner.active {
         height: 3em;
         border-radius: 4em;
     }
-
+    .node.outer, .node.mid, .node.inner {
+        transform: translate(-50%, -50%)
+    }
+    
     div.node.active {
         border-radius: 8em;
         width: 8em;
@@ -324,10 +341,11 @@ div.node.inner.active {
         background: white;
         display: table;
         z-index: 3;
-    }
-    div.node.outer.active, div.node.inner.active {
         transform: translate(-50%, -50%)
     }
+    /* div.node.outer.active, div.node.inner.active {
+        transform: translate(-50%, -50%)
+    } */
 
     .node > .title {
         padding: 0em 0.5em;

@@ -125,17 +125,17 @@
         "outer" : {
           "struktur": "anlaufstellen",
           "radius": radiusMax * 0.85,
-          "angInit": - 2*Math.PI / 4 // - 2*Math.PI / 2.3
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 2.3
         },
         "mid" : {
           "struktur": "kommissionen",
           "radius": radiusMax * 0.55,
-          "angInit": - 2*Math.PI / 4 //- 2*Math.PI / 6
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 6
         },
         "inner" : {
           "struktur": "ags",
           "radius": radiusMax * 0.3,
-          "angInit": - 2*Math.PI / 4 // - 2*Math.PI / 12
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
         },
       }
 
@@ -159,7 +159,7 @@
             y = (radius*Math.sin(theta) + diagramWidth/2)+"px"
           } else {
             let nodeHeight = dCont1.offsetHeight/num 
-            x = ["16.667%", "50%", "83.333%"][j]
+            x = ["0%", "50%", "100%"][j]
             y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
             thisNode.style.height = (nodeHeight-10)+"px"
           }
@@ -181,17 +181,18 @@
     // }
 
     // Button/Tab functionalities
-    for (let item of document.getElementById("toggleButtons").children){
-      item.addEventListener("click", function(){
-        let class_id = this.id.split("toggle")[1].toLowerCase()
-        let allNodes = document.getElementsByClassName("node")
+    function toggleNodes(class_id){
+      let allNodes = document.getElementsByClassName("node")
         // clear all to start with, in either case
         for(let node of allNodes){
             if (node.classList.contains("active")){
-              let xOrig = (node.getAttribute("r") * Math.cos(node.getAttribute("theta")) + diagramWidth/2) + "px"
-              let yOrig = (node.getAttribute("r") * Math.sin(node.getAttribute("theta")) + diagramWidth/2) + "px"
-              node.style["left"] = xOrig
-              node.style["top"] = yOrig
+              if (window.innerWidth > thresholdWidth){
+                let xOrig = (node.getAttribute("r") * Math.cos(node.getAttribute("theta")) + diagramWidth/2) + "px"
+                let yOrig = (node.getAttribute("r") * Math.sin(node.getAttribute("theta")) + diagramWidth/2) + "px"
+                node.style["left"] = xOrig
+                node.style["top"] = yOrig
+              }
+
               node.classList.remove("active")
             }
           }
@@ -219,15 +220,28 @@
 
               node.style["left"] = xNew
               node.style["top"] = yNew
+            } else {
+              if (node.classList.contains("outer")){
+                node.style["left"] = "0%"
+                node.style["transform"] = "translate(0, -50%)"
+              }
             }
             node.classList.add("active")
             dC.classList.add("activeC")
+            console.log(node.style["background"])
+            dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
           }
           activeClass = class_id
         }
         else {
           activeClass = null
         }
+    }
+
+    for (let item of document.getElementById("toggleButtons").children){
+      item.addEventListener("click", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        toggleNodes(class_id)
       })
     }
 
@@ -246,7 +260,7 @@
       })
     }
 
-    var n1 = document.getElementsByClassName(activeClass)[1]
+    var n1 = document.getElementsByClassName("outer")[1]
     var n0 = document.getElementsByClassName(activeClass)[0]
     var n2 = document.getElementsByClassName(activeClass)[2]
     // position optimization functions
@@ -265,11 +279,6 @@
 
       return result
     }
-
-    function makeActive(class_id){
-      
-    }
-    makeActive("outer")
 
     // function getLine(start, end){
     //   let startNode = getPositionArguments(start)
