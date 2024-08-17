@@ -13,13 +13,13 @@
 	</head>
 	<body class="is-preload">
     <div class="innerWindow">
-      <p>Registerkarten werden hier erscheinen</p>
+      <div id="fadeCover"></div>
       <div id="toggleButtons">
-        <button id="toggleOuter">Anlaufstellen</button><button id="toggleMid">Kommissionen</button><button id="toggleInner">AGs</button>
+        <div id="toggleOuter">Anlaufstellen</div><div id="toggleMid">Kommissionen</div><div id="toggleInner">AGs</div>
       </div>
       <div class="diagramContainer" id="dCont1">
         <!-- decorative elements -->
-        <div id="fadeCover"></div>
+        <div id="closeBtn"><p>&#10006;</p></div>
         <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div>
         <div id="invisibleNode"></div>
       </div>
@@ -36,93 +36,100 @@
           "fambuero": {
             "name": "Familienbüro",
             "desc": "Zentrale Koordinations- und Anlaufstelle für das Thema Familiengerechtigkeit an der HU. Das Familienbüro treibt die Weiterentwicklung und Umsetzung eines systematischen Gesamtkonzepts zur Verbesserung der Familienfreundlichkeit der HU voran. Neben der statusgruppenübergreifenden Beratung zu allen Aspekten der Vereinbarkeit von Beruf bzw. Studium und Familie zählt hierzu die hochschulinterne Informationspolitik zum Thema, die Beförderung der Umsetzung des Nachteilsausgleichs, die Weiterentwicklung von Kinderbetreuungsmöglichkeiten sowie der Ausbau der familiengerechten Infrastruktur der Hochschule. Das Familienbüro ist Geschäftsstelle der Kommission Familiengerechte Hochschule (KFH) und Projektleitung des Audit Famliengerechte Hochschule.",
-            "nodes": []
+            "connections": []
           },
           "fgb": {
-            "name": "Frauen- und Gleichstellungs-beauftragte (FGB)",
+            "name": "Frauen- und Gleichstellungsbeauftragte (FGB)",
+            "wordBreak": "Frauen- und Gleichstellungs-beauftragte (FGB)",
             "desc": "Die Zentrale FGB sowie die denzentralen FGB an den Instituten bieten vertrauliche Beratung und Unterstützung in Fällen sexualisierter Belästigung, Diskriminierung und Gewalt sowie Karriereberatung für Frauen aller Statusgruppen an; Beratung der Leitungsebene und Gremien in Fragen von Gleichstellung und Chancengerechtigkeit,",
-            "nodes": []
+            "connections": []
           },
           "psych": {
             "name": "Psychologische Beratung für Studierende",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           },
           "psychosoz": {
             "name": "Psychosoziale Beratung für Beschäftigte",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           },
           "refrat": {
             "name": "Beratung des RefRats",
             "desc": "u.a. zu den Themen Antidiskriminierung, Behinderung/chronische Erkrankung - Enthinderung, Studieren mit Kind(ern), Sexistische Belästigung und Übergriffe: https://www.refrat.de/beratung.html",
-            "nodes": []
+            "connections": []
           },
           "sbv": {
-            "name": "Schwerbehinderten-vertretung",
+            "name": "Schwerbehindertenvertretung",
+            "wordBreak": "Schwerbehinderten-vertretung",
             "desc": "Interessenvertretung für schwerbehinderte und gleichgestellte Mitarbeiter*innen an der HU.",
-            "nodes": []
+            "connections": []
           },
           "stmB": {
             "name": "Studium mit Beeinträchtigung",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           },
         },
         "kommissionen":{
           "kfh": {
             "name": "Kommission Familiengerechte Hochschule (KFH)",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           },
           "kbfhs": {
             "name": "Kommission Barrierefreie Hochschule (KBH)",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           },
           "kff": {
             "name": "Kommission für Frauenförderung (KFF)",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           },
           "kkp": {
             "name": "Kommission zur Konfliktprävention",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           }
         },
         "ags": {
           "agdiv": {
             "name": "AG Diversität",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           },
           "agbfl": {
             "name": "AG barrierefreie Lehre",
             "desc": "Mehr Informationen folgen.",
-            "nodes": []
+            "connections": []
           },
           "kagna": {
-              "name": "Kommissions- übergreifende AG Nachteilsauschleich",
+              "name": "Kommissionsübergreifende AG Nachteilsauschleich",
+              "wordBreak": "Kommissions- übergreifende AG Nachteilsauschleich",
               "desc": "Mehr Informationen folgen.",
-              "nodes": []
+              "connections": []
             }
         }
       }
 
       // Berechnung der Position der Pünkte
       const dCont1 = document.getElementById("dCont1")
+      const closeBtn = document.getElementById("closeBtn")
       var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
 
       var diagramWidth = dCont1.offsetWidth
       var radiusMax = 0.5 * diagramWidth * 0.9
-      var activeClass = null // "mid"
+      var activeClass = null
+      var openNode = null
+      var oldPos
       var inactiveNodeWidth=100, inactiveNodeHeight=100
       var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
       
       var dC = document.getElementById("decCircle")
       dC.style["top"] = diagramWidth/2 + "px"
 
+      
 
       var nodes = {
         "outer" : {
@@ -167,15 +174,29 @@
             thisNode.style["left"] = x 
             thisNode.style["top"]  = y 
           }
-
+          thisNode.setAttribute("id", catEntry[0])
+          thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
           thisNode.setAttribute("r", radius)
           thisNode.setAttribute("theta", theta)
           thisNode.setAttribute("theta_init", angInit)
           thisNode.setAttribute("idx", [j,i])
-          let title = document.createElement("p")
+          thisNode.setAttribute("num", num)
+
+          let title = document.createElement("h")
           title.classList.add("title")
-          title.innerHTML = catEntry[1]["name"]
+          if (catEntry[1].hasOwnProperty("wordBreak")){
+            title.innerHTML = catEntry[1]["wordBreak"]
+          } else {
+            title.innerHTML = catEntry[1]["name"]
+          }
+          
+
+          let details = document.createElement("p")
+          details.classList.add("details")
+          details.innerHTML = catEntry[1]["desc"]
+
           thisNode.append(title)
+          thisNode.append(details)
           dCont1.append(thisNode)
           if (j==0){
           inactiveNodeWidth = thisNode.offsetWidth
@@ -191,6 +212,21 @@
 
     // Button/Tab functionalities
     function toggleNodes(class_id){
+      for (let tab of document.getElementById("toggleButtons").children){
+        let tabClass = tab.id.split("toggle")[1].toLowerCase()
+        if (tab.classList.contains("activeC")){
+          tab.classList.remove("activeC")
+        }
+        if (tabClass==class_id){
+          if (!activeClass | activeClass != class_id){
+            tab.classList.add("activeC")
+          } else {
+            tab.classList.remove("activeC")
+          }
+          
+        }
+      }
+
       let allNodes = document.getElementsByClassName("node")
         // clear all to start with, in either case
         for(let node of allNodes){
@@ -201,10 +237,8 @@
               node.classList.remove("active")
             }
             // minimize non-active modes
-            console.log(class_id, activeClass)
             if (class_id != activeClass & !(node.classList.contains(class_id))){
               node.classList.add("minimized")
-              console.log(node)
             }
           }
           dC.classList.remove("activeC")
@@ -214,29 +248,21 @@
           for(let node of theseNodes){
             node.classList.remove("minimized")
             if (window.innerWidth > thresholdWidth){
-              console.log(node.offsetWidth)
+              
               let rNew
               let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
               if (node.getAttribute("r") < 2*inactiveNodeWidth + dC.offsetWidth*0.8){
                 rNew = 2*inactiveNodeWidth + dC.offsetWidth*0.8
               } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
-                console.log('too big')
                 rNew = radiusMax - inactiveNodeWidth
                 // rNew = node.getAttribute("r")
               } else {
                 rNew = node.getAttribute("r")
               }
               updateCoordinatesPolar(node, rNew, thetaNew)
-            } else {
-              if (node.classList.contains("outer")){
-                node.style["left"] = "0%"
-                node.style["transform"] = "translate(0, -50%)"
-              }
-            }
-            
+            }             
             node.classList.add("active")
             dC.classList.add("activeC")
-            console.log(node.style["background"])
             dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
           }
           activeClass = class_id
@@ -247,6 +273,7 @@
           }
           activeClass = null
         }
+      
     }
 
     for (let item of document.getElementById("toggleButtons").children){
@@ -257,26 +284,105 @@
     }
 
     // Hover and click effects
+    function openNodeW(node){
+      // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
+      document.getElementById("fadeCover").style["display"] = "block"
+      document.getElementById("fadeCover").style["opacity"] = "0.8"
+      openNode = node.id
+      node.classList.add("opened")
+      let x = node.style["left"]
+      let y = node.style["top"]
+      if (window.innerWidth > thresholdWidth){
+        node.style["left"] = (diagramWidth/2)+"px"
+        node.style["top"] = (diagramWidth/2)+"px"
+      } else {
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        node.style["top"] = (dCont1.offsetHeight/2) + "px"
+        node.style["height"] = "fit-content"
+      }
+
+      if (window.innerWidth > thresholdWidth){
+        // adjust title if word-break version was used
+        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+
+      
+      dCont1.removeChild(closeBtn)
+      node.append(closeBtn)
+      setTimeout(function(){
+        // closeBtn.style["left"] = "calc("+ (dCont1.offsetWidth/2) + "px + 30% + 1.5em)"
+        // closeBtn.style["top"] = (dCont1.offsetHeight/2) + "px"
+        closeBtn.style.visibility="visible"
+        closeBtn.style.opacity="1"
+      }, 500)
+      return [x, y]
+      }
+      
+    function closeNodeW(node){
+      node.classList.remove("opened")
+      node.classList.add("closing")
+      node.style["left"] = oldPos[0]
+      node.style["top"] = oldPos[1]
+
+      if (!(window.innerWidth > thresholdWidth)){
+        node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
+      }
+
+      // adjust title if word-break version was used
+      if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+      }
+      
+
+      document.getElementById("fadeCover").style["opacity"] = "0"
+      document.getElementById("fadeCover").style["display"] = "none"
+      
+      node.removeChild(closeBtn)
+      dCont1.appendChild(closeBtn)
+      closeBtn.style.visibility="hidden"
+      closeBtn.style.opacity="0"
+      openNode = null
+      setTimeout(function(){
+        if (!(node.classList.contains(activeClass))){
+          node.classList.remove("active")
+        }
+        setTimeout(function(){
+          node.classList.remove("closing")
+        },400)
+      }, 100)
+      }
+      
     for (let item of document.getElementsByClassName("node")){
-      item.addEventListener("mouseenter", function(){
-        if (!activeClass){
-          item.classList.add("active")
-        }
-      })
-      item.addEventListener("mouseleave", function(){
-        if (!activeClass){
-          item.classList.remove("active")
-        }
-      })
+      // item.addEventListener("mouseenter", function(){
+      //   if (!activeClass){
+      //     item.classList.add("active")
+      //   }
+      // })
+      // item.addEventListener("mouseleave", function(){
+      //   if (!activeClass){
+      //     item.classList.remove("active")
+      //   }
+      // })
       item.addEventListener("click", function(){
-        if (!(item.classList.contains("active"))){
+        // special case - clicking a minimized node activates the whole class
+        if (item.classList.contains("minimized")){
+          let class_id = item.classList[1]
+          toggleNodes(class_id)
+        } else {
+          if (!(item.classList.contains("active"))){
           item.classList.add("active")
+          }
+          if (!openNode & !(item.classList.contains("closing"))){
+            oldPos = openNodeW(item)
+          } 
         }
-        if (!openClass){
-          item.classList.add("opened")
-        }
+        
       })
     }
+    closeBtn.addEventListener("click", function(){
+      let nodeToClose = closeBtn.parentElement
+      closeNodeW(nodeToClose)
+    })
 
     var n1 = document.getElementsByClassName("outer")[1]
     var n0 = document.getElementsByClassName(activeClass)[0]
