@@ -29,6 +29,7 @@
     <script src="../assets/js/breakpoints.min.js"></script>
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
     <script>
       const strukturen = {
         "anlaufstellen": {
@@ -112,10 +113,12 @@
       // Berechnung der Position der Pünkte
       const dCont1 = document.getElementById("dCont1")
       var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
+
       var diagramWidth = dCont1.offsetWidth
       var radiusMax = 0.5 * diagramWidth * 0.9
       var activeClass = null // "mid"
-      var nodeWidth = document.getElementById("invisibleNode").offsetWidth, nodeHeight = document.getElementById("invisibleNode").offsetHeight
+      var inactiveNodeWidth=100, inactiveNodeHeight=100
+      var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
       
       var dC = document.getElementById("decCircle")
       dC.style["top"] = diagramWidth/2 + "px"
@@ -125,17 +128,17 @@
         "outer" : {
           "struktur": "anlaufstellen",
           "radius": radiusMax * 0.85,
-          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 2.3
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
         },
         "mid" : {
           "struktur": "kommissionen",
           "radius": radiusMax * 0.55,
-          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 6
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 24
         },
         "inner" : {
           "struktur": "ags",
           "radius": radiusMax * 0.3,
-          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
+          "angInit": - 2*Math.PI / 4 + 2*Math.PI / 12
         },
       }
 
@@ -143,7 +146,7 @@
         let category = strukturen[nodeEntry[1]["struktur"]]
         let radius = nodeEntry[1]["radius"]
         let angInit = nodeEntry[1]["angInit"]
-        console.log(category)
+        
         let num = Object.keys(category).length
         let angStep = 2*Math.PI / num
         
@@ -155,30 +158,36 @@
 
           let x, y
           if (window.innerWidth > thresholdWidth){
-            x = (radius*Math.cos(theta) + diagramWidth/2)+"px"
-            y = (radius*Math.sin(theta) + diagramWidth/2)+"px"
+            updateCoordinatesPolar(thisNode, radius, theta)
           } else {
             let nodeHeight = dCont1.offsetHeight/num 
             x = ["0%", "50%", "100%"][j]
             y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
             thisNode.style.height = (nodeHeight-10)+"px"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
           }
-          thisNode.style["left"] = x 
-          thisNode.style["top"]  = y 
+
           thisNode.setAttribute("r", radius)
           thisNode.setAttribute("theta", theta)
           thisNode.setAttribute("theta_init", angInit)
+          thisNode.setAttribute("idx", [j,i])
           let title = document.createElement("p")
           title.classList.add("title")
           title.innerHTML = catEntry[1]["name"]
           thisNode.append(title)
           dCont1.append(thisNode)
+          if (j==0){
+          inactiveNodeWidth = thisNode.offsetWidth
+          inactiveNodeHeight = thisNode.offsetHeight
+        }
         })
       })
-    // // for testing: pre-activate a set of nodes by setting activeClass
-    // for (let node of document.getElementsByClassName(activeClass)){
-    //   node.classList.add("active")
-    // }
+
+    function updateCoordinatesPolar(node, r, theta){
+      node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
+      node.style["top"] = (r * Math.sin(theta) + diagramWidth/2) + "px"
+    }
 
     // Button/Tab functionalities
     function toggleNodes(class_id){
@@ -187,13 +196,15 @@
         for(let node of allNodes){
             if (node.classList.contains("active")){
               if (window.innerWidth > thresholdWidth){
-                let xOrig = (node.getAttribute("r") * Math.cos(node.getAttribute("theta")) + diagramWidth/2) + "px"
-                let yOrig = (node.getAttribute("r") * Math.sin(node.getAttribute("theta")) + diagramWidth/2) + "px"
-                node.style["left"] = xOrig
-                node.style["top"] = yOrig
+                updateCoordinatesPolar(node, node.getAttribute("r"), node.getAttribute("theta"))
               }
-
               node.classList.remove("active")
+            }
+            // minimize non-active modes
+            console.log(class_id, activeClass)
+            if (class_id != activeClass & !(node.classList.contains(class_id))){
+              node.classList.add("minimized")
+              console.log(node)
             }
           }
           dC.classList.remove("activeC")
@@ -201,31 +212,28 @@
         let theseNodes = document.getElementsByClassName(class_id)
         if (activeClass != class_id){
           for(let node of theseNodes){
-            console.log(node.getAttribute("r"), node.offsetWidth, radiusMax)
+            node.classList.remove("minimized")
             if (window.innerWidth > thresholdWidth){
+              console.log(node.offsetWidth)
               let rNew
-              let thetaNew = node.getAttribute("theta") - node.getAttribute("theta_init")
-              if (node.getAttribute("r") < 2*node.offsetWidth + dC.offsetWidth*0.8){
-                rNew = 2*node.offsetWidth + dC.offsetWidth*0.8
-              } else if (node.getAttribute("r") > radiusMax - node.offsetWidth){
+              let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
+              if (node.getAttribute("r") < 2*inactiveNodeWidth + dC.offsetWidth*0.8){
+                rNew = 2*inactiveNodeWidth + dC.offsetWidth*0.8
+              } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
                 console.log('too big')
-                rNew = radiusMax - node.offsetWidth
+                rNew = radiusMax - inactiveNodeWidth
                 // rNew = node.getAttribute("r")
               } else {
                 rNew = node.getAttribute("r")
               }
-              
-              let xNew = (rNew*Math.cos(thetaNew) + diagramWidth/2)+"px"
-              let yNew = (rNew*Math.sin(thetaNew) + diagramWidth/2)+"px"
-
-              node.style["left"] = xNew
-              node.style["top"] = yNew
+              updateCoordinatesPolar(node, rNew, thetaNew)
             } else {
               if (node.classList.contains("outer")){
                 node.style["left"] = "0%"
                 node.style["transform"] = "translate(0, -50%)"
               }
             }
+            
             node.classList.add("active")
             dC.classList.add("activeC")
             console.log(node.style["background"])
@@ -234,6 +242,9 @@
           activeClass = class_id
         }
         else {
+          for (let node of allNodes){
+            node.classList.remove("minimized")
+          }
           activeClass = null
         }
     }
@@ -256,7 +267,14 @@
         if (!activeClass){
           item.classList.remove("active")
         }
-        
+      })
+      item.addEventListener("click", function(){
+        if (!(item.classList.contains("active"))){
+          item.classList.add("active")
+        }
+        if (!openClass){
+          item.classList.add("opened")
+        }
       })
     }
 
@@ -272,10 +290,10 @@
         "r": n.getAttribute("r"),
       }
       result["theta_temp"] = Math.acos((result["x"]-diagramWidth/2)/result["r"])
-      result["left"] = result["x"] - nodeWidth/2
-      result["right"] = result["x"] + nodeWidth/2
-      result["top"] = result["y"] - nodeHeight/2
-      result["bottom"] = result["y"] + nodeHeight/2
+      result["left"] = result["x"] - activeNodeWidth/2
+      result["right"] = result["x"] + activeNodeWidth/2
+      result["top"] = result["y"] - activeNodeHeight/2
+      result["bottom"] = result["y"] + activeNodeHeight/2
 
       return result
     }

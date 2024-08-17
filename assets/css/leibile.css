@@ -226,7 +226,7 @@ div.theme, div.infoContainer, img.mainIcon {
 .diagramContainer {
     height: 28em;
     position: relative;
-    background-color: rgb(240,240,240)
+    background-color: rgb(242, 254, 253)
 }
 
 @media only screen and (min-width: 600px){
@@ -241,7 +241,6 @@ div.theme, div.infoContainer, img.mainIcon {
     .diagramContainer {
         height: 80em;
         position: relative;
-        background-color: rgb(240,240,240)
     }
     #decCircle {
         display: block;
@@ -258,13 +257,28 @@ div.theme, div.infoContainer, img.mainIcon {
     }
 }
 
+/* invisible node (stable size reference) */
 #invisibleNode {
     width: 10em;
     height: 5em;
     pointer-events: none;
     visibility: hidden;
 }
+@media only screen and (min-width: 600px){
+    #invisibleNode {
+        width: 8em;
+        height: 8em;
+    }
+}
+@media only screen and (min-width: 800px){
+    #invisibleNode {
+        width: 10em;
+        height: 10em;
+    }
 
+}
+
+/* all nodes */
 .node {
     margin: 2px;
     position: absolute;
@@ -272,16 +286,32 @@ div.theme, div.infoContainer, img.mainIcon {
     border-radius: 1em;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, background 0.5s ease;
-    overflow: show;
+    display: table
 }
 .node.outer {
     transform: translate(0, -50%);
+    background: rgb(247, 98, 98);
+    border: 2px solid rgb(247, 98, 98)
 }
 .node.mid {
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    background: rgb(89, 65, 226);
+    border: 2px solid rgb(89, 65, 226);
 }
 .node.inner {
-    transform: translate(-100%, -50%)
+    transform: translate(-100%, -50%);
+    background: rgb(244, 199, 53);
+    border: 2px solid rgb(244, 199, 53);
+}
+
+.node > .title {
+    width: 100%;
+    font-size: 12px;
+    display: none;    
+    vertical-align: middle;
+    text-align: center;
+    padding: 0em 0em;
+    color: #ffffff;
 }
 
 /* activated node */
@@ -291,37 +321,26 @@ div.node.active {
     display: table;
     z-index: 3;
 }
-/* div.node.outer.active {
-    transform: translate(calc(-50% + 0.5em), -50%); 
-}
-div.node.inner.active {
-    transform: translate(calc(-50% - 0.5em), -50%); 
-} */
-
-.node.outer {
-    background: rgb(247, 98, 98);
-    border: 2px solid rgb(247, 98, 98)
-}
-.node.mid {
-    background: rgb(89, 65, 226);
-    border: 2px solid rgb(89, 65, 226);
-}
-.node.inner {
-    background: rgb(244, 199, 53);
-    border: 2px solid rgb(244, 199, 53);
-}
-.node > .title {
-    display: none;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    padding: 0em 2em;
-    color: #585858
-}
 
 .node.active > .title {
-    display: table-cell;
-    vertical-align: middle;
+    display: table-cell;  
+    color: #585858;
+    font-weight: bold;
+    padding: 0em 2em;
+}
+
+/* minimized node: nothing for mobile */
+
+@media only screen and (min-width: 400px){
+    .node > .title {
+        display: table-cell; 
+        font-size: 10px;
+    }
+}
+@media only screen and (min-width: 500px){
+    .node > .title {
+        font-size: 12px;
+    }
 }
 
 @media only screen and (min-width: 600px){
@@ -334,6 +353,13 @@ div.node.inner.active {
         transform: translate(-50%, -50%)
     }
     
+    .node > .title {
+        display: none;
+        padding: 0em 0.5em;
+        font-size: 10px;
+        color: #585858;
+    }
+
     div.node.active {
         border-radius: 8em;
         width: 8em;
@@ -343,27 +369,25 @@ div.node.inner.active {
         z-index: 3;
         transform: translate(-50%, -50%)
     }
-    /* div.node.outer.active, div.node.inner.active {
-        transform: translate(-50%, -50%)
-    } */
 
-    .node > .title {
-        padding: 0em 0.5em;
-        font-size: 10px;
+    .node.minimized {
+        width: 1em;
+        height: 1em;
     }
+
 }
 
 @media only screen and (min-width: 800px){
+    .node > .title {
+        padding: 0em 2em;
+        font-size: 12px;
+    }
     div.node.active {
         border-radius: 10em;
         width: 10em;
         height: 10em;
     }
 
-    .node > .title {
-        padding: 0em 2em;
-        font-size: 12px;
-    }
 }
 
 
