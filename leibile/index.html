@@ -13,7 +13,6 @@
 	</head>
 	<body class="is-preload">
     <div class="themesContainer">
-
         <div class="theme tl">
           <h2>Inklusion, Diversität, Gleichstellung und Partizipation</h2>
           <div class="infoContainer">
@@ -22,11 +21,11 @@
               <p class="description">Die HU Berlin zielt auf umfassende Bildungsgerechtigkeit, Chancengleichheit und Diskriminierungsfreiheit. Die Lehre fördert die Sensibilität für die Vielfalt der Akteur*innen in Studium und Lehre. Sie betont ausgehend von einem intersektionalen Verständnis von Heterogenität die Bedeutung von Inklusion, Gleichstellung und Diversität, um unter kontinuierlichem Abbau von Barrieren eine Lehre zu schaffen, die Partizipation als aktive Beteiligung aller am Lehr- und Lernprozess ermöglicht. Diversität bezieht sich nicht nur auf die Berücksichtigung der individuellen – sichtbaren und unsichtbaren – Merkmale der Lehrenden und Studierenden, sondern auch auf die Lehrinhalte sowie Lehr- und Lernformen. Die HU Berlin erkennt an, dass die Fachgegenstände vielfältig sind und verschiedene Perspektiven, Erfahrungen und Kulturen repräsentieren.</p>
               <div class="moreInfo"><a href="inklusion.html" aria-label="Unterstützende Strukturen zur Inklusion, Diversität, Gleichstellung und Partizipation an der HU">► &nbsp; Unterstützende Strukturen an der HU</a></div>
             </div>
-              
             <img class="mainIcon" src="../images/leibile/inklusion.svg" />
-            
           </div> 
         </div>
+        <div class="grid tl"></div>
+
         <div class="theme tr">
           <h2>Digitalisierung und Medienbildung</h2>
           <div class="infoContainer">
@@ -37,9 +36,9 @@
               <div class="moreInfo"><a href="inklusion.html" aria-label="Unterstützende Strukturen zur Digitalisierung und Medienbildung an der HU">► &nbsp; Unterstützende Strukturen an der HU</a></div>
             </div>
             <img class="mainIcon" src="../images/leibile/digitalisierung.svg" />
-            
           </div>
         </div>
+        <div class="grid tr"></div>
 
         <div class="theme ll">
           <h2>Nachhaltigkeit und Innovation</h2>
@@ -53,7 +52,8 @@
             <img class="mainIcon" src="../images/leibile/nachhaltigkeit.svg" />
           </div>
         </div>
-
+        <div class="grid ll"></div>
+        
         <div class="theme lr">
           <h2>Multiperspektivität und Internationalisierung</h2>
           <div class="infoContainer">
@@ -66,6 +66,8 @@
             <img class="mainIcon" src="../images/leibile/internationalisierung.svg" />
           </div>
         </div>
+        <div class="grid lr"></div>
+
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/browser.min.js"></script>
@@ -74,21 +76,51 @@
     <script src="../assets/js/main.js"></script>
     <script>
       var themeButtons = document.getElementsByClassName("theme")
-      for (var i=0; i < themeButtons.length; i++){
-        themeButtons[i].onmouseenter = function(m){
-          let infoContent = this.getElementsByClassName("infoContent")[0]
-          console.log(this.getElementsByClassName("infoContent")[0])
-          setTimeout(function(){
-            infoContent.style["opacity"]=1}, 500
-          )
-        }
-        themeButtons[i].onmouseleave = function(m){
-          let infoContent = this.getElementsByClassName("infoContent")[0]
-          console.log(this.getElementsByClassName("infoContent")[0])
-          infoContent.style["opacity"]=0;
-        }
+      var grids = document.getElementsByClassName("grid")
 
+      for (let themeButton of themeButtons){
+        themeButton.addEventListener("mouseenter", function(e){
+          console.log(e)
+          this.classList.add("opening")
+          if (!(this.classList.contains("closing"))){
+            this.classList.add("focused")
+          }
+          setTimeout(()=>this.classList.remove("opening"), 500)
+        })
+
+        themeButton.addEventListener("mouseleave", function(e){
+          let thisGrid = document.getElementsByClassName("grid " + themeButton.classList[1])[0]
+          console.log(thisGrid, e.clientX, e.clientY)
+          let rect = thisGrid.getBoundingClientRect()
+          // CONTINUE HERE
+          console.log(rect) 
+          if ("0"== themeButton.classList[1]){
+            // console.log(this, e)
+            this.classList.add("closing")
+            this.classList.remove("focused")
+            // if (!(this.classList.contains("opening"))){
+            //   this.classList.remove("focused")
+            // }
+            setTimeout(()=>this.classList.remove("closing"), 500)
+            } 
+        })
       }
+
+      // for (var i=0; i < themeButtons.length; i++){
+      //   themeButtons[i].onmouseenter = function(m){
+      //     let infoContent = this.getElementsByClassName("infoContent")[0]
+      //     console.log(this.getElementsByClassName("infoContent")[0])
+      //     setTimeout(function(){
+      //       infoContent.style["opacity"]=1}, 500
+      //     )
+      //   }
+      //   themeButtons[i].onmouseleave = function(m){
+      //     let infoContent = this.getElementsByClassName("infoContent")[0]
+      //     console.log(this.getElementsByClassName("infoContent")[0])
+      //     infoContent.style["opacity"]=0;
+      //   }
+
+      // }
     </script>
 	</body>
 </html>
