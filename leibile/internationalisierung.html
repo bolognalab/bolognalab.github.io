@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+<!--
+	Leitbild Lehre
+-->
+<html lang="de">
+	<head>
+		<title>Leitbild Lehre</title>
+		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+ 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../assets/css/leibile.css" /> 
+	</head>
+	<body class="is-preload">
+    <div class="innerWindow">
+      <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner.png" /></a>
+      <h1>Multiperspektivität und Internationalisierung</h1>
+      <h2>Ansprechparter:innen an der HU</h2>
+      <p>Um eine zukunftsorientierte Lehre, die Internationalisierung und Multiperspektivität fördert, zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte/Projekte/Kommissionen/AGs gesammelt: </p>
+    </div>
+    <div class="containerWindow">
+      <div id="fadeCover"></div>
+      <div class="diagramContainer" id="dCont1">
+        <!-- decorative elements -->
+        <div id="closeBtn"><p>&#10006;</p></div>
+        <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div>
+        <div id="invisibleNode"></div>
+        <div id="smallFade"></div>
+      </div>
+    </div>
+		<script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script>
+      const strukturen = {
+        "group1": {
+          "intl": {
+            "name": "Abteilung Internationales",
+            "desc": "Mehr Informationen: <a href='https://www.international.hu-berlin.de/de'>https://www.international.hu-berlin.de/de</a> ",
+            "connections": []
+          },
+          "sprach": {
+            "name": "Sprachzentrum der HU",
+            "desc": "Die <a href='https://frauenbeauftragte.hu-berlin.de/de'>Zentrale FGB</a> sowie die <a href='https://frauenbeauftragte.hu-berlin.de/de/ueber-uns/dezentrale-frauenbeauftragte'>denzentralen FGB an den Fakultäten und Instituten</a> bieten vertrauliche Beratung und Unterstützung in Fällen sexualisierter Belästigung, Diskriminierung und Gewalt sowie Karriereberatung für Frauen aller Statusgruppen an; Beratung der Leitungsebene und Gremien in Fragen von Gleichstellung und Chancengerechtigkeit,",
+            "connections": []
+          }
+        },
+        "group2": {
+          "openhu": {
+            "name": "Open Humboldt",
+            "subtitle": "Berlin School of Public Engagement and Open Science",
+            "desc": "Interessenvertretung für schwerbehinderte und gleichgestellte Mitarbeiter*innen an der HU. <br><br>Mehr Informationen: <a href='https://beauftragte.hu-berlin.de/de/schwerbehindertenvertretung'>https://beauftragte.hu-berlin.de/de/schwerbehindertenvertretung</a>",
+            "connections": []
+          },
+          "kfk": {
+            "name": "Kommission Forschung und wissenschaftliche Karrierre*n",
+            "desc": "Die <a href='https://gremien.hu-berlin.de/de/kommissionen/fnk'>Kommission Forschung und wissenschaftliche Karrierre*n (KFK)</a> berät den Akademischen Senat und das Präsidium in allen Fragen, die die Forschung und den wissenschaftlichen Nachwuchs betreffen. Die Kommission ist für Empfehlungen zur Entwicklung und Koordinierung der Forschung, zur Bildung von Forschungsschwerpunkten sowie für grundsätzliche Fragen der Förderung des wissenschaftlichen Nachwuchses zuständig",
+            "connections": []
+          }
+        }
+      }
+
+      // Berechnung der Position der Pünkte
+      const dCont1 = document.getElementById("dCont1")
+      const closeBtn = document.getElementById("closeBtn")
+      var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
+
+      var diagramWidth = dCont1.offsetWidth
+      var radiusMax = 0.5 * diagramWidth * 0.9
+      var activeClass = null
+      var openNode = null
+      var oldPos
+      var inactiveNodeWidth=100, inactiveNodeHeight=100
+      var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
+      
+      var dC = document.getElementById("decCircle")
+      dC.style["top"] = diagramWidth/2 + "px"
+
+      var nodes = {
+        "outer" : {
+          "struktur": "group1",
+          "radius": radiusMax * 0.85,
+          "angInit": 0
+        },
+        "inner" : {
+          "struktur": "group2",
+          "radius": radiusMax * 0.85,
+          "angInit": - 2*Math.PI / 4
+        }
+      }
+
+      Object.entries(nodes).forEach(function(nodeEntry, j){
+        let category = strukturen[nodeEntry[1]["struktur"]]
+        let radius = nodeEntry[1]["radius"]
+        let angInit = nodeEntry[1]["angInit"]
+        
+        let num = Object.keys(category).length
+        let angStep = 2*Math.PI / num
+        
+        let thisList = document.createElement("ul")
+        thisList.setAttribute("id", nodeEntry[1]["struktur"])
+        dCont1.append(thisList)
+        Object.entries(category).forEach(function(catEntry, i){
+          let theta = angInit + i*angStep
+          
+          let thisNode = document.createElement("li")
+          thisNode.classList.add("node", nodeEntry[0], "active")
+
+          let x, y
+          if (window.innerWidth > thresholdWidth){
+            updateCoordinatesPolar(thisNode, radius, theta)
+          } else {
+            let nodeHeight = dCont1.offsetHeight/num 
+            x = ["0%", "calc(100% - 2px)"][j]
+            y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
+            thisNode.style.height = (nodeHeight-10)+"px"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
+          }
+          thisNode.setAttribute("id", catEntry[0])
+          thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
+          thisNode.setAttribute("r", radius)
+          thisNode.setAttribute("theta", theta)
+          thisNode.setAttribute("theta_init", angInit)
+          thisNode.setAttribute("idx", [j,i])
+          thisNode.setAttribute("num", num)
+
+          let title = document.createElement("h3")
+          title.classList.add("title")
+          if (catEntry[1].hasOwnProperty("wordBreak")){
+            title.innerHTML = catEntry[1]["wordBreak"]
+          } else {
+            title.innerHTML = catEntry[1]["name"]
+          }
+          thisNode.append(title)
+
+          if (catEntry[1].hasOwnProperty("subtitle")){
+            console.log("subtitle")
+            let subtitle = document.createElement("h4")
+            subtitle.classList.add("subtitle")
+            subtitle.innerHTML = catEntry[1]["subtitle"]
+            thisNode.append(subtitle)
+          }
+          
+
+          let details = document.createElement("p")
+          details.classList.add("details")
+          details.innerHTML = catEntry[1]["desc"]
+
+          
+          thisNode.append(details)
+          thisList.append(thisNode)
+          // dCont1.append(thisNode)
+          if (j==0){
+          inactiveNodeWidth = thisNode.offsetWidth
+          inactiveNodeHeight = thisNode.offsetHeight
+        }
+        })
+      })
+
+    function updateCoordinatesPolar(node, r, theta){
+      node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
+      node.style["top"] = (r * Math.sin(theta) + diagramWidth/2) + "px"
+    }
+
+    // Button/Tab functionalities
+    function toggleNodes(class_id){
+      // Button formats
+      for (let tab of document.getElementById("toggleButtons").children){
+        let tabClass = tab.id.split("toggle")[1].toLowerCase()
+        // if clicking same button that was open
+        if (tab.classList.contains("activeC")){
+          tab.classList.remove("activeC")
+        }
+        if (tabClass==class_id){
+          if (!activeClass | activeClass != class_id){
+            tab.classList.add("activeC")
+            document.getElementsByClassName("containerWindow")[0].style["background"]="rgb(203, 224, 223)"
+            document.getElementsByClassName("diagramContainer")[0].style["background"]="rgb(255,255,255)"
+          } else {
+            tab.classList.remove("activeC")
+            document.getElementsByClassName("containerWindow")[0].style["background"]="rgb(227, 235, 235)"
+            document.getElementsByClassName("diagramContainer")[0].style["background"]=""
+          }
+        }
+      }
+
+      let allNodes = document.getElementsByClassName("node")
+        // clear all to start with, in either case
+        Object.keys(strukturen).forEach(function(cat){
+            let fade = document.getElementById("smallFade")
+            fade.style["background"] = "rgba(255,255,255,0)"
+        })
+        for(let node of allNodes){
+            if (node.classList.contains("active")){
+              if (window.innerWidth > thresholdWidth){
+                updateCoordinatesPolar(node, node.getAttribute("r"), node.getAttribute("theta"))
+              } else {
+              // for mobile: white fade effect
+            }      
+              node.classList.remove("active")
+            }
+            // minimize non-active modes
+            if (class_id != activeClass & !(node.classList.contains(class_id))){
+              node.classList.add("minimized")
+            }
+          }
+          dC.classList.remove("activeC")
+
+        // activate nodes if they were hidden before
+        let theseNodes = document.getElementsByClassName(class_id)
+        if (activeClass != class_id){
+          for(let node of theseNodes){
+            node.classList.remove("minimized")
+            if (window.innerWidth > thresholdWidth){
+              
+              let rNew
+              let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
+              if (node.getAttribute("r") < 2*inactiveNodeWidth + dC.offsetWidth*0.8){
+                rNew = 2*inactiveNodeWidth + dC.offsetWidth*0.8
+              } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
+                rNew = radiusMax - inactiveNodeWidth
+                // rNew = node.getAttribute("r")
+              } else {
+                rNew = node.getAttribute("r")
+              }
+              updateCoordinatesPolar(node, rNew, thetaNew)
+            }
+            node.classList.add("active")
+            dC.classList.add("activeC")
+            dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
+          }
+          activeClass = class_id
+          if (window.innerWidth <= thresholdWidth){
+              // for mobile: white fade effect
+              let fade = document.getElementById("smallFade")
+              fade.style["background"] = "rgba(255,255,255,0.8)"
+            }      
+        }
+        else {
+          for (let node of allNodes){
+            node.classList.remove("minimized")
+          }
+          if (window.innerWidth <= thresholdWidth){
+              // for mobile: white fade effect
+              let fade = document.getElementById("smallFade")
+              fade.style["background"] = "rgba(255,255,255,0)"
+            }      
+          activeClass = null
+        }
+      
+    }
+
+    for (let item of document.getElementById("toggleButtons").children){
+      item.addEventListener("click", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        toggleNodes(class_id)
+      })
+    }
+
+    // Hover and click effects
+    function openNodeW(node){
+      // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
+      document.getElementById("fadeCover").style["display"] = "block"
+      document.getElementById("fadeCover").style["opacity"] = "0.8"
+      openNode = node.id
+      node.classList.remove("active")
+      node.classList.add("opened")
+      let x = node.style["left"]
+      let y = node.style["top"]
+      if (window.innerWidth > thresholdWidth){
+        node.style["left"] = (diagramWidth/2)+"px"
+        node.style["top"] = "5em"
+      } else {
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        node.style["top"] = "1em"
+        node.style["height"] = "fit-content"
+      }
+      node.style["transform"] = "translate(-50%, 0%)"
+      if (window.innerWidth > thresholdWidth){
+        // adjust title if word-break version was used
+        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      } 
+
+      
+      dCont1.removeChild(closeBtn)
+      node.append(closeBtn)
+      setTimeout(function(){
+        // closeBtn.style["left"] = "calc("+ (dCont1.offsetWidth/2) + "px + 30% + 1.5em)"
+        // closeBtn.style["top"] = (dCont1.offsetHeight/2) + "px"
+        closeBtn.style.visibility="visible"
+        closeBtn.style.opacity="1"
+      }, 500)
+      return [x, y]
+      }
+      
+    function closeNodeW(node){
+      node.classList.remove("opened")
+      node.classList.add("closing")
+      node.style["left"] = oldPos[0]
+      node.style["top"] = oldPos[1]
+      
+
+      if (!(window.innerWidth > thresholdWidth)){
+        node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
+        if (node.classList.contains("outer")){
+          node.style["transform"] = "translate(0, -50%)"
+        }
+        if (node.classList.contains("mid")){
+          node.style["transform"] = "translate(-50%, -50%)"
+        }
+        if (node.classList.contains("inner")){
+          node.style["transform"] = "translate(-100%, -50%)"
+        }
+      } else {
+        node.style["transform"] = "translate(-50%, -50%)"
+      }
+
+      // adjust title if word-break version was used
+      if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+      }
+      
+
+      document.getElementById("fadeCover").style["opacity"] = "0"
+      document.getElementById("fadeCover").style["display"] = "none"
+      
+      node.removeChild(closeBtn)
+      dCont1.appendChild(closeBtn)
+      closeBtn.style.visibility="hidden"
+      closeBtn.style.opacity="0"
+      openNode = null
+      setTimeout(function(){
+        if (node.classList.contains(activeClass)){
+          node.classList.add("active")
+        } else {
+          node.classList.remove("active")
+        }
+        setTimeout(function(){
+          node.classList.remove("closing")
+        },400)
+      }, 100)
+      }
+      
+    for (let item of document.getElementsByClassName("node")){
+      item.addEventListener("mouseenter", function(){
+        if (!activeClass & !(item.classList.contains("opened"))){
+          item.classList.add("active")
+        }
+      })
+      item.addEventListener("mouseleave", function(){
+        if (!activeClass){
+          item.classList.remove("active")
+        }
+      })
+      item.addEventListener("click", function(){
+        // special case - clicking a minimized node activates the whole class
+        if (item.classList.contains("minimized")){
+          let class_id = item.classList[1]
+          toggleNodes(class_id)
+        } else {
+          if (!openNode & !(item.classList.contains("closing"))){
+            oldPos = openNodeW(item)
+          } 
+        }
+        
+      })
+    }
+    closeBtn.addEventListener("click", function(){
+      let nodeToClose = closeBtn.parentElement
+      closeNodeW(nodeToClose)
+    })
+
+    var n1 = document.getElementsByClassName("outer")[1]
+    var n0 = document.getElementsByClassName(activeClass)[0]
+    var n2 = document.getElementsByClassName(activeClass)[2]
+    // position optimization functions
+    function getPositionArguments(n){
+      let result = {
+        "node": n,
+        "x": n.style.left.split("px")[0],
+        "y": n.style.top.split("px")[0],
+        "r": n.getAttribute("r"),
+      }
+      result["theta_temp"] = Math.acos((result["x"]-diagramWidth/2)/result["r"])
+      result["left"] = result["x"] - activeNodeWidth/2
+      result["right"] = result["x"] + activeNodeWidth/2
+      result["top"] = result["y"] - activeNodeHeight/2
+      result["bottom"] = result["y"] + activeNodeHeight/2
+
+      return result
+    }
+
+    </script>
+	</body>
+</html>
