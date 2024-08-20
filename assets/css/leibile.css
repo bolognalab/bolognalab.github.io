@@ -1,129 +1,161 @@
 /* First page (4 containers) */
 .themesContainer {
-    width: 80%;
-    max-width: 740px;
+    width: 95%;
     margin: 1em auto;
     aspect-ratio: 1.2;
     font-family: Arial;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -moz-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    font-size: 10px;
+    display: block;
     position: relative;
 }
 
+@media only screen and (min-width: 600px){
+    .themesContainer {
+        width: 80%;
+        max-width: 740px;
+        font-size: 16px;
+    }
+}
+
+.theme, .grid {
+    width: calc(50% - 0.8em);
+    height: calc(50% - 0.8em);
+    position: absolute;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
 .theme {
-    width: calc(50% - 2.4em);
-    aspect-ratio: 1.2;
-    font-size: 1.0em;
+    /* padding: 0.5em 0.5em 15px 0.5em; */
     padding: 0.5em;
     color: #ffffff;
-    margin: 1.2em 0 0 1.2em;
     align-items: center;
     text-align: center;
-    position: absolute;
     z-index: 1;
 }
 
 .grid {
-    background: rgba(200,0,0,0.5);
-    width: calc(50% - 2.4em);
-    aspect-ratio: 1.2;
-    position: absolute;
-    margin: 1.2em 0 0 1.2em;
     border-radius: 0;
     padding: 0.5em;
-    z-index: 0
+    z-index: 0;
 }
 
-div.theme, div.infoContainer, img.mainIcon {
-    -moz-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease;
-    -webkit-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease;
-    -ms-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease;
-    transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease;
+div.theme, div.infoContainer, div.infoContent, img.mainIcon {
+    -moz-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+    -webkit-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+    -ms-transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+    transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, align-items 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
 }
 
 .theme > h2 {
-    width: 100%;
-    height: 30%;
+    display: block;
+    width: 95%;
+    margin: 0.5em auto 0;
+    height: 40%;
 }
 
 .theme .infoContainer {
     width: 90%;
     height: 50%;
-    display: flex;
     position: relative;
     align-items: center;
-    margin:auto;
+    margin: 0 auto;
     background-color: rgba(255,255,255,0);
     border-radius: 0.3em;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 .theme .mainIcon {
     display: block;
     top: 0%;
     height: 100%;
+    width: auto;
     margin: auto;
     filter: invert(100%) sepia(0%) saturate(7481%) hue-rotate(129deg) brightness(102%) contrast(102%);
     opacity: 60%;
 }
 
 .theme .infoContent {
+    height: 0;
     position: absolute;
     top: 0;
     display: none;
     opacity: 0;
-    padding: 5%;
+    padding: 1.2em;
     text-align: left;
+    font-size: 12px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    transition: opacity 0.6s ease;
-    -moz-trasition: opacity 0.6s ease;
+    letter-spacing: 0.01em;
+    line-height: 1.5em;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
 }
 
-.theme .infoContent > .narrowLeft {
+@media only screen and (min-width: 600px){
+    .theme .infoContent {
+        padding: 5% 7%;
+    }
+}
+/* .theme .infoContent > .narrowLeft {
     width: 2em;
     padding: 0 0.5em 0 0 ;
     height: 2em;
-}
+} */
 .theme .infoContent > p {
-    width: 95%;
-    margin-right: -20%;
+    width: 100%;
+    margin-top: 0;
 }
 
 .theme .infoContent .moreInfo {
-    margin-top: 60%;
-    margin-left: -60%;
+    width: calc(100%- 4em);
+    min-width: 16em;
+    margin-top: 2em;
+    margin-left: 4em;
     padding: 0.8em 1.6em 0.8em 1.6em;
     background: #f59645;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: #ffffff;
     border-radius: 1em;
+    text-decoration: none;
+    display: table;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
     /* -webkit-clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
     clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); */
 }
 
-.moreInfo > a {
-    text-decoration: none;
-    color: inherit;
+.moreInfo > * {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    padding: 0 0.2em;
 }
 
+@media only screen and (min-width: 600px){
+    .theme .infoContent .moreInfo {
+        width: 40%;
+        margin-left: 60%;
+        margin-top: 3.5em;
+    }
+}
 .tl, .tr {
     top: 0%;
 }
 .ll, .lr {
-    top: 50%;
+    top: calc(50% + 0.8em);
 }
 .tl, .ll {
     left: 0%;
 }
 .tr, .lr {
-    left: 50%
+    left: calc(50% + 0.8em);
 }
 
 .tl {
@@ -143,14 +175,15 @@ div.theme, div.infoContainer, img.mainIcon {
     border-radius: 2.5em 3em 2.5em 0em ;
 }
 .grid.tl, .grid.tr, .grid.lr, .grid.ll {
-    background-color: rgb(92, 92, 92)
+    background-color: rgb(159, 173, 173)
 }
 
 
 /* Hovering Transitions */
 .theme.focused {
-    width: 80%;
-    left: 10%;
+    width: 90%;
+    height: 51em;
+    left: 5%;
     top: 5%; 
     z-index: 5;
     align-items: top;
@@ -158,25 +191,60 @@ div.theme, div.infoContainer, img.mainIcon {
 }
 
 .theme.focused > h2 {
-    height: 10%;
+    height: fit-content;
+    margin: 0.5em auto
 }
 
-.theme.focused > .infoContainer {
-    height: 80%;
-    background-color: rgba(255,255,255,0.9);
+.theme.focused .infoContainer {
+    height: 44em;
+    background: rgba(255,255,255,0.95);
     z-index: 7;
 }
 
 .theme.focused > * > .infoContent {
+    height: 44em;
     z-index: 8;
-    display: flex;
+    display: block;
     color: #00376c
 }
 .theme.focused > * >  .mainIcon {
-    height: 80%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: auto;
     opacity: 1;
     z-index: 6;
 }
+.theme.focused .moreInfo {
+    display: block
+}
+
+@media only screen and (min-width: 600px){
+
+    .theme.focused {
+        width: 80%;
+        height: 80%;
+        left: 10%;
+    }
+
+    .theme.focused > h2 {
+        /* height: 3em; */
+        margin: 0.5em auto
+    }    
+    .theme.focused > .infoContainer {
+        height: 80%;
+    }
+    .theme.focused > * >  .mainIcon {
+        top: 50%;
+        width: auto;
+        height: 80%;
+    }
+}
+
+
+
 
 /* other effects */
 .moreInfo {
@@ -207,11 +275,14 @@ div.theme, div.infoContainer, img.mainIcon {
 }
 .innerWindow > p, .innerWindow > ul {
     font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.5em;
+    letter-spacing: 0.01em;
 }
 
 .containerWindow {
     background: rgb(227, 235, 235);
-    transition: background 0.5s ease;
+    transition: background-color 0.5s ease;
     position: relative;
 }
 .containerWindow > * {
@@ -254,7 +325,7 @@ div.theme, div.infoContainer, img.mainIcon {
     font-weight: bold;
     cursor: pointer;
     color: #585858;
-    transition: background 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 #toggleButtons > #toggleOuter {
     border-radius: 0 5px 0 0;
@@ -310,7 +381,7 @@ div.theme, div.infoContainer, img.mainIcon {
   left: 0;
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  transition: background 0.5s ease;
+  transition: background-color 0.5s ease;
   z-index: 2;
   pointer-events: none;
 }
@@ -395,7 +466,7 @@ div.theme, div.infoContainer, img.mainIcon {
     position: absolute;
     width: calc(33% - 8px);
     border-radius: 1em;
-    transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, background 0.5s ease, z-index 0.5s;
+    transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, background-color 0.5s ease, z-index 0.5s;
     display: table;
     cursor: pointer;
 }
