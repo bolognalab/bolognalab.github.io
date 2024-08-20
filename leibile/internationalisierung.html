@@ -80,14 +80,14 @@
       dC.style["top"] = diagramWidth/2 + "px"
 
       var nodes = {
-        "outer" : {
+        "left" : {
           "struktur": "group1",
-          "radius": radiusMax * 0.85,
+          "radius": radiusMax * 0.5,
           "angInit": 0
         },
-        "inner" : {
+        "right" : {
           "struktur": "group2",
-          "radius": radiusMax * 0.85,
+          "radius": radiusMax * 0.5,
           "angInit": - 2*Math.PI / 4
         }
       }
@@ -107,7 +107,7 @@
           let theta = angInit + i*angStep
           
           let thisNode = document.createElement("li")
-          thisNode.classList.add("node", nodeEntry[0], "active")
+          thisNode.classList.add("node", nodeEntry[0])
 
           let x, y
           if (window.innerWidth > thresholdWidth){
@@ -254,13 +254,6 @@
       
     }
 
-    for (let item of document.getElementById("toggleButtons").children){
-      item.addEventListener("click", function(){
-        let class_id = this.id.split("toggle")[1].toLowerCase()
-        toggleNodes(class_id)
-      })
-    }
-
     // Hover and click effects
     function openNodeW(node){
       // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
@@ -347,6 +340,7 @@
       
     for (let item of document.getElementsByClassName("node")){
       item.addEventListener("mouseenter", function(){
+        console.log("mouseleave")
         if (!activeClass & !(item.classList.contains("opened"))){
           item.classList.add("active")
         }
@@ -357,16 +351,9 @@
         }
       })
       item.addEventListener("click", function(){
-        // special case - clicking a minimized node activates the whole class
-        if (item.classList.contains("minimized")){
-          let class_id = item.classList[1]
-          toggleNodes(class_id)
-        } else {
-          if (!openNode & !(item.classList.contains("closing"))){
-            oldPos = openNodeW(item)
-          } 
+        if (!openNode & !(item.classList.contains("closing"))){
+          oldPos = openNodeW(item)
         }
-        
       })
     }
     closeBtn.addEventListener("click", function(){

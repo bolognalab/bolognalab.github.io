@@ -254,8 +254,6 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 
-
-
 /* other effects */
 .moreInfo {
     transition: all 0.4s ease;
@@ -480,7 +478,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     display: table;
     cursor: pointer;
 }
-.node.outer {
+.node.outer, .node.left {
     transform: translate(0, -50%);
     background: rgb(247, 98, 98);
     border: 2px solid rgb(247, 98, 98)
@@ -490,10 +488,13 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     background: rgb(89, 65, 226);
     border: 2px solid rgb(89, 65, 226);
 }
-.node.inner {
+.node.inner, .node.right {
     transform: translate(-100%, -50%);
     background: rgb(235, 173, 39);
     border: 2px solid rgb(235, 173, 39);
+}
+.node.left, .node.right {
+    width: calc(50% - 8px);
 }
 
 .node > .title {
@@ -526,6 +527,9 @@ div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
     display: table;
     z-index: 3;
 }
+div.node.left.active, div.node.right.active {
+    width: calc(50% - 8px);
+}
 
 .node.active > .title {
     display: table-cell;
@@ -537,7 +541,7 @@ div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
 /* minimized node: nothing for mobile */
 
 /* opened node */
-.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened {
+.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened {
     width: 80%;
     height: fit-content;
     padding: 1.5em;
@@ -562,7 +566,7 @@ div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
     display: block;
 }
 
-.node.outer.opened, .node.mid.opened, .node.inner.opened {
+.node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened {
     transform: translate(-50%, -50%);
     background: white;
 }
@@ -596,7 +600,12 @@ div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
         height: 3em;
         border-radius: 3em;
     }
-    .node.outer, .node.mid, .node.inner {
+    .node.left, .node.right {
+        width: 12em;
+        height: 12em;
+        border-radius: 12em;
+    }
+    .node.outer, .node.mid, .node.inner, .node.left, .node.right {
         transform: translate(-50%, -50%)
     }
     
@@ -605,6 +614,9 @@ div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
         padding: 0em 0.5em;
         font-size: 10px;
         color: white;
+    }
+    .node.left > .title, .node.right > .title {
+        display: table-cell;
     }
 
     div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
@@ -616,11 +628,16 @@ div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
         transform: translate(-50%, -50%);
     }
 
+    div.node.left.active, div.node.right.active {
+        border-radius: 15em;
+        width: 15em;
+        height: 15em;
+    }
     .node.minimized {
         width: 1em;
         height: 1em;
     }
-    div.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened {
+    div.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened {
     width: 60%;
     transform: translate(-50%, -50%);
     border-radius: 1.5em;
