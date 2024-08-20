@@ -78,7 +78,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 .theme .infoContent {
-    height: 0;
+    height: 100%;
     position: absolute;
     top: 0;
     display: none;
@@ -98,6 +98,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 @media only screen and (min-width: 600px){
     .theme .infoContent {
         padding: 5% 7%;
+        font-size: 13px;
     }
 }
 /* .theme .infoContent > .narrowLeft {
@@ -140,9 +141,10 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 
 @media only screen and (min-width: 600px){
     .theme .infoContent .moreInfo {
-        width: 40%;
-        margin-left: 60%;
-        margin-top: 3.5em;
+        width: calc(50% - 1.2em);
+        min-width: 0;
+        margin-left: 50%;
+        margin-top: 1.5em;
     }
 }
 .tl, .tr {
@@ -199,6 +201,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     height: 44em;
     background: rgba(255,255,255,0.95);
     z-index: 7;
+    display: block;
 }
 
 .theme.focused > * > .infoContent {
@@ -235,6 +238,13 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     }    
     .theme.focused > .infoContainer {
         height: 80%;
+        position: relative;
+    }
+    .theme.focused > * > .infoContent {
+        height: fit-content;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%)
     }
     .theme.focused > * >  .mainIcon {
         top: 50%;
