@@ -299,6 +299,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 
+
 @media only screen and (min-width: 600px){
     .innerWindow, .containerWindow {
         width: 95%;
@@ -309,6 +310,12 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     }
     .containerWindow > * {
         width: 100%;
+    }
+
+    .containerWindow.smaller1 {
+        height: 28em; 
+        width: 29em;
+        min-width: 0
     }
 }
 
@@ -406,17 +413,23 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 #decCircle {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 9%;
     aspect-ratio:1;
     border-radius: 50%;
     background: #585858;
     overflow: hidden;
     display: none;
+    margin: 0 auto 1em;
 }
-#decCircle.activeC {
+
+.diagramContainer > #decCircle {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 0 0 0
+}
+
+.diagramContainer > #decCircle.activeC {
     background: white;
     border: 5px solid;
 }
@@ -439,6 +452,10 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
         width: calc(100% - 1em); 
         aspect-ratio: 1;
         position: relative;
+    }
+    .smaller .diagramContainer {
+        height: 100%;
+        width: 100%;
     }
     #decCircle {
         display: block;
@@ -474,7 +491,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     position: absolute;
     width: calc(33% - 8px);
     border-radius: 1em;
-    transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, background-color 0.5s ease, z-index 0.5s;
+    transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, background-color 0.5s ease, transform 0.4s ease;
     display: table;
     cursor: pointer;
 }
@@ -506,6 +523,11 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     color: #ffffff;
     margin: 0 auto;
 }
+
+.node.left > .title, .node.right > .title {
+    font-size: 14px;
+}
+
 .node > .subtitle{
     display: none;
     font-size: 10px;
@@ -520,6 +542,33 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     display: none;
     width: 100%
 }
+.details b {
+    font-weight: 800;
+    color: rgb(27, 27, 27);
+}
+.details a.mi {
+    color: #32a8a0;
+    font-weight: bold;
+    margin-top: 2.5em;
+    text-decoration: none;
+    display: block;
+}
+.details a.mi.cont {
+    margin-top: 0.5em;
+}
+.details a.mi::after {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-left: 4px;
+    background-image: url("../../images/leibile/box-arrow-up-right.svg");
+    filter: invert(50%) sepia(81%) saturate(354%) hue-rotate(127deg) brightness(96%) contrast(86%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+  }
+  
 
 /* activated node */
 div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
@@ -547,6 +596,7 @@ div.node.left.active, div.node.right.active {
     padding: 1.5em;
     display: block;
     z-index: 5;
+    cursor: auto;
 }
 
 .node.opened > .title {
@@ -564,6 +614,7 @@ div.node.left.active, div.node.right.active {
 .node.opened > .details {
     display: table-row;
     display: block;
+    margin-top: 2em;
 }
 
 .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened {
@@ -626,9 +677,14 @@ div.node.left.active, div.node.right.active {
         display: table;
         z-index: 3;
         transform: translate(-50%, -50%);
+        overflow: hidden;
     }
-
+    .node.left.opened > .title, .node.right.opened > .title {
+        display: block;
+    }
     div.node.left.active, div.node.right.active {
+        
+        z-index: 3;
         border-radius: 15em;
         width: 15em;
         height: 15em;

@@ -17,13 +17,14 @@
       <h1>Multiperspektivität und Internationalisierung</h1>
       <h2>Ansprechparter:innen an der HU</h2>
       <p>Um eine zukunftsorientierte Lehre, die Internationalisierung und Multiperspektivität fördert, zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte/Projekte/Kommissionen/AGs gesammelt: </p>
+      <div id="decCircle"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
     </div>
-    <div class="containerWindow">
+    <div class="containerWindow smaller1">
       <div id="fadeCover"></div>
       <div class="diagramContainer" id="dCont1">
         <!-- decorative elements -->
         <div id="closeBtn"><p>&#10006;</p></div>
-        <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div>
+        <!-- <div id="decCircle"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div> -->
         <div id="invisibleNode"></div>
         <div id="smallFade"></div>
       </div>
@@ -36,28 +37,28 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script>
       const strukturen = {
-        "group1": {
+        "erster": {
           "intl": {
             "name": "Abteilung Internationales",
-            "desc": "Mehr Informationen: <a href='https://www.international.hu-berlin.de/de'>https://www.international.hu-berlin.de/de</a> ",
+            "desc": "<a class='mi' href='https://www.international.hu-berlin.de/de'>Mehr Informationen zur Abteilung Internationales</a>",
             "connections": []
           },
           "sprach": {
             "name": "Sprachzentrum der HU",
-            "desc": "Die <a href='https://frauenbeauftragte.hu-berlin.de/de'>Zentrale FGB</a> sowie die <a href='https://frauenbeauftragte.hu-berlin.de/de/ueber-uns/dezentrale-frauenbeauftragte'>denzentralen FGB an den Fakultäten und Instituten</a> bieten vertrauliche Beratung und Unterstützung in Fällen sexualisierter Belästigung, Diskriminierung und Gewalt sowie Karriereberatung für Frauen aller Statusgruppen an; Beratung der Leitungsebene und Gremien in Fragen von Gleichstellung und Chancengerechtigkeit,",
+            "desc": "<a class='mi' href='https://www.sprachenzentrum.hu-berlin.de/de'>Mehr Informationen zum Sprachzentrum</a>",
             "connections": []
           }
         },
-        "group2": {
+        "zweiter": {
           "openhu": {
             "name": "Open Humboldt",
             "subtitle": "Berlin School of Public Engagement and Open Science",
-            "desc": "Interessenvertretung für schwerbehinderte und gleichgestellte Mitarbeiter*innen an der HU. <br><br>Mehr Informationen: <a href='https://beauftragte.hu-berlin.de/de/schwerbehindertenvertretung'>https://beauftragte.hu-berlin.de/de/schwerbehindertenvertretung</a>",
+            "desc": "<a class='mi' href='https://open-humboldt.de/de'>Mehr Informationen zu Open Humboldt</a>",
             "connections": []
           },
           "kfk": {
             "name": "Kommission Forschung und wissenschaftliche Karrierre*n",
-            "desc": "Die <a href='https://gremien.hu-berlin.de/de/kommissionen/fnk'>Kommission Forschung und wissenschaftliche Karrierre*n (KFK)</a> berät den Akademischen Senat und das Präsidium in allen Fragen, die die Forschung und den wissenschaftlichen Nachwuchs betreffen. Die Kommission ist für Empfehlungen zur Entwicklung und Koordinierung der Forschung, zur Bildung von Forschungsschwerpunkten sowie für grundsätzliche Fragen der Förderung des wissenschaftlichen Nachwuchses zuständig",
+            "desc": "<p>Die <b>Kommission Forschung und wissenschaftliche Karrierre*n (KFK)</b> berät den Akademischen Senat und das Präsidium in allen Fragen, die die Forschung und den wissenschaftlichen Nachwuchs betreffen. Die Kommission ist für Empfehlungen zur Entwicklung und Koordinierung der Forschung, zur Bildung von Forschungsschwerpunkten sowie für grundsätzliche Fragen der Förderung des wissenschaftlichen Nachwuchses zuständig.</p><a href='https://gremien.hu-berlin.de/de/kommissionen/fnk' class='mi'>Mehr Informationen zur Kommission</a>",
             "connections": []
           }
         }
@@ -81,37 +82,48 @@
 
       var nodes = {
         "left" : {
-          "struktur": "group1",
-          "radius": radiusMax * 0.5,
-          "angInit": 0
+          "struktur": "erster",
+          "pctWidth": 40,
+          "offsetX": 20, // offsets measured in % of container width
+          "offsetY": 20
         },
         "right" : {
-          "struktur": "group2",
-          "radius": radiusMax * 0.5,
-          "angInit": - 2*Math.PI / 4
+          "struktur": "zweiter",
+          "pctWidth": 40,
+          "offsetX": 35,
+          "offsetY": 60
         }
       }
+      let numgroups = Object.keys(nodes).length
 
       Object.entries(nodes).forEach(function(nodeEntry, j){
         let category = strukturen[nodeEntry[1]["struktur"]]
-        let radius = nodeEntry[1]["radius"]
-        let angInit = nodeEntry[1]["angInit"]
-        
+        let offsetX = nodeEntry[1]["offsetX"]
+        let offsetY = nodeEntry[1]["offsetY"]
+        let pctWidth = nodeEntry[1]["pctWidth"]
+
         let num = Object.keys(category).length
-        let angStep = 2*Math.PI / num
+        let posStep = 2*pctWidth/ num
+
+        let posY = offsetY
         
         let thisList = document.createElement("ul")
         thisList.setAttribute("id", nodeEntry[1]["struktur"])
+        thisList.setAttribute("aria-label", nodeEntry[1]["struktur"] + " Teil der Liste")
         dCont1.append(thisList)
         Object.entries(category).forEach(function(catEntry, i){
-          let theta = angInit + i*angStep
+          let posX = offsetX + i*posStep
           
           let thisNode = document.createElement("li")
           thisNode.classList.add("node", nodeEntry[0])
 
           let x, y
           if (window.innerWidth > thresholdWidth){
-            updateCoordinatesPolar(thisNode, radius, theta)
+            let nodeHeight = 14 
+            x = ["7em", "21em"][j]
+            y = ["7em", "21em"][i]
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y
           } else {
             let nodeHeight = dCont1.offsetHeight/num 
             x = ["0%", "calc(100% - 2px)"][j]
@@ -122,9 +134,8 @@
           }
           thisNode.setAttribute("id", catEntry[0])
           thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
-          thisNode.setAttribute("r", radius)
-          thisNode.setAttribute("theta", theta)
-          thisNode.setAttribute("theta_init", angInit)
+          thisNode.setAttribute("posX", posX)
+          thisNode.setAttribute("posY", posY)
           thisNode.setAttribute("idx", [j,i])
           thisNode.setAttribute("num", num)
 
@@ -138,7 +149,6 @@
           thisNode.append(title)
 
           if (catEntry[1].hasOwnProperty("subtitle")){
-            console.log("subtitle")
             let subtitle = document.createElement("h4")
             subtitle.classList.add("subtitle")
             subtitle.innerHTML = catEntry[1]["subtitle"]
@@ -161,9 +171,9 @@
         })
       })
 
-    function updateCoordinatesPolar(node, r, theta){
-      node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
-      node.style["top"] = (r * Math.sin(theta) + diagramWidth/2) + "px"
+    function updateCoordinatesXY(node, x, y){
+      node.style["left"] = x + "%"
+      node.style["top"] = y + "%"
     }
 
     // Button/Tab functionalities
@@ -190,10 +200,8 @@
 
       let allNodes = document.getElementsByClassName("node")
         // clear all to start with, in either case
-        Object.keys(strukturen).forEach(function(cat){
-            let fade = document.getElementById("smallFade")
+        let fade = document.getElementById("smallFade")
             fade.style["background"] = "rgba(255,255,255,0)"
-        })
         for(let node of allNodes){
             if (node.classList.contains("active")){
               if (window.innerWidth > thresholdWidth){
@@ -204,7 +212,7 @@
               node.classList.remove("active")
             }
             // minimize non-active modes
-            if (class_id != activeClass & !(node.classList.contains(class_id))){
+            if (class_id != activeClass && !(node.classList.contains(class_id))){
               node.classList.add("minimized")
             }
           }
@@ -257,6 +265,7 @@
     // Hover and click effects
     function openNodeW(node){
       // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
+      let transform = window.getComputedStyle(node)["transform"]
       document.getElementById("fadeCover").style["display"] = "block"
       document.getElementById("fadeCover").style["opacity"] = "0.8"
       openNode = node.id
@@ -264,6 +273,8 @@
       node.classList.add("opened")
       let x = node.style["left"]
       let y = node.style["top"]
+      
+
       if (window.innerWidth > thresholdWidth){
         node.style["left"] = (diagramWidth/2)+"px"
         node.style["top"] = "5em"
@@ -287,7 +298,7 @@
         closeBtn.style.visibility="visible"
         closeBtn.style.opacity="1"
       }, 500)
-      return [x, y]
+      return [x, y, transform]
       }
       
     function closeNodeW(node){
@@ -295,7 +306,7 @@
       node.classList.add("closing")
       node.style["left"] = oldPos[0]
       node.style["top"] = oldPos[1]
-      
+      node.style["transform"] = oldPos[2]
 
       if (!(window.innerWidth > thresholdWidth)){
         node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
@@ -340,19 +351,24 @@
       
     for (let item of document.getElementsByClassName("node")){
       item.addEventListener("mouseenter", function(){
-        console.log("mouseleave")
-        if (!activeClass & !(item.classList.contains("opened"))){
-          item.classList.add("active")
+        console.log("mouseenter")
+        if (window.innerWidth > thresholdWidth){
+          if (!(item.classList.contains("opened"))){
+            item.style["transform"] = "translate(-50%, -50%) scale(110%, 110%)"
+          }
         }
       })
       item.addEventListener("mouseleave", function(){
-        if (!activeClass){
-          item.classList.remove("active")
+        if (window.innerWidth > thresholdWidth){
+          if (!(item.classList.contains("opened"))){
+            item.style["transform"] = "translate(-50%, -50%)"
+          }
         }
       })
       item.addEventListener("click", function(){
-        if (!openNode & !(item.classList.contains("closing"))){
+        if (!openNode && !(item.classList.contains("closing"))){
           oldPos = openNodeW(item)
+          console.log(oldPos)
         }
       })
     }
@@ -361,7 +377,7 @@
       closeNodeW(nodeToClose)
     })
 
-    var n1 = document.getElementsByClassName("outer")[1]
+    var n1 = document.getElementsByClassName("left")[1]
     var n0 = document.getElementsByClassName(activeClass)[0]
     var n2 = document.getElementsByClassName(activeClass)[2]
     // position optimization functions
