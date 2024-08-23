@@ -13,11 +13,11 @@
 	</head>
 	<body class="is-preload">
     <div class="innerWindow">
-      <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner.png" /></a>
+      <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner_constr.png" /></a>
       <h1>Nachhaltigkeit und Innovation</h1>
       <div id="decCircle" style="background: #3a7775"><img class="mainIcon" src="../images/leibile/nachhaltigkeit.svg"></div>
       <h2>Ansprechparter:innen an der HU</h2>
-      <p>Um eine zukunftsfähige, nachhaltige und innovative Hochschullehre zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte/Projekte/Kommissionen/AGs gesammelt: </p>
+      <p>Um eine zukunftsfähige, nachhaltige und innovative Hochschullehre zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte und Initiativen gesammelt: </p>
       <div class="containerWindow">
         <div id="fadeCover"></div>
         <div id="toggleButtons">
@@ -48,84 +48,40 @@
     <script>
       const strukturen = {
         "anlaufstellen": {
-          "fambuero": {
-            "name": "Familienbüro",
-            "desc": "<p>Das <b>Familienbüro</b> ist eine Zentrale Koordinations- und Anlaufstelle für das Thema Familiengerechtigkeit an der HU. Das Familienbüro treibt die Weiterentwicklung und Umsetzung eines systematischen Gesamtkonzepts zur Verbesserung der Familienfreundlichkeit der HU voran. Neben der statusgruppenübergreifenden Beratung zu allen Aspekten der Vereinbarkeit von Beruf bzw. Studium und Familie zählt hierzu die hochschulinterne Informationspolitik zum Thema, die Beförderung der Umsetzung des Nachteilsausgleichs, die Weiterentwicklung von Kinderbetreuungsmöglichkeiten sowie der Ausbau der familiengerechten Infrastruktur der Hochschule. Das Familienbüro ist Geschäftsstelle der <b>Kommission Familiengerechte Hochschule (KFH)</b> und Projektleitung des <b>Audits Famliengerechte Hochschule</b>.</p><a href='https://www.familienbuero.hu-berlin.de/de' class='mi'>Mehr Informationen zum Familienbüro</a>",
+          "oeco": {
+            "name": "Lehrprogramm 'Studium Oecologicum'",
+            "desc": "<a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/studium-oecologicum' class='mi'>Mehr Informationen zum Studium Oecologicum</a>",
             "connections": []
           },
-          "fgb": {
-            "name": "Frauen- und Gleichstellungsbeauftragte (FGB)",
-            "wordBreak": "Frauen- und Gleichstellungs-beauftragte (FGB)",
-            "desc": "<p>Die <b>Zentrale FGB</b> sowie die <b>denzentralen FGB an den Fakultäten und Instituten</b> bieten vertrauliche Beratung und Unterstützung in Fällen sexualisierter Belästigung, Diskriminierung und Gewalt sowie Karriereberatung für Frauen aller Statusgruppen an; Beratung der Leitungsebene und Gremien in Fragen von Gleichstellung und Chancengerechtigkeit.</p><a href='https://frauenbeauftragte.hu-berlin.de/de' class='mi'>Mehr Informationen zur zentralen FGB</a><a href='https://frauenbeauftragte.hu-berlin.de/de/ueber-uns/dezentrale-frauenbeauftragte' class='mi cont'>Mehr Informationen zur den dezentralen FGB</a>",
+          "nbuero": {
+            "name": "Nachhaltigkeitsbüro",
+            "desc": "<a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/' class='mi'>Mehr Informationen zum Nachhaltigkeitsbüro</a>",
             "connections": []
           },
-          "sbv": {
-            "name": "Schwerbehindertenvertretung",
-            "wordBreak": "Schwerbehinderten-vertretung",
-            "desc": "<p>Interessenvertretung für schwerbehinderte und gleichgestellte Mitarbeiter*innen an der HU.</p><a href='https://beauftragte.hu-berlin.de/de/schwerbehindertenvertretung' class='mi'>Mehr Informationen zur Schwerbehindertenvertretung</a>",
+          "h17": {
+            "name": "Humboldts17",
+            "desc": "<a href='https://humboldts17.de/de' class='mi'>Mehr Informationen zum Humboldts17</a>",
             "connections": []
           },
-          "psychosoz": {
-            "name": "Hochschulisches Gesundheitsmanagement",
-            "wordBreak": "Hochschulisches Gesundheits-management",
-            "subtitle": "Psychosoziale Beratung für Beschäftigte",
-            "desc": "<p>Das <b>Hochschulische Gesundheitsmanagement (HGM)</b> setzt sich für die Gesundheit der Beschäftigten und Studierenden der Humboldt-Universität ein. Dabei werden bereits bestehende, gesundheitsrelevante Maßnahmen unserer Universität gebündelt, aber auch neue Angebote bedarfsorientiert initiiert. Neben bewegungs- oder ernährungsbezogenen Maßnahmen entwickeln wir u. a. Angebote im Bereich Gesundheitskompetenzen und Stressbewältigung, um die Arbeits- und Studienatmosphäre zu verbessern und die individuelle und organisationale Gesundheit zu stärken. Das HGM bietet u.a. <b>psychosoziale Beratung für Mitarbeitende der HU</b>.</p><a href='https://www.hgm.hu-berlin.de/de/index.html' class='mi'>Mehr Informationen zum HGM</a><a href='https://www.hgm.hu-berlin.de/de/gesund-arbeiten/beratung-informationen/psychosoziale-beratung-fuer-beschaeftigte' class='mi cont'>Mehr Informationen zur psychosozialen Beratung für Mitarbeiter:innen</a>",
+          "irithesys": {
+            "name": "IRI THESys",
+            "subtitle": "Integrative Research Institute on Transformations of Human-Environment Systems",
+            "desc": "<a href='https://www.iri-thesys.org/' class='mi'>Mehr Informationen zum IRI THESys</a>",
             "connections": []
-          },
-          "refrat": {
-            "name": "Beratung des RefRats",
-            "desc": "<p>Das RefRat beratet Studierende u.a. zu den Themen Antidiskriminierung, Behinderung/chronische Erkrankung - Enthinderung, Studieren mit Kind(ern), Sexistische Belästigung und Übergriffe.</p><a class='mi' href='https://www.refrat.de/beratung.html'>Mehr Informationen zur Beratung des RefRats</a>",
-            "connections": []
-          },
-          "psych": {
-            "name": "Psychologische Beratung für Studierende",
-            "desc": "<a href='https://www.hu-berlin.de/de/studium/beratung/psyber' class='mi'>Mehr Informationen zur psychologischen Beratung für Studierende</a>",
-            "connections": []
-          },
-          "stmB": {
-            "name": "Studium mit Beeinträchtigung",
-            "desc": "<a class='mi' href='https://www.hu-berlin.de/de/studium/barrierefrei'>Mehr Informationen zum Studium mit Beeinträchtigung</a>",
-            "connections": []
-          },
+          }
         },
         "kommissionen":{
-          "kfh": {
-            "name": "Kommission Familiengerechte Hochschule (KFH)",
-            "desc": "<p>Die <b>Kommission Familiengerechte Hochschule</b> wurde als ständige Kommission des Akademischen Senates zur Vorbereitung der Entscheidungen und zur Unterstützung des Präsidiums gebildet. Geschäftsstelle der KFH ist das <b>Familienbüro.</b></p><a href='https://gremien.hu-berlin.de/de/kommissionen/kfgh' class='mi'>Mehr Informationen zur KFH</a>",
-            "connections": []
-          },
-          "kbfhs": {
-            "name": "Kommission Barrierefreie Hochschule (KBH)",
-            "desc": "<p>Die <b>Kommission Barrierefreie Hochschule (KBH)</b> wurde im Sommersemester 2010 vom Akademischen Senat mit dem Ziel eingerichtet, Richtlinien zu erarbeiten, deren Umsetzung ein barrierefreies Arbeiten, Lehren und Studieren an der Humboldt-Universität zu Berlin gewährleisten.</p><a href='https://gremien.hu-berlin.de/de/kommissionen/barrierefrei' class='mi'>Mehr Informationen zur KBH</a>",
-            "connections": []
-          },
-          "kff": {
-            "name": "Kommission für Frauenförderung (KFF)",
-            "desc": "<p>Die	<b>Kommission für Frauenförderung (KFF)</b>: unterstützt die Leitung und die zentralen Gremien der Universität in Fragen der Gleichstellung von Frauen und Männern.</p><a href='https://gremien.hu-berlin.de/de/as/kommissionen/kff' class='mi'>Mehr Informationen zur KFF</a>",
-            "connections": []
-          },
-          "kkp": {
-            "name": "Kommission zur Konfliktprävention",
-            "desc": "<p>Im Sinne der Dienstvereinbarung für ein respektvolles Miteinander an der Humboldt-Universität zu Berlin verfolgt die <b>Kommission zur Konfliktprävention (KKP)</b> den Anspruch eines fairen, kultivierten und achtungsvollen Zusammenwirkens aller Universitätsmitglieder.</p><a href='https://gremien.hu-berlin.de/de/konfliktpraevention' class='mi'>Mehr Informationen zur KKP</a>",
+          "knu": {
+            "name": "Kommission Nachhaltige Universität",
+            "desc": "<a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/kommission-nachhaltige-universitaet/kommission-nachhaltige-universitaet-2' class='mi'>Mehr Informationen zur KNU</a>",
             "connections": []
           }
         },
         "ags": {
-          "agdiv": {
-            "name": "AG Diversität",
+          "agnachgeo": {
+            "name": "AG Nachhaltigkeit am geografischen Institut",
             "subtitle": "Zentrale Frauen- und Gleichstellungsbeauftragte",
-            "desc": "<p>Die <b>AG Diversität/ Zentrale Frauen- und Gleichstellungsbeauftragte</b> ist ein seit 2018 regelmäßig tagendes Gremium von Zuständigen aus dem Bereich Antidiskriminierung, Führungspersonen, Wissenschaftler*innen mit Expertise im Handlungsfeld und Betroffenen; Ziel ist es einen Kulturwandel an der HU im Sinne von Diversität und Antidiskriminierung zu befördern.</p><a href='https://diversitaet.hu-berlin.de/de/grundlagen-gremien/ag-diversitaet/ag-diversitaet' class='mi'>Mehr Informationen zur AG</a>",
-            "connections": []
-          },
-          "kagna": {
-              "name": "Kommissionsübergreifende AG Nachteilsauschleich",
-              "wordBreak": "Kommissions- übergreifende AG Nachteilsauschleich",
-              "desc": "Die AG wurde 2023 von den Kommissionen Barreirefreie Hochschule und Familiengerechte Hochschule ins Leben gerufen. Als Ziel der AG wurde festgelegt, einen Vorschlag zur Verbesserung der Prozesse des Nachteilsausgleichs und der bevorzugten Zugang zu Lehrveranstaltungen zu erarbeiten im Sinne der betreffenden Studierenden (Behinderung und Care-Aufgaben) sowie der Lehrenden, Prüfenden und Prüfungsbüros.<br><br>Verantwortliche Kommissionen: KFH / KBH<br>Kontakt: familienservice@hu-berlin.de",
-              "connections": []
-            },
-          "agbfl": {
-            "name": "Andere AGs",
-            "desc": "<b>AG Diversitätssensible/ Diskriminierungskritische Lehre</b><br>Professional School of Education<br>Ansprechperson: Julia Podelo (julia.podelo@hu-berlin.de)<br><br><b>AG Diskriminierungskritische Lehre (Dikri-L)</b><br>Institut für Erziehungswissenschaften<br>Ansprechperson: Aylin Jordan (aylin.jordan@hu-berlin.de)<br><br><b>AG Lehre</b><br>Zentrum für transdisziplinäre Geschlechterstudien<br>Siehe <a href='https://www.gender.hu-berlin.de/de/studium/diskriminierungskritik-1/broschuere-der-ag-lehre-diskriminierungskritische-lehre-denkanstoesse-aus-den-gender-studies'>Broschüre 'Diskriminierungskritische Lehre'</a>",
+            "desc": "<a href='https://www.geographie.hu-berlin.de/de/institut/nachhaltigkeit' class='mi'>Mehr Informationen zur AG</a>",
             "connections": []
           }
         }

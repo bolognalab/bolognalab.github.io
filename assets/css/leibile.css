@@ -301,7 +301,6 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
         width: calc(50% - 1.2em);
         min-width: 0;
         margin-left: 50%;
-        margin-top: 1.5em;
     }
 }
 .tl, .tr {
