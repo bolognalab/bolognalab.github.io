@@ -1,13 +1,160 @@
+/* basic */
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DIN.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DIN.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DIN.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DIN.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DIN-Bold.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DIN-Bold.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DIN-Bold.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DIN-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DIN-Italic.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DIN-Italic.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DIN-Italic.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DIN-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINCondensed.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINCondensed.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINCondensed.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINCondensed.woff2') format('woff2');
+    font-stretch: condensed;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINCondensed-Bold.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINCondensed-Bold.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINCondensed-Bold.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINCondensed-Bold.woff2') format('woff2');
+    font-stretch: condensed;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINExp.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINExp.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINExp.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINExp.woff2') format('woff2');
+    font-weight: normal;
+    font-stretch: expanded;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINExp-Bold.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINExp-Bold.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINExp-Bold.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINExp-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-stretch: expanded;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINExp-Italic.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINExp-Italic.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINExp-Italic.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINExp-Italic.woff2') format('woff2');
+    font-stretch: expanded;
+    font-style: italic;
+}
+
+
+body {
+    background: #f0f0eb;
+}
+.innerWindow {
+    width: 100%;
+    margin: auto;
+    font-family: 'D-DIN', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 5em;
+}
+
+.innerWindow > h1, .innerWindow > h2, .innerWindow > p {
+    width: 95%;
+    margin: auto;
+}
+.innerWindow > h1, .innerWindow > h2 {
+    text-align: center;
+}
+.innerWindow > h1 {
+    font-size: 20px;
+    margin: 1em auto 0;
+    color: #004c90;
+    font-size: 30px;
+    font-stretch: expanded;
+}
+.innerWindow > h2 {
+    color: #004c90;
+    font-size: 18px;
+    margin: 1.5em auto 0.5em;
+    font-stretch: condensed;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.innerWindow > p, .innerWindow > ul {
+    font-size: 12px;
+    font-family: 'D-DIN', Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+    letter-spacing: 0.01em;
+}
+.innerWindow > ul {
+    width: 90%;
+    margin: auto;
+}
+
+@media only screen and (min-width: 600px){
+    .innerWindow > p, .innerWindow > ul {
+        font-size: 14px;
+    }
+}
+
+/* link appearance */
+
+a.mi {
+    color: #009ee3;
+    font-weight: bold;
+    text-decoration: none
+}
+
+a.mi::after {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-left: 4px;
+    background-image: url("../../images/leibile/box-arrow-up-right.svg");
+    /* filter: invert(50%) sepia(81%) saturate(354%) hue-rotate(127deg) brightness(96%) contrast(86%); */
+    filter: invert(43%) sepia(80%) saturate(3580%) hue-rotate(173deg) brightness(103%) contrast(101%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+
 /* First page (4 containers) */
 .themesContainer {
     width: 95%;
     margin: 1em auto;
     aspect-ratio: 1.2;
-    font-family: Arial;
-    font-size: 10px;
+    font-family: 'D-DIN', Arial, Helvetica, sans-serif;
+    font-size: 9px;
     display: block;
     position: relative;
 }
+
 
 @media only screen and (min-width: 600px){
     .themesContainer {
@@ -15,11 +162,14 @@
         max-width: 740px;
         font-size: 16px;
     }
+    .innerWindow > h2 {
+        font-size: 24px
+    }
 }
 
 .theme, .grid {
-    width: calc(50% - 0.8em);
-    height: calc(50% - 0.8em);
+    width: calc(50% - 0.3em);
+    height: calc(50% - 0.3em);
     position: absolute;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -52,10 +202,11 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     width: 95%;
     margin: 0.5em auto 0;
     height: 40%;
+    font-weight: normal;
 }
 
 .theme .infoContainer {
-    width: 90%;
+    width: 95%;
     height: 50%;
     position: relative;
     align-items: center;
@@ -86,7 +237,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     padding: 1.2em;
     text-align: left;
     font-size: 12px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'D-DIN', Arial, Helvetica, sans-serif;
     letter-spacing: 0.01em;
     line-height: 1.5em;
     box-sizing: border-box;
@@ -96,6 +247,10 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 @media only screen and (min-width: 600px){
+    .theme, .grid {
+        width: calc(50% - 0.8em);
+        height: calc(50% - 0.8em)
+    }
     .theme .infoContent {
         padding: 5% 7%;
         font-size: 13px;
@@ -113,12 +268,14 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 
 .theme .infoContent .moreInfo {
     width: calc(100%- 4em);
-    min-width: 16em;
-    margin-top: 2em;
-    margin-left: 4em;
+    min-width: 14em;
+    margin-top: 1em;
+    margin-left: 3em;
     padding: 0.8em 1.6em 0.8em 1.6em;
-    background: #f59645;
-    font-family: Arial, Helvetica, sans-serif;
+    background: #009ee3;
+    font-family: 'D-DIN', Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-stretch: expanded;
     font-weight: bold;
     color: #ffffff;
     border-radius: 1em;
@@ -151,50 +308,59 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     top: 0%;
 }
 .ll, .lr {
-    top: calc(50% + 0.8em);
+    top: calc(50% + 0.3em);
 }
 .tl, .ll {
     left: 0%;
 }
 .tr, .lr {
-    left: calc(50% + 0.8em);
+    left: calc(50% + 0.3em);
 }
 
 .tl {
-    background-color: #7D6D99;
+    background-color: #7c6c98;
     border-radius: 0em 2.5em 3em 2.5em;
 }
 .tr {
-    background-color: #5B89B0;
+    background-color: #5b89b0;
     border-radius: 2.5em 0em 2.5em 3em ;
 }
 .lr {
-    background-color: #822071;
+    background-color: #821f71;
     border-radius: 3em 2.5em 0em 2.5em;
 }
 .ll {
-    background-color: #3A7775;
+    background-color: #3a7775;
     border-radius: 2.5em 3em 2.5em 0em ;
 }
 .grid.tl, .grid.tr, .grid.lr, .grid.ll {
     background-color: rgb(159, 173, 173)
 }
 
+@media only screen and (min-width: 600px){
+    .ll, .lr {
+        top: calc(50% + 0.8em);
+    }
+    .tr, .lr {
+        left: calc(50% + 0.8em);
+    }  
+}
 
 /* Hovering Transitions */
 .theme.focused {
     width: 90%;
-    height: 51em;
+    height: 52em;
     left: 5%;
     top: 5%; 
     z-index: 5;
     align-items: top;
-    border-radius: 2.5em;
+    border-radius: 1em;
 }
 
 .theme.focused > h2 {
     height: fit-content;
-    margin: 0.5em auto
+    margin: 0.5em auto;
+    font-size: 15px;
 }
 
 .theme.focused .infoContainer {
@@ -227,14 +393,15 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 @media only screen and (min-width: 600px){
 
     .theme.focused {
-        width: 80%;
+        width: 95%;
         height: 80%;
-        left: 10%;
+        left: 2.5%;
     }
 
     .theme.focused > h2 {
         /* height: 3em; */
-        margin: 0.5em auto
+        margin: 0.5em auto;
+        font-size: 24px;
     }    
     .theme.focused > .infoContainer {
         height: 80%;
@@ -264,38 +431,17 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 /* Individual Pages */
-.innerWindow, .containerWindow{
-    width: 98%;
-    margin: auto;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-.innerWindow > h1, .innerWindow > h2 {
-    text-align: center;
-}
-.innerWindow > h1 {
-    font-size: 20px;
-    margin: 1em auto 0
-}
-.innerWindow > h2 {
-    color: rgb(89, 65, 226);
-    font-size: 16px;
-    margin: 1.5em auto 0.5em;
-}
-.innerWindow > p, .innerWindow > ul {
-    font-size: 14px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    line-height: 1.5em;
-    letter-spacing: 0.01em;
-}
+
 
 .containerWindow {
-    background: rgb(227, 235, 235);
+    width: 98%;
+    margin: auto;
     transition: background-color 0.5s ease;
     position: relative;
 }
 .containerWindow > * {
     width: 100%;
-    margin: auto;
+    margin: -1px auto;
 }
 
 
@@ -349,7 +495,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     border-radius: 5px 0 0 0;
 }
 #toggleButtons > .activeC {
-    background: rgb(255, 255, 255);
+    background: #fafaf5;
     color: black;
 }
 
@@ -366,9 +512,6 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     }
     #toggleButtons > * > h3 {
         font-size: 16px;
-    }
-    #toggleButtons > .activeC {
-        background: white;
     }
     #toggleButtons > #toggleOuter, #toggleButtons > #toggleInner {
         border-radius: 5px 5px 0 0;
@@ -413,13 +556,14 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 #decCircle {
-    width: 9%;
+    width: 10%;
+    min-width: 90px;
     aspect-ratio:1;
     border-radius: 50%;
     background: #585858;
     overflow: hidden;
-    display: none;
-    margin: 0 auto 1em;
+    /* display: none; */
+    margin: 1.5em auto 0;
 }
 
 .diagramContainer > #decCircle {
@@ -450,7 +594,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 @media only screen and (min-width: 600px){
     .diagramContainer {
         width: calc(100% - 1em); 
-        aspect-ratio: 1;
+        aspect-ratio: 1.3;
         position: relative;
     }
     .smaller .diagramContainer {
@@ -495,25 +639,50 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     display: table;
     cursor: pointer;
 }
-.node.outer, .node.left {
+.node.outer {
     transform: translate(0, -50%);
-    background: rgb(247, 98, 98);
-    border: 2px solid rgb(247, 98, 98)
+    background: #e74306;
+    border: 2px solid #e74306
 }
 .node.mid {
     transform: translate(-50%, -50%);
-    background: rgb(89, 65, 226);
-    border: 2px solid rgb(89, 65, 226);
+    background: #5b89b0;
+    border: 2px solid #5b89b0;
 }
-.node.inner, .node.right {
+.node.inner {
     transform: translate(-100%, -50%);
-    background: rgb(235, 173, 39);
-    border: 2px solid rgb(235, 173, 39);
+    background: #059931;
+    border: 2px solid #059931;
 }
+
 .node.left, .node.right {
     width: calc(50% - 8px);
 }
 
+.node.left {
+    transform: translate(0, -50%);
+    border: 2px solid;
+}
+.node.right {
+    transform: translate(-100%, -50%);
+    border: 2px solid
+}
+#intl {
+    background: #009ee3;
+    border-color: #009ee3;
+}
+#kfk {
+    background: #059931;
+    border-color: #059931
+}
+#sprach {
+    background: #3a7775;
+    border-color: #3a7775;
+}
+#openhu {
+    background: #0000ff;
+    border-color: #0000ff;
+}
 .node > .title {
     font-size: 10px;
     display: table-cell;    
@@ -542,32 +711,25 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     display: none;
     width: 100%
 }
+
+@media only screen and (min-width: 600px){
+    .node > .details {
+        font-size: 15px;
+    }
+}
 .details b {
     font-weight: 800;
-    color: rgb(27, 27, 27);
+    color: #0a0a19;
 }
+
+
 .details a.mi {
-    color: #32a8a0;
-    font-weight: bold;
     margin-top: 2.5em;
-    text-decoration: none;
     display: block;
 }
 .details a.mi.cont {
     margin-top: 0.5em;
 }
-.details a.mi::after {
-    content: "";
-    width: 1em;
-    height: 1em;
-    margin-left: 4px;
-    background-image: url("../../images/leibile/box-arrow-up-right.svg");
-    filter: invert(50%) sepia(81%) saturate(354%) hue-rotate(127deg) brightness(96%) contrast(86%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-block;
-  }
   
 
 /* activated node */
@@ -705,7 +867,7 @@ div.node.left.active, div.node.right.active {
 @media only screen and (min-width: 800px){
     .node > .title {
         padding: 0em 2em;
-        font-size: 12px;
+        font-size: 15px;
     }
     div.node.active {
         border-radius: 10em;
@@ -714,10 +876,6 @@ div.node.left.active, div.node.right.active {
     }
 }
 
-#closeBtn {
-    z-index:6;
-
-}
 
 #closeBtn {
     position: absolute;
@@ -732,7 +890,8 @@ div.node.left.active, div.node.right.active {
     opacity: 0;
     border-radius: 1.5em;
     transform: translate(-50%, -50%);
-    transition: all 0.2s
+    transition: all 0.2s;
+    font-family: Arial, Helvetica, sans-serif
 }
 #closeBtn:hover {
     background: rgb(112, 112, 112);

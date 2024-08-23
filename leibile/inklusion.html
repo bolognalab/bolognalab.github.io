@@ -12,34 +12,36 @@
     <link rel="stylesheet" href="../assets/css/leibile.css" /> 
 	</head>
 	<body class="is-preload">
-    <div class="innerWindow">
+    <div class="innerWindow inklusion">
       <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner.png" /></a>
       <h1>Inklusion, Diversität, Gleichstellung  und Partizipation</h1>
+      <div id="decCircle" style="background: #7c6c98"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div>
       <h2>Ansprechparter:innen an der HU</h2>
       <p>Um eine inklusive, chancengerechte  und partizipative Lehre zu fördern, wurden folgende Beispiele für vorhandene Anlaufstellen/Projekte/Kommissionen/AGs gesammelt:</p>
-    </div>
-    <div class="containerWindow">
-      <div id="fadeCover"></div>
-      <div id="toggleButtons">
-        <div id="toggleOuter"><h3>Anlaufstellen</h3></div><div id="toggleMid"><h3>Kommissionen</h3></div><div id="toggleInner"><h3>AGs</h3></div>
+    
+      <div class="containerWindow">
+        <div id="fadeCover" style="background: #f0f0eb"></div>
+        <div id="toggleButtons">
+          <div id="toggleOuter"><h3>Anlaufstellen</h3></div><div id="toggleMid"><h3>Kommissionen</h3></div><div id="toggleInner"><h3>AGs</h3></div>
+        </div>
+        <div class="diagramContainer" id="dCont1">
+          <!-- decorative elements -->
+          <div id="closeBtn"><p>&#10006;</p></div>
+          <!-- <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div> -->
+          <div id="invisibleNode"></div>
+          <div id="smallFade"></div>
+        </div>
       </div>
-      <div class="diagramContainer" id="dCont1">
-        <!-- decorative elements -->
-        <div id="closeBtn"><p>&#10006;</p></div>
-        <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div>
-        <div id="invisibleNode"></div>
-        <div id="smallFade"></div>
+      <div class="innerWindow">
+        <h2>Konzepte und Dokumentation zum Thema</h2>
+        <ul>
+          <li><a class='mi' href='../files/leibile/Inklusionsverständnis_KBH_2022.pdf'>Inklusionsverständnis der HU (PDF)</a><br>(Kommission Barrierefreie Hochschule)</li>
+          <li>Konzepte und Grundlagen diversitätssensibler Lehre</li>
+          <li>Leitbild der Humboldt-Universität zu Berlin als familiengerechte Hochschule</li>
+          <li>Gleichstellungszukunftskonzept (PDF)</li>
+          <li><a class='mi' href='../files/leibile/ZtG-Diskriminierungskritische Lehre.pdf' >Broschüre "Diskriminierungskritische Lehre: Dekanstöße aus den Gender Studies"</a> <br> (AG Lehre,  Zentrum für Transdizsiplinäre Geschlechterstudien)</li>
+        </ul>
       </div>
-    </div>
-    <div class="innerWindow">
-      <h2>Konzepte und Dokumentation zum Thema</h2>
-      <ul>
-        <li>Inklusionsverständnis der HU (PDF)</li>
-        <li>Konzepte und Grundlagen diversitätssensibler Lehre</li>
-        <li>Leitbild der Humboldt-Universität zu Berlin als familiengerechte Hochschule</li>
-        <li>Gleichstellungszukunftskonzept (PDF)</li>
-        <li>Broschüre <a href='https://www.gender.hu-berlin.de/de/studium/diskriminierungskritik-1/broschuere-der-ag-lehre-diskriminierungskritische-lehre-denkanstoesse-aus-den-gender-studies'>"Diskriminierungskritische Lehre: Dekanstöße aus den Gender Studies"</a> der AG Lehre des Zentrums für Transdizsiplinäre Geschlechterstudies</li>
-      </ul>
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/browser.min.js"></script>
@@ -146,8 +148,8 @@
       var inactiveNodeWidth=100, inactiveNodeHeight=100
       var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
       
-      var dC = document.getElementById("decCircle")
-      dC.style["top"] = diagramWidth/2 + "px"
+      // var dC = document.getElementById("decCircle")
+      // dC.style["top"] = diagramWidth/2 + "px"
 
       
 
@@ -241,7 +243,8 @@
 
     function updateCoordinatesPolar(node, r, theta){
       node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
-      node.style["top"] = (r * Math.sin(theta) + diagramWidth/2) + "px"
+      let top = (r * Math.sin(theta) + diagramWidth/2)
+      node.style["top"] = "calc(" + top * 0.7 + "px" + " + 2em)"
     }
 
     // Button/Tab functionalities
@@ -256,11 +259,9 @@
         if (tabClass==class_id){
           if (!activeClass | activeClass != class_id){
             tab.classList.add("activeC")
-            document.getElementsByClassName("containerWindow")[0].style["background"]="rgb(203, 224, 223)"
-            document.getElementsByClassName("diagramContainer")[0].style["background"]="rgb(255,255,255)"
+            document.getElementsByClassName("diagramContainer")[0].style["background"]="#fafaf5"
           } else {
             tab.classList.remove("activeC")
-            document.getElementsByClassName("containerWindow")[0].style["background"]="rgb(227, 235, 235)"
             document.getElementsByClassName("diagramContainer")[0].style["background"]=""
           }
         }
@@ -286,7 +287,7 @@
               node.classList.add("minimized")
             }
           }
-          dC.classList.remove("activeC")
+          // dC.classList.remove("activeC")
 
         // activate nodes if they were hidden before
         let theseNodes = document.getElementsByClassName(class_id)
@@ -297,8 +298,8 @@
               
               let rNew
               let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
-              if (node.getAttribute("r") < 2*inactiveNodeWidth + dC.offsetWidth*0.8){
-                rNew = 2*inactiveNodeWidth + dC.offsetWidth*0.8
+              if (node.getAttribute("r") < 2*inactiveNodeWidth){
+                rNew = 2*inactiveNodeWidth // + dC.offsetWidth*0.8
               } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
                 rNew = radiusMax - inactiveNodeWidth
                 // rNew = node.getAttribute("r")
@@ -308,8 +309,8 @@
               updateCoordinatesPolar(node, rNew, thetaNew)
             }
             node.classList.add("active")
-            dC.classList.add("activeC")
-            dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
+            // dC.classList.add("activeC")
+            // dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
           }
           activeClass = class_id
           if (window.innerWidth <= thresholdWidth){
@@ -367,8 +368,6 @@
       dCont1.removeChild(closeBtn)
       node.append(closeBtn)
       setTimeout(function(){
-        // closeBtn.style["left"] = "calc("+ (dCont1.offsetWidth/2) + "px + 30% + 1.5em)"
-        // closeBtn.style["top"] = (dCont1.offsetHeight/2) + "px"
         closeBtn.style.visibility="visible"
         closeBtn.style.opacity="1"
       }, 500)

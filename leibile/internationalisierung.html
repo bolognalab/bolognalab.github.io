@@ -15,18 +15,18 @@
     <div class="innerWindow">
       <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner.png" /></a>
       <h1>Multiperspektivität und Internationalisierung</h1>
-      <h2>Ansprechparter:innen an der HU</h2>
+      <div id="decCircle" style="background: #821f71"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
+      <h2>Ansprechpunkte an der HU</h2>
       <p>Um eine zukunftsorientierte Lehre, die Internationalisierung und Multiperspektivität fördert, zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte/Projekte/Kommissionen/AGs gesammelt: </p>
-      <div id="decCircle"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
-    </div>
-    <div class="containerWindow smaller1">
-      <div id="fadeCover"></div>
-      <div class="diagramContainer" id="dCont1">
-        <!-- decorative elements -->
-        <div id="closeBtn"><p>&#10006;</p></div>
-        <!-- <div id="decCircle"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div> -->
-        <div id="invisibleNode"></div>
-        <div id="smallFade"></div>
+      <div class="containerWindow smaller1" style="margin-top: 1em">
+        <div id="fadeCover" style="background: #f0f0eb"></div>
+        <div class="diagramContainer" id="dCont1">
+          <!-- decorative elements -->
+          <div id="closeBtn"><p>&#10006;</p></div>
+          <!-- <div id="decCircle"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div> -->
+          <div id="invisibleNode"></div>
+          <div id="smallFade"></div>
+        </div>
       </div>
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
@@ -50,15 +50,15 @@
           }
         },
         "zweiter": {
+          "kfk": {
+            "name": "Kommission Forschung und wissenschaftliche Karrierre*n",
+            "desc": "<p>Die <b>Kommission Forschung und wissenschaftliche Karrierre*n (KFK)</b> berät den Akademischen Senat und das Präsidium in allen Fragen, die die Forschung und den wissenschaftlichen Nachwuchs betreffen. Die Kommission ist für Empfehlungen zur Entwicklung und Koordinierung der Forschung, zur Bildung von Forschungsschwerpunkten sowie für grundsätzliche Fragen der Förderung des wissenschaftlichen Nachwuchses zuständig.</p><a href='https://gremien.hu-berlin.de/de/kommissionen/fnk' class='mi'>Mehr Informationen zur KFK</a>",
+            "connections": []
+          },
           "openhu": {
             "name": "Open Humboldt",
             "subtitle": "Berlin School of Public Engagement and Open Science",
             "desc": "<a class='mi' href='https://open-humboldt.de/de'>Mehr Informationen zu Open Humboldt</a>",
-            "connections": []
-          },
-          "kfk": {
-            "name": "Kommission Forschung und wissenschaftliche Karrierre*n",
-            "desc": "<p>Die <b>Kommission Forschung und wissenschaftliche Karrierre*n (KFK)</b> berät den Akademischen Senat und das Präsidium in allen Fragen, die die Forschung und den wissenschaftlichen Nachwuchs betreffen. Die Kommission ist für Empfehlungen zur Entwicklung und Koordinierung der Forschung, zur Bildung von Forschungsschwerpunkten sowie für grundsätzliche Fragen der Förderung des wissenschaftlichen Nachwuchses zuständig.</p><a href='https://gremien.hu-berlin.de/de/kommissionen/fnk' class='mi'>Mehr Informationen zur Kommission</a>",
             "connections": []
           }
         }
@@ -201,7 +201,7 @@
       let allNodes = document.getElementsByClassName("node")
         // clear all to start with, in either case
         let fade = document.getElementById("smallFade")
-            fade.style["background"] = "rgba(255,255,255,0)"
+            fade.style["background"] = "rgba(240, 240, 235, 0)"
         for(let node of allNodes){
             if (node.classList.contains("active")){
               if (window.innerWidth > thresholdWidth){
@@ -245,7 +245,7 @@
           if (window.innerWidth <= thresholdWidth){
               // for mobile: white fade effect
               let fade = document.getElementById("smallFade")
-              fade.style["background"] = "rgba(255,255,255,0.8)"
+              fade.style["background"] = "rgba(240, 240, 235, 0.8)"
             }      
         }
         else {
@@ -255,7 +255,7 @@
           if (window.innerWidth <= thresholdWidth){
               // for mobile: white fade effect
               let fade = document.getElementById("smallFade")
-              fade.style["background"] = "rgba(255,255,255,0)"
+              fade.style["background"] = "rgba(240, 240, 235, 0)"
             }      
           activeClass = null
         }
@@ -264,7 +264,6 @@
 
     // Hover and click effects
     function openNodeW(node){
-      // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
       let transform = window.getComputedStyle(node)["transform"]
       document.getElementById("fadeCover").style["display"] = "block"
       document.getElementById("fadeCover").style["opacity"] = "0.8"
