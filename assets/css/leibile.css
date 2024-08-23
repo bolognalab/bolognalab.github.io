@@ -682,6 +682,10 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     background: #0000ff;
     border-color: #0000ff;
 }
+#intl.opened, #kfk.opened, #sprach.opened, #openhu.opened {
+    background: white;
+}
+
 .node > .title {
     font-size: 10px;
     display: table-cell;    
