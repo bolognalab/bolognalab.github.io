@@ -176,92 +176,6 @@
       node.style["top"] = y + "%"
     }
 
-    // Button/Tab functionalities
-    function toggleNodes(class_id){
-      // Button formats
-      for (let tab of document.getElementById("toggleButtons").children){
-        let tabClass = tab.id.split("toggle")[1].toLowerCase()
-        // if clicking same button that was open
-        if (tab.classList.contains("activeC")){
-          tab.classList.remove("activeC")
-        }
-        if (tabClass==class_id){
-          if (!activeClass | activeClass != class_id){
-            tab.classList.add("activeC")
-            document.getElementsByClassName("containerWindow")[0].style["background"]="rgb(203, 224, 223)"
-            document.getElementsByClassName("diagramContainer")[0].style["background"]="rgb(255,255,255)"
-          } else {
-            tab.classList.remove("activeC")
-            document.getElementsByClassName("containerWindow")[0].style["background"]="rgb(227, 235, 235)"
-            document.getElementsByClassName("diagramContainer")[0].style["background"]=""
-          }
-        }
-      }
-
-      let allNodes = document.getElementsByClassName("node")
-        // clear all to start with, in either case
-        let fade = document.getElementById("smallFade")
-            fade.style["background"] = "rgba(240, 240, 235, 0)"
-        for(let node of allNodes){
-            if (node.classList.contains("active")){
-              if (window.innerWidth > thresholdWidth){
-                updateCoordinatesPolar(node, node.getAttribute("r"), node.getAttribute("theta"))
-              } else {
-              // for mobile: white fade effect
-            }      
-              node.classList.remove("active")
-            }
-            // minimize non-active modes
-            if (class_id != activeClass && !(node.classList.contains(class_id))){
-              node.classList.add("minimized")
-            }
-          }
-          dC.classList.remove("activeC")
-
-        // activate nodes if they were hidden before
-        let theseNodes = document.getElementsByClassName(class_id)
-        if (activeClass != class_id){
-          for(let node of theseNodes){
-            node.classList.remove("minimized")
-            if (window.innerWidth > thresholdWidth){
-              
-              let rNew
-              let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
-              if (node.getAttribute("r") < 2*inactiveNodeWidth + dC.offsetWidth*0.8){
-                rNew = 2*inactiveNodeWidth + dC.offsetWidth*0.8
-              } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
-                rNew = radiusMax - inactiveNodeWidth
-                // rNew = node.getAttribute("r")
-              } else {
-                rNew = node.getAttribute("r")
-              }
-              updateCoordinatesPolar(node, rNew, thetaNew)
-            }
-            node.classList.add("active")
-            dC.classList.add("activeC")
-            dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
-          }
-          activeClass = class_id
-          if (window.innerWidth <= thresholdWidth){
-              // for mobile: white fade effect
-              let fade = document.getElementById("smallFade")
-              fade.style["background"] = "rgba(240, 240, 235, 0.8)"
-            }      
-        }
-        else {
-          for (let node of allNodes){
-            node.classList.remove("minimized")
-          }
-          if (window.innerWidth <= thresholdWidth){
-              // for mobile: white fade effect
-              let fade = document.getElementById("smallFade")
-              fade.style["background"] = "rgba(240, 240, 235, 0)"
-            }      
-          activeClass = null
-        }
-      
-    }
-
     // Hover and click effects
     function openNodeW(node){
       let transform = window.getComputedStyle(node)["transform"]
@@ -327,7 +241,6 @@
         node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
       }
       
-
       document.getElementById("fadeCover").style["opacity"] = "0"
       document.getElementById("fadeCover").style["display"] = "none"
       

@@ -12,31 +12,29 @@
     <link rel="stylesheet" href="../assets/css/leibile.css" /> 
 	</head>
 	<body class="is-preload">
-    <div class="innerWindow">
+    <div class="innerWindow nachhaltigkeit">
       <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner_constr.png" /></a>
       <h1>Nachhaltigkeit und Innovation</h1>
       <div id="decCircle" style="background: #3a7775"><img class="mainIcon" src="../images/leibile/nachhaltigkeit.svg"></div>
-      <h2>Ansprechparter:innen an der HU</h2>
-      <p>Um eine zukunftsfähige, nachhaltige und innovative Hochschullehre zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte und Initiativen gesammelt: </p>
+      <p style="margin-top: 1em">Um eine zukunftsfähige, nachhaltige und innovative Hochschullehre zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte und Initiativen gesammelt: </p>
       <div class="containerWindow">
-        <div id="fadeCover"></div>
-        <div id="toggleButtons">
-          <div id="toggleOuter"><h3>Anlaufstellen</h3></div><div id="toggleMid"><h3>Kommissionen</h3></div><div id="toggleInner"><h3>AGs</h3></div>
-        </div>
+        <!-- decorative elements -->
+        <div id="fadeCover" style="background: #f0f0eb; height: calc(100% + 4px)"></div>
+        <h2>Wissenserwerb an der HU</h2>
         <div class="diagramContainer" id="dCont1">
-          <!-- decorative elements -->
           <div id="closeBtn"><p>&#10006;</p></div>
           <div id="invisibleNode"></div>
           <div id="smallFade"></div>
         </div>
+
+        <h2>Nachhaltigkeit als Mission</h2>
+        <div class="diagramContainer" id="dCont2"></div>
+        <h2>Kommissionen und AGs</h2>
+        <div class="diagramContainer" id="dCont3"></div>
       </div>
-      <h2>Konzepte und Dokumentation zum Thema</h2>
+      <h2>Weitere Dokumentation</h2>
       <ul>
-        <li>Inklusionsverständnis der HU (PDF)</li>
-        <li>Konzepte und Grundlagen diversitätssensibler Lehre</li>
-        <li>Leitbild der Humboldt-Universität zu Berlin als familiengerechte Hochschule</li>
-        <li>Gleichstellungszukunftskonzept (PDF)</li>
-        <li>Broschüre <a href='https://www.gender.hu-berlin.de/de/studium/diskriminierungskritik-1/broschuere-der-ag-lehre-diskriminierungskritische-lehre-denkanstoesse-aus-den-gender-studies'>"Diskriminierungskritische Lehre: Dekanstöße aus den Gender Studies"</a> der AG Lehre des Zentrums für Transdizsiplinäre Geschlechterstudies</li>
+        <li><a class='mi' href='../files/leibile/klimaschutzkonzept_hu_2023.pdf'>Klimaschutzkonzept der HU (PDF)</a></li>
       </ul>
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
@@ -47,41 +45,52 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script>
       const strukturen = {
-        "anlaufstellen": {
+        "wissenserwerb": {
           "oeco": {
-            "name": "Lehrprogramm 'Studium Oecologicum'",
-            "desc": "<a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/studium-oecologicum' class='mi'>Mehr Informationen zum Studium Oecologicum</a>",
+            "name": "Studium Oecologicum",
+            "desc": "<p>Das <b>Studium Oecologicum</b> ist ein 10 Leistungspunkte umfassendes Lehrprogramm im überfachlichen Wahlpflichtbereich, das im Rahmen der studentischen Initiative <b>'Nachhaltigkeitsbüro'</b> entwickelt wurde. Es richtet sich vor allem an Bachelor- und Masterstudierende der HU.</p><a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/studium-oecologicum' class='mi'>Mehr Informationen zum Studium Oecologicum</a><a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/' class='mi cont'>Informationen zum Nachhaltigkeitsbüro</a>",
             "connections": []
           },
+          "h17wiss": {
+            "name": "Humboldts17: Wissensportal",
+            "desc": "<a href='https://humboldts17.de/de' class='mi'>Homepage der Humboldts17</a>",
+            "connections": []
+          },
+          "irithesysWiss": {
+            "name": "IRI THESys: Programme",
+            "subtitle": "Integrative Research Institute on Transformations of Human-Environment Systems",
+            "desc": "<a href='https://www.iri-thesys.org/education/' class='mi'>Informationen zu den Angeboten von IRI THESys</a>",
+            "connections": []
+          }
+        },
+        "mission":{
           "nbuero": {
             "name": "Nachhaltigkeitsbüro",
             "desc": "<a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/' class='mi'>Mehr Informationen zum Nachhaltigkeitsbüro</a>",
             "connections": []
           },
-          "h17": {
-            "name": "Humboldts17",
-            "desc": "<a href='https://humboldts17.de/de' class='mi'>Mehr Informationen zum Humboldts17</a>",
+          "h17miss": {
+            "name": "Humboldts17: Expeditionen",
+            "desc": "<a href='https://h17.cdlx.dev/de/expeditionen' class='mi'>Mehr Informationen zu den Initativen von Humboldts17</a>",
             "connections": []
           },
-          "irithesys": {
-            "name": "IRI THESys",
+          "irithesysMiss": {
+            "name": "IRI THESys: Outreach",
             "subtitle": "Integrative Research Institute on Transformations of Human-Environment Systems",
             "desc": "<a href='https://www.iri-thesys.org/' class='mi'>Mehr Informationen zum IRI THESys</a>",
             "connections": []
           }
         },
-        "kommissionen":{
+        "kommissionenAgs": {
           "knu": {
             "name": "Kommission Nachhaltige Universität",
-            "desc": "<a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/kommission-nachhaltige-universitaet/kommission-nachhaltige-universitaet-2' class='mi'>Mehr Informationen zur KNU</a>",
+            "desc": "<a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/kommission-nachhaltige-universitaet/kommission-nachhaltige-universitaet-2' class='mi'>Mehr Informationen zur KNU</a><a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/kommission-nachhaltige-universitaet' class='mi cont'>Informationen zum Nachhaltigkeitskompetenzzentrum</a>",
             "connections": []
-          }
-        },
-        "ags": {
-          "agnachgeo": {
-            "name": "AG Nachhaltigkeit am geografischen Institut",
-            "subtitle": "Zentrale Frauen- und Gleichstellungsbeauftragte",
-            "desc": "<a href='https://www.geographie.hu-berlin.de/de/institut/nachhaltigkeit' class='mi'>Mehr Informationen zur AG</a>",
+          },
+          "instit": {
+            "name": "Institutspezifische Initiativen",
+            "wordBreak": "Institut-spezifische Initiativen",
+            "desc": "<a href='https://www.geographie.hu-berlin.de/de/institut/nachhaltigkeit' class='mi'>AG Nachhaltigkeit am geografischen Institut</a><a href='https://www.greenchem.berlin/' class='mi cont'>greenCHEM</a>(Hochschulübergreifendes Projekt zur Nachhaltigkeit in der Chemie)",
             "connections": []
           }
         }
@@ -89,6 +98,8 @@
 
       // Berechnung der Position der Pünkte
       const dCont1 = document.getElementById("dCont1")
+      const dCont2 = document.getElementById("dCont2")
+      const dCont3 = document.getElementById("dCont3")
       const closeBtn = document.getElementById("closeBtn")
       var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
 
@@ -103,60 +114,74 @@
       // var dC = document.getElementById("decCircle")
       // dC.style["top"] = diagramWidth/2 + "px"
 
-      
-
       var nodes = {
-        "outer" : {
-          "struktur": "anlaufstellen",
-          "radius": radiusMax * 0.85,
-          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
+        "first" : {
+          "struktur": "wissenserwerb",
+          "width": 90,
+          "box": dCont1
         },
-        "mid" : {
-          "struktur": "kommissionen",
-          "radius": radiusMax * 0.55,
-          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 24
+        "second" : {
+          "struktur": "mission",
+          "width": 90,
+          "box": dCont2
         },
-        "inner" : {
-          "struktur": "ags",
-          "radius": radiusMax * 0.3,
-          "angInit": - 2*Math.PI / 4 + 2*Math.PI / 24
+        "third" : {
+          "struktur": "kommissionenAgs",
+          "width": 90,
+          "box": dCont3
         },
       }
 
       Object.entries(nodes).forEach(function(nodeEntry, j){
         let category = strukturen[nodeEntry[1]["struktur"]]
-        let radius = nodeEntry[1]["radius"]
-        let angInit = nodeEntry[1]["angInit"]
+        let box = nodeEntry[1]["box"]
         
         let num = Object.keys(category).length
-        let angStep = 2*Math.PI / num
+        
+
+        let posY = 50
         
         let thisList = document.createElement("ul")
         thisList.setAttribute("id", nodeEntry[1]["struktur"])
         thisList.setAttribute("aria-label", "liste " + nodeEntry[1]["struktur"])
-        dCont1.append(thisList)
+        box.append(thisList)
         Object.entries(category).forEach(function(catEntry, i){
-          let theta = angInit + i*angStep
           
           let thisNode = document.createElement("li")
-          thisNode.classList.add("node", nodeEntry[0])
+          thisNode.classList.add("node", "simple", nodeEntry[0])
 
-          let x, y
+          let x, y, posX, nodeWidth
           if (window.innerWidth > thresholdWidth){
-            updateCoordinatesPolar(thisNode, radius, theta)
-          } else {
-            let nodeHeight = dCont1.offsetHeight/num 
-            x = ["0%", "50%", "calc(100% - 2px)"][j]
-            y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
-            thisNode.style.height = (nodeHeight-10)+"px"
+            posX = (100/num)*0.5 + i*(100/num)
+            x = posX + "%"
+            y = posY + "%"
+            thisNode.style.height = "calc(100% - 8px)"
             thisNode.style["left"] = x 
             thisNode.style["top"]  = y 
+            thisNode.style["width"] = "calc(" + (100/num) + "% - 8px)"
+            // let posStep = nodeEntry[1]["width"] / num
+            // let offsetX = (100-nodeEntry[1]["width"])/2
+            // posX = offsetX + i*posStep
+
+            // let nodeHeight = 14 
+            // x = ["7em", "21em"][j]
+            // y = ["7em", "21em"][i]
+            // thisNode.style["left"] = x 
+            // thisNode.style["top"]  = y
+            // thisNode.style["width"] = "calc(" + (nodeEntry[1]["width"]/num) + "% - 2px)"
+          } else {
+            posX = (100/num)*0.5 + i*(100/num)
+            x = posX + "%"
+            y = posY + "%"
+            thisNode.style.height = "calc(100% - 8px)"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
+            thisNode.style["width"] = "calc(" + (100/num) + "% - 8px)"
           }
           thisNode.setAttribute("id", catEntry[0])
           thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
-          thisNode.setAttribute("r", radius)
-          thisNode.setAttribute("theta", theta)
-          thisNode.setAttribute("theta_init", angInit)
+          thisNode.setAttribute("posX", posX)
+          thisNode.setAttribute("posY", posY)
           thisNode.setAttribute("idx", [j,i])
           thisNode.setAttribute("num", num)
 
@@ -170,7 +195,6 @@
           thisNode.append(title)
 
           if (catEntry[1].hasOwnProperty("subtitle")){
-            console.log("subtitle")
             let subtitle = document.createElement("h4")
             subtitle.classList.add("subtitle")
             subtitle.innerHTML = catEntry[1]["subtitle"]
@@ -199,101 +223,6 @@
       node.style["top"] = "calc(" + top * 0.7 + "px" + " + 2em)"
     }
 
-    // Button/Tab functionalities
-    function toggleNodes(class_id){
-      // Button formats
-      for (let tab of document.getElementById("toggleButtons").children){
-        let tabClass = tab.id.split("toggle")[1].toLowerCase()
-        // if clicking same button that was open
-        if (tab.classList.contains("activeC")){
-          tab.classList.remove("activeC")
-        }
-        if (tabClass==class_id){
-          if (!activeClass | activeClass != class_id){
-            tab.classList.add("activeC")
-            // document.getElementsByClassName("containerWindow")[0].style["background"]="rgb(203, 224, 223)"
-            document.getElementsByClassName("diagramContainer")[0].style["background"]="#fafaf5"
-          } else {
-            tab.classList.remove("activeC")
-            // document.getElementsByClassName("containerWindow")[0].style["background"]="rgb(227, 235, 235)"
-            document.getElementsByClassName("diagramContainer")[0].style["background"]=""
-          }
-        }
-      }
-
-      let allNodes = document.getElementsByClassName("node")
-        // clear all to start with, in either case
-        Object.keys(strukturen).forEach(function(cat){
-            let fade = document.getElementById("smallFade")
-            fade.style["background"] = "rgba(255,255,255,0)"
-        })
-        for(let node of allNodes){
-            if (node.classList.contains("active")){
-              if (window.innerWidth > thresholdWidth){
-                updateCoordinatesPolar(node, node.getAttribute("r"), node.getAttribute("theta"))
-              } else {
-              // for mobile: white fade effect
-            }      
-              node.classList.remove("active")
-            }
-            // minimize non-active modes
-            if (class_id != activeClass && !(node.classList.contains(class_id))){
-              node.classList.add("minimized")
-            }
-          }
-          // dC.classList.remove("activeC")
-
-        // activate nodes if they were hidden before
-        let theseNodes = document.getElementsByClassName(class_id)
-        if (activeClass != class_id){
-          for(let node of theseNodes){
-            node.classList.remove("minimized")
-            if (window.innerWidth > thresholdWidth){
-              
-              let rNew
-              let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
-              if (node.getAttribute("r") < 2*inactiveNodeWidth){
-                rNew = 2*inactiveNodeWidth //+ dC.offsetWidth*0.8
-              } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
-                rNew = radiusMax - inactiveNodeWidth
-                // rNew = node.getAttribute("r")
-              } else {
-                rNew = node.getAttribute("r")
-              }
-              updateCoordinatesPolar(node, rNew, thetaNew)
-            }
-            node.classList.add("active")
-            // dC.classList.add("activeC")
-            // dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
-          }
-          activeClass = class_id
-          if (window.innerWidth <= thresholdWidth){
-              // for mobile: white fade effect
-              let fade = document.getElementById("smallFade")
-              fade.style["background"] = "rgba(255,255,255,0.8)"
-            }      
-        }
-        else {
-          for (let node of allNodes){
-            node.classList.remove("minimized")
-          }
-          if (window.innerWidth <= thresholdWidth){
-              // for mobile: white fade effect
-              let fade = document.getElementById("smallFade")
-              fade.style["background"] = "rgba(255,255,255,0)"
-            }      
-          activeClass = null
-        }
-      
-    }
-
-    for (let item of document.getElementById("toggleButtons").children){
-      item.addEventListener("click", function(){
-        let class_id = this.id.split("toggle")[1].toLowerCase()
-        toggleNodes(class_id)
-      })
-    }
-
     // Hover and click effects
     function openNodeW(node){
       // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
@@ -301,18 +230,47 @@
       document.getElementById("fadeCover").style["opacity"] = "0.8"
       openNode = node.id
       node.classList.remove("active")
-      node.classList.add("opened")
       let x = node.style["left"]
       let y = node.style["top"]
       if (window.innerWidth > thresholdWidth){
-        node.style["left"] = (diagramWidth/2)+"px"
-        node.style["top"] = "5em"
+        // node.style["left"] = (diagramWidth/2)+"px"
+        // node.style["top"] = "5em"
+        // node.style["transform"] = "translate(-50%, 0%)"
+        // node.style["z-index"] = 5
+        // setTimeout(()=>{
+        //   node.classList.add("opened")
+        // }, 200)
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        if (node.classList.contains("third")){
+          node.style["top"] = "-10em"
+        } else {
+          node.style["top"] = "1em"
+        }
+        
+        node.style["z-index"] = 5
+        node.style["transform"] = "translate(-50%, 0%)"
+        setTimeout(()=>{
+          node.classList.add("opened")
+          node.style["height"] = "fit-content"
+        }, 200)
       } else {
         node.style["left"] = (dCont1.offsetWidth/2) + "px"
-        node.style["top"] = "1em"
-        node.style["height"] = "fit-content"
+        if (node.classList.contains("third")){
+          node.style["top"] = "-10em"
+        } else {
+          node.style["top"] = "1em"
+        }
+        
+        node.style["z-index"] = 5
+        node.style["transform"] = "translate(-50%, 0%)"
+        setTimeout(()=>{
+          node.classList.add("opened")
+          node.style["height"] = "fit-content"
+        }, 200)
       }
-      node.style["transform"] = "translate(-50%, 0%)"
+      
+      
+      
       if (window.innerWidth > thresholdWidth){
         // adjust title if word-break version was used
         node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
@@ -335,21 +293,13 @@
       node.classList.add("closing")
       node.style["left"] = oldPos[0]
       node.style["top"] = oldPos[1]
-      
+      node.style["transform"] = "translate(-50%, -50%)"
+      node.style["z-index"] = ""
 
       if (!(window.innerWidth > thresholdWidth)){
-        node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
-        if (node.classList.contains("outer")){
-          node.style["transform"] = "translate(0, -50%)"
-        }
-        if (node.classList.contains("mid")){
-          node.style["transform"] = "translate(-50%, -50%)"
-        }
-        if (node.classList.contains("inner")){
-          node.style["transform"] = "translate(-100%, -50%)"
-        }
+        node.style["height"] = "calc(100% - 8px)"
       } else {
-        node.style["transform"] = "translate(-50%, -50%)"
+        node.style["height"] = "calc(100% - 8px)"
       }
 
       // adjust title if word-break version was used

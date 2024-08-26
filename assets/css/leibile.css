@@ -87,7 +87,7 @@ body {
     width: 95%;
     margin: auto;
 }
-.innerWindow > h1, .innerWindow > h2 {
+.innerWindow > h1, .innerWindow > h2, .containerWindow > h2 {
     text-align: center;
 }
 .innerWindow > h1 {
@@ -97,7 +97,7 @@ body {
     font-size: 30px;
     font-stretch: expanded;
 }
-.innerWindow > h2 {
+.innerWindow > h2, .containerWindow > h2 {
     color: #004c90;
     font-size: 18px;
     margin: 1.5em auto 0.5em;
@@ -530,6 +530,11 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 
 }
 
+.nachhaltigkeit .diagramContainer {
+    height: 5.5em;
+}
+
+
 .diagramContainer > #smallFade {
   width: 100%;
   height: 100%;
@@ -600,6 +605,9 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
         height: 100%;
         width: 100%;
     }
+    .nachhaltigkeit .diagramContainer {
+        height: 8em;
+    }
     #decCircle {
         display: block;
     }
@@ -640,8 +648,8 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 .node.outer {
     transform: translate(0, -50%);
-    background: #e74306;
-    border: 2px solid #e74306
+    background: #009ee3;
+    border: 2px solid #009ee3
 }
 .node.mid {
     transform: translate(-50%, -50%);
@@ -650,8 +658,8 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 .node.inner {
     transform: translate(-100%, -50%);
-    background: #059931;
-    border: 2px solid #059931;
+    background: #3a7775;
+    border: 2px solid #3a7775;
 }
 
 .node.left, .node.right {
@@ -665,6 +673,16 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 .node.right {
     transform: translate(-100%, -50%);
     border: 2px solid
+}
+
+.node.simple {
+    transform: translate(-50%, -50%);
+    background: #3a7775;
+    border: 2px solid #3a7775;
+}
+
+.node.simple.opened {
+    background: white;
 }
 #intl {
     background: #009ee3;
@@ -686,8 +704,33 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     background: white;
 }
 
+#oeco, #nbuero {
+    background: #5b89b0;
+    border-color: #5b89b0;
+}
+#h17wiss, #h17miss {
+    background: #004c90;
+    border-color: #004c90;
+}
+#irithesysWiss, #irithesysMiss { 
+    background: #00376c;
+    border-color: #00376c;
+}
+#knu {
+    background: #7c6c98;
+    border-color: #7c6c98;
+}
+#instit {
+    background: #3a7775;
+    border-color: #3a7775;
+}
+
+#oeco.opened, #nbuero.opened, #h17wiss.opened, #irithesysWiss.opened, #h17miss.opened, #irithesysMiss.opened, #knu.opened, #instit.opened {
+    background: white;
+}
+
 .node > .title {
-    font-size: 10px;
+    font-size: 11px;
     display: table-cell;    
     vertical-align: middle;
     text-align: center;
@@ -755,13 +798,16 @@ div.node.left.active, div.node.right.active {
 /* minimized node: nothing for mobile */
 
 /* opened node */
-.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened {
+.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened, .node.simple.opened {
     width: 80%;
     height: fit-content;
     padding: 1.5em;
     display: block;
     z-index: 5;
     cursor: auto;
+}
+.node.simple.opened {
+    width: 80% !important;
 }
 
 .node.opened > .title {
@@ -773,6 +819,7 @@ div.node.left.active, div.node.right.active {
 
 .node.opened > .subtitle {
     display: block;
+    width: 100%;
     font-size: 0.8em;
 }
 
@@ -821,6 +868,9 @@ div.node.left.active, div.node.right.active {
         height: 12em;
         border-radius: 12em;
     }
+    .node.simple {
+        border-radius: 8em;
+    }
     .node.outer, .node.mid, .node.inner, .node.left, .node.right {
         transform: translate(-50%, -50%)
     }
@@ -831,7 +881,7 @@ div.node.left.active, div.node.right.active {
         font-size: 10px;
         color: white;
     }
-    .node.left > .title, .node.right > .title {
+    .node.left > .title, .node.right > .title, .node.simple > .title {
         display: table-cell;
     }
 
@@ -844,11 +894,10 @@ div.node.left.active, div.node.right.active {
         transform: translate(-50%, -50%);
         overflow: hidden;
     }
-    .node.left.opened > .title, .node.right.opened > .title {
+    .node.left.opened > .title, .node.right.opened > .title, .node.simple.opened > .title {
         display: block;
     }
     div.node.left.active, div.node.right.active {
-        
         z-index: 3;
         border-radius: 15em;
         width: 15em;
@@ -858,7 +907,7 @@ div.node.left.active, div.node.right.active {
         width: 1em;
         height: 1em;
     }
-    div.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened {
+    div.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened, .node.simple.opened {
     width: 60%;
     transform: translate(-50%, -50%);
     border-radius: 1.5em;
