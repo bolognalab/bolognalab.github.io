@@ -71,6 +71,7 @@
             </div>
           </div>
           <div class="grid lr"></div>
+          <div id="dummyWindow" style="display: none"></div>
       </div>
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
@@ -83,6 +84,7 @@
       const grids = document.getElementsByClassName("grid")
       const closeBtn = document.getElementById("closeBtn")
       const tCont1 = document.getElementsByClassName("themesContainer")[0]
+      const dummyWindow = document.getElementById("dummyWindow")
       const themesContainerRect = tCont1.getBoundingClientRect()
       const thresholdWidth = 600
 
@@ -128,7 +130,7 @@
       function closeTheme(node){
         node.getElementsByClassName("infoContent")[0].style.opacity=0
         closeBtn.parentElement.removeChild(closeBtn)
-          tCont1.appendChild(closeBtn)
+          dummyWindow.appendChild(closeBtn)
           closeBtn.style.visibility="hidden"
           closeBtn.style.opacity="0"
         setTimeout(function(){
