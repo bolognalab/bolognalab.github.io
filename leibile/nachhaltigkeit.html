@@ -23,7 +23,6 @@
         <h2>Wissenserwerb an der HU</h2>
         <div class="diagramContainer" id="dCont1">
           <div id="closeBtn"><p>&#10006;</p></div>
-          <div id="invisibleNode"></div>
           <div id="smallFade"></div>
         </div>
 
@@ -89,7 +88,7 @@
           },
           "instit": {
             "name": "Institutspezifische Initiativen",
-            "wordBreak": "Institut-spezifische Initiativen",
+            "wordBreak": "Institutspezifische Initiativen",
             "desc": "<a href='https://www.geographie.hu-berlin.de/de/institut/nachhaltigkeit' class='mi'>AG Nachhaltigkeit am geografischen Institut</a><a href='https://www.greenchem.berlin/' class='mi cont'>greenCHEM</a>(Hochschulübergreifendes Projekt zur Nachhaltigkeit in der Chemie)",
             "connections": []
           }
@@ -108,8 +107,6 @@
       var activeClass = null
       var openNode = null
       var oldPos
-      var inactiveNodeWidth=100, inactiveNodeHeight=100
-      var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
       
       // var dC = document.getElementById("decCircle")
       // dC.style["top"] = diagramWidth/2 + "px"
@@ -158,7 +155,8 @@
             thisNode.style.height = "calc(100% - 8px)"
             thisNode.style["left"] = x 
             thisNode.style["top"]  = y 
-            thisNode.style["width"] = "calc(" + (100/num) + "% - 8px)"
+            thisNode.style["width"] = "calc(" + (100/num) + "% - 20px)"
+            thisNode.style["max-width"] = "11.8em"
             // let posStep = nodeEntry[1]["width"] / num
             // let offsetX = (100-nodeEntry[1]["width"])/2
             // posX = offsetX + i*posStep
@@ -209,11 +207,6 @@
           
           thisNode.append(details)
           thisList.append(thisNode)
-          // dCont1.append(thisNode)
-          if (j==0){
-          inactiveNodeWidth = thisNode.offsetWidth
-          inactiveNodeHeight = thisNode.offsetHeight
-        }
         })
       })
 
@@ -249,6 +242,7 @@
         
         node.style["z-index"] = 5
         node.style["transform"] = "translate(-50%, 0%)"
+        node.style["max-width"] = ""
         setTimeout(()=>{
           node.classList.add("opened")
           node.style["height"] = "fit-content"
@@ -300,6 +294,7 @@
         node.style["height"] = "calc(100% - 8px)"
       } else {
         node.style["height"] = "calc(100% - 8px)"
+        node.style["max-width"] = "11.8em"
       }
 
       // adjust title if word-break version was used
@@ -360,22 +355,7 @@
     var n1 = document.getElementsByClassName("outer")[1]
     var n0 = document.getElementsByClassName(activeClass)[0]
     var n2 = document.getElementsByClassName(activeClass)[2]
-    // position optimization functions
-    function getPositionArguments(n){
-      let result = {
-        "node": n,
-        "x": n.style.left.split("px")[0],
-        "y": n.style.top.split("px")[0],
-        "r": n.getAttribute("r"),
-      }
-      result["theta_temp"] = Math.acos((result["x"]-diagramWidth/2)/result["r"])
-      result["left"] = result["x"] - activeNodeWidth/2
-      result["right"] = result["x"] + activeNodeWidth/2
-      result["top"] = result["y"] - activeNodeHeight/2
-      result["bottom"] = result["y"] + activeNodeHeight/2
 
-      return result
-    }
     function isWithinBoundingRect(x, y, rect){
       let rx1 = rect.x, rx2 = rect.x + rect.width
       let ry1 = rect.y, ry2 = rect.y + rect.height

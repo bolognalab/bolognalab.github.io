@@ -444,7 +444,6 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 
-
 @media only screen and (min-width: 600px){
     .innerWindow, .containerWindow {
         width: 95%;
@@ -548,6 +547,10 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
   pointer-events: none;
 }
 
+.diagramContainer > ul {
+    margin: 0 0;
+}
+
 #fadeCover {
     position: absolute;
     left:0; top: 0;
@@ -606,7 +609,9 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
         width: 100%;
     }
     .nachhaltigkeit .diagramContainer {
-        height: 8em;
+        height: 7em;
+        width: 80%;
+        max-width: 600px;
     }
     #decCircle {
         display: block;
@@ -805,6 +810,7 @@ div.node.left.active, div.node.right.active {
     display: block;
     z-index: 5;
     cursor: auto;
+    max-width: "";
 }
 .node.simple.opened {
     width: 80% !important;
@@ -920,6 +926,9 @@ div.node.left.active, div.node.right.active {
     .node > .title {
         padding: 0em 2em;
         font-size: 15px;
+    }
+    .nachhaltigkeit .node > .title {
+        font-size: 14px;
     }
     div.node.active {
         border-radius: 10em;
