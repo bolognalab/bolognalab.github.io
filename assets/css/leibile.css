@@ -458,13 +458,13 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 
     .containerWindow.smaller1 {
         height: 28em; 
-        width: 29em;
+        /* width: 29em; */
         min-width: 0
     }
 }
 
 @media only screen and (min-width: 1200px){
-    .innerWindow, .containerWindow {
+    .innerWindow {
         width: 70%;
         min-width: 800px;
         max-width: 800px;
@@ -521,11 +521,12 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 
 /* diagram container */
 .diagramContainer {
-    width: calc(98%-1em);
+    width: calc(98% - 1em);
     aspect-ratio: 1;
     position: relative;
     /* background-color: red; */
-    border-radius: 0 0 5px 5px
+    border-radius: 0 0 5px 5px;
+    transition: background-color 0.5s ease;
 
 }
 
@@ -693,7 +694,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     background: #009ee3;
     border-color: #009ee3;
 }
-#kfk {
+#bua {
     background: #5b89b0;
     border-color: #5b89b0;
 }
@@ -705,7 +706,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     background: #0000ff;
     border-color: #0000ff;
 }
-#intl.opened, #kfk.opened, #sprach.opened, #openhu.opened {
+#intl.opened, #bua.opened, #sprach.opened, #openhu.opened {
     background: white;
 }
 

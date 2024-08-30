@@ -36,10 +36,12 @@
         <h2>Konzepte und Dokumentation zum Thema</h2>
         <ul>
           <li><a class='mi' href='../files/leibile/Inklusionsverständnis_KBH_2022.pdf'>Inklusionsverständnis der HU (PDF)</a><br>(Kommission Barrierefreie Hochschule)</li>
-          <li>Konzepte und Grundlagen diversitätssensibler Lehre</li>
-          <li>Leitbild der Humboldt-Universität zu Berlin als familiengerechte Hochschule</li>
-          <li>Gleichstellungszukunftskonzept (PDF)</li>
-          <li><a class='mi' href='../files/leibile/ZtG-Diskriminierungskritische Lehre.pdf' >Broschüre "Diskriminierungskritische Lehre: Dekanstöße aus den Gender Studies"</a> <br> (AG Lehre,  Zentrum für Transdizsiplinäre Geschlechterstudien)</li>
+          <li><a class= 'mi' href='https://diversitaet.hu-berlin.de/de/diversitaetssensible-Lehre'>Konzepte und Grundlagen diversitätssensibler Lehre</a></li>
+          <li><a class='mi' href='https://www.familienbuero.hu-berlin.de/de/strategie-familienfreundlichkeit/familiengerechte-grundsaetze/grundsaetze-der-hu-zur-gestaltung-einer-familienfreundlichen-hochschule'>Leitbild der Humboldt-Universität zu Berlin als familiengerechte Hochschule</a></li>
+          <li><a class='mi' href= 'https://frauenbeauftragte.hu-berlin.de/de/informationen/download/gzk_hu.pdf'>Gleichstellungszukunftskonzept (PDF)</a></li>
+          <!-- <li><a class='mi' href='../files/leibile/ZtG-Diskriminierungskritische Lehre.pdf' >Broschüre "Diskriminierungskritische Lehre: Dekanstöße aus den Gender Studies"</a> <br> (AG Lehre,  Zentrum für Transdizsiplinäre Geschlechterstudien)</li> -->
+          <li><a class='mi' href='https://diversitaet.hu-berlin.de/de'>Diversität an der HU</a></li>
+          <li><a class='mi' href='https://www.hu-berlin.de/de/service/beratung/chancengleichheit-1'>Beauftragte und Angebote zu Chancengleichheit an der HU</a></li>
         </ul>
       </div>
     </div>
@@ -137,6 +139,7 @@
 
       // Berechnung der Position der Pünkte
       const dCont1 = document.getElementById("dCont1")
+      var dCont1Rect = dCont1.getBoundingClientRect()
 
       const closeBtn = document.getElementById("closeBtn")
       var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
@@ -147,6 +150,7 @@
       var radiusMax = 0.5 * diagramWidth * 0.9
       var activeClass = null
       var openNode = null
+      var holdingOpen = false
       var oldPos
       var inactiveNodeWidth=100, inactiveNodeHeight=100
       var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
@@ -243,6 +247,8 @@
         }
         })
       })
+      
+    
 
     function updateCoordinatesPolar(node, r, theta){
       node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
@@ -298,7 +304,6 @@
           for(let node of theseNodes){
             node.classList.remove("minimized")
             if (window.innerWidth > thresholdWidth){
-              
               let rNew
               let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
               if (node.getAttribute("r") < 2*inactiveNodeWidth){
@@ -341,7 +346,36 @@
         let class_id = this.id.split("toggle")[1].toLowerCase()
         toggleNodes(class_id)
       })
+      item.addEventListener("mouseenter", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        if (class_id != activeClass){
+          holdingOpen = false
+          toggleNodes(class_id)
+        }
+
+      })
+      item.addEventListener("mouseleave", function(e){
+        dCont1Rect = dCont1.getBoundingClientRect()
+        if (!isWithinBoundingRect(e.clientX, (e.clientY+1), dCont1Rect)){
+          let class_id = this.id.split("toggle")[1].toLowerCase()
+          toggleNodes(class_id)
+        } else {
+          holdingOpen = true
+        }
+      })
     }
+
+    dCont1.addEventListener("mouseleave", function(e){
+      if (activeClass && !openNode){
+        let activeButton = document.getElementById("toggle" + activeClass.charAt(0).toUpperCase() + activeClass.slice(1))
+        let rect = activeButton.getBoundingClientRect()
+        if (holdingOpen && !isWithinBoundingRect(e.clientX, e.clientY, rect)){
+          toggleNodes(activeClass)
+          holdingOpen = false
+        }
+      }
+
+    })
 
     // Hover and click effects
     function openNodeW(node){

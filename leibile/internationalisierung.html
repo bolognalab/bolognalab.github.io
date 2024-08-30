@@ -18,7 +18,7 @@
       <div id="decCircle" style="background: #821f71"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
       <h2>Ansprechpunkte an der HU</h2>
       <p>Um eine zukunftsorientierte Lehre, die Internationalisierung und Multiperspektivität fördert, zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte und Initiativen gesammelt: </p>
-      <div class="containerWindow smaller1" style="margin-top: 1em">
+      <div class="containerWindow smaller1" style="margin-top: 1em; overflow: hidden">
         <div id="fadeCover" style="background: #f0f0eb"></div>
         <div class="diagramContainer" id="dCont1">
           <!-- decorative elements -->
@@ -40,25 +40,30 @@
         "erster": {
           "intl": {
             "name": "Abteilung Internationales",
-            "desc": "<a class='mi' href='https://www.international.hu-berlin.de/de'>Mehr Informationen zur Abteilung Internationales</a>",
+            "desc": "<p>Die Abteilung Internationales ist die zentrale Serviceeinrichtung für alle internationalen Aktivitäten an und mit der Humboldt-Universität. Unsere Angebote ergänzen das internationale Engagement der Fakultäten und fördern bereichsübergreifende Zusammenarbeit.</p><a class='mi' href='https://www.international.hu-berlin.de/de'>Mehr Informationen zur Abteilung Internationales</a>",
             "connections": []
           },
           "sprach": {
             "name": "Sprachzentrum der HU",
-            "desc": "<a class='mi' href='https://www.sprachenzentrum.hu-berlin.de/de'>Mehr Informationen zum Sprachzentrum</a>",
+            "desc": "<p>Das Sprachenzentrum bietet Studierenden aller Fachrichtungen und Mitarbeiter/innen eine universitätsspezifische Fremd- und Fachsprachenausbildung an.</p><a class='mi' href='https://www.sprachenzentrum.hu-berlin.de/de'>Mehr Informationen zum Sprachzentrum</a>",
             "connections": []
           }
         },
         "zweiter": {
-          "kfk": {
-            "name": "Kommission Forschung und wissenschaftliche Karrierre*n",
-            "desc": "<p>Die <b>Kommission Forschung und wissenschaftliche Karrierre*n (KFK)</b> berät den Akademischen Senat und das Präsidium in allen Fragen, die die Forschung und den wissenschaftlichen Nachwuchs betreffen. Die Kommission ist für Empfehlungen zur Entwicklung und Koordinierung der Forschung, zur Bildung von Forschungsschwerpunkten sowie für grundsätzliche Fragen der Förderung des wissenschaftlichen Nachwuchses zuständig.</p><a href='https://gremien.hu-berlin.de/de/kommissionen/fnk' class='mi'>Mehr Informationen zur KFK</a>",
-            "connections": []
+          // "kfk": {
+          //   "name": "Kommission Forschung und wissenschaftliche Karrierre*n",
+          //   "desc": "<p>Die <b>Kommission Forschung und wissenschaftliche Karrierre*n (KFK)</b> berät den Akademischen Senat und das Präsidium in allen Fragen, die die Forschung und den wissenschaftlichen Nachwuchs betreffen. Die Kommission ist für Empfehlungen zur Entwicklung und Koordinierung der Forschung, zur Bildung von Forschungsschwerpunkten sowie für grundsätzliche Fragen der Förderung des wissenschaftlichen Nachwuchses zuständig.</p><a href='https://gremien.hu-berlin.de/de/kommissionen/fnk' class='mi'>Mehr Informationen zur KFK</a>",
+          //   "connections": []
+          // },
+          "bua": {
+            "name": "Berlin University Alliance",
+            "desc": "<p>Mit der Gründung der Berlin University Alliance (BUA) haben sich die Freie Universität Berlin, die Humboldt-Universität zu Berlin, die Technische Universität Berlin und die Charité –Universitätsmedizin Berlin das langfristige Ziel gesetzt, gemeinsam einen integrierten Forschungsraum in Berlin zu schaffen und zu gestalten. Über individuelle Netzwerke, Institutionen und Disziplinen hinweg möchte der Verbund zum Herzstück und zur Antriebskraft eines exzellenten Berliner „Ökosystems“ werden, bestehend aus Universitäten und außeruniversitären Forschungseinrichtungen, wissenschaftlichen Sammlungen, Museen, kulturellen und politischen Einrichtungen sowie Startups und Partnern aus der Industrie.</p><a class='mi' href='https://open-humboldt.de/de'>Mehr Informationen zu Open Humboldt</a>",
+            "connections": [] 
           },
           "openhu": {
             "name": "Open Humboldt",
             "subtitle": "Berlin School of Public Engagement and Open Science",
-            "desc": "<a class='mi' href='https://open-humboldt.de/de'>Mehr Informationen zu Open Humboldt</a>",
+            "desc": "<p>Die Aufgabe von Open Humboldt ist, Wissensaustausch mit der Gesellschaft als zentrale Mission der Humboldt-Universität neben Forschung und Lehre als Daueraufgabe zu etablieren und mit Leben zu füllen. Die Humboldt-Universität intensiviert und verstetigt die Interaktion zwischen Wissenschaft, Gesellschaft und Kultur im Rahmen von Open Humboldt mit neuen Kommunikationsangeboten.</p><a class='mi' href='https://open-humboldt.de/de'>Mehr Informationen zu Open Humboldt</a>",
             "connections": []
           }
         }
@@ -120,7 +125,7 @@
           let x, y
           if (window.innerWidth > thresholdWidth){
             let nodeHeight = 14 
-            x = ["7em", "21em"][j]
+            x = ["calc(50% - 7em)", "calc(50% + 7em)"][j]
             y = ["7em", "21em"][i]
             thisNode.style["left"] = x 
             thisNode.style["top"]  = y
