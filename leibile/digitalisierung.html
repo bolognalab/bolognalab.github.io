@@ -16,14 +16,480 @@
       <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner_constr.png" /></a>
       <h1>Digitalisierung und Medienbildung</h1>
       <div id="decCircle" style="background: #5b89b0;"><img class="mainIcon" src="../images/leibile/digitalisierung.svg"></div>
-      <h2>Under Construction</h2>
-      <p>Diese Webseite ist noch im Aufbau</p>
+      <h2>Anlaufstellen an der HU</h2>
+      <p>Um eine moderne Hochschullehre samt Didaktik und Methodik zu gestalten, wurden folgende Beispiele für vorhandene Anlaufstellen gesammelt:</p>
+      <div class="containerWindow">
+        <div id="fadeCover" style="background: #f0f0eb"></div>
+        <div id="toggleButtons">
+          <div id="toggleOuter"><h3>Ressourcen zur KI</h3></div><div id="toggleMid"><h3>Technische & didaktische Unterstützung</h3></div><div id="toggleInner"><h3>Weiterbildung für Lehrende</h3></div>
+        </div>
+        <div class="diagramContainer" id="dCont1">
+          <!-- decorative elements -->
+          <div id="closeBtn"><p>&#10006;</p></div>
+          <!-- <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div> -->
+          <div id="invisibleNode"></div>
+          <div id="smallFade"></div>
+        </div>
       </div>
+      <h2>Dokumente zum Thema</h2>
+      <ul>
+        <li><a class='mi' href='https://bolognalab.hu-berlin.de/de/leitbild-lehre/literatur-und-dokumente/leitlinien-digitale-lehre_20221109.pdf'>Leitlinien digitale Lehre: Kriterien und Standards für Digitale Lehre in Präsenzsemestern</a><br>(Vize-Präsident(in) für Lehre und Studium)</li>
+        <li><a class='mi' href='https://www.digitale-lehre.hu-berlin.de/de/handreichungen'>Handreichungen zur digitalen Lehre</a><br>(Task Force Digitale Lehre)</li>
+        <li><a class='mi' href='https://www.hu-berlin.de/de/studium/pservice/empfehlungen_ki_in_pruefungen_hu_2023-09-18.pdf'>Empfehlungen zur Nutzung von KI in Studienleistungen und Prüfungen</a><br>(HU Prüfungsservice)</li>
+      </ul>
+      </div>
+
+      
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/browser.min.js"></script>
     <script src="../assets/js/breakpoints.min.js"></script>
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script>
+      // Informationen zu digitaler Lehre
+      const strukturen = {
+        "support": {
+          "hdl3": {
+            "name": "HDL3",
+            "desc": "<p>Die HU digitale Lehr- und Lernlandschaft (HDL3) ermöglicht es Lehrenden und Lernenden, weite Teile von Lehre und Studium online umzusetzen. Sie fasst IT-Dienste zusammen, um Kurse online abzubilden, Vorlesungen und Seminare durchzuführen oder Prüfungen abzuhalten. Die Dienste ermöglichen kollaboratives Arbeiten in Kursen und zwischen Studierenden, Lehrmaterial kann als Video oder interaktiv angeboten und genutzt werden.</p><a href='https://www.digitale-lehre.hu-berlin.de/de/lehr-und-lernlandschaft' class='mi'>Mehr Informationen zur HDL3</a>",
+            "connections": []
+          },
+          "digimed": {
+            "name": "Digitale Medien - Projekte und Platformen",
+            "desc": "<p>Die AG Digitale Medien – Projekte und Platformen (DMP) berät Mitarbeiter/innen und Studierende bei der Nutzung digitaler Medien in Studium, Lehre und Forschung und betreuen u. a. Moodle, das Medien-Repositorium, Mahara und Etherpad. Die AG wirkt aktiv bei der Akquise und Durchführung von Drittmittelprojekten mit und können Lehrende dabei unterstützen, in die HU-Infrastruktur die für ihre individuellen Anforderungen geeigneten Ressourcen und Angebote zu finden.</p><a href='https://www.cms.hu-berlin.de/de/dl/multimedia/bereiche/dmp' class='mi'>Mehr Informationen zur AG</a>",
+            "connections": []
+          },
+          "digiLe": {
+            "name": "Digitales Lehren und Lernen",
+            "desc": "<p>Die Webseiten zu Digitalem Lehren und Lernen (DL) unterstützen HU-Angehörige bei der Umsetzung ihrer Aufgaben in Forschung, Lehre und Studium. Auf dieser Seite sind Informationen zu den Tools der HDL3, praktische Empfehlungen, Informationen zu Beratungsangeboten und verschiedene Handreichungen zu Aspekten digitaler Lehre zu finden.</p><a href='https://www.digitale-lehre.hu-berlin.de/de' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "moodle": {
+            "name": "Moodle-Kurse zur digitalen Lehre",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "medienkomm": {
+            "name": "Medienkommission",
+            "subtitle": "Förderprogramme",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          }
+        },
+        "ki":{
+          "kicms": {
+            "name": "KI-Website der HU",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "aiskills": {
+            "name": "AI-SkillsA",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "kicampus": {
+            "name": "KI-Campus",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "impact": {
+            "name": "IMPACT",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          }
+        },
+        "weiterb": {
+          "bwb": {
+            "name": "Berufliche Weiterbildung",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "kilz": {
+            "name": "KI-Lehrzertifikat",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "bzhl": {
+            "name": "Berliner Zentrum für Hochschullehre",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "ubib": {
+            "name": "Universitätsbibliothek",
+            "wordBreak": "Universitäts-bibliothek",
+            "subtitle": "Angebote zu Informationskompetenz",
+            "desc": "<p>Text</p><a href='' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          }
+        }
+      }
+
+      // Berechnung der Position der Pünkte
+      const dCont1 = document.getElementById("dCont1")
+      const dCont2 = document.getElementById("dCont2")
+
+      const closeBtn = document.getElementById("closeBtn")
+      var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
+      if (window.innerWidth < thresholdWidth){
+        dCont1.style["aspect-ratio"] = 0.83
+      }
+      var diagramWidth = dCont1.offsetWidth
+      var radiusMax = 0.5 * diagramWidth * 0.9
+      var activeClass = null
+      var openNode = null
+      var oldPos
+      var inactiveNodeWidth=100, inactiveNodeHeight=100
+      var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
+      
+      // var dC = document.getElementById("decCircle")
+      // dC.style["top"] = diagramWidth/2 + "px"
+
+      
+
+      var nodes = {
+        "outer" : {
+          "struktur": "weiterb",
+          "radius": radiusMax * 0.85,
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
+        },
+        "mid" : {
+          "struktur": "support",
+          "radius": radiusMax * 0.6,
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 24
+        }, 
+        "inner": {
+          "struktur": "ki",
+          "radius": radiusMax * 0.3,
+          "angInit": - 2*Math.PI / 4 + 2*Math.PI / 24
+        }
+      }
+
+      Object.entries(nodes).forEach(function(nodeEntry, j){
+        let category = strukturen[nodeEntry[1]["struktur"]]
+        let radius = nodeEntry[1]["radius"]
+        let angInit = nodeEntry[1]["angInit"]
+        
+        let num = Object.keys(category).length
+        let angStep = 2*Math.PI / num
+        
+        let thisList = document.createElement("ul")
+        thisList.setAttribute("id", nodeEntry[1]["struktur"])
+        thisList.setAttribute("aria-label", "liste " + nodeEntry[1]["struktur"])
+        dCont1.append(thisList)
+        Object.entries(category).forEach(function(catEntry, i){
+          let theta = angInit + i*angStep
+          
+          let thisNode = document.createElement("li")
+          thisNode.classList.add("node", nodeEntry[0])
+
+          let x, y
+          if (window.innerWidth > thresholdWidth){
+            updateCoordinatesPolar(thisNode, radius, theta)
+          } else {
+            let nodeHeight = dCont1.offsetHeight/num 
+            x = ["0%", "50%", "calc(100% - 2px)"][j]
+            y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
+            thisNode.style.height = (nodeHeight-10)+"px"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
+          }
+          thisNode.setAttribute("id", catEntry[0])
+          thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
+          thisNode.setAttribute("r", radius)
+          thisNode.setAttribute("theta", theta)
+          thisNode.setAttribute("theta_init", angInit)
+          thisNode.setAttribute("idx", [j,i])
+          thisNode.setAttribute("num", num)
+
+          let title = document.createElement("h3")
+          title.classList.add("title")
+          if (catEntry[1].hasOwnProperty("wordBreak")){
+            title.innerHTML = catEntry[1]["wordBreak"]
+          } else {
+            title.innerHTML = catEntry[1]["name"]
+          }
+          thisNode.append(title)
+
+          if (catEntry[1].hasOwnProperty("subtitle")){
+            console.log("subtitle")
+            let subtitle = document.createElement("h4")
+            subtitle.classList.add("subtitle")
+            subtitle.innerHTML = catEntry[1]["subtitle"]
+            thisNode.append(subtitle)
+          }
+          
+
+          let details = document.createElement("p")
+          details.classList.add("details")
+          details.innerHTML = catEntry[1]["desc"]
+
+          
+          thisNode.append(details)
+          thisList.append(thisNode)
+          // dCont1.append(thisNode)
+          if (j==0){
+          inactiveNodeWidth = thisNode.offsetWidth
+          inactiveNodeHeight = thisNode.offsetHeight
+        }
+        })
+      })
+
+    function updateCoordinatesPolar(node, r, theta){
+      node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
+      let top = (r * Math.sin(theta) + diagramWidth/2)
+      node.style["top"] = "calc(" + top * 0.67 + "px" + " + 1.5em)"
+    }
+
+    function updateNodePosition(node){
+      let cHeight = dCont1.offsetHeight
+        if (window.innerWidth > thresholdWidth){
+            let radius = node.getAttribute("r")
+            let theta = node.getAttribute("theta")
+            updateCoordinatesPolar(node, radius, theta)
+            node.style["height"] = ""
+            node.style["width"] = ""
+          } else {
+            let idx = node.getAttribute("idx")
+            let j = idx.split(",")[0]
+            let i = idx.split(",")[1]
+            let num = node.getAttribute("num")
+            let nodeHeight = dCont1.offsetHeight/num
+            let x = ["0%", "50%", "calc(100% - 2px)"][j]
+            let y = (nodeHeight/2 - 2.5 + i * cHeight / num) + "px"
+            node.style["height"] = (nodeHeight-10)+"px"
+            node.style["left"] = x 
+            node.style["top"]  = y 
+          }
+      }
+      function updateAllNodes(){
+        let allNodes = document.getElementsByClassName("node")
+        for (let n of allNodes){
+          if (n.classList.contains("opened")){
+            closeNodeW(n)
+            n.style["transform"] = ""
+          }
+          updateNodePosition(n)
+        }
+      }
+
+    // Button/Tab functionalities
+    function toggleNodes(class_id){
+      // Button formats
+      for (let tab of document.getElementById("toggleButtons").children){
+        let tabClass = tab.id.split("toggle")[1].toLowerCase()
+        // if clicking same button that was open
+        if (tab.classList.contains("activeC")){
+          tab.classList.remove("activeC")
+        }
+        if (tabClass==class_id){
+          if (!activeClass | activeClass != class_id){
+            tab.classList.add("activeC")
+            document.getElementsByClassName("diagramContainer")[0].style["background"]="#fafaf5"
+          } else {
+            tab.classList.remove("activeC")
+            document.getElementsByClassName("diagramContainer")[0].style["background"]=""
+          }
+        }
+      }
+
+      let allNodes = document.getElementsByClassName("node")
+        // clear all to start with, in either case
+        Object.keys(strukturen).forEach(function(cat){
+            let fade = document.getElementById("smallFade")
+            fade.style["background"] = "rgba(255,255,255,0)"
+        })
+        for(let node of allNodes){
+            if (node.classList.contains("active")){
+              if (window.innerWidth > thresholdWidth){
+                updateCoordinatesPolar(node, node.getAttribute("r"), node.getAttribute("theta"))
+              } else {
+              // for mobile: white fade effect
+            }      
+              node.classList.remove("active")
+            }
+            // minimize non-active modes
+            if (class_id != activeClass && !(node.classList.contains(class_id))){
+              node.classList.add("minimized")
+            }
+          }
+          // dC.classList.remove("activeC")
+
+        // activate nodes if they were hidden before
+        let theseNodes = document.getElementsByClassName(class_id)
+        if (activeClass != class_id){
+          for(let node of theseNodes){
+            node.classList.remove("minimized")
+            if (window.innerWidth > thresholdWidth){
+              
+              let rNew
+              let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
+              if (node.getAttribute("r") < 2*inactiveNodeWidth){
+                rNew = 2.3*inactiveNodeWidth // + dC.offsetWidth*0.8
+              } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
+                rNew = radiusMax - 0.9*inactiveNodeWidth
+                // rNew = node.getAttribute("r")
+              } else {
+                rNew = node.getAttribute("r")
+              }
+              updateCoordinatesPolar(node, rNew, thetaNew)
+            }
+            node.classList.add("active")
+            // dC.classList.add("activeC")
+            // dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
+          }
+          activeClass = class_id
+          if (window.innerWidth <= thresholdWidth){
+              // for mobile: white fade effect
+              let fade = document.getElementById("smallFade")
+              fade.style["background"] = "rgba(255,255,255,0.8)"
+            }      
+        }
+        else {
+          for (let node of allNodes){
+            node.classList.remove("minimized")
+          }
+          if (window.innerWidth <= thresholdWidth){
+              // for mobile: white fade effect
+              let fade = document.getElementById("smallFade")
+              fade.style["background"] = "rgba(255,255,255,0)"
+            }      
+          activeClass = null
+        }
+      
+    }
+
+    for (let item of document.getElementById("toggleButtons").children){
+      item.addEventListener("click", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        toggleNodes(class_id)
+      })
+    }
+
+    // Hover and click effects
+    function openNodeW(node){
+      // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
+      document.getElementById("fadeCover").style["display"] = "block"
+      document.getElementById("fadeCover").style["opacity"] = "0.8"
+      openNode = node.id
+      node.classList.remove("active")
+      node.classList.add("opened")
+      let x = node.style["left"]
+      let y = node.style["top"]
+      if (window.innerWidth > thresholdWidth){
+        node.style["left"] = (diagramWidth/2)+"px"
+        node.style["top"] = "5em"
+      } else {
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        node.style["top"] = "1em"
+        node.style["height"] = "fit-content"
+      }
+      node.style["transform"] = "translate(-50%, 0%)"
+      if (window.innerWidth > thresholdWidth){
+        // adjust title if word-break version was used
+        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      } 
+
+      
+      dCont1.removeChild(closeBtn)
+      node.append(closeBtn)
+      setTimeout(function(){
+        closeBtn.style.visibility="visible"
+        closeBtn.style.opacity="1"
+      }, 500)
+      return [x, y]
+      }
+      
+    function closeNodeW(node){
+      node.classList.remove("opened")
+      node.classList.add("closing")
+      node.style["left"] = oldPos[0]
+      node.style["top"] = oldPos[1]
+      
+
+      if (!(window.innerWidth > thresholdWidth)){
+        node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
+        if (node.classList.contains("outer")){
+          node.style["transform"] = "translate(0, -50%)"
+        }
+        if (node.classList.contains("mid")){
+          node.style["transform"] = "translate(-50%, -50%)"
+        }
+        if (node.classList.contains("inner")){
+          node.style["transform"] = "translate(-100%, -50%)"
+        }
+      } else {
+        node.style["transform"] = "translate(-50%, -50%)"
+      }
+
+      // adjust title if word-break version was used
+      if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+      }
+      
+
+      document.getElementById("fadeCover").style["opacity"] = "0"
+      document.getElementById("fadeCover").style["display"] = "none"
+      
+      node.removeChild(closeBtn)
+      dCont1.appendChild(closeBtn)
+      closeBtn.style.visibility="hidden"
+      closeBtn.style.opacity="0"
+      openNode = null
+      setTimeout(function(){
+        if (node.classList.contains(activeClass)){
+          node.classList.add("active")
+        } else {
+          node.classList.remove("active")
+        }
+        setTimeout(function(){
+          node.classList.remove("closing")
+        },400)
+      }, 100)
+      }
+      
+    for (let item of document.getElementsByClassName("node")){
+      item.addEventListener("mouseenter", function(e){
+        if (!activeClass && !(item.classList.contains("opened"))){
+          item.classList.add("active")
+        }
+      })
+      item.addEventListener("mouseleave", function(){
+        if (!activeClass){
+          item.classList.remove("active")
+        }
+      })
+      item.addEventListener("click", function(){
+        // special case - clicking a minimized node activates the whole class
+        if (item.classList.contains("minimized")){
+          let class_id = item.classList[1]
+          toggleNodes(class_id)
+        } else {
+          if (!openNode && !(item.classList.contains("closing"))){
+            oldPos = openNodeW(item)
+          } 
+        }
+        
+      })
+    }
+    closeBtn.addEventListener("click", function(){
+      let nodeToClose = closeBtn.parentElement
+      closeNodeW(nodeToClose)
+    })
+
+    // window.addEventListener("resize", ()=>{
+    //   updateAllNodes()
+    // })
+    // position optimization functions
+    function isWithinBoundingRect(x, y, rect){
+      let rx1 = rect.x, rx2 = rect.x + rect.width
+      let ry1 = rect.y, ry2 = rect.y + rect.height
+      if (rx1 <= x && x <= rx2 && ry1 <= y && y <= ry2){
+        return true
+      } else {
+        return false
+      }
+    }
+    </script>
 	</body>
 </html>
