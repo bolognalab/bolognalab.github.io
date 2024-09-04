@@ -112,11 +112,13 @@ body {
     letter-spacing: 0.01em;
 }
 .innerWindow > ul {
-    width: 90%;
     margin: auto;
 }
 
 @media only screen and (min-width: 600px){
+    .innerWindow > ul {
+        width: 90%;
+    }
     .innerWindow > p, .innerWindow > ul {
         font-size: 14px;
     }
@@ -839,7 +841,7 @@ div.node.left.active, div.node.right.active {
 }
 
 .node.opened > .title {
-    font-size: 1.5em;
+    font-size: 20px;
     display: block;
     padding: 0em 0em;
     color: #585858
@@ -909,6 +911,7 @@ div.node.left.active, div.node.right.active {
         font-size: 10px;
         color: white;
     }
+
     .node.left > .title, .node.right > .title, .node.simple > .title {
         display: table-cell;
     }
