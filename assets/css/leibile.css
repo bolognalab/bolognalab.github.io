@@ -784,7 +784,10 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     font-size: 12px;
     color: #585858;
     display: none;
-    width: 100%
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: all 0.5s ease;
 }
 
 @media only screen and (min-width: 600px){
@@ -821,7 +824,7 @@ div.node.left.active, div.node.right.active {
     display: table-cell;
     vertical-align: middle;
     font-weight: bold;
-    padding: 0em 0.1em;
+    padding: 0em 0.2em;
 }
 
 /* minimized node: nothing for mobile */
@@ -854,9 +857,10 @@ div.node.left.active, div.node.right.active {
 }
 
 .node.opened > .details {
-    display: table-row;
     display: block;
-    margin-top: 2em;
+    height: 100px;
+    overflow: scroll;
+    padding-top: 1em;
 }
 
 .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened {
@@ -915,6 +919,12 @@ div.node.left.active, div.node.right.active {
     .node.left > .title, .node.right > .title, .node.simple > .title {
         display: table-cell;
     }
+    .node.active > .title {
+        padding: 0em 0.5em;
+    }
+    .node.simple.active > .title {
+        padding: 0em 2em;
+    }
     .node.active .nodeInfo {
         display: block;
         margin: auto;
@@ -941,6 +951,7 @@ div.node.left.active, div.node.right.active {
     .node.minimized {
         width: 1em;
         height: 1em;
+        cursor: pointer;
     }
     div.node.opened, .node.outer.opened, .node.mid.opened, .node.inner.opened, .node.left.opened, .node.right.opened, .node.simple.opened {
     width: 60%;

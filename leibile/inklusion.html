@@ -16,7 +16,7 @@
       <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner_constr.png" /></a>
       <h1>Inklusion, Diversität, Gleichstellung  und Partizipation</h1>
       <div id="decCircle" style="background: #7c6c98"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div>
-      <h2>Ansprechpartner:innen an der HU</h2>
+      <h2>Anlaufpunkte an der HU</h2>
       <p>An diesem Querschnittsthema arbeiten an der HU vielfältige Instanzen, die sich mit der Arbeit von Kommissionen, mit Leitlinien, mit AGa und in der Beratung für ein inklusives, chancengerechtes Miteinander und eine partizipative Lehre einsetzen:</p>
       <div class="containerWindow">
         <div id="fadeCover" style="background: #f0f0eb"></div>
@@ -125,12 +125,12 @@
           "kagna": {
               "name": "AG Nachteilsausgleich",
               "wordBreak": "AG Nachteils-ausgleich",
-              "desc": "Die Kommissionsübergreifende AG Nachteilsausgleich wurde 2023 von den Kommissionen Barreirefreie Hochschule und Familiengerechte Hochschule ins Leben gerufen. Als Ziel der AG wurde festgelegt, einen Vorschlag zur Verbesserung der Prozesse des Nachteilsausgleichs und der bevorzugten Zugang zu Lehrveranstaltungen zu erarbeiten im Sinne der betreffenden Studierenden (Behinderung und Care-Aufgaben) sowie der Lehrenden, Prüfenden und Prüfungsbüros.<br><br>Verantwortliche Kommissionen: KFH / KBH<br>Kontakt: familienservice@hu-berlin.de",
+              "desc": "<p>Die Kommissionsübergreifende AG Nachteilsausgleich wurde 2023 von den Kommissionen Barreirefreie Hochschule und Familiengerechte Hochschule ins Leben gerufen. Als Ziel der AG wurde festgelegt, einen Vorschlag zur Verbesserung der Prozesse des Nachteilsausgleichs und der bevorzugten Zugang zu Lehrveranstaltungen zu erarbeiten im Sinne der betreffenden Studierenden (Behinderung und Care-Aufgaben) sowie der Lehrenden, Prüfenden und Prüfungsbüros.<br><br>Verantwortliche Kommissionen: KFH / KBH<br>Kontakt: </p><a href= 'mailto: familienservice@hu-berlin.de'>familienservice@hu-berlin.de</a>",
               "connections": []
             },
           "agbfl": {
             "name": "Andere AGs",
-            "desc": "<b>AG Diversitätssensible/ Diskriminierungskritische Lehre</b><br>Professional School of Education<br>Ansprechperson: Julia Podelo (julia.podelo@hu-berlin.de)<br><br><b>AG Diskriminierungskritische Lehre (Dikri-L)</b><br>Institut für Erziehungswissenschaften<br>Ansprechperson: Aylin Jordan (aylin.jordan@hu-berlin.de)<br><br><b>AG Lehre</b><br>Zentrum für transdisziplinäre Geschlechterstudien<br>Siehe <a href='https://www.gender.hu-berlin.de/de/studium/diskriminierungskritik-1/broschuere-der-ag-lehre-diskriminierungskritische-lehre-denkanstoesse-aus-den-gender-studies'>Broschüre 'Diskriminierungskritische Lehre'</a>",
+            "desc": "<b>AG Diversitätssensible/ Diskriminierungskritische Lehre</b><br>Professional School of Education<br>Ansprechperson: Julia Podelo (<a href='mailto:julia.podelo@hu-berlin.de'>julia.podelo@hu-berlin.de</a>)<br><br><b>AG Diskriminierungskritische Lehre (Dikri-L)</b><br>Institut für Erziehungswissenschaften<br>Ansprechperson: Aylin Jordan (<a href='mailto:aylin.jordan@hu-berlin.de'>aylin.jordan@hu-berlin.de</a>)<br><br><b>AG Lehre</b><br>Zentrum für transdisziplinäre Geschlechterstudien<br>Siehe <a href='https://www.gender.hu-berlin.de/de/studium/diskriminierungskritik-1/broschuere-der-ag-lehre-diskriminierungskritische-lehre-denkanstoesse-aus-den-gender-studies'>Broschüre 'Diskriminierungskritische Lehre'</a>",
             "connections": []
           }
         }
@@ -153,6 +153,7 @@
       var oldPos
       var inactiveNodeWidth=100, inactiveNodeHeight=100
       var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
+      var showInfoTimeout
       
       // var dC = document.getElementById("decCircle")
       // dC.style["top"] = diagramWidth/2 + "px"
@@ -162,24 +163,24 @@
       var nodes = {
         "outer" : {
           "struktur": "anlaufstellen",
-          "radius": radiusMax * 0.85,
+          "radius": function(rMax){return 0.85*rMax},
           "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
         },
         "mid" : {
           "struktur": "kommissionen",
-          "radius": radiusMax * 0.55,
+          "radius": function(rMax){return 0.55*rMax},
           "angInit": - 2*Math.PI / 4 - 2*Math.PI / 24
         },
         "inner" : {
           "struktur": "ags",
-          "radius": radiusMax * 0.3,
+          "radius": function(rMax){return 0.3*rMax},
           "angInit": - 2*Math.PI / 4 + 2*Math.PI / 24
         },
       }
 
       Object.entries(nodes).forEach(function(nodeEntry, j){
         let category = strukturen[nodeEntry[1]["struktur"]]
-        let radius = nodeEntry[1]["radius"]
+        let radius = nodeEntry[1]["radius"](radiusMax)
         let angInit = nodeEntry[1]["angInit"]
         
         let num = Object.keys(category).length
@@ -224,7 +225,6 @@
           thisNode.append(title)
 
           let nodeInfo = document.createElement("span")
-
           nodeInfo.innerHTML = "<br><img src ='../images/info-circle.svg' name='anlaufpunkt-zeigen'>"
           nodeInfo.classList.add("nodeInfo")
           title.append(nodeInfo)
@@ -251,14 +251,73 @@
         }
         })
       })
-      
-    
 
     function updateCoordinatesPolar(node, r, theta){
       node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
       let top = (r * Math.sin(theta) + diagramWidth/2)
       node.style["top"] = "calc(" + top * 0.68 + "px" + " + 1em)"
     }
+
+    // Window resizing: what happens to the nodes?
+    function updateNodePosition(node, rMax){
+          let nodeEntry = nodes[node.classList[1]]
+          let radius = nodeEntry["radius"](rMax)
+          let theta = node.getAttribute("theta")
+          node.setAttribute("r", radius)
+          radiusMax = rMax
+          if (window.innerWidth > thresholdWidth){
+              updateCoordinatesPolar(node, radius, theta)
+              node.style["height"] = ""
+              node.style["width"] = ""
+            } else {
+              let idx = node.getAttribute("idx")
+              let j = idx.split(",")[0]
+              let i = idx.split(",")[1]
+              let num = node.getAttribute("num")
+              let nodeHeight = dCont1.offsetHeight/num
+              let x = ["0%", "50%", "calc(100% - 2px)"][j]
+              let y = (nodeHeight/2 - 2.5 + i * nodeHeight) + "px"
+              node.style["height"] = (nodeHeight-10)+"px"
+              node.style["left"] = x 
+              node.style["top"]  = y 
+          }
+        }
+        function updateAllNodes(){
+          let allNodes = document.getElementsByClassName("node")
+          for (let n of allNodes){
+            if (n.classList.contains("opened")){
+              closeNodeW(n)
+            }
+            if (window.innerWidth < thresholdWidth && n.classList.contains("active")){
+              n.classList.remove("active")
+              if (activeClass){
+                toggleNodes(activeClass)
+              }
+            }
+            diagramWidth = dCont1.offsetWidth
+            let rMax = 0.5 * diagramWidth * 0.9
+            setTimeout(()=>{
+              updateNodePosition(n, rMax)
+              if (!(window.innerWidth > thresholdWidth)){
+                n.style["height"] = (dCont1.offsetHeight/n.getAttribute("num")-10)+"px"
+                if (n.classList.contains("outer")){
+                  n.style["transform"] = "translate(0, -50%)"
+                }
+                if (n.classList.contains("mid")){
+                  n.style["transform"] = "translate(-50%, -50%)"
+                }
+                if (n.classList.contains("inner")){
+                  n.style["transform"] = "translate(-100%, -50%)"
+                }
+              } else {
+                n.style["transform"] = "translate(-50%, -50%)"
+              }
+            }, 50)
+          }
+        }
+        window.addEventListener("resize", ()=>{
+          updateAllNodes()
+        })
 
     // Button/Tab functionalities
     function toggleNodes(class_id){
@@ -400,10 +459,8 @@
         node.style["height"] = "fit-content"
       }
       node.style["transform"] = "translate(-50%, 0%)"
-      // if (window.innerWidth > thresholdWidth){
-      //   // adjust title if word-break version was used
-      //   node.getElementsByClassName("title")[0].childNodes[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
-      // } 
+      
+      // adjust title if word-break version was used
       let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
       let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
       if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
@@ -417,11 +474,26 @@
       } else {
         thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
       }
-      // if (thisTitle.offsetWidth > node.offsetWidth){
-      //   thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
-      // }
-
       
+      // adjust length 
+      let details = node.getElementsByClassName("details")[0]
+      setTimeout(()=>{details.style.height = heightToFitContent(details)+"px"}, 400)
+
+      function heightToFitContent(div){
+        let height = 0
+        let contents = div.childNodes
+
+        contents.forEach(function(element){
+          let marginTop = +(window.getComputedStyle(element)["margin-top"].split("px")[0])
+          height += marginTop
+          let marginBottom = +(window.getComputedStyle(element)["margin-bottom"].split("px")[0])
+          height += marginBottom
+          height += element.offsetHeight
+        })
+        return height
+      }
+      
+
       dCont1.removeChild(closeBtn)
       node.append(closeBtn)
       setTimeout(function(){
@@ -435,8 +507,7 @@
       node.classList.remove("opened")
       node.classList.add("closing")
       node.style["left"] = oldPos[0]
-      node.style["top"] = oldPos[1]
-      
+      node.style["top"] = oldPos[1]  
 
       if (!(window.innerWidth > thresholdWidth)){
         node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
@@ -461,6 +532,9 @@
         node.getElementsByClassName("title")[0].childNodes[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
       }
       
+      // undo height adjustment
+      let details = node.getElementsByClassName("details")[0]
+      details.style.height = ""
 
       document.getElementById("fadeCover").style["opacity"] = "0"
       document.getElementById("fadeCover").style["display"] = "none"
@@ -519,9 +593,18 @@
       })
       item.addEventListener("mouseenter", function(e){
         item.classList.add("hovered")
+        showInfoTimeout = setTimeout(function(){
+          if (isWithinBoundingRect(e.clientX, e.clientY, item.getBoundingClientRect())){
+            let nodeToShow = item.parentElement.parentElement.parentElement
+            if (item.classList.contains("hovered")){
+              oldPos = openNodeW(nodeToShow)
+            }
+          }
+        }, 500)
       })
       item.addEventListener("mouseleave", function(e){
         item.classList.remove("hovered")
+        clearTimeout(showInfoTimeout)
       })
     })
 

@@ -16,7 +16,7 @@
       <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner_constr.png" /></a>
       <h1>Multiperspektivität und Internationalisierung</h1>
       <div id="decCircle" style="background: #821f71"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
-      <h2>Ansprechpunkte an der HU</h2>
+      <h2>Anlaufpunkte an der HU</h2>
       <p>Verschiedene Institutionen an der HU unterstützen und fördern Internationalisierung und Multiperspektivität. Wir haben 4 zentrale Akteure gelistet:</p>
       <div class="containerWindow smaller1" style="margin-top: 1em; overflow: hidden">
         <div id="fadeCover" style="background: #f0f0eb"></div>
@@ -120,6 +120,7 @@
           
           let thisNode = document.createElement("li")
           thisNode.classList.add("node", nodeEntry[0])
+          thisNode.style["cursor"] = "pointer"
 
           let x, y
           if (window.innerWidth > thresholdWidth){
@@ -214,7 +215,24 @@
       } else {
         thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
       }
+      
+      // adjust length 
+      let details = node.getElementsByClassName("details")[0]
+      setTimeout(()=>{details.style.height = heightToFitContent(details)+"px"}, 400)
 
+      function heightToFitContent(div){
+        let height = 0
+        let contents = div.childNodes
+
+        contents.forEach(function(element){
+          let marginTop = +(window.getComputedStyle(element)["margin-top"].split("px")[0])
+          height += marginTop
+          let marginBottom = +(window.getComputedStyle(element)["margin-bottom"].split("px")[0])
+          height += marginBottom
+          height += element.offsetHeight
+        })
+        return height
+      }
       
       dCont1.removeChild(closeBtn)
       node.append(closeBtn)
@@ -253,6 +271,10 @@
       if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
         node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
       }
+
+      // undo height adjustment
+      let details = node.getElementsByClassName("details")[0]
+      details.style.height = ""
       
       document.getElementById("fadeCover").style["opacity"] = "0"
       document.getElementById("fadeCover").style["display"] = "none"

@@ -124,8 +124,8 @@
       }
 
       // Berechnung der Position der Pünkte
+      const originalWindowWidth = window.innerWidth
       const dCont1 = document.getElementById("dCont1")
-      const dCont2 = document.getElementById("dCont2")
 
       const closeBtn = document.getElementById("closeBtn")
       var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
@@ -141,31 +141,29 @@
       var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
       
       // var dC = document.getElementById("decCircle")
-      // dC.style["top"] = diagramWidth/2 + "px"
-
-      
+      // dC.style["top"] = diagramWidth/2 + "px"      
 
       var nodes = {
         "outer" : {
           "struktur": "weiterb",
-          "radius": radiusMax * 0.85,
+          "radius": function(rMax){return 0.85*rMax},
           "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
         },
         "mid" : {
           "struktur": "support",
-          "radius": radiusMax * 0.6,
+          "radius": function(rMax){return 0.6*rMax},
           "angInit": - 2*Math.PI / 4 - 2*Math.PI / 24
         }, 
         "inner": {
           "struktur": "ki",
-          "radius": radiusMax * 0.3,
+          "radius": function(rMax){return 0.3*rMax},
           "angInit": - 2*Math.PI / 4 + 2*Math.PI / 24
         }
       }
-
+      
       Object.entries(nodes).forEach(function(nodeEntry, j){
         let category = strukturen[nodeEntry[1]["struktur"]]
-        let radius = nodeEntry[1]["radius"]
+        let radius = nodeEntry[1]["radius"](radiusMax)
         let angInit = nodeEntry[1]["angInit"]
         
         let num = Object.keys(category).length
@@ -203,11 +201,16 @@
           let title = document.createElement("h3")
           title.classList.add("title")
           if (catEntry[1].hasOwnProperty("wordBreak")){
-            title.innerHTML = catEntry[1]["wordBreak"]
+            title.innerHTML = "<span>" + catEntry[1]["wordBreak"] + "</span>"
           } else {
-            title.innerHTML = catEntry[1]["name"]
+            title.innerHTML = "<span>" + catEntry[1]["name"] + "</span>"
           }
           thisNode.append(title)
+
+          let nodeInfo = document.createElement("span")
+          nodeInfo.innerHTML = "<br><img src ='../images/info-circle.svg' name='anlaufpunkt-zeigen'>"
+          nodeInfo.classList.add("nodeInfo")
+          title.append(nodeInfo)
 
           if (catEntry[1].hasOwnProperty("subtitle")){
             let subtitle = document.createElement("h4")
@@ -238,37 +241,68 @@
       node.style["top"] = "calc(" + top * 0.67 + "px" + " + 1.5em)"
     }
 
-    function updateNodePosition(node){
-      let cHeight = dCont1.offsetHeight
-        if (window.innerWidth > thresholdWidth){
-            let radius = node.getAttribute("r")
-            let theta = node.getAttribute("theta")
-            updateCoordinatesPolar(node, radius, theta)
-            node.style["height"] = ""
-            node.style["width"] = ""
-          } else {
-            let idx = node.getAttribute("idx")
-            let j = idx.split(",")[0]
-            let i = idx.split(",")[1]
-            let num = node.getAttribute("num")
-            let nodeHeight = dCont1.offsetHeight/num
-            let x = ["0%", "50%", "calc(100% - 2px)"][j]
-            let y = (nodeHeight/2 - 2.5 + i * cHeight / num) + "px"
-            node.style["height"] = (nodeHeight-10)+"px"
-            node.style["left"] = x 
-            node.style["top"]  = y 
-          }
+    // Window resizing: what happens to the nodes?
+    function updateNodePosition(node, rMax){
+      let nodeEntry = nodes[node.classList[1]]
+      let radius = nodeEntry["radius"](rMax)
+      let theta = node.getAttribute("theta")
+      node.setAttribute("r", radius)
+      radiusMax = rMax
+      if (window.innerWidth > thresholdWidth){
+          updateCoordinatesPolar(node, radius, theta)
+          node.style["height"] = ""
+          node.style["width"] = ""
+        } else {
+          let idx = node.getAttribute("idx")
+          let j = idx.split(",")[0]
+          let i = idx.split(",")[1]
+          let num = node.getAttribute("num")
+          let nodeHeight = dCont1.offsetHeight/num
+          let x = ["0%", "50%", "calc(100% - 2px)"][j]
+          let y = (nodeHeight/2 - 2.5 + i * nodeHeight) + "px"
+          node.style["height"] = (nodeHeight-10)+"px"
+          node.style["left"] = x 
+          node.style["top"]  = y 
       }
-      function updateAllNodes(){
-        let allNodes = document.getElementsByClassName("node")
-        for (let n of allNodes){
-          if (n.classList.contains("opened")){
-            closeNodeW(n)
-            n.style["transform"] = ""
-          }
-          updateNodePosition(n)
+    }
+    function updateAllNodes(){
+      let allNodes = document.getElementsByClassName("node")
+      for (let n of allNodes){
+        if (n.classList.contains("opened")){
+          closeNodeW(n)
+          n.style["transform"] = ""
         }
+        if (window.innerWidth < thresholdWidth && n.classList.contains("active")){
+          n.classList.remove("active")
+          if (activeClass){
+            toggleNodes(activeClass)
+          }
+        }
+        diagramWidth = dCont1.offsetWidth
+        let rMax = 0.5 * diagramWidth * 0.9
+        setTimeout(()=>{
+              updateNodePosition(n, rMax)
+              if (!(window.innerWidth > thresholdWidth)){
+                n.style["height"] = (dCont1.offsetHeight/n.getAttribute("num")-10)+"px"
+                if (n.classList.contains("outer")){
+                  n.style["transform"] = "translate(0, -50%)"
+                }
+                if (n.classList.contains("mid")){
+                  n.style["transform"] = "translate(-50%, -50%)"
+                }
+                if (n.classList.contains("inner")){
+                  n.style["transform"] = "translate(-100%, -50%)"
+                }
+              } else {
+                n.style["transform"] = "translate(-50%, -50%)"
+              }
+            }, 50)
+        
       }
+    }
+    window.addEventListener("resize", ()=>{
+      updateAllNodes()
+    })
 
     // Button/Tab functionalities
     function toggleNodes(class_id){
@@ -356,12 +390,6 @@
       
     }
 
-    // for (let item of document.getElementById("toggleButtons").children){
-    //   item.addEventListener("click", function(){
-    //     let class_id = this.id.split("toggle")[1].toLowerCase()
-    //     toggleNodes(class_id)
-    //   })
-    // }
     for (let item of document.getElementById("toggleButtons").children){
       item.addEventListener("click", function(){
         let class_id = this.id.split("toggle")[1].toLowerCase()
@@ -405,11 +433,39 @@
         node.style["height"] = "fit-content"
       }
       node.style["transform"] = "translate(-50%, 0%)"
-      if (window.innerWidth > thresholdWidth){
-        // adjust title if word-break version was used
-        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
-      } 
 
+      // adjust title if word-break version was used
+      let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
+      let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
+      if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
+        if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        }
+        else {
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+          console.log("Bitte fügen Sie zu diesem Item eine 'wordBreak' Version des Titels: " + node.id)
+        }
+      } else {
+        thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+
+      // adjust length 
+      let details = node.getElementsByClassName("details")[0]
+      setTimeout(()=>{details.style.height = heightToFitContent(details)+"px"}, 400)
+
+      function heightToFitContent(div){
+        let height = 0
+        let contents = div.childNodes
+
+        contents.forEach(function(element){
+          let marginTop = +(window.getComputedStyle(element)["margin-top"].split("px")[0])
+          height += marginTop
+          let marginBottom = +(window.getComputedStyle(element)["margin-bottom"].split("px")[0])
+          height += marginBottom
+          height += element.offsetHeight
+        })
+        return height
+      }
       
       dCont1.removeChild(closeBtn)
       node.append(closeBtn)
@@ -456,7 +512,10 @@
       } else {
         thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
       }
-      
+
+      // undo height adjustment
+      let details = node.getElementsByClassName("details")[0]
+      details.style.height = ""
 
       document.getElementById("fadeCover").style["opacity"] = "0"
       document.getElementById("fadeCover").style["display"] = "none"
@@ -495,21 +554,46 @@
           let class_id = item.classList[1]
           toggleNodes(class_id)
         } else {
-          if (!openNode && !(item.classList.contains("closing"))){
+          if (!openNode && !(item.classList.contains("closing")) && window.innerWidth <= thresholdWidth){
             oldPos = openNodeW(item)
           } 
         }
         
       })
     }
+
+    // "nodeInfo" buttons
+    document.querySelectorAll(".nodeInfo img").forEach(function(item){
+      item.addEventListener("click", function(e){
+        let nodeToShow = item.parentElement.parentElement.parentElement
+        console.log(nodeToShow)
+        if (item.classList.contains("hovered")){
+          oldPos = openNodeW(nodeToShow)
+        }
+      })
+      item.addEventListener("mouseenter", function(e){
+        item.classList.add("hovered")
+        setTimeout(function(){
+          if (isWithinBoundingRect(e.clientX, e.clientY, item.getBoundingClientRect())){
+            console.log("yay")
+            let nodeToShow = item.parentElement.parentElement.parentElement
+            if (item.classList.contains("hovered")){
+              oldPos = openNodeW(nodeToShow)
+            }
+          }
+        }, 500)
+      })
+      item.addEventListener("mouseleave", function(e){
+        item.classList.remove("hovered")
+      })
+    })
+
+    // closeBtn
     closeBtn.addEventListener("click", function(){
       let nodeToClose = closeBtn.parentElement
       closeNodeW(nodeToClose)
     })
 
-    // window.addEventListener("resize", ()=>{
-    //   updateAllNodes()
-    // })
     // position optimization functions
     function isWithinBoundingRect(x, y, rect){
       let rx1 = rect.x, rx2 = rect.x + rect.width

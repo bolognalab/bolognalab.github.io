@@ -146,6 +146,7 @@
           
           let thisNode = document.createElement("li")
           thisNode.classList.add("node", "simple", nodeEntry[0])
+          thisNode.style["cursor"] = "pointer"
 
           let x, y, posX, nodeWidth
           if (window.innerWidth > thresholdWidth){
@@ -226,13 +227,6 @@
       let x = node.style["left"]
       let y = node.style["top"]
       if (window.innerWidth > thresholdWidth){
-        // node.style["left"] = (diagramWidth/2)+"px"
-        // node.style["top"] = "5em"
-        // node.style["transform"] = "translate(-50%, 0%)"
-        // node.style["z-index"] = 5
-        // setTimeout(()=>{
-        //   node.classList.add("opened")
-        // }, 200)
         node.style["left"] = (dCont1.offsetWidth/2) + "px"
         if (node.classList.contains("third")){
           node.style["top"] = "-10em"
@@ -270,6 +264,23 @@
         node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
       } 
 
+      // adjust length 
+      let details = node.getElementsByClassName("details")[0]
+      setTimeout(()=>{details.style.height = heightToFitContent(details)+"px"}, 400)
+
+      function heightToFitContent(div){
+        let height = 0
+        let contents = div.childNodes
+
+        contents.forEach(function(element){
+          let marginTop = +(window.getComputedStyle(element)["margin-top"].split("px")[0])
+          height += marginTop
+          let marginBottom = +(window.getComputedStyle(element)["margin-bottom"].split("px")[0])
+          height += marginBottom
+          height += element.offsetHeight
+        })
+        return height
+      }
       
       dCont1.removeChild(closeBtn)
       node.append(closeBtn)
@@ -311,6 +322,9 @@
         thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
       }
       
+      // undo height adjustment
+      let details = node.getElementsByClassName("details")[0]
+      details.style.height = ""
 
       document.getElementById("fadeCover").style["opacity"] = "0"
       document.getElementById("fadeCover").style["display"] = "none"
@@ -333,14 +347,18 @@
       }
       
     for (let item of document.getElementsByClassName("node")){
-      item.addEventListener("mouseenter", function(e){
-        if (!activeClass && !(item.classList.contains("opened"))){
-          item.classList.add("active")
+      item.addEventListener("mouseenter", function(){
+        if (window.innerWidth > thresholdWidth){
+          if (!(item.classList.contains("opened"))){
+            item.style["transform"] = "translate(-50%, -50%) scale(110%, 110%)"
+          }
         }
       })
       item.addEventListener("mouseleave", function(){
-        if (!activeClass){
-          item.classList.remove("active")
+        if (window.innerWidth > thresholdWidth){
+          if (!(item.classList.contains("opened"))){
+            item.style["transform"] = "translate(-50%, -50%)"
+          }
         }
       })
       item.addEventListener("click", function(){
