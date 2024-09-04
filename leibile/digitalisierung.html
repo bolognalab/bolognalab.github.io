@@ -358,10 +358,33 @@
       
     }
 
+    // for (let item of document.getElementById("toggleButtons").children){
+    //   item.addEventListener("click", function(){
+    //     let class_id = this.id.split("toggle")[1].toLowerCase()
+    //     toggleNodes(class_id)
+    //   })
+    // }
     for (let item of document.getElementById("toggleButtons").children){
       item.addEventListener("click", function(){
         let class_id = this.id.split("toggle")[1].toLowerCase()
         toggleNodes(class_id)
+      })
+      item.addEventListener("mouseenter", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        if (class_id != activeClass){
+          holdingOpen = false
+          toggleNodes(class_id)
+        }
+
+      })
+      item.addEventListener("mouseleave", function(e){
+        dCont1Rect = dCont1.getBoundingClientRect()
+        if (!isWithinBoundingRect(e.clientX, (e.clientY+1), dCont1Rect)){
+          let class_id = this.id.split("toggle")[1].toLowerCase()
+          toggleNodes(class_id)
+        } else {
+          holdingOpen = true
+        }
       })
     }
 
