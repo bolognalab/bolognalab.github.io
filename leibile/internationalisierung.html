@@ -17,7 +17,7 @@
       <h1>Multiperspektivität und Internationalisierung</h1>
       <div id="decCircle" style="background: #821f71"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
       <h2>Ansprechpunkte an der HU</h2>
-      <p>Um eine zukunftsorientierte Lehre, die Internationalisierung und Multiperspektivität fördert, zu gestalten, wurden folgende Beispiele für vorhandene Ansprechpunkte und Initiativen gesammelt: </p>
+      <p>Verschiedene Institutionen an der HU unterstützen und fördern Internationalisierung und Multiperspektivität. Wir haben 4 zentrale Akteure gelistet:</p>
       <div class="containerWindow smaller1" style="margin-top: 1em; overflow: hidden">
         <div id="fadeCover" style="background: #f0f0eb"></div>
         <div class="diagramContainer" id="dCont1">
@@ -267,7 +267,6 @@
       
     for (let item of document.getElementsByClassName("node")){
       item.addEventListener("mouseenter", function(){
-        console.log("mouseenter")
         if (window.innerWidth > thresholdWidth){
           if (!(item.classList.contains("opened"))){
             item.style["transform"] = "translate(-50%, -50%) scale(110%, 110%)"
@@ -284,7 +283,6 @@
       item.addEventListener("click", function(){
         if (!openNode && !(item.classList.contains("closing"))){
           oldPos = openNodeW(item)
-          console.log(oldPos)
         }
       })
     }

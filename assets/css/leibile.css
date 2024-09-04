@@ -120,6 +120,9 @@ body {
     .innerWindow > p, .innerWindow > ul {
         font-size: 14px;
     }
+    .containerWindow > h2 {
+        font-size: 24px;
+    }
 }
 
 /* link appearance */
@@ -652,7 +655,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     border-radius: 1em;
     transition: width 0.5s ease, left 0.5s ease, top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, background-color 0.5s ease, transform 0.4s ease;
     display: table;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .node.outer {
     transform: translate(0, -50%);
@@ -735,6 +738,22 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 
 #oeco.opened, #nbuero.opened, #h17wiss.opened, #irithesysWiss.opened, #h17miss.opened, #irithesysMiss.opened, #knu.opened, #instit.opened {
     background: white;
+}
+
+.node .nodeInfo {
+    display: none;
+}
+.nodeInfo img {
+    filter: brightness(0) saturate(100%) invert(99%) sepia(10%) saturate(16%) hue-rotate(223deg) brightness(114%) contrast(100%);
+    padding-top: 0.3em;
+    transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.nodeInfo img.hovered {
+    transform: scale(140%, 140%)
 }
 
 .node > .title {
@@ -893,7 +912,10 @@ div.node.left.active, div.node.right.active {
     .node.left > .title, .node.right > .title, .node.simple > .title {
         display: table-cell;
     }
-
+    .node.active .nodeInfo {
+        display: block;
+        margin: auto;
+    }
     div.node.active, .node.outer.active, .node.mid.active, .node.inner.active {
         border-radius: 9em;
         width: 9em;
@@ -902,7 +924,7 @@ div.node.left.active, div.node.right.active {
         z-index: 3;
         transform: translate(-50%, -50%);
         overflow: hidden;
-        box-shadow: rgba(91, 137, 176, 0.8) -4px 9px 25px -6px;
+        box-shadow: rgba(91, 137, 176, 0.5) -4px 9px 25px -6px;
     }
     .node.left.opened > .title, .node.right.opened > .title, .node.simple.opened > .title {
         display: block;

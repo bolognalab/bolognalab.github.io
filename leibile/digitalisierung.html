@@ -17,11 +17,11 @@
       <h1>Digitalisierung und Medienbildung</h1>
       <div id="decCircle" style="background: #5b89b0;"><img class="mainIcon" src="../images/leibile/digitalisierung.svg"></div>
       <h2>Anlaufstellen an der HU</h2>
-      <p>Um eine moderne Hochschullehre samt Didaktik und Methodik zu gestalten, wurden folgende Beispiele für vorhandene Anlaufstellen gesammelt:</p>
+      <p>Digitalisierung und Medienbildung sind zentrale Themen der HU, die von verschiedenen Anlaufstellen und unter verschiedenen Aspekten bearbeitet werden. Einige aktuell relevante Anlaufstellen haben wir unter den Aspekten Weiterbildung, Unterstützung und KI-Ressourcen gesammelt:</p>
       <div class="containerWindow">
         <div id="fadeCover" style="background: #f0f0eb"></div>
         <div id="toggleButtons">
-          <div id="toggleOuter"><h3>Ressourcen zur KI</h3></div><div id="toggleMid"><h3>Technische & didaktische Unterstützung</h3></div><div id="toggleInner"><h3>Weiterbildung für Lehrende</h3></div>
+          <div id="toggleOuter"><h3>Weiterbildung für Lehrende</h3></div><div id="toggleMid"><h3>Technische & didaktische Unterstützung</h3></div><div id="toggleInner"><h3>Ressourcen zur KI</h3></div>
         </div>
         <div class="diagramContainer" id="dCont1">
           <!-- decorative elements -->
@@ -72,14 +72,14 @@
           },
           "medienkomm": {
             "name": "Medienkommission",
-            "desc": "<p>Die Medienkommission der HU berät den Akademischen Senat in Sachfragen zu IT und Medien und bereitet dessen Beschlüsse vor. Sie: <ul><li>unterstützt aktiv den Prozess der hochschulweiten Versorgung mit IT- und Mediendienstleistungen sowie des Betriebes von IT- und Medien-Infrastrukturen zur Unterstützung von Studium, Lehre, Forschung und Verwaltung</li><li>wirkt auf die Integration der dezentralen IT- und Medienplanungen in das Gesamtkonzept der HU</li><li> ist zuständig für die Verteilung des Erwerbungsetats der Universitätsbibliothek</li><li>begutachtet investive IT-Beschaffungen und ist zuständig für die Etatverteilung der Software-Mittel.</li></ul></p><a href='https://gremien.hu-berlin.de/de/medienkommission' class='mi'>Mehr Informationen zur Medienkommission</a>",
+            "desc": "<p>Die Medienkommission ist für den Computer- und Medienservice und die Universitätsbibliothek zuständig. Als Kommission des akademischen Senats übernimmt die Medienkommission die Beratung und Planung zu IT und Medien der Humboldt-Universität und deren Bibliothek. In dieser Funktion verantwortet Sie zwei Förderlinien für IT- und Medieninfrastrukturen. </p><a href='https://gremien.hu-berlin.de/de/medienkommission' class='mi'>Mehr Informationen zur Medienkommission</a>",
             "connections": []
           }
         },
         "ki":{
           "kicms": {
             "name": "KI-Website der HU",
-            "desc": "<p>Diese Webseite informiert über KI Angebote der HU und bietet Unterstützung für die Nutzung.</p><a href='https://ki.cms.hu-berlin.de/de' class='mi'>Zur KI-Website</a>",
+            "desc": "<p>Diese Webseite informiert über KI Angebote der HU und bietet Unterstützung für deren Nutzung.</p><a href='https://ki.cms.hu-berlin.de/de' class='mi'>Zur KI-Website</a>",
             "connections": []
           },
           "aiskills": {
@@ -117,8 +117,7 @@
           "ubib": {
             "name": "Universitätsbibliothek",
             "wordBreak": "Universitäts-bibliothek",
-            "subtitle": "Angebote zu Informationskompetenz",
-            "desc": "<p>Die Universitätsbibliothek der HU bietet Führungen und Schulungen zu diversen bibliotheksrelevanten Themen und in verschiedenen Formaten an.</p><a href='https://www.ub.hu-berlin.de/de/recherche-lernen/fuehrungen-schulungen-webinare' class='mi'>Zu den Angeboten</a>",
+            "desc": "<p>Die Universitätsbibliothek der HU bietet Führungen und Schulungen zu diversen Aspekten der Informationskompetenz (z.B. Recherche, Literaturverwaltung) und in verschiedenen Formaten an.</p><a href='https://www.ub.hu-berlin.de/de/recherche-lernen/fuehrungen-schulungen-webinare' class='mi'>Zu den Angeboten</a>",
             "connections": []
           }
         }
@@ -211,7 +210,6 @@
           thisNode.append(title)
 
           if (catEntry[1].hasOwnProperty("subtitle")){
-            console.log("subtitle")
             let subtitle = document.createElement("h4")
             subtitle.classList.add("subtitle")
             subtitle.innerHTML = catEntry[1]["subtitle"]
