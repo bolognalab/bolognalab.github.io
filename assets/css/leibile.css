@@ -859,7 +859,7 @@ div.node.left.active, div.node.right.active {
 .node.opened > .details {
     display: block;
     height: 100px;
-    overflow: scroll;
+    overflow: hidden;
     padding-top: 1em;
 }
 
