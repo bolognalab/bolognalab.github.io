@@ -17,8 +17,7 @@
 
 <table class="tree" id="tRegular"></table>
 <script>
-    var questionInfo, all_scenarios
-    var scenarios = {}
+    var questionInfo, scenarios;
     var table = document.getElementById("tRegular")
     var colorMapping = {
         "-100": "#C00000",
@@ -28,15 +27,9 @@
         "2": "#A9D08E",
     }
 
-    var shownScenarios = ['so-async-0-4-0', 'vl-rem-0-0-0', 'vl-rem-0-0-1', 'vl-rem-0-0-2', 'vl-rem-1-2-2', 'vl-ringhyb1-0-2-2']
-
-    $.getJSON("fragenSzenarienV2.json", function(json){
+    $.getJSON("fragenUndSzenarien.json", function(json){
         questionInfo = json['questions']
-        all_scenarios = json['scenarios']
-        shownScenarios.forEach(function(code){
-            scenarios[code] = all_scenarios[code]
-        })
-        console.log(scenarios)
+        scenarios = json['scenarios']
         // first table row, one blank cell followed by headers
         var firstRow = document.createElement("tr")
         firstRow.classList.add("firstRow")
@@ -49,7 +42,7 @@
                 sHeader.classList.add("sHeader", "clickable")
                 sHeader.addEventListener("click", function(event){showHideInfo(event,json)})
                 firstRow.append(sHeader)
-        })
+            })
         table.append(firstRow)
 
         // making rows for each "question"
@@ -83,11 +76,9 @@
                     srHeader.innerHTML = aKey
                     srHeader.addEventListener("click", function(event){showHideInfo(event,json)})
                     srVal.classList.add("answerVal")
-                    console.log(qInf["antworten"][aKey]["effects"][sKey])
-
-                    if (qInf["antworten"][aKey]["effects"][sKey]){
-                        var score = qInf["antworten"][aKey]["effects"][sKey]
-                    } else {
+                    try {
+                        var score = sVal[qKey][aKey]
+                    } catch (error) {
                         var score = "null"
                     }
                     srVal.innerHTML = score
@@ -136,10 +127,10 @@
                 if (event.target.className.includes("rowHeader")){
                     text = "<b>Frage:</b> " + json["questions"][targetId]["text"]
                 } else if (event.target.className.includes("sHeader")){
-                    text = "<b>Lehr-/Lernszenario:</b> " + json["scenarios"][targetId]["unterrichtsformat"]
+                    text = "<b>Lehr-/Lernszenario:</b> " + json["scenarios"][targetId]["name"]
                 } else if (event.target.className.includes("answerKey")){
                     let qa = event.target.id.split("_")
-                    text = "<b>Frage:</b> " + json["questions"][qa[0]]["text"] + "<br><b>Antwort:</b> " + json["questions"][qa[0]]["antworten"][qa[1]]["text"]
+                    text = "<b>Frage:</b> " + json["questions"][qa[0]]["text"] + "<br><b>Antwort:</b> " + json["questions"][qa[0]]["antworten"][qa[1]]
                 }
                 infoText.innerHTML = text
                 infoText.style.color = "black"

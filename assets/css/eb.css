@@ -1,0 +1,61 @@
+th, td {
+    text-align: center;
+    min-width: 20px;
+    /* border: 0.5px dotted gray; */
+}
+table {
+    border-spacing: 0px;
+    margin: 20px 5px;
+}
+.sHeader, .rowHeader {
+    padding: 5px 7px;
+    cursor: pointer;
+    z-index: 3;
+}
+.clickable {
+    cursor: pointer;
+    margin: 2px 2px;
+    border: 1px solid rgb(255, 255, 255);
+    background: #cdeefc;
+}
+.clickable:hover {
+    background: #e7f8ff;
+}
+.active {
+    border: 0px;
+    background: white;
+}
+
+.answerKey, .answerVal {
+    padding: 5px 7px;
+}
+.answerKey {
+    font-weight: bold;
+    cursor: pointer;
+}
+.answerKey:nth-child(4n+5), .answerVal:nth-child(4n), .sHeader {
+    border-right: 2px solid black;
+}
+.answerVal {
+    z-index: 1;
+    border: 1px solid rgb(255, 255, 255);
+}
+.blankCell {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzgnPgogIDxyZWN0IHdpZHRoPSc4JyBoZWlnaHQ9JzgnIGZpbGw9JyNmZmYnLz4KICA8cGF0aCBkPSdNMCAwTDggOFpNOCAwTDAgOFonIHN0cm9rZS13aWR0aD0nMC41JyBzdHJva2U9JyNhYWEnLz4KPC9zdmc+Cg=="); 
+    background-repeat: repeat;
+    pointer-events: none;
+}
+#textBox {
+    border-radius: 5px; 
+    border: solid 1px gray; 
+    width: 40%;
+    margin: 5px;
+    padding: 10px;
+    
+}
+#infoText {
+    color: gray;
+    margin-top: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.8em;
+}

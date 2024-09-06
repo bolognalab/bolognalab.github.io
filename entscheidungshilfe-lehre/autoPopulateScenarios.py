@@ -12,6 +12,7 @@ with open("fragenUndSzenarien.json", mode='r', encoding='utf-8') as json_file:
     existing_scenarios = data['scenarios']
     # print(existing_scenarios)
 
+updated_json = {}
 updated_scenarios = {}
 list_of_scenarios = []
 
@@ -29,8 +30,6 @@ with open(csv_file, mode='r', encoding='utf-8-sig') as csv_file:
         subvalues = row_data.values()
         updated_scenarios[key] = dict(zip(subkeys, subvalues))
 
-print(list_of_scenarios)
-
 updated_questions = existing_questions.copy()
 
 for key, val in existing_questions.items():
@@ -38,7 +37,7 @@ for key, val in existing_questions.items():
     for akey, aname in answers.items():
         updated_questions[key]["antworten"][akey] = {
             "text": aname,
-            "effects": []
+            "effects": {}
         }
 # print(updated_questions)
 
@@ -46,49 +45,72 @@ for key, val in existing_questions.items():
 for code in list_of_scenarios:
     # question artLV excludes all options not matching the selected LV type
     if code.split('-')[0] not in ["vl", "so"]:
-        effect = (code, -100)
-        updated_questions["artLV"]["antworten"]["VL"]["effects"].append(effect)
+        updated_questions["artLV"]["antworten"]["VL"]["effects"][code] = -100
     if code.split('-')[0] not in ["se", "so"]:
-        effect = (code, -100)
-        updated_questions["artLV"]["antworten"]["SE"]["effects"].append(effect)
+        updated_questions["artLV"]["antworten"]["SE"]["effects"][code] = -100
     if code.split('-')[0] not in ["pr"]:
-        effect = (code, -100)
-        updated_questions["artLV"]["antworten"]["PR"]["effects"].append(effect)
+        updated_questions["artLV"]["antworten"]["PR"]["effects"][code] = -100
 
     # LZiP: if essential learning goals in person, exclude hybrid and online options
     if code.split("-")[1] in ["async", "onl", "ringonl", "hyb", "ringhyb2"]:
-        effect = (code, -100)
-        updated_questions["LZiP"]["antworten"]["2"]["effects"].append(effect)
+        updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -100
 
     # LZsy: if important learning goals are exclusively attainable synchronously, exclude all options that are fully asynchronous or offer asynchronous alternatives
     if code.split("-")[3] in ["3", "4"]:
-        effect = (code, -100)
-        updated_questions["LZsy"]["antworten"]["2"]["effects"].append(effect)
+        updated_questions["LZsy"]["antworten"]["2"]["effects"][code] = -100
 
     # IntSync: if synchronous interaction is wished at different levels, exclude options with lower levels of interaction
     if code.split("-")[2] == "0":
-        effect = (code, -100)
-        updated_questions["IntSync"]["antworten"]["1"]["effects"].append(effect)
-        updated_questions["IntSync"]["antworten"]["2"]["effects"].append(effect)
+        updated_questions["IntSync"]["antworten"]["1"]["effects"][code] = -100
+        updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
     if code.split("-")[2] == "1":
-        effect = (code, -100)
-        updated_questions["IntSync"]["antworten"]["2"]["effects"].append(effect)
+        updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
 
+    # IntAsync: if asynchronous interaction is wished at different levels, exclude options with less interaction
+    if code.split("-")[4] == "0":
+        updated_questions["IntAsync"]["antworten"]["1"]["effects"][code] = -100
+        updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
+    if code.split("-")[4] == "1":
+        updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
 
-    # question niePr; if some students can never make it to class in-person, then exclude all options exclusively in-person for students
+    # niePr; if some students can never make it to class in-person, then exclude all options exclusively in-person for students
     if code.split("-")[1] in ["praes", "ringpr", "rem", "ringhyb1", "wechs"]:
         # do not exclude options with asynchronous participation alternative
         if code.split("-")[3] != "3":
             effect = (code, -100)
-            updated_questions["niePr"]["antworten"]["ja"]["effects"].append(effect)
+            updated_questions["niePr"]["antworten"]["ja"]["effects"][code] = -100
 
     # if not allowed to teach online at all, exclude all online options
     if code.split("-")[1] in ["async", "onl", "ringonl"]:
-        effect = (code, -100)
-        updated_questions["onlErlLP"]["antworten"]["kein"]["effects"].append(effect)
+        updated_questions["onlErlLP"]["antworten"]["kein"]["effects"][code] = -100
 
     # if students not allowed to attend online at all, exclude hybrid and online options for students
     if code.split("-")[1] in ["async", "onl", "ringonl", "wechs", "hyb", "ringhyb2"]:
-        effect = (code, -100)
-        updated_questions["onlErlSt"]["antworten"]["kein"]["effects"].append(effect)
+        updated_questions["onlErlSt"]["antworten"]["kein"]["effects"][code] = -100
 
+    # onlZugang: if not all students have access to stable internet (for conferencing), exclude all online-only or mandatorily partially online options
+    if code.split("-")[1] in ["async", "onl", "ringonl", "wechs"]:
+        updated_questions["onlZugang"]["antworten"]["nein"]["effects"][code] = -100
+
+    # aufzTech: if a clear recording of the room is not possible, exclude Remote Classroom
+    if code.split("-")[1] == "rem":
+        updated_questions["aufzTech"]["antworten"]["nein"]["effects"][code] = -100
+
+    # gaeste: if having regular guest speakers, only display Ringvorlesung formats
+    if "ring" not in code.split("-")[1]:
+        updated_questions["gaeste"]["antworten"]["2"]["effects"][code] = -100
+    # and obviously don't display Ringvorlesung formats if no guests!
+    if "ring" in code.split("-")[1]:
+        updated_questions["gaeste"]["antworten"]["0"]["effects"][code] = -100
+        
+
+updated_json["questions"] = updated_questions
+updated_json["scenarios"] = updated_scenarios
+
+json_file = "fragenSzenarienV2.json"
+def updateJSON(json_data, json_file):
+    with open(json_file, 'w') as json_file:
+        json_file.write(json.dumps(json_data, indent=4))
+        print("json file created or updated successfully")
+
+updateJSON(updated_json, json_file)
