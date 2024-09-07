@@ -43,6 +43,7 @@ for key, val in existing_questions.items():
 
 # MASS-POPULATE SOME EFFECTS
 for code in list_of_scenarios:
+    # ABSOLUTE RULES (complete exclusion)
     # question artLV excludes all options not matching the selected LV type
     if code.split('-')[0] not in ["vl", "so"]:
         updated_questions["artLV"]["antworten"]["VL"]["effects"][code] = -100
@@ -74,7 +75,7 @@ for code in list_of_scenarios:
         updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
 
     # niePr; if some students can never make it to class in-person, then exclude all options exclusively in-person for students
-    if code.split("-")[1] in ["praes", "ringpr", "rem", "ringhyb1", "wechs"]:
+    if code.split("-")[1] in ["praes", "ringpr", "rem", "ringhyb1", "grwechs"]:
         # do not exclude options with asynchronous participation alternative
         if code.split("-")[3] != "3":
             effect = (code, -100)
@@ -85,11 +86,11 @@ for code in list_of_scenarios:
         updated_questions["onlErlLP"]["antworten"]["kein"]["effects"][code] = -100
 
     # if students not allowed to attend online at all, exclude hybrid and online options for students
-    if code.split("-")[1] in ["async", "onl", "ringonl", "wechs", "hyb", "ringhyb2"]:
+    if code.split("-")[1] in ["async", "onl", "ringonl", "grwechs", "hyb", "ringhyb2"]:
         updated_questions["onlErlSt"]["antworten"]["kein"]["effects"][code] = -100
 
     # onlZugang: if not all students have access to stable internet (for conferencing), exclude all online-only or mandatorily partially online options
-    if code.split("-")[1] in ["async", "onl", "ringonl", "wechs"]:
+    if code.split("-")[1] in ["async", "onl", "ringonl", "grwechs"]:
         updated_questions["onlZugang"]["antworten"]["nein"]["effects"][code] = -100
 
     # aufzTech: if a clear recording of the room is not possible, exclude Remote Classroom
@@ -102,7 +103,19 @@ for code in list_of_scenarios:
     # and obviously don't display Ringvorlesung formats if no guests!
     if "ring" in code.split("-")[1]:
         updated_questions["gaeste"]["antworten"]["0"]["effects"][code] = -100
-        
+        updated_questions["gaeste"]["antworten"]["1"]["effects"][code] = -100
+    
+    # gaesteMittel: no in-person Ringvorlesung if no means to invite
+    if code.split("-")[1] == "ringpr":
+        updated_questions["gaesteMittel"]["antworten"]["nein"]["effects"][code] = -100
+
+    # NON-ABSOLUTE RULES
+    # LZiP: if no important learning goals exclusively in-person, discourage in-person only options
+    if "praes" in code.split("-")[1] and code.split("3") in ["0", "1", "2"]:
+        updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = -2
+        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -1
+
+    
 
 updated_json["questions"] = updated_questions
 updated_json["scenarios"] = updated_scenarios
