@@ -59,3 +59,14 @@ table {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 0.8em;
 }
+
+/* for table view */
+.closeBtn {
+    font-size: 0.5em;
+    color: blue;
+    border-radius: 0.5em;
+    padding-top: -0.5em;
+}
+li > .closeBtn {
+    margin-top: 0.5em;
+}

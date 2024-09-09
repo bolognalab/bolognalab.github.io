@@ -6,7 +6,7 @@ import json
 os.chdir(os.path.dirname(__file__))
 
 # previous entries to update
-with open("fragenUndSzenarien.json", mode='r', encoding='utf-8') as json_file:
+with open("fragen_source.json", mode='r', encoding='utf-8') as json_file:
     data = json.load(json_file)
     existing_questions = data['questions']
     existing_scenarios = data['scenarios']
@@ -19,7 +19,7 @@ list_of_scenarios = []
 #importing scenarios from csv
 csv_file = 'szenarien.csv'
 with open(csv_file, mode='r', encoding='utf-8-sig') as csv_file:
-    csvfiledata = csv.DictReader(csv_file, delimiter=',')
+    csvfiledata = csv.DictReader(csv_file, delimiter=';')
     # print(csvfiledata)
     for r, row_data in enumerate(csvfiledata):
         # extract code to use as identifier 
@@ -43,31 +43,32 @@ for key, val in existing_questions.items():
 
 # MASS-POPULATE SOME EFFECTS
 for code in list_of_scenarios:
-    # ABSOLUTE RULES (complete exclusion)
-    # question artLV excludes all options not matching the selected LV type
+    # artLV: exclude all options not matching the selected LV type
     if code.split('-')[0] not in ["vl", "so"]:
         updated_questions["artLV"]["antworten"]["VL"]["effects"][code] = -100
     if code.split('-')[0] not in ["se", "so"]:
         updated_questions["artLV"]["antworten"]["SE"]["effects"][code] = -100
     if code.split('-')[0] not in ["pr"]:
         updated_questions["artLV"]["antworten"]["PR"]["effects"][code] = -100
+    if code.split('-')[0] != "so":
+        updated_questions["artLV"]["antworten"]["SO"]["effects"][code] = -100
 
     # LZiP: if essential learning goals in person, exclude hybrid and online options
-    if code.split("-")[1] in ["async", "onl", "ringonl", "hyb", "ringhyb2"]:
+    if code.split("-")[1] in ["async", "onl", "ringonl", "hyb", "ringhyb2", "onlhybwechs"]:
         updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -100
 
     # LZsy: if important learning goals are exclusively attainable synchronously, exclude all options that are fully asynchronous or offer asynchronous alternatives
     if code.split("-")[3] in ["3", "4"]:
         updated_questions["LZsy"]["antworten"]["2"]["effects"][code] = -100
 
-    # IntSync: if synchronous interaction is wished at different levels, exclude options with lower levels of interaction
+    # IntSync: if desired synchronous interaction is level 1 or 2, exclude options with lower levels of interaction
     if code.split("-")[2] == "0":
         updated_questions["IntSync"]["antworten"]["1"]["effects"][code] = -100
         updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
     if code.split("-")[2] == "1":
         updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
 
-    # IntAsync: if asynchronous interaction is wished at different levels, exclude options with less interaction
+    # IntAsync: if desired asynchronous interaction is level 1 or 2, exclude options with less interaction
     if code.split("-")[4] == "0":
         updated_questions["IntAsync"]["antworten"]["1"]["effects"][code] = -100
         updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
@@ -75,22 +76,65 @@ for code in list_of_scenarios:
         updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
 
     # niePr; if some students can never make it to class in-person, then exclude all options exclusively in-person for students
-    if code.split("-")[1] in ["praes", "ringpr", "rem", "ringhyb1", "grwechs"]:
+    if code.split("-")[1] in ["praes", "ringpr", "rem", "ringhyb1", "grwechs", "praesonlwechs", "praeshybwechs", "onlpraeswechs"]:
         # do not exclude options with asynchronous participation alternative
         if code.split("-")[3] != "3":
-            effect = (code, -100)
             updated_questions["niePr"]["antworten"]["ja"]["effects"][code] = -100
 
-    # if not allowed to teach online at all, exclude all online options
-    if code.split("-")[1] in ["async", "onl", "ringonl"]:
+    # nieSync; if some students cannot regularly make it to class synchronously, then exclude all options where material is exclusively shared synchronously
+    if code.split("-")[3] == "0":
+        updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = -100
+    # also, discourage options where asynchronous work only complements (but cannot replace) synchronous participation
+    if code.split("-")[3] == "1":
+        updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = -2
+    if code.split("-")[3] == "2":
+        updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = -1
+    # and encourage options with asynchronous participation alternatives
+    if code.split("-")[3] in ["3", "4"]: 
+        updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = + 1
+
+    # wohnLP: if the instructor lives far from the university, favor online and mostly-online options!
+    if code.split("-")[1] in ["onl", "ringonl", "onlhybwechs", "onlpraeswechs"]: 
+        updated_questions["wohnLP"]["antworten"]["nein"]["effects"][code] = + 1
+
+    # regAbw: if instructor is occasionally absent from campus, encourage switching options and, less so, primarily-online options
+    if code.split("-")[1] in ["praesonlwechs", "praeshybwechs", "hyb", "ringhyb1", "ringhyb2"]: 
+        # note: hybrid options also count, because the hybrid room can easily be moved fully online for individual classes
+        updated_questions["regAbw"]["antworten"]["abundzu"]["effects"][code] = + 2
+    if code.split("-")[1] in ["onlpraeswechs", "onl", "ringonl", "onlhybwechs"]:
+        updated_questions["regAbw"]["antworten"]["abundzu"]["effects"][code] = + 1
+    # if regularly absent from campus, enccourage fully online options (for the instructor)
+    if code.split("-")[1] in ["onlpraeswechs", "onl", "ringonl", "onlhybwechs"]:
+        updated_questions["regAbw"]["antworten"]["oft"]["effects"][code] = + 2
+    # also encourage async options
+    if code.split("-")[3] == "4": 
+        updated_questions["regAbw"]["antworten"]["oft"]["effects"][code] = + 2
+
+    # onlErlLP: if not allowed to teach online at all, exclude all online options
+    if code.split("-")[1] in ["async", "onl", "ringonl", "onlhybwechs", "onlpraeswechs"]:
         updated_questions["onlErlLP"]["antworten"]["kein"]["effects"][code] = -100
 
-    # if students not allowed to attend online at all, exclude hybrid and online options for students
-    if code.split("-")[1] in ["async", "onl", "ringonl", "grwechs", "hyb", "ringhyb2"]:
+    # onlErlSt: if students not allowed to attend online at all, exclude hybrid and online options for students
+    if code.split("-")[1] in ["async", "onl", "ringonl", "grwechs", "hyb", "ringhyb2", "onlhybwechs", "onlpraeswechs", "praesonlwechs", "praeshybwechs"]:
         updated_questions["onlErlSt"]["antworten"]["kein"]["effects"][code] = -100
 
+    # limZPSt: if most students have significant time-limitations:
+    #  - discourage flipped-classroom options
+    if code.split("-")[3] == "2":
+        updated_questions["limZPSt"]["antworten"]["ja"]["effects"][code] = - 2
+    #  -  encourage asynchronous alternative options
+    if code.split("-")[3] in ["3", "4"]: 
+        updated_questions["limZPSt"]["antworten"]["ja"]["effects"][code] = + 2
+    # - lightly encourage online and hybrid options (async is already favored above)
+    if code.split("-")[1] in ["hyb", "onl", "ringonl", "ringhyb2", "onlpraeswechs", "onlhybwechs"]:
+        updated_questions["limZPSt"]["antworten"]["ja"]["effects"][code] = + 1
+    # - lightly encourage synchronous only options
+    if code.split("-")[3] == "0":
+        # TODO: maybe: check for answer to question: are certain students unable to attend synchronously ever?
+        updated_questions["limZPSt"]["antworten"]["ja"]["effects"][code] = + 1  
+
     # onlZugang: if not all students have access to stable internet (for conferencing), exclude all online-only or mandatorily partially online options
-    if code.split("-")[1] in ["async", "onl", "ringonl", "grwechs"]:
+    if code.split("-")[1] in ["async", "onl", "ringonl", "grwechs", "praesonlwechs", "onlpraeswechs", "onlhybwechs"]:
         updated_questions["onlZugang"]["antworten"]["nein"]["effects"][code] = -100
 
     # aufzTech: if a clear recording of the room is not possible, exclude Remote Classroom
@@ -109,11 +153,22 @@ for code in list_of_scenarios:
     if code.split("-")[1] == "ringpr":
         updated_questions["gaesteMittel"]["antworten"]["nein"]["effects"][code] = -100
 
-    # NON-ABSOLUTE RULES
-    # LZiP: if no important learning goals exclusively in-person, discourage in-person only options
-    if "praes" in code.split("-")[1] and code.split("3") in ["0", "1", "2"]:
-        updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = -2
-        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -1
+    # begrAnz: gruppenwechsel is pointless if everyone can fit in the room
+    if code.split("-")[1] == "grwechs":
+        updated_questions["begrAnz"]["antworten"]["nein"]["effects"][code] = -100
+        updated_questions["begrAnz"]["antworten"]["ja"]["effects"][code] = + 2
+
+    #intKoll: exclude non-internet options if collaborative
+    # if code.split("-")[1] not in ["onl", "onlhybwechs", "onlpraeswechs", "ringonl", "rem", "hyb", "ringhyb2"]
+
+
+    # # LZiP: if no important learning goals exclusively in-person, discourage in-person only options
+    # if "praes" in code.split("-")[1] and code.split("-")[3] in ["0", "1", "2"]:
+    #     updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = -2
+    #     updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -1
+
+
+    
 
     
 
