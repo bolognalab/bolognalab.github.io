@@ -238,7 +238,8 @@
                         "se-praeshybwechs-2-3-0": -100,
                         "se-praeshybwechs-2-3-1": -100,
                         "se-praeshybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "SE": {
                     "text": "Seminar oder \u00dcbung",
@@ -696,7 +697,8 @@
                         "vl-praeshybwechs-2-3-0": -100,
                         "vl-praeshybwechs-2-3-1": -100,
                         "vl-praeshybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "PR": {
                     "text": "Praktikum",
@@ -1346,7 +1348,8 @@
                         "vl-praeshybwechs-2-3-0": -100,
                         "vl-praeshybwechs-2-3-1": -100,
                         "vl-praeshybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "SO": {
                     "text": "Sonstiges",
@@ -2014,7 +2017,8 @@
                         "vl-praeshybwechs-2-3-0": -100,
                         "vl-praeshybwechs-2-3-1": -100,
                         "vl-praeshybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -2024,11 +2028,555 @@
             "antworten": {
                 "0": {
                     "text": "keine",
-                    "effects": {}
+                    "effects": {
+                        "so-async-0-4-0": 1,
+                        "so-async-0-4-1": 1,
+                        "so-async-0-4-2": 1,
+                        "vl-hyb-0-0-0": 1,
+                        "vl-hyb-0-0-1": 1,
+                        "vl-hyb-0-0-2": 1,
+                        "vl-hyb-0-1-0": 1,
+                        "vl-hyb-0-1-1": 1,
+                        "vl-hyb-0-1-2": 1,
+                        "vl-hyb-0-2-0": 1,
+                        "vl-hyb-0-2-1": 1,
+                        "vl-hyb-0-2-2": 1,
+                        "vl-hyb-0-3-0": 1,
+                        "vl-hyb-0-3-1": 1,
+                        "vl-hyb-0-3-2": 1,
+                        "vl-hyb-1-0-0": 1,
+                        "vl-hyb-1-0-1": 1,
+                        "vl-hyb-1-0-2": 1,
+                        "vl-hyb-1-1-0": 1,
+                        "vl-hyb-1-1-1": 1,
+                        "vl-hyb-1-1-2": 1,
+                        "vl-hyb-1-2-0": 1,
+                        "vl-hyb-1-2-1": 1,
+                        "vl-hyb-1-2-2": 1,
+                        "vl-hyb-1-3-0": 1,
+                        "vl-hyb-1-3-1": 1,
+                        "vl-hyb-1-3-2": 1,
+                        "vl-hyb-2-0-0": 1,
+                        "vl-hyb-2-0-1": 1,
+                        "vl-hyb-2-0-2": 1,
+                        "vl-hyb-2-1-0": 1,
+                        "vl-hyb-2-1-1": 1,
+                        "vl-hyb-2-1-2": 1,
+                        "vl-hyb-2-2-0": 1,
+                        "vl-hyb-2-2-1": 1,
+                        "vl-hyb-2-2-2": 1,
+                        "vl-hyb-2-3-0": 1,
+                        "vl-hyb-2-3-1": 1,
+                        "vl-hyb-2-3-2": 1,
+                        "se-hyb-1-0-0": 1,
+                        "se-hyb-1-0-1": 1,
+                        "se-hyb-1-0-2": 1,
+                        "se-hyb-1-1-0": 1,
+                        "se-hyb-1-1-1": 1,
+                        "se-hyb-1-1-2": 1,
+                        "se-hyb-1-2-0": 1,
+                        "se-hyb-1-2-1": 1,
+                        "se-hyb-1-2-2": 1,
+                        "se-hyb-1-3-0": 1,
+                        "se-hyb-1-3-1": 1,
+                        "se-hyb-1-3-2": 1,
+                        "se-hyb-2-0-0": 1,
+                        "se-hyb-2-0-1": 1,
+                        "se-hyb-2-0-2": 1,
+                        "se-hyb-2-1-0": 1,
+                        "se-hyb-2-1-1": 1,
+                        "se-hyb-2-1-2": 1,
+                        "se-hyb-2-2-0": 1,
+                        "se-hyb-2-2-1": 1,
+                        "se-hyb-2-2-2": 1,
+                        "se-hyb-2-3-0": 1,
+                        "se-hyb-2-3-1": 1,
+                        "se-hyb-2-3-2": 1,
+                        "vl-onl-0-0-0": 1,
+                        "vl-onl-0-0-1": 1,
+                        "vl-onl-0-0-2": 1,
+                        "vl-onl-0-1-0": 1,
+                        "vl-onl-0-1-1": 1,
+                        "vl-onl-0-1-2": 1,
+                        "vl-onl-0-2-0": 1,
+                        "vl-onl-0-2-1": 1,
+                        "vl-onl-0-2-2": 1,
+                        "vl-onl-0-3-0": 1,
+                        "vl-onl-0-3-1": 1,
+                        "vl-onl-0-3-2": 1,
+                        "vl-onl-1-0-0": 1,
+                        "vl-onl-1-0-1": 1,
+                        "vl-onl-1-0-2": 1,
+                        "vl-onl-1-1-0": 1,
+                        "vl-onl-1-1-1": 1,
+                        "vl-onl-1-1-2": 1,
+                        "vl-onl-1-2-0": 1,
+                        "vl-onl-1-2-1": 1,
+                        "vl-onl-1-2-2": 1,
+                        "vl-onl-1-3-0": 1,
+                        "vl-onl-1-3-1": 1,
+                        "vl-onl-1-3-2": 1,
+                        "vl-onl-2-0-0": 1,
+                        "vl-onl-2-0-1": 1,
+                        "vl-onl-2-0-2": 1,
+                        "vl-onl-2-1-0": 1,
+                        "vl-onl-2-1-1": 1,
+                        "vl-onl-2-1-2": 1,
+                        "vl-onl-2-2-0": 1,
+                        "vl-onl-2-2-1": 1,
+                        "vl-onl-2-2-2": 1,
+                        "vl-onl-2-3-0": 1,
+                        "vl-onl-2-3-1": 1,
+                        "vl-onl-2-3-2": 1,
+                        "se-onl-1-0-0": 1,
+                        "se-onl-1-0-1": 1,
+                        "se-onl-1-0-2": 1,
+                        "se-onl-1-1-0": 1,
+                        "se-onl-1-1-1": 1,
+                        "se-onl-1-1-2": 1,
+                        "se-onl-1-2-0": 1,
+                        "se-onl-1-2-1": 1,
+                        "se-onl-1-2-2": 1,
+                        "se-onl-1-3-0": 1,
+                        "se-onl-1-3-1": 1,
+                        "se-onl-1-3-2": 1,
+                        "se-onl-2-0-0": 1,
+                        "se-onl-2-0-1": 1,
+                        "se-onl-2-0-2": 1,
+                        "se-onl-2-1-0": 1,
+                        "se-onl-2-1-1": 1,
+                        "se-onl-2-1-2": 1,
+                        "se-onl-2-2-0": 1,
+                        "se-onl-2-2-1": 1,
+                        "se-onl-2-2-2": 1,
+                        "se-onl-2-3-0": 1,
+                        "se-onl-2-3-1": 1,
+                        "se-onl-2-3-2": 1,
+                        "vl-ringonl-0-0-0": 1,
+                        "vl-ringonl-0-0-1": 1,
+                        "vl-ringonl-0-0-2": 1,
+                        "vl-ringonl-0-1-0": 1,
+                        "vl-ringonl-0-1-1": 1,
+                        "vl-ringonl-0-1-2": 1,
+                        "vl-ringonl-0-2-0": 1,
+                        "vl-ringonl-0-2-1": 1,
+                        "vl-ringonl-0-2-2": 1,
+                        "vl-ringonl-0-3-0": 1,
+                        "vl-ringonl-0-3-1": 1,
+                        "vl-ringonl-0-3-2": 1,
+                        "vl-ringonl-1-0-0": 1,
+                        "vl-ringonl-1-0-1": 1,
+                        "vl-ringonl-1-0-2": 1,
+                        "vl-ringonl-1-1-0": 1,
+                        "vl-ringonl-1-1-1": 1,
+                        "vl-ringonl-1-1-2": 1,
+                        "vl-ringonl-1-2-0": 1,
+                        "vl-ringonl-1-2-1": 1,
+                        "vl-ringonl-1-2-2": 1,
+                        "vl-ringonl-1-3-0": 1,
+                        "vl-ringonl-1-3-1": 1,
+                        "vl-ringonl-1-3-2": 1,
+                        "vl-ringonl-2-0-0": 1,
+                        "vl-ringonl-2-0-1": 1,
+                        "vl-ringonl-2-0-2": 1,
+                        "vl-ringonl-2-1-0": 1,
+                        "vl-ringonl-2-1-1": 1,
+                        "vl-ringonl-2-1-2": 1,
+                        "vl-ringonl-2-2-0": 1,
+                        "vl-ringonl-2-2-1": 1,
+                        "vl-ringonl-2-2-2": 1,
+                        "vl-ringonl-2-3-0": 1,
+                        "vl-ringonl-2-3-1": 1,
+                        "vl-ringonl-2-3-2": 1,
+                        "vl-ringhyb2-0-0-0": 1,
+                        "vl-ringhyb2-0-0-1": 1,
+                        "vl-ringhyb2-0-0-2": 1,
+                        "vl-ringhyb2-0-1-0": 1,
+                        "vl-ringhyb2-0-1-1": 1,
+                        "vl-ringhyb2-0-1-2": 1,
+                        "vl-ringhyb2-0-2-0": 1,
+                        "vl-ringhyb2-0-2-1": 1,
+                        "vl-ringhyb2-0-2-2": 1,
+                        "vl-ringhyb2-0-3-0": 1,
+                        "vl-ringhyb2-0-3-1": 1,
+                        "vl-ringhyb2-0-3-2": 1,
+                        "vl-ringhyb2-1-0-0": 1,
+                        "vl-ringhyb2-1-0-1": 1,
+                        "vl-ringhyb2-1-0-2": 1,
+                        "vl-ringhyb2-1-1-0": 1,
+                        "vl-ringhyb2-1-1-1": 1,
+                        "vl-ringhyb2-1-1-2": 1,
+                        "vl-ringhyb2-1-2-0": 1,
+                        "vl-ringhyb2-1-2-1": 1,
+                        "vl-ringhyb2-1-2-2": 1,
+                        "vl-ringhyb2-1-3-0": 1,
+                        "vl-ringhyb2-1-3-1": 1,
+                        "vl-ringhyb2-1-3-2": 1,
+                        "vl-ringhyb2-2-0-0": 1,
+                        "vl-ringhyb2-2-0-1": 1,
+                        "vl-ringhyb2-2-0-2": 1,
+                        "vl-ringhyb2-2-1-0": 1,
+                        "vl-ringhyb2-2-1-1": 1,
+                        "vl-ringhyb2-2-1-2": 1,
+                        "vl-ringhyb2-2-2-0": 1,
+                        "vl-ringhyb2-2-2-1": 1,
+                        "vl-ringhyb2-2-2-2": 1,
+                        "vl-ringhyb2-2-3-0": 1,
+                        "vl-ringhyb2-2-3-1": 1,
+                        "vl-ringhyb2-2-3-2": 1,
+                        "pr-onl-0-4-0": 1,
+                        "pr-onl-0-4-1": 1,
+                        "pr-onl-0-4-2": 1,
+                        "pr-hyb-1-1-0": 1,
+                        "pr-hyb-1-1-1": 1,
+                        "pr-hyb-1-1-2": 1,
+                        "pr-hyb-1-2-0": 1,
+                        "pr-hyb-1-2-1": 1,
+                        "pr-hyb-1-2-2": 1,
+                        "pr-hyb-2-1-0": 1,
+                        "pr-hyb-2-1-1": 1,
+                        "pr-hyb-2-1-2": 1,
+                        "pr-hyb-2-2-0": 1,
+                        "pr-hyb-2-2-1": 1,
+                        "pr-hyb-2-2-2": 1,
+                        "se-onlhybwechs-1-0-0": 1,
+                        "se-onlhybwechs-1-0-1": 1,
+                        "se-onlhybwechs-1-0-2": 1,
+                        "se-onlhybwechs-1-1-0": 1,
+                        "se-onlhybwechs-1-1-1": 1,
+                        "se-onlhybwechs-1-1-2": 1,
+                        "se-onlhybwechs-1-2-0": 1,
+                        "se-onlhybwechs-1-2-1": 1,
+                        "se-onlhybwechs-1-2-2": 1,
+                        "se-onlhybwechs-1-3-0": 1,
+                        "se-onlhybwechs-1-3-1": 1,
+                        "se-onlhybwechs-1-3-2": 1,
+                        "se-onlhybwechs-2-0-0": 1,
+                        "se-onlhybwechs-2-0-1": 1,
+                        "se-onlhybwechs-2-0-2": 1,
+                        "se-onlhybwechs-2-1-0": 1,
+                        "se-onlhybwechs-2-1-1": 1,
+                        "se-onlhybwechs-2-1-2": 1,
+                        "se-onlhybwechs-2-2-0": 1,
+                        "se-onlhybwechs-2-2-1": 1,
+                        "se-onlhybwechs-2-2-2": 1,
+                        "se-onlhybwechs-2-3-0": 1,
+                        "se-onlhybwechs-2-3-1": 1,
+                        "se-onlhybwechs-2-3-2": 1,
+                        "vl-onlhybwechs-0-0-0": 1,
+                        "vl-onlhybwechs-0-0-1": 1,
+                        "vl-onlhybwechs-0-0-2": 1,
+                        "vl-onlhybwechs-0-1-0": 1,
+                        "vl-onlhybwechs-0-1-1": 1,
+                        "vl-onlhybwechs-0-1-2": 1,
+                        "vl-onlhybwechs-0-2-0": 1,
+                        "vl-onlhybwechs-0-2-1": 1,
+                        "vl-onlhybwechs-0-2-2": 1,
+                        "vl-onlhybwechs-0-3-0": 1,
+                        "vl-onlhybwechs-0-3-1": 1,
+                        "vl-onlhybwechs-0-3-2": 1,
+                        "vl-onlhybwechs-1-0-0": 1,
+                        "vl-onlhybwechs-1-0-1": 1,
+                        "vl-onlhybwechs-1-0-2": 1,
+                        "vl-onlhybwechs-1-1-0": 1,
+                        "vl-onlhybwechs-1-1-1": 1,
+                        "vl-onlhybwechs-1-1-2": 1,
+                        "vl-onlhybwechs-1-2-0": 1,
+                        "vl-onlhybwechs-1-2-1": 1,
+                        "vl-onlhybwechs-1-2-2": 1,
+                        "vl-onlhybwechs-1-3-0": 1,
+                        "vl-onlhybwechs-1-3-1": 1,
+                        "vl-onlhybwechs-1-3-2": 1,
+                        "vl-onlhybwechs-2-0-0": 1,
+                        "vl-onlhybwechs-2-0-1": 1,
+                        "vl-onlhybwechs-2-0-2": 1,
+                        "vl-onlhybwechs-2-1-0": 1,
+                        "vl-onlhybwechs-2-1-1": 1,
+                        "vl-onlhybwechs-2-1-2": 1,
+                        "vl-onlhybwechs-2-2-0": 1,
+                        "vl-onlhybwechs-2-2-1": 1,
+                        "vl-onlhybwechs-2-2-2": 1,
+                        "vl-onlhybwechs-2-3-0": 1,
+                        "vl-onlhybwechs-2-3-1": 1,
+                        "vl-onlhybwechs-2-3-2": 1
+                    },
+                    "conditionalEffects": {}
                 },
                 "1": {
                     "text": "ja, von niedriger Priorit\u00e4t",
-                    "effects": {}
+                    "effects": {
+                        "so-async-0-4-0": -2,
+                        "so-async-0-4-1": -2,
+                        "so-async-0-4-2": -2,
+                        "vl-hyb-0-0-0": -2,
+                        "vl-hyb-0-0-1": -2,
+                        "vl-hyb-0-0-2": -2,
+                        "vl-hyb-0-1-0": -2,
+                        "vl-hyb-0-1-1": -2,
+                        "vl-hyb-0-1-2": -2,
+                        "vl-hyb-0-2-0": -2,
+                        "vl-hyb-0-2-1": -2,
+                        "vl-hyb-0-2-2": -2,
+                        "vl-hyb-0-3-0": -2,
+                        "vl-hyb-0-3-1": -2,
+                        "vl-hyb-0-3-2": -2,
+                        "vl-hyb-1-0-0": -2,
+                        "vl-hyb-1-0-1": -2,
+                        "vl-hyb-1-0-2": -2,
+                        "vl-hyb-1-1-0": -2,
+                        "vl-hyb-1-1-1": -2,
+                        "vl-hyb-1-1-2": -2,
+                        "vl-hyb-1-2-0": -2,
+                        "vl-hyb-1-2-1": -2,
+                        "vl-hyb-1-2-2": -2,
+                        "vl-hyb-1-3-0": -2,
+                        "vl-hyb-1-3-1": -2,
+                        "vl-hyb-1-3-2": -2,
+                        "vl-hyb-2-0-0": -2,
+                        "vl-hyb-2-0-1": -2,
+                        "vl-hyb-2-0-2": -2,
+                        "vl-hyb-2-1-0": -2,
+                        "vl-hyb-2-1-1": -2,
+                        "vl-hyb-2-1-2": -2,
+                        "vl-hyb-2-2-0": -2,
+                        "vl-hyb-2-2-1": -2,
+                        "vl-hyb-2-2-2": -2,
+                        "vl-hyb-2-3-0": -2,
+                        "vl-hyb-2-3-1": -2,
+                        "vl-hyb-2-3-2": -2,
+                        "se-hyb-1-0-0": -2,
+                        "se-hyb-1-0-1": -2,
+                        "se-hyb-1-0-2": -2,
+                        "se-hyb-1-1-0": -2,
+                        "se-hyb-1-1-1": -2,
+                        "se-hyb-1-1-2": -2,
+                        "se-hyb-1-2-0": -2,
+                        "se-hyb-1-2-1": -2,
+                        "se-hyb-1-2-2": -2,
+                        "se-hyb-1-3-0": -2,
+                        "se-hyb-1-3-1": -2,
+                        "se-hyb-1-3-2": -2,
+                        "se-hyb-2-0-0": -2,
+                        "se-hyb-2-0-1": -2,
+                        "se-hyb-2-0-2": -2,
+                        "se-hyb-2-1-0": -2,
+                        "se-hyb-2-1-1": -2,
+                        "se-hyb-2-1-2": -2,
+                        "se-hyb-2-2-0": -2,
+                        "se-hyb-2-2-1": -2,
+                        "se-hyb-2-2-2": -2,
+                        "se-hyb-2-3-0": -2,
+                        "se-hyb-2-3-1": -2,
+                        "se-hyb-2-3-2": -2,
+                        "vl-onl-0-0-0": -2,
+                        "vl-onl-0-0-1": -2,
+                        "vl-onl-0-0-2": -2,
+                        "vl-onl-0-1-0": -2,
+                        "vl-onl-0-1-1": -2,
+                        "vl-onl-0-1-2": -2,
+                        "vl-onl-0-2-0": -2,
+                        "vl-onl-0-2-1": -2,
+                        "vl-onl-0-2-2": -2,
+                        "vl-onl-0-3-0": -2,
+                        "vl-onl-0-3-1": -2,
+                        "vl-onl-0-3-2": -2,
+                        "vl-onl-1-0-0": -2,
+                        "vl-onl-1-0-1": -2,
+                        "vl-onl-1-0-2": -2,
+                        "vl-onl-1-1-0": -2,
+                        "vl-onl-1-1-1": -2,
+                        "vl-onl-1-1-2": -2,
+                        "vl-onl-1-2-0": -2,
+                        "vl-onl-1-2-1": -2,
+                        "vl-onl-1-2-2": -2,
+                        "vl-onl-1-3-0": -2,
+                        "vl-onl-1-3-1": -2,
+                        "vl-onl-1-3-2": -2,
+                        "vl-onl-2-0-0": -2,
+                        "vl-onl-2-0-1": -2,
+                        "vl-onl-2-0-2": -2,
+                        "vl-onl-2-1-0": -2,
+                        "vl-onl-2-1-1": -2,
+                        "vl-onl-2-1-2": -2,
+                        "vl-onl-2-2-0": -2,
+                        "vl-onl-2-2-1": -2,
+                        "vl-onl-2-2-2": -2,
+                        "vl-onl-2-3-0": -2,
+                        "vl-onl-2-3-1": -2,
+                        "vl-onl-2-3-2": -2,
+                        "se-onl-1-0-0": -2,
+                        "se-onl-1-0-1": -2,
+                        "se-onl-1-0-2": -2,
+                        "se-onl-1-1-0": -2,
+                        "se-onl-1-1-1": -2,
+                        "se-onl-1-1-2": -2,
+                        "se-onl-1-2-0": -2,
+                        "se-onl-1-2-1": -2,
+                        "se-onl-1-2-2": -2,
+                        "se-onl-1-3-0": -2,
+                        "se-onl-1-3-1": -2,
+                        "se-onl-1-3-2": -2,
+                        "se-onl-2-0-0": -2,
+                        "se-onl-2-0-1": -2,
+                        "se-onl-2-0-2": -2,
+                        "se-onl-2-1-0": -2,
+                        "se-onl-2-1-1": -2,
+                        "se-onl-2-1-2": -2,
+                        "se-onl-2-2-0": -2,
+                        "se-onl-2-2-1": -2,
+                        "se-onl-2-2-2": -2,
+                        "se-onl-2-3-0": -2,
+                        "se-onl-2-3-1": -2,
+                        "se-onl-2-3-2": -2,
+                        "vl-ringonl-0-0-0": -2,
+                        "vl-ringonl-0-0-1": -2,
+                        "vl-ringonl-0-0-2": -2,
+                        "vl-ringonl-0-1-0": -2,
+                        "vl-ringonl-0-1-1": -2,
+                        "vl-ringonl-0-1-2": -2,
+                        "vl-ringonl-0-2-0": -2,
+                        "vl-ringonl-0-2-1": -2,
+                        "vl-ringonl-0-2-2": -2,
+                        "vl-ringonl-0-3-0": -2,
+                        "vl-ringonl-0-3-1": -2,
+                        "vl-ringonl-0-3-2": -2,
+                        "vl-ringonl-1-0-0": -2,
+                        "vl-ringonl-1-0-1": -2,
+                        "vl-ringonl-1-0-2": -2,
+                        "vl-ringonl-1-1-0": -2,
+                        "vl-ringonl-1-1-1": -2,
+                        "vl-ringonl-1-1-2": -2,
+                        "vl-ringonl-1-2-0": -2,
+                        "vl-ringonl-1-2-1": -2,
+                        "vl-ringonl-1-2-2": -2,
+                        "vl-ringonl-1-3-0": -2,
+                        "vl-ringonl-1-3-1": -2,
+                        "vl-ringonl-1-3-2": -2,
+                        "vl-ringonl-2-0-0": -2,
+                        "vl-ringonl-2-0-1": -2,
+                        "vl-ringonl-2-0-2": -2,
+                        "vl-ringonl-2-1-0": -2,
+                        "vl-ringonl-2-1-1": -2,
+                        "vl-ringonl-2-1-2": -2,
+                        "vl-ringonl-2-2-0": -2,
+                        "vl-ringonl-2-2-1": -2,
+                        "vl-ringonl-2-2-2": -2,
+                        "vl-ringonl-2-3-0": -2,
+                        "vl-ringonl-2-3-1": -2,
+                        "vl-ringonl-2-3-2": -2,
+                        "vl-ringhyb2-0-0-0": -2,
+                        "vl-ringhyb2-0-0-1": -2,
+                        "vl-ringhyb2-0-0-2": -2,
+                        "vl-ringhyb2-0-1-0": -2,
+                        "vl-ringhyb2-0-1-1": -2,
+                        "vl-ringhyb2-0-1-2": -2,
+                        "vl-ringhyb2-0-2-0": -2,
+                        "vl-ringhyb2-0-2-1": -2,
+                        "vl-ringhyb2-0-2-2": -2,
+                        "vl-ringhyb2-0-3-0": -2,
+                        "vl-ringhyb2-0-3-1": -2,
+                        "vl-ringhyb2-0-3-2": -2,
+                        "vl-ringhyb2-1-0-0": -2,
+                        "vl-ringhyb2-1-0-1": -2,
+                        "vl-ringhyb2-1-0-2": -2,
+                        "vl-ringhyb2-1-1-0": -2,
+                        "vl-ringhyb2-1-1-1": -2,
+                        "vl-ringhyb2-1-1-2": -2,
+                        "vl-ringhyb2-1-2-0": -2,
+                        "vl-ringhyb2-1-2-1": -2,
+                        "vl-ringhyb2-1-2-2": -2,
+                        "vl-ringhyb2-1-3-0": -2,
+                        "vl-ringhyb2-1-3-1": -2,
+                        "vl-ringhyb2-1-3-2": -2,
+                        "vl-ringhyb2-2-0-0": -2,
+                        "vl-ringhyb2-2-0-1": -2,
+                        "vl-ringhyb2-2-0-2": -2,
+                        "vl-ringhyb2-2-1-0": -2,
+                        "vl-ringhyb2-2-1-1": -2,
+                        "vl-ringhyb2-2-1-2": -2,
+                        "vl-ringhyb2-2-2-0": -2,
+                        "vl-ringhyb2-2-2-1": -2,
+                        "vl-ringhyb2-2-2-2": -2,
+                        "vl-ringhyb2-2-3-0": -2,
+                        "vl-ringhyb2-2-3-1": -2,
+                        "vl-ringhyb2-2-3-2": -2,
+                        "pr-onl-0-4-0": -2,
+                        "pr-onl-0-4-1": -2,
+                        "pr-onl-0-4-2": -2,
+                        "pr-hyb-1-1-0": -2,
+                        "pr-hyb-1-1-1": -2,
+                        "pr-hyb-1-1-2": -2,
+                        "pr-hyb-1-2-0": -2,
+                        "pr-hyb-1-2-1": -2,
+                        "pr-hyb-1-2-2": -2,
+                        "pr-hyb-2-1-0": -2,
+                        "pr-hyb-2-1-1": -2,
+                        "pr-hyb-2-1-2": -2,
+                        "pr-hyb-2-2-0": -2,
+                        "pr-hyb-2-2-1": -2,
+                        "pr-hyb-2-2-2": -2,
+                        "se-onlhybwechs-1-0-0": -2,
+                        "se-onlhybwechs-1-0-1": -2,
+                        "se-onlhybwechs-1-0-2": -2,
+                        "se-onlhybwechs-1-1-0": -2,
+                        "se-onlhybwechs-1-1-1": -2,
+                        "se-onlhybwechs-1-1-2": -2,
+                        "se-onlhybwechs-1-2-0": -2,
+                        "se-onlhybwechs-1-2-1": -2,
+                        "se-onlhybwechs-1-2-2": -2,
+                        "se-onlhybwechs-1-3-0": -2,
+                        "se-onlhybwechs-1-3-1": -2,
+                        "se-onlhybwechs-1-3-2": -2,
+                        "se-onlhybwechs-2-0-0": -2,
+                        "se-onlhybwechs-2-0-1": -2,
+                        "se-onlhybwechs-2-0-2": -2,
+                        "se-onlhybwechs-2-1-0": -2,
+                        "se-onlhybwechs-2-1-1": -2,
+                        "se-onlhybwechs-2-1-2": -2,
+                        "se-onlhybwechs-2-2-0": -2,
+                        "se-onlhybwechs-2-2-1": -2,
+                        "se-onlhybwechs-2-2-2": -2,
+                        "se-onlhybwechs-2-3-0": -2,
+                        "se-onlhybwechs-2-3-1": -2,
+                        "se-onlhybwechs-2-3-2": -2,
+                        "vl-onlhybwechs-0-0-0": -2,
+                        "vl-onlhybwechs-0-0-1": -2,
+                        "vl-onlhybwechs-0-0-2": -2,
+                        "vl-onlhybwechs-0-1-0": -2,
+                        "vl-onlhybwechs-0-1-1": -2,
+                        "vl-onlhybwechs-0-1-2": -2,
+                        "vl-onlhybwechs-0-2-0": -2,
+                        "vl-onlhybwechs-0-2-1": -2,
+                        "vl-onlhybwechs-0-2-2": -2,
+                        "vl-onlhybwechs-0-3-0": -2,
+                        "vl-onlhybwechs-0-3-1": -2,
+                        "vl-onlhybwechs-0-3-2": -2,
+                        "vl-onlhybwechs-1-0-0": -2,
+                        "vl-onlhybwechs-1-0-1": -2,
+                        "vl-onlhybwechs-1-0-2": -2,
+                        "vl-onlhybwechs-1-1-0": -2,
+                        "vl-onlhybwechs-1-1-1": -2,
+                        "vl-onlhybwechs-1-1-2": -2,
+                        "vl-onlhybwechs-1-2-0": -2,
+                        "vl-onlhybwechs-1-2-1": -2,
+                        "vl-onlhybwechs-1-2-2": -2,
+                        "vl-onlhybwechs-1-3-0": -2,
+                        "vl-onlhybwechs-1-3-1": -2,
+                        "vl-onlhybwechs-1-3-2": -2,
+                        "vl-onlhybwechs-2-0-0": -2,
+                        "vl-onlhybwechs-2-0-1": -2,
+                        "vl-onlhybwechs-2-0-2": -2,
+                        "vl-onlhybwechs-2-1-0": -2,
+                        "vl-onlhybwechs-2-1-1": -2,
+                        "vl-onlhybwechs-2-1-2": -2,
+                        "vl-onlhybwechs-2-2-0": -2,
+                        "vl-onlhybwechs-2-2-1": -2,
+                        "vl-onlhybwechs-2-2-2": -2,
+                        "vl-onlhybwechs-2-3-0": -2,
+                        "vl-onlhybwechs-2-3-1": -2,
+                        "vl-onlhybwechs-2-3-2": -2
+                    },
+                    "conditionalEffects": {}
                 },
                 "2": {
                     "text": "ja, von hoher Priorit\u00e4t",
@@ -2303,7 +2851,8 @@
                         "vl-onlhybwechs-2-3-0": -100,
                         "vl-onlhybwechs-2-3-1": -100,
                         "vl-onlhybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -2313,11 +2862,13 @@
             "antworten": {
                 "0": {
                     "text": "keine",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "1": {
                     "text": "ja, von niedriger Priorit\u00e4t",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "2": {
                     "text": "ja, von hoher Priorit\u00e4t",
@@ -2484,7 +3035,8 @@
                         "vl-praeshybwechs-2-3-0": -100,
                         "vl-praeshybwechs-2-3-1": -100,
                         "vl-praeshybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -2494,7 +3046,8 @@
             "antworten": {
                 "0": {
                     "text": "Die Lernziele des Kurses k\u00f6nnen auch mit minimaler oder nur gelegentlicher Interaktion erreicht werden.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "1": {
                     "text": "Die Studierenden sollen mit der Lehrperson (auch z.B. durch Polls oder Clicker) interagieren, aber nicht unbedingt mit anderen Studierenden",
@@ -2649,7 +3202,8 @@
                         "vl-praeshybwechs-0-3-0": -100,
                         "vl-praeshybwechs-0-3-1": -100,
                         "vl-praeshybwechs-0-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "2": {
                     "text": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren.",
@@ -3059,7 +3613,8 @@
                         "vl-praeshybwechs-1-3-0": -100,
                         "vl-praeshybwechs-1-3-1": -100,
                         "vl-praeshybwechs-1-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -3069,7 +3624,8 @@
             "antworten": {
                 "0": {
                     "text": "minimale oder gelegentliche Interaktion",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "1": {
                     "text": "Interaktion haupts\u00e4chlich zw. Studierenden und der Lehrperson",
@@ -3296,7 +3852,8 @@
                         "vl-praeshybwechs-2-1-0": -100,
                         "vl-praeshybwechs-2-2-0": -100,
                         "vl-praeshybwechs-2-3-0": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "2": {
                     "text": "Interaktion sowohl zw. Studierenden als auch zw. Studierenden und der Lehrperson",
@@ -3745,7 +4302,8 @@
                         "vl-praeshybwechs-2-2-1": -100,
                         "vl-praeshybwechs-2-3-0": -100,
                         "vl-praeshybwechs-2-3-1": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -4032,11 +4590,13 @@
                         "vl-praeshybwechs-2-2-0": -100,
                         "vl-praeshybwechs-2-2-1": -100,
                         "vl-praeshybwechs-2-2-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -4713,11 +5273,13 @@
                         "vl-praeshybwechs-2-3-0": 1,
                         "vl-praeshybwechs-2-3-1": 1,
                         "vl-praeshybwechs-2-3-2": 1
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -4727,11 +5289,15 @@
             "antworten": {
                 "ja": {
                     "text": "Ja.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein.",
                     "effects": {
+                        "so-async-0-4-0": 1,
+                        "so-async-0-4-1": 1,
+                        "so-async-0-4-2": 1,
                         "vl-onl-0-0-0": 1,
                         "vl-onl-0-0-1": 1,
                         "vl-onl-0-0-2": 1,
@@ -4951,7 +5517,8 @@
                         "vl-onlhybwechs-2-3-0": 1,
                         "vl-onlhybwechs-2-3-1": 1,
                         "vl-onlhybwechs-2-3-2": 1
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -4961,7 +5528,8 @@
             "antworten": {
                 "nein": {
                     "text": "Nein, ich werde immer anwesend sein",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "abundzu": {
                     "text": "Nur gelegentlich (z.B. Konferenzen)",
@@ -5449,7 +6017,8 @@
                         "vl-praeshybwechs-2-3-0": 2,
                         "vl-praeshybwechs-2-3-1": 2,
                         "vl-praeshybwechs-2-3-2": 2
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "oft": {
                     "text": "Ja (z.B. Sabbatjahr)",
@@ -5676,7 +6245,8 @@
                         "vl-onlhybwechs-2-3-0": 2,
                         "vl-onlhybwechs-2-3-1": 2,
                         "vl-onlhybwechs-2-3-2": 2
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -5705,7 +6275,8 @@
                         "se-grwechs-2-2-0": -100,
                         "se-grwechs-2-2-1": -100,
                         "se-grwechs-2-2-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "ja": {
                     "text": "ja",
@@ -5728,7 +6299,8 @@
                         "se-grwechs-2-2-0": 2,
                         "se-grwechs-2-2-1": 2,
                         "se-grwechs-2-2-2": 2
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -5961,19 +6533,23 @@
                         "vl-onlhybwechs-2-3-0": -100,
                         "vl-onlhybwechs-2-3-1": -100,
                         "vl-onlhybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "teil": {
                     "text": "zwischen 0-100%",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "voll": {
                     "text": "100%",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "idk": {
                     "text": "Ich bin mir nicht sicher.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -6452,19 +7028,23 @@
                         "vl-praeshybwechs-2-3-0": -100,
                         "vl-praeshybwechs-2-3-1": -100,
                         "vl-praeshybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "teil": {
                     "text": "zwischen 0-100%",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "voll": {
                     "text": "100%",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "idk": {
                     "text": "Ich bin mir nicht sicher.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -7054,15 +7634,18 @@
                         "vl-praeshybwechs-2-3-0": 2,
                         "vl-praeshybwechs-2-3-1": 2,
                         "vl-praeshybwechs-2-3-2": 2
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "idk": {
                     "text": "Ich bin mir nicht sicher.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -7072,7 +7655,8 @@
             "antworten": {
                 "ja": {
                     "text": "Ja.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein.",
@@ -7377,11 +7961,13 @@
                         "vl-praesonlwechs-2-3-0": -100,
                         "vl-praesonlwechs-2-3-1": -100,
                         "vl-praesonlwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "helfen": {
                     "text": "Nein, aber ich kann bed\u00fcrftigen Studierenden helfen, ein solches Ger\u00e4t zu erhalten.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -7391,7 +7977,8 @@
             "antworten": {
                 "ja": {
                     "text": "Ja.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein.",
@@ -7456,11 +8043,13 @@
                         "se-rem-2-3-0": -100,
                         "se-rem-2-3-1": -100,
                         "se-rem-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "idk": {
                     "text": "Ich bin mir nicht sicher.",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -7615,7 +8204,8 @@
                         "vl-ringhyb2-2-3-0": -100,
                         "vl-ringhyb2-2-3-1": -100,
                         "vl-ringhyb2-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "1": {
                     "text": "Nur ab und zu.",
@@ -7764,7 +8354,8 @@
                         "vl-ringhyb2-2-3-0": -100,
                         "vl-ringhyb2-2-3-1": -100,
                         "vl-ringhyb2-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 },
                 "2": {
                     "text": "Ja, regelm\u00e4\u00dfig (Ringvorlesung)",
@@ -8291,7 +8882,8 @@
                         "vl-praeshybwechs-2-3-0": -100,
                         "vl-praeshybwechs-2-3-1": -100,
                         "vl-praeshybwechs-2-3-2": -100
-                    }
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -8301,11 +8893,123 @@
             "antworten": {
                 "ja": {
                     "text": "Ja",
-                    "effects": {}
+                    "effects": {
+                        "vl-ringpraes-0-0-0": 1,
+                        "vl-ringpraes-0-0-1": 1,
+                        "vl-ringpraes-0-0-2": 1,
+                        "vl-ringpraes-0-1-0": 1,
+                        "vl-ringpraes-0-1-1": 1,
+                        "vl-ringpraes-0-1-2": 1,
+                        "vl-ringpraes-0-2-0": 1,
+                        "vl-ringpraes-0-2-1": 1,
+                        "vl-ringpraes-0-2-2": 1,
+                        "vl-ringpraes-0-3-0": 1,
+                        "vl-ringpraes-0-3-1": 1,
+                        "vl-ringpraes-0-3-2": 1,
+                        "vl-ringpraes-1-0-0": 1,
+                        "vl-ringpraes-1-0-1": 1,
+                        "vl-ringpraes-1-0-2": 1,
+                        "vl-ringpraes-1-1-0": 1,
+                        "vl-ringpraes-1-1-1": 1,
+                        "vl-ringpraes-1-1-2": 1,
+                        "vl-ringpraes-1-2-0": 1,
+                        "vl-ringpraes-1-2-1": 1,
+                        "vl-ringpraes-1-2-2": 1,
+                        "vl-ringpraes-1-3-0": 1,
+                        "vl-ringpraes-1-3-1": 1,
+                        "vl-ringpraes-1-3-2": 1,
+                        "vl-ringpraes-2-0-0": 1,
+                        "vl-ringpraes-2-0-1": 1,
+                        "vl-ringpraes-2-0-2": 1,
+                        "vl-ringpraes-2-1-0": 1,
+                        "vl-ringpraes-2-1-1": 1,
+                        "vl-ringpraes-2-1-2": 1,
+                        "vl-ringpraes-2-2-0": 1,
+                        "vl-ringpraes-2-2-1": 1,
+                        "vl-ringpraes-2-2-2": 1,
+                        "vl-ringpraes-2-3-0": 1,
+                        "vl-ringpraes-2-3-1": 1,
+                        "vl-ringpraes-2-3-2": 1,
+                        "vl-ringhyb2-0-0-0": 1,
+                        "vl-ringhyb2-0-0-1": 1,
+                        "vl-ringhyb2-0-0-2": 1,
+                        "vl-ringhyb2-0-1-0": 1,
+                        "vl-ringhyb2-0-1-1": 1,
+                        "vl-ringhyb2-0-1-2": 1,
+                        "vl-ringhyb2-0-2-0": 1,
+                        "vl-ringhyb2-0-2-1": 1,
+                        "vl-ringhyb2-0-2-2": 1,
+                        "vl-ringhyb2-0-3-0": 1,
+                        "vl-ringhyb2-0-3-1": 1,
+                        "vl-ringhyb2-0-3-2": 1,
+                        "vl-ringhyb2-1-0-0": 1,
+                        "vl-ringhyb2-1-0-1": 1,
+                        "vl-ringhyb2-1-0-2": 1,
+                        "vl-ringhyb2-1-1-0": 1,
+                        "vl-ringhyb2-1-1-1": 1,
+                        "vl-ringhyb2-1-1-2": 1,
+                        "vl-ringhyb2-1-2-0": 1,
+                        "vl-ringhyb2-1-2-1": 1,
+                        "vl-ringhyb2-1-2-2": 1,
+                        "vl-ringhyb2-1-3-0": 1,
+                        "vl-ringhyb2-1-3-1": 1,
+                        "vl-ringhyb2-1-3-2": 1,
+                        "vl-ringhyb2-2-0-0": 1,
+                        "vl-ringhyb2-2-0-1": 1,
+                        "vl-ringhyb2-2-0-2": 1,
+                        "vl-ringhyb2-2-1-0": 1,
+                        "vl-ringhyb2-2-1-1": 1,
+                        "vl-ringhyb2-2-1-2": 1,
+                        "vl-ringhyb2-2-2-0": 1,
+                        "vl-ringhyb2-2-2-1": 1,
+                        "vl-ringhyb2-2-2-2": 1,
+                        "vl-ringhyb2-2-3-0": 1,
+                        "vl-ringhyb2-2-3-1": 1,
+                        "vl-ringhyb2-2-3-2": 1
+                    },
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein",
-                    "effects": {}
+                    "effects": {
+                        "vl-ringpraes-0-0-0": -100,
+                        "vl-ringpraes-0-0-1": -100,
+                        "vl-ringpraes-0-0-2": -100,
+                        "vl-ringpraes-0-1-0": -100,
+                        "vl-ringpraes-0-1-1": -100,
+                        "vl-ringpraes-0-1-2": -100,
+                        "vl-ringpraes-0-2-0": -100,
+                        "vl-ringpraes-0-2-1": -100,
+                        "vl-ringpraes-0-2-2": -100,
+                        "vl-ringpraes-0-3-0": -100,
+                        "vl-ringpraes-0-3-1": -100,
+                        "vl-ringpraes-0-3-2": -100,
+                        "vl-ringpraes-1-0-0": -100,
+                        "vl-ringpraes-1-0-1": -100,
+                        "vl-ringpraes-1-0-2": -100,
+                        "vl-ringpraes-1-1-0": -100,
+                        "vl-ringpraes-1-1-1": -100,
+                        "vl-ringpraes-1-1-2": -100,
+                        "vl-ringpraes-1-2-0": -100,
+                        "vl-ringpraes-1-2-1": -100,
+                        "vl-ringpraes-1-2-2": -100,
+                        "vl-ringpraes-1-3-0": -100,
+                        "vl-ringpraes-1-3-1": -100,
+                        "vl-ringpraes-1-3-2": -100,
+                        "vl-ringpraes-2-0-0": -100,
+                        "vl-ringpraes-2-0-1": -100,
+                        "vl-ringpraes-2-0-2": -100,
+                        "vl-ringpraes-2-1-0": -100,
+                        "vl-ringpraes-2-1-1": -100,
+                        "vl-ringpraes-2-1-2": -100,
+                        "vl-ringpraes-2-2-0": -100,
+                        "vl-ringpraes-2-2-1": -100,
+                        "vl-ringpraes-2-2-2": -100,
+                        "vl-ringpraes-2-3-0": -100,
+                        "vl-ringpraes-2-3-1": -100,
+                        "vl-ringpraes-2-3-2": -100
+                    },
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -8315,11 +9019,116 @@
             "antworten": {
                 "ja": {
                     "text": "Ja",
-                    "effects": {}
+                    "effects": {
+                        "so-async-0-4-0": -100,
+                        "so-async-0-4-1": -100,
+                        "so-async-0-4-2": -100,
+                        "vl-onl-0-0-0": -100,
+                        "vl-onl-0-0-1": -100,
+                        "vl-onl-0-0-2": -100,
+                        "vl-onl-0-1-0": -100,
+                        "vl-onl-0-1-1": -100,
+                        "vl-onl-0-1-2": -100,
+                        "vl-onl-0-2-0": -100,
+                        "vl-onl-0-2-1": -100,
+                        "vl-onl-0-2-2": -100,
+                        "vl-onl-0-3-0": -100,
+                        "vl-onl-0-3-1": -100,
+                        "vl-onl-0-3-2": -100,
+                        "vl-onl-1-0-0": -100,
+                        "vl-onl-1-0-1": -100,
+                        "vl-onl-1-0-2": -100,
+                        "vl-onl-1-1-0": -100,
+                        "vl-onl-1-1-1": -100,
+                        "vl-onl-1-1-2": -100,
+                        "vl-onl-1-2-0": -100,
+                        "vl-onl-1-2-1": -100,
+                        "vl-onl-1-2-2": -100,
+                        "vl-onl-1-3-0": -100,
+                        "vl-onl-1-3-1": -100,
+                        "vl-onl-1-3-2": -100,
+                        "vl-onl-2-0-0": -100,
+                        "vl-onl-2-0-1": -100,
+                        "vl-onl-2-0-2": -100,
+                        "vl-onl-2-1-0": -100,
+                        "vl-onl-2-1-1": -100,
+                        "vl-onl-2-1-2": -100,
+                        "vl-onl-2-2-0": -100,
+                        "vl-onl-2-2-1": -100,
+                        "vl-onl-2-2-2": -100,
+                        "vl-onl-2-3-0": -100,
+                        "vl-onl-2-3-1": -100,
+                        "vl-onl-2-3-2": -100,
+                        "se-onl-1-0-0": -100,
+                        "se-onl-1-0-1": -100,
+                        "se-onl-1-0-2": -100,
+                        "se-onl-1-1-0": -100,
+                        "se-onl-1-1-1": -100,
+                        "se-onl-1-1-2": -100,
+                        "se-onl-1-2-0": -100,
+                        "se-onl-1-2-1": -100,
+                        "se-onl-1-2-2": -100,
+                        "se-onl-1-3-0": -100,
+                        "se-onl-1-3-1": -100,
+                        "se-onl-1-3-2": -100,
+                        "se-onl-2-0-0": -100,
+                        "se-onl-2-0-1": -100,
+                        "se-onl-2-0-2": -100,
+                        "se-onl-2-1-0": -100,
+                        "se-onl-2-1-1": -100,
+                        "se-onl-2-1-2": -100,
+                        "se-onl-2-2-0": -100,
+                        "se-onl-2-2-1": -100,
+                        "se-onl-2-2-2": -100,
+                        "se-onl-2-3-0": -100,
+                        "se-onl-2-3-1": -100,
+                        "se-onl-2-3-2": -100,
+                        "vl-ringonl-0-0-0": -100,
+                        "vl-ringonl-0-0-1": -100,
+                        "vl-ringonl-0-0-2": -100,
+                        "vl-ringonl-0-1-0": -100,
+                        "vl-ringonl-0-1-1": -100,
+                        "vl-ringonl-0-1-2": -100,
+                        "vl-ringonl-0-2-0": -100,
+                        "vl-ringonl-0-2-1": -100,
+                        "vl-ringonl-0-2-2": -100,
+                        "vl-ringonl-0-3-0": -100,
+                        "vl-ringonl-0-3-1": -100,
+                        "vl-ringonl-0-3-2": -100,
+                        "vl-ringonl-1-0-0": -100,
+                        "vl-ringonl-1-0-1": -100,
+                        "vl-ringonl-1-0-2": -100,
+                        "vl-ringonl-1-1-0": -100,
+                        "vl-ringonl-1-1-1": -100,
+                        "vl-ringonl-1-1-2": -100,
+                        "vl-ringonl-1-2-0": -100,
+                        "vl-ringonl-1-2-1": -100,
+                        "vl-ringonl-1-2-2": -100,
+                        "vl-ringonl-1-3-0": -100,
+                        "vl-ringonl-1-3-1": -100,
+                        "vl-ringonl-1-3-2": -100,
+                        "vl-ringonl-2-0-0": -100,
+                        "vl-ringonl-2-0-1": -100,
+                        "vl-ringonl-2-0-2": -100,
+                        "vl-ringonl-2-1-0": -100,
+                        "vl-ringonl-2-1-1": -100,
+                        "vl-ringonl-2-1-2": -100,
+                        "vl-ringonl-2-2-0": -100,
+                        "vl-ringonl-2-2-1": -100,
+                        "vl-ringonl-2-2-2": -100,
+                        "vl-ringonl-2-3-0": -100,
+                        "vl-ringonl-2-3-1": -100,
+                        "vl-ringonl-2-3-2": -100,
+                        "pr-onl-0-4-0": -100,
+                        "pr-onl-0-4-1": -100,
+                        "pr-onl-0-4-2": -100
+                    },
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         },
@@ -8329,11 +9138,2393 @@
             "antworten": {
                 "ja": {
                     "text": "Ja",
-                    "effects": {}
+                    "effects": {
+                        "vl-hyb-0-0-0": "FUNC",
+                        "vl-hyb-0-0-1": "FUNC",
+                        "vl-hyb-0-0-2": "FUNC",
+                        "vl-hyb-0-1-0": "FUNC",
+                        "vl-hyb-0-1-1": "FUNC",
+                        "vl-hyb-0-1-2": "FUNC",
+                        "vl-hyb-0-2-0": "FUNC",
+                        "vl-hyb-0-2-1": "FUNC",
+                        "vl-hyb-0-2-2": "FUNC",
+                        "vl-hyb-0-3-0": "FUNC",
+                        "vl-hyb-0-3-1": "FUNC",
+                        "vl-hyb-0-3-2": "FUNC",
+                        "vl-hyb-1-0-0": "FUNC",
+                        "vl-hyb-1-0-1": "FUNC",
+                        "vl-hyb-1-0-2": "FUNC",
+                        "vl-hyb-1-1-0": "FUNC",
+                        "vl-hyb-1-1-1": "FUNC",
+                        "vl-hyb-1-1-2": "FUNC",
+                        "vl-hyb-1-2-0": "FUNC",
+                        "vl-hyb-1-2-1": "FUNC",
+                        "vl-hyb-1-2-2": "FUNC",
+                        "vl-hyb-1-3-0": "FUNC",
+                        "vl-hyb-1-3-1": "FUNC",
+                        "vl-hyb-1-3-2": "FUNC",
+                        "vl-hyb-2-0-0": "FUNC",
+                        "vl-hyb-2-0-1": "FUNC",
+                        "vl-hyb-2-0-2": "FUNC",
+                        "vl-hyb-2-1-0": "FUNC",
+                        "vl-hyb-2-1-1": "FUNC",
+                        "vl-hyb-2-1-2": "FUNC",
+                        "vl-hyb-2-2-0": "FUNC",
+                        "vl-hyb-2-2-1": "FUNC",
+                        "vl-hyb-2-2-2": "FUNC",
+                        "vl-hyb-2-3-0": "FUNC",
+                        "vl-hyb-2-3-1": "FUNC",
+                        "vl-hyb-2-3-2": "FUNC",
+                        "se-hyb-1-0-0": "FUNC",
+                        "se-hyb-1-0-1": "FUNC",
+                        "se-hyb-1-0-2": "FUNC",
+                        "se-hyb-1-1-0": "FUNC",
+                        "se-hyb-1-1-1": "FUNC",
+                        "se-hyb-1-1-2": "FUNC",
+                        "se-hyb-1-2-0": "FUNC",
+                        "se-hyb-1-2-1": "FUNC",
+                        "se-hyb-1-2-2": "FUNC",
+                        "se-hyb-1-3-0": "FUNC",
+                        "se-hyb-1-3-1": "FUNC",
+                        "se-hyb-1-3-2": "FUNC",
+                        "se-hyb-2-0-0": "FUNC",
+                        "se-hyb-2-0-1": "FUNC",
+                        "se-hyb-2-0-2": "FUNC",
+                        "se-hyb-2-1-0": "FUNC",
+                        "se-hyb-2-1-1": "FUNC",
+                        "se-hyb-2-1-2": "FUNC",
+                        "se-hyb-2-2-0": "FUNC",
+                        "se-hyb-2-2-1": "FUNC",
+                        "se-hyb-2-2-2": "FUNC",
+                        "se-hyb-2-3-0": "FUNC",
+                        "se-hyb-2-3-1": "FUNC",
+                        "se-hyb-2-3-2": "FUNC",
+                        "vl-praes-0-0-0": "FUNC",
+                        "vl-praes-0-0-1": "FUNC",
+                        "vl-praes-0-0-2": "FUNC",
+                        "vl-praes-0-1-0": "FUNC",
+                        "vl-praes-0-1-1": "FUNC",
+                        "vl-praes-0-1-2": "FUNC",
+                        "vl-praes-0-2-0": "FUNC",
+                        "vl-praes-0-2-1": "FUNC",
+                        "vl-praes-0-2-2": "FUNC",
+                        "vl-praes-0-3-0": "FUNC",
+                        "vl-praes-0-3-1": "FUNC",
+                        "vl-praes-0-3-2": "FUNC",
+                        "vl-praes-1-0-0": "FUNC",
+                        "vl-praes-1-0-1": "FUNC",
+                        "vl-praes-1-0-2": "FUNC",
+                        "vl-praes-1-1-0": "FUNC",
+                        "vl-praes-1-1-1": "FUNC",
+                        "vl-praes-1-1-2": "FUNC",
+                        "vl-praes-1-2-0": "FUNC",
+                        "vl-praes-1-2-1": "FUNC",
+                        "vl-praes-1-2-2": "FUNC",
+                        "vl-praes-1-3-0": "FUNC",
+                        "vl-praes-1-3-1": "FUNC",
+                        "vl-praes-1-3-2": "FUNC",
+                        "vl-praes-2-0-0": "FUNC",
+                        "vl-praes-2-0-1": "FUNC",
+                        "vl-praes-2-0-2": "FUNC",
+                        "vl-praes-2-1-0": "FUNC",
+                        "vl-praes-2-1-1": "FUNC",
+                        "vl-praes-2-1-2": "FUNC",
+                        "vl-praes-2-2-0": "FUNC",
+                        "vl-praes-2-2-1": "FUNC",
+                        "vl-praes-2-2-2": "FUNC",
+                        "vl-praes-2-3-0": "FUNC",
+                        "vl-praes-2-3-1": "FUNC",
+                        "vl-praes-2-3-2": "FUNC",
+                        "se-praes-1-0-0": "FUNC",
+                        "se-praes-1-0-1": "FUNC",
+                        "se-praes-1-0-2": "FUNC",
+                        "se-praes-1-1-0": "FUNC",
+                        "se-praes-1-1-1": "FUNC",
+                        "se-praes-1-1-2": "FUNC",
+                        "se-praes-1-2-0": "FUNC",
+                        "se-praes-1-2-1": "FUNC",
+                        "se-praes-1-2-2": "FUNC",
+                        "se-praes-1-3-0": "FUNC",
+                        "se-praes-1-3-1": "FUNC",
+                        "se-praes-1-3-2": "FUNC",
+                        "se-praes-2-0-0": "FUNC",
+                        "se-praes-2-0-1": "FUNC",
+                        "se-praes-2-0-2": "FUNC",
+                        "se-praes-2-1-0": "FUNC",
+                        "se-praes-2-1-1": "FUNC",
+                        "se-praes-2-1-2": "FUNC",
+                        "se-praes-2-2-0": "FUNC",
+                        "se-praes-2-2-1": "FUNC",
+                        "se-praes-2-2-2": "FUNC",
+                        "se-praes-2-3-0": "FUNC",
+                        "se-praes-2-3-1": "FUNC",
+                        "se-praes-2-3-2": "FUNC",
+                        "vl-ringpraes-0-0-0": "FUNC",
+                        "vl-ringpraes-0-0-1": "FUNC",
+                        "vl-ringpraes-0-0-2": "FUNC",
+                        "vl-ringpraes-0-1-0": "FUNC",
+                        "vl-ringpraes-0-1-1": "FUNC",
+                        "vl-ringpraes-0-1-2": "FUNC",
+                        "vl-ringpraes-0-2-0": "FUNC",
+                        "vl-ringpraes-0-2-1": "FUNC",
+                        "vl-ringpraes-0-2-2": "FUNC",
+                        "vl-ringpraes-0-3-0": "FUNC",
+                        "vl-ringpraes-0-3-1": "FUNC",
+                        "vl-ringpraes-0-3-2": "FUNC",
+                        "vl-ringpraes-1-0-0": "FUNC",
+                        "vl-ringpraes-1-0-1": "FUNC",
+                        "vl-ringpraes-1-0-2": "FUNC",
+                        "vl-ringpraes-1-1-0": "FUNC",
+                        "vl-ringpraes-1-1-1": "FUNC",
+                        "vl-ringpraes-1-1-2": "FUNC",
+                        "vl-ringpraes-1-2-0": "FUNC",
+                        "vl-ringpraes-1-2-1": "FUNC",
+                        "vl-ringpraes-1-2-2": "FUNC",
+                        "vl-ringpraes-1-3-0": "FUNC",
+                        "vl-ringpraes-1-3-1": "FUNC",
+                        "vl-ringpraes-1-3-2": "FUNC",
+                        "vl-ringpraes-2-0-0": "FUNC",
+                        "vl-ringpraes-2-0-1": "FUNC",
+                        "vl-ringpraes-2-0-2": "FUNC",
+                        "vl-ringpraes-2-1-0": "FUNC",
+                        "vl-ringpraes-2-1-1": "FUNC",
+                        "vl-ringpraes-2-1-2": "FUNC",
+                        "vl-ringpraes-2-2-0": "FUNC",
+                        "vl-ringpraes-2-2-1": "FUNC",
+                        "vl-ringpraes-2-2-2": "FUNC",
+                        "vl-ringpraes-2-3-0": "FUNC",
+                        "vl-ringpraes-2-3-1": "FUNC",
+                        "vl-ringpraes-2-3-2": "FUNC",
+                        "vl-ringhyb1-0-0-0": "FUNC",
+                        "vl-ringhyb1-0-0-1": "FUNC",
+                        "vl-ringhyb1-0-0-2": "FUNC",
+                        "vl-ringhyb1-0-1-0": "FUNC",
+                        "vl-ringhyb1-0-1-1": "FUNC",
+                        "vl-ringhyb1-0-1-2": "FUNC",
+                        "vl-ringhyb1-0-2-0": "FUNC",
+                        "vl-ringhyb1-0-2-1": "FUNC",
+                        "vl-ringhyb1-0-2-2": "FUNC",
+                        "vl-ringhyb1-0-3-0": "FUNC",
+                        "vl-ringhyb1-0-3-1": "FUNC",
+                        "vl-ringhyb1-0-3-2": "FUNC",
+                        "vl-ringhyb1-1-0-0": "FUNC",
+                        "vl-ringhyb1-1-0-1": "FUNC",
+                        "vl-ringhyb1-1-0-2": "FUNC",
+                        "vl-ringhyb1-1-1-0": "FUNC",
+                        "vl-ringhyb1-1-1-1": "FUNC",
+                        "vl-ringhyb1-1-1-2": "FUNC",
+                        "vl-ringhyb1-1-2-0": "FUNC",
+                        "vl-ringhyb1-1-2-1": "FUNC",
+                        "vl-ringhyb1-1-2-2": "FUNC",
+                        "vl-ringhyb1-1-3-0": "FUNC",
+                        "vl-ringhyb1-1-3-1": "FUNC",
+                        "vl-ringhyb1-1-3-2": "FUNC",
+                        "vl-ringhyb1-2-0-0": "FUNC",
+                        "vl-ringhyb1-2-0-1": "FUNC",
+                        "vl-ringhyb1-2-0-2": "FUNC",
+                        "vl-ringhyb1-2-1-0": "FUNC",
+                        "vl-ringhyb1-2-1-1": "FUNC",
+                        "vl-ringhyb1-2-1-2": "FUNC",
+                        "vl-ringhyb1-2-2-0": "FUNC",
+                        "vl-ringhyb1-2-2-1": "FUNC",
+                        "vl-ringhyb1-2-2-2": "FUNC",
+                        "vl-ringhyb1-2-3-0": "FUNC",
+                        "vl-ringhyb1-2-3-1": "FUNC",
+                        "vl-ringhyb1-2-3-2": "FUNC",
+                        "vl-ringhyb2-0-0-0": "FUNC",
+                        "vl-ringhyb2-0-0-1": "FUNC",
+                        "vl-ringhyb2-0-0-2": "FUNC",
+                        "vl-ringhyb2-0-1-0": "FUNC",
+                        "vl-ringhyb2-0-1-1": "FUNC",
+                        "vl-ringhyb2-0-1-2": "FUNC",
+                        "vl-ringhyb2-0-2-0": "FUNC",
+                        "vl-ringhyb2-0-2-1": "FUNC",
+                        "vl-ringhyb2-0-2-2": "FUNC",
+                        "vl-ringhyb2-0-3-0": "FUNC",
+                        "vl-ringhyb2-0-3-1": "FUNC",
+                        "vl-ringhyb2-0-3-2": "FUNC",
+                        "vl-ringhyb2-1-0-0": "FUNC",
+                        "vl-ringhyb2-1-0-1": "FUNC",
+                        "vl-ringhyb2-1-0-2": "FUNC",
+                        "vl-ringhyb2-1-1-0": "FUNC",
+                        "vl-ringhyb2-1-1-1": "FUNC",
+                        "vl-ringhyb2-1-1-2": "FUNC",
+                        "vl-ringhyb2-1-2-0": "FUNC",
+                        "vl-ringhyb2-1-2-1": "FUNC",
+                        "vl-ringhyb2-1-2-2": "FUNC",
+                        "vl-ringhyb2-1-3-0": "FUNC",
+                        "vl-ringhyb2-1-3-1": "FUNC",
+                        "vl-ringhyb2-1-3-2": "FUNC",
+                        "vl-ringhyb2-2-0-0": "FUNC",
+                        "vl-ringhyb2-2-0-1": "FUNC",
+                        "vl-ringhyb2-2-0-2": "FUNC",
+                        "vl-ringhyb2-2-1-0": "FUNC",
+                        "vl-ringhyb2-2-1-1": "FUNC",
+                        "vl-ringhyb2-2-1-2": "FUNC",
+                        "vl-ringhyb2-2-2-0": "FUNC",
+                        "vl-ringhyb2-2-2-1": "FUNC",
+                        "vl-ringhyb2-2-2-2": "FUNC",
+                        "vl-ringhyb2-2-3-0": "FUNC",
+                        "vl-ringhyb2-2-3-1": "FUNC",
+                        "vl-ringhyb2-2-3-2": "FUNC",
+                        "pr-praes-2-1-0": "FUNC",
+                        "pr-praes-2-1-1": "FUNC",
+                        "pr-praes-2-1-2": "FUNC",
+                        "pr-praes-2-2-0": "FUNC",
+                        "pr-praes-2-2-1": "FUNC",
+                        "pr-praes-2-2-2": "FUNC",
+                        "pr-hyb-1-1-0": "FUNC",
+                        "pr-hyb-1-1-1": "FUNC",
+                        "pr-hyb-1-1-2": "FUNC",
+                        "pr-hyb-1-2-0": "FUNC",
+                        "pr-hyb-1-2-1": "FUNC",
+                        "pr-hyb-1-2-2": "FUNC",
+                        "pr-hyb-2-1-0": "FUNC",
+                        "pr-hyb-2-1-1": "FUNC",
+                        "pr-hyb-2-1-2": "FUNC",
+                        "pr-hyb-2-2-0": "FUNC",
+                        "pr-hyb-2-2-1": "FUNC",
+                        "pr-hyb-2-2-2": "FUNC",
+                        "se-onlpraeswechs-1-0-0": "FUNC",
+                        "se-onlpraeswechs-1-0-1": "FUNC",
+                        "se-onlpraeswechs-1-0-2": "FUNC",
+                        "se-onlpraeswechs-1-1-0": "FUNC",
+                        "se-onlpraeswechs-1-1-1": "FUNC",
+                        "se-onlpraeswechs-1-1-2": "FUNC",
+                        "se-onlpraeswechs-1-2-0": "FUNC",
+                        "se-onlpraeswechs-1-2-1": "FUNC",
+                        "se-onlpraeswechs-1-2-2": "FUNC",
+                        "se-onlpraeswechs-1-3-0": "FUNC",
+                        "se-onlpraeswechs-1-3-1": "FUNC",
+                        "se-onlpraeswechs-1-3-2": "FUNC",
+                        "se-onlpraeswechs-2-0-0": "FUNC",
+                        "se-onlpraeswechs-2-0-1": "FUNC",
+                        "se-onlpraeswechs-2-0-2": "FUNC",
+                        "se-onlpraeswechs-2-1-0": "FUNC",
+                        "se-onlpraeswechs-2-1-1": "FUNC",
+                        "se-onlpraeswechs-2-1-2": "FUNC",
+                        "se-onlpraeswechs-2-2-0": "FUNC",
+                        "se-onlpraeswechs-2-2-1": "FUNC",
+                        "se-onlpraeswechs-2-2-2": "FUNC",
+                        "se-onlpraeswechs-2-3-0": "FUNC",
+                        "se-onlpraeswechs-2-3-1": "FUNC",
+                        "se-onlpraeswechs-2-3-2": "FUNC",
+                        "se-onlhybwechs-1-0-0": "FUNC",
+                        "se-onlhybwechs-1-0-1": "FUNC",
+                        "se-onlhybwechs-1-0-2": "FUNC",
+                        "se-onlhybwechs-1-1-0": "FUNC",
+                        "se-onlhybwechs-1-1-1": "FUNC",
+                        "se-onlhybwechs-1-1-2": "FUNC",
+                        "se-onlhybwechs-1-2-0": "FUNC",
+                        "se-onlhybwechs-1-2-1": "FUNC",
+                        "se-onlhybwechs-1-2-2": "FUNC",
+                        "se-onlhybwechs-1-3-0": "FUNC",
+                        "se-onlhybwechs-1-3-1": "FUNC",
+                        "se-onlhybwechs-1-3-2": "FUNC",
+                        "se-onlhybwechs-2-0-0": "FUNC",
+                        "se-onlhybwechs-2-0-1": "FUNC",
+                        "se-onlhybwechs-2-0-2": "FUNC",
+                        "se-onlhybwechs-2-1-0": "FUNC",
+                        "se-onlhybwechs-2-1-1": "FUNC",
+                        "se-onlhybwechs-2-1-2": "FUNC",
+                        "se-onlhybwechs-2-2-0": "FUNC",
+                        "se-onlhybwechs-2-2-1": "FUNC",
+                        "se-onlhybwechs-2-2-2": "FUNC",
+                        "se-onlhybwechs-2-3-0": "FUNC",
+                        "se-onlhybwechs-2-3-1": "FUNC",
+                        "se-onlhybwechs-2-3-2": "FUNC",
+                        "vl-onlpraeswechs-0-0-0": "FUNC",
+                        "vl-onlpraeswechs-0-0-1": "FUNC",
+                        "vl-onlpraeswechs-0-0-2": "FUNC",
+                        "vl-onlpraeswechs-0-1-0": "FUNC",
+                        "vl-onlpraeswechs-0-1-1": "FUNC",
+                        "vl-onlpraeswechs-0-1-2": "FUNC",
+                        "vl-onlpraeswechs-0-2-0": "FUNC",
+                        "vl-onlpraeswechs-0-2-1": "FUNC",
+                        "vl-onlpraeswechs-0-2-2": "FUNC",
+                        "vl-onlpraeswechs-0-3-0": "FUNC",
+                        "vl-onlpraeswechs-0-3-1": "FUNC",
+                        "vl-onlpraeswechs-0-3-2": "FUNC",
+                        "vl-onlpraeswechs-1-0-0": "FUNC",
+                        "vl-onlpraeswechs-1-0-1": "FUNC",
+                        "vl-onlpraeswechs-1-0-2": "FUNC",
+                        "vl-onlpraeswechs-1-1-0": "FUNC",
+                        "vl-onlpraeswechs-1-1-1": "FUNC",
+                        "vl-onlpraeswechs-1-1-2": "FUNC",
+                        "vl-onlpraeswechs-1-2-0": "FUNC",
+                        "vl-onlpraeswechs-1-2-1": "FUNC",
+                        "vl-onlpraeswechs-1-2-2": "FUNC",
+                        "vl-onlpraeswechs-1-3-0": "FUNC",
+                        "vl-onlpraeswechs-1-3-1": "FUNC",
+                        "vl-onlpraeswechs-1-3-2": "FUNC",
+                        "vl-onlpraeswechs-2-0-0": "FUNC",
+                        "vl-onlpraeswechs-2-0-1": "FUNC",
+                        "vl-onlpraeswechs-2-0-2": "FUNC",
+                        "vl-onlpraeswechs-2-1-0": "FUNC",
+                        "vl-onlpraeswechs-2-1-1": "FUNC",
+                        "vl-onlpraeswechs-2-1-2": "FUNC",
+                        "vl-onlpraeswechs-2-2-0": "FUNC",
+                        "vl-onlpraeswechs-2-2-1": "FUNC",
+                        "vl-onlpraeswechs-2-2-2": "FUNC",
+                        "vl-onlpraeswechs-2-3-0": "FUNC",
+                        "vl-onlpraeswechs-2-3-1": "FUNC",
+                        "vl-onlpraeswechs-2-3-2": "FUNC",
+                        "vl-onlhybwechs-0-0-0": "FUNC",
+                        "vl-onlhybwechs-0-0-1": "FUNC",
+                        "vl-onlhybwechs-0-0-2": "FUNC",
+                        "vl-onlhybwechs-0-1-0": "FUNC",
+                        "vl-onlhybwechs-0-1-1": "FUNC",
+                        "vl-onlhybwechs-0-1-2": "FUNC",
+                        "vl-onlhybwechs-0-2-0": "FUNC",
+                        "vl-onlhybwechs-0-2-1": "FUNC",
+                        "vl-onlhybwechs-0-2-2": "FUNC",
+                        "vl-onlhybwechs-0-3-0": "FUNC",
+                        "vl-onlhybwechs-0-3-1": "FUNC",
+                        "vl-onlhybwechs-0-3-2": "FUNC",
+                        "vl-onlhybwechs-1-0-0": "FUNC",
+                        "vl-onlhybwechs-1-0-1": "FUNC",
+                        "vl-onlhybwechs-1-0-2": "FUNC",
+                        "vl-onlhybwechs-1-1-0": "FUNC",
+                        "vl-onlhybwechs-1-1-1": "FUNC",
+                        "vl-onlhybwechs-1-1-2": "FUNC",
+                        "vl-onlhybwechs-1-2-0": "FUNC",
+                        "vl-onlhybwechs-1-2-1": "FUNC",
+                        "vl-onlhybwechs-1-2-2": "FUNC",
+                        "vl-onlhybwechs-1-3-0": "FUNC",
+                        "vl-onlhybwechs-1-3-1": "FUNC",
+                        "vl-onlhybwechs-1-3-2": "FUNC",
+                        "vl-onlhybwechs-2-0-0": "FUNC",
+                        "vl-onlhybwechs-2-0-1": "FUNC",
+                        "vl-onlhybwechs-2-0-2": "FUNC",
+                        "vl-onlhybwechs-2-1-0": "FUNC",
+                        "vl-onlhybwechs-2-1-1": "FUNC",
+                        "vl-onlhybwechs-2-1-2": "FUNC",
+                        "vl-onlhybwechs-2-2-0": "FUNC",
+                        "vl-onlhybwechs-2-2-1": "FUNC",
+                        "vl-onlhybwechs-2-2-2": "FUNC",
+                        "vl-onlhybwechs-2-3-0": "FUNC",
+                        "vl-onlhybwechs-2-3-1": "FUNC",
+                        "vl-onlhybwechs-2-3-2": "FUNC"
+                    },
+                    "conditionalEffects": {
+                        "vl-hyb-0-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-0-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-1-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-hyb-2-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-1-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-hyb-2-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-praes-0-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-0-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praes-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praes-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-0-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringpraes-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-0-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb1-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-0-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-1-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-ringhyb2-2-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "pr-praes-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "pr-praes-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "pr-praes-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "pr-praes-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "pr-praes-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "pr-praes-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-1-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-1-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-1-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-1-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-1-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-1-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-2-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-2-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-2-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-2-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-2-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "pr-hyb-2-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlpraeswechs-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlpraeswechs-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-1-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "se-onlhybwechs-2-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlpraeswechs-0-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-0-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlpraeswechs-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-0-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-1-3-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-0-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-0-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-0-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-1-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-1-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-1-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-2-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-2-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-2-2": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-3-0": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-3-1": {
+                            "exkur=ja": -1
+                        },
+                        "vl-onlhybwechs-2-3-2": {
+                            "exkur=ja": -1
+                        }
+                    }
                 },
                 "nein": {
                     "text": "Nein",
-                    "effects": {}
+                    "effects": {
+                        "vl-hyb-0-0-0": "FUNC",
+                        "vl-hyb-0-0-1": "FUNC",
+                        "vl-hyb-0-0-2": "FUNC",
+                        "vl-hyb-0-1-0": "FUNC",
+                        "vl-hyb-0-1-1": "FUNC",
+                        "vl-hyb-0-1-2": "FUNC",
+                        "vl-hyb-0-2-0": "FUNC",
+                        "vl-hyb-0-2-1": "FUNC",
+                        "vl-hyb-0-2-2": "FUNC",
+                        "vl-hyb-0-3-0": "FUNC",
+                        "vl-hyb-0-3-1": "FUNC",
+                        "vl-hyb-0-3-2": "FUNC",
+                        "vl-hyb-1-0-0": "FUNC",
+                        "vl-hyb-1-0-1": "FUNC",
+                        "vl-hyb-1-0-2": "FUNC",
+                        "vl-hyb-1-1-0": "FUNC",
+                        "vl-hyb-1-1-1": "FUNC",
+                        "vl-hyb-1-1-2": "FUNC",
+                        "vl-hyb-1-2-0": "FUNC",
+                        "vl-hyb-1-2-1": "FUNC",
+                        "vl-hyb-1-2-2": "FUNC",
+                        "vl-hyb-1-3-0": "FUNC",
+                        "vl-hyb-1-3-1": "FUNC",
+                        "vl-hyb-1-3-2": "FUNC",
+                        "vl-hyb-2-0-0": "FUNC",
+                        "vl-hyb-2-0-1": "FUNC",
+                        "vl-hyb-2-0-2": "FUNC",
+                        "vl-hyb-2-1-0": "FUNC",
+                        "vl-hyb-2-1-1": "FUNC",
+                        "vl-hyb-2-1-2": "FUNC",
+                        "vl-hyb-2-2-0": "FUNC",
+                        "vl-hyb-2-2-1": "FUNC",
+                        "vl-hyb-2-2-2": "FUNC",
+                        "vl-hyb-2-3-0": "FUNC",
+                        "vl-hyb-2-3-1": "FUNC",
+                        "vl-hyb-2-3-2": "FUNC",
+                        "se-hyb-1-0-0": "FUNC",
+                        "se-hyb-1-0-1": "FUNC",
+                        "se-hyb-1-0-2": "FUNC",
+                        "se-hyb-1-1-0": "FUNC",
+                        "se-hyb-1-1-1": "FUNC",
+                        "se-hyb-1-1-2": "FUNC",
+                        "se-hyb-1-2-0": "FUNC",
+                        "se-hyb-1-2-1": "FUNC",
+                        "se-hyb-1-2-2": "FUNC",
+                        "se-hyb-1-3-0": "FUNC",
+                        "se-hyb-1-3-1": "FUNC",
+                        "se-hyb-1-3-2": "FUNC",
+                        "se-hyb-2-0-0": "FUNC",
+                        "se-hyb-2-0-1": "FUNC",
+                        "se-hyb-2-0-2": "FUNC",
+                        "se-hyb-2-1-0": "FUNC",
+                        "se-hyb-2-1-1": "FUNC",
+                        "se-hyb-2-1-2": "FUNC",
+                        "se-hyb-2-2-0": "FUNC",
+                        "se-hyb-2-2-1": "FUNC",
+                        "se-hyb-2-2-2": "FUNC",
+                        "se-hyb-2-3-0": "FUNC",
+                        "se-hyb-2-3-1": "FUNC",
+                        "se-hyb-2-3-2": "FUNC",
+                        "vl-ringhyb2-0-0-0": "FUNC",
+                        "vl-ringhyb2-0-0-1": "FUNC",
+                        "vl-ringhyb2-0-0-2": "FUNC",
+                        "vl-ringhyb2-0-1-0": "FUNC",
+                        "vl-ringhyb2-0-1-1": "FUNC",
+                        "vl-ringhyb2-0-1-2": "FUNC",
+                        "vl-ringhyb2-0-2-0": "FUNC",
+                        "vl-ringhyb2-0-2-1": "FUNC",
+                        "vl-ringhyb2-0-2-2": "FUNC",
+                        "vl-ringhyb2-0-3-0": "FUNC",
+                        "vl-ringhyb2-0-3-1": "FUNC",
+                        "vl-ringhyb2-0-3-2": "FUNC",
+                        "vl-ringhyb2-1-0-0": "FUNC",
+                        "vl-ringhyb2-1-0-1": "FUNC",
+                        "vl-ringhyb2-1-0-2": "FUNC",
+                        "vl-ringhyb2-1-1-0": "FUNC",
+                        "vl-ringhyb2-1-1-1": "FUNC",
+                        "vl-ringhyb2-1-1-2": "FUNC",
+                        "vl-ringhyb2-1-2-0": "FUNC",
+                        "vl-ringhyb2-1-2-1": "FUNC",
+                        "vl-ringhyb2-1-2-2": "FUNC",
+                        "vl-ringhyb2-1-3-0": "FUNC",
+                        "vl-ringhyb2-1-3-1": "FUNC",
+                        "vl-ringhyb2-1-3-2": "FUNC",
+                        "vl-ringhyb2-2-0-0": "FUNC",
+                        "vl-ringhyb2-2-0-1": "FUNC",
+                        "vl-ringhyb2-2-0-2": "FUNC",
+                        "vl-ringhyb2-2-1-0": "FUNC",
+                        "vl-ringhyb2-2-1-1": "FUNC",
+                        "vl-ringhyb2-2-1-2": "FUNC",
+                        "vl-ringhyb2-2-2-0": "FUNC",
+                        "vl-ringhyb2-2-2-1": "FUNC",
+                        "vl-ringhyb2-2-2-2": "FUNC",
+                        "vl-ringhyb2-2-3-0": "FUNC",
+                        "vl-ringhyb2-2-3-1": "FUNC",
+                        "vl-ringhyb2-2-3-2": "FUNC",
+                        "pr-hyb-1-1-0": "FUNC",
+                        "pr-hyb-1-1-1": "FUNC",
+                        "pr-hyb-1-1-2": "FUNC",
+                        "pr-hyb-1-2-0": "FUNC",
+                        "pr-hyb-1-2-1": "FUNC",
+                        "pr-hyb-1-2-2": "FUNC",
+                        "pr-hyb-2-1-0": "FUNC",
+                        "pr-hyb-2-1-1": "FUNC",
+                        "pr-hyb-2-1-2": "FUNC",
+                        "pr-hyb-2-2-0": "FUNC",
+                        "pr-hyb-2-2-1": "FUNC",
+                        "pr-hyb-2-2-2": "FUNC",
+                        "se-onlhybwechs-1-0-0": "FUNC",
+                        "se-onlhybwechs-1-0-1": "FUNC",
+                        "se-onlhybwechs-1-0-2": "FUNC",
+                        "se-onlhybwechs-1-1-0": "FUNC",
+                        "se-onlhybwechs-1-1-1": "FUNC",
+                        "se-onlhybwechs-1-1-2": "FUNC",
+                        "se-onlhybwechs-1-2-0": "FUNC",
+                        "se-onlhybwechs-1-2-1": "FUNC",
+                        "se-onlhybwechs-1-2-2": "FUNC",
+                        "se-onlhybwechs-1-3-0": "FUNC",
+                        "se-onlhybwechs-1-3-1": "FUNC",
+                        "se-onlhybwechs-1-3-2": "FUNC",
+                        "se-onlhybwechs-2-0-0": "FUNC",
+                        "se-onlhybwechs-2-0-1": "FUNC",
+                        "se-onlhybwechs-2-0-2": "FUNC",
+                        "se-onlhybwechs-2-1-0": "FUNC",
+                        "se-onlhybwechs-2-1-1": "FUNC",
+                        "se-onlhybwechs-2-1-2": "FUNC",
+                        "se-onlhybwechs-2-2-0": "FUNC",
+                        "se-onlhybwechs-2-2-1": "FUNC",
+                        "se-onlhybwechs-2-2-2": "FUNC",
+                        "se-onlhybwechs-2-3-0": "FUNC",
+                        "se-onlhybwechs-2-3-1": "FUNC",
+                        "se-onlhybwechs-2-3-2": "FUNC",
+                        "se-praeshybwechs-1-0-0": "FUNC",
+                        "se-praeshybwechs-1-0-1": "FUNC",
+                        "se-praeshybwechs-1-0-2": "FUNC",
+                        "se-praeshybwechs-1-1-0": "FUNC",
+                        "se-praeshybwechs-1-1-1": "FUNC",
+                        "se-praeshybwechs-1-1-2": "FUNC",
+                        "se-praeshybwechs-1-2-0": "FUNC",
+                        "se-praeshybwechs-1-2-1": "FUNC",
+                        "se-praeshybwechs-1-2-2": "FUNC",
+                        "se-praeshybwechs-1-3-0": "FUNC",
+                        "se-praeshybwechs-1-3-1": "FUNC",
+                        "se-praeshybwechs-1-3-2": "FUNC",
+                        "se-praeshybwechs-2-0-0": "FUNC",
+                        "se-praeshybwechs-2-0-1": "FUNC",
+                        "se-praeshybwechs-2-0-2": "FUNC",
+                        "se-praeshybwechs-2-1-0": "FUNC",
+                        "se-praeshybwechs-2-1-1": "FUNC",
+                        "se-praeshybwechs-2-1-2": "FUNC",
+                        "se-praeshybwechs-2-2-0": "FUNC",
+                        "se-praeshybwechs-2-2-1": "FUNC",
+                        "se-praeshybwechs-2-2-2": "FUNC",
+                        "se-praeshybwechs-2-3-0": "FUNC",
+                        "se-praeshybwechs-2-3-1": "FUNC",
+                        "se-praeshybwechs-2-3-2": "FUNC",
+                        "vl-onlhybwechs-0-0-0": "FUNC",
+                        "vl-onlhybwechs-0-0-1": "FUNC",
+                        "vl-onlhybwechs-0-0-2": "FUNC",
+                        "vl-onlhybwechs-0-1-0": "FUNC",
+                        "vl-onlhybwechs-0-1-1": "FUNC",
+                        "vl-onlhybwechs-0-1-2": "FUNC",
+                        "vl-onlhybwechs-0-2-0": "FUNC",
+                        "vl-onlhybwechs-0-2-1": "FUNC",
+                        "vl-onlhybwechs-0-2-2": "FUNC",
+                        "vl-onlhybwechs-0-3-0": "FUNC",
+                        "vl-onlhybwechs-0-3-1": "FUNC",
+                        "vl-onlhybwechs-0-3-2": "FUNC",
+                        "vl-onlhybwechs-1-0-0": "FUNC",
+                        "vl-onlhybwechs-1-0-1": "FUNC",
+                        "vl-onlhybwechs-1-0-2": "FUNC",
+                        "vl-onlhybwechs-1-1-0": "FUNC",
+                        "vl-onlhybwechs-1-1-1": "FUNC",
+                        "vl-onlhybwechs-1-1-2": "FUNC",
+                        "vl-onlhybwechs-1-2-0": "FUNC",
+                        "vl-onlhybwechs-1-2-1": "FUNC",
+                        "vl-onlhybwechs-1-2-2": "FUNC",
+                        "vl-onlhybwechs-1-3-0": "FUNC",
+                        "vl-onlhybwechs-1-3-1": "FUNC",
+                        "vl-onlhybwechs-1-3-2": "FUNC",
+                        "vl-onlhybwechs-2-0-0": "FUNC",
+                        "vl-onlhybwechs-2-0-1": "FUNC",
+                        "vl-onlhybwechs-2-0-2": "FUNC",
+                        "vl-onlhybwechs-2-1-0": "FUNC",
+                        "vl-onlhybwechs-2-1-1": "FUNC",
+                        "vl-onlhybwechs-2-1-2": "FUNC",
+                        "vl-onlhybwechs-2-2-0": "FUNC",
+                        "vl-onlhybwechs-2-2-1": "FUNC",
+                        "vl-onlhybwechs-2-2-2": "FUNC",
+                        "vl-onlhybwechs-2-3-0": "FUNC",
+                        "vl-onlhybwechs-2-3-1": "FUNC",
+                        "vl-onlhybwechs-2-3-2": "FUNC",
+                        "vl-praeshybwechs-0-0-0": "FUNC",
+                        "vl-praeshybwechs-0-0-1": "FUNC",
+                        "vl-praeshybwechs-0-0-2": "FUNC",
+                        "vl-praeshybwechs-0-1-0": "FUNC",
+                        "vl-praeshybwechs-0-1-1": "FUNC",
+                        "vl-praeshybwechs-0-1-2": "FUNC",
+                        "vl-praeshybwechs-0-2-0": "FUNC",
+                        "vl-praeshybwechs-0-2-1": "FUNC",
+                        "vl-praeshybwechs-0-2-2": "FUNC",
+                        "vl-praeshybwechs-0-3-0": "FUNC",
+                        "vl-praeshybwechs-0-3-1": "FUNC",
+                        "vl-praeshybwechs-0-3-2": "FUNC",
+                        "vl-praeshybwechs-1-0-0": "FUNC",
+                        "vl-praeshybwechs-1-0-1": "FUNC",
+                        "vl-praeshybwechs-1-0-2": "FUNC",
+                        "vl-praeshybwechs-1-1-0": "FUNC",
+                        "vl-praeshybwechs-1-1-1": "FUNC",
+                        "vl-praeshybwechs-1-1-2": "FUNC",
+                        "vl-praeshybwechs-1-2-0": "FUNC",
+                        "vl-praeshybwechs-1-2-1": "FUNC",
+                        "vl-praeshybwechs-1-2-2": "FUNC",
+                        "vl-praeshybwechs-1-3-0": "FUNC",
+                        "vl-praeshybwechs-1-3-1": "FUNC",
+                        "vl-praeshybwechs-1-3-2": "FUNC",
+                        "vl-praeshybwechs-2-0-0": "FUNC",
+                        "vl-praeshybwechs-2-0-1": "FUNC",
+                        "vl-praeshybwechs-2-0-2": "FUNC",
+                        "vl-praeshybwechs-2-1-0": "FUNC",
+                        "vl-praeshybwechs-2-1-1": "FUNC",
+                        "vl-praeshybwechs-2-1-2": "FUNC",
+                        "vl-praeshybwechs-2-2-0": "FUNC",
+                        "vl-praeshybwechs-2-2-1": "FUNC",
+                        "vl-praeshybwechs-2-2-2": "FUNC",
+                        "vl-praeshybwechs-2-3-0": "FUNC",
+                        "vl-praeshybwechs-2-3-1": "FUNC",
+                        "vl-praeshybwechs-2-3-2": "FUNC"
+                    },
+                    "conditionalEffects": {
+                        "vl-hyb-0-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-0-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-hyb-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-hyb-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-0-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-ringhyb2-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "pr-hyb-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-onlhybwechs-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "se-praeshybwechs-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-0-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-onlhybwechs-2-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-0-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-1-3-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-0-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-0-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-0-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-1-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-1-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-1-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-2-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-2-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-2-2": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-3-0": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-3-1": {
+                            "exkur=ja": 2
+                        },
+                        "vl-praeshybwechs-2-3-2": {
+                            "exkur=ja": 2
+                        }
+                    }
                 }
             }
         },
@@ -8343,11 +11534,13 @@
             "antworten": {
                 "ja": {
                     "text": "Ja",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 },
                 "nein": {
                     "text": "Nein",
-                    "effects": {}
+                    "effects": {},
+                    "conditionalEffects": {}
                 }
             }
         }

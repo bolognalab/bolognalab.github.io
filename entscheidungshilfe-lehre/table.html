@@ -22,7 +22,7 @@
     </div>
 <table class="tree" id="tRegular"></table>
 <script>
-    var questionInfo, all_scenarios
+    var all_data, questionInfo, all_scenarios
     var scenarios = {}
     var table = document.getElementById("tRegular")
     var selections = document.getElementById("select")
@@ -34,13 +34,13 @@
         "0": "#FFEB84",
         "1": "#D4DE89",
         "2": "#A9D08E",
+        "FUNC": "#FFFFAA"
     }
  
-    var shownScenarios = ['so-async-0-4-0', 'vl-rem-0-0-0', 'vl-rem-0-0-1', 'se-praes-1-2-2', 'vl-praes-0-0-0', 'vl-ringhyb1-0-2-2']
-
-
+    var shownScenarios = ['vl-ringhyb1-0-0-0', 'vl-ringhyb2-0-0-0', 'vl-ringonl-0-0-0', 'vl-ringpraes-0-0-0']
 
     $.getJSON("fragenSzenarienV2.json", function(json){
+        all_data = json
         questionInfo = json['questions']
         all_scenarios = json['scenarios']
         setUpList(all_scenarios)
@@ -131,7 +131,7 @@
                 sHeader.setAttribute("colspan", 4)
                 sHeader.setAttribute("id", entry[0])
                 sHeader.classList.add("sHeader", "clickable")
-                sHeader.addEventListener("click", function(event){showHideInfo(event,json)})
+                sHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
                 firstRow.append(sHeader)
         })
         table.append(firstRow)
@@ -148,7 +148,7 @@
             rowHeader.classList.add("rowHeader", "clickable")
             rowHeader.setAttribute("id", qKey)
             rowHeader.setAttribute("rowspan", 2)
-            rowHeader.addEventListener("click", function(event){showHideInfo(event,json)})
+            rowHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
             rowHeader.innerHTML = qKey // qInf["text"]
             row0.append(rowHeader)
             // adding row entries for each "scenario"
@@ -165,7 +165,7 @@
                     srHeader.classList.add("answerKey", "clickable")
                     srHeader.setAttribute("id", qKey + "_" + aKey)
                     srHeader.innerHTML = aKey
-                    srHeader.addEventListener("click", function(event){showHideInfo(event,json)})
+                    srHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
                     srVal.classList.add("answerVal")
                     
 
@@ -176,6 +176,7 @@
                         var score = "null"
                     }
                     srVal.innerHTML = score
+
                     try {
                         var backgroundColor = colorMapping[score]
                         srVal.style.background = backgroundColor
@@ -183,8 +184,17 @@
                             srVal.style.color = "#ee9999"
                         }
                     } catch (error) {
-                        console.log("No color this score")
+                        console.log("No color for this score")
                     }
+                    if (score == "FUNC"){
+                        srVal.classList.add("clickable")
+                        srVal.setAttribute("id", "VAL_" + qKey + "_" + aKey + "_" + sKey)
+                        srVal.addEventListener("click", function(event){showHideInfo(event,all_data)})
+                    }
+                    
+
+
+
                     row0.append(srHeader)
                     row1.append(srVal)
                 })
@@ -216,7 +226,6 @@
             try {
                 document.getElementsByClassName("active")[0].classList.remove("active")
             } catch (error) {
-                
             }
             if (event.target.className.includes("rowHeader")){
                 text = "<b>Frage:</b> " + json["questions"][targetId]["text"]
@@ -225,6 +234,13 @@
             } else if (event.target.className.includes("answerKey")){
                 let qa = event.target.id.split("_")
                 text = "<b>Frage:</b> " + json["questions"][qa[0]]["text"] + "<br><b>Antwort:</b> " + json["questions"][qa[0]]["antworten"][qa[1]]["text"]
+            } else if (event.target.className.includes("answerVal") && event.target.innerHTML == "FUNC"){
+                let qKey = event.target.id.split("_")[1]
+                let aKey = event.target.id.split("_")[2]
+                let sKey = event.target.id.split("_")[3]
+                console.log("Conditional function for: ", qKey, aKey, sKey)
+                console.log(json["questions"][qKey]["antworten"][aKey]["conditionalEffects"][sKey])
+
             }
             infoText.innerHTML = text
             infoText.style.color = "black"
@@ -246,7 +262,6 @@
         li = document.createElement("li")
         li.innerHTML = code + "&nbsp; <button id = 'close_" + code + "' class='closeBtn' onclick='closeBtn(this)'>X</button>"
         selected.append(li)
-        
     }
     
         

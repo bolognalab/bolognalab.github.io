@@ -37,9 +37,19 @@ for key, val in existing_questions.items():
     for akey, aname in answers.items():
         updated_questions[key]["antworten"][akey] = {
             "text": aname,
-            "effects": {}
+            "effects": {},
+            "conditionalEffects": {}
         }
 # print(updated_questions)
+def setConditionalEffect(qKey, aKey,  code, condition, effect):
+    try:
+        updated_questions[qKey]["antworten"][aKey]["conditionalEffects"][code][condition] = effect
+        updated_questions[qKey]["antworten"][aKey]["effects"][code] = "FUNC"
+    except KeyError:
+        updated_questions[qKey]["antworten"][aKey]["conditionalEffects"][code] = {}
+        updated_questions[qKey]["antworten"][aKey]["conditionalEffects"][code][condition] = effect
+        updated_questions[qKey]["antworten"][aKey]["effects"][code] = "FUNC"
+
 
 # MASS-POPULATE SOME EFFECTS
 for code in list_of_scenarios:
@@ -56,6 +66,8 @@ for code in list_of_scenarios:
     # LZiP: if essential learning goals in person, exclude hybrid and online options
     if code.split("-")[1] in ["async", "onl", "ringonl", "hyb", "ringhyb2", "onlhybwechs"]:
         updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -100
+        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -2
+        updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
 
     # LZsy: if important learning goals are exclusively attainable synchronously, exclude all options that are fully asynchronous or offer asynchronous alternatives
     if code.split("-")[3] in ["3", "4"]:
@@ -68,12 +80,14 @@ for code in list_of_scenarios:
     if code.split("-")[2] == "1":
         updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
 
-    # IntAsync: if desired asynchronous interaction is level 1 or 2, exclude options with less interaction
+    # IntAsync: if desired asynchronous interaction is level 1 or 2, exclude options with less interaction (if it's technically possible)
+    # TODO: if St-St interaction is not technically feasible, discourage but not exclude those options
     if code.split("-")[4] == "0":
         updated_questions["IntAsync"]["antworten"]["1"]["effects"][code] = -100
         updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
     if code.split("-")[4] == "1":
         updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
+    
 
     # niePr; if some students can never make it to class in-person, then exclude all options exclusively in-person for students
     if code.split("-")[1] in ["praes", "ringpr", "rem", "ringhyb1", "grwechs", "praesonlwechs", "praeshybwechs", "onlpraeswechs"]:
@@ -94,7 +108,7 @@ for code in list_of_scenarios:
         updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = + 1
 
     # wohnLP: if the instructor lives far from the university, favor online and mostly-online options!
-    if code.split("-")[1] in ["onl", "ringonl", "onlhybwechs", "onlpraeswechs"]: 
+    if code.split("-")[1] in ["onl", "ringonl", "onlhybwechs", "onlpraeswechs", "async"]: 
         updated_questions["wohnLP"]["antworten"]["nein"]["effects"][code] = + 1
 
     # regAbw: if instructor is occasionally absent from campus, encourage switching options and, less so, primarily-online options
@@ -150,8 +164,28 @@ for code in list_of_scenarios:
         updated_questions["gaeste"]["antworten"]["1"]["effects"][code] = -100
     
     # gaesteMittel: no in-person Ringvorlesung if no means to invite
-    if code.split("-")[1] == "ringpr":
+    if code.split("-")[1] == "ringpraes":
         updated_questions["gaesteMittel"]["antworten"]["nein"]["effects"][code] = -100
+        updated_questions["gaesteMittel"]["antworten"]["ja"]["effects"][code] = +1
+    if code.split("-")[1] == "ringhyb2":
+        updated_questions["gaesteMittel"]["antworten"]["ja"]["effects"][code] = +1
+
+    #exkur: if there are excursions, exclude fully-online options
+    if code.split("-")[1] in ["onl", "ringonl", "async"]:
+        updated_questions["exkur"]["antworten"]["ja"]["effects"][code] = -100
+    
+    #exkurMittel depending on exkurs
+    # disourage hybrid options (where some students would never participate in person) if there is enough means to send every student to the excursion
+    if code.split("-")[1] in ["hyb", "ringhyb2", "onlhybwechs"]:
+        setConditionalEffect("exkurMittel", "ja", code, "exkur=ja", -1)
+    # favor options with fully-in-person excursion possibility if enough means
+    if code.split("-")[1] in ["praes", "ringhyb1", "ringpraes", "onlpraeswechs"]:
+        setConditionalEffect("exkurMittel", "ja", code, "exkur=ja", +2)
+    # favor options with hybrid excursion option if not enough means to send everyone
+    if code.split("-")[1] in ["hyb", "ringhyb2", "onlhybwechs", "praeshybwechs"]:
+        setConditionalEffect("exkurMittel", "nein", code, "exkur=ja", +2)
+
+    
 
     # begrAnz: gruppenwechsel is pointless if everyone can fit in the room
     if code.split("-")[1] == "grwechs":
@@ -166,7 +200,6 @@ for code in list_of_scenarios:
     # if "praes" in code.split("-")[1] and code.split("-")[3] in ["0", "1", "2"]:
     #     updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = -2
     #     updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -1
-
 
     
 
