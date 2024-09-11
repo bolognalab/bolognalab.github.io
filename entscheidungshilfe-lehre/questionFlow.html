@@ -60,7 +60,7 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         displayQuestion(questionOrder[nextQuestion])
-        listActiveScenarios(activeScenarios)
+        // listActiveScenarios(activeScenarios)
         // makeTable(questionInfo, shownScenarios)
     })
     
@@ -78,14 +78,19 @@
             let aKey = a[0]
             let aText = a[1].text
             let aEffects = a[1].effects
-            let aConditionalEffects = a[1].conditionalEffects
-            
+            let aConditionalEffects= a[1].conditionalEffects
+
             let aButton = document.createElement("button"); qDiv.append(aButton)
             aButton.innerHTML = aText
             aButton.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
             aButton.addEventListener("click", function(){
                 selectAnswer(qKey, aKey)
             })
+            if (aKey == "PR" | aKey =="SO"){
+                aButton.style.display = "none"
+            }
+
+
         })
         nextQuestion += 1
     }
