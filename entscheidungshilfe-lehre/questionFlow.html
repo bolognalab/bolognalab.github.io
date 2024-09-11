@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entscheidungshilfe: Tabelle</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="de">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="../assets/css/eb.css" />
+<script src="../assets/js/jquery.min.js"></script>
+</head>
+<body class="is-preload" lang="de">
+<h2>Fragereihe-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
+<div style="display: table; width: 100%">
+    <div id="questions" class="qCont"></div>
+    <div id="scenarios" class="sCont"></div>
+</div>
+<script>
+    const qCont = document.getElementById("questions")
+    const sCont = document.getElementById("scenarios")
+    var all_data, questionInfo, all_scenarios
+    
+    var nextQuestion = 0
+
+    var scenarios = {}
+    var colorMapping = {
+        "-100": "#C00000",
+        "-2": "#f77e59",
+        "-1": "#ffa185",
+        "0": "#FFEB84",
+        "1": "#D4DE89",
+        "2": "#A9D08E",
+        "FUNC": "#FFFFAA"
+    }
+//  'artLV',
+    var questionOrder = [ 
+        'artLV', 
+        'LZiP',
+        'LZsy', 
+        'niePr',
+        'nieSync',
+        'wohnLP',
+        'regAbw',
+        'begrAnz',
+        'gaeste', 
+        // 'gaesteMittel',
+        "exkur",
+        // "exkurMittel",
+        "IntSync",
+        "IntAsync"
+    ]
+    var answers = {}
+    var activeScenarios = {}
+    var recent = []
+
+    $.getJSON("fragenSzenarienV2.json", function(json){
+        all_data = json
+        questionInfo = json['questions']
+        all_scenarios = json['scenarios']
+        Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
+        displayQuestion(questionOrder[nextQuestion])
+        listActiveScenarios(activeScenarios)
+        // makeTable(questionInfo, shownScenarios)
+    })
+    
+    function displayQuestion(qKey){
+        let q = questionInfo[qKey]
+        let qText = q.text
+
+        let qDiv = document.createElement("div"); qCont.append(qDiv)
+        qDiv.setAttribute("id", "DIV_" + qKey)
+        let qP = document.createElement("p"); qDiv.append(qP)
+        qP.setAttribute("id", "Q_" + qKey)
+        qP.innerHTML = qText
+
+        Object.entries(q.antworten).forEach((a)=>{
+            let aKey = a[0]
+            let aText = a[1].text
+            let aEffects = a[1].effects
+            let aConditionalEffects = a[1].conditionalEffects
+            
+            let aButton = document.createElement("button"); qDiv.append(aButton)
+            aButton.innerHTML = aText
+            aButton.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
+            aButton.addEventListener("click", function(){
+                selectAnswer(qKey, aKey)
+            })
+        })
+        nextQuestion += 1
+    }
+
+    function selectAnswer(qKey, aKey){
+        let allButtons = document.getElementById("DIV_" + qKey).querySelectorAll("button")
+        recent = []
+        for (let button of allButtons){
+            if (button.id == "Q_" + qKey + "_A_" + aKey){
+                button.classList.add("selected")   
+            }
+            button.setAttribute("disabled", true)
+        }
+
+        answers[qKey] = aKey
+
+        let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
+        let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
+
+        Object.entries(effects).forEach((entry)=>{
+            if (entry[1]== -100){
+                delete activeScenarios[entry[0]]
+            } else if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+                let scoreVal = +(activeScenarios[entry[0]])
+                newScoreVal = scoreVal + entry[1]
+                activeScenarios[entry[0]] = newScoreVal
+                recent.push(entry[0])
+            }
+        })
+
+        Object.entries(conditionalEffects).forEach((entry)=>{
+            let sKey = entry[0]
+            let sEffects = entry[1]
+            console.log(sKey)
+            Object.entries(sEffects).forEach((sEntry)=>{
+                let conditions = sEntry[0]
+                let score = sEntry[1]
+                console.log(conditions, score)
+                // separate conditions if more than one
+                let met = andCheck(conditions)
+                if (met){
+                    let scoreVal = +(activeScenarios[entry[0]])
+                    newScoreVal = scoreVal + score
+                    activeScenarios[entry[0]] = newScoreVal
+                    recent.push(sKey)
+                }
+            })
+            
+        })
+
+        setTimeout(()=>{
+            listActiveScenarios(activeScenarios)
+        }, 100)
+
+        if (nextQuestion < questionOrder.length){
+            displayQuestion(questionOrder[nextQuestion])
+        }
+    }
+    
+    function andCheck(conditions){
+        // checks if all conditions qKey=aKey are simultaneously true
+        let i = 0
+        while (i < 10){
+            [qKey, aKey] = conditions.split("+")[i].split("=")
+            if (answers[qKey] != aKey){
+                return false
+            } else {
+                i += 1
+            }
+            if (i >= conditions.split("+").length){
+                return true
+            }
+        }
+        conditions.split("+").forEach((condition, i)=>{
+            [qKey, aKey] = condition.split("=")
+            console.log(condition, qKey, aKey)
+            if (answers[qKey] != aKey){
+                if (i <4){
+                    realConditions[i] = false
+                } else {
+                    console.log("only up to 4 simultaneous conditions supported; the rest are ignored")
+                }
+            }
+        })
+        
+    }
+
+    function listActiveScenarios(sObju, sorted=false){
+        sObj = Object.entries(sObju).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+        sCont.innerHTML = ""
+        Object.entries(sObj).forEach((entry)=>{
+            sKey = entry[0]
+            sVal = entry[1]
+            let tr = document.createElement("tr")
+            let name = document.createElement("th")
+            let score = document.createElement("td")
+            name.innerHTML = sKey 
+            score.innerHTML = sVal
+            score.setAttribute("id", "SCORE_" + sKey)
+            score.classList.add("score")
+            tr.append(name, score)
+            if (recent.includes(sKey)){
+                tr.classList.add("recent")
+            }
+            sCont.append(tr)
+        })
+        console.log(Object.keys(sObj).length)
+
+        for (let score of document.querySelectorAll(".score")){
+            let value = +(score.innerHTML)
+            if (value > 0){
+                score.style.color = "#0e7700"
+            } else if (value <0){
+                score.style.color = "#d93300"
+            } else {
+                score.style.color = "#585858"
+            }
+        }
+    }
+    //     let names = ["onl", "praes", "rem", "hyb", "wechs", "async"]
+    //     names.forEach(function(name){
+    //         let row = document.createElement("tr")
+    //         row.setAttribute("id", name)
+    //         selections.append(row)
+    //         arts = ["vl", "se", "so"]
+    //         arts.forEach(function(art){
+    //             // console.log(art)
+    //             let select = document.createElement("select")
+    //             select.setAttribute("id", name + "-" + art)
+    //             select.setAttribute("multiple", true)
+    //             select.style.height = "4em"
+    //             select.style.width = "10em"
+    //             select.innerHTML = "<option value='' selected ></option>"
+    //             let label = document.createElement("span")
+    //             label.innerHTML = "&nbsp;&nbsp;&nbsp;"+ name + "-" + art + ':&nbsp;'
+    //             let empties = ["wechs-so", "async-vl", "async-se", "rem-so"]
+    //             if (!empties.includes(name + "-" + art)){
+    //                 let cell = document.createElement("td")
+    //                 cell.append(label)
+    //                 cell.append(select)
+    //                 row.append(cell)
+    //             }
+
+    //         })
+    //     })
+    //     Object.entries(all_scenarios).forEach(entry => {
+    //         let code = entry[0]
+    //         let name = code.split("-")[1]
+    //         if (name.includes("wechs")){
+    //             name = "wechs"
+    //         } else if (name.includes("onl")){
+    //             name = "onl"
+    //         } else if (name.includes("praes")){
+    //             name = "praes"
+    //         } else if (name.includes("hyb")){
+    //             name = "hyb"
+    //         }
+    //         let art = code.split("-")[0]
+    //         if (art == "pr"){
+    //             art = "so"
+    //         }
+    //         let whereToAdd = document.getElementById(name + "-" + art)
+    //         let option = document.createElement("option")
+    //         option.setAttribute("value", code)
+    //         option.setAttribute("id", "opt_" + code)
+    //         option.addEventListener("click", function(){
+    //             if (!shownScenarios.includes(code)){
+    //                 addToList(code)
+    //                 shownScenarios.push(code)
+    //             }
+
+    //         })
+    //         option.innerHTML = code
+    //         if (shownScenarios.includes(code)){
+    //             option.setAttribute("selected", true)
+    //         }
+    //         whereToAdd.append(option)
+    //     })
+
+    // }
+
+    function makeTable(questionInfo, shownScenarios){
+        table.innerHTML = ""
+        scenarios = {}
+        shownScenarios.forEach(function(code){
+        scenarios[code] = all_scenarios[code]
+        })
+        // first table row, one blank cell followed by headers
+        var firstRow = document.createElement("tr")
+        firstRow.classList.add("firstRow")
+        firstRow.append(document.createElement("th"))
+        Object.entries(scenarios).forEach(entry => {
+                var sHeader = document.createElement("th")
+                sHeader.innerHTML = entry[0]
+                sHeader.setAttribute("colspan", 4)
+                sHeader.setAttribute("id", entry[0])
+                sHeader.classList.add("sHeader", "clickable")
+                sHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
+                firstRow.append(sHeader)
+        })
+        table.append(firstRow)
+
+        // making rows for each "question"
+        Object.entries(questionInfo).forEach(entry=>{
+            var qKey = entry[0]
+            var qInf = entry[1]
+            var row0 = document.createElement("tr")
+            var row1 = document.createElement("tr")
+            row0.classList.add("row0")
+            row1.classList.add("row1")
+            var rowHeader = document.createElement("th")
+            rowHeader.classList.add("rowHeader", "clickable")
+            rowHeader.setAttribute("id", qKey)
+            rowHeader.setAttribute("rowspan", 2)
+            rowHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
+            rowHeader.innerHTML = qKey // qInf["text"]
+            row0.append(rowHeader)
+            // adding row entries for each "scenario"
+            Object.entries(scenarios).forEach(entry => {
+                var sKey = entry[0]
+                var sVal = entry[1]
+                //adding sub-cells for each possible answer and the corresponding points
+                var numAnswers = Object.keys(qInf["antworten"]).length
+                Object.entries(qInf["antworten"]).forEach(function(entry, idx){
+                    var aKey = entry[0]
+                    var aText = entry[1]
+                    srHeader = document.createElement("td")
+                    srVal = document.createElement("td")
+                    srHeader.classList.add("answerKey", "clickable")
+                    srHeader.setAttribute("id", qKey + "_" + aKey)
+                    srHeader.innerHTML = aKey
+                    srHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
+                    srVal.classList.add("answerVal")
+                    
+
+                    if (qInf["antworten"][aKey]["effects"][sKey]){
+                        var score = qInf["antworten"][aKey]["effects"][sKey]
+                        
+                    } else {
+                        var score = "null"
+                    }
+                    srVal.innerHTML = score
+
+                    try {
+                        var backgroundColor = colorMapping[score]
+                        srVal.style.background = backgroundColor
+                        if (score=="-100"){
+                            srVal.style.color = "#ee9999"
+                        }
+                    } catch (error) {
+                        console.log("No color for this score")
+                    }
+                    if (score == "FUNC"){
+                        srVal.classList.add("clickable")
+                        srVal.setAttribute("id", "VAL_" + qKey + "_" + aKey + "_" + sKey)
+                        srVal.addEventListener("click", function(event){showHideInfo(event,all_data)})
+                    }
+                    
+                    row0.append(srHeader)
+                    row1.append(srVal)
+                })
+                for (i=0; i<(4-numAnswers); i++){
+                    var blankCellH = document.createElement("td")
+                    blankCellH.classList.add("blankCell", "answerKey")
+                    var blankCellD = document.createElement("td")
+                    blankCellD.classList.add("blankCell", "answerVal")
+                    row0.append(blankCellH)
+                    row1.append(blankCellD)
+                }
+            })
+            table.append(row0)
+            table.append(row1)
+        })
+    }
+
+
+    
+        
+</script>
+</body>
+</html>

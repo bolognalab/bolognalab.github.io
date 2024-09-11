@@ -13,7 +13,7 @@
 
         "LZiP":{
             "order": 0,
-            "text": "Gibt es Lernziele, die <p>ausschließlich in Präsenz</p> erreichbar sind?",
+            "text": "Gibt es Lernziele, die <b>ausschließlich in Präsenz</b> erreichbar sind?",
             "antworten": {
                 "0": "keine",
                 "1": "ja, von niedriger Priorität",
@@ -31,40 +31,21 @@
             } 
         },
 
-        "IntSync":{
-            "order": 0,
-            "text": "Wie viel studentische Interaktion ist <b>während der Kurssitzungen</b> für die Lernziele des Kurses benötigt?",
-            "antworten": {
-                "0": "Die Lernziele des Kurses können auch mit minimaler oder nur gelegentlicher Interaktion erreicht werden.",
-                "1": "Die Studierenden sollen mit der Lehrperson (auch z.B. durch Polls oder Clicker) interagieren, aber nicht unbedingt mit anderen Studierenden",
-                "2": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren."
-            }
-        },
-
-        "IntAsync": {
-            "order": 0,
-            "text": "Wie viel studentische Interaktion ist <b>außerhalb der Kurssitzungen</b> für die Lernziele des Kurses benötigt?",
-            "antworten": {
-                "0": "minimale oder gelegentliche Interaktion",
-                "1": "Interaktion hauptsächlich zw. Studierenden und der Lehrperson",
-                "2": "Interaktion sowohl zw. Studierenden als auch zw. Studierenden und der Lehrperson"
-            }
-        },
-
         "niePr": {
             "order": 0,
             "text": "Gibt es Studierende, die <b>nie oder fast nie</b> in Präsenz am Kurs teilnehmen können?",
             "antworten": {
-                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein",
-                "nein": "Nein."
+                "nein": "Nein",
+                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein"
+                
             }
         },
         "nieSync": {
             "order": 0,
             "text": "Gibt es Studierende, die <b>nie oder sehr schwierig</b> synchron am Kurs teilnehmen k\u00f6nnten?",
             "antworten": {
-                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein",
-                "nein": "Nein."
+                "nein": "Nein",
+                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein"
             }
         },
 
@@ -72,8 +53,9 @@
             "order": 0,
             "text": "Wohnen Sie als Lehrperson während des betreffenden Semesters in derselben Stadt wie die Universität, an der Sie lehren (oder höchstens 90 Min. von der Universität entfernt)?",
             "antworten": {
-                "ja": "Ja.",
-                "nein": "Nein."
+                "nein": "Nein",
+                "ja": "Ja"
+                
             }
         },
 
@@ -122,8 +104,8 @@
             "order": 0,
             "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufstätigkeit) eingeschränkte Zeitpläne?",
             "antworten": {
-                "ja": "Ja.",
                 "nein": "Nein.",
+                "ja": "Ja.",
                 "idk": "Ich bin mir nicht sicher."
             }
         },
@@ -132,9 +114,9 @@
             "order": 0,
             "text": "Haben alle Studierenden Zugang zu einem Gerät und einer Umgebung, in der sie zuverlässig online am Kurs teilnehmen können?",
             "antworten": {
-                "ja": "Ja.",
                 "nein": "Nein.",
-                "helfen": "Nein, aber ich kann bedürftigen Studierenden helfen, ein solches Gerät zu erhalten."
+                "helfen": "Nein, aber ich kann bedürftigen Studierenden helfen, ein solches Gerät zu erhalten.",
+                "ja": "Ja."
             }
         },
 
@@ -142,9 +124,29 @@
             "order": 0,
             "text": "Wäre bei einer Präsenz- oder Hybridsitzung eine <br>Aufzeichnung des Lehrraums mit klaren Bild und Ton</br> technisch möglich?",
             "antworten": {
-                "ja": "Ja.",
-                "nein": "Nein.",
+                "nein": "Nein",
+                "ja": "Ja",
                 "idk": "Ich bin mir nicht sicher."
+            }
+        },
+
+        "IntSync":{
+            "order": 0,
+            "text": "Wie viel studentische Interaktion ist <b>während der Kurssitzungen</b> für die Lernziele des Kurses benötigt?",
+            "antworten": {
+                "0": "Die Lernziele des Kurses können auch mit minimaler oder nur gelegentlicher Interaktion erreicht werden.",
+                "1": "Die Studierenden sollen mit der Lehrperson (auch z.B. durch Polls oder Clicker) interagieren, aber nicht unbedingt mit anderen Studierenden",
+                "2": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren."
+            }
+        },
+
+        "IntAsync": {
+            "order": 0,
+            "text": "Wie viel studentische Interaktion ist <b>außerhalb der Kurssitzungen</b> für die Lernziele des Kurses benötigt?",
+            "antworten": {
+                "0": "minimale oder gelegentliche Interaktion",
+                "1": "Interaktion hauptsächlich zw. Studierenden und der Lehrperson",
+                "2": "Interaktion sowohl zw. Studierenden als auch zw. Studierenden und der Lehrperson"
             }
         },
 
@@ -162,8 +164,8 @@
             "order": 0,
             "text": "Verfügen Sie über ausreichende Ressourcen, um die gewünschten Gastvortragenden persönlich zum Kurs einzuladen?",
             "antworten": {
-                "ja": "Ja",
-                "nein": "Nein"
+                "nein": "Nein",
+                "ja": "Ja"
             }
         },
 
@@ -171,8 +173,8 @@
             "order": 0,
             "text": "Planen Sie eine oder mehrere Exkursionen als festen Bestandteil Ihres Kurses?",
             "antworten": {
-                "ja": "Ja",
-                "nein": "Nein"
+                "nein": "Nein",
+                "ja": "Ja"
             }
         },
 
@@ -180,8 +182,9 @@
             "order": 0,
             "text": "Verfügen Sie über ausreichende Ressourcen, damit alle Studierenden an einer Exkursion teilnehmen können?",
             "antworten": {
-                "ja": "Ja",
-                "nein": "Nein"
+                "nein": "Nein",
+                "ja": "Ja"
+                
             }
         },
 
@@ -189,8 +192,8 @@
             "order": 0,
             "text": "Ist Ihr Kurs Teil einer nationalen oder internationalen Kollaboration mit Studierenden und Lehpersonen einer anderen Universität?",
             "antworten": {
-                "ja": "Ja",
-                "nein": "Nein"
+                "nein": "Nein",
+                "ja": "Ja"
             }
         }
 

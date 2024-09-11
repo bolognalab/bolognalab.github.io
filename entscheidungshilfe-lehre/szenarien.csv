@@ -665,3 +665,63 @@ vl-praeshybwechs-2-2-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP 
 vl-praeshybwechs-2-3-0;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
 vl-praeshybwechs-2-3-1;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
 vl-praeshybwechs-2-3-2;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-0-0-0;Vorlesung als synchron-hybrides Remote Classroom;minimal;exklusiv synchron;minimal
+vl-hybrem-0-0-1;Vorlesung als synchron-hybrides Remote Classroom;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
+vl-hybrem-0-0-2;Vorlesung als synchron-hybrides Remote Classroom;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-0-1-0;Vorlesung als synchron-hybrides Remote Classroom;minimal;ergänzende Nacharbeit;minimal
+vl-hybrem-0-1-1;Vorlesung als synchron-hybrides Remote Classroom;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
+vl-hybrem-0-1-2;Vorlesung als synchron-hybrides Remote Classroom;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-0-2-0;Vorlesung als synchron-hybrides Remote Classroom;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-hybrem-0-2-1;Vorlesung als synchron-hybrides Remote Classroom;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
+vl-hybrem-0-2-2;Vorlesung als synchron-hybrides Remote Classroom;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-0-3-0;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
+vl-hybrem-0-3-1;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
+vl-hybrem-0-3-2;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-1-0-0;Vorlesung als synchron-hybrides Remote Classroom;St-LP;exklusiv synchron;minimal
+vl-hybrem-1-0-1;Vorlesung als synchron-hybrides Remote Classroom;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
+vl-hybrem-1-0-2;Vorlesung als synchron-hybrides Remote Classroom;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-1-1-0;Vorlesung als synchron-hybrides Remote Classroom;St-LP;ergänzende Nacharbeit;minimal
+vl-hybrem-1-1-1;Vorlesung als synchron-hybrides Remote Classroom;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
+vl-hybrem-1-1-2;Vorlesung als synchron-hybrides Remote Classroom;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-1-2-0;Vorlesung als synchron-hybrides Remote Classroom;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-hybrem-1-2-1;Vorlesung als synchron-hybrides Remote Classroom;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
+vl-hybrem-1-2-2;Vorlesung als synchron-hybrides Remote Classroom;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-1-3-0;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
+vl-hybrem-1-3-1;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
+vl-hybrem-1-3-2;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-2-0-0;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;exklusiv synchron;minimal
+vl-hybrem-2-0-1;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
+vl-hybrem-2-0-2;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-2-1-0;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-hybrem-2-1-1;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
+vl-hybrem-2-1-2;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-2-2-0;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-hybrem-2-2-1;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
+vl-hybrem-2-2-2;Vorlesung als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-2-3-0;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
+vl-hybrem-2-3-1;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
+vl-hybrem-2-3-2;Vorlesung als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-1-0-0;Seminar als synchron-hybrides Remote Classroom;St-LP;exklusiv synchron;minimal
+se-hybrem-1-0-1;Seminar als synchron-hybrides Remote Classroom;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
+se-hybrem-1-0-2;Seminar als synchron-hybrides Remote Classroom;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-1-1-0;Seminar als synchron-hybrides Remote Classroom;St-LP;ergänzende Nacharbeit;minimal
+se-hybrem-1-1-1;Seminar als synchron-hybrides Remote Classroom;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
+se-hybrem-1-1-2;Seminar als synchron-hybrides Remote Classroom;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-1-2-0;Seminar als synchron-hybrides Remote Classroom;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-hybrem-1-2-1;Seminar als synchron-hybrides Remote Classroom;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
+se-hybrem-1-2-2;Seminar als synchron-hybrides Remote Classroom;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-1-3-0;Seminar als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
+se-hybrem-1-3-1;Seminar als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
+se-hybrem-1-3-2;Seminar als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-2-0-0;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;exklusiv synchron;minimal
+se-hybrem-2-0-1;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
+se-hybrem-2-0-2;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-2-1-0;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Nacharbeit;minimal
+se-hybrem-2-1-1;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
+se-hybrem-2-1-2;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-2-2-0;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-hybrem-2-2-1;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
+se-hybrem-2-2-2;Seminar als synchron-hybrides Remote Classroom;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-2-3-0;Seminar als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
+se-hybrem-2-3-1;Seminar als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
+se-hybrem-2-3-2;Seminar als synchron-hybrides Remote Classroom mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
