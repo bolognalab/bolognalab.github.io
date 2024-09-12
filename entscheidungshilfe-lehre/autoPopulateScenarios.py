@@ -177,6 +177,7 @@ for code in list_of_scenarios:
             updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = +1
         # if St-St is desired and impossible, discourage it
         if code.split("-")[1] in ["hyb", "ringhyb2", "rem", "hybrem", "onlhybwechs", "praeshybwechs"]:
+            # TODO: here add a note to differentiate between cross-group and intra-group interaction.
             setConditionalEffect("IntSync", "2", code, "studGeraete=nein", -100)
 
 
