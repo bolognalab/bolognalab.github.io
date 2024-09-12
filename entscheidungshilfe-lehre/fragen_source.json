@@ -110,13 +110,23 @@
             }
         },
 
-        "onlZugang": {
+        "studGeraete": {
             "order": 0,
-            "text": "Haben alle Studierenden Zugang zu einem Gerät und einer Umgebung, in der sie zuverlässig online am Kurs teilnehmen können?",
+            "text": "Könnten alle Studierenden ihre persönlichen (oder ausgeliehenen) Enderäte und die verfügbare Internetverbindung für die benötigte Interaktion bzw. Kollaboration <b>im Lehrraum</b> nutzen?",
             "antworten": {
                 "nein": "Nein.",
-                "helfen": "Nein, aber ich kann bedürftigen Studierenden helfen, ein solches Gerät zu erhalten.",
-                "ja": "Ja."
+                "idk": "Ich weiß nicht.",
+                "ja": "Ja bzw. ich könnte dafür sorgen."
+            }
+        },
+
+        "onlZugang": {
+            "order": 0,
+            "text": "Haben alle Studierenden <b>außerhalb des Lehrraums</b> Zugang zu einem Gerät und einer Umgebung, in der sie zuverlässig online am Kurs teilnehmen können?",
+            "antworten": {
+                "nein": "Nein.",
+                "idk": "Ich weiß nicht.",
+                "ja": "Ja bzw. ich könnte dafür sorgen."
             }
         },
 

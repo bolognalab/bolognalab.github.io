@@ -82,23 +82,7 @@ for code in list_of_scenarios:
         updated_questions["LZsy"]["antworten"]["2"]["effects"][code] = -100
     if code.split("-")[3] == "4":
         updated_questions["LZsy"]["antworten"]["1"]["effects"][code] = -2
-        updated_questions["LZsy"]["antworten"]["2"]["effects"][code] = -100
-
-    # IntSync: if desired synchronous interaction is level 1 or 2, exclude options with lower levels of interaction
-    if code.split("-")[2] == "0":
-        updated_questions["IntSync"]["antworten"]["1"]["effects"][code] = -100
-        updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
-    if code.split("-")[2] == "1":
-        updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
-
-    # IntAsync: if desired asynchronous interaction is level 1 or 2, exclude options with less interaction (if it's technically possible)
-    # TODO: if St-St interaction is not technically feasible, discourage but not exclude those options
-    if code.split("-")[4] == "0":
-        updated_questions["IntAsync"]["antworten"]["1"]["effects"][code] = -100
-        updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
-    if code.split("-")[4] == "1":
-        updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
-    
+        updated_questions["LZsy"]["antworten"]["2"]["effects"][code] = -100 
 
     # niePr; if some students can never make it to class in-person, then exclude all options exclusively in-person for students
     if code.split("-")[1] in ["praes", "ringpraes", "rem", "ringhyb1", "grwechs", "praesonlwechs", "praeshybwechs", "onlpraeswechs"]:
@@ -160,13 +144,49 @@ for code in list_of_scenarios:
         # TODO: maybe: check for answer to question: are certain students unable to attend synchronously ever?
         updated_questions["limZPSt"]["antworten"]["ja"]["effects"][code] = + 1  
 
+    # studGeraete: do nothing, but it will influence future answers
+
     # onlZugang: if not all students have access to stable internet (for conferencing), exclude all online-only or mandatorily partially online options
     if code.split("-")[1] in ["async", "onl", "ringonl", "grwechs", "praesonlwechs", "onlpraeswechs", "onlhybwechs"]:
         updated_questions["onlZugang"]["antworten"]["nein"]["effects"][code] = -100
+        updated_questions["onlZugang"]["antworten"]["idk"]["effects"][code] = -2
 
-    # aufzTech: if a clear recording of the room is not possible, exclude Remote Classroom
+    # aufzTech
+    # if a clear recording of the room is not possible, exclude Remote Classroom
     if code.split("-")[1] in ["rem", "hybrem"]:
         updated_questions["aufzTech"]["antworten"]["nein"]["effects"][code] = -100
+
+    # IntSync: 
+    # options with no synchronous interaction and purely async options: exlude automatically if any interaction is wished
+    if code.split("-")[2] == "0" or code.split("-")[3] == "4":
+        updated_questions["IntSync"]["antworten"]["1"]["effects"][code] = -100
+        updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
+    # option with only St-LP interaction: exlude St-St wanted AND St-St technically possible; otherwise discourage and suggest replacing sync interaction with async interaction.
+    if code.split("-")[2] == "1":
+        # always technically possible for pure-in-person and pure-online
+        if code.split("-")[1] in ["praes", "ringpraes", "onl", "ringonl", "ringhyb1", "onlpraeswechs", "praesonlwechs"]:
+            updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
+        # for hybrid options with individual online students: technically possible with student devices
+        if code.split("-")[1] in ["hyb", "ringhyb2", "rem", "hybrem", "onlhybwechs", "praeshybwechs"]:
+            setConditionalEffect("IntSync", "2", code, "studGeraete=ja", -100)
+    # if St-St interaction is wished but it's not technically possible, discourage options with synchronous St-St and instead favor those with synchronous St-LP and asynchronous St-St
+    # xx-xxx-1-x-2
+    if code.split("-")[2] == "2":
+        # if St-St is desired and possible, favor it!
+        if code.split("-")[1] in ["praes", "ringpraes", "onl", "ringonl", "ringhyb1", "onlpraeswechs", "praesonlwechs"]:
+            updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = +1
+        # if St-St is desired and impossible, discourage it
+        if code.split("-")[1] in ["hyb", "ringhyb2", "rem", "hybrem", "onlhybwechs", "praeshybwechs"]:
+            setConditionalEffect("IntSync", "2", code, "studGeraete=nein", -100)
+
+
+
+    # IntAsync: if desired asynchronous interaction is level 1 or 2, exclude options with less interaction 
+    if code.split("-")[4] == "0":
+        updated_questions["IntAsync"]["antworten"]["1"]["effects"][code] = -100
+        updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
+    if code.split("-")[4] == "1":
+        updated_questions["IntAsync"]["antworten"]["2"]["effects"][code] = -100
 
     # gaeste: if having regular guest speakers, only display Ringvorlesung formats
     if "ring" not in code.split("-")[1]:
