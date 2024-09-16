@@ -272,12 +272,13 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 
 .theme .infoContent .moreInfo {
-    width: calc(100%- 4em);
+    /* width: calc(100%- 4em); */
     min-width: 14em;
     margin-top: 1em;
-    margin-left: 3em;
+    /* margin-left: 3em; */
+    background: rgba(0, 158, 227, 0.8);
     padding: 0.8em 1.6em 0.8em 1.6em;
-    background: #009ee3;
+    opacity: 0.8;
     font-family: 'D-DIN', Arial, Helvetica, sans-serif;
     font-size: 1.1em;
     font-stretch: expanded;
@@ -285,27 +286,42 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     color: #ffffff;
     border-radius: 1em;
     text-decoration: none;
-    display: table;
+    display: block;
+    position: relative;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-
+    height: 3em;
     /* -webkit-clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
     clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); */
 }
 
 .moreInfo > * {
+    position: absolute;
     display: table-cell;
     vertical-align: middle;
     text-align: left;
-    padding: 0 0.2em;
+    /* padding: 0 0.2em; */
+    top: 50%;
+    transform: translate(0, -50%);
 }
+.moreInfo > span {
+    left: 1em;
+    width: calc(100% - 2em);
+}
+.moreInfo > img {
+    height: 1em;
+    right: 1em;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(203deg) brightness(102%) contrast(102%);
+    opacity: 0.8;
+    transition: all 0.4s ease;
 
+}
 @media only screen and (min-width: 600px){
     .theme .infoContent .moreInfo {
-        width: calc(50% - 1.2em);
+        /* width: calc(50% - 1.2em); */
         min-width: 0;
-        margin-left: 50%;
+        /* margin-left: 50%; */
     }
 }
 .tl, .tr {
@@ -326,11 +342,14 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     border-radius: 0em 2.5em 3em 2.5em;
 }
 .tr {
+    /* background-color: #5b89b0; */
+    /* background-color: #821f71; */
     background-color: #5b89b0;
     border-radius: 2.5em 0em 2.5em 3em ;
 }
 .lr {
-    background-color: #821f71;
+    /* background-color: #821f71; */
+    background-color: #004c90;
     border-radius: 3em 2.5em 0em 2.5em;
 }
 .ll {
@@ -391,7 +410,7 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     z-index: 6;
 }
 .theme.focused .moreInfo {
-    display: block
+    display: block;
 }
 
 @media only screen and (min-width: 600px){
@@ -412,10 +431,10 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
         position: relative;
     }
     .theme.focused > * > .infoContent {
-        height: fit-content;
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%)
+        height: 100%;
+        position: relative;
+        top: 0%;
+        /* transform: translate(0, -50%) */
     }
     .theme.focused > * >  .mainIcon {
         top: 50%;
@@ -432,6 +451,9 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
 }
 .moreInfo:hover {
     transform: scale(105%, 105%);
+}
+.moreInfo:hover > img {
+    opacity: 1;
 }
 
 /* Individual Pages */
@@ -474,6 +496,30 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
         min-width: 800px;
         max-width: 800px;
     }
+}
+
+.bk {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.bk h3 {
+    color: #5b89b0;
+    opacity: 0.8;
+}
+
+.bk img {
+    height: 3em;
+    aspect-ratio: 1;
+    padding: 0.5em;
+    /* filter: brightness(0) saturate(100%) invert(89%) sepia(0%) saturate(829%) hue-rotate(20deg) brightness(106%) contrast(69%); */
+    filter: brightness(0) saturate(100%) invert(48%) sepia(59%) saturate(329%) hue-rotate(165deg) brightness(96%) contrast(85%);
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+.bk img:hover {
+    transform: scale(110%, 110%);
+    opacity: 0.8;
 }
 
 #toggleButtons {
@@ -805,6 +851,9 @@ div.theme, div.infoContainer, div.infoContent, img.mainIcon {
     margin-top: 2.5em;
     display: block;
 }
+.details a.mi:first-child{
+    margin-top: 0em;
+}
 .details a.mi.cont {
     margin-top: 0.5em;
 }
@@ -967,9 +1016,9 @@ div.node.left.active, div.node.right.active {
         padding: 0em 2em;
         font-size: 15px;
     }
-    .nachhaltigkeit .node > .title {
+    /* .nachhaltigkeit .node > .title {
         font-size: 14px;
-    }
+    } */
     div.node.active {
         border-radius: 10em;
         width: 10em;

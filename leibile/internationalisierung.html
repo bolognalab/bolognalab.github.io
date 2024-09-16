@@ -10,15 +10,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
  		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../assets/css/leibile.css" /> 
+    <style>
+      .node .nodeInfo {
+        display: block;
+      }
+      .node.opened .nodeInfo {
+        display: none;
+      }
+    </style>
 	</head>
 	<body class="is-preload">
     <div class="innerWindow">
       <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner_constr.png" /></a>
+      <div class="bk">
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
       <h1>Multiperspektivität und Internationalisierung</h1>
-      <div id="decCircle" style="background: #821f71"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
+      <div id="decCircle" style="background: #5b89b0"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
       <h2>Anlaufpunkte an der HU</h2>
       <p>Verschiedene Institutionen an der HU unterstützen und fördern Internationalisierung und Multiperspektivität. Wir haben 4 zentrale Akteure gelistet:</p>
-      <div class="containerWindow smaller1" style="margin-top: 1em; overflow: hidden">
+      <div class="containerWindow smaller1" style="margin-top: 1em;">
         <div id="fadeCover" style="background: #f0f0eb"></div>
         <div class="diagramContainer" id="dCont1">
           <!-- decorative elements -->
@@ -27,6 +38,10 @@
           <div id="invisibleNode"></div>
           <div id="smallFade"></div>
         </div>
+      </div>
+      <div class="bk">
+        <h3>Zurück zur Hauptseite</h3>
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
       </div>
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
@@ -153,6 +168,11 @@
           }
           thisNode.append(title)
 
+          let nodeInfo = document.createElement("span")
+          nodeInfo.innerHTML = "<br><img src ='../images/info-circle.svg' name='anlaufpunkt-zeigen'>"
+          nodeInfo.classList.add("nodeInfo")
+          title.append(nodeInfo)
+
           if (catEntry[1].hasOwnProperty("subtitle")){
             let subtitle = document.createElement("h4")
             subtitle.classList.add("subtitle")
@@ -237,8 +257,6 @@
       dCont1.removeChild(closeBtn)
       node.append(closeBtn)
       setTimeout(function(){
-        // closeBtn.style["left"] = "calc("+ (dCont1.offsetWidth/2) + "px + 30% + 1.5em)"
-        // closeBtn.style["top"] = (dCont1.offsetHeight/2) + "px"
         closeBtn.style.visibility="visible"
         closeBtn.style.opacity="1"
       }, 500)
@@ -268,8 +286,11 @@
       }
 
       // adjust title if word-break version was used
+      // do not forget to add "nodeInfo" again!
       if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
-        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        node.getElementsByClassName("title")[0].childNodes[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+      } else {
+        node.getElementsByClassName("title")[0].childNodes[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
       }
 
       // undo height adjustment
@@ -317,6 +338,33 @@
         }
       })
     }
+
+    // "nodeInfo" buttons
+    document.querySelectorAll(".nodeInfo img").forEach(function(item){
+      item.addEventListener("click", function(e){
+        let nodeToShow = item.parentElement.parentElement.parentElement
+        console.log(nodeToShow)
+        if (item.classList.contains("hovered")){
+          oldPos = openNodeW(nodeToShow)
+        }
+      })
+      item.addEventListener("mouseenter", function(e){
+        item.classList.add("hovered")
+        showInfoTimeout = setTimeout(function(){
+          if (isWithinBoundingRect(e.clientX, e.clientY, item.getBoundingClientRect())){
+            let nodeToShow = item.parentElement.parentElement.parentElement
+            if (item.classList.contains("hovered")){
+              oldPos = openNodeW(nodeToShow)
+            }
+          }
+        }, 500)
+      })
+      item.addEventListener("mouseleave", function(e){
+        item.classList.remove("hovered")
+        clearTimeout(showInfoTimeout)
+      })
+    })
+
     closeBtn.addEventListener("click", function(){
       let nodeToClose = closeBtn.parentElement
       closeNodeW(nodeToClose)
@@ -341,7 +389,15 @@
 
       return result
     }
-
+    function isWithinBoundingRect(x, y, rect){
+      let rx1 = rect.x, rx2 = rect.x + rect.width
+      let ry1 = rect.y, ry2 = rect.y + rect.height
+      if (rx1 <= x && x <= rx2 && ry1 <= y && y <= ry2){
+        return true
+      } else {
+        return false
+      }
+    }
     </script>
 	</body>
 </html>

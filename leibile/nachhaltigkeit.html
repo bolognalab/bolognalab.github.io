@@ -10,10 +10,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
  		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../assets/css/leibile.css" /> 
+    <style>
+      .node .nodeInfo {
+        display: block;
+      }
+      .node.opened .nodeInfo {
+        display: none;
+      }
+      .nodeInfo img{
+        padding-top: 0.6em;
+      }
+    </style>
 	</head>
 	<body class="is-preload">
     <div class="innerWindow nachhaltigkeit">
       <a href='index.html'><img style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner_constr.png" /></a>
+      <div class="bk">
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
       <h1>Nachhaltigkeit und Innovation</h1>
       <div id="decCircle" style="background: #3a7775"><img class="mainIcon" src="../images/leibile/nachhaltigkeit.svg"></div>
       <p style="margin-top: 1em">Um eine zukunftsfähige, nachhaltige und innovative Hochschullehre zu gestalten, bedarf es Institutionen, die sich dem Austausch mit verschiedenen Akteuren innerhalb und außerhalb der HU widmen. Diese Institutionen ermöglichen einen Wissenserwerb zu den Themen, fördern die third mission der HU und bringen die Themen in die Universitätstrukturen:</p>
@@ -35,6 +49,10 @@
       <ul>
         <li><a class='mi' href='../files/leibile/klimaschutzkonzept_hu_2023.pdf'>Klimaschutzkonzept der HU (PDF)</a></li>
       </ul>
+      <div class="bk">
+        <h3>Zurück zur Hauptseite</h3>
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
     </div>
 		<script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/browser.min.js"></script>
@@ -157,7 +175,7 @@
             thisNode.style["left"] = x 
             thisNode.style["top"]  = y 
             thisNode.style["width"] = "calc(" + (100/num) + "% - 20px)"
-            thisNode.style["max-width"] = "11.8em"
+            thisNode.style["max-width"] = "14.8em"
             // let posStep = nodeEntry[1]["width"] / num
             // let offsetX = (100-nodeEntry[1]["width"])/2
             // posX = offsetX + i*posStep
@@ -193,6 +211,10 @@
           }
           thisNode.append(title)
 
+          let nodeInfo = document.createElement("span")
+          nodeInfo.innerHTML = "<img src ='../images/info-circle.svg' name='anlaufpunkt-zeigen'>"
+          nodeInfo.classList.add("nodeInfo")
+          title.append(nodeInfo)
           if (catEntry[1].hasOwnProperty("subtitle")){
             let subtitle = document.createElement("h4")
             subtitle.classList.add("subtitle")
@@ -257,12 +279,20 @@
         }, 200)
       }
       
-      
-      
-      if (window.innerWidth > thresholdWidth){
-        // adjust title if word-break version was used
-        node.getElementsByClassName("title")[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
-      } 
+      // adjust title if word-break version was used
+      let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
+      let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
+      if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
+        if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        }
+        else {
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+          console.log("Bitte fügen Sie zu diesem Item eine 'wordBreak' Version des Titels: " + node.id)
+        }
+      } else {
+        thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
 
       // adjust length 
       let details = node.getElementsByClassName("details")[0]
@@ -374,6 +404,35 @@
         
       })
     }
+
+    // "nodeInfo" buttons
+    document.querySelectorAll(".nodeInfo img").forEach(function(item){
+      item.addEventListener("click", function(e){
+        let nodeToShow = item.parentElement.parentElement.parentElement
+        console.log(nodeToShow)
+        if (item.classList.contains("hovered")){
+          oldPos = openNodeW(nodeToShow)
+        }
+      })
+      item.addEventListener("mouseenter", function(e){
+        item.classList.add("hovered")
+        showInfoTimeout = setTimeout(function(){
+          if (isWithinBoundingRect(e.clientX, e.clientY, item.getBoundingClientRect())){
+            let nodeToShow = item.parentElement.parentElement.parentElement
+            if (item.classList.contains("hovered")){
+              oldPos = openNodeW(nodeToShow)
+            }
+          }
+        }, 500)
+      })
+      item.addEventListener("mouseleave", function(e){
+        item.classList.remove("hovered")
+        clearTimeout(showInfoTimeout)
+      })
+    })
+
+
+
     closeBtn.addEventListener("click", function(){
       let nodeToClose = closeBtn.parentElement
       closeNodeW(nodeToClose)
