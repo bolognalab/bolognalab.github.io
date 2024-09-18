@@ -155,11 +155,22 @@
         let i = 0
         while (i < 10){
             [qKey, aKey] = conditions.split("+")[i].split("=")
-            if (answers[qKey] != aKey){
-                return false
+            if (qKey.includes("!")){
+                // check if it's a NOT test
+                qKeyR = qKey.split("!")[0]
+                if (answers[qKeyR] == aKey){
+                    return false
+                } else {
+                    i += 1
+                }
             } else {
-                i += 1
+                if (answers[qKey] != aKey){
+                return false
+                } else {
+                    i += 1
+                }
             }
+
             if (i >= conditions.split("+").length){
                 return true
             }

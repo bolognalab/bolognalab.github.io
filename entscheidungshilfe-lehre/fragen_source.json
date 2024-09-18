@@ -78,26 +78,16 @@
             }
         },
 
-        "onlErlLP": {
+        "onlBereit": {
             "order": 0,
-            "text": "Wie viel Prozent der Lehrveranstaltung ist Ihnen als Lehrperson laut der Hochschulordnung erlaubt, online durchführen?",
+            "text": "In welchem Umfang sind Sie bereit, den Kurs online zu unterrichten (d. h. vom eigenen Gerät aus und nicht in einem Lehrraum)?",
             "antworten": {
-                "kein": "0%",
-                "teil": "zwischen 0-100%",
-                "voll": "100%",
-                "idk" : "Ich bin mir nicht sicher."
-            }
-        },
-
-        "onlErlSt": {
-            "order": 0,
-            "text": "Wie viel Prozent der Lehrveranstaltung ist den Studierenden laut der Hochschulordnung erlaubt, online zu besuchen?",
-            "antworten": {
-                "kein": "0%",
-                "teil": "zwischen 0-100%",
-                "voll": "100%",
-                "idk" : "Ich bin mir nicht sicher."
-            }
+                "kein": "Gar nicht - ich möchte ausschließlich in Präsenz in einem Lehrraum unterrichten.",
+                "geleg": "Ich bin bereit, gelegentlich online zu unterrichten, bevorzuge aber das Präsenzunterrichten",
+                "viel": "Ich möchte so viel wie möglich online unterrichten",
+                "egal" : "Es spielt für mich keine Rolle, wie viel ich online oder in Präsenz unterrichte."
+            },
+            "addInfo": "z.B. unter Berücksichtigung der Anerkennung Ihrer Lehre für das Lehrdeputat oder nach persönlicher Präferenz"
         },
 
         "limZPSt": {

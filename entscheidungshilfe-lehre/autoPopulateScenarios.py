@@ -40,6 +40,7 @@ for key, val in existing_questions.items():
             "effects": {},
             "conditionalEffects": {}
         }
+
 # print(updated_questions)
 def setConditionalEffect(qKey, aKey,  code, condition, effect):
     try:
@@ -100,34 +101,43 @@ for code in list_of_scenarios:
         updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = -2
     if code.split("-")[3] == "2":
         updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = -1
-    # and encourage options with asynchronous participation alternatives
+    # and encourage options with asynchronous participation alternatives, unless there are essential learning goals in person
     if code.split("-")[3] in ["3", "4"]: 
-        updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = + 1
+        setConditionalEffect("nieSync", "ja", code, "LZsy!=2", +1)
 
-    # wohnLP: if the instructor lives far from the university, favor online and mostly-online options!
+    # wohnLP: if the instructor lives far from the university, favor online and mostly-online options, unless there are essential learning goals in person!
     if code.split("-")[1] in ["onl", "ringonl", "onlhybwechs", "onlpraeswechs", "async"]: 
-        updated_questions["wohnLP"]["antworten"]["nein"]["effects"][code] = + 1
+        setConditionalEffect("wohnLP", "nein", code, "LZiP!=2", +1)
 
-    # regAbw: if instructor is occasionally absent from campus, encourage switching options and, less so, primarily-online options
+    # regAbw: if instructor is occasionally absent from campus, encourage switching options with more in-person character
     if code.split("-")[1] in ["praesonlwechs", "praeshybwechs", "hyb", "ringhyb1", "ringhyb2", "hybrem"]: 
         # note: hybrid options also count, because the hybrid room can easily be moved fully online for individual classes
         updated_questions["regAbw"]["antworten"]["abundzu"]["effects"][code] = + 2
-    if code.split("-")[1] in ["onlpraeswechs", "onl", "ringonl", "onlhybwechs"]:
-        updated_questions["regAbw"]["antworten"]["abundzu"]["effects"][code] = + 1
-    # if regularly absent from campus, enccourage fully online options (for the instructor)
+    # if regularly absent from campus, enccourage switching options with more online character and fully online options (for the instructor)
     if code.split("-")[1] in ["onlpraeswechs", "onl", "ringonl", "onlhybwechs"]:
         updated_questions["regAbw"]["antworten"]["oft"]["effects"][code] = + 2
     # also encourage async options
     if code.split("-")[3] == "4": 
         updated_questions["regAbw"]["antworten"]["oft"]["effects"][code] = + 2
 
-    # onlErlLP: if not allowed to teach online at all, exclude all online options
-    if code.split("-")[1] in ["async", "onl", "ringonl", "onlhybwechs", "onlpraeswechs"]:
-        updated_questions["onlErlLP"]["antworten"]["kein"]["effects"][code] = -100
+    # onlBereit: if instructor doesn't want to teach online at all, exclude fully online and switching options
+    if code.split("-")[1] in ["async", "onl", "ringonl", "onlhybwechs", "onlpraeswechs", "praesonlwechs"]:
+        updated_questions["onlBereit"]["antworten"]["kein"]["effects"][code] = -100
+    # if instructor wants to teach online only occasionally:
+    # exclude fully online options
+    if code.split("-")[1] in ["async", "onl", "ringonl"]:
+        updated_questions["onlBereit"]["antworten"]["geleg"]["effects"][code] = -100
+    #  discourage options with more than occasional online teaching
+    if code.split("-")[1] in ["onlhybwechs", "onlpraeswechs"]:
+        updated_questions["onlBereit"]["antworten"]["geleg"]["effects"][code] = -1
+    # if instructor wants to teach online as much as possible, encourage options with a higher online portion
+    if code.split("-")[1] in ["onlhybwechs", "onlpraeswechs"]:
+        updated_questions["onlBereit"]["antworten"]["viel"]["effects"][code] = +2
+    if code.split("-")[1] in ["onl", "ringonl"]:
+        # do not favor fully online options if there are important learning goals in person
+        setConditionalEffect("onlBereit", "viel", code, "LZiP=0", +2)
+        setConditionalEffect("onlBereit", "viel", code, "LZiP=1", +1)
 
-    # onlErlSt: if students not allowed to attend online at all, exclude hybrid and online options for students
-    if code.split("-")[1] in ["async", "onl", "ringonl", "grwechs", "hyb", "ringhyb2", "onlhybwechs", "onlpraeswechs", "praesonlwechs", "praeshybwechs", "hybrem"]:
-        updated_questions["onlErlSt"]["antworten"]["kein"]["effects"][code] = -100
 
     # limZPSt: if most students have significant time-limitations:
     #  - discourage flipped-classroom options
