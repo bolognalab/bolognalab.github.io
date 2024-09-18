@@ -38,7 +38,8 @@ for key, val in existing_questions.items():
         updated_questions[key]["antworten"][akey] = {
             "text": aname,
             "effects": {},
-            "conditionalEffects": {}
+            "conditionalEffects": {},
+            "special": []
         }
 
 # print(updated_questions)
@@ -50,6 +51,9 @@ def setConditionalEffect(qKey, aKey,  code, condition, effect):
         updated_questions[qKey]["antworten"][aKey]["conditionalEffects"][code] = {}
         updated_questions[qKey]["antworten"][aKey]["conditionalEffects"][code][condition] = effect
         updated_questions[qKey]["antworten"][aKey]["effects"][code] = "FUNC"
+
+def setSpecialCase(qKey, aKey, case):
+    updated_questions[qKey]["antworten"][aKey]["special"].append(case)
 
 
 # MASS-POPULATE SOME EFFECTS
@@ -138,7 +142,6 @@ for code in list_of_scenarios:
         setConditionalEffect("onlBereit", "viel", code, "LZiP=0", +2)
         setConditionalEffect("onlBereit", "viel", code, "LZiP=1", +1)
 
-
     # limZPSt: if most students have significant time-limitations:
     #  - discourage flipped-classroom options
     if code.split("-")[3] == "2":
@@ -171,7 +174,7 @@ for code in list_of_scenarios:
     if code.split("-")[2] == "0" or code.split("-")[3] == "4":
         updated_questions["IntSync"]["antworten"]["1"]["effects"][code] = -100
         updated_questions["IntSync"]["antworten"]["2"]["effects"][code] = -100
-    # option with only St-LP interaction: exlude St-St wanted AND St-St technically possible; otherwise discourage and suggest replacing sync interaction with async interaction.
+    # option with only St-LP interaction: exclude if St-St wanted AND St-St technically possible; otherwise discourage and suggest replacing sync interaction with async interaction.
     if code.split("-")[2] == "1":
         # always technically possible for pure-in-person and pure-online
         if code.split("-")[1] in ["praes", "ringpraes", "onl", "ringonl", "ringhyb1", "onlpraeswechs", "praesonlwechs"]:
@@ -189,8 +192,6 @@ for code in list_of_scenarios:
         if code.split("-")[1] in ["hyb", "ringhyb2", "rem", "hybrem", "onlhybwechs", "praeshybwechs"]:
             # TODO: here add a note to differentiate between cross-group and intra-group interaction.
             setConditionalEffect("IntSync", "2", code, "studGeraete=nein", -100)
-
-
 
     # IntAsync: if desired asynchronous interaction is level 1 or 2, exclude options with less interaction 
     if code.split("-")[4] == "0":
@@ -237,12 +238,13 @@ for code in list_of_scenarios:
     #intKoll: only include remote, online, switching, and hybrid options
     if code.split("-")[1] not in ["onl", "onlhybwechs", "ringonl", "onlpraeswechs", "ringhyb2", "rem", "hyb", "hybrem"]:
         updated_questions["intKoll"]["antworten"]["ja"]["effects"][code] = -100  
-
+    # add special case 'international'
+    setSpecialCase("intKoll", "ja", "international")
 
 updated_json["questions"] = updated_questions
 updated_json["scenarios"] = updated_scenarios
 
-json_file = "fragenSzenarienV2.json"
+json_file = "data.json"
 def updateJSON(json_data, json_file):
     with open(json_file, 'w') as json_file:
         json_file.write(json.dumps(json_data, indent=4))
