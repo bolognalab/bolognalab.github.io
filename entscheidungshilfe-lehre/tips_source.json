@@ -7,10 +7,15 @@
         "privateEcke": {
             "type": "synchron",
             "content": "Ein Teil des Raums, in dem Studierende, die ihre Privatsphäre wahren wollen, außerhalb des Kamerawinkels sitzen können."
+        },
+        "aufzeichnung": {
+            "type": "asynchron",
+            "content": ""
         }
     },
     "specialCases": {
         "international": "", 
-        "exkursion": ""
+        "exkursion": "",
+        "alternativPraes": "Einige Studierende haben die Möglichkeit, vollständig online an dieser LV teilzunehmen. Laut Ihrer Angaben gibt es aber wichtige Lernziele für Ihren Kurs, die nur in Präsenz erreicht werden können. Da Ihre Lehrveranstaltung Teil eines Moduls ist, wird empfohlen, dass die anderen Teile Ihres Moduls zumindest gelegentlich obligatorische Präsenzkomponenten haben, um diese Lernziele zu erreichen."
     }
 }

@@ -11,6 +11,15 @@
             }
         },
 
+        "modulCombo": {
+            "order": 0,
+            "text": "Ist die Lehrveranstaltung mit einer anderen Art von Lehrveranstaltung desselben Moduls kombiniert, die Studierende im selben Semester besuchen (z.B. Vorlesung und Seminar)",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+
         "LZiP":{
             "order": 0,
             "text": "Gibt es Lernziele, die <b>ausschließlich in Präsenz</b> erreichbar sind?",
@@ -23,12 +32,13 @@
 
         "LZsy":{
             "order": 0,
-            "text": "Gibt es Lernziele, die <b>ausschließlich synchron</b> erreichbar sind?",
+            "text": "Gibt es Lernziele, die <b>ausschließlich synchron</b> während dieser Lehrveranstaltung erreichbar sind?",
             "antworten": {
                 "0": "keine",
                 "1": "ja, von niedriger Priorität",
                 "2": "ja, von hoher Priorität"
-            } 
+            },
+            "addInfo": "z.B. argumentative Diskussion, wichtige Gruppenaufgaben, usw."
         },
 
         "niePr": {

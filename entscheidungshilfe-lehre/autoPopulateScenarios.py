@@ -29,6 +29,7 @@ with open(csv_file, mode='r', encoding='utf-8-sig') as csv_file:
         subkeys = row_data.keys()
         subvalues = row_data.values()
         updated_scenarios[key] = dict(zip(subkeys, subvalues))
+        updated_scenarios[key]["special_cases"] = {}
 
 updated_questions = existing_questions.copy()
 
@@ -38,8 +39,7 @@ for key, val in existing_questions.items():
         updated_questions[key]["antworten"][akey] = {
             "text": aname,
             "effects": {},
-            "conditionalEffects": {},
-            "special": []
+            "conditionalEffects": {}
         }
 
 # print(updated_questions)
@@ -52,9 +52,8 @@ def setConditionalEffect(qKey, aKey,  code, condition, effect):
         updated_questions[qKey]["antworten"][aKey]["conditionalEffects"][code][condition] = effect
         updated_questions[qKey]["antworten"][aKey]["effects"][code] = "FUNC"
 
-def setSpecialCase(qKey, aKey, case):
-    updated_questions[qKey]["antworten"][aKey]["special"].append(case)
-
+def setSpecialCase(code, conditions, case):
+    updated_scenarios[code]["special_cases"][conditions] = case
 
 # MASS-POPULATE SOME EFFECTS
 for code in list_of_scenarios:
@@ -70,15 +69,21 @@ for code in list_of_scenarios:
     if code.split('-')[0] != "so":
         updated_questions["artLV"]["antworten"]["SO"]["effects"][code] = -100
 
-    # LZiP: if essential learning goals in person, exclude hybrid and online options
+    #modulCombo: do nothing, but will affect previous answers
+
+    # LZiP: if essential learning goals in person and there are no other LV in the module, exclude hybrid and online options.
+    # if there are essential goals in person and there are other LV in the module, discourage those options and add note
     # if some nonessential learning goals in person, discourage online options and less so hybrid options
     if code.split("-")[1] in ["async", "onl", "ringonl"]:
-        updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -100
-        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -2
+        setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
+        setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
+        setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -2)
+        setConditionalEffect("LZiP", "1", code, "modulCombo=ja", -1)
         updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
     if code.split("-")[1] in ["hyb", "ringhyb2", "onlhybwechs", "hybrem"]:
-        updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -100
-        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -1
+        setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
+        setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
+        setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -1)
         updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
 
     # LZsy: if important learning goals are exclusively attainable synchronously, exclude all options that are fully asynchronous or offer asynchronous alternatives
@@ -239,7 +244,16 @@ for code in list_of_scenarios:
     if code.split("-")[1] not in ["onl", "onlhybwechs", "ringonl", "onlpraeswechs", "ringhyb2", "rem", "hyb", "hybrem"]:
         updated_questions["intKoll"]["antworten"]["ja"]["effects"][code] = -100  
     # add special case 'international'
-    setSpecialCase("intKoll", "ja", "international")
+    
+    # SPECIAL CASES
+    setSpecialCase(code, "intKoll=ja", "international")
+
+    #for online, hybrid and async options, if there are other LV in the same module, add note that the other LV should have in-person elements
+    if code.split("-")[1] in ["onl", "onlhybwechs", "ringonl", "ringhyb2", "hyb", "hybrem"]:
+        setSpecialCase(code, "modulCombo=ja+LZiP=2", "alternativPraes")
+        setSpecialCase(code, "modulCombo=ja+LZiP=1", "alternativPraes")
+
+
 
 updated_json["questions"] = updated_questions
 updated_json["scenarios"] = updated_scenarios

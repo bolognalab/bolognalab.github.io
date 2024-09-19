@@ -36,6 +36,7 @@
 //  'artLV',
     var questionOrder = [ 
         'artLV', 
+        'modulCombo',
         'LZiP',
         'LZsy', 
         'niePr',
@@ -47,6 +48,7 @@
         // 'gaesteMittel',
         "exkur",
         // "exkurMittel",
+        "intKoll",
         "IntSync",
         "IntAsync"
     ]
@@ -111,9 +113,16 @@
         let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
 
         Object.entries(effects).forEach((entry)=>{
-            if (entry[1]== -100){
-                delete activeScenarios[entry[0]]
-            } else if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+            // if (entry[1]== -100){
+                
+            //     delete activeScenarios[entry[0]]
+            // } else if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+            //     let scoreVal = +(activeScenarios[entry[0]])
+            //     newScoreVal = scoreVal + entry[1]
+            //     activeScenarios[entry[0]] = newScoreVal
+            //     recent.push(entry[0])
+            // }
+            if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
                 let scoreVal = +(activeScenarios[entry[0]])
                 newScoreVal = scoreVal + entry[1]
                 activeScenarios[entry[0]] = newScoreVal
