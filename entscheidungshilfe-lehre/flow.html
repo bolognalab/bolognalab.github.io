@@ -21,7 +21,7 @@
     const sCont = document.getElementById("scenarios")
     var all_data, questionInfo, all_scenarios
     
-    var nextQuestion = 0
+    var nextQuestionIdx = 0
 
     var scenarios = {}
     var colorMapping = {
@@ -41,19 +41,22 @@
         'LZsy', 
         'niePr',
         'nieSync',
-        'wohnLP',
+        // 'wohnLP',
         'regAbw',
-        'begrAnz',
+        "onlBereit", 
+        "limZPSt",
+        "onlZugang",
+        "IntAsync",
         'gaeste', 
-        // 'gaesteMittel',
+        'gaesteMittel',
         "exkur",
-        // "exkurMittel",
-        "intKoll",
-        "IntSync",
-        "IntAsync"
+        "exkurMittel",
+        'begrAnz',
+        "intKoll"
     ]
     var answers = {}
     var activeScenarios = {}
+    var deltas = {} // stores previous scores
     var recent = []
 
     $.getJSON("data.json", function(json){
@@ -61,7 +64,7 @@
         questionInfo = json['questions']
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
-        displayQuestion(questionOrder[nextQuestion])
+        displayQuestion(questionOrder[nextQuestionIdx])
         // listActiveScenarios(activeScenarios)
         // makeTable(questionInfo, shownScenarios)
     })
@@ -82,32 +85,66 @@
             let aEffects = a[1].effects
             let aConditionalEffects= a[1].conditionalEffects
 
-            let aButton = document.createElement("button"); qDiv.append(aButton)
-            aButton.innerHTML = aText
-            aButton.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
-            aButton.addEventListener("click", function(){
+            let aDiv = document.createElement("div"); qDiv.append(aDiv)
+            let aRadio = document.createElement("input")
+            aRadio.setAttribute("type", "radio")
+            aRadio.setAttribute("name", "Q_" + qKey)
+            aRadio.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
+            aRadio.setAttribute("value", aKey)
+            aRadio.addEventListener("click", function(){
+                console.log(this.parentElement.parentElement)
+                let nButton = this.parentElement.parentElement.getElementsByClassName("nextButton")[0]
+                console.log(nButton)
+                nButton.disabled = false
+                console.log(nButton)
                 selectAnswer(qKey, aKey)
-            })
-            if (aKey == "PR" | aKey =="SO"){
-                aButton.style.display = "none"
-            }
 
+            })
+            let aLabel = document.createElement("label")
+            aLabel.setAttribute("for", "Q_" + qKey + "_A_" + aKey)
+            aLabel.innerHTML = aText
+
+            aDiv.append(aRadio, aLabel)
+            if (aKey == "PR" | aKey =="SO"){
+                aDiv.style.display = "none"
+            }            
 
         })
-        nextQuestion += 1
+
+        let pButton = document.createElement("button"); qDiv.append(pButton)
+        pButton.classList.add("prevButton")
+        pButton.innerHTML = "Vorherige Frage"
+        pButton.addEventListener("click", function(){
+            undoAnswer()
+        })
+        pButton.disabled = true
+
+        let nButton = document.createElement("button"); qDiv.append(nButton)
+        nButton.classList.add("nextButton")
+        nButton.innerHTML = "Nächste Frage"
+        nButton.addEventListener("click", function(){
+            submitAnswer(qKey, answers[qKey])
+            nButton.remove()
+            pButton.remove()
+        })
+        nButton.disabled = true
+        
+
+
+        nextQuestionIdx += 1
     }
-
     function selectAnswer(qKey, aKey){
-        let allButtons = document.getElementById("DIV_" + qKey).querySelectorAll("button")
-        recent = []
-        for (let button of allButtons){
-            if (button.id == "Q_" + qKey + "_A_" + aKey){
-                button.classList.add("selected")   
-            }
-            button.setAttribute("disabled", true)
-        }
-
         answers[qKey] = aKey
+    }
+    function submitAnswer(qKey, aKey){
+        let allRadios = document.getElementById("DIV_" + qKey).querySelectorAll("input")
+        recent = []
+        for (let radio of allRadios){
+            if (radio.id == "Q_" + qKey + "_A_" + aKey){
+                radio.classList.add("selected")   
+            }
+            radio.setAttribute("disabled", true)
+        }
 
         let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
         let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
@@ -137,7 +174,7 @@
             Object.entries(sEffects).forEach((sEntry)=>{
                 let conditions = sEntry[0]
                 let score = sEntry[1]
-                console.log(conditions, score)
+                // console.log(conditions, score)
                 // separate conditions if more than one
                 let met = andCheck(conditions)
                 if (met){
@@ -154,11 +191,33 @@
             listActiveScenarios(activeScenarios)
         }, 100)
 
-        if (nextQuestion < questionOrder.length){
-            displayQuestion(questionOrder[nextQuestion])
+        if (nextQuestionIdx < questionOrder.length){
+            let nextQuestion = questionOrder[nextQuestionIdx]
+            let includeNextQuestion = includeCheck(nextQuestion)
+            if (includeNextQuestion==true){
+                displayQuestion(nextQuestion)
+            } else {
+                if (nextQuestionIdx + 1 < questionOrder.length){
+                    nextQuestionIdx +=1
+                    displayQuestion(questionOrder[nextQuestionIdx])
+                }
+            }
+            
         }
     }
     
+    function includeCheck(qKey){
+        // checks if a question should be displayed
+        // assumes that questions have been ordered correctly, otherwise results may be unexpected
+        let condition = questionInfo[qKey]["condition"]
+        if (condition == true){
+            return true
+        } else {
+            return andCheck(condition)
+        }
+        
+    }
+
     function andCheck(conditions){
         // checks if all conditions qKey=aKey are simultaneously true
         let i = 0
@@ -167,7 +226,7 @@
             if (qKey.includes("!")){
                 // check if it's a NOT test
                 qKeyR = qKey.split("!")[0]
-                if (answers[qKeyR] == aKey){
+                if (answers[qKeyR] == aKey | !answers[qKeyR]){
                     return false
                 } else {
                     i += 1
@@ -230,164 +289,46 @@
             }
         }
     }
-    //     let names = ["onl", "praes", "rem", "hyb", "wechs", "async"]
-    //     names.forEach(function(name){
-    //         let row = document.createElement("tr")
-    //         row.setAttribute("id", name)
-    //         selections.append(row)
-    //         arts = ["vl", "se", "so"]
-    //         arts.forEach(function(art){
-    //             // console.log(art)
-    //             let select = document.createElement("select")
-    //             select.setAttribute("id", name + "-" + art)
-    //             select.setAttribute("multiple", true)
-    //             select.style.height = "4em"
-    //             select.style.width = "10em"
-    //             select.innerHTML = "<option value='' selected ></option>"
-    //             let label = document.createElement("span")
-    //             label.innerHTML = "&nbsp;&nbsp;&nbsp;"+ name + "-" + art + ':&nbsp;'
-    //             let empties = ["wechs-so", "async-vl", "async-se", "rem-so"]
-    //             if (!empties.includes(name + "-" + art)){
-    //                 let cell = document.createElement("td")
-    //                 cell.append(label)
-    //                 cell.append(select)
-    //                 row.append(cell)
-    //             }
 
-    //         })
-    //     })
-    //     Object.entries(all_scenarios).forEach(entry => {
-    //         let code = entry[0]
-    //         let name = code.split("-")[1]
-    //         if (name.includes("wechs")){
-    //             name = "wechs"
-    //         } else if (name.includes("onl")){
-    //             name = "onl"
-    //         } else if (name.includes("praes")){
-    //             name = "praes"
-    //         } else if (name.includes("hyb")){
-    //             name = "hyb"
-    //         }
-    //         let art = code.split("-")[0]
-    //         if (art == "pr"){
-    //             art = "so"
-    //         }
-    //         let whereToAdd = document.getElementById(name + "-" + art)
-    //         let option = document.createElement("option")
-    //         option.setAttribute("value", code)
-    //         option.setAttribute("id", "opt_" + code)
-    //         option.addEventListener("click", function(){
-    //             if (!shownScenarios.includes(code)){
-    //                 addToList(code)
-    //                 shownScenarios.push(code)
-    //             }
+    function updateScore(code, answers){
+        Object.entries(answers).forEach(function(entry){
+            qKey = entry[0]
+            aKey = entry[1]
+            let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
+            let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
 
-    //         })
-    //         option.innerHTML = code
-    //         if (shownScenarios.includes(code)){
-    //             option.setAttribute("selected", true)
-    //         }
-    //         whereToAdd.append(option)
-    //     })
-
-    // }
-
-    function makeTable(questionInfo, shownScenarios){
-        table.innerHTML = ""
-        scenarios = {}
-        shownScenarios.forEach(function(code){
-        scenarios[code] = all_scenarios[code]
-        })
-        // first table row, one blank cell followed by headers
-        var firstRow = document.createElement("tr")
-        firstRow.classList.add("firstRow")
-        firstRow.append(document.createElement("th"))
-        Object.entries(scenarios).forEach(entry => {
-                var sHeader = document.createElement("th")
-                sHeader.innerHTML = entry[0]
-                sHeader.setAttribute("colspan", 4)
-                sHeader.setAttribute("id", entry[0])
-                sHeader.classList.add("sHeader", "clickable")
-                sHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
-                firstRow.append(sHeader)
-        })
-        table.append(firstRow)
-
-        // making rows for each "question"
-        Object.entries(questionInfo).forEach(entry=>{
-            var qKey = entry[0]
-            var qInf = entry[1]
-            var row0 = document.createElement("tr")
-            var row1 = document.createElement("tr")
-            row0.classList.add("row0")
-            row1.classList.add("row1")
-            var rowHeader = document.createElement("th")
-            rowHeader.classList.add("rowHeader", "clickable")
-            rowHeader.setAttribute("id", qKey)
-            rowHeader.setAttribute("rowspan", 2)
-            rowHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
-            rowHeader.innerHTML = qKey // qInf["text"]
-            row0.append(rowHeader)
-            // adding row entries for each "scenario"
-            Object.entries(scenarios).forEach(entry => {
-                var sKey = entry[0]
-                var sVal = entry[1]
-                //adding sub-cells for each possible answer and the corresponding points
-                var numAnswers = Object.keys(qInf["antworten"]).length
-                Object.entries(qInf["antworten"]).forEach(function(entry, idx){
-                    var aKey = entry[0]
-                    var aText = entry[1]
-                    srHeader = document.createElement("td")
-                    srVal = document.createElement("td")
-                    srHeader.classList.add("answerKey", "clickable")
-                    srHeader.setAttribute("id", qKey + "_" + aKey)
-                    srHeader.innerHTML = aKey
-                    srHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
-                    srVal.classList.add("answerVal")
-                    
-
-                    if (qInf["antworten"][aKey]["effects"][sKey]){
-                        var score = qInf["antworten"][aKey]["effects"][sKey]
-                        
-                    } else {
-                        var score = "null"
-                    }
-                    srVal.innerHTML = score
-
-                    try {
-                        var backgroundColor = colorMapping[score]
-                        srVal.style.background = backgroundColor
-                        if (score=="-100"){
-                            srVal.style.color = "#ee9999"
-                        }
-                    } catch (error) {
-                        console.log("No color for this score")
-                    }
-                    if (score == "FUNC"){
-                        srVal.classList.add("clickable")
-                        srVal.setAttribute("id", "VAL_" + qKey + "_" + aKey + "_" + sKey)
-                        srVal.addEventListener("click", function(event){showHideInfo(event,all_data)})
-                    }
-                    
-                    row0.append(srHeader)
-                    row1.append(srVal)
-                })
-                for (i=0; i<(4-numAnswers); i++){
-                    var blankCellH = document.createElement("td")
-                    blankCellH.classList.add("blankCell", "answerKey")
-                    var blankCellD = document.createElement("td")
-                    blankCellD.classList.add("blankCell", "answerVal")
-                    row0.append(blankCellH)
-                    row1.append(blankCellD)
+            Object.entries(effects).forEach((entry)=>{
+                // TODO: Continue here
+                if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+                    let scoreVal = +(activeScenarios[entry[0]])
+                    newScoreVal = scoreVal + entry[1]
+                    activeScenarios[entry[0]] = newScoreVal
+                    recent.push(entry[0])
                 }
             })
-            table.append(row0)
-            table.append(row1)
+
+            Object.entries(conditionalEffects).forEach((entry)=>{
+                let sKey = entry[0]
+                let sEffects = entry[1]
+                console.log(sKey)
+                Object.entries(sEffects).forEach((sEntry)=>{
+                    let conditions = sEntry[0]
+                    let score = sEntry[1]
+                    // console.log(conditions, score)
+                    // separate conditions if more than one
+                    let met = andCheck(conditions)
+                    if (met){
+                        let scoreVal = +(activeScenarios[entry[0]])
+                        newScoreVal = scoreVal + score
+                        activeScenarios[entry[0]] = newScoreVal
+                        recent.push(sKey)
+                    }
+                })
+                
+            })
         })
     }
 
-
-    
         
 </script>
 </body>
