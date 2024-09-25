@@ -21,6 +21,7 @@
     const sCont = document.getElementById("scenarios")
     var all_data, questionInfo, all_scenarios
     
+    var activeQ, activeA
     var nextQuestionIdx = 0
 
     var scenarios = {}
@@ -37,20 +38,20 @@
     var questionOrder = [ 
         'artLV', 
         'modulCombo',
-        'LZiP',
-        'LZsy', 
-        'niePr',
-        'nieSync',
-        // 'wohnLP',
-        'regAbw',
-        "onlBereit", 
-        "limZPSt",
-        "onlZugang",
-        "IntAsync",
-        'gaeste', 
-        'gaesteMittel',
-        "exkur",
-        "exkurMittel",
+        // 'LZiP',
+        // 'LZsy', 
+        // 'niePr',
+        // 'nieSync',
+        // // 'wohnLP',
+        // 'regAbw',
+        // "onlBereit", 
+        // "limZPSt",
+        // "onlZugang",
+        // "IntAsync",
+        // 'gaeste', 
+        // 'gaesteMittel',
+        // "exkur",
+        // "exkurMittel",
         'begrAnz',
         "intKoll"
     ]
@@ -58,6 +59,25 @@
     var activeScenarios = {}
     var deltas = {} // stores previous scores
     var recent = []
+
+    // Previous Question, Next Question buttons (will be moved around)
+    var pButton = document.createElement("button"); document.body.append(pButton)
+    pButton.classList.add("prevButton")
+    pButton.setAttribute("id", "prevButton")
+    pButton.innerHTML = "Vorherige Frage"
+    pButton.addEventListener("click", function(){
+        undoAnswer()
+    })
+    pButton.style.display = "none"
+
+    let nButton = document.createElement("button"); document.body.append(nButton)
+    nButton.classList.add("nextButton")
+    pButton.setAttribute("id", "nextButton")
+    nButton.innerHTML = "Nächste Frage"
+    nButton.addEventListener("click", function(){
+        submitAnswer()
+    })
+    nButton.style.display = "none"
 
     $.getJSON("data.json", function(json){
         all_data = json
@@ -72,6 +92,9 @@
     function displayQuestion(qKey){
         let q = questionInfo[qKey]
         let qText = q.text
+
+        activeQ = qKey
+        activeA = null
 
         let qDiv = document.createElement("div"); qCont.append(qDiv)
         qDiv.setAttribute("id", "DIV_" + qKey)
@@ -92,13 +115,8 @@
             aRadio.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
             aRadio.setAttribute("value", aKey)
             aRadio.addEventListener("click", function(){
-                console.log(this.parentElement.parentElement)
-                let nButton = this.parentElement.parentElement.getElementsByClassName("nextButton")[0]
-                console.log(nButton)
-                nButton.disabled = false
-                console.log(nButton)
+                
                 selectAnswer(qKey, aKey)
-
             })
             let aLabel = document.createElement("label")
             aLabel.setAttribute("for", "Q_" + qKey + "_A_" + aKey)
@@ -111,32 +129,36 @@
 
         })
 
-        let pButton = document.createElement("button"); qDiv.append(pButton)
-        pButton.classList.add("prevButton")
-        pButton.innerHTML = "Vorherige Frage"
-        pButton.addEventListener("click", function(){
-            undoAnswer()
-        })
-        pButton.disabled = true
-
-        let nButton = document.createElement("button"); qDiv.append(nButton)
-        nButton.classList.add("nextButton")
-        nButton.innerHTML = "Nächste Frage"
-        nButton.addEventListener("click", function(){
-            submitAnswer(qKey, answers[qKey])
-            nButton.remove()
-            pButton.remove()
-        })
+        qDiv.append(pButton)
+        qDiv.append(nButton)
         nButton.disabled = true
+        pButton.style.display = nextQuestionIdx == 0 ? "none" : "inline"
+        nButton.style.display = "inline"
         
-
-
         nextQuestionIdx += 1
     }
     function selectAnswer(qKey, aKey){
+        // check if there would be a next question if this answer is selected; if so, enable the "Next Button"
+        let includeNextQuestion = false
+        let dummyIdx = nextQuestionIdx
+        while (dummyIdx < questionOrder.length && includeNextQuestion == false){
+            let nextQuestion = questionOrder[dummyIdx]
+            includeNextQuestion = includeCheck(nextQuestion)
+            if (includeNextQuestion){
+                nButton.disabled = false
+                break
+            } else {
+                dummyIdx += 1
+            }
+        }
+
         answers[qKey] = aKey
+        activeA = aKey
     }
-    function submitAnswer(qKey, aKey){
+
+    function submitAnswer(){
+        qKey = activeQ
+        aKey = activeA
         let allRadios = document.getElementById("DIV_" + qKey).querySelectorAll("input")
         recent = []
         for (let radio of allRadios){
@@ -170,7 +192,7 @@
         Object.entries(conditionalEffects).forEach((entry)=>{
             let sKey = entry[0]
             let sEffects = entry[1]
-            console.log(sKey)
+        
             Object.entries(sEffects).forEach((sEntry)=>{
                 let conditions = sEntry[0]
                 let score = sEntry[1]
@@ -191,21 +213,91 @@
             listActiveScenarios(activeScenarios)
         }, 100)
 
-        if (nextQuestionIdx < questionOrder.length){
+        // check if there is another question left to display and, if yes, do so.
+        let includeNextQuestion = false
+        while (nextQuestionIdx < questionOrder.length && includeNextQuestion == false){
             let nextQuestion = questionOrder[nextQuestionIdx]
-            let includeNextQuestion = includeCheck(nextQuestion)
-            if (includeNextQuestion==true){
+            includeNextQuestion = includeCheck(nextQuestion)
+            if (includeNextQuestion){
                 displayQuestion(nextQuestion)
+                break
             } else {
-                if (nextQuestionIdx + 1 < questionOrder.length){
-                    nextQuestionIdx +=1
-                    displayQuestion(questionOrder[nextQuestionIdx])
-                }
+                nextQuestionIdx += 1
             }
-            
         }
     }
     
+    function undoAnswer(){
+        // remove current question
+        document.getElementById("DIV_" + activeQ).remove()
+        
+        // if user has already selected an answer for the current question and not submitted it:
+        // remove the current answer from 'answers' before proceeding
+        if (activeA){
+            delete answers[activeQ]
+        }
+
+        // get information about the last answered question
+        activeQ = Object.keys(answers)[Object.keys(answers).length-1]
+        nextQuestionIdx = questionOrder.indexOf(activeQ)
+        activeA = null
+        let lastAnswer = answers[activeQ]
+        delete answers[activeQ]
+
+        let qKey = activeQ
+        let aKey = lastAnswer
+
+        let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
+        let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
+        
+        recent = []
+        // calculate score provided by last answer for each code (but this time subtract it!)
+        Object.entries(effects).forEach((entry)=>{
+            // if (entry[1]== -100){
+                
+            //     delete activeScenarios[entry[0]]
+            // } else if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+            //     let scoreVal = +(activeScenarios[entry[0]])
+            //     newScoreVal = scoreVal + entry[1]
+            //     activeScenarios[entry[0]] = newScoreVal
+            //     recent.push(entry[0])
+            // }
+            if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+                let scoreVal = +(activeScenarios[entry[0]])
+                newScoreVal = scoreVal - entry[1]
+                activeScenarios[entry[0]] = newScoreVal
+                recent.push(entry[0])
+            }
+        })
+
+        Object.entries(conditionalEffects).forEach((entry)=>{
+            let sKey = entry[0]
+            let sEffects = entry[1]
+            Object.entries(sEffects).forEach((sEntry)=>{
+                let conditions = sEntry[0]
+                let score = sEntry[1]
+                // console.log(conditions, score)
+                // separate conditions if more than one
+                let met = andCheck(conditions)
+                if (met){
+                    let scoreVal = +(activeScenarios[entry[0]])
+                    newScoreVal = scoreVal - score
+                    activeScenarios[entry[0]] = newScoreVal
+                    recent.push(sKey)
+                }
+            })
+            
+        })
+
+        // remove previous question and display it again
+        document.getElementById("DIV_" + activeQ).remove()
+        displayQuestion(activeQ)
+
+        setTimeout(()=>{
+            listActiveScenarios(activeScenarios)
+        }, 100)
+    }
+
     function includeCheck(qKey){
         // checks if a question should be displayed
         // assumes that questions have been ordered correctly, otherwise results may be unexpected
@@ -245,7 +337,6 @@
         }
         conditions.split("+").forEach((condition, i)=>{
             [qKey, aKey] = condition.split("=")
-            console.log(condition, qKey, aKey)
             if (answers[qKey] != aKey){
                 if (i <4){
                     realConditions[i] = false
@@ -276,7 +367,6 @@
             }
             sCont.append(tr)
         })
-        console.log(Object.keys(sObj).length)
 
         for (let score of document.querySelectorAll(".score")){
             let value = +(score.innerHTML)
@@ -289,46 +379,6 @@
             }
         }
     }
-
-    function updateScore(code, answers){
-        Object.entries(answers).forEach(function(entry){
-            qKey = entry[0]
-            aKey = entry[1]
-            let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
-            let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
-
-            Object.entries(effects).forEach((entry)=>{
-                // TODO: Continue here
-                if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
-                    let scoreVal = +(activeScenarios[entry[0]])
-                    newScoreVal = scoreVal + entry[1]
-                    activeScenarios[entry[0]] = newScoreVal
-                    recent.push(entry[0])
-                }
-            })
-
-            Object.entries(conditionalEffects).forEach((entry)=>{
-                let sKey = entry[0]
-                let sEffects = entry[1]
-                console.log(sKey)
-                Object.entries(sEffects).forEach((sEntry)=>{
-                    let conditions = sEntry[0]
-                    let score = sEntry[1]
-                    // console.log(conditions, score)
-                    // separate conditions if more than one
-                    let met = andCheck(conditions)
-                    if (met){
-                        let scoreVal = +(activeScenarios[entry[0]])
-                        newScoreVal = scoreVal + score
-                        activeScenarios[entry[0]] = newScoreVal
-                        recent.push(sKey)
-                    }
-                })
-                
-            })
-        })
-    }
-
         
 </script>
 </body>
