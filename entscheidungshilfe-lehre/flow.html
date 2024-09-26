@@ -14,7 +14,9 @@
 <h2>Fragereihe-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
 <div style="display: table; width: 100%">
     <div id="questions" class="qCont"></div>
+    <div id="result" class="rCont" style="display:none">Result</div>
     <div id="scenarios" class="sCont"></div>
+    
 </div>
 <script>
     const qCont = document.getElementById("questions")
@@ -25,7 +27,7 @@
     var nextQuestionIdx = 0
 
     var scenarios = {}
-    var colorMapping = {
+    const colorMapping = {
         "-100": "#C00000",
         "-2": "#f77e59",
         "-1": "#ffa185",
@@ -34,33 +36,34 @@
         "2": "#A9D08E",
         "FUNC": "#FFFFAA"
     }
-//  'artLV',
-    var questionOrder = [ 
+
+    const questionOrder = [ 
         'artLV', 
         'modulCombo',
-        // 'LZiP',
-        // 'LZsy', 
-        // 'niePr',
-        // 'nieSync',
-        // // 'wohnLP',
-        // 'regAbw',
-        // "onlBereit", 
-        // "limZPSt",
-        // "onlZugang",
-        // "IntAsync",
-        // 'gaeste', 
-        // 'gaesteMittel',
-        // "exkur",
-        // "exkurMittel",
+        'LZiP',
+        'LZsy', 
+        'niePr',
+        'nieSync',
+        // 'wohnLP',
+        'regAbw',
+        "onlBereit", 
+        "limZPSt",
+        "onlZugang",
+        "IntAsync",
+        'gaeste', 
+        'gaesteMittel',
+        "exkur",
+        "exkurMittel",
         'begrAnz',
         "intKoll"
     ]
     var answers = {}
     var activeScenarios = {}
-    var deltas = {} // stores previous scores
     var recent = []
 
-    // Previous Question, Next Question buttons (will be moved around)
+    const maxShownAnswers = 4
+
+    // Previous Question, Next Question, Submit buttons (will be moved around)
     var pButton = document.createElement("button"); document.body.append(pButton)
     pButton.classList.add("prevButton")
     pButton.setAttribute("id", "prevButton")
@@ -72,12 +75,21 @@
 
     let nButton = document.createElement("button"); document.body.append(nButton)
     nButton.classList.add("nextButton")
-    pButton.setAttribute("id", "nextButton")
+    nButton.setAttribute("id", "nextButton")
     nButton.innerHTML = "Nächste Frage"
     nButton.addEventListener("click", function(){
         submitAnswer()
     })
     nButton.style.display = "none"
+
+    let sButton = document.createElement("button"); document.body.append(sButton)
+    sButton.classList.add("nextButton")
+    sButton.setAttribute("id", "submitButton")
+    sButton.innerHTML = "Absenden"
+    sButton.addEventListener("click", function(){
+        getResult()
+    })
+    sButton.style.display = "none"
 
     $.getJSON("data.json", function(json){
         all_data = json
@@ -85,8 +97,6 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         displayQuestion(questionOrder[nextQuestionIdx])
-        // listActiveScenarios(activeScenarios)
-        // makeTable(questionInfo, shownScenarios)
     })
     
     function displayQuestion(qKey){
@@ -137,10 +147,15 @@
         
         nextQuestionIdx += 1
     }
+
     function selectAnswer(qKey, aKey){
         // check if there would be a next question if this answer is selected; if so, enable the "Next Button"
         let includeNextQuestion = false
         let dummyIdx = nextQuestionIdx
+        if (dummyIdx >= questionOrder.length){
+                document.getElementById("DIV_" + activeQ).append(sButton)
+                sButton.style.display="inline"
+            }
         while (dummyIdx < questionOrder.length && includeNextQuestion == false){
             let nextQuestion = questionOrder[dummyIdx]
             includeNextQuestion = includeCheck(nextQuestion)
@@ -150,6 +165,8 @@
             } else {
                 dummyIdx += 1
             }
+            console.log(dummyIdx)
+
         }
 
         answers[qKey] = aKey
@@ -172,15 +189,6 @@
         let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
 
         Object.entries(effects).forEach((entry)=>{
-            // if (entry[1]== -100){
-                
-            //     delete activeScenarios[entry[0]]
-            // } else if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
-            //     let scoreVal = +(activeScenarios[entry[0]])
-            //     newScoreVal = scoreVal + entry[1]
-            //     activeScenarios[entry[0]] = newScoreVal
-            //     recent.push(entry[0])
-            // }
             if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
                 let scoreVal = +(activeScenarios[entry[0]])
                 newScoreVal = scoreVal + entry[1]
@@ -196,7 +204,6 @@
             Object.entries(sEffects).forEach((sEntry)=>{
                 let conditions = sEntry[0]
                 let score = sEntry[1]
-                // console.log(conditions, score)
                 // separate conditions if more than one
                 let met = andCheck(conditions)
                 if (met){
@@ -253,15 +260,6 @@
         recent = []
         // calculate score provided by last answer for each code (but this time subtract it!)
         Object.entries(effects).forEach((entry)=>{
-            // if (entry[1]== -100){
-                
-            //     delete activeScenarios[entry[0]]
-            // } else if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
-            //     let scoreVal = +(activeScenarios[entry[0]])
-            //     newScoreVal = scoreVal + entry[1]
-            //     activeScenarios[entry[0]] = newScoreVal
-            //     recent.push(entry[0])
-            // }
             if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
                 let scoreVal = +(activeScenarios[entry[0]])
                 newScoreVal = scoreVal - entry[1]
@@ -298,6 +296,94 @@
         }, 100)
     }
 
+    function listActiveScenarios(sObju){
+        sObj = Object.entries(sObju).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+        sCont.innerHTML = ""
+        Object.entries(sObj).forEach((entry)=>{
+            sKey = entry[0]
+            sVal = entry[1]
+            let tr = document.createElement("tr")
+            let name = document.createElement("th")
+            let score = document.createElement("td")
+            name.innerHTML = sKey 
+            score.innerHTML = sVal
+            score.setAttribute("id", "SCORE_" + sKey)
+            score.classList.add("score")
+            tr.append(name, score)
+            if (recent.includes(sKey)){
+                tr.classList.add("recent")
+            }
+            sCont.append(tr)
+        })
+
+        for (let score of document.querySelectorAll(".score")){
+            let value = +(score.innerHTML)
+            if (value > 0){
+                score.style.color = "#0e7700"
+            } else if (value <0){
+                score.style.color = "#d93300"
+            } else {
+                score.style.color = "#585858"
+            }
+        }
+    }
+
+    function getResult(topResults){
+        // filteredScenarios = Object.entries(activeScenarios).filter(([key, val])=> val > -85).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})
+        // sortedScenarios = Object.entries(filteredScenarios).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+
+        // determine top 3 scores (multiple scenarios can have the same score)
+        let firstScore = Math.max(...Object.values(topResults))
+        let topTier = Object.entries(topResults).filter(([k,v])=>v==firstScore).reduce((r, [k,v])=>[...r,k], []) // returns list of scenarios
+
+        let secondScore = Math.max(...Object.values(Object.entries(topResults).filter(([k,v])=>v<firstScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
+        let secondTier = Object.entries(topResults).filter(([k,v])=>v==secondScore).reduce((r, [k,v])=>[...r,k], [])
+
+        let thirdScore = Math.max(...Object.values(Object.entries(topResults).filter(([k,v])=>v<secondScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
+        let thirdTier = Object.entries(topResults).filter(([k,v])=>v==thirdScore).reduce((r, [k,v])=>[...r,k], [])
+        
+        // decide which scenarios to show!
+        let shownScenarios = []
+        
+        for (let i=0; i<maxShownAnswers; i++){
+            // first tier: include all non-duplicates
+            if (i<topTier.length){
+                let scenarioToAdd = topTier[i]
+                let sType = scenarioToAdd.split("-")[1]
+                // do not add scenarios with same format hyb, rem, ringonl, etc.
+                if (!shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){
+                    shownScenarios.push(scenarioToAdd)
+                }
+
+            } else {
+                // second tier: don't consider if score less than zero
+                if (i < (topTier.length+secondTier.length)){
+                    let j = i - topTier.length
+                    let scenarioToAdd = secondTier[j]
+                    let sType = scenarioToAdd.split("-")[1]
+                    if (!shownScenarios.map((str)=>str.split("-")[1]).includes(sType) && secondScore>=0){
+                        shownScenarios.push(scenarioToAdd)
+                    }
+
+                } else {
+                    // third tier: don't consider if score less than zero
+                    let k = i - topTier.legnth - secondTier.length
+                    let scenarioToAdd = thirdTier[k]
+                    let sType = scenarioToAdd.split("-")[1]
+                    if (!shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){
+                        shownScenarios.push(scenarioToAdd)
+                    }
+                    }
+                }          
+            
+        }
+
+        console.log(topTier, secondTier, thirdTier)
+        return shownScenarios
+
+    }
+
+    // Auxiliary functions
     function includeCheck(qKey){
         // checks if a question should be displayed
         // assumes that questions have been ordered correctly, otherwise results may be unexpected
@@ -348,38 +434,13 @@
         
     }
 
-    function listActiveScenarios(sObju, sorted=false){
-        sObj = Object.entries(sObju).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-        sCont.innerHTML = ""
-        Object.entries(sObj).forEach((entry)=>{
-            sKey = entry[0]
-            sVal = entry[1]
-            let tr = document.createElement("tr")
-            let name = document.createElement("th")
-            let score = document.createElement("td")
-            name.innerHTML = sKey 
-            score.innerHTML = sVal
-            score.setAttribute("id", "SCORE_" + sKey)
-            score.classList.add("score")
-            tr.append(name, score)
-            if (recent.includes(sKey)){
-                tr.classList.add("recent")
-            }
-            sCont.append(tr)
-        })
-
-        for (let score of document.querySelectorAll(".score")){
-            let value = +(score.innerHTML)
-            if (value > 0){
-                score.style.color = "#0e7700"
-            } else if (value <0){
-                score.style.color = "#d93300"
-            } else {
-                score.style.color = "#585858"
-            }
-        }
-    }
-        
+    topResults =  {'se-rem-2-3-2': 2,
+    'se-rem-2-1-1': 2, 
+    'se-praes-2-3-2': 2, 
+    'se-praeshybwechs-2-3-2': 2, 
+    'se-hyb-2-3-2': 1, 
+    'se-onl-2-3-2': 1,
+    'se-onl-2-1-1': 0,}        
 </script>
 </body>
 </html>
