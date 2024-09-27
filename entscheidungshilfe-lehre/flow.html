@@ -14,7 +14,18 @@
 <h2>Fragereihe-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
 <div style="display: table; width: 100%">
     <div id="questions" class="qCont"></div>
-    <div id="result" class="rCont" style="display:none">Result</div>
+    <div id="result" class="rCont">
+        <p>Ihr Ergebnis:</p>
+        <div id="resOverview" class="block resOverview">
+            <h3 id="resTitle" class="resTitle">Titel des Lehr-Lernszenarios</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <img src="../images/entscheidungshilfe/sampleResult.png" />
+        </div>
+        <div id="resSync" class="block aSync">
+            <h4>Tipps für die synchrone Interaktion</h4>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        </div>
+    </div>
     <div id="scenarios" class="sCont"></div>
     
 </div>
@@ -329,61 +340,65 @@
     }
 
     function getResult(topResults){
-        // filteredScenarios = Object.entries(activeScenarios).filter(([key, val])=> val > -85).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})
-        // sortedScenarios = Object.entries(filteredScenarios).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-
-        // determine top 3 scores (multiple scenarios can have the same score)
-        let firstScore = Math.max(...Object.values(topResults))
-        let topTier = Object.entries(topResults).filter(([k,v])=>v==firstScore).reduce((r, [k,v])=>[...r,k], []) // returns list of scenarios
-
-        let secondScore = Math.max(...Object.values(Object.entries(topResults).filter(([k,v])=>v<firstScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
-        let secondTier = Object.entries(topResults).filter(([k,v])=>v==secondScore).reduce((r, [k,v])=>[...r,k], [])
-
-        let thirdScore = Math.max(...Object.values(Object.entries(topResults).filter(([k,v])=>v<secondScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
-        let thirdTier = Object.entries(topResults).filter(([k,v])=>v==thirdScore).reduce((r, [k,v])=>[...r,k], [])
-        
         // decide which scenarios to show!
-        let shownScenarios = []
+        let shownScenarios = getTopScenarios(topResults)
         
-        for (let i=0; i<maxShownAnswers; i++){
+        
+
+    }
+    
+    // Auxiliary funcitons (specialized)
+    function getTopScenarios(results){
+        shownScenarios = []
+        // determine top 3 scores (multiple scenarios can have the same score)
+        let firstScore = Math.max(...Object.values(results))
+        let topTier = Object.entries(results).filter(([k,v])=>v==firstScore).reduce((r, [k,v])=>[...r,k], []) // returns list of scenarios
+
+        let secondScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<firstScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
+        let secondTier = Object.entries(results).filter(([k,v])=>v==secondScore).reduce((r, [k,v])=>[...r,k], [])
+
+        let thirdScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<secondScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
+        let thirdTier = Object.entries(results).filter(([k,v])=>v==thirdScore).reduce((r, [k,v])=>[...r,k], [])
+        
+        for (let i=0; i<(topTier.length + secondTier.length + thirdTier.length); i++){
             // first tier: include all non-duplicates
             if (i<topTier.length){
                 let scenarioToAdd = topTier[i]
-                let sType = scenarioToAdd.split("-")[1]
                 // do not add scenarios with same format hyb, rem, ringonl, etc.
-                if (!shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){
+                if (notDuplicate(scenarioToAdd, shownScenarios)){
                     shownScenarios.push(scenarioToAdd)
                 }
 
             } else {
                 // second tier: don't consider if score less than zero
-                if (i < (topTier.length+secondTier.length)){
+                if (i < (topTier.length+secondTier.length) && secondScore>=0){
                     let j = i - topTier.length
                     let scenarioToAdd = secondTier[j]
-                    let sType = scenarioToAdd.split("-")[1]
-                    if (!shownScenarios.map((str)=>str.split("-")[1]).includes(sType) && secondScore>=0){
+                    if (notDuplicate(scenarioToAdd, shownScenarios)){
                         shownScenarios.push(scenarioToAdd)
                     }
 
                 } else {
                     // third tier: don't consider if score less than zero
-                    let k = i - topTier.legnth - secondTier.length
-                    let scenarioToAdd = thirdTier[k]
-                    let sType = scenarioToAdd.split("-")[1]
-                    if (!shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){
-                        shownScenarios.push(scenarioToAdd)
+                    if (thirdScore>=0){
+                        let k = i - topTier.length - secondTier.length
+                        let scenarioToAdd = thirdTier[k]
+                        if (notDuplicate(scenarioToAdd, shownScenarios)){
+                            shownScenarios.push(scenarioToAdd)
+                        }
                     }
+
                     }
-                }          
+                }
+            if (shownScenarios.length >=maxShownAnswers){
+                break
+            }     
             
         }
-
-        console.log(topTier, secondTier, thirdTier)
         return shownScenarios
-
     }
 
-    // Auxiliary functions
+
     function includeCheck(qKey){
         // checks if a question should be displayed
         // assumes that questions have been ordered correctly, otherwise results may be unexpected
@@ -432,6 +447,28 @@
             }
         })
         
+    }
+    
+    function notDuplicate(newScenario, shownScenarios){
+        sType = newScenario.split("-")[1]
+        if (shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){
+            // if the type of scenario is the same, still include if there is asynchronous participation alternative for one scenario
+            let matchingScenarios = shownScenarios.filter((str)=>str.split("-")[1] == sType)
+            if (matchingScenarios.length > 1){
+                // can't add same scenario a third time!
+                return false
+            }
+            let matchingScenario = matchingScenarios[0]
+            let asyncNew = newScenario.split("-")[3] // asynchronous participation mode of new scenario
+            let asyncMatching = matchingScenario.split("-")[3] // asynchronous participation mode of matching scenario
+            if ([asyncNew, asyncMatching].includes("3") && asyncNew != asyncMatching){
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return true
+        }
     }
 
     topResults =  {'se-rem-2-3-2': 2,
