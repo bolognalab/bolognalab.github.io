@@ -79,12 +79,17 @@ li > .closeBtn {
 .sCont {
     color: rgb(4, 23, 133)
 }
-.qCont, .sCont, .rCont {
+/* .qCont, .sCont, .rCont {
     display: table-cell;
     vertical-align: top;
-}
-.qCont, .rCont {
+} */
+/* .qCont, .rCont {
     width: 45%;
+} */
+.rCont {
+    width: 95%;
+    max-width: 800px;
+    margin: auto;
 }
 .sCont {
     width: 10%;
@@ -109,12 +114,78 @@ li > .closeBtn {
 }
 
 /* result container */
-.resOverview p, .resOverview img {
-    display: inline-block;
-}
-.block p {
+/* .block p {
     width: 60%;
 }
 .resOverview img {
     width: 30%;
+}
+
+.block > p, .block .tCont {
+    display: inline-block;
+    position: relative;
+}
+
+.tip {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 3em;
+} */
+.rCont h4 {
+    margin-top: 3em;
+}
+.block {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    resize: both;
+    gap: 30px;
+    align-items: flex-start
+}
+
+.block > * {
+    max-width: 100%;
+    width: 100%;
+    /* flex: 1 1; */
+}
+.block > p {
+    margin-top: 0;
+}
+.tip {
+    background-color: #b1d6fa;
+    margin: 4px;
+    height: 3em;
+    padding: 0.5em;
+    box-sizing: border-box;
+    position: relative;
+}
+.tip > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+
+}
+.tip img {
+    left:  1em;
+    height: 1em;
+    width: auto;
+}
+.tip span {
+    left: 2.5em
+}
+
+@media only screen and (min-width: 600px){
+    .block > * {
+        max-width: 50%;
+        flex: 1 1;
+    }
 }
