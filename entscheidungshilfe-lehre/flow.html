@@ -14,29 +14,19 @@
 <h2>Fragereihe-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
 <div style="display: table; width: 100%">
     <div id="questions" class="qCont"></div>
+    <hr />
     <div id="result" class="rCont">
-        <p>Ihr Ergebnis:</p>
-        <h3 id="resTitle" class="resTitle">Titel des Lehr-Lernszenarios</h3>
-        <div id="resOverview" class="block resOverview">
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            <img src="../images/entscheidungshilfe/sampleResult.png" />
-        </div>
-        <h4>Tipps für die synchrone Interaktion</h4>
-        <div id="resSync" class="block aSync">
-            <p style="display: inline-block">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
-            <div id="resSyn-tips" class="tCont">
-                <div class="tip"><img src="../images/fwd3.svg" /><span>Tip Lorem ipsum dolor</span></div>
-                <div class="tip"><img src="../images/fwd3.svg" /><span>Tip Lorem ipsum dolor</span></div>
-            </div>
-        </div>
-    </div>
+    <hr />
     <div id="scenarios" class="sCont"></div>
     
 </div>
+<script src="../assets/js/jquery.csv.js"></script>
 <script>
     const qCont = document.getElementById("questions")
     const sCont = document.getElementById("scenarios")
-    var all_data, questionInfo, all_scenarios
+    const rCont = document.getElementById("result")
+
+    var all_data, questionInfo, all_scenarios, all_texts
     
     var activeQ, activeA
     var nextQuestionIdx = 0
@@ -112,8 +102,22 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         displayQuestion(questionOrder[nextQuestionIdx])
+        $.get( "texte.csv", function(CSVdata) {
+            let csvData = $.csv.toObjects(CSVdata, {separator:';'});
+            all_texts = {}
+            csvData.forEach(function(dict){
+                let key = dict["wert"]
+                delete dict["wert"]
+                all_texts[key] = dict
+            })
+            setTimeout(showResult('vl-rem-1-1-1'), 500)
+            });
+        
     })
     
+
+
+
     function displayQuestion(qKey){
         let q = questionInfo[qKey]
         let qText = q.text
@@ -351,6 +355,57 @@
 
     }
     
+    function showResult(scenario='de-default-0-0-0', specialCases=[]){
+        // gathering texts
+        let scenarioTitle = all_scenarios[scenario]['unterrichtsformat']
+        let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
+        let syncIntValue = "syncInt-" + scenario.split("-")[2]
+        let asyncTNValue = "asyncTN-" + scenario.split("-")[3]
+        let asyncIntValue = "asyncInt-" + scenario.split("-")[4]
+
+        let overviewText = all_texts[scenarioValue]["text_overview"]
+        let syncIntText =  all_texts[scenarioValue]["text_" + syncIntValue]
+        let asyncTNText =  all_texts[scenarioValue]["text_" + asyncTNValue]
+        let asyncIntText =  all_texts[scenarioValue]["text_" + asyncIntValue]
+
+        // building HTML elements
+        rCont.innerHTML = '<p>Ihr Ergebnis:</p>'
+        
+        // overview block
+        let overviewBlock = document.createElement("div"); rCont.append(overviewBlock)
+        overviewBlock.classList.add("block", "overview")
+        let resTitle = document.createElement("h3"); overviewBlock.append(resTitle)
+        resTitle.innerHTML = scenarioTitle
+
+        let overviewContent = document.createElement("div"); overviewBlock.append(overviewContent)
+        overviewContent.classList.add("blockContent")
+        
+        let overviewP = document.createElement("p"); overviewContent.append(overviewP)
+        overviewP.innerHTML = overviewText
+        let scenarioImg = document.createElement("img"); overviewContent.append(scenarioImg)
+        scenarioImg.setAttribute("src", "../images/entscheidungshilfe/sampleResult.png" )
+        scenarioImg.setAttribute("alt", "Studenten und Studentinnen in einem Raum" )
+
+        // syncInter block
+        let syncInterBlock = document.createElement("div"); rCont.append(syncInterBlock)
+        syncInterBlock.classList.add("block", "sync")
+
+        let syncTitle = document.createElement("h4"); syncInterBlock.append(syncTitle)
+        syncTitle.innerHTML = "Tipps für die synchrone Interaktion"
+
+        let syncInterContent = document.createElement("div"); syncInterBlock.append(syncInterContent)
+        syncInterContent.classList.add("blockContent")
+
+        let syncInterP = document.createElement("p"); syncInterContent.append(syncInterP)
+        syncInterP.innerHTML = syncIntText
+        let syncTips = document.createElement("ul"); syncInterContent.append(syncTips)
+        syncTips.classList.add("tCont")
+        syncTips.innerHTML = "<li class='tip'><h5><img src='../images/fwd3.svg' alt='' /><span>Tip Lorem ipsum dolor</span></h5><p class='tipContent'>At vero eos et accusam et justo duo dolores et ea rebum!</p></li><li class='tip'><h5><img src='../images/fwd3.svg' alt=''/><span>Tip Lorem ipsum dolor</span></h5><p class='tipContent'>At vero eos et accusam et justo duo dolores et ea rebum!</p></li>"
+        
+        
+    }
+    
+
     // Auxiliary funcitons (specialized)
     function getTopScenarios(results){
         shownScenarios = []

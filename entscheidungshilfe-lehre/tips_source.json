@@ -2,15 +2,18 @@
     "tips": {
         "lernkino": {
             "type": "synchron",
+            "title": "Lernkino",
             "content": "<a href='https://www.e-teaching.org/praxis/hybride-lernraeume/lernkino'>https://www.e-teaching.org/praxis/hybride-lernraeume/lernkino</a>"
         },
         "privateEcke": {
             "type": "synchron",
+            "title": "Privatsphäre beim Aufzeichnen",
             "content": "Ein Teil des Raums, in dem Studierende, die ihre Privatsphäre wahren wollen, außerhalb des Kamerawinkels sitzen können."
         },
-        "aufzeichnung": {
+        "asyncfeedback": {
             "type": "asynchron",
-            "content": ""
+            "title": "Asynchrones Feedback",
+            "content": "TODO"
         }
     },
     "specialCases": {

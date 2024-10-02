@@ -145,9 +145,9 @@
             "order": 0,
             "text": "Wie viel studentische Interaktion ist <b>während der Kurssitzungen</b> für die Lernziele des Kurses benötigt?",
             "antworten": {
-                "0": "Die Lernziele des Kurses können auch mit minimaler oder nur gelegentlicher Interaktion erreicht werden.",
-                "1": "Die Studierenden sollen mit der Lehrperson (auch z.B. durch Polls oder Clicker) interagieren, aber nicht unbedingt mit anderen Studierenden",
-                "2": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren."
+                "0": "Die Studierenden brauchen nur gelegentlich während des Unterrichts aktiv beizutragen (der Unterricht ist eher frontal)",
+                "1": "Die Studierenden sollen sich im Kurs aktiv beteiligen, aber es gibt keine gezielte Gruppenarbeit während des Unterrichts",
+                "2": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren und gelegentlich in Gruppen arbeiten."
             }
         },
 

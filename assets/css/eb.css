@@ -1,6 +1,20 @@
 
+:root {
+    --networkBlack: #373736;
+    --networkTurqoise: #12A19A;
+    --networkBlue: #0F70B7;
+    --networkBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
+    --vibrantBlue: #0F70B7;
+    --vibrantBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
+
+}
+
 body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    color: var(--networkBlack)
+}
+h1, h2, h3, h4 {
+    color: black
 }
 th, td {
     text-align: center;
@@ -79,14 +93,8 @@ li > .closeBtn {
 .sCont {
     color: rgb(4, 23, 133)
 }
-/* .qCont, .sCont, .rCont {
-    display: table-cell;
-    vertical-align: top;
-} */
-/* .qCont, .rCont {
-    width: 45%;
-} */
-.rCont {
+
+.rCont, .sCont, .qCont {
     width: 95%;
     max-width: 800px;
     margin: auto;
@@ -114,28 +122,22 @@ li > .closeBtn {
 }
 
 /* result container */
-/* .block p {
-    width: 60%;
-}
-.resOverview img {
-    width: 30%;
+.rCont > p:first-child {
+    margin-top: 8em
 }
 
-.block > p, .block .tCont {
-    display: inline-block;
-    position: relative;
-}
-
-.tip {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 3em;
-} */
-.rCont h4 {
-    margin-top: 3em;
-}
 .block {
+    padding: 15px 15px;
+}
+.block:nth-child(2n+1){
+    background-color: #f3fbff;
+    margin-top: 2em;
+}
+.block:last-child {
+    margin-bottom: 8em;
+}
+
+.blockContent {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -152,40 +154,126 @@ li > .closeBtn {
     align-items: flex-start
 }
 
-.block > * {
+
+.blockContent > * {
     max-width: 100%;
     width: 100%;
     /* flex: 1 1; */
 }
-.block > p {
+.blockContent > p {
     margin-top: 0;
 }
+
+@media only screen and (min-width: 600px){
+    .blockContent > * {
+        max-width: 50%;
+        flex: 1 1;
+    }
+
+}
+
+ul.tCont, ul.altCont {
+    list-style-type: none; 
+    padding-left: 0;
+    margin: 0 0;
+}
+
+
+/* tips */
 .tip {
-    background-color: #b1d6fa;
+    box-sizing: border-box;
+    margin: 0.5em 0;
+    border-bottom: solid 0.5px rgb(226, 235, 255);
+}
+
+.tip h5{
+    font-size: inherit;
+    margin: 0 0;
+    padding: 0 0;
+    height: 3em;
+    box-sizing: border-box;
+    position: relative; 
+    cursor: pointer;
+    color: var(--vibrantBlue)
+}
+
+.tip h5 > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.tip h5 > img {
+    left:  1em;
+    height: 1em;
+    width: auto;
+    filter: var(--vibrantBlueFilter); 
+    
+}
+
+.tip h5 > span {
+    left: 2.5em
+}
+
+.tip .tipContent {
+    display: none;
+    color: var(--vibrantBlue);
+    padding: 0 1em;
+    margin-top: 0;
+}
+
+.tip h5:hover{
+    background-color: var(--vibrantBlue);
+    color: white;
+}
+.tip h5:hover > img {
+    filter: brightness(0) saturate(100%) invert(95%) sepia(62%) saturate(2%) hue-rotate(116deg) brightness(109%) contrast(100%); 
+}
+
+.tip.open h5 {
+    color: var(--vibrantBlue);
+}
+.tip.open h5 > img {
+    transform: rotate(90deg) translate(-50%, 0);
+}
+.tip.open .tipContent {
+    display: block;
+}
+.tip.open h5:hover {
+    background-color: rgba(0,0,0,0);
+    color: var(--vibrantBlue);
+}
+.tip.open h5:hover > img {
+    filter: var(--vibrantBlueFilter)
+}
+
+/* technical sheets */
+.pdfLink {
+    margin: 0 0;
+    text-align: center
+}
+.pdfLink > img {
+    width: 80%;
+    max-width: 200px;
+    border-radius: 2em;
+    margin-bottom: 0.5em;
+    border: 2px solid var(--vibrantBlue);
+    cursor: pointer
+}
+.pdfLink > strong {
+    display: block;
+    font-size: 0.9em;
+}
+
+/* more results (alternative scenarios) */
+.altScenario {
     margin: 4px;
     height: 3em;
     padding: 0.5em;
     box-sizing: border-box;
-    position: relative;
-}
-.tip > * {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%)
-
-}
-.tip img {
-    left:  1em;
-    height: 1em;
-    width: auto;
-}
-.tip span {
-    left: 2.5em
+    
 }
 
-@media only screen and (min-width: 600px){
-    .block > * {
-        max-width: 50%;
-        flex: 1 1;
-    }
+.altScenario a {
+    font-weight: bold;
 }
