@@ -1,0 +1,29 @@
+﻿wert;name;tips_general;tips_syncInt-0;tips_syncInt-1;tips_syncInt-2;tips_asyncTN-0;tips_asyncTN-1;tips_asyncTN-2;tips_asyncTN-3;tips_asyncTN-4;tips_asyncInt-0;tips_asyncInt-1;tips_asyncInt-2
+de-default;default;default;-;-;-;-;-;-;-;-;-;-;-
+so-async;Digital asynchroner Kurs;woechCheckin;-;-;-;-;-;-;-;-;-;-;-
+vl-rem;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-rem;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-hyb;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-hyb;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-onl;Online synchrone Vorlesung ;wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-onl;Online synchrones Seminar ;wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-praes;Präsenzvorlesung ;wartezeitPr;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-praes;Präsenzseminar ;wartezeitPr;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-ringpraes;Präsenz-Ringvorlesung ;wartezeitPr;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-ringonl;Online-Ringvorlesung ;wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-ringhyb1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-ringhyb2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+pr-praes;Präsenzlabor;wartezeitPr;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+pr-onl;Digital Asynchrones Labor;woechCheckin;-;-;-;-;-;-;-;-;-;-;-
+pr-hyb;Synchron-hybrides Labor;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-grwechs;Seminar mit Gruppenwechsel zwischen Online und Präsenz;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-onlpraeswechs;Online Seminar mit einzelnen Präsenzterminen ;wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-onlhybwechs;Online Seminar mit einzelnen hybriden Terminen ;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-praesonlwechs;Präsenzseminar mit einzelnen Online-Terminen;wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-praeshybwechs;Präsenzseminar mit einzelnen hybriden Terminen;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-onlpraeswechs;Online-Vorlesung mit einzelnen Präsenzterminen ;wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-onlhybwechs;Online-Vorlesung mit einzelnen hybriden Terminen ;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-praesonlwechs;Präsenzvorlesung mit einzelnen Online-Terminen ;wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-praeshybwechs;Präsenzvorlesung mit einzelnen hybriden Terminen ;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+vl-hybrem;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-
+se-hybrem;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;privateEcke, wartezeitHyb;-;-;-;-;woechCheckin;woechCheckin;woechCheckin;woechCheckin;-;-;-

@@ -102,7 +102,7 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         displayQuestion(questionOrder[nextQuestionIdx])
-        $.get( "texte.csv", function(CSVdata) {
+        $.get( "texts_matrix.csv", function(CSVdata) {
             let csvData = $.csv.toObjects(CSVdata, {separator:';'});
             all_texts = {}
             csvData.forEach(function(dict){
@@ -357,52 +357,52 @@
     
     function showResult(scenario='de-default-0-0-0', specialCases=[]){
         // gathering texts
-        let scenarioTitle = all_scenarios[scenario]['unterrichtsformat']
+        let scenarioTitle
+        if (scenario != 'de-default-0-0-0'){
+            scenarioTitle = all_scenarios[scenario]['unterrichtsformat']
+        } else {
+            scenarioTitle = 'Default Scenario'
+        }
+        
         let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
         let syncIntValue = "syncInt-" + scenario.split("-")[2]
         let asyncTNValue = "asyncTN-" + scenario.split("-")[3]
         let asyncIntValue = "asyncInt-" + scenario.split("-")[4]
 
-        let overviewText = all_texts[scenarioValue]["text_overview"]
-        let syncIntText =  all_texts[scenarioValue]["text_" + syncIntValue]
-        let asyncTNText =  all_texts[scenarioValue]["text_" + asyncTNValue]
-        let asyncIntText =  all_texts[scenarioValue]["text_" + asyncIntValue]
+        let theseTexts = {}
+        let l = ['overview', syncIntValue, asyncTNValue, asyncIntValue]
+        l.forEach(function(s){
+            let val = all_texts[scenarioValue]["text_" + s]
+            if (val != '-'){
+                theseTexts[s + 'Text'] = val
+            } else {
+                theseTexts[s + 'Text'] = all_texts['de-default']["text_" + s]
+            }
+        })
+        let overviewText = theseTexts['overviewText']
+        let syncIntText =  theseTexts[syncIntValue + "Text"]
+        let asyncTNText =  theseTexts[asyncTNValue + "Text"]
+        let asyncIntText =  theseTexts[asyncIntValue + "Text"]
+        let asyncText = asyncTNText + asyncIntText
 
-        // building HTML elements
-        rCont.innerHTML = '<p>Ihr Ergebnis:</p>'
-        
-        // overview block
-        let overviewBlock = document.createElement("div"); rCont.append(overviewBlock)
-        overviewBlock.classList.add("block", "overview")
-        let resTitle = document.createElement("h3"); overviewBlock.append(resTitle)
-        resTitle.innerHTML = scenarioTitle
+        $("#result").load("vorlagen/result.html", function(){
+            document.querySelector("#resOverview > h3").innerHTML = scenarioTitle
+            document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
+            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
+            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
 
-        let overviewContent = document.createElement("div"); overviewBlock.append(overviewContent)
-        overviewContent.classList.add("blockContent")
-        
-        let overviewP = document.createElement("p"); overviewContent.append(overviewP)
-        overviewP.innerHTML = overviewText
-        let scenarioImg = document.createElement("img"); overviewContent.append(scenarioImg)
-        scenarioImg.setAttribute("src", "../images/entscheidungshilfe/sampleResult.png" )
-        scenarioImg.setAttribute("alt", "Studenten und Studentinnen in einem Raum" )
+            document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
+            let syncTips = document.querySelector("#resSync > .blockContent > .tCont")
+            // TODO: add tips
 
-        // syncInter block
-        let syncInterBlock = document.createElement("div"); rCont.append(syncInterBlock)
-        syncInterBlock.classList.add("block", "sync")
+            document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
+            let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
+            // TODO: add tips
 
-        let syncTitle = document.createElement("h4"); syncInterBlock.append(syncTitle)
-        syncTitle.innerHTML = "Tipps für die synchrone Interaktion"
 
-        let syncInterContent = document.createElement("div"); syncInterBlock.append(syncInterContent)
-        syncInterContent.classList.add("blockContent")
 
-        let syncInterP = document.createElement("p"); syncInterContent.append(syncInterP)
-        syncInterP.innerHTML = syncIntText
-        let syncTips = document.createElement("ul"); syncInterContent.append(syncTips)
-        syncTips.classList.add("tCont")
-        syncTips.innerHTML = "<li class='tip'><h5><img src='../images/fwd3.svg' alt='' /><span>Tip Lorem ipsum dolor</span></h5><p class='tipContent'>At vero eos et accusam et justo duo dolores et ea rebum!</p></li><li class='tip'><h5><img src='../images/fwd3.svg' alt=''/><span>Tip Lorem ipsum dolor</span></h5><p class='tipContent'>At vero eos et accusam et justo duo dolores et ea rebum!</p></li>"
-        
-        
+        })
+
     }
     
 

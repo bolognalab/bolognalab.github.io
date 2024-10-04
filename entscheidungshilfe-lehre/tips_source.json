@@ -1,20 +1,31 @@
 {
     "tips": {
-        "lernkino": {
-            "type": "synchron",
-            "title": "Lernkino",
-            "content": "<a href='https://www.e-teaching.org/praxis/hybride-lernraeume/lernkino'>https://www.e-teaching.org/praxis/hybride-lernraeume/lernkino</a>"
-        },
         "privateEcke": {
             "type": "synchron",
             "title": "Privatsphäre beim Aufzeichnen",
-            "content": "Ein Teil des Raums, in dem Studierende, die ihre Privatsphäre wahren wollen, außerhalb des Kamerawinkels sitzen können."
+            "content": "Wenn möglich, stellen Sie die Kamera so auf, dass ein Teil des Raums vorhanden ist, in dem Studierende, die ihre Privatsphäre wahren wollen, außerhalb des Kamerawinkels sitzen können. Wenn Sie studentische Diskussionsbeiträge aufzeichnen möchten, nutzen Sie wenn möglich ein mobiles oder Wurfmikrofon, um unbeabsichtigte Aufnahmen von Studierenden zu vermeiden."
         },
-        "asyncfeedback": {
+        "tonBild": {
+            "type": "synchron",
+            "title": "Tonqualität priorisieren",
+            "content": "Die Tonqualität wird immer wieder als einer der wichtigsten Faktoren genannt, die das Erlebnis der Online-Zuschauer einer Live gestreamten oder aufgezeichneten Lehrveranstaltung beeinflussen. Während eine schlechte Videoqualität durch die Bereitstellung von zusätzlichen Materialien für die Studierende ausgeglichen werden kann, kann eine schlechte Tonqualität die Aufmerksamkeit der Studierenden beeinträchtigen, die bereits durch die Verarbeitung von neuen Inhalten herausgefordert sind. Achten Sie auf die Platzierung der Mikrofone und Störgeräusche und führen Sie immer einen kurzen Soundcheck durch (z. B. über Zoom), bevor Sie mit dem Unterricht beginnen. Im technischen Abschnitt unten finden Sie weitere Details zur Einrichtung Ihres Tons."
+        },
+        "wartezeitHyb": {
+            "type": "synchron",
+            "title": "Wartezeit zwischen Fragen",
+            "content": "Wenn Sie Studierende auffordern, sich an der Diskussion zu beteiligen, sollten Sie ihnen genug Zeit lassen, um ihre Gedanken zu formulieren. In einem hybriden oder Online-Setting ist diese Wartezeit besonders kritisch und sollte aufgrund der Zeitverzögerung in einer Webkonferenz verlängert werden (ca. 10 Sekunden). Also, wenn Sie die übliche Frage stellen: „Gibt es noch Fragen?“, sollten Sie nicht vorschnell zu dem Schluss kommen, dass es keine gibt!"
+        },
+        "wartezeitPr": {
+            "type": "synchron",
+            "title": "Wartezeit zwischen Fragen",
+            "content": "Wenn Sie Studierende auffordern, sich an der Diskussion zu beteiligen, sollten Sie ihnen genug Zeit lassen (mind. 5 Sekunden), um ihre Gedanken zu formulieren. Also, wenn Sie die übliche Frage stellen: „Gibt es noch Fragen?“, sollten Sie nicht vorschnell zu dem Schluss kommen, dass es keine gibt!"
+        },
+        "woechCheckin": {
             "type": "asynchron",
-            "title": "Asynchrones Feedback",
-            "content": "TODO"
+            "title": "Wöchentliches Check-In",
+            "content": "Sowohl in synchronen als auch in asynchronen Kursen profitieren viele Studierende (vor allem in den ersten Semestern) von einer gewissen Strukturierung ihrer Kursarbeit. Eine wöchentliche E-Mail oder eine ähnliche Mitteilung ist eine gute Möglichkeit, die Studierenden daran zu erinnern, was sie in dieser Woche erledigen sollten oder in den kommenden Wochen erwarten können. Sie können die E-Mail auch zur Sammlung von studentischem Feedback nutzen, das Ihnen bei der Lehreplanung helfen kann. So eine regelmäßige Kommunikation hilft Ihnen, Vertrauen und Gemeinschaft zwischen Ihnen und Ihren Schülerinnen und Schülern aufzubauen, vor allem, wenn Sie zeigen, dass Sie persönlich an ihrem Erfolg interessiert sind. Einige Beispiele für wöchentliche E-Mails finden Sie <a href=''>hier.</a>"
         }
+
     },
     "specialCases": {
         "international": "", 
