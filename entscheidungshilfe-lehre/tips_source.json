@@ -20,6 +20,11 @@
             "title": "Wartezeit zwischen Fragen",
             "content": "Wenn Sie Studierende auffordern, sich an der Diskussion zu beteiligen, sollten Sie ihnen genug Zeit lassen (mind. 5 Sekunden), um ihre Gedanken zu formulieren. Also, wenn Sie die übliche Frage stellen: „Gibt es noch Fragen?“, sollten Sie nicht vorschnell zu dem Schluss kommen, dass es keine gibt!"
         },
+        "ModerationHybGr": {
+            "type": "synchron",
+            "title": "Hybride (Co-)Moderation",
+            "content": "Die Moderation von Gruppenarbeiten für zwei Gruppen von Studierenden (online und vor Ort) kann für eine einzelne Person überwältigend sein, weshalb die Anwesenheit von zwei Moderator:innen sehr empfohlen wird. Ein/e Moderator:in kann die Präsenzteilnehmenden betreuen, während die andere einen Blick auf die Online-Teilnehmenden hat. Auch in Phasen ohne Gruppenarbeit kann eine zusätzliche Person aus technischer Sicht zu einem reibungslosen Ablauf der Sitzung beitragen. Die Moderatoren sollten sich im Voraus über den Ablauf der Arbeitsphasen verständigen und idealerweise während der Sitzung Zugang zu einem separaten Kommunikationskanal (z. B. Text oder Chat) miteinander haben. <br>Falls sich Ihre Einrichtung eine Co-Moderation für Ihre Lehrveranstaltung nicht leisten kann, können Sie die Moderationsrolle zu verschiedenen Zeiten an verschiedene Studierende vergeben (zusammen mit entsprechenden Anweisungen für die Moderation). Die Übernahme dieser Art von Verantwortung für das eigene Lernen ist für die Studierenden von Vorteil. Sie sollten sich jedoch auch um diese Art der Unterstützung durch Ihre Einrichtung einsetzen, da eine Co-Moderation die hybride Lehr- und Lernerfahrung für Sie und Ihre Studierenden erheblich verbessern kann. <br>Mehr Ressourcen dazu: <br><a href='' >"
+        },
         "woechCheckin": {
             "type": "asynchron",
             "title": "Wöchentliches Check-In",
