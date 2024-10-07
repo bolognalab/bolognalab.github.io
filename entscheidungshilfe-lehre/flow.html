@@ -26,8 +26,8 @@
     const sCont = document.getElementById("scenarios")
     const rCont = document.getElementById("result")
 
-    var all_data, questionInfo, all_scenarios, all_texts
-    
+    var all_data, questionInfo, all_scenarios, all_texts, all_tips, tip_matching
+
     var activeQ, activeA
     var nextQuestionIdx = 0
 
@@ -102,21 +102,24 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         displayQuestion(questionOrder[nextQuestionIdx])
-        $.get( "texts_matrix.csv", function(CSVdata) {
+        $.get( "texts_tips_matrix.csv", function(CSVdata) {
             let csvData = $.csv.toObjects(CSVdata, {separator:';'});
             all_texts = {}
+            tip_matching = {}
             csvData.forEach(function(dict){
                 let key = dict["wert"]
                 delete dict["wert"]
-                all_texts[key] = dict
+                
+                all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
+                tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
             })
-            setTimeout(showResult('vl-rem-1-1-1'), 500)
-            });
-        
+            $.get("tips_source.json", function(json){
+                all_tips = json["tips"]
+                setTimeout(showResult('vl-rem-1-1-1'), 500)
+            })
+            
+        });
     })
-    
-
-
 
     function displayQuestion(qKey){
         let q = questionInfo[qKey]
@@ -385,6 +388,25 @@
         let asyncIntText =  theseTexts[asyncIntValue + "Text"]
         let asyncText = asyncTNText + asyncIntText
 
+        // gathering tips
+        // synchronous
+        let syncTips = []
+        let tipsGeneral = tip_matching[scenarioValue]["tips_general"]
+        let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue]
+        let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue]
+        let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue]
+
+        
+        let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
+        let fullTipList = fullTipListAsString.split(", ").filter((k)=>k != "-")
+        console.log(fullTipList)
+
+        let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
+        let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
+        console.log(syncTipList, asyncTipList)
+
+
+        // building document
         $("#result").load("vorlagen/result.html", function(){
             document.querySelector("#resOverview > h3").innerHTML = scenarioTitle
             document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
@@ -393,18 +415,39 @@
 
             document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
             let syncTips = document.querySelector("#resSync > .blockContent > .tCont")
-            // TODO: add tips
+            syncTipList.forEach(function(tipCode){
+                addTip(tipCode, syncTips)
+            })
 
             document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
             let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
-            // TODO: add tips
-
-
-
+            asyncTipList.forEach(function(tipCode){
+                addTip(tipCode, asyncTips)
+            })
         })
 
     }
     
+    function addTip(tipCode, container){
+        let tipli = document.createElement("li"); container.append(tipli)
+                tipli.classList.add("tip")
+                let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
+                tipHeader.innerHTML = "<img src='../images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
+                let tipContent = document.createElement("p"); tipli.append(tipContent)
+                tipContent.classList.add("tipContent")
+                tipContent.innerHTML = all_tips[tipCode]["content"]
+
+                tipli.setAttribute("onclick", "showHideTip(this)")
+    }
+
+    function showHideTip(a){
+        if (a.classList.contains("open")){
+            a.classList.remove("open")
+        } else {
+            a.classList.add("open")
+        }
+
+    }
 
     // Auxiliary funcitons (specialized)
     function getTopScenarios(results){

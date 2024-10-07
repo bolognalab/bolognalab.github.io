@@ -20,17 +20,36 @@
             "title": "Wartezeit zwischen Fragen",
             "content": "Wenn Sie Studierende auffordern, sich an der Diskussion zu beteiligen, sollten Sie ihnen genug Zeit lassen (mind. 5 Sekunden), um ihre Gedanken zu formulieren. Also, wenn Sie die übliche Frage stellen: „Gibt es noch Fragen?“, sollten Sie nicht vorschnell zu dem Schluss kommen, dass es keine gibt!"
         },
-        "ModerationHybGr": {
+        "moderationHybGr": {
             "type": "synchron",
             "title": "Hybride (Co-)Moderation",
             "content": "Die Moderation von Gruppenarbeiten für zwei Gruppen von Studierenden (online und vor Ort) kann für eine einzelne Person überwältigend sein, weshalb die Anwesenheit von zwei Moderator:innen sehr empfohlen wird. Ein/e Moderator:in kann die Präsenzteilnehmenden betreuen, während die andere einen Blick auf die Online-Teilnehmenden hat. Auch in Phasen ohne Gruppenarbeit kann eine zusätzliche Person aus technischer Sicht zu einem reibungslosen Ablauf der Sitzung beitragen. Die Moderatoren sollten sich im Voraus über den Ablauf der Arbeitsphasen verständigen und idealerweise während der Sitzung Zugang zu einem separaten Kommunikationskanal (z. B. Text oder Chat) miteinander haben. <br>Falls sich Ihre Einrichtung eine Co-Moderation für Ihre Lehrveranstaltung nicht leisten kann, können Sie die Moderationsrolle zu verschiedenen Zeiten an verschiedene Studierende vergeben (zusammen mit entsprechenden Anweisungen für die Moderation). Die Übernahme dieser Art von Verantwortung für das eigene Lernen ist für die Studierenden von Vorteil. Sie sollten sich jedoch auch um diese Art der Unterstützung durch Ihre Einrichtung einsetzen, da eine Co-Moderation die hybride Lehr- und Lernerfahrung für Sie und Ihre Studierenden erheblich verbessern kann. <br>Mehr Ressourcen dazu: <br><a href='' >"
+        },
+        "moderationHybSimple": {
+            "type": "synchron",
+            "title": "Online-Raum-Betreuung",
+            "content": "Selbst wenn keine intensive Gruppenarbeit stattfindet, kann es für die Lehrperson eine Herausforderung sein, sowohl die Präsenz- als auch die Online-Studierende im Auge zu behalten. Die einfachste Lösung für dieses Problem besteht darin, eine andere Person mit der Überwachung des Online-Raums (und des Chats) zu beauftragen, um sicherzustellen, dass die Fragen und Beiträge der Online-Studierenden korrekt erfasst werden. Diese Rolle kann leicht von einem Studierenden übernommen werden. Als Lehrkraft sollten Sie dennoch in regelmäßigen Abständen Pausen einplanen und Fragen und Beiträge von Online- und Präsenzteilnehmenden einladen."
+        },
+        "darstellungsformen": {
+            "type": "synchron",
+            "title": "Mehrere Darstellungsformen",
+            "content": "Durch die Bereitstellung derselben Inhalte in verschiedenen Formaten, z. B. Text, Bildern und Audio, wird sichergestellt, dass jede*r Studierende die Informationen auf die für sich selbst effektivste Weise aufnehmen kann. Darüber hinaus können multiple Repräsentationen Sprachbarrieren sowie Barrieren für Studierende mit Behinderungen abbauen. Wenn Sie im Unterricht Folien zeigen oder an die Tafel schreiben, sollten Sie darauf achten, dass das, was Sie sagen, und das, was angezeigt wird, klar miteinander verbunden sind."
         },
         "woechCheckin": {
             "type": "asynchron",
             "title": "Wöchentliches Check-In",
             "content": "Sowohl in synchronen als auch in asynchronen Kursen profitieren viele Studierende (vor allem in den ersten Semestern) von einer gewissen Strukturierung ihrer Kursarbeit. Eine wöchentliche E-Mail oder eine ähnliche Mitteilung ist eine gute Möglichkeit, die Studierenden daran zu erinnern, was sie in dieser Woche erledigen sollten oder in den kommenden Wochen erwarten können. Sie können die E-Mail auch zur Sammlung von studentischem Feedback nutzen, das Ihnen bei der Lehreplanung helfen kann. So eine regelmäßige Kommunikation hilft Ihnen, Vertrauen und Gemeinschaft zwischen Ihnen und Ihren Schülerinnen und Schülern aufzubauen, vor allem, wenn Sie zeigen, dass Sie persönlich an ihrem Erfolg interessiert sind. Einige Beispiele für wöchentliche E-Mails finden Sie <a href=''>hier.</a>"
+        },
+        "reflexionHyb": {
+            "type": "asynchron",
+            "title": "Regelmäßige Reflexionsbeiträge",
+            "content": "Bei einem Reflexionsbeitrag werden die Studierenden in einem hybriden Kurs gebeten, regelmäßig (z. B. einmal pro Woche) einen Forumsbeitrag im LMS des Kurses zu verfassen, in dem sie über einen Aspekt ihres Lernens reflektieren. Diese Reflexion kann einer bestimmten Aufforderung folgen (z. B. „Was halten Sie von der Lektüre dieser Woche“) oder völlig offen sein, solange sie sich auf den Kurs bezieht. Die Studierenden haben die Möglichkeit, müssen aber nicht, die Reflexionen anderer Studierender zu lesen und darauf zu antworten. Reflexionsbeiträge helfen dabei, eine Gemeinschaft zwischen Präsenz- und Online-Studierenden aufzubauen, indem sie sich über ihre gemeinsamen Lernerfahrungen austauschen. <br> <a href='https://edtechbooks.org/hyflex/student_experience#h4_EZxm'>Mehr zu Reflexionsbeiträgen und ihrer Wirksamkeit (auf Englisch)</a>"
+        },
+        "reflexionAsync": {
+            "type": "asynchron",
+            "title": "Regelmäßige Reflexionsbeiträge",
+            "content": "Bei einem Reflexionsbeitrag werden die Studierenden in einem Online-Kurs gebeten, regelmäßig (z. B. einmal pro Woche) einen Forumsbeitrag im LMS des Kurses zu verfassen, in dem sie über einen Aspekt ihres Lernens reflektieren. Diese Reflexion kann einer bestimmten Aufforderung folgen (z. B. „Was halten Sie von der Lektüre dieser Woche“) oder völlig offen sein, solange sie sich auf den Kurs bezieht. Die Studierenden haben die Möglichkeit, müssen aber nicht, die Reflexionen anderer Studierender zu lesen und darauf zu antworten. Reflexionsbeiträge helfen dabei, eine Gemeinschaft zwischen Studierenden aufzubauen, indem sie sich über ihre gemeinsamen Lernerfahrungen austauschen. Eine solche Vorgehensweise hilft den Studierenden auch, ihr Lernen zu strukturieren, wenn der Kurs asynchron ist.  <br> <a href='https://edtechbooks.org/hyflex/student_experience#h4_EZxm'>Mehr zu Reflexionsbeiträgen und ihrer Wirksamkeit (auf Englisch)</a>"
         }
-
     },
     "specialCases": {
         "international": "", 
