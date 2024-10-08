@@ -9,8 +9,6 @@ os.chdir(os.path.dirname(__file__))
 with open("fragen_source.json", mode='r', encoding='utf-8') as json_file:
     data = json.load(json_file)
     existing_questions = data['questions']
-    existing_scenarios = data['scenarios']
-    # print(existing_scenarios)
 
 updated_json = {}
 updated_scenarios = {}

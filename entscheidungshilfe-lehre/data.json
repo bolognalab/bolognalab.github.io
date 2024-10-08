@@ -1,7 +1,7 @@
 {
     "questions": {
         "artLV": {
-            "order": 0,
+            "condition": true,
             "text": "Um welche Art von Lehrveranstaltung handelt es sich?",
             "antworten": {
                 "VL": {
@@ -2059,7 +2059,7 @@
             }
         },
         "modulCombo": {
-            "order": 0,
+            "condition": "artLV=VL",
             "text": "Ist die Lehrveranstaltung mit einer anderen Art von Lehrveranstaltung desselben Moduls kombiniert, die Studierende im selben Semester besuchen (z.B. Vorlesung und Seminar)",
             "antworten": {
                 "nein": {
@@ -2075,7 +2075,7 @@
             }
         },
         "LZiP": {
-            "order": 0,
+            "condition": true,
             "text": "Gibt es Lernziele, die <b>ausschlie\u00dflich in Pr\u00e4senz</b> erreichbar sind?",
             "antworten": {
                 "0": {
@@ -5172,7 +5172,7 @@
             }
         },
         "LZsy": {
-            "order": 0,
+            "condition": true,
             "text": "Gibt es Lernziele, die <b>ausschlie\u00dflich synchron</b> w\u00e4hrend dieser Lehrveranstaltung erreichbar sind?",
             "antworten": {
                 "0": {
@@ -6216,7 +6216,7 @@
             "addInfo": "z.B. argumentative Diskussion, wichtige Gruppenaufgaben, usw."
         },
         "niePr": {
-            "order": 0,
+            "condition": true,
             "text": "Gibt es Studierende, die <b>nie oder fast nie</b> in Pr\u00e4senz am Kurs teilnehmen k\u00f6nnen?",
             "antworten": {
                 "nein": {
@@ -6629,7 +6629,7 @@
             }
         },
         "nieSync": {
-            "order": 0,
+            "condition": true,
             "text": "Gibt es Studierende, die <b>nie oder sehr schwierig</b> synchron am Kurs teilnehmen k\u00f6nnten?",
             "antworten": {
                 "nein": {
@@ -7904,7 +7904,7 @@
             }
         },
         "wohnLP": {
-            "order": 0,
+            "condition": true,
             "text": "Wohnen Sie als Lehrperson w\u00e4hrend des betreffenden Semesters in derselben Stadt wie die Universit\u00e4t, an der Sie lehren (oder h\u00f6chstens 90 Min. von der Universit\u00e4t entfernt)?",
             "antworten": {
                 "nein": {
@@ -7920,7 +7920,7 @@
             }
         },
         "regAbw": {
-            "order": 0,
+            "condition": true,
             "text": "Werden Sie als Lehrperson w\u00e4hrend des betreffenden Semesters oft vom Campus abwesend sein m\u00fcssen?",
             "antworten": {
                 "nein": {
@@ -8489,7 +8489,7 @@
             }
         },
         "begrAnz": {
-            "order": 0,
+            "condition": true,
             "text": "Ist die Anzahl der Studierenden, die Ihren Kurs pers\u00f6nlich besuchen k\u00f6nnen, durch eine geringe Raumkapazit\u00e4t, Verf\u00fcgbarkeit von Ausrustung, o.\u00e4. eingeschr\u00e4nkt? (z.B. Computerraum)",
             "antworten": {
                 "nein": {
@@ -8543,7 +8543,7 @@
             }
         },
         "onlBereit": {
-            "order": 0,
+            "condition": true,
             "text": "In welchem Umfang sind Sie bereit, den Kurs online zu unterrichten (d. h. vom eigenen Ger\u00e4t aus und nicht in einem Lehrraum)?",
             "antworten": {
                 "kein": {
@@ -9693,7 +9693,7 @@
             "addInfo": "z.B. unter Ber\u00fccksichtigung der Anerkennung Ihrer Lehre f\u00fcr das Lehrdeputat oder nach pers\u00f6nlicher Pr\u00e4ferenz"
         },
         "limZPSt": {
-            "order": 0,
+            "condition": true,
             "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufst\u00e4tigkeit) eingeschr\u00e4nkte Zeitpl\u00e4ne?",
             "antworten": {
                 "nein": {
@@ -10886,7 +10886,7 @@
             }
         },
         "studGeraete": {
-            "order": 0,
+            "condition": true,
             "text": "K\u00f6nnten alle Studierenden ihre pers\u00f6nlichen (oder ausgeliehenen) Ender\u00e4te und die verf\u00fcgbare Internetverbindung f\u00fcr die ben\u00f6tigte Interaktion bzw. Kollaboration <b>im Lehrraum</b> nutzen?",
             "antworten": {
                 "nein": {
@@ -10907,7 +10907,7 @@
             }
         },
         "onlZugang": {
-            "order": 0,
+            "condition": true,
             "text": "Haben alle Studierenden <b>au\u00dferhalb des Lehrraums</b> Zugang zu einem Ger\u00e4t und einer Umgebung, in der sie zuverl\u00e4ssig online am Kurs teilnehmen k\u00f6nnen?",
             "antworten": {
                 "nein": {
@@ -11530,7 +11530,7 @@
             }
         },
         "aufzTech": {
-            "order": 0,
+            "condition": true,
             "text": "W\u00e4re bei einer Pr\u00e4senz- oder Hybridsitzung eine <br>Erfassung des ganzen Lehrraums mit klaren Bild und Ton</br> technisch m\u00f6glich?",
             "antworten": {
                 "nein": {
@@ -11552,28 +11552,28 @@
             "addInfo": "Hier wird eine 'Erfassung' des Raums entweder f\u00fcr eine Aufzeichnung oder f\u00fcr eine Live-Videokonferenz gemeint."
         },
         "IntSync": {
-            "order": 0,
+            "condition": true,
             "text": "Wie viel studentische Interaktion ist <b>w\u00e4hrend der Kurssitzungen</b> f\u00fcr die Lernziele des Kurses ben\u00f6tigt?",
             "antworten": {
                 "0": {
-                    "text": "Die Lernziele des Kurses k\u00f6nnen auch mit minimaler oder nur gelegentlicher Interaktion erreicht werden.",
+                    "text": "Die Studierenden brauchen nur gelegentlich w\u00e4hrend des Unterrichts aktiv beizutragen (der Unterricht ist eher frontal)",
                     "effects": {},
                     "conditionalEffects": {}
                 },
                 "1": {
-                    "text": "Die Studierenden sollen mit der Lehrperson (auch z.B. durch Polls oder Clicker) interagieren, aber nicht unbedingt mit anderen Studierenden",
+                    "text": "Die Studierenden sollen sich im Kurs aktiv beteiligen, aber es gibt keine gezielte Gruppenarbeit w\u00e4hrend des Unterrichts",
                     "effects": {},
                     "conditionalEffects": {}
                 },
                 "2": {
-                    "text": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren.",
+                    "text": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren und gelegentlich in Gruppen arbeiten.",
                     "effects": {},
                     "conditionalEffects": {}
                 }
             }
         },
         "IntAsync": {
-            "order": 0,
+            "condition": true,
             "text": "Wie viel studentische Interaktion ist <b>au\u00dferhalb der Kurssitzungen</b> f\u00fcr die Lernziele des Kurses ben\u00f6tigt?",
             "antworten": {
                 "0": {
@@ -13049,7 +13049,7 @@
             }
         },
         "gaeste": {
-            "order": 0,
+            "condition": true,
             "text": "Planen Sie, Gastvortragende zu Ihrem Kurs einzuladen?",
             "antworten": {
                 "0": {
@@ -13943,7 +13943,7 @@
             }
         },
         "gaesteMittel": {
-            "order": 0,
+            "condition": "gaeste!=0",
             "text": "Verf\u00fcgen Sie \u00fcber ausreichende Ressourcen, um die gew\u00fcnschten Gastvortragenden pers\u00f6nlich zum Kurs einzuladen?",
             "antworten": {
                 "nein": {
@@ -14105,7 +14105,7 @@
             }
         },
         "exkur": {
-            "order": 0,
+            "condition": true,
             "text": "Planen Sie eine oder mehrere Exkursionen als festen Bestandteil Ihres Kurses?",
             "antworten": {
                 "nein": {
@@ -14224,7 +14224,7 @@
             }
         },
         "exkurMittel": {
-            "order": 0,
+            "condition": "exkur=ja",
             "text": "Verf\u00fcgen Sie \u00fcber ausreichende Ressourcen, damit alle Studierenden an einer Exkursion teilnehmen k\u00f6nnen?",
             "antworten": {
                 "nein": {
@@ -17100,7 +17100,7 @@
             }
         },
         "intKoll": {
-            "order": 0,
+            "condition": true,
             "text": "Ist Ihr Kurs Teil einer nationalen oder internationalen Kollaboration mit Studierenden und Lehpersonen einer anderen Universit\u00e4t?",
             "antworten": {
                 "nein": {

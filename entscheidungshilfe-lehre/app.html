@@ -9,70 +9,82 @@
   <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
   <link rel="stylesheet" href="../assets/css/eb.css" />
 <script src="../assets/js/jquery.min.js"></script>
+<style>
+    .qCont {
+        background-color: var(--backgroundLightBlue);
+        padding: 20px 20px;
+    }
+    .qDiv {
+        background: rgba(18, 161, 154, 0.8);
+        padding: 20px 20px;
+        color: white;
+    }
+    .nextButton.asIcon {
+        height: 3em;
+        width: 3em;
+        border-radius: 3em;
+        border: 2px solid rgba(255,255,255, 1);
+        background: rgba(0,0,0,0);
+        background-image: url("../images/fwd3.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 0.8em;
+        filter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%);
+        transition: all 0.4s ease;
+        cursor: pointer;
+    }
+    .nextButton.asIcon:disabled {
+        opacity: 0.5;
+        transition: all 0.4s ease;
+        cursor: auto;
+    }
+
+</style>
 </head>
 <body class="is-preload" lang="de">
 <h2>Fragereihe-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
 <div style="display: table; width: 100%">
-    <div id="questions" class="qCont"></div>
-    <hr />
-    <div id="result" class="rCont"></div>
-    <hr />
-    <div id="scenarios" class="sCont"></div>
-    
+    <div id="questions" class="qCont"></div>    
 </div>
 <script src="../assets/js/jquery.csv.js"></script>
 <script>
     const qCont = document.getElementById("questions")
-    const sCont = document.getElementById("scenarios")
-    const rCont = document.getElementById("result")
 
-    var all_data, questionInfo, all_scenarios, all_texts, all_tips, tip_matching
+    var all_data, questionInfo, all_scenarios
 
     var activeQ, activeA
     var nextQuestionIdx = 0
 
     var scenarios = {}
-    const colorMapping = {
-        "-100": "#C00000",
-        "-2": "#f77e59",
-        "-1": "#ffa185",
-        "0": "#FFEB84",
-        "1": "#D4DE89",
-        "2": "#A9D08E",
-        "FUNC": "#FFFFAA"
-    }
 
     const questionOrder = [ 
         'artLV', 
-        // 'modulCombo',
+        'modulCombo',
         'LZiP',
         'LZsy', 
         'niePr',
-        // 'nieSync',
-        // // 'wohnLP',
-        // 'regAbw',
-        // "onlBereit", 
-        // "limZPSt",
-        // "onlZugang",
-        // "IntAsync",
-        // 'gaeste', 
-        // 'gaesteMittel',
-        // "exkur",
-        // "exkurMittel",
-        // 'begrAnz',
-        // "intKoll"
+        'nieSync',
+        // 'wohnLP',
+        'regAbw',
+        "onlBereit", 
+        "limZPSt",
+        "onlZugang",
+        "IntAsync",
+        'gaeste', 
+        'gaesteMittel',
+        "exkur",
+        "exkurMittel",
+        'begrAnz',
+        "intKoll"
     ]
-
-
 
     var answers = {}
     var activeScenarios = {}
     var recent = []
+    var topResults
 
     const maxShownAnswers = 4
-
-    // temporary
-    var topResults
+   
 
     // Previous Question, Next Question, Submit buttons (will be moved around)
     var pButton = document.createElement("button"); document.body.append(pButton)
@@ -85,9 +97,9 @@
     pButton.style.display = "none"
 
     let nButton = document.createElement("button"); document.body.append(nButton)
-    nButton.classList.add("nextButton")
+    nButton.classList.add("nextButton", "asIcon")
     nButton.setAttribute("id", "nextButton")
-    nButton.innerHTML = "Nächste Frage"
+    // nButton.innerHTML = "Nächste Frage"
     nButton.addEventListener("click", function(){
         submitAnswer()
     })
@@ -108,23 +120,6 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         displayQuestion(questionOrder[nextQuestionIdx])
-        $.get( "texts_tips_matrix.csv", function(CSVdata) {
-            let csvData = $.csv.toObjects(CSVdata, {separator:';'});
-            all_texts = {}
-            tip_matching = {}
-            csvData.forEach(function(dict){
-                let key = dict["wert"]
-                delete dict["wert"]
-                
-                all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
-                tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
-            })
-            $.get("tips_source.json", function(json){
-                all_tips = json["tips"]
-                // setTimeout(showResult('se-rem-2-1-1', specialCases=[], topTier=['se-rem-2-1-1']), 500)
-            })
-            
-        });
     })
 
     function displayQuestion(qKey){
@@ -136,6 +131,7 @@
 
         let qDiv = document.createElement("div"); qCont.append(qDiv)
         qDiv.setAttribute("id", "DIV_" + qKey)
+        qDiv.classList.add("qDiv")
         let qP = document.createElement("p"); qDiv.append(qP)
         qP.setAttribute("id", "Q_" + qKey)
         qP.innerHTML = qText
@@ -242,10 +238,6 @@
             
         })
 
-        setTimeout(()=>{
-            listActiveScenarios(activeScenarios)
-        }, 100)
-
         // check if there is another question left to display and, if yes, do so.
         let includeNextQuestion = false
         while (nextQuestionIdx < questionOrder.length && includeNextQuestion == false){
@@ -322,127 +314,12 @@
         }, 100)
     }
 
-    function listActiveScenarios(sObju){
-        sObj = Object.entries(sObju).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
-        sCont.innerHTML = ""
-        Object.entries(sObj).forEach((entry)=>{
-            sKey = entry[0]
-            sVal = entry[1]
-            let tr = document.createElement("tr")
-            let name = document.createElement("th")
-            let score = document.createElement("td")
-            name.innerHTML = sKey 
-            score.innerHTML = sVal
-            score.setAttribute("id", "SCORE_" + sKey)
-            score.classList.add("score")
-            tr.append(name, score)
-            if (recent.includes(sKey)){
-                tr.classList.add("recent")
-            }
-            sCont.append(tr)
-        })
-
-        for (let score of document.querySelectorAll(".score")){
-            let value = +(score.innerHTML)
-            if (value > 0){
-                score.style.color = "#0e7700"
-            } else if (value <0){
-                score.style.color = "#d93300"
-            } else {
-                score.style.color = "#585858"
-            }
-        }
-    }
-
     function getResult(finalResults){
         // decide which scenarios to show!
         topResults = getTopScenarios(finalResults)
         let firstResult = topResults[0]
         window.open("var_result.html?shownScenario=" + firstResult + "&topTier=" + JSON.stringify(topResults), "_self")
-        // showResult(scenario=firstResult, specialCases=[], topTier=topResults)
     }
-    
-    function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
-        // gathering texts
-        let scenarioTitle
-        if (scenario != 'de-default-0-0-0'){
-            scenarioTitle = all_scenarios[scenario]['unterrichtsformat']
-        } else {
-            scenarioTitle = 'Default Scenario'
-        }
-        
-        let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
-        let syncIntValue = "syncInt-" + scenario.split("-")[2]
-        let asyncTNValue = "asyncTN-" + scenario.split("-")[3]
-        let asyncIntValue = "asyncInt-" + scenario.split("-")[4]
-
-        let theseTexts = {}
-        let l = ['overview', syncIntValue, asyncTNValue, asyncIntValue]
-        l.forEach(function(s){
-            let val = all_texts[scenarioValue]["text_" + s]
-            if (val != '-'){
-                theseTexts[s + 'Text'] = val
-            } else {
-                theseTexts[s + 'Text'] = all_texts['de-default']["text_" + s]
-            }
-        })
-        let overviewText = theseTexts['overviewText']
-        let syncIntText =  theseTexts[syncIntValue + "Text"]
-        let asyncTNText =  theseTexts[asyncTNValue + "Text"]
-        let asyncIntText =  theseTexts[asyncIntValue + "Text"]
-        let asyncText = asyncTNText + asyncIntText
-
-        // gathering tips
-        // synchronous
-        let syncTips = []
-        let tipsGeneral = tip_matching[scenarioValue]["tips_general"]
-        let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue]
-        let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue]
-        let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue]
-
-        
-        let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
-        let fullTipList = fullTipListAsString.split(", ").filter((k)=>k != "-")
-        
-        let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
-        let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
-
-
-        // building document
-        $("#result").load("vorlagen/result.html", function(){
-            document.querySelector("#resOverview > h3").innerHTML = scenarioTitle
-            document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
-            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
-            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
-
-            document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
-            let syncTips = document.querySelector("#resSync > .blockContent > .tCont")
-            syncTipList.forEach(function(tipCode){
-                addTip(tipCode, syncTips)
-            })
-
-            document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
-            let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
-            asyncTipList.forEach(function(tipCode){
-                if (tipCode != scenario){
-                    addTip(tipCode, asyncTips)
-                }
-
-            })
-
-            let altResults = document.querySelector("#resMore > .blockContent > .altCont")
-            topTier.forEach(function(resCode){
-                if (resCode != scenario){
-                    addAltResult(resCode, altResults)
-                }
-                
-            })
-
-        })
-
-    }
-    
-
 
     // Auxiliary funcitons (specialized)
     function getTopScenarios(results){
@@ -568,36 +445,6 @@
         }
     }
 
-    // creating HTML elements
-    function addTip(tipCode, container){
-        let tipli = document.createElement("li"); container.append(tipli)
-                tipli.classList.add("tip")
-                let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
-                tipHeader.innerHTML = "<img src='../images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
-                let tipContent = document.createElement("p"); tipli.append(tipContent)
-                tipContent.classList.add("tipContent")
-                tipContent.innerHTML = all_tips[tipCode]["content"]
-
-                tipli.setAttribute("onclick", "showHideTip(this)")
-    }
-
-    function showHideTip(a){
-        if (a.classList.contains("open")){
-            a.classList.remove("open")
-        } else {
-            a.classList.add("open")
-        }
-
-    }
-
-    function addAltResult(resCode, container){
-        let li = document.createElement("li"); container.append(li)
-        li.classList.add("altScenario")
-        let a = document.createElement("a"); li.append(a)
-        // a.setAttribute("href", "var_result.html?shownScenario=" + resCode + "&topTier=" + JSON.stringify(topResults))
-        a.innerHTML = all_scenarios[resCode]["unterrichtsformat"]
-        a.setAttribute("onclick", "showResult('" + resCode + "', special_cases = [], topTier=topResults)")
-    }
 
      
 </script>
