@@ -1,0 +1,665 @@
+<!DOCTYPE HTML>
+<!--
+	Leitbild Lehre
+-->
+<html lang="de">
+	<head>
+		<title>Leitbild Lehre</title>
+		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+ 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../assets/css/leibile.css" />
+    <script src="../assets/js/jquery.min.js"></script>
+	</head>
+	<body class="is-preload">
+    <div class="innerWindow inklusion">
+      <img id="banner" style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner.png" />
+      <div class="bk">
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
+      <h1>Inklusion, Diversität, Gleichstellung  und Partizipation</h1>
+      <div id="decCircle" style="background: #7c6c98"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div>
+      <h2>Anlaufpunkte an der HU</h2>
+      <p>An diesem Querschnittsthema arbeiten an der HU vielfältige Instanzen, die sich mit der Arbeit von Kommissionen, mit Leitlinien, mit AGs und in der Beratung für ein inklusives, chancengerechtes Miteinander und eine partizipative Lehre einsetzen:</p>
+      <div class="containerWindow">
+        <div id="fadeCover" style="background: #f0f0eb"></div>
+        <div id="toggleButtons">
+          <div id="toggleOuter"><h3>Anlaufstellen</h3></div><div id="toggleMid"><h3>Kommissionen</h3></div><div id="toggleInner"><h3>AGs</h3></div>
+        </div>
+        <div class="diagramContainer" id="dCont1">
+          <!-- decorative elements -->
+          <div id="closeBtn" class="touchOnly"><p>&#10006;</p></div>
+          <!-- <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div> -->
+          <div id="invisibleNode"></div>
+          <div id="smallFade"></div>
+        </div>
+      </div>
+      <div class="innerWindow">
+        <h2>Konzepte und Dokumente zum Thema</h2>
+        <ul>
+          <li><a class='mi' href='../files/leibile/Inklusionsverständnis_KBH_2022.pdf'>Inklusionsverständnis der HU (PDF)</a><br>(Kommission Barrierefreie Hochschule)</li>
+          <li><a class= 'mi' href='https://diversitaet.hu-berlin.de/de/diversitaetssensible-Lehre'>Konzepte und Grundlagen diversitätssensibler Lehre</a><br>(AG Diversität)</li>
+          <li><a class='mi' href='https://www.familienbuero.hu-berlin.de/de/strategie-familienfreundlichkeit/familiengerechte-grundsaetze/grundsaetze-der-hu-zur-gestaltung-einer-familienfreundlichen-hochschule'>Leitbild der Humboldt-Universität zu Berlin als familiengerechte Hochschule</a><br>(Familienbüro)</li>
+          <li><a class='mi' href= 'https://frauenbeauftragte.hu-berlin.de/de/informationen/download/gzk_hu.pdf'>Gleichstellungszukunftskonzept (PDF)</a><br>(Frauenbeauftragte)</li>
+          <!-- <li><a class='mi' href='../files/leibile/ZtG-Diskriminierungskritische Lehre.pdf' >Broschüre "Diskriminierungskritische Lehre: Dekanstöße aus den Gender Studies"</a> <br> (AG Lehre,  Zentrum für Transdizsiplinäre Geschlechterstudien)</li> -->
+          <li><a class='mi' href='https://diversitaet.hu-berlin.de/de'>Diversität an der HU</a><br>(AG Diversität)</li>
+          <li><a class='mi' href='https://www.hu-berlin.de/de/service/beratung/chancengleichheit-1'>Beauftragte und Angebote zu Chancengleichheit an der HU</a></li>
+        </ul>
+      </div>
+      
+      <div class="bk">
+        <h3>Zurück zur Hauptseite</h3>
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <script>$("#footer").load("footer.html"); </script>
+    </footer>
+    
+
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script>
+      const strukturen = {
+        "anlaufstellen": {
+          "fambuero": {
+            "name": "Familienbüro",
+            "desc": "<p>Das <b>Familienbüro</b> ist eine Zentrale Koordinations- und Anlaufstelle für das Thema Familiengerechtigkeit an der HU. Das Familienbüro treibt die Weiterentwicklung und Umsetzung eines systematischen Gesamtkonzepts zur Verbesserung der Familienfreundlichkeit der HU voran. Neben der statusgruppenübergreifenden Beratung zu allen Aspekten der Vereinbarkeit von Beruf bzw. Studium und Familie zählt hierzu die hochschulinterne Informationspolitik zum Thema, die Beförderung der Umsetzung des Nachteilsausgleichs, die Weiterentwicklung von Kinderbetreuungsmöglichkeiten sowie der Ausbau der familiengerechten Infrastruktur der Hochschule. Das Familienbüro ist Geschäftsstelle der <b>Kommission Familiengerechte Hochschule (KFH)</b> und Projektleitung des <b>Audits Famliengerechte Hochschule</b>.</p><a href='https://www.familienbuero.hu-berlin.de/de' class='mi'>Mehr Informationen zum Familienbüro</a>",
+            "connections": []
+          },
+          "fgb": {
+            "name": "Frauen- und Gleichstellungsbeauftragte (FGB)",
+            "wordBreak": "Frauen- und Gleichstellungs-beauftragte (FGB)",
+            "desc": "<p>Die <b>Zentrale FGB</b> sowie die <b>denzentralen FGB an den Fakultäten und Instituten</b> bieten vertrauliche Beratung und Unterstützung in Fällen sexualisierter Belästigung, Diskriminierung und Gewalt sowie Karriereberatung für Frauen aller Statusgruppen an; Beratung der Leitungsebene und Gremien in Fragen von Gleichstellung und Chancengerechtigkeit.</p><a href='https://frauenbeauftragte.hu-berlin.de/de' class='mi'>Mehr Informationen zur zentralen FGB</a><a href='https://frauenbeauftragte.hu-berlin.de/de/ueber-uns/dezentrale-frauenbeauftragte' class='mi cont'>Mehr Informationen zur den dezentralen FGB</a>",
+            "connections": []
+          },
+          "sbv": {
+            "name": "Schwerbehindertenvertretung",
+            "wordBreak": "Schwerbehinder-tenvertretung",
+            "desc": "<p>Interessenvertretung für schwerbehinderte und gleichgestellte Mitarbeiter*innen an der HU.</p><a href='https://beauftragte.hu-berlin.de/de/schwerbehindertenvertretung' class='mi'>Mehr Informationen zur Schwerbehindertenvertretung</a>",
+            "connections": []
+          },
+          "psychosoz": {
+            "name": "Hochschulisches Gesundheitsmanagement",
+            "wordBreak": "Hochschulisches Gesundheits-management",
+            "subtitle": "Psychosoziale Beratung für Beschäftigte",
+            "desc": "<p>Das <b>Hochschulische Gesundheitsmanagement (HGM)</b> setzt sich für die Gesundheit der Beschäftigten und Studierenden der Humboldt-Universität ein. Dabei werden bereits bestehende, gesundheitsrelevante Maßnahmen unserer Universität gebündelt, aber auch neue Angebote bedarfsorientiert initiiert. Neben bewegungs- oder ernährungsbezogenen Maßnahmen entwickeln wir u. a. Angebote im Bereich Gesundheitskompetenzen und Stressbewältigung, um die Arbeits- und Studienatmosphäre zu verbessern und die individuelle und organisationale Gesundheit zu stärken. Das HGM bietet u.a. <b>psychosoziale Beratung für Mitarbeitende der HU</b>.</p><a href='https://www.hgm.hu-berlin.de/de/index.html' class='mi'>Mehr Informationen zum HGM</a><a href='https://www.hgm.hu-berlin.de/de/gesund-arbeiten/beratung-informationen/psychosoziale-beratung-fuer-beschaeftigte' class='mi cont'>Mehr Informationen zur psychosozialen Beratung für Mitarbeiter:innen</a>",
+            "connections": []
+          },
+          "refrat": {
+            "name": "Beratung des RefRats",
+            "desc": "<p>Das RefRat berät Studierende u.a. zu den Themen Antidiskriminierung, Behinderung/chronische Erkrankung - Enthinderung, Studieren mit Kind(ern), Sexistische Belästigung und Übergriffe.</p><a class='mi' href='https://www.refrat.de/beratung.html'>Mehr Informationen zur Beratung des RefRats</a>",
+            "connections": []
+          },
+          "psych": {
+            "name": "Psychologische Beratung für Studierende",
+            "desc": "<p>Die Psychologische Beratung richtet sich mit persönlichen  Beratungsgesprächen und Gruppenangeboten an Studierende der HU und trägt  dazu bei, dass sie ihr Ausbildungsziel weiterhin anstreben können.</p><a href='https://www.hu-berlin.de/de/studium/beratung/psyber' class='mi'>Mehr Informationen zur psychologischen Beratung für Studierende</a>",
+            "connections": []
+          },
+          "stmB": {
+            "name": "Studium mit Beeinträchtigung",
+            "desc": "<p>Die Unterseiten des Studiums mit Beeinträchtigung bündeln Beratungsangebote und Informationen zu Bewerbung und Studium mit Beeinträchtigung an der HU. Das Angebot richtet sich an Studierende, Schüler*innen und Studieninteressierte mit Beeinträchtigung und an Lehrende, die mehr Informationen zu inklusiver Lehre suchen.</p><a class='mi' href='https://www.hu-berlin.de/de/studium/barrierefrei'>Zur Seite des Studiums mit Beeinträchtigung</a>",
+            "connections": []
+          },
+        },
+        "kommissionen":{
+          "kfh": {
+            "name": "Kommission Familiengerechte Hochschule (KFH)",
+            "desc": "<p>Die <b>Kommission Familiengerechte Hochschule</b> wurde als ständige Kommission des Akademischen Senates zur Vorbereitung der Entscheidungen und zur Unterstützung des Präsidiums gebildet. Geschäftsstelle der KFH ist das <b>Familienbüro.</b></p><a href='https://gremien.hu-berlin.de/de/kommissionen/kfgh' class='mi'>Mehr Informationen zur KFH</a>",
+            "connections": []
+          },
+          "kbfhs": {
+            "name": "Kommission Barrierefreie Hochschule (KBH)",
+            "desc": "<p>Die <b>Kommission Barrierefreie Hochschule (KBH)</b> wurde im Sommersemester 2010 vom Akademischen Senat mit dem Ziel eingerichtet, Richtlinien zu erarbeiten, deren Umsetzung ein barrierefreies Arbeiten, Lehren und Studieren an der Humboldt-Universität zu Berlin gewährleisten.</p><a href='https://gremien.hu-berlin.de/de/kommissionen/barrierefrei' class='mi'>Mehr Informationen zur KBH</a>",
+            "connections": []
+          },
+          "kff": {
+            "name": "Kommission für Frauenförderung (KFF)",
+            "desc": "<p>Die	<b>Kommission für Frauenförderung (KFF)</b>: unterstützt die Leitung und die zentralen Gremien der Universität in Fragen der Gleichstellung von Frauen und Männern.</p><a href='https://gremien.hu-berlin.de/de/as/kommissionen/kff' class='mi'>Mehr Informationen zur KFF</a>",
+            "connections": []
+          },
+          "kkp": {
+            "name": "Kommission zur Konfliktprävention",
+            "desc": "<p>Im Sinne der Dienstvereinbarung für ein respektvolles Miteinander an der Humboldt-Universität zu Berlin verfolgt die <b>Kommission zur Konfliktprävention (KKP)</b> den Anspruch eines fairen, kultivierten und achtungsvollen Zusammenwirkens aller Universitätsmitglieder.</p><a href='https://gremien.hu-berlin.de/de/konfliktpraevention' class='mi'>Mehr Informationen zur KKP</a>",
+            "connections": []
+          }
+        },
+        "ags": {
+          "agdiv": {
+            "name": "AG Diversität",
+            "subtitle": "Zentrale Frauen- und Gleichstellungsbeauftragte",
+            "desc": "<p>Die <b>AG Diversität/ Zentrale Frauen- und Gleichstellungsbeauftragte</b> ist ein seit 2018 regelmäßig tagendes Gremium von Zuständigen aus dem Bereich Antidiskriminierung, Führungspersonen, Wissenschaftler*innen mit Expertise im Handlungsfeld und Betroffenen; Ziel ist es einen Kulturwandel an der HU im Sinne von Diversität und Antidiskriminierung zu befördern.</p><a href='https://diversitaet.hu-berlin.de/de/grundlagen-gremien/ag-diversitaet/ag-diversitaet' class='mi'>Mehr Informationen zur AG</a>",
+            "connections": []
+          },
+          "kagna": {
+              "name": "AG Nachteilsausgleich",
+              "wordBreak": "AG Nachteils-ausgleich",
+              "desc": "<p>Die Kommissionsübergreifende AG Nachteilsausgleich wurde 2023 von den Kommissionen Barreirefreie Hochschule und Familiengerechte Hochschule ins Leben gerufen. Als Ziel der AG wurde festgelegt, einen Vorschlag zur Verbesserung der Prozesse des Nachteilsausgleichs und der bevorzugten Zugang zu Lehrveranstaltungen zu erarbeiten im Sinne der betreffenden Studierenden (Behinderung und Care-Aufgaben) sowie der Lehrenden, Prüfenden und Prüfungsbüros.<br><br>Verantwortliche Kommissionen: KFH / KBH<br>Kontakt: </p><a href= 'mailto: familienservice@hu-berlin.de'>familienservice@hu-berlin.de</a>",
+              "connections": []
+            },
+          "agbfl": {
+            "name": "Institutspezifische AGs",
+            "desc": "<p><b>AG Diversitätssensible/ Diskriminierungskritische Lehre</b><br>Professional School of Education<br>Ansprechperson: Julia Podelo (<a href='mailto:julia.podelo@hu-berlin.de'>julia.podelo@hu-berlin.de</a>)</p><p><b>AG Diskriminierungskritische Lehre (Dikri-L)</b><br>Institut für Erziehungswissenschaften<br>Ansprechperson: Aylin Jordan (<a href='mailto:aylin.jordan@hu-berlin.de'>aylin.jordan@hu-berlin.de</a>)<br></p><p><b>AG Lehre</b><br>Zentrum für transdisziplinäre Geschlechterstudien<br>Siehe <a href='https://www.gender.hu-berlin.de/de/studium/diskriminierungskritik-1/broschuere-der-ag-lehre-diskriminierungskritische-lehre-denkanstoesse-aus-den-gender-studies'>Broschüre 'Diskriminierungskritische Lehre'</a></p>",
+            "connections": []
+          }
+        }
+      }
+
+      // Berechnung der Position der Pünkte
+      const dCont1 = document.getElementById("dCont1")
+      var dCont1Rect = dCont1.getBoundingClientRect()
+
+      const closeBtn = document.getElementById("closeBtn")
+      var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
+      if (window.innerWidth < thresholdWidth){
+        dCont1.style["aspect-ratio"] = 0.83
+      }
+      var diagramWidth = dCont1.offsetWidth
+      var radiusMax = 0.5 * diagramWidth * 0.9
+      var activeClass = null
+      var openNode = null
+      var holdingOpen = false
+      var oldPos
+      var inactiveNodeWidth=100, inactiveNodeHeight=100
+      var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
+      var showInfoTimeout
+      
+      // var dC = document.getElementById("decCircle")
+      // dC.style["top"] = diagramWidth/2 + "px"
+
+      
+
+      var nodes = {
+        "outer" : {
+          "struktur": "anlaufstellen",
+          "radius": function(rMax){return 0.85*rMax},
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
+        },
+        "mid" : {
+          "struktur": "kommissionen",
+          "radius": function(rMax){return 0.55*rMax},
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 24
+        },
+        "inner" : {
+          "struktur": "ags",
+          "radius": function(rMax){return 0.3*rMax},
+          "angInit": - 2*Math.PI / 4 + 2*Math.PI / 24
+        },
+      }
+
+      Object.entries(nodes).forEach(function(nodeEntry, j){
+        let category = strukturen[nodeEntry[1]["struktur"]]
+        let radius = nodeEntry[1]["radius"](radiusMax)
+        let angInit = nodeEntry[1]["angInit"]
+        
+        let num = Object.keys(category).length
+        let angStep = 2*Math.PI / num
+        
+        let thisList = document.createElement("ul")
+        thisList.setAttribute("id", nodeEntry[1]["struktur"])
+        thisList.setAttribute("aria-label", "liste " + nodeEntry[1]["struktur"])
+        dCont1.append(thisList)
+        Object.entries(category).forEach(function(catEntry, i){
+          let theta = angInit + i*angStep
+          
+          let thisNode = document.createElement("li")
+          thisNode.classList.add("node", nodeEntry[0])
+
+          let x, y
+          if (window.innerWidth > thresholdWidth){
+            updateCoordinatesPolar(thisNode, radius, theta)
+          } else {
+            let nodeHeight = dCont1.offsetHeight/num 
+            x = ["0%", "50%", "calc(100% - 2px)"][j]
+            y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
+            thisNode.style.height = (nodeHeight-10)+"px"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
+          }
+          thisNode.setAttribute("id", catEntry[0])
+          thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
+          thisNode.setAttribute("r", radius)
+          thisNode.setAttribute("theta", theta)
+          thisNode.setAttribute("theta_init", angInit)
+          thisNode.setAttribute("idx", [j,i])
+          thisNode.setAttribute("num", num)
+
+          let title = document.createElement("h3")
+          title.classList.add("title")
+          if (catEntry[1].hasOwnProperty("wordBreak")){
+            title.innerHTML = "<span>" + catEntry[1]["wordBreak"] + "</span>"
+          } else {
+            title.innerHTML = "<span>" + catEntry[1]["name"] + "</span>"
+          }
+          thisNode.append(title)
+
+          let nodeInfo = document.createElement("span")
+          nodeInfo.innerHTML = "<br><img src ='../images/info-circle.svg' name='anlaufpunkt-zeigen'>"
+          nodeInfo.classList.add("nodeInfo")
+          title.append(nodeInfo)
+
+          if (catEntry[1].hasOwnProperty("subtitle")){
+            let subtitle = document.createElement("h4")
+            subtitle.classList.add("subtitle")
+            subtitle.innerHTML = catEntry[1]["subtitle"]
+            thisNode.append(subtitle)
+          }
+          
+
+          let details = document.createElement("p")
+          details.classList.add("details")
+          details.innerHTML = catEntry[1]["desc"]
+
+          
+          thisNode.append(details)
+          thisList.append(thisNode)
+          // dCont1.append(thisNode)
+          if (j==0){
+          inactiveNodeWidth = thisNode.offsetWidth
+          inactiveNodeHeight = thisNode.offsetHeight
+        }
+        })
+      })
+
+    function updateCoordinatesPolar(node, r, theta){
+      node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
+      let top = (r * Math.sin(theta) + diagramWidth/2)
+      node.style["top"] = "calc(" + top * 0.68 + "px" + " + 1em)"
+    }
+
+    // Window resizing: what happens to the nodes?
+    function updateNodePosition(node, rMax){
+          let nodeEntry = nodes[node.classList[1]]
+          let radius = nodeEntry["radius"](rMax)
+          let theta = node.getAttribute("theta")
+          node.setAttribute("r", radius)
+          radiusMax = rMax
+          if (window.innerWidth > thresholdWidth){
+              updateCoordinatesPolar(node, radius, theta)
+              node.style["height"] = ""
+              node.style["width"] = ""
+            } else {
+              let idx = node.getAttribute("idx")
+              let j = idx.split(",")[0]
+              let i = idx.split(",")[1]
+              let num = node.getAttribute("num")
+              let nodeHeight = dCont1.offsetHeight/num
+              let x = ["0%", "50%", "calc(100% - 2px)"][j]
+              let y = (nodeHeight/2 - 2.5 + i * nodeHeight) + "px"
+              node.style["height"] = (nodeHeight-10)+"px"
+              node.style["left"] = x 
+              node.style["top"]  = y 
+          }
+        }
+        function updateAllNodes(){
+          let allNodes = document.getElementsByClassName("node")
+          for (let n of allNodes){
+            if (n.classList.contains("opened")){
+              closeNodeW(n)
+            }
+            if (window.innerWidth < thresholdWidth && n.classList.contains("active")){
+              n.classList.remove("active")
+              if (activeClass){
+                toggleNodes(activeClass)
+              }
+            }
+            diagramWidth = dCont1.offsetWidth
+            let rMax = 0.5 * diagramWidth * 0.9
+            setTimeout(()=>{
+              updateNodePosition(n, rMax)
+              if (!(window.innerWidth > thresholdWidth)){
+                n.style["height"] = (dCont1.offsetHeight/n.getAttribute("num")-10)+"px"
+                if (n.classList.contains("outer")){
+                  n.style["transform"] = "translate(0, -50%)"
+                }
+                if (n.classList.contains("mid")){
+                  n.style["transform"] = "translate(-50%, -50%)"
+                }
+                if (n.classList.contains("inner")){
+                  n.style["transform"] = "translate(-100%, -50%)"
+                }
+              } else {
+                n.style["transform"] = "translate(-50%, -50%)"
+              }
+            }, 50)
+          }
+        }
+        window.addEventListener("resize", ()=>{
+          updateAllNodes()
+        })
+
+    // Button/Tab functionalities
+    function toggleNodes(class_id){
+      // Button formats
+      for (let tab of document.getElementById("toggleButtons").children){
+        let tabClass = tab.id.split("toggle")[1].toLowerCase()
+        // if clicking same button that was open
+        if (tab.classList.contains("activeC")){
+          tab.classList.remove("activeC")
+        }
+        if (tabClass==class_id){
+          if (!activeClass | activeClass != class_id){
+            tab.classList.add("activeC")
+            document.getElementsByClassName("diagramContainer")[0].style["background"]="#fafaf5"
+          } else {
+            tab.classList.remove("activeC")
+            document.getElementsByClassName("diagramContainer")[0].style["background"]=""
+          }
+        }
+      }
+
+      let allNodes = document.getElementsByClassName("node")
+        // clear all to start with, in either case
+        Object.keys(strukturen).forEach(function(cat){
+            let fade = document.getElementById("smallFade")
+            fade.style["background"] = "rgba(255,255,255,0)"
+        })
+        for(let node of allNodes){
+            if (node.classList.contains("active")){
+              if (window.innerWidth > thresholdWidth){
+                updateCoordinatesPolar(node, node.getAttribute("r"), node.getAttribute("theta"))
+              } else {
+              // for mobile: white fade effect
+            }      
+              node.classList.remove("active")
+            }
+            // minimize non-active modes
+            if (class_id != activeClass && !(node.classList.contains(class_id))){
+              node.classList.add("minimized")
+            }
+          }
+          // dC.classList.remove("activeC")
+
+        // activate nodes if they were hidden before
+        let theseNodes = document.getElementsByClassName(class_id)
+        if (activeClass != class_id){
+          for(let node of theseNodes){
+            node.classList.remove("minimized")
+            if (window.innerWidth > thresholdWidth){
+              let rNew
+              let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
+              if (node.getAttribute("r") < 2*inactiveNodeWidth){
+                rNew = 2*inactiveNodeWidth // + dC.offsetWidth*0.8
+              } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
+                rNew = radiusMax - inactiveNodeWidth
+                // rNew = node.getAttribute("r")
+              } else {
+                rNew = node.getAttribute("r")
+              }
+              updateCoordinatesPolar(node, rNew, thetaNew)
+            }
+            node.classList.add("active")
+            // dC.classList.add("activeC")
+            // dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
+          }
+          activeClass = class_id
+          if (window.innerWidth <= thresholdWidth){
+              // for mobile: white fade effect
+              let fade = document.getElementById("smallFade")
+              fade.style["background"] = "rgba(255,255,255,0.8)"
+            }      
+        }
+        else {
+          for (let node of allNodes){
+            node.classList.remove("minimized")
+          }
+          if (window.innerWidth <= thresholdWidth){
+              // for mobile: white fade effect
+              let fade = document.getElementById("smallFade")
+              fade.style["background"] = "rgba(255,255,255,0)"
+            }      
+          activeClass = null
+        }
+      
+    }
+
+    for (let item of document.getElementById("toggleButtons").children){
+      item.addEventListener("click", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        toggleNodes(class_id)
+      })
+      item.addEventListener("mouseenter", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        if (class_id != activeClass){
+          holdingOpen = false
+          toggleNodes(class_id)
+        }
+
+      })
+      item.addEventListener("mouseleave", function(e){
+        dCont1Rect = dCont1.getBoundingClientRect()
+        if (!isWithinBoundingRect(e.clientX, (e.clientY+1), dCont1Rect)){
+          let class_id = this.id.split("toggle")[1].toLowerCase()
+          toggleNodes(class_id)
+        } else {
+          holdingOpen = true
+        }
+      })
+    }
+
+    dCont1.addEventListener("mouseleave", function(e){
+      if (activeClass && !openNode){
+        let activeButton = document.getElementById("toggle" + activeClass.charAt(0).toUpperCase() + activeClass.slice(1))
+        let rect = activeButton.getBoundingClientRect()
+        if (holdingOpen && !isWithinBoundingRect(e.clientX, e.clientY, rect)){
+          toggleNodes(activeClass)
+          holdingOpen = false
+        }
+      }
+
+    })
+
+    // Hover and click effects
+    function openNodeW(node){
+      // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
+      document.getElementById("fadeCover").style["display"] = "block"
+      document.getElementById("fadeCover").style["opacity"] = "0.8"
+      openNode = node.id
+      node.classList.remove("active")
+      node.classList.add("opened")
+      let x = node.style["left"]
+      let y = node.style["top"]
+      if (window.innerWidth > thresholdWidth){
+        node.style["left"] = (diagramWidth/2)+"px"
+        node.style["top"] = "5em"
+      } else {
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        node.style["top"] = "1em"
+        node.style["height"] = "fit-content"
+      }
+      node.style["transform"] = "translate(-50%, 0%)"
+      
+      // adjust title if word-break version was used
+      let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
+      let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
+      if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
+        if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        }
+        else {
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+          console.log("Bitte fügen Sie zu diesem Item eine 'wordBreak' Version des Titels: " + node.id)
+        }
+      } else {
+        thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+      
+      // adjust length 
+      let details = node.getElementsByClassName("details")[0]
+      setTimeout(()=>{details.style.height = heightToFitContent(details)+"px"}, 400)
+
+      function heightToFitContent(div){
+        let height = 0
+        let contents = div.childNodes
+
+        contents.forEach(function(element){
+          let marginTop = +(window.getComputedStyle(element)["margin-top"].split("px")[0])
+          height += marginTop
+          let marginBottom = +(window.getComputedStyle(element)["margin-bottom"].split("px")[0])
+          height += marginBottom
+          height += element.offsetHeight
+        })
+        return height
+      }
+      
+
+      dCont1.removeChild(closeBtn)
+      node.append(closeBtn)
+      setTimeout(function(){
+        closeBtn.style.visibility="visible"
+        closeBtn.style.opacity="1"
+      }, 500)
+      return [x, y]
+      }
+      
+    function closeNodeW(node){
+      node.classList.remove("opened")
+      node.classList.add("closing")
+      node.style["left"] = oldPos[0]
+      node.style["top"] = oldPos[1]  
+
+      if (!(window.innerWidth > thresholdWidth)){
+        node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
+        if (node.classList.contains("outer")){
+          node.style["transform"] = "translate(0, -50%)"
+        }
+        if (node.classList.contains("mid")){
+          node.style["transform"] = "translate(-50%, -50%)"
+        }
+        if (node.classList.contains("inner")){
+          node.style["transform"] = "translate(-100%, -50%)"
+        }
+      } else {
+        node.style["transform"] = "translate(-50%, -50%)"
+      }
+
+      // adjust title if word-break version was used. 
+      // do not forget to add "nodeInfo" again!
+      if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+        node.getElementsByClassName("title")[0].childNodes[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+      } else {
+        node.getElementsByClassName("title")[0].childNodes[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+      
+      // undo height adjustment
+      let details = node.getElementsByClassName("details")[0]
+      details.style.height = ""
+
+      document.getElementById("fadeCover").style["opacity"] = "0"
+      document.getElementById("fadeCover").style["display"] = "none"
+      
+      node.removeChild(closeBtn)
+      dCont1.appendChild(closeBtn)
+      closeBtn.style.visibility="hidden"
+      closeBtn.style.opacity="0"
+      openNode = null
+      setTimeout(function(){
+        if (node.classList.contains(activeClass)){
+          node.classList.add("active")
+        } else {
+          node.classList.remove("active")
+        }
+        setTimeout(function(){
+          node.classList.remove("closing")
+        },400)
+      }, 100)
+      }
+    
+    // hovering and clicking nodes
+    for (let item of document.getElementsByClassName("node")){
+      item.addEventListener("mouseenter", function(e){
+        if (!activeClass && !(item.classList.contains("opened"))){
+          item.classList.add("active")
+        }
+      })
+      item.addEventListener("mouseleave", function(){
+        if (!activeClass){
+          item.classList.remove("active")
+        }
+      })
+      item.addEventListener("click", function(){
+        // special case - clicking a minimized node activates the whole class
+        if (item.classList.contains("minimized")){
+          let class_id = item.classList[1]
+          toggleNodes(class_id)
+        } else {
+          if (!openNode && !(item.classList.contains("closing")) && window.innerWidth <= thresholdWidth){
+            oldPos = openNodeW(item)
+          } 
+        }
+        
+      })
+    }
+
+    // "nodeInfo" buttons
+    document.querySelectorAll(".nodeInfo img").forEach(function(item){
+      item.addEventListener("click", function(e){
+        let nodeToShow = item.parentElement.parentElement.parentElement
+        console.log(nodeToShow)
+        if (item.classList.contains("hovered")){
+          oldPos = openNodeW(nodeToShow)
+        }
+      })
+      item.addEventListener("mouseenter", function(e){
+        item.classList.add("hovered")
+        showInfoTimeout = setTimeout(function(){
+          if (isWithinBoundingRect(e.clientX, e.clientY, item.getBoundingClientRect())){
+            let nodeToShow = item.parentElement.parentElement.parentElement
+            if (item.classList.contains("hovered")){
+              oldPos = openNodeW(nodeToShow)
+            }
+          }
+        }, 500)
+      })
+      item.addEventListener("mouseleave", function(e){
+        item.classList.remove("hovered")
+        clearTimeout(showInfoTimeout)
+      })
+    })
+
+
+
+    // close Button
+    closeBtn.addEventListener("click", function(){
+      let nodeToClose = closeBtn.parentElement
+      closeNodeW(nodeToClose)
+    })
+
+    var n1 = document.getElementsByClassName("outer")[1]
+    // setTimeout(n1.classList.add("active"), 400)
+    var n0 = document.getElementsByClassName(activeClass)[0]
+    var n2 = document.getElementsByClassName(activeClass)[2]
+    // position optimization functions
+    function getPositionArguments(n){
+      let result = {
+        "node": n,
+        "x": n.style.left.split("px")[0],
+        "y": n.style.top.split("px")[0],
+        "r": n.getAttribute("r"),
+      }
+      result["theta_temp"] = Math.acos((result["x"]-diagramWidth/2)/result["r"])
+      result["left"] = result["x"] - activeNodeWidth/2
+      result["right"] = result["x"] + activeNodeWidth/2
+      result["top"] = result["y"] - activeNodeHeight/2
+      result["bottom"] = result["y"] + activeNodeHeight/2
+
+      return result
+    }
+    function isWithinBoundingRect(x, y, rect){
+      let rx1 = rect.x, rx2 = rect.x + rect.width
+      let ry1 = rect.y, ry2 = rect.y + rect.height
+      if (rx1 <= x && x <= rx2 && ry1 <= y && y <= ry2){
+        return true
+      } else {
+        return false
+      }
+    }
+    </script>
+	</body>
+</html>

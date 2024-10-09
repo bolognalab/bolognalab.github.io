@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<!--
+	Leitbild Lehre
+-->
+<html lang="de">
+	<head>
+		<title>Leitbild Lehre</title>
+		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+ 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../assets/css/leibile.css" /> 
+    <script src="../assets/js/jquery.min.js"></script>
+    <style>
+      .internat .node .nodeInfo {
+        display: block;
+      }
+      .internat .node.opened .nodeInfo {
+        display: none;
+      }
+    </style>
+	</head>
+	<body class="is-preload">
+    <div class="innerWindow internat">
+      <img id="banner" style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner.png" />
+      <div class="bk">
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
+      <h1>Multiperspektivität und Internationalisierung</h1>
+      <div id="decCircle" style="background: #5b89b0"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div>
+      <h2>Anlaufpunkte an der HU</h2>
+      <p>Verschiedene Institutionen an der HU unterstützen und fördern Internationalisierung und Multiperspektivität. Wir haben 4 zentrale Akteure gelistet:</p>
+      <div class="containerWindow smaller1" style="margin-top: 1em;">
+        <div id="fadeCover" style="background: #f0f0eb"></div>
+        <div class="diagramContainer" id="dCont1">
+          <!-- decorative elements -->
+          <div id="closeBtn"><p>&#10006;</p></div>
+          <!-- <div id="decCircle"><img class="mainIcon" src="../images/leibile/internationalisierung.svg"></div> -->
+          <div id="invisibleNode"></div>
+          <div id="smallFade"></div>
+        </div>
+      </div>
+      <div class="bk">
+        <h3>Zurück zur Hauptseite</h3>
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <script>$("#footer").load("footer.html"); </script>
+    </footer>
+    
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script>
+      const strukturen = {
+        "erster": {
+          "intl": {
+            "name": "Abteilung Internationales",
+            "desc": "<p>Die Abteilung Internationales ist die zentrale Serviceeinrichtung für alle internationalen Aktivitäten an und mit der Humboldt-Universität. Unsere Angebote ergänzen das internationale Engagement der Fakultäten und fördern bereichsübergreifende Zusammenarbeit.</p><a class='mi' href='https://www.international.hu-berlin.de/de'>Mehr Informationen zur Abteilung Internationales</a>",
+            "connections": []
+          },
+          "sprach": {
+            "name": "Sprachzentrum der HU",
+            "desc": "<p>Das Sprachenzentrum bietet Studierenden aller Fachrichtungen und Mitarbeiter/innen eine universitätsspezifische Fremd- und Fachsprachenausbildung an.</p><a class='mi' href='https://www.sprachenzentrum.hu-berlin.de/de'>Mehr Informationen zum Sprachzentrum</a>",
+            "connections": []
+          }
+        },
+        "zweiter": {
+          // "kfk": {
+          //   "name": "Kommission Forschung und wissenschaftliche Karrierre*n",
+          //   "desc": "<p>Die <b>Kommission Forschung und wissenschaftliche Karrierre*n (KFK)</b> berät den Akademischen Senat und das Präsidium in allen Fragen, die die Forschung und den wissenschaftlichen Nachwuchs betreffen. Die Kommission ist für Empfehlungen zur Entwicklung und Koordinierung der Forschung, zur Bildung von Forschungsschwerpunkten sowie für grundsätzliche Fragen der Förderung des wissenschaftlichen Nachwuchses zuständig.</p><a href='https://gremien.hu-berlin.de/de/kommissionen/fnk' class='mi'>Mehr Informationen zur KFK</a>",
+          //   "connections": []
+          // },
+          "bua": {
+            "name": "Berlin University Alliance",
+            "desc": "<p>Mit der Gründung der Berlin University Alliance (BUA) haben sich die Freie Universität Berlin, die Humboldt-Universität zu Berlin, die Technische Universität Berlin und die Charité –Universitätsmedizin Berlin das langfristige Ziel gesetzt, gemeinsam einen integrierten Forschungsraum in Berlin zu schaffen und zu gestalten. Über individuelle Netzwerke, Institutionen und Disziplinen hinweg möchte der Verbund zum Herzstück und zur Antriebskraft eines exzellenten Berliner „Ökosystems“ werden, bestehend aus Universitäten und außeruniversitären Forschungseinrichtungen, wissenschaftlichen Sammlungen, Museen, kulturellen und politischen Einrichtungen sowie Startups und Partnern aus der Industrie.</p><a class='mi' href='https://open-humboldt.de/de'>Mehr Informationen zu Open Humboldt</a>",
+            "connections": [] 
+          },
+          "openhu": {
+            "name": "Open Humboldt",
+            "desc": "<p>Die Aufgabe von Open Humboldt ist, Wissensaustausch mit der Gesellschaft als zentrale Mission der Humboldt-Universität neben Forschung und Lehre als Daueraufgabe zu etablieren und mit Leben zu füllen. Die Humboldt-Universität intensiviert und verstetigt die Interaktion zwischen Wissenschaft, Gesellschaft und Kultur im Rahmen von Open Humboldt mit neuen Kommunikationsangeboten.</p><a class='mi' href='https://open-humboldt.de/de'>Mehr Informationen zu Open Humboldt</a>",
+            "connections": []
+          }
+        }
+      }
+
+      // Berechnung der Position der Pünkte
+      const dCont1 = document.getElementById("dCont1")
+      const closeBtn = document.getElementById("closeBtn")
+      var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
+
+      var diagramWidth = dCont1.offsetWidth
+      var radiusMax = 0.5 * diagramWidth * 0.9
+      var activeClass = null
+      var openNode = null
+      var oldPos
+      var inactiveNodeWidth=100, inactiveNodeHeight=100
+      var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
+      
+      var dC = document.getElementById("decCircle")
+      dC.style["top"] = diagramWidth/2 + "px"
+
+      var nodes = {
+        "left" : {
+          "struktur": "erster",
+          "pctWidth": 40,
+          "offsetX": 20, // offsets measured in % of container width
+          "offsetY": 20
+        },
+        "right" : {
+          "struktur": "zweiter",
+          "pctWidth": 40,
+          "offsetX": 35,
+          "offsetY": 60
+        }
+      }
+      let numgroups = Object.keys(nodes).length
+
+      Object.entries(nodes).forEach(function(nodeEntry, j){
+        let category = strukturen[nodeEntry[1]["struktur"]]
+        let offsetX = nodeEntry[1]["offsetX"]
+        let offsetY = nodeEntry[1]["offsetY"]
+        let pctWidth = nodeEntry[1]["pctWidth"]
+
+        let num = Object.keys(category).length
+        let posStep = 2*pctWidth/ num
+
+        let posY = offsetY
+        
+        let thisList = document.createElement("ul")
+        thisList.setAttribute("id", nodeEntry[1]["struktur"])
+        thisList.setAttribute("aria-label", nodeEntry[1]["struktur"] + " Teil der Liste")
+        dCont1.append(thisList)
+        Object.entries(category).forEach(function(catEntry, i){
+          let posX = offsetX + i*posStep
+          
+          let thisNode = document.createElement("li")
+          thisNode.classList.add("node", nodeEntry[0])
+          thisNode.style["cursor"] = "pointer"
+
+          let x, y
+          if (window.innerWidth > thresholdWidth){
+            let nodeHeight = 14 
+            x = ["calc(50% - 7em)", "calc(50% + 7em)"][j]
+            y = ["7em", "21em"][i]
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y
+          } else {
+            let nodeHeight = dCont1.offsetHeight/num 
+            x = ["0%", "calc(100% - 2px)"][j]
+            y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
+            thisNode.style.height = (nodeHeight-10)+"px"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
+          }
+          thisNode.setAttribute("id", catEntry[0])
+          thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
+          thisNode.setAttribute("posX", posX)
+          thisNode.setAttribute("posY", posY)
+          thisNode.setAttribute("idx", [j,i])
+          thisNode.setAttribute("num", num)
+
+          let title = document.createElement("h3")
+          title.classList.add("title")
+          if (catEntry[1].hasOwnProperty("wordBreak")){
+            title.innerHTML = catEntry[1]["wordBreak"]
+          } else {
+            title.innerHTML = catEntry[1]["name"]
+          }
+          thisNode.append(title)
+
+          let nodeInfo = document.createElement("span")
+          nodeInfo.innerHTML = "<br><img src ='../images/info-circle.svg' name='anlaufpunkt-zeigen'>"
+          nodeInfo.classList.add("nodeInfo")
+          title.append(nodeInfo)
+
+          if (catEntry[1].hasOwnProperty("subtitle")){
+            let subtitle = document.createElement("h4")
+            subtitle.classList.add("subtitle")
+            subtitle.innerHTML = catEntry[1]["subtitle"]
+            thisNode.append(subtitle)
+          }
+          
+
+          let details = document.createElement("p")
+          details.classList.add("details")
+          details.innerHTML = catEntry[1]["desc"]
+
+          
+          thisNode.append(details)
+          thisList.append(thisNode)
+          // dCont1.append(thisNode)
+          if (j==0){
+          inactiveNodeWidth = thisNode.offsetWidth
+          inactiveNodeHeight = thisNode.offsetHeight
+        }
+        })
+      })
+
+    function updateCoordinatesXY(node, x, y){
+      node.style["left"] = x + "%"
+      node.style["top"] = y + "%"
+    }
+
+    // Hover and click effects
+    function openNodeW(node){
+      let transform = window.getComputedStyle(node)["transform"]
+      document.getElementById("fadeCover").style["display"] = "block"
+      document.getElementById("fadeCover").style["opacity"] = "0.8"
+      openNode = node.id
+      node.classList.remove("active")
+      node.classList.add("opened")
+      let x = node.style["left"]
+      let y = node.style["top"]
+      
+
+      if (window.innerWidth > thresholdWidth){
+        node.style["left"] = (diagramWidth/2)+"px"
+        node.style["top"] = "5em"
+      } else {
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        node.style["top"] = "1em"
+        node.style["height"] = "fit-content"
+      }
+      node.style["transform"] = "translate(-50%, 0%)"
+      let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
+      let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
+      if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
+        if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        }
+        else {
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+          console.log("Bitte fügen Sie zu diesem Item eine 'wordBreak' Version des Titels: " + node.id)
+        }
+      } else {
+        thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+      
+      // adjust length 
+      let details = node.getElementsByClassName("details")[0]
+      setTimeout(()=>{details.style.height = heightToFitContent(details)+"px"}, 400)
+
+      function heightToFitContent(div){
+        let height = 0
+        let contents = div.childNodes
+
+        contents.forEach(function(element){
+          let marginTop = +(window.getComputedStyle(element)["margin-top"].split("px")[0])
+          height += marginTop
+          let marginBottom = +(window.getComputedStyle(element)["margin-bottom"].split("px")[0])
+          height += marginBottom
+          height += element.offsetHeight
+        })
+        return height
+      }
+      
+      dCont1.removeChild(closeBtn)
+      node.append(closeBtn)
+      setTimeout(function(){
+        closeBtn.style.visibility="visible"
+        closeBtn.style.opacity="1"
+      }, 500)
+      return [x, y, transform]
+      }
+      
+    function closeNodeW(node){
+      node.classList.remove("opened")
+      node.classList.add("closing")
+      node.style["left"] = oldPos[0]
+      node.style["top"] = oldPos[1]
+      node.style["transform"] = oldPos[2]
+
+      if (!(window.innerWidth > thresholdWidth)){
+        node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
+        if (node.classList.contains("outer")){
+          node.style["transform"] = "translate(0, -50%)"
+        }
+        if (node.classList.contains("mid")){
+          node.style["transform"] = "translate(-50%, -50%)"
+        }
+        if (node.classList.contains("inner")){
+          node.style["transform"] = "translate(-100%, -50%)"
+        }
+      } else {
+        node.style["transform"] = "translate(-50%, -50%)"
+      }
+
+      // adjust title if word-break version was used
+      // do not forget to add "nodeInfo" again!
+      if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+        node.getElementsByClassName("title")[0].childNodes[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+      } else {
+        node.getElementsByClassName("title")[0].childNodes[0].innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+
+      // undo height adjustment
+      let details = node.getElementsByClassName("details")[0]
+      details.style.height = ""
+      
+      document.getElementById("fadeCover").style["opacity"] = "0"
+      document.getElementById("fadeCover").style["display"] = "none"
+      
+      node.removeChild(closeBtn)
+      dCont1.appendChild(closeBtn)
+      closeBtn.style.visibility="hidden"
+      closeBtn.style.opacity="0"
+      openNode = null
+      setTimeout(function(){
+        if (node.classList.contains(activeClass)){
+          node.classList.add("active")
+        } else {
+          node.classList.remove("active")
+        }
+        setTimeout(function(){
+          node.classList.remove("closing")
+        },400)
+      }, 100)
+      }
+      
+    for (let item of document.getElementsByClassName("node")){
+      item.addEventListener("mouseenter", function(){
+        if (window.innerWidth > thresholdWidth){
+          if (!(item.classList.contains("opened"))){
+            item.style["transform"] = "translate(-50%, -50%) scale(110%, 110%)"
+          }
+        }
+      })
+      item.addEventListener("mouseleave", function(){
+        if (window.innerWidth > thresholdWidth){
+          if (!(item.classList.contains("opened"))){
+            item.style["transform"] = "translate(-50%, -50%)"
+          }
+        }
+      })
+      item.addEventListener("click", function(){
+        if (!openNode && !(item.classList.contains("closing"))){
+          oldPos = openNodeW(item)
+        }
+      })
+    }
+
+    // "nodeInfo" buttons
+    document.querySelectorAll(".nodeInfo img").forEach(function(item){
+      item.addEventListener("click", function(e){
+        let nodeToShow = item.parentElement.parentElement.parentElement
+        console.log(nodeToShow)
+        if (item.classList.contains("hovered")){
+          oldPos = openNodeW(nodeToShow)
+        }
+      })
+      item.addEventListener("mouseenter", function(e){
+        item.classList.add("hovered")
+        showInfoTimeout = setTimeout(function(){
+          if (isWithinBoundingRect(e.clientX, e.clientY, item.getBoundingClientRect())){
+            let nodeToShow = item.parentElement.parentElement.parentElement
+            if (item.classList.contains("hovered")){
+              oldPos = openNodeW(nodeToShow)
+            }
+          }
+        }, 500)
+      })
+      item.addEventListener("mouseleave", function(e){
+        item.classList.remove("hovered")
+        clearTimeout(showInfoTimeout)
+      })
+    })
+
+    closeBtn.addEventListener("click", function(){
+      let nodeToClose = closeBtn.parentElement
+      closeNodeW(nodeToClose)
+    })
+
+    var n1 = document.getElementsByClassName("left")[1]
+    var n0 = document.getElementsByClassName(activeClass)[0]
+    var n2 = document.getElementsByClassName(activeClass)[2]
+    // position optimization functions
+    function getPositionArguments(n){
+      let result = {
+        "node": n,
+        "x": n.style.left.split("px")[0],
+        "y": n.style.top.split("px")[0],
+        "r": n.getAttribute("r"),
+      }
+      result["theta_temp"] = Math.acos((result["x"]-diagramWidth/2)/result["r"])
+      result["left"] = result["x"] - activeNodeWidth/2
+      result["right"] = result["x"] + activeNodeWidth/2
+      result["top"] = result["y"] - activeNodeHeight/2
+      result["bottom"] = result["y"] + activeNodeHeight/2
+
+      return result
+    }
+    function isWithinBoundingRect(x, y, rect){
+      let rx1 = rect.x, rx2 = rect.x + rect.width
+      let ry1 = rect.y, ry2 = rect.y + rect.height
+      if (rx1 <= x && x <= rx2 && ry1 <= y && y <= ry2){
+        return true
+      } else {
+        return false
+      }
+    }
+    </script>
+	</body>
+</html>

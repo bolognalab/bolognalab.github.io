@@ -1,0 +1,620 @@
+<!DOCTYPE HTML>
+<!--
+	Leitbild Lehre
+-->
+<html lang="de">
+	<head>
+		<title>Leitbild Lehre</title>
+		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+ 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../assets/css/leibile.css" /> 
+    <script src="../assets/js/jquery.min.js"></script>
+	</head>
+	<body class="is-preload">
+    <div class="innerWindow">
+      <img id="banner" style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner.png" />
+      <div class="bk">
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
+      <h1>Digitalisierung und Medienbildung</h1>
+      <div id="decCircle" style="background: #004c90;"><img class="mainIcon" src="../images/leibile/digitalisierung.svg"></div>
+      <h2>Anlaufpunkte an der HU</h2>
+      <p>Digitalisierung und Medienbildung sind zentrale Themen der HU, die von verschiedenen Anlaufstellen und unter verschiedenen Aspekten bearbeitet werden. Einige aktuell relevante Anlaufstellen haben wir unter den Aspekten Weiterbildung, Unterstützung und KI-Ressourcen gesammelt:</p>
+      <div class="containerWindow">
+        <div id="fadeCover" style="background: #f0f0eb"></div>
+        <div id="toggleButtons">
+          <div id="toggleOuter"><h3>Weiterbildung für Lehrende</h3></div><div id="toggleMid"><h3>Technische & didaktische Unterstützung</h3></div><div id="toggleInner"><h3>Ressourcen zur KI</h3></div>
+        </div>
+        <div class="diagramContainer" id="dCont1">
+          <!-- decorative elements -->
+          <div id="closeBtn"><p>&#10006;</p></div>
+          <!-- <div id="decCircle"><img class="mainIcon" src="../images/leibile/inklusion.svg" /></div> -->
+          <div id="invisibleNode"></div>
+          <div id="smallFade"></div>
+        </div>
+      </div>
+      <h2>Dokumente zum Thema</h2>
+      <ul>
+        <li><a class='mi' href='https://bolognalab.hu-berlin.de/de/leitbild-lehre/literatur-und-dokumente/leitlinien-digitale-lehre_20221109.pdf'>Leitlinien digitale Lehre: Kriterien und Standards für Digitale Lehre in Präsenzsemestern</a><br>(Vize-Präsident(in) für Lehre und Studium)</li>
+        <li><a class='mi' href='https://www.digitale-lehre.hu-berlin.de/de/handreichungen'>Handreichungen zur digitalen Lehre</a><br>(Task Force Digitale Lehre)</li>
+        <li><a class='mi' href='https://www.hu-berlin.de/de/studium/pservice/empfehlungen_ki_in_pruefungen_hu_2023-09-18.pdf'>Empfehlungen zur Nutzung von KI in Studienleistungen und Prüfungen</a><br>(HU Prüfungsservice)</li>
+      </ul>
+      <div class="bk">
+        <h3>Zurück zur Hauptseite</h3>
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <script>$("#footer").load("footer.html"); </script>
+    </footer>
+    
+
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+      // Informationen zu digitaler Lehre
+      const strukturen = {
+        "support": {
+          "hdl3": {
+            "name": "HDL3",
+            "desc": "<p>Die HU digitale Lehr- und Lernlandschaft (HDL3) ermöglicht es Lehrenden und Lernenden, weite Teile von Lehre und Studium online umzusetzen. Sie fasst IT-Dienste zusammen, um Kurse online abzubilden, Vorlesungen und Seminare durchzuführen oder Prüfungen abzuhalten. Die Dienste ermöglichen kollaboratives Arbeiten in Kursen und zwischen Studierenden, Lehrmaterial kann als Video oder interaktiv angeboten und genutzt werden.</p><a href='https://www.digitale-lehre.hu-berlin.de/de/lehr-und-lernlandschaft' class='mi'>Mehr Informationen zur HDL3</a>",
+            "connections": []
+          },
+          "digimed": {
+            "name": "Digitale Medien - Projekte und Platformen",
+            "desc": "<p>Die AG Digitale Medien – Projekte und Platformen (DMP) berät Mitarbeiter/innen und Studierende bei der Nutzung digitaler Medien in Studium, Lehre und Forschung und betreuen u. a. Moodle, das Medien-Repositorium, Mahara und Etherpad. Die AG wirkt aktiv bei der Akquise und Durchführung von Drittmittelprojekten mit und können Lehrende dabei unterstützen, in die HU-Infrastruktur die für ihre individuellen Anforderungen geeigneten Ressourcen und Angebote zu finden.</p><a href='https://www.cms.hu-berlin.de/de/dl/multimedia/bereiche/dmp' class='mi'>Mehr Informationen zur AG</a>",
+            "connections": []
+          },
+          "digiLe": {
+            "name": "Digitales Lehren und Lernen",
+            "desc": "<p>Die Webseiten zu Digitalem Lehren und Lernen (DL) unterstützen HU-Angehörige bei der Umsetzung ihrer Aufgaben in Forschung, Lehre und Studium. Auf dieser Seite sind Informationen zu den Tools der HDL3, praktische Empfehlungen, Informationen zu Beratungsangeboten und verschiedene Handreichungen zu Aspekten digitaler Lehre zu finden.</p><a href='https://www.digitale-lehre.hu-berlin.de/de' class='mi'>Mehr Informationen zum Text</a>",
+            "connections": []
+          },
+          "moodle": {
+            "name": "Moodle-Kurse zur digitalen Lehre",
+            "desc": "<p>Eine Vielfalt an Informationen, Tutorials und anderen Ressourcen zur digitalen Lehre sind in Form von 'Kursen' auf der Moodle-Seite der HU zu finden. Eine Liste aller dieser Kurse finden Sie im Abschnitt <em>Kurse > HU Moodle: Informationen</em>.</p><a href='https://moodle.hu-berlin.de/course/index.php?categoryid=906' class='mi'>Liste der Moodle-Kurse</a>",
+            "connections": []
+          },
+          "medienkomm": {
+            "name": "Medienkommission",
+            "desc": "<p>Die Medienkommission ist für den Computer- und Medienservice und die Universitätsbibliothek zuständig. Als Kommission des akademischen Senats übernimmt die Medienkommission die Beratung und Planung zu IT und Medien der Humboldt-Universität und deren Bibliothek. In dieser Funktion verantwortet Sie zwei Förderlinien für IT- und Medieninfrastrukturen. </p><a href='https://gremien.hu-berlin.de/de/medienkommission' class='mi'>Mehr Informationen zur Medienkommission</a>",
+            "connections": []
+          }
+        },
+        "ki":{
+          "kicms": {
+            "name": "KI-Website der HU",
+            "desc": "<p>Diese Webseite informiert über KI Angebote der HU und bietet Unterstützung für deren Nutzung.</p><a href='https://ki.cms.hu-berlin.de/de' class='mi'>Zur KI-Website</a>",
+            "connections": []
+          },
+          "aiskills": {
+            "name": "AI-Skills",
+            "desc": "<p> Ziel von AI-SKILLS ist es, Lehrende dabei zu unterstützen, den Studierenden aller Disziplinen die fachspezifische Auseinandersetzung mit KI-Methoden und KI-Technologien in der universitären Lehre forschungsbezogen und anwendungsorientiert zu vermitteln. Dazu vernetzen wir interessierte Lehrende in Communities of Practice, die sich gemeinsam dem Thema KI widmen.</p><a href='https://www.projekte.hu-berlin.de/de/ai-skills' class='mi'>Mehr Informationen zu AI-Skills</a>",
+            "connections": []
+          },
+          "kicampus": {
+            "name": "KI-Campus 2.0",
+            "desc": "<p>Das Verbundprojekt KI-Campus 2.0 hat die Entwicklung und Erprobung nachhaltiger Umsetzungskonzepte für den KI-Campus mit offenen Lernangeboten, Communities und Technologien für Wissenschaft und Praxis zum Ziel.</p><a href='https://www.hu-berlin.de/de/hu/verwaltung/ccww/projekt-ki-campus-2.0' class='mi'>Mehr Informationen zum KI-Campus 2.0</a>",
+            "connections": []
+          },
+          "impact": {
+            "name": "IMPACT",
+            "desc": "<p>Das durch das BMBF geförderte Verbundprojekt IMPACT (<b>Imp</b>lementierung von KI-basiertem Feedb<b>ac</b>k und Assessment mit <b>T</b>rusted Learning Analytics in Hochschulen) setzt sich zum Ziel, Trusted Learning Analytics in den Verbundhochschulen zu etablieren, um das Lernen, Lehren und Prüfen mit KI-unterstützten Methoden datenschutzkonform zu ermöglichen. Zugleich führt es mehrere Anwendungsszenarien für den Einsatz von KI im Student Life Cycle zusammen und will so Impulse für eine zukunftsfähige Hochschulbildung setzen.</p><a href='https://www.projekte.hu-berlin.de/de/impact' class='mi'>Mehr Informationen zum Projekt IMPACT</a>",
+            "connections": []
+          }
+        },
+        "weiterb": {
+          "bwb": {
+            "name": "Berufliche Weiterbildung",
+            "desc": "<p>Die berufliche Weiterbildung der HU (BWB) bietet allen HU-Mitarbeiter:innen ein zielgruppenspezifisches und umfangreiches Weiterbildungsangebot.</p><a href='https://bwb.hu-berlin.de' class='mi'>Mehr Informationen zur Beruflichen Weiterbildung</a>",
+            "connections": []
+          },
+          "kilz": {
+            "name": "KI-Lehrzertifikat",
+            "desc": "<p>Das KI-Lehrzertifikat beinhaltet eine fundierte hochschuldidaktische Qualifizierung zum Thema Künstliche Intelligenz und ist an Standards und Leitlinien der Deutschen Gesellschaft für Hochschuldidaktik (dghd) ausgerichtet</p><a href='https://www.hu-berlin.de/de/hu/verwaltung/ccww/wissenschaftliche-weiterbildung/ki-lehrzertifikat' class='mi'>Mehr Informationen zum KI-Zertifikat</a><a href='https://www.dghd.de/' class='mi cont'>Informationen zur dghd</a>",
+            "connections": []
+          },
+          "bzhl": {
+            "name": "Berliner Zentrum für Hochschullehre",
+            "desc": "<p>Das BZHL ist eine gemeinsame Einrichtung der 13 öffentlichen Berliner Hochschulen und der Charité - Universitätsmedizin Berlin und hat das Ziel, 'den Professionalisierungsgrad der Lehrtätigkeit von angehenden und praktizierenden Hochschullehrer/-innen zu erhöhen und damit die Qualität der Lehre zu verbessern'</p><a href='https://www.tu.berlin/bzhl' class='mi'>Mehr Informationen zum BZHL</a>",
+            "connections": []
+          },
+          "ubib": {
+            "name": "Universitätsbibliothek",
+            "wordBreak": "Universitäts-bibliothek",
+            "desc": "<p>Die Universitätsbibliothek der HU bietet Führungen und Schulungen zu diversen Aspekten der Informationskompetenz (z.B. Recherche, Literaturverwaltung) und in verschiedenen Formaten an.</p><a href='https://www.ub.hu-berlin.de/de/recherche-lernen/fuehrungen-schulungen-webinare' class='mi'>Zu den Angeboten</a>",
+            "connections": []
+          }
+        }
+      }
+
+      // Berechnung der Position der Pünkte
+      const originalWindowWidth = window.innerWidth
+      const dCont1 = document.getElementById("dCont1")
+
+      const closeBtn = document.getElementById("closeBtn")
+      var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
+      if (window.innerWidth < thresholdWidth){
+        dCont1.style["aspect-ratio"] = 0.83
+      }
+      var diagramWidth = dCont1.offsetWidth
+      var radiusMax = 0.5 * diagramWidth * 0.9
+      var activeClass = null
+      var openNode = null
+      var oldPos
+      var inactiveNodeWidth=100, inactiveNodeHeight=100
+      var activeNodeWidth = document.getElementById("invisibleNode").offsetWidth, activeNodeHeight = document.getElementById("invisibleNode").offsetHeight
+      
+      // var dC = document.getElementById("decCircle")
+      // dC.style["top"] = diagramWidth/2 + "px"      
+
+      var nodes = {
+        "outer" : {
+          "struktur": "weiterb",
+          "radius": function(rMax){return 0.85*rMax},
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 12
+        },
+        "mid" : {
+          "struktur": "support",
+          "radius": function(rMax){return 0.6*rMax},
+          "angInit": - 2*Math.PI / 4 - 2*Math.PI / 24
+        }, 
+        "inner": {
+          "struktur": "ki",
+          "radius": function(rMax){return 0.3*rMax},
+          "angInit": - 2*Math.PI / 4 + 2*Math.PI / 24
+        }
+      }
+      
+      Object.entries(nodes).forEach(function(nodeEntry, j){
+        let category = strukturen[nodeEntry[1]["struktur"]]
+        let radius = nodeEntry[1]["radius"](radiusMax)
+        let angInit = nodeEntry[1]["angInit"]
+        
+        let num = Object.keys(category).length
+        let angStep = 2*Math.PI / num
+        
+        let thisList = document.createElement("ul")
+        thisList.setAttribute("id", nodeEntry[1]["struktur"])
+        thisList.setAttribute("aria-label", "liste " + nodeEntry[1]["struktur"])
+        dCont1.append(thisList)
+        Object.entries(category).forEach(function(catEntry, i){
+          let theta = angInit + i*angStep
+          
+          let thisNode = document.createElement("li")
+          thisNode.classList.add("node", nodeEntry[0])
+
+          let x, y
+          if (window.innerWidth > thresholdWidth){
+            updateCoordinatesPolar(thisNode, radius, theta)
+          } else {
+            let nodeHeight = dCont1.offsetHeight/num 
+            x = ["0%", "50%", "calc(100% - 2px)"][j]
+            y = (nodeHeight/2 - 2.5 + i * dCont1.offsetHeight / num)+"px"
+            thisNode.style.height = (nodeHeight-10)+"px"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
+          }
+          thisNode.setAttribute("id", catEntry[0])
+          thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
+          thisNode.setAttribute("r", radius)
+          thisNode.setAttribute("theta", theta)
+          thisNode.setAttribute("theta_init", angInit)
+          thisNode.setAttribute("idx", [j,i])
+          thisNode.setAttribute("num", num)
+
+          let title = document.createElement("h3")
+          title.classList.add("title")
+          if (catEntry[1].hasOwnProperty("wordBreak")){
+            title.innerHTML = "<span>" + catEntry[1]["wordBreak"] + "</span>"
+          } else {
+            title.innerHTML = "<span>" + catEntry[1]["name"] + "</span>"
+          }
+          thisNode.append(title)
+
+          let nodeInfo = document.createElement("span")
+          nodeInfo.innerHTML = "<br><img src ='../images/info-circle.svg' name='anlaufpunkt-zeigen'>"
+          nodeInfo.classList.add("nodeInfo")
+          title.append(nodeInfo)
+
+          if (catEntry[1].hasOwnProperty("subtitle")){
+            let subtitle = document.createElement("h4")
+            subtitle.classList.add("subtitle")
+            subtitle.innerHTML = catEntry[1]["subtitle"]
+            thisNode.append(subtitle)
+          }
+          
+
+          let details = document.createElement("p")
+          details.classList.add("details")
+          details.innerHTML = catEntry[1]["desc"]
+
+          
+          thisNode.append(details)
+          thisList.append(thisNode)
+          // dCont1.append(thisNode)
+          if (j==0){
+          inactiveNodeWidth = thisNode.offsetWidth
+          inactiveNodeHeight = thisNode.offsetHeight
+        }
+        })
+      })
+
+    function updateCoordinatesPolar(node, r, theta){
+      node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
+      let top = (r * Math.sin(theta) + diagramWidth/2)
+      node.style["top"] = "calc(" + top * 0.67 + "px" + " + 1.5em)"
+    }
+
+    // Window resizing: what happens to the nodes?
+    function updateNodePosition(node, rMax){
+      let nodeEntry = nodes[node.classList[1]]
+      let radius = nodeEntry["radius"](rMax)
+      let theta = node.getAttribute("theta")
+      node.setAttribute("r", radius)
+      radiusMax = rMax
+      if (window.innerWidth > thresholdWidth){
+          updateCoordinatesPolar(node, radius, theta)
+          node.style["height"] = ""
+          node.style["width"] = ""
+        } else {
+          let idx = node.getAttribute("idx")
+          let j = idx.split(",")[0]
+          let i = idx.split(",")[1]
+          let num = node.getAttribute("num")
+          let nodeHeight = dCont1.offsetHeight/num
+          let x = ["0%", "50%", "calc(100% - 2px)"][j]
+          let y = (nodeHeight/2 - 2.5 + i * nodeHeight) + "px"
+          node.style["height"] = (nodeHeight-10)+"px"
+          node.style["left"] = x 
+          node.style["top"]  = y 
+      }
+    }
+    function updateAllNodes(){
+      let allNodes = document.getElementsByClassName("node")
+      for (let n of allNodes){
+        if (n.classList.contains("opened")){
+          closeNodeW(n)
+          n.style["transform"] = ""
+        }
+        if (window.innerWidth < thresholdWidth && n.classList.contains("active")){
+          n.classList.remove("active")
+          if (activeClass){
+            toggleNodes(activeClass)
+          }
+        }
+        diagramWidth = dCont1.offsetWidth
+        let rMax = 0.5 * diagramWidth * 0.9
+        setTimeout(()=>{
+              updateNodePosition(n, rMax)
+              if (!(window.innerWidth > thresholdWidth)){
+                n.style["height"] = (dCont1.offsetHeight/n.getAttribute("num")-10)+"px"
+                if (n.classList.contains("outer")){
+                  n.style["transform"] = "translate(0, -50%)"
+                }
+                if (n.classList.contains("mid")){
+                  n.style["transform"] = "translate(-50%, -50%)"
+                }
+                if (n.classList.contains("inner")){
+                  n.style["transform"] = "translate(-100%, -50%)"
+                }
+              } else {
+                n.style["transform"] = "translate(-50%, -50%)"
+              }
+            }, 50)
+        
+      }
+    }
+    window.addEventListener("resize", ()=>{
+      updateAllNodes()
+    })
+
+    // Button/Tab functionalities
+    function toggleNodes(class_id){
+      // Button formats
+      for (let tab of document.getElementById("toggleButtons").children){
+        let tabClass = tab.id.split("toggle")[1].toLowerCase()
+        // if clicking same button that was open
+        if (tab.classList.contains("activeC")){
+          tab.classList.remove("activeC")
+        }
+        if (tabClass==class_id){
+          if (!activeClass | activeClass != class_id){
+            tab.classList.add("activeC")
+            document.getElementsByClassName("diagramContainer")[0].style["background"]="#fafaf5"
+          } else {
+            tab.classList.remove("activeC")
+            document.getElementsByClassName("diagramContainer")[0].style["background"]=""
+          }
+        }
+      }
+
+      let allNodes = document.getElementsByClassName("node")
+        // clear all to start with, in either case
+        Object.keys(strukturen).forEach(function(cat){
+            let fade = document.getElementById("smallFade")
+            fade.style["background"] = "rgba(255,255,255,0)"
+        })
+        for(let node of allNodes){
+            if (node.classList.contains("active")){
+              if (window.innerWidth > thresholdWidth){
+                updateCoordinatesPolar(node, node.getAttribute("r"), node.getAttribute("theta"))
+              } else {
+              // for mobile: white fade effect
+            }      
+              node.classList.remove("active")
+            }
+            // minimize non-active modes
+            if (class_id != activeClass && !(node.classList.contains(class_id))){
+              node.classList.add("minimized")
+            }
+          }
+          // dC.classList.remove("activeC")
+
+        // activate nodes if they were hidden before
+        let theseNodes = document.getElementsByClassName(class_id)
+        if (activeClass != class_id){
+          for(let node of theseNodes){
+            node.classList.remove("minimized")
+            if (window.innerWidth > thresholdWidth){
+              
+              let rNew
+              let thetaNew = node.getAttribute("theta") - (node.getAttribute("theta_init") - (- 2*Math.PI/4))
+              if (node.getAttribute("r") < 2*inactiveNodeWidth){
+                rNew = 2.3*inactiveNodeWidth // + dC.offsetWidth*0.8
+              } else if (node.getAttribute("r") > radiusMax - inactiveNodeWidth){
+                rNew = radiusMax - 0.9*inactiveNodeWidth
+                // rNew = node.getAttribute("r")
+              } else {
+                rNew = node.getAttribute("r")
+              }
+              updateCoordinatesPolar(node, rNew, thetaNew)
+            }
+            node.classList.add("active")
+            // dC.classList.add("activeC")
+            // dC.style["border-color"] = window.getComputedStyle(node)["border-color"]
+          }
+          activeClass = class_id
+          if (window.innerWidth <= thresholdWidth){
+              // for mobile: white fade effect
+              let fade = document.getElementById("smallFade")
+              fade.style["background"] = "rgba(255,255,255,0.8)"
+            }      
+        }
+        else {
+          for (let node of allNodes){
+            node.classList.remove("minimized")
+          }
+          if (window.innerWidth <= thresholdWidth){
+              // for mobile: white fade effect
+              let fade = document.getElementById("smallFade")
+              fade.style["background"] = "rgba(255,255,255,0)"
+            }      
+          activeClass = null
+        }
+      
+    }
+
+    for (let item of document.getElementById("toggleButtons").children){
+      item.addEventListener("click", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        toggleNodes(class_id)
+      })
+      item.addEventListener("mouseenter", function(){
+        let class_id = this.id.split("toggle")[1].toLowerCase()
+        if (class_id != activeClass){
+          holdingOpen = false
+          toggleNodes(class_id)
+        }
+
+      })
+      item.addEventListener("mouseleave", function(e){
+        dCont1Rect = dCont1.getBoundingClientRect()
+        if (!isWithinBoundingRect(e.clientX, (e.clientY+1), dCont1Rect)){
+          let class_id = this.id.split("toggle")[1].toLowerCase()
+          toggleNodes(class_id)
+        } else {
+          holdingOpen = true
+        }
+      })
+    }
+
+    // Hover and click effects
+    function openNodeW(node){
+      // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
+      document.getElementById("fadeCover").style["display"] = "block"
+      document.getElementById("fadeCover").style["opacity"] = "0.8"
+      openNode = node.id
+      node.classList.remove("active")
+      node.classList.add("opened")
+      let x = node.style["left"]
+      let y = node.style["top"]
+      if (window.innerWidth > thresholdWidth){
+        node.style["left"] = (diagramWidth/2)+"px"
+        node.style["top"] = "5em"
+      } else {
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        node.style["top"] = "1em"
+        node.style["height"] = "fit-content"
+      }
+      node.style["transform"] = "translate(-50%, 0%)"
+
+      // adjust title if word-break version was used
+      let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
+      let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
+      if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
+        if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        }
+        else {
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+          console.log("Bitte fügen Sie zu diesem Item eine 'wordBreak' Version des Titels: " + node.id)
+        }
+      } else {
+        thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+
+      // adjust length 
+      let details = node.getElementsByClassName("details")[0]
+      setTimeout(()=>{details.style.height = heightToFitContent(details)+"px"}, 400)
+
+      function heightToFitContent(div){
+        let height = 0
+        let contents = div.childNodes
+
+        contents.forEach(function(element){
+          let marginTop = +(window.getComputedStyle(element)["margin-top"].split("px")[0])
+          height += marginTop
+          let marginBottom = +(window.getComputedStyle(element)["margin-bottom"].split("px")[0])
+          height += marginBottom
+          height += element.offsetHeight
+        })
+        return height
+      }
+      
+      dCont1.removeChild(closeBtn)
+      node.append(closeBtn)
+      setTimeout(function(){
+        closeBtn.style.visibility="visible"
+        closeBtn.style.opacity="1"
+      }, 500)
+      return [x, y]
+      }
+      
+    function closeNodeW(node){
+      node.classList.remove("opened")
+      node.classList.add("closing")
+      node.style["left"] = oldPos[0]
+      node.style["top"] = oldPos[1]
+      
+
+      if (!(window.innerWidth > thresholdWidth)){
+        node.style["height"] = (dCont1.offsetHeight/node.getAttribute("num")-10)+"px"
+        if (node.classList.contains("outer")){
+          node.style["transform"] = "translate(0, -50%)"
+        }
+        if (node.classList.contains("mid")){
+          node.style["transform"] = "translate(-50%, -50%)"
+        }
+        if (node.classList.contains("inner")){
+          node.style["transform"] = "translate(-100%, -50%)"
+        }
+      } else {
+        node.style["transform"] = "translate(-50%, -50%)"
+      }
+
+      // adjust title if word-break version was used
+      let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
+      let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
+      if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
+        if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        }
+        else {
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+          console.log("Bitte fügen Sie zu diesem Item eine 'wordBreak' Version des Titels: " + node.id)
+        }
+      } else {
+        thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+
+      // undo height adjustment
+      let details = node.getElementsByClassName("details")[0]
+      details.style.height = ""
+
+      document.getElementById("fadeCover").style["opacity"] = "0"
+      document.getElementById("fadeCover").style["display"] = "none"
+      
+      node.removeChild(closeBtn)
+      dCont1.appendChild(closeBtn)
+      closeBtn.style.visibility="hidden"
+      closeBtn.style.opacity="0"
+      openNode = null
+      setTimeout(function(){
+        if (node.classList.contains(activeClass)){
+          node.classList.add("active")
+        } else {
+          node.classList.remove("active")
+        }
+        setTimeout(function(){
+          node.classList.remove("closing")
+        },400)
+      }, 100)
+      }
+      
+    for (let item of document.getElementsByClassName("node")){
+      item.addEventListener("mouseenter", function(e){
+        if (!activeClass && !(item.classList.contains("opened"))){
+          item.classList.add("active")
+        }
+      })
+      item.addEventListener("mouseleave", function(){
+        if (!activeClass){
+          item.classList.remove("active")
+        }
+      })
+      item.addEventListener("click", function(){
+        // special case - clicking a minimized node activates the whole class
+        if (item.classList.contains("minimized")){
+          let class_id = item.classList[1]
+          toggleNodes(class_id)
+        } else {
+          if (!openNode && !(item.classList.contains("closing")) && window.innerWidth <= thresholdWidth){
+            oldPos = openNodeW(item)
+          } 
+        }
+        
+      })
+    }
+
+    // "nodeInfo" buttons
+    document.querySelectorAll(".nodeInfo img").forEach(function(item){
+      item.addEventListener("click", function(e){
+        let nodeToShow = item.parentElement.parentElement.parentElement
+        console.log(nodeToShow)
+        if (item.classList.contains("hovered")){
+          oldPos = openNodeW(nodeToShow)
+        }
+      })
+      item.addEventListener("mouseenter", function(e){
+        item.classList.add("hovered")
+        setTimeout(function(){
+          if (isWithinBoundingRect(e.clientX, e.clientY, item.getBoundingClientRect())){
+            console.log("yay")
+            let nodeToShow = item.parentElement.parentElement.parentElement
+            if (item.classList.contains("hovered")){
+              oldPos = openNodeW(nodeToShow)
+            }
+          }
+        }, 500)
+      })
+      item.addEventListener("mouseleave", function(e){
+        item.classList.remove("hovered")
+      })
+    })
+
+    // closeBtn
+    closeBtn.addEventListener("click", function(){
+      let nodeToClose = closeBtn.parentElement
+      closeNodeW(nodeToClose)
+    })
+
+    // position optimization functions
+    function isWithinBoundingRect(x, y, rect){
+      let rx1 = rect.x, rx2 = rect.x + rect.width
+      let ry1 = rect.y, ry2 = rect.y + rect.height
+      if (rx1 <= x && x <= rx2 && ry1 <= y && y <= ry2){
+        return true
+      } else {
+        return false
+      }
+    }
+    </script>
+	</body>
+</html>

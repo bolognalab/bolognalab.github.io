@@ -1,0 +1,463 @@
+<!DOCTYPE HTML>
+<!--
+	Leitbild Lehre
+-->
+<html lang="de">
+	<head>
+		<title>Leitbild Lehre</title>
+		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+ 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../assets/css/leibile.css" /> 
+    <script src="../assets/js/jquery.min.js"></script>
+    <style>
+      .nachhaltigkeit .node .nodeInfo {
+        display: block;
+      }
+      .nachhaltigkeit .node.opened .nodeInfo {
+        display: none;
+      }
+      .nachhaltigkeit .nodeInfo img{
+        padding-top: 0.6em;
+      }
+    </style>
+	</head>
+	<body class="is-preload">
+    <div class="innerWindow nachhaltigkeit">
+      <img id="banner" style="width: 100%" alt="Leitbild Lehre der Humboldt-Universität zu Berlin" src="../images/leibile/leitbild-banner.png" />
+      <div class="bk">
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
+      <h1>Nachhaltigkeit und Innovation</h1>
+      <div id="decCircle" style="background: #3a7775"><img class="mainIcon" src="../images/leibile/nachhaltigkeit.svg"></div>
+      <p style="margin-top: 1em">Um eine zukunftsfähige, nachhaltige und innovative Hochschullehre zu gestalten, bedarf es Institutionen, die sich dem Austausch mit verschiedenen Akteuren innerhalb und außerhalb der HU widmen. Diese Institutionen ermöglichen einen Wissenserwerb zu den Themen, fördern die third mission der HU und bringen die Themen in die Universitätstrukturen:</p>
+      <div class="containerWindow">
+        <!-- decorative elements -->
+        <div id="fadeCover" style="background: #f0f0eb; height: calc(100% + 4px)"></div>
+        <h2>Wissenserwerb an der HU</h2>
+        <div class="diagramContainer" id="dCont1">
+          <div id="closeBtn"><p>&#10006;</p></div>
+          <div id="smallFade"></div>
+        </div>
+
+        <h2>Nachhaltigkeit als Mission</h2>
+        <div class="diagramContainer" id="dCont2"></div>
+        <h2>Kommissionen und AGs</h2>
+        <div class="diagramContainer" id="dCont3"></div>
+      </div>
+      <h2>Weitere Dokumente</h2>
+      <ul>
+        <li><a class='mi' href='../files/leibile/klimaschutzkonzept_hu_2023.pdf'>Klimaschutzkonzept der HU (PDF)</a><br>(Klimaschutzmanagement)</li>
+      </ul>
+      <div class="bk">
+        <h3>Zurück zur Hauptseite</h3>
+        <a href="index.html" aria-label="zurück zur Hauptseite"><img src="../images/icons/back6.svg" /></a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <script>$("#footer").load("footer.html"); </script>
+    </footer>
+
+
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script>
+      const strukturen = {
+        "wissenserwerb": {
+          "oeco": {
+            "name": "Studium Oecologicum",
+            "desc": "<p>Das <b>Studium Oecologicum</b> ist ein 10 Leistungspunkte umfassendes Lehrprogramm im überfachlichen Wahlpflichtbereich, das im Rahmen der studentischen Initiative <b>'Nachhaltigkeitsbüro'</b> entwickelt wurde. Es richtet sich vor allem an Bachelor- und Masterstudierende der HU.</p><a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/studium-oecologicum' class='mi'>Mehr Informationen zum Studium Oecologicum</a><a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/' class='mi cont'>Informationen zum Nachhaltigkeitsbüro</a>",
+            "connections": []
+          },
+          "h17wiss": {
+            "name": "Humboldts17: Wissensportal",
+            "desc": "<p>Humboldts17 ist das Wissensportal Nachhaltigkeit der Humboldt-Universität zu Berlin. Die Webseite stellt wissenschaftliche Ideen und Erkenntnisse vor für Wege in eine nachhaltige Zukunft im Zeitalter des Anthropozäns.</p><a href='https://humboldts17.de/de' class='mi'>Homepage der Humboldts17</a>",
+            "connections": []
+          },
+          "irithesysWiss": {
+            "name": "IRI THESys: Programme",
+            "subtitle": "Integrative Research Institute on Transformations of Human-Environment Systems",
+            "desc": "<p>Die IRI-THESys Studienprogramme befähigen Studierende interdisziplinär im Bereich der Mensch-Umwelt-Interaktion zu forschen und vernetzen sie international.</p><a href='https://www.iri-thesys.org/education/' class='mi'>Informationen zu den Angeboten von IRI THESys</a>",
+            "connections": []
+          }
+        },
+        "mission":{
+          "nbuero": {
+            "name": "Nachhaltigkeitsbüro",
+            "desc": "<p>Das Nachhaltigkeitsbüro verfolgt das Ziel, eine nachhaltige Uni zu schaffen, die diese Thematik in allen Arbeitsfeldern aufgreift, umsetzt sowie weiterträgt. Somit kann sie letztendlich den Wandel hin zu einer nachhaltigen Gesellschaft aktiv mitgestalten.</p><a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/' class='mi'>Mehr Informationen zum Nachhaltigkeitsbüro</a>",
+            "connections": []
+          },
+          "h17miss": {
+            "name": "Humboldts17: Expeditionen",
+            "desc": "<p>Auf der Seite 'Expeditionen' des Humboldts17 werden Wissenschaftler:innen der Humboldt-Universität vorgestellt, die in zahlreichen Projekten an Themen der Nachhaltigkeit forschen.</p><a href='https://h17.cdlx.dev/de/expeditionen' class='mi'>Mehr Informationen zu den Expeditionen von Humboldts17</a>",
+            "connections": []
+          },
+          "irithesysMiss": {
+            "name": "IRI THESys: Outreach",
+            "subtitle": "Integrative Research Institute on Transformations of Human-Environment Systems",
+            "desc": "<p>Wissenschaftskommunikation zielt im IRI THESys nicht nur auf die Verbreitung, sondern auch auf die Verbindung und Integration von Interessengruppen aus Gesellschaft, Wissenschaft, Politik und darüber hinaus ab. Durch Veranstaltungen, Ausstellungen und Pressearbeit arbeitet IRI THESys daran, das Bewusstsein, das Engagement und die Beteiligung an der Transformationsforschung zu erhöhen.</p><a href='https://www.iri-thesys.org/' class='mi'>Mehr Informationen zum IRI THESys</a>",
+            "connections": []
+          }
+        },
+        "kommissionenAgs": {
+          "knu": {
+            "name": "Kommission Nachhaltige Universität",
+            "desc": "<p>Die Kommission Nachhaltige Universität leitet aus der Klimaschutzstrategie der HU entsprechende Maßnahmen zur Umsetzung ein. Die Maßnahmen orientieren sich an den Handlungsfeldern <b>Lehre</b>, <b>Betrieb</b>, <b>Forschung</b>, <b>Governance</b> und <b>Kommunikation</b></p><a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/kommission-nachhaltige-universitaet/kommission-nachhaltige-universitaet-2' class='mi'>Mehr Informationen zur KNU</a><a href='https://www.nachhaltigkeitsbuero.hu-berlin.de/de/kommission-nachhaltige-universitaet' class='mi cont'>Informationen zum Nachhaltigkeitskompetenzzentrum</a>",
+            "connections": []
+          },
+          "instit": {
+            "name": "Institutspezifische Initiativen",
+            "wordBreak": "Institutspezifische Initiativen",
+            "desc": "<a href='https://www.geographie.hu-berlin.de/de/institut/nachhaltigkeit' class='mi'>Nachhaltigkeits-AG, Geografisches Institut</a><span>(Initiative mit dem Fokus auf Klima und globale Gerechtigkeit am Institut)</span><a href='https://www.greenchem.berlin/' class='mi cont'>greenCHEM</a><span>(Hochschulübergreifendes Projekt zur Nachhaltigkeit in der Chemie)</span>",
+            "connections": []
+          }
+        }
+      }
+
+      // Berechnung der Position der Pünkte
+      const dCont1 = document.getElementById("dCont1")
+      const dCont2 = document.getElementById("dCont2")
+      const dCont3 = document.getElementById("dCont3")
+      const closeBtn = document.getElementById("closeBtn")
+      var thresholdWidth = 600 // width at which to switch appearance from "mobile" to "desktop"
+
+      var diagramWidth = dCont1.offsetWidth
+      var radiusMax = 0.5 * diagramWidth * 0.9
+      var activeClass = null
+      var openNode = null
+      var oldPos
+      
+      // var dC = document.getElementById("decCircle")
+      // dC.style["top"] = diagramWidth/2 + "px"
+
+      var nodes = {
+        "first" : {
+          "struktur": "wissenserwerb",
+          "width": 90,
+          "box": dCont1
+        },
+        "second" : {
+          "struktur": "mission",
+          "width": 90,
+          "box": dCont2
+        },
+        "third" : {
+          "struktur": "kommissionenAgs",
+          "width": 90,
+          "box": dCont3
+        },
+      }
+
+      Object.entries(nodes).forEach(function(nodeEntry, j){
+        let category = strukturen[nodeEntry[1]["struktur"]]
+        let box = nodeEntry[1]["box"]
+        
+        let num = Object.keys(category).length
+        
+
+        let posY = 50
+        
+        let thisList = document.createElement("ul")
+        thisList.setAttribute("id", nodeEntry[1]["struktur"])
+        thisList.setAttribute("aria-label", "liste " + nodeEntry[1]["struktur"])
+        box.append(thisList)
+        Object.entries(category).forEach(function(catEntry, i){
+          
+          let thisNode = document.createElement("li")
+          thisNode.classList.add("node", "simple", nodeEntry[0])
+          thisNode.style["cursor"] = "pointer"
+
+          let x, y, posX, nodeWidth
+          if (window.innerWidth > thresholdWidth){
+            posX = (100/num)*0.5 + i*(100/num)
+            x = posX + "%"
+            y = posY + "%"
+            thisNode.style.height = "calc(100% - 8px)"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
+            thisNode.style["width"] = "calc(" + (100/num) + "% - 20px)"
+            thisNode.style["max-width"] = "14.8em"
+            // let posStep = nodeEntry[1]["width"] / num
+            // let offsetX = (100-nodeEntry[1]["width"])/2
+            // posX = offsetX + i*posStep
+
+            // let nodeHeight = 14 
+            // x = ["7em", "21em"][j]
+            // y = ["7em", "21em"][i]
+            // thisNode.style["left"] = x 
+            // thisNode.style["top"]  = y
+            // thisNode.style["width"] = "calc(" + (nodeEntry[1]["width"]/num) + "% - 2px)"
+          } else {
+            posX = (100/num)*0.5 + i*(100/num)
+            x = posX + "%"
+            y = posY + "%"
+            thisNode.style.height = "calc(100% - 8px)"
+            thisNode.style["left"] = x 
+            thisNode.style["top"]  = y 
+            thisNode.style["width"] = "calc(" + (100/num) + "% - 8px)"
+          }
+          thisNode.setAttribute("id", catEntry[0])
+          thisNode.setAttribute("cat", nodeEntry[1]["struktur"])
+          thisNode.setAttribute("posX", posX)
+          thisNode.setAttribute("posY", posY)
+          thisNode.setAttribute("idx", [j,i])
+          thisNode.setAttribute("num", num)
+
+          let title = document.createElement("h3")
+          title.classList.add("title")
+          if (catEntry[1].hasOwnProperty("wordBreak")){
+            title.innerHTML = catEntry[1]["wordBreak"]
+          } else {
+            title.innerHTML = catEntry[1]["name"]
+          }
+          thisNode.append(title)
+
+          let nodeInfo = document.createElement("span")
+          nodeInfo.innerHTML = "<img src ='../images/info-circle.svg' name='anlaufpunkt-zeigen'>"
+          nodeInfo.classList.add("nodeInfo")
+          title.append(nodeInfo)
+          if (catEntry[1].hasOwnProperty("subtitle")){
+            let subtitle = document.createElement("h4")
+            subtitle.classList.add("subtitle")
+            subtitle.innerHTML = catEntry[1]["subtitle"]
+            thisNode.append(subtitle)
+          }
+          
+
+          let details = document.createElement("p")
+          details.classList.add("details")
+          details.innerHTML = catEntry[1]["desc"]
+
+          
+          thisNode.append(details)
+          thisList.append(thisNode)
+        })
+      })
+
+      function updateCoordinatesPolar(node, r, theta){
+      node.style["left"] = (r * Math.cos(theta) + diagramWidth/2) + "px"
+      let top = (r * Math.sin(theta) + diagramWidth/2)
+      node.style["top"] = "calc(" + top * 0.7 + "px" + " + 2em)"
+    }
+
+    // Hover and click effects
+    function openNodeW(node){
+      // document.getElementById("fadeCover").style["background"] = "rgba(255, 255, 255, 0.9)"
+      document.getElementById("fadeCover").style["display"] = "block"
+      document.getElementById("fadeCover").style["opacity"] = "0.8"
+      openNode = node.id
+      node.classList.remove("active")
+      let x = node.style["left"]
+      let y = node.style["top"]
+      if (window.innerWidth > thresholdWidth){
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        if (node.classList.contains("third")){
+          node.style["top"] = "-10em"
+        } else {
+          node.style["top"] = "1em"
+        }
+        
+        node.style["z-index"] = 5
+        node.style["transform"] = "translate(-50%, 0%)"
+        node.style["max-width"] = ""
+        setTimeout(()=>{
+          node.classList.add("opened")
+          node.style["height"] = "fit-content"
+        }, 200)
+      } else {
+        node.style["left"] = (dCont1.offsetWidth/2) + "px"
+        if (node.classList.contains("third")){
+          node.style["top"] = "-10em"
+        } else {
+          node.style["top"] = "1em"
+        }
+        
+        node.style["z-index"] = 5
+        node.style["transform"] = "translate(-50%, 0%)"
+        setTimeout(()=>{
+          node.classList.add("opened")
+          node.style["height"] = "fit-content"
+        }, 200)
+      }
+      
+      // adjust title if word-break version was used
+      let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
+      let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
+      if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
+        if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        }
+        else {
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+          console.log("Bitte fügen Sie zu diesem Item eine 'wordBreak' Version des Titels: " + node.id)
+        }
+      } else {
+        thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+
+      // adjust length 
+      let details = node.getElementsByClassName("details")[0]
+      setTimeout(()=>{details.style.height = heightToFitContent(details)+"px"}, 400)
+
+      function heightToFitContent(div){
+        let height = 0
+        let contents = div.childNodes
+
+        contents.forEach(function(element){
+          let marginTop = +(window.getComputedStyle(element)["margin-top"].split("px")[0])
+          height += marginTop
+          let marginBottom = +(window.getComputedStyle(element)["margin-bottom"].split("px")[0])
+          height += marginBottom
+          height += element.offsetHeight
+        })
+        return height
+      }
+      
+      dCont1.removeChild(closeBtn)
+      node.append(closeBtn)
+      setTimeout(function(){
+        // closeBtn.style["left"] = "calc("+ (dCont1.offsetWidth/2) + "px + 30% + 1.5em)"
+        // closeBtn.style["top"] = (dCont1.offsetHeight/2) + "px"
+        closeBtn.style.visibility="visible"
+        closeBtn.style.opacity="1"
+      }, 500)
+      return [x, y]
+      }
+      
+    function closeNodeW(node){
+      node.classList.remove("opened")
+      node.classList.add("closing")
+      node.style["left"] = oldPos[0]
+      node.style["top"] = oldPos[1]
+      node.style["transform"] = "translate(-50%, -50%)"
+      node.style["z-index"] = ""
+
+      if (!(window.innerWidth > thresholdWidth)){
+        node.style["height"] = "calc(100% - 8px)"
+      } else {
+        node.style["height"] = "calc(100% - 8px)"
+        node.style["max-width"] = "11.8em"
+      }
+
+      let thisTitle = node.getElementsByClassName("title")[0].childNodes[0]
+      let titleText = strukturen[node.getAttribute("cat")][node.id]["name"]
+      if (titleText.split(" ").sort((a, b) => b.length - a.length)[0].length > 27){
+        if (strukturen[node.getAttribute("cat")][node.id].hasOwnProperty("wordBreak")){
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["wordBreak"]
+        }
+        else {
+          thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+          console.log("Bitte fügen Sie zu diesem Item eine 'wordBreak' Version des Titels: " + node.id)
+        }
+      } else {
+        thisTitle.innerHTML = strukturen[node.getAttribute("cat")][node.id]["name"]
+      }
+      
+      // undo height adjustment
+      let details = node.getElementsByClassName("details")[0]
+      details.style.height = ""
+
+      document.getElementById("fadeCover").style["opacity"] = "0"
+      document.getElementById("fadeCover").style["display"] = "none"
+      
+      node.removeChild(closeBtn)
+      dCont1.appendChild(closeBtn)
+      closeBtn.style.visibility="hidden"
+      closeBtn.style.opacity="0"
+      openNode = null
+      setTimeout(function(){
+        if (node.classList.contains(activeClass)){
+          node.classList.add("active")
+        } else {
+          node.classList.remove("active")
+        }
+        setTimeout(function(){
+          node.classList.remove("closing")
+        },400)
+      }, 100)
+      }
+      
+    for (let item of document.getElementsByClassName("node")){
+      item.addEventListener("mouseenter", function(){
+        if (window.innerWidth > thresholdWidth){
+          if (!(item.classList.contains("opened"))){
+            item.style["transform"] = "translate(-50%, -50%) scale(110%, 110%)"
+          }
+        }
+      })
+      item.addEventListener("mouseleave", function(){
+        if (window.innerWidth > thresholdWidth){
+          if (!(item.classList.contains("opened"))){
+            item.style["transform"] = "translate(-50%, -50%)"
+          }
+        }
+      })
+      item.addEventListener("click", function(){
+        // special case - clicking a minimized node activates the whole class
+        if (item.classList.contains("minimized")){
+          let class_id = item.classList[1]
+          toggleNodes(class_id)
+        } else {
+          if (!openNode && !(item.classList.contains("closing"))){
+            oldPos = openNodeW(item)
+          } 
+        }
+        
+      })
+    }
+
+    // "nodeInfo" buttons
+    document.querySelectorAll(".nodeInfo img").forEach(function(item){
+      item.addEventListener("click", function(e){
+        let nodeToShow = item.parentElement.parentElement.parentElement
+        console.log(nodeToShow)
+        if (item.classList.contains("hovered")){
+          oldPos = openNodeW(nodeToShow)
+        }
+      })
+      item.addEventListener("mouseenter", function(e){
+        item.classList.add("hovered")
+        showInfoTimeout = setTimeout(function(){
+          if (isWithinBoundingRect(e.clientX, e.clientY, item.getBoundingClientRect())){
+            let nodeToShow = item.parentElement.parentElement.parentElement
+            if (item.classList.contains("hovered")){
+              oldPos = openNodeW(nodeToShow)
+            }
+          }
+        }, 500)
+      })
+      item.addEventListener("mouseleave", function(e){
+        item.classList.remove("hovered")
+        clearTimeout(showInfoTimeout)
+      })
+    })
+
+
+
+    closeBtn.addEventListener("click", function(){
+      let nodeToClose = closeBtn.parentElement
+      closeNodeW(nodeToClose)
+    })
+
+    var n1 = document.getElementsByClassName("outer")[1]
+    var n0 = document.getElementsByClassName(activeClass)[0]
+    var n2 = document.getElementsByClassName(activeClass)[2]
+
+    function isWithinBoundingRect(x, y, rect){
+      let rx1 = rect.x, rx2 = rect.x + rect.width
+      let ry1 = rect.y, ry2 = rect.y + rect.height
+      if (rx1 <= x && x <= rx2 && ry1 <= y && y <= ry2){
+        return true
+      } else {
+        return false
+      }
+    }
+    </script>
+	</body>
+</html>
