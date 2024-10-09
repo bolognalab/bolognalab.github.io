@@ -55,10 +55,19 @@
     #start {
         background: var(--networkTurqoise)
     }
+    #start, .qCont .submitButton {
+        border: 4px solid rgba(255,255,255,0.7);
+    }
+    #start:hover, .qCont .submitButton:hover {
+        transform: scale(105%, 105%) translate(-50%, -50%);
+        border: 5px solid rgba(255,255,255,0.7);
+    }
     .qDiv {
-        background: rgba(18, 161, 154, 0.8);
+        /* background: rgba(18, 161, 154, 0.8); */
+        background: white;
         padding: 20px 20px;
-        color: white;
+        /* color: white; */
+        color: var(--networkBlack);
         margin-bottom: 20px;
         position: absolute;
         left: 50%;
@@ -85,11 +94,12 @@
         width: calc(100%-40px);
         transition: all 0.5s ease;
         border-radius: 0.4em;
-        border: 2px rgba(255,255,255,0.4) solid;
+        border: 2px rgba(18, 161, 154, 0.2) solid;
     }
     .aDiv.highlighted {
-        background: rgba(255, 252, 79, 0.1);
-        border: 2px rgba(255, 255, 255, 0.8) solid;
+        background: rgb(18, 161, 154);
+        border: 2px rgb(18, 161, 154) solid;
+        color: white;
     }
     input[type='radio']{
        opacity: 0;
@@ -125,7 +135,6 @@
         transform: translate(-50%, -50%);
         height: 3em;
         margin: 0 0;
-        border: 2px solid rgba(255,255,255, 1);
         transition: all 0.4s ease;
         cursor: pointer;
     }
@@ -135,7 +144,10 @@
         background: rgba(0,0,0,0);
         background-repeat: no-repeat;
         background-size: 0.8em;
-        filter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%);
+        border: 2px solid var(--networkTurqoise);
+        filter: var(--networkTurqoiseFilter);
+        opacity: 0.7;
+        /* filter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%); */
     }
     .nextButton.asIcon {
         background-image: url("../images/fwd3.svg");
@@ -148,7 +160,7 @@
         left: calc(15% - 0em)
     }
     .nextButton.asIcon:disabled, .prevButton.asIcon:disabled {
-        opacity: 0.5;
+        opacity: 0.2;
         transition: all 0.4s ease;
         cursor: auto;
     }
@@ -160,7 +172,7 @@
         font-size: 16px;
         font-weight: bold;
         letter-spacing: 0.05em;
-        background: rgba(15, 112, 183, 0.6)
+        background: var(--networkBlue)
     }
     .infoContainer {
         position: absolute;
@@ -223,7 +235,7 @@
         <div id="welcome" class="qDiv">
             <h2 style="text-align: center"><img src="../images/entscheidungshilfe/NHL_logo.svg" style="width: 40%" /></h2>
             <h1>Entscheidungsbaum Online und Hybride Lehre</h3>
-            <p>Überlegen Sie, in einem neuen Format zu unterrichten? Beantworten Sie die folgenden fragen und entdecken Sie, welches Szenario für Sie am besten passt!</p>
+            <p>Überlegen Sie, in einem neuen Format zu unterrichten? Beantworten Sie die folgenden Fragen und entdecken Sie, welches Szenario für Sie am besten passt!</p>
             <div class="buttonContainer"><button id="start" class="submitButton" onclick="start()" style="display:none">Beginnen</button></div>
         </div>
     </div>    

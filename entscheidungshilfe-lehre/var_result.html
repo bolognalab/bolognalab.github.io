@@ -9,8 +9,7 @@
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/jquery.csv.js"></script>
 </head>
-<body class="is-preload" lang="de" onload="loadPage()">
-<h2>Beispiel-Ergebnis</h2>
+<body class="is-preload resultBg" lang="de" onload="loadPage()">
     <div id="result" class="rCont">
         <p>Ihr Ergebnis:</p>
         <div id="resOverview" class="block overview">
@@ -40,10 +39,10 @@
                 <div class="descText">
                     <p>Notwendige Raumeigenschaften:</p>
                     <ul id="raumList" class="techList"></ul>
-                    <p>Notwendige Technik:</p>
+                    <!-- <p>Notwendige Technik:</p>
                     <ul id="hardwList" class="techList"></ul>
                     <p>Software:</p>
-                    <ul id="softwList" class="techList"></ul>
+                    <ul id="softwList" class="techList"></ul> -->
                 </div>
                 <a href="" class="pdfLink">
                     <img src='../../images/entscheidungshilfe/raumkonzept_icon.png' alt="" />
@@ -64,7 +63,7 @@
 
 
 const urlParams = new URLSearchParams(window.location.search);
-const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario') : "se-hyb-1-0-0"
+const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario') : "se-rem-2-1-2"
 const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : ["se-rem-2-0-0","se-rem-2-3-0","se-hyb-2-0-0","se-hyb-2-3-0"]
 const specialCases = urlParams.has('specialCases') ? urlParams.get('specialCases') : []
 
@@ -182,10 +181,11 @@ function addTip(tipCode, container){
                 tipContent.classList.add("tipContent")
                 tipContent.innerHTML = all_tips[tipCode]["content"]
 
-                tipli.setAttribute("onclick", "showHideTip(this)")
+                tipHeader.setAttribute("onclick", "showHideTip(this)")
     }
 
-    function showHideTip(a){
+    function showHideTip(th){
+        let a = th.parentElement
         if (a.classList.contains("open")){
             a.classList.remove("open")
         } else {

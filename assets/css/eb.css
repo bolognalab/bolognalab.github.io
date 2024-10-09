@@ -2,7 +2,7 @@
 :root {
     --whiteFilter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%);
     --networkBlack: #373736;
-    --networkTurqoise: rgb(18, 161, 154);
+    --networkTurqoise: #12a19a;
     --networkBlue: #0F70B7;
     --networkBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
     --vibrantBlue: #0F70B7;
@@ -126,16 +126,15 @@ li > .closeBtn {
 /* result container */
 .rCont {
     font-size: 14px;
-}
-.rCont > p:first-child {
-    margin-top: 8em
+    background: white;
+    padding-top: 8em
 }
 
 .block {
     padding: 15px 15px;
 }
 .block:nth-child(2n+1){
-    background-color: #f3fbff;
+    background-color: var(--backgroundLightBlue);
     margin-top: 2em;
 }
 .block:last-child {
