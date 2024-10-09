@@ -2060,7 +2060,7 @@
         },
         "modulCombo": {
             "condition": "artLV=VL",
-            "text": "Ist die Lehrveranstaltung mit einer anderen Art von Lehrveranstaltung desselben Moduls kombiniert, die Studierende im selben Semester besuchen (z.B. Vorlesung und Seminar)",
+            "text": "Ist die Lehrveranstaltung mit einer anderen Art von Lehrveranstaltung desselben Moduls kombiniert, die Studierende im selben Semester besuchen (z.B. Vorlesung und Seminar)?",
             "antworten": {
                 "nein": {
                     "text": "Nein",
@@ -2076,15 +2076,15 @@
         },
         "LZiP": {
             "condition": true,
-            "text": "Gibt es Lernziele, die <b>ausschlie\u00dflich in Pr\u00e4senz</b> erreichbar sind?",
+            "text": "Gibt es Lernziele oder Kurskomponenten, die <b>ausschlie\u00dflich in Pr\u00e4senz</b> sinnvoll sind, oder k\u00f6nnte eine*r Studierende alle Lernziele auch online erreichen?",
             "antworten": {
                 "0": {
-                    "text": "keine",
+                    "text": "Alle Lernziele des Kurses k\u00f6nnen <b>sowohl in Pr\u00e4senz als auch online</b> erreicht werden.",
                     "effects": {},
                     "conditionalEffects": {}
                 },
                 "1": {
-                    "text": "ja, von niedriger Priorit\u00e4t",
+                    "text": "Alle Lernziele k\u00f6nnen auch online erreicht werden, aber manche davon <b>nicht so gut online wie in Pr\u00e4senz</b>.",
                     "effects": {
                         "so-async-0-4-0": "FUNC",
                         "so-async-0-4-1": "FUNC",
@@ -3513,7 +3513,7 @@
                     }
                 },
                 "2": {
-                    "text": "ja, von hoher Priorit\u00e4t",
+                    "text": "Manche Komponenten des Kurses <b>m\u00fcssen</b> in Pr\u00e4senz durchgef\u00fchrt werden.",
                     "effects": {
                         "so-async-0-4-0": "FUNC",
                         "so-async-0-4-1": "FUNC",
@@ -5173,15 +5173,15 @@
         },
         "LZsy": {
             "condition": true,
-            "text": "Gibt es Lernziele, die <b>ausschlie\u00dflich synchron</b> w\u00e4hrend dieser Lehrveranstaltung erreichbar sind?",
+            "text": "Wie wichtig ist die <b>synchrone Interaktion</b> zwischen Studierenden f\u00fcr die Ziele der Lehrveranstaltung?",
             "antworten": {
                 "0": {
-                    "text": "keine",
+                    "text": "Nicht so wichtig - synchrone Interaktion ist zwar sch\u00f6n, aber die meisten Lernziele k\u00f6nnten auch asynchron erreicht werden.",
                     "effects": {},
                     "conditionalEffects": {}
                 },
                 "1": {
-                    "text": "ja, von niedriger Priorit\u00e4t",
+                    "text": "Wichtig - die synchrone Interaktion verbessert die Lernerfahrung der Studierenden erheblich - aber eine*r Studierende k\u00f6nnte auch ohne sie erfolgreich im Kurs sein",
                     "effects": {
                         "so-async-0-4-0": -100,
                         "so-async-0-4-1": -100,
@@ -5481,7 +5481,7 @@
                     "conditionalEffects": {}
                 },
                 "2": {
-                    "text": "ja, von hoher Priorit\u00e4t",
+                    "text": "Essentiel - ohne synchrone Interaktion k\u00f6nnen manche Lernziele des Kurses nicht erreicht werden.",
                     "effects": {
                         "so-async-0-4-0": -100,
                         "so-async-0-4-1": -100,
@@ -8493,7 +8493,7 @@
             "text": "Ist die Anzahl der Studierenden, die Ihren Kurs pers\u00f6nlich besuchen k\u00f6nnen, durch eine geringe Raumkapazit\u00e4t, Verf\u00fcgbarkeit von Ausrustung, o.\u00e4. eingeschr\u00e4nkt? (z.B. Computerraum)",
             "antworten": {
                 "nein": {
-                    "text": "nein",
+                    "text": "Nein",
                     "effects": {
                         "se-grwechs-1-0-0": -100,
                         "se-grwechs-1-0-1": -100,
@@ -8517,7 +8517,7 @@
                     "conditionalEffects": {}
                 },
                 "ja": {
-                    "text": "ja",
+                    "text": "Ja",
                     "effects": {
                         "se-grwechs-1-0-0": 2,
                         "se-grwechs-1-0-1": 2,
@@ -9697,12 +9697,12 @@
             "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufst\u00e4tigkeit) eingeschr\u00e4nkte Zeitpl\u00e4ne?",
             "antworten": {
                 "nein": {
-                    "text": "Nein.",
+                    "text": "Nein",
                     "effects": {},
                     "conditionalEffects": {}
                 },
                 "ja": {
-                    "text": "Ja.",
+                    "text": "Ja",
                     "effects": {
                         "so-async-0-4-0": 2,
                         "so-async-0-4-1": 2,
@@ -10879,7 +10879,7 @@
                     }
                 },
                 "idk": {
-                    "text": "Ich bin mir nicht sicher.",
+                    "text": "Ich bin mir nicht sicher",
                     "effects": {},
                     "conditionalEffects": {}
                 }
@@ -10890,17 +10890,17 @@
             "text": "K\u00f6nnten alle Studierenden ihre pers\u00f6nlichen (oder ausgeliehenen) Ender\u00e4te und die verf\u00fcgbare Internetverbindung f\u00fcr die ben\u00f6tigte Interaktion bzw. Kollaboration <b>im Lehrraum</b> nutzen?",
             "antworten": {
                 "nein": {
-                    "text": "Nein.",
+                    "text": "Nein",
                     "effects": {},
                     "conditionalEffects": {}
                 },
                 "idk": {
-                    "text": "Ich wei\u00df nicht.",
+                    "text": "Ich wei\u00df nicht",
                     "effects": {},
                     "conditionalEffects": {}
                 },
                 "ja": {
-                    "text": "Ja bzw. ich k\u00f6nnte daf\u00fcr sorgen.",
+                    "text": "Ja bzw. ich k\u00f6nnte daf\u00fcr sorgen",
                     "effects": {},
                     "conditionalEffects": {}
                 }
@@ -10911,7 +10911,7 @@
             "text": "Haben alle Studierenden <b>au\u00dferhalb des Lehrraums</b> Zugang zu einem Ger\u00e4t und einer Umgebung, in der sie zuverl\u00e4ssig online am Kurs teilnehmen k\u00f6nnen?",
             "antworten": {
                 "nein": {
-                    "text": "Nein.",
+                    "text": "Nein",
                     "effects": {
                         "so-async-0-4-0": -100,
                         "so-async-0-4-1": -100,
@@ -11217,7 +11217,7 @@
                     "conditionalEffects": {}
                 },
                 "idk": {
-                    "text": "Ich wei\u00df nicht.",
+                    "text": "Ich wei\u00df nicht",
                     "effects": {
                         "so-async-0-4-0": -2,
                         "so-async-0-4-1": -2,
@@ -11523,7 +11523,7 @@
                     "conditionalEffects": {}
                 },
                 "ja": {
-                    "text": "Ja bzw. ich k\u00f6nnte daf\u00fcr sorgen.",
+                    "text": "Ja bzw. ich k\u00f6nnte daf\u00fcr sorgen",
                     "effects": {},
                     "conditionalEffects": {}
                 }
@@ -11544,33 +11544,12 @@
                     "conditionalEffects": {}
                 },
                 "idk": {
-                    "text": "Ich bin mir nicht sicher.",
+                    "text": "Ich bin mir nicht sicher",
                     "effects": {},
                     "conditionalEffects": {}
                 }
             },
             "addInfo": "Hier wird eine 'Erfassung' des Raums entweder f\u00fcr eine Aufzeichnung oder f\u00fcr eine Live-Videokonferenz gemeint."
-        },
-        "IntSync": {
-            "condition": true,
-            "text": "Wie viel studentische Interaktion ist <b>w\u00e4hrend der Kurssitzungen</b> f\u00fcr die Lernziele des Kurses ben\u00f6tigt?",
-            "antworten": {
-                "0": {
-                    "text": "Die Studierenden brauchen nur gelegentlich w\u00e4hrend des Unterrichts aktiv beizutragen (der Unterricht ist eher frontal)",
-                    "effects": {},
-                    "conditionalEffects": {}
-                },
-                "1": {
-                    "text": "Die Studierenden sollen sich im Kurs aktiv beteiligen, aber es gibt keine gezielte Gruppenarbeit w\u00e4hrend des Unterrichts",
-                    "effects": {},
-                    "conditionalEffects": {}
-                },
-                "2": {
-                    "text": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren und gelegentlich in Gruppen arbeiten.",
-                    "effects": {},
-                    "conditionalEffects": {}
-                }
-            }
         },
         "IntAsync": {
             "condition": true,
@@ -17514,7 +17493,8 @@
                     },
                     "conditionalEffects": {}
                 }
-            }
+            },
+            "addInfo": "z.B. Collaborative Online International Learning f\u00fcr alle oder ein Teil der Sitzungen"
         }
     },
     "scenarios": {
