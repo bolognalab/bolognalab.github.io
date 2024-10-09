@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entscheidungshilfe</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="de">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="../assets/css/eb.css" />
+<script src="../assets/js/jquery.min.js"></script>
+</head>
+<body class="is-preload" lang="de">
+<h2>Fragereihe-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
+<div style="display: table; width: 100%">
+    <div id="questions" class="qCont"></div>
+    <hr />
+    <div id="result" class="rCont"></div>
+    <hr />
+    <div id="scenarios" class="sCont"></div>
+    
+</div>
+<script src="../assets/js/jquery.csv.js"></script>
+<script>
+    const qCont = document.getElementById("questions")
+    const sCont = document.getElementById("scenarios")
+    const rCont = document.getElementById("result")
+
+    var all_data, questionInfo, all_scenarios, all_texts, all_tips, tip_matching
+
+    var activeQ, activeA
+    var nextQuestionIdx = 0
+
+    var scenarios = {}
+    const colorMapping = {
+        "-100": "#C00000",
+        "-2": "#f77e59",
+        "-1": "#ffa185",
+        "0": "#FFEB84",
+        "1": "#D4DE89",
+        "2": "#A9D08E",
+        "FUNC": "#FFFFAA"
+    }
+
+    const questionOrder = [ 
+        'artLV', 
+        // 'modulCombo',
+        'LZiP',
+        'LZsy', 
+        'niePr',
+        // 'nieSync',
+        // // 'wohnLP',
+        // 'regAbw',
+        // "onlBereit", 
+        // "limZPSt",
+        // "onlZugang",
+        // "IntAsync",
+        // 'gaeste', 
+        // 'gaesteMittel',
+        // "exkur",
+        // "exkurMittel",
+        // 'begrAnz',
+        // "intKoll"
+    ]
+
+
+
+    var answers = {}
+    var activeScenarios = {}
+    var recent = []
+
+    const maxShownAnswers = 4
+
+    // temporary
+    var topResults
+
+    // Previous Question, Next Question, Submit buttons (will be moved around)
+    var pButton = document.createElement("button"); document.body.append(pButton)
+    pButton.classList.add("prevButton")
+    pButton.setAttribute("id", "prevButton")
+    pButton.innerHTML = "Vorherige Frage"
+    pButton.addEventListener("click", function(){
+        undoAnswer()
+    })
+    pButton.style.display = "none"
+
+    let nButton = document.createElement("button"); document.body.append(nButton)
+    nButton.classList.add("nextButton")
+    nButton.setAttribute("id", "nextButton")
+    nButton.innerHTML = "Nächste Frage"
+    nButton.addEventListener("click", function(){
+        submitAnswer()
+    })
+    nButton.style.display = "none"
+
+    let sButton = document.createElement("button"); document.body.append(sButton)
+    sButton.classList.add("nextButton")
+    sButton.setAttribute("id", "submitButton")
+    sButton.innerHTML = "Absenden"
+    sButton.addEventListener("click", function(){
+        getResult(activeScenarios)
+    })
+    sButton.style.display = "none"
+
+    $.getJSON("data.json", function(json){
+        all_data = json
+        questionInfo = json['questions']
+        all_scenarios = json['scenarios']
+        Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
+        displayQuestion(questionOrder[nextQuestionIdx])
+        $.get( "texts_tips_matrix.csv", function(CSVdata) {
+            let csvData = $.csv.toObjects(CSVdata, {separator:';'});
+            all_texts = {}
+            tip_matching = {}
+            csvData.forEach(function(dict){
+                let key = dict["wert"]
+                delete dict["wert"]
+                
+                all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
+                tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
+            })
+            $.get("tips_source.json", function(json){
+                all_tips = json["tips"]
+                // setTimeout(showResult('se-rem-2-1-1', specialCases=[], topTier=['se-rem-2-1-1']), 500)
+            })
+            
+        });
+    })
+
+    function displayQuestion(qKey){
+        let q = questionInfo[qKey]
+        let qText = q.text
+
+        activeQ = qKey
+        activeA = null
+
+        let qDiv = document.createElement("div"); qCont.append(qDiv)
+        qDiv.setAttribute("id", "DIV_" + qKey)
+        let qP = document.createElement("p"); qDiv.append(qP)
+        qP.setAttribute("id", "Q_" + qKey)
+        qP.innerHTML = qText
+
+        Object.entries(q.antworten).forEach((a)=>{
+            let aKey = a[0]
+            let aText = a[1].text
+            let aEffects = a[1].effects
+            let aConditionalEffects= a[1].conditionalEffects
+
+            let aDiv = document.createElement("div"); qDiv.append(aDiv)
+            aDiv.classList.append("aDiv")
+            let aRadio = document.createElement("input")
+            aRadio.setAttribute("type", "radio")
+            aRadio.setAttribute("name", "Q_" + qKey)
+            aRadio.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
+            aRadio.setAttribute("value", aKey)
+            aRadio.addEventListener("click", function(){  
+                selectAnswer(qKey, aKey)
+            })
+            let aLabel = document.createElement("label")
+            aLabel.setAttribute("for", "Q_" + qKey + "_A_" + aKey)
+            aLabel.innerHTML = aText
+
+            aDiv.append(aRadio, aLabel)
+            if (aKey == "PR" | aKey =="SO"){
+                aDiv.style.display = "none"
+            }            
+
+        })
+
+        qDiv.append(pButton)
+        qDiv.append(nButton)
+        nButton.disabled = true
+        pButton.style.display = nextQuestionIdx == 0 ? "none" : "inline"
+        nButton.style.display = "inline"
+        
+        nextQuestionIdx += 1
+    }
+
+    function selectAnswer(qKey, aKey){
+        // check if there would be a next question if this answer is selected; if so, enable the "Next Button"
+        let includeNextQuestion = false
+        let dummyIdx = nextQuestionIdx
+        if (dummyIdx >= questionOrder.length){
+                document.getElementById("DIV_" + activeQ).append(sButton)
+                sButton.style.display="inline"
+            }
+        while (dummyIdx < questionOrder.length && includeNextQuestion == false){
+            let nextQuestion = questionOrder[dummyIdx]
+            includeNextQuestion = includeCheck(nextQuestion)
+            if (includeNextQuestion){
+                nButton.disabled = false
+                break
+            } else {
+                dummyIdx += 1
+            }
+
+        }
+
+        answers[qKey] = aKey
+        activeA = aKey
+    }
+
+    function submitAnswer(){
+        qKey = activeQ
+        aKey = activeA
+        let allRadios = document.getElementById("DIV_" + qKey).querySelectorAll("input")
+        recent = []
+        for (let radio of allRadios){
+            if (radio.id == "Q_" + qKey + "_A_" + aKey){
+                radio.classList.add("selected")   
+            }
+            radio.setAttribute("disabled", true)
+        }
+
+        let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
+        let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
+
+        Object.entries(effects).forEach((entry)=>{
+            if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+                let scoreVal = +(activeScenarios[entry[0]])
+                newScoreVal = scoreVal + entry[1]
+                activeScenarios[entry[0]] = newScoreVal
+                recent.push(entry[0])
+            }
+        })
+
+        Object.entries(conditionalEffects).forEach((entry)=>{
+            let sKey = entry[0]
+            let sEffects = entry[1]
+        
+            Object.entries(sEffects).forEach((sEntry)=>{
+                let conditions = sEntry[0]
+                let score = sEntry[1]
+                // separate conditions if more than one
+                let met = andCheck(conditions)
+                if (met){
+                    let scoreVal = +(activeScenarios[entry[0]])
+                    newScoreVal = scoreVal + score
+                    activeScenarios[entry[0]] = newScoreVal
+                    recent.push(sKey)
+                }
+            })
+            
+        })
+
+        setTimeout(()=>{
+            listActiveScenarios(activeScenarios)
+        }, 100)
+
+        // check if there is another question left to display and, if yes, do so.
+        let includeNextQuestion = false
+        while (nextQuestionIdx < questionOrder.length && includeNextQuestion == false){
+            let nextQuestion = questionOrder[nextQuestionIdx]
+            includeNextQuestion = includeCheck(nextQuestion)
+            if (includeNextQuestion){
+                displayQuestion(nextQuestion)
+                break
+            } else {
+                nextQuestionIdx += 1
+            }
+        }
+    }
+    
+    function undoAnswer(){
+        // remove current question
+        document.getElementById("DIV_" + activeQ).remove()
+        
+        // if user has already selected an answer for the current question and not submitted it:
+        // remove the current answer from 'answers' before proceeding
+        if (activeA){
+            delete answers[activeQ]
+        }
+
+        // get information about the last answered question
+        activeQ = Object.keys(answers)[Object.keys(answers).length-1]
+        nextQuestionIdx = questionOrder.indexOf(activeQ)
+        activeA = null
+        let lastAnswer = answers[activeQ]
+        delete answers[activeQ]
+
+        let qKey = activeQ
+        let aKey = lastAnswer
+
+        let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
+        let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
+        
+        recent = []
+        // calculate score provided by last answer for each code (but this time subtract it!)
+        Object.entries(effects).forEach((entry)=>{
+            if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+                let scoreVal = +(activeScenarios[entry[0]])
+                newScoreVal = scoreVal - entry[1]
+                activeScenarios[entry[0]] = newScoreVal
+                recent.push(entry[0])
+            }
+        })
+
+        Object.entries(conditionalEffects).forEach((entry)=>{
+            let sKey = entry[0]
+            let sEffects = entry[1]
+            Object.entries(sEffects).forEach((sEntry)=>{
+                let conditions = sEntry[0]
+                let score = sEntry[1]
+                
+                // separate conditions if more than one
+                let met = andCheck(conditions)
+                if (met){
+                    let scoreVal = +(activeScenarios[entry[0]])
+                    newScoreVal = scoreVal - score
+                    activeScenarios[entry[0]] = newScoreVal
+                    recent.push(sKey)
+                }
+            })
+            
+        })
+
+        // remove previous question and display it again
+        document.getElementById("DIV_" + activeQ).remove()
+        displayQuestion(activeQ)
+
+        setTimeout(()=>{
+            listActiveScenarios(activeScenarios)
+        }, 100)
+    }
+
+    function listActiveScenarios(sObju){
+        sObj = Object.entries(sObju).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+        sCont.innerHTML = ""
+        Object.entries(sObj).forEach((entry)=>{
+            sKey = entry[0]
+            sVal = entry[1]
+            let tr = document.createElement("tr")
+            let name = document.createElement("th")
+            let score = document.createElement("td")
+            name.innerHTML = sKey 
+            score.innerHTML = sVal
+            score.setAttribute("id", "SCORE_" + sKey)
+            score.classList.add("score")
+            tr.append(name, score)
+            if (recent.includes(sKey)){
+                tr.classList.add("recent")
+            }
+            sCont.append(tr)
+        })
+
+        for (let score of document.querySelectorAll(".score")){
+            let value = +(score.innerHTML)
+            if (value > 0){
+                score.style.color = "#0e7700"
+            } else if (value <0){
+                score.style.color = "#d93300"
+            } else {
+                score.style.color = "#585858"
+            }
+        }
+    }
+
+    function getResult(finalResults){
+        // decide which scenarios to show!
+        topResults = getTopScenarios(finalResults)
+        let firstResult = topResults[0]
+        window.open("var_result.html?shownScenario=" + firstResult + "&topTier=" + JSON.stringify(topResults), "_self")
+        // showResult(scenario=firstResult, specialCases=[], topTier=topResults)
+    }
+    
+    function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
+        // gathering texts
+        let scenarioTitle
+        if (scenario != 'de-default-0-0-0'){
+            scenarioTitle = all_scenarios[scenario]['unterrichtsformat']
+        } else {
+            scenarioTitle = 'Default Scenario'
+        }
+        
+        let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
+        let syncIntValue = "syncInt-" + scenario.split("-")[2]
+        let asyncTNValue = "asyncTN-" + scenario.split("-")[3]
+        let asyncIntValue = "asyncInt-" + scenario.split("-")[4]
+
+        let theseTexts = {}
+        let l = ['overview', syncIntValue, asyncTNValue, asyncIntValue]
+        l.forEach(function(s){
+            let val = all_texts[scenarioValue]["text_" + s]
+            if (val != '-'){
+                theseTexts[s + 'Text'] = val
+            } else {
+                theseTexts[s + 'Text'] = all_texts['de-default']["text_" + s]
+            }
+        })
+        let overviewText = theseTexts['overviewText']
+        let syncIntText =  theseTexts[syncIntValue + "Text"]
+        let asyncTNText =  theseTexts[asyncTNValue + "Text"]
+        let asyncIntText =  theseTexts[asyncIntValue + "Text"]
+        let asyncText = asyncTNText + asyncIntText
+
+        // gathering tips
+        // synchronous
+        let syncTips = []
+        let tipsGeneral = tip_matching[scenarioValue]["tips_general"]
+        let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue]
+        let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue]
+        let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue]
+
+        
+        let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
+        let fullTipList = fullTipListAsString.split(", ").filter((k)=>k != "-")
+        
+        let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
+        let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
+
+
+        // building document
+        $("#result").load("vorlagen/result.html", function(){
+            document.querySelector("#resOverview > h3").innerHTML = scenarioTitle
+            document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
+            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
+            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
+
+            document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
+            let syncTips = document.querySelector("#resSync > .blockContent > .tCont")
+            syncTipList.forEach(function(tipCode){
+                addTip(tipCode, syncTips)
+            })
+
+            document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
+            let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
+            asyncTipList.forEach(function(tipCode){
+                if (tipCode != scenario){
+                    addTip(tipCode, asyncTips)
+                }
+
+            })
+
+            let altResults = document.querySelector("#resMore > .blockContent > .altCont")
+            topTier.forEach(function(resCode){
+                if (resCode != scenario){
+                    addAltResult(resCode, altResults)
+                }
+                
+            })
+
+        })
+
+    }
+    
+
+
+    // Auxiliary funcitons (specialized)
+    function getTopScenarios(results){
+        shownScenarios = []
+        // determine top 3 scores (multiple scenarios can have the same score)
+        let firstScore = Math.max(...Object.values(results))
+        let topTier = Object.entries(results).filter(([k,v])=>v==firstScore).reduce((r, [k,v])=>[...r,k], []) // returns list of scenarios
+
+        let secondScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<firstScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
+        let secondTier = Object.entries(results).filter(([k,v])=>v==secondScore).reduce((r, [k,v])=>[...r,k], [])
+
+        let thirdScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<secondScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
+        let thirdTier = Object.entries(results).filter(([k,v])=>v==thirdScore).reduce((r, [k,v])=>[...r,k], [])
+        
+        for (let i=0; i<(topTier.length + secondTier.length + thirdTier.length); i++){
+            // first tier: include all non-duplicates
+            if (i<topTier.length){
+                let scenarioToAdd = topTier[i]
+                // do not add scenarios with same format hyb, rem, ringonl, etc.
+                if (notDuplicate(scenarioToAdd, shownScenarios)){
+                    shownScenarios.push(scenarioToAdd)
+                }
+
+            } else {
+                // second tier: don't consider if score less than zero
+                if (i < (topTier.length+secondTier.length) && secondScore>=0){
+                    let j = i - topTier.length
+                    let scenarioToAdd = secondTier[j]
+                    if (notDuplicate(scenarioToAdd, shownScenarios)){
+                        shownScenarios.push(scenarioToAdd)
+                    }
+
+                } else {
+                    // third tier: don't consider if score less than zero
+                    if (thirdScore>=0){
+                        let k = i - topTier.length - secondTier.length
+                        let scenarioToAdd = thirdTier[k]
+                        if (notDuplicate(scenarioToAdd, shownScenarios)){
+                            shownScenarios.push(scenarioToAdd)
+                        }
+                    }
+
+                    }
+                }
+            if (shownScenarios.length >=maxShownAnswers){
+                break
+            }     
+            
+        }
+        return shownScenarios
+    }
+
+    // logic
+    function includeCheck(qKey){
+        // checks if a question should be displayed
+        // assumes that questions have been ordered correctly, otherwise results may be unexpected
+        let condition = questionInfo[qKey]["condition"]
+        if (condition == true){
+            return true
+        } else {
+            return andCheck(condition)
+        }
+        
+    }
+
+    function andCheck(conditions){
+        // checks if all conditions qKey=aKey are simultaneously true
+        let i = 0
+        while (i < 10){
+            [qKey, aKey] = conditions.split("+")[i].split("=")
+            if (qKey.includes("!")){
+                // check if it's a NOT test
+                qKeyR = qKey.split("!")[0]
+                if (answers[qKeyR] == aKey | !answers[qKeyR]){
+                    return false
+                } else {
+                    i += 1
+                }
+            } else {
+                if (answers[qKey] != aKey){
+                return false
+                } else {
+                    i += 1
+                }
+            }
+
+            if (i >= conditions.split("+").length){
+                return true
+            }
+        }
+        conditions.split("+").forEach((condition, i)=>{
+            [qKey, aKey] = condition.split("=")
+            if (answers[qKey] != aKey){
+                if (i <4){
+                    realConditions[i] = false
+                } else {
+                    console.log("only up to 4 simultaneous conditions supported; the rest are ignored")
+                }
+            }
+        })
+        
+    }
+    
+    function notDuplicate(newScenario, shownScenarios){
+        sType = newScenario.split("-")[1]
+        if (shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){
+            // if the type of scenario is the same, still include if there is asynchronous participation alternative for one scenario
+            let matchingScenarios = shownScenarios.filter((str)=>str.split("-")[1] == sType)
+            if (matchingScenarios.length > 1){
+                // can't add same scenario a third time!
+                return false
+            }
+            let matchingScenario = matchingScenarios[0]
+            let asyncNew = newScenario.split("-")[3] // asynchronous participation mode of new scenario
+            let asyncMatching = matchingScenario.split("-")[3] // asynchronous participation mode of matching scenario
+            if ([asyncNew, asyncMatching].includes("3") && asyncNew != asyncMatching){
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return true
+        }
+    }
+
+    // creating HTML elements
+    function addTip(tipCode, container){
+        let tipli = document.createElement("li"); container.append(tipli)
+                tipli.classList.add("tip")
+                let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
+                tipHeader.innerHTML = "<img src='../images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
+                let tipContent = document.createElement("p"); tipli.append(tipContent)
+                tipContent.classList.add("tipContent")
+                tipContent.innerHTML = all_tips[tipCode]["content"]
+
+                tipli.setAttribute("onclick", "showHideTip(this)")
+    }
+
+    function showHideTip(a){
+        if (a.classList.contains("open")){
+            a.classList.remove("open")
+        } else {
+            a.classList.add("open")
+        }
+
+    }
+
+    function addAltResult(resCode, container){
+        let li = document.createElement("li"); container.append(li)
+        li.classList.add("altScenario")
+        let a = document.createElement("a"); li.append(a)
+        // a.setAttribute("href", "var_result.html?shownScenario=" + resCode + "&topTier=" + JSON.stringify(topResults))
+        a.innerHTML = all_scenarios[resCode]["unterrichtsformat"]
+        a.setAttribute("onclick", "showResult('" + resCode + "', special_cases = [], topTier=topResults)")
+    }
+
+     
+</script>
+</body>
+</html>

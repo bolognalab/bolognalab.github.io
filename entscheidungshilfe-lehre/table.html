@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Entscheidungshilfe: Tabelle</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="de">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="../assets/css/eb.css" />
+<script src="../assets/js/jquery.min.js"></script>
+</head>
+<body class="is-preload" lang="de">
+    <h2>Tabelle-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
+    <p>Wählen Sie, welche Szenarien anzuzeigen sind:</p>
+    <table id = "select" ></table>
+    <h3>Liste angezeigter Szenarien:</h3>
+    <button onclick="makeTable(questionInfo, shownScenarios)">Tabelle aktualisieren</button>
+    <ul id="selected" style="color: blue"></ul>
+    <div id="textBox">
+        <p id="infoText">Klicken Sie auf eine blaue Zelle, um Details anzuzeigen...</p>
+    </div>
+<table class="tree" id="tRegular"></table>
+<script>
+    var all_data, questionInfo, all_scenarios
+    var scenarios = {}
+    var table = document.getElementById("tRegular")
+    var selections = document.getElementById("select")
+    var selected = document.getElementById("selected")
+    var colorMapping = {
+        "-100": "#C00000",
+        "-2": "#f77e59",
+        "-1": "#ffa185",
+        "0": "#FFEB84",
+        "1": "#D4DE89",
+        "2": "#A9D08E",
+        "FUNC": "#FFFFAA"
+    }
+ 
+    var shownScenarios = ['vl-ringhyb1-0-0-0', 'vl-ringhyb2-0-0-0', 'vl-ringonl-0-0-0', 'vl-ringpraes-0-0-0']
+
+    $.getJSON("data.json", function(json){
+        all_data = json
+        questionInfo = json['questions']
+        all_scenarios = json['scenarios']
+        setUpList(all_scenarios)
+        makeTable(questionInfo, shownScenarios)
+    })
+    
+    function setUpList(all_scenarios){
+        shownScenarios.forEach(function(m){
+            addToList(m)
+        })
+
+        let names = ["onl", "praes", "rem", "hyb", "wechs", "async"]
+        names.forEach(function(name){
+            let row = document.createElement("tr")
+            row.setAttribute("id", name)
+            selections.append(row)
+            arts = ["vl", "se", "so"]
+            arts.forEach(function(art){
+                // console.log(art)
+                let select = document.createElement("select")
+                select.setAttribute("id", name + "-" + art)
+                select.setAttribute("multiple", true)
+                select.style.height = "4em"
+                select.style.width = "10em"
+                select.innerHTML = "<option value='' selected ></option>"
+                let label = document.createElement("span")
+                label.innerHTML = "&nbsp;&nbsp;&nbsp;"+ name + "-" + art + ':&nbsp;'
+                let empties = ["wechs-so", "async-vl", "async-se", "rem-so"]
+                if (!empties.includes(name + "-" + art)){
+                    let cell = document.createElement("td")
+                    cell.append(label)
+                    cell.append(select)
+                    row.append(cell)
+                }
+
+            })
+        })
+        Object.entries(all_scenarios).forEach(entry => {
+            let code = entry[0]
+            let name = code.split("-")[1]
+            if (name.includes("wechs")){
+                name = "wechs"
+            } else if (name.includes("onl")){
+                name = "onl"
+            } else if (name.includes("praes")){
+                name = "praes"
+            } else if (name.includes("hyb")){
+                name = "hyb"
+            }
+            let art = code.split("-")[0]
+            if (art == "pr"){
+                art = "so"
+            }
+            let whereToAdd = document.getElementById(name + "-" + art)
+            let option = document.createElement("option")
+            option.setAttribute("value", code)
+            option.setAttribute("id", "opt_" + code)
+            option.addEventListener("click", function(){
+                if (!shownScenarios.includes(code)){
+                    addToList(code)
+                    shownScenarios.push(code)
+                }
+
+            })
+            option.innerHTML = code
+            if (shownScenarios.includes(code)){
+                option.setAttribute("selected", true)
+            }
+            whereToAdd.append(option)
+        })
+
+    }
+
+    function makeTable(questionInfo, shownScenarios){
+        table.innerHTML = ""
+        scenarios = {}
+        shownScenarios.forEach(function(code){
+        scenarios[code] = all_scenarios[code]
+        })
+        // first table row, one blank cell followed by headers
+        var firstRow = document.createElement("tr")
+        firstRow.classList.add("firstRow")
+        firstRow.append(document.createElement("th"))
+        Object.entries(scenarios).forEach(entry => {
+                var sHeader = document.createElement("th")
+                sHeader.innerHTML = entry[0]
+                sHeader.setAttribute("colspan", 4)
+                sHeader.setAttribute("id", entry[0])
+                sHeader.classList.add("sHeader", "clickable")
+                sHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
+                firstRow.append(sHeader)
+        })
+        table.append(firstRow)
+
+        // making rows for each "question"
+        Object.entries(questionInfo).forEach(entry=>{
+            var qKey = entry[0]
+            var qInf = entry[1]
+            var row0 = document.createElement("tr")
+            var row1 = document.createElement("tr")
+            row0.classList.add("row0")
+            row1.classList.add("row1")
+            var rowHeader = document.createElement("th")
+            rowHeader.classList.add("rowHeader", "clickable")
+            rowHeader.setAttribute("id", qKey)
+            rowHeader.setAttribute("rowspan", 2)
+            rowHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
+            rowHeader.innerHTML = qKey // qInf["text"]
+            row0.append(rowHeader)
+            // adding row entries for each "scenario"
+            Object.entries(scenarios).forEach(entry => {
+                var sKey = entry[0]
+                var sVal = entry[1]
+                //adding sub-cells for each possible answer and the corresponding points
+                var numAnswers = Object.keys(qInf["antworten"]).length
+                Object.entries(qInf["antworten"]).forEach(function(entry, idx){
+                    var aKey = entry[0]
+                    var aText = entry[1]
+                    srHeader = document.createElement("td")
+                    srVal = document.createElement("td")
+                    srHeader.classList.add("answerKey", "clickable")
+                    srHeader.setAttribute("id", qKey + "_" + aKey)
+                    srHeader.innerHTML = aKey
+                    srHeader.addEventListener("click", function(event){showHideInfo(event,all_data)})
+                    srVal.classList.add("answerVal")
+                    
+
+                    if (qInf["antworten"][aKey]["effects"][sKey]){
+                        var score = qInf["antworten"][aKey]["effects"][sKey]
+                        
+                    } else {
+                        var score = "null"
+                    }
+                    srVal.innerHTML = score
+
+                    try {
+                        var backgroundColor = colorMapping[score]
+                        srVal.style.background = backgroundColor
+                        if (score=="-100"){
+                            srVal.style.color = "#ee9999"
+                        }
+                    } catch (error) {
+                        console.log("No color for this score")
+                    }
+                    if (score == "FUNC"){
+                        srVal.classList.add("clickable")
+                        srVal.setAttribute("id", "VAL_" + qKey + "_" + aKey + "_" + sKey)
+                        srVal.addEventListener("click", function(event){showHideInfo(event,all_data)})
+                    }
+                    
+                    row0.append(srHeader)
+                    row1.append(srVal)
+                })
+                for (i=0; i<(4-numAnswers); i++){
+                    var blankCellH = document.createElement("td")
+                    blankCellH.classList.add("blankCell", "answerKey")
+                    var blankCellD = document.createElement("td")
+                    blankCellD.classList.add("blankCell", "answerVal")
+                    row0.append(blankCellH)
+                    row1.append(blankCellD)
+                }
+            })
+            table.append(row0)
+            table.append(row1)
+        })
+    }
+
+    function showHideInfo(event, json){
+        const defaultText = "Klicken Sie auf eine blaue Zelle, um Details anzuzeigen..."
+        var text
+        var targetId = event.target.id
+        var infoText = document.querySelector("#infoText")
+
+        if (event.target.className.includes("active")){
+            infoText.innerHTML = defaultText
+            infoText.style.color = "gray"
+            event.target.classList.remove("active")
+        } else {
+            try {
+                document.getElementsByClassName("active")[0].classList.remove("active")
+            } catch (error) {
+            }
+            if (event.target.className.includes("rowHeader")){
+                text = "<b>Frage:</b> " + json["questions"][targetId]["text"]
+            } else if (event.target.className.includes("sHeader")){
+                text = "<b>Lehr-/Lernszenario:</b> " + json["scenarios"][targetId]["unterrichtsformat"]
+            } else if (event.target.className.includes("answerKey")){
+                let qa = event.target.id.split("_")
+                text = "<b>Frage:</b> " + json["questions"][qa[0]]["text"] + "<br><b>Antwort:</b> " + json["questions"][qa[0]]["antworten"][qa[1]]["text"]
+            } else if (event.target.className.includes("answerVal") && event.target.innerHTML == "FUNC"){
+                let qKey = event.target.id.split("_")[1]
+                let aKey = event.target.id.split("_")[2]
+                let sKey = event.target.id.split("_")[3]
+                console.log("Conditional function for: ", qKey, aKey, sKey)
+                console.log(json["questions"][qKey]["antworten"][aKey]["conditionalEffects"][sKey])
+
+            }
+            infoText.innerHTML = text
+            infoText.style.color = "black"
+            event.target.classList.add("active")
+
+        }
+        
+        }
+    
+    function closeBtn(b){
+        el = b.parentElement
+        code = b.id.split("_")[1]
+        $("#opt_" + code).removeAttr("selected")
+        el.remove()
+        idx = shownScenarios.indexOf(code)
+        shownScenarios.splice(idx, 1)
+    }
+    function addToList(code){
+        li = document.createElement("li")
+        li.innerHTML = code + "&nbsp; <button id = 'close_" + code + "' class='closeBtn' onclick='closeBtn(this)'>X</button>"
+        selected.append(li)
+    }
+    
+        
+</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+{
+    "questions":{
+        "artLV":{
+            "order": 0,
+            "text": "Um welche Art von Lehrveranstaltung handelt es sich?",
+            "antworten": {
+                "VL": "Vorlesung",
+                "SE": "Seminar oder Übung",
+                "PR": "Praktikum",
+                "SO": "Sonstiges"
+            }
+        },
+
+        "LZiP":{
+            "order": 0,
+            "text": "Gibt es Lernziele, die <p>ausschließlich in Präsenz</p> erreichbar sind?",
+            "antworten": {
+                "0": "keine",
+                "1": "ja, von niedriger Priorität",
+                "2": "ja, von hoher Priorität"
+            }
+        },
+
+        "LZsy":{
+            "order": 0,
+            "text": "Gibt es Lernziele, die <b>ausschließlich synchron</b> erreichbar sind?",
+            "antworten": {
+                "0": "keine",
+                "1": "ja, von niedriger Priorität",
+                "2": "ja, von hoher Priorität"
+            } 
+        },
+
+        "PrDig":{
+            "order": 0,
+            "text": "Planen Sie didaktische Prozesse/Aktivitäten, die digital/online viel leichter durchzuführen sind?",
+            "antworten": {
+                "0": "nein",
+                "1": "ja"
+            }
+        },
+
+        "IntSync":{
+            "order": 0,
+            "text": "Wie viel studentische Interaktion ist <b>während der Kurssitzungen</b> für die Lernziele des Kurses benötigt?",
+            "antworten": {
+                "0": "Die Lernziele des Kurses können auch mit minimaler oder nur gelegentlicher Interaktion erreicht werden.",
+                "1": "Die Studierenden sollen mit der Lehrperson (auch z.B. durch Polls oder Clicker) interagieren, aber nicht unbedingt mit anderen Studierenden",
+                "2": "Die Studierenden sollen aktiv mit der Lehrperson und anderen Studierenden interagieren."
+            }
+        },
+
+        "IntAsync": {
+            "order": 0,
+            "text": "Wie viel studentische Interaktion ist <b>außerhalb der Kurssitzungen</b> für die Lernziele des Kurses benötigt?",
+            "antworten": {
+                "0": "minimale oder gelegentliche Interaktion",
+                "1": "Interaktion hauptsächlich zw. Studierenden und der Lehrperson",
+                "2": "Interaktion sowohl zw. Studierenden als auch zw. Studierenden und der Lehrperson"
+            }
+        },
+
+        "niePr": {
+            "order": 0,
+            "text": "Gibt es Studierende, die <b>nie oder fast nie</b> in Präsenz am Kurs teilnehmen können?",
+            "antworten": {
+                "ja": "Ja.",
+                "nein": "Nein.",
+                "idk": "Ich weiß nicht."
+            }
+        },
+
+        "wohnLP": {
+            "order": 0,
+            "text": "Wohnen Sie als Lehrperson in derselben Stadt wie die Universität, an der Sie lehren (oder höchstens 90 Min. von der Universität entfernt)?",
+            "antworten": {
+                "ja": "Ja.",
+                "nein": "Nein."
+            }
+        },
+
+        "onlErlLP": {
+            "order": 0,
+            "text": "Wie viel Prozent der Lehrveranstaltung ist Ihnen als Lehrperson laut der Hochschulordnung erlaubt, online durchführen?",
+            "antworten": {
+                "kein": "0%",
+                "teil": "zwischen 0-100%",
+                "voll": "100%",
+                "idk" : "Ich bin mir nicht sicher."
+            }
+        },
+
+        "onlErlSt": {
+            "order": 0,
+            "text": "Wie viel Prozent der Lehrveranstaltung ist den Studierenden laut der Hochschulordnung erlaubt, online zu besuchen?",
+            "antworten": {
+                "kein": "0%",
+                "teil": "zwischen 0-100%",
+                "voll": "100%",
+                "idk" : "Ich bin mir nicht sicher."
+            }
+        },
+
+        "limZPSt": {
+            "order": 0,
+            "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufstätigkeit) eingeschränkte Zeitpläne?",
+            "antworten": {
+                "ja": "Ja.",
+                "nein": "Nein.",
+                "idk": "Ich bin mir nicht sicher."
+            }
+        },
+
+        "onlZugang": {
+            "order": 0,
+            "text": "Haben alle Studierenden Zugang zu einem Gerät und einer Umgebung, in der sie zuverlässig online am Kurs teilnehmen können?",
+            "antworten": {
+                "ja": "Ja.",
+                "nein": "Nein.",
+                "helfen": "Nein, aber ich kann bedürftigen Studierenden helfen, ein solches Gerät zu erhalten."
+            }
+        },
+
+        "aufzTech": {
+            "order": 0,
+            "text": "Wäre bei einer Präsenz- oder Hybridsitzung eine <br>Aufzeichnung des Lehrraums mit klaren Bild und Ton</br> technisch möglich?",
+            "antworten": {
+                "ja": "Ja.",
+                "nein": "Nein.",
+                "idk": "Ich bin mir nicht sicher."
+            }
+        },
+
+        "gaeste": {
+            "order": 0,
+            "text": "Planen Sie, Gastvortragende zu Ihrem Kurs einzuladen?",
+            "antworten": {
+                "0": "Nein.",
+                "1": "Nur ab und zu.",
+                "2": "Ja, regelmäßig (Ringvorlesung)"
+            }
+        },
+
+        "gaesteMittel": {
+            "order": 0,
+            "text": "Verfügen Sie über ausreichende Ressourcen, um die gewünschten Gastvortragenden persönlich zum Kurs einzuladen?",
+            "antworten": {
+                "ja": "Ja",
+                "nein": "Nein"
+            }
+        },
+
+        "exkur": {
+            "order": 0,
+            "text": "Planen Sie eine oder mehrere Exkursionen als festen Bestandteil Ihres Kurses?",
+            "antworten": {
+                "ja": "Ja",
+                "nein": "Nein"
+            }
+        },
+
+        "exkurMittel": {
+            "order": 0,
+            "text": "Verfügen Sie über ausreichende Ressourcen, damit alle Studierenden an einer Exkursion teilnehmen können?",
+            "antworten": {
+                "ja": "Ja",
+                "nein": "Nein"
+            }
+        },
+
+        "intKoll": {
+            "order": 0,
+            "text": "Ist Ihr Kurs Teil einer nationalen oder internationalen Kollaboration mit Studierenden und Lehpersonen einer anderen Universität?",
+            "antworten": {
+                "ja": "Ja",
+                "nein": "Nein"
+            }
+        }
+
+    },
+    "scenarios": {
+        "async-simple": {
+            "name": "Digitaler asynchroner Kurs",
+            "totalScore": null,
+            "status": "active",
+            "artLV": {
+                "VL": 0,
+                "SE": 0,
+                "PR": -100,
+                "SO": -100
+            },
+            "LZiP": {
+                "0": 0,
+                "1": -100,
+                "2": -100
+            },
+            "LZsy": {
+                "0": 0,
+                "1": 0,
+                "2": 0
+            }
+        },
+        
+        "async-inter": {
+            "name": "Digitaler asynchroner Kurs mit Interaktion zw. Studierenden",
+            "totalScore": null,
+            "status": "active",
+            "LZiP": {
+                "0": 0,
+                "1": -100,
+                "2": -100
+            },
+            "artLV": {
+                "VL": 0,
+                "SE": 0,
+                "PR": -100,
+                "SO": -100
+            }
+        }
+    }
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Entscheidungshilfe</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="de">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="../assets/css/eb.css" />
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/jquery.csv.js"></script>
+</head>
+<body class="is-preload" lang="de" onload="loadPage()">
+<h2>Beispiel-Ergebnis</h2>
+    <div id="result" class="rCont">
+        <p>Ihr Ergebnis:</p>
+        <div id="resOverview" class="block overview">
+            <h3>Titel des Lehr-Lernszenarios</h3>
+            <div class="blockContent">
+                <p class="descText"></p>
+                <img class="descImg" src="" alt="Studenten und Studentinnen in einem Raum."/>
+            </div>
+        </div>
+        <div id="resSync" class="block sync">
+            <h4>Tipps für die synchrone Interaktion</h4>
+            <div class="blockContent">
+                <p class="descText"></p>
+                <ul class="tCont"></ul>
+            </div>
+        </div>
+        <div id="resAsync" class="block async">
+            <h4>Tipps für die asynchrone Teilnahme</h4>
+            <div class="blockContent">
+                <p class="descText"></p>
+                <ul class="tCont"></ul>
+            </div>
+        </div>
+        <div id="resTechn" class="block techn">
+            <h4>Technik, Raum und Software</h4>
+            <div class="blockContent">
+                <div class="descText">
+                    <p>Notwendige Raumeigenschaften:</p>
+                    <ul id="raumList" class="techList"></ul>
+                    <p>Notwendige Technik:</p>
+                    <ul id="hardwList" class="techList"></ul>
+                    <p>Software:</p>
+                    <ul id="softwList" class="techList"></ul>
+                </div>
+                <a href="" class="pdfLink">
+                    <img src='../../images/entscheidungshilfe/raumkonzept_icon.png' alt="" />
+                    <strong>Exemplarisches Raumkonzept (PDF)</strong>
+                </a>
+            </div>
+        </div>
+        <div id="resMore" class="block more">
+            <h4>Weitere Ergebnissse</h4>
+            <div class="blockContent">
+                <p>Folgende Lehr-/Lernszenarien könnten auch für Sie passend sein:</p>
+                <ul class="altCont"></ul>
+            </div>
+        </div>
+    </div>
+    <hr />
+<script>
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario') : "se-hyb-1-0-0"
+const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : ["se-rem-2-0-0","se-rem-2-3-0","se-hyb-2-0-0","se-hyb-2-3-0"]
+const specialCases = urlParams.has('specialCases') ? urlParams.get('specialCases') : []
+
+
+// var shownScenario = 'se-rem-2-1-1'
+
+var all_tips, all_texts, tip_matching
+
+function loadPage(){
+    const rCont = document.getElementById("result")
+    $.getJSON("data.json", function(json){
+    all_scenarios = json['scenarios']
+    $.get( "texts_tips_matrix.csv", function(CSVdata) {
+        let csvData = $.csv.toObjects(CSVdata, {separator:';'});
+        all_texts = {}
+        tip_matching = {}
+        csvData.forEach(function(dict){
+            let key = dict["wert"]
+            delete dict["wert"]
+            all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
+            tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
+        })
+        $.get("tips_source.json", function(json){
+            all_tips = json["tips"]
+            setTimeout(showResult(shownScenario, specialCases, topTier), 500)
+        })
+        
+    });
+})
+}
+
+function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
+    // gathering texts
+    let scenarioTitle
+    if (scenario != 'de-default-0-0-0'){
+        scenarioTitle = all_scenarios[scenario]['unterrichtsformat']
+    } else {
+        scenarioTitle = 'Default Scenario'
+    }
+    
+    let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
+    let syncIntValue = "syncInt-" + scenario.split("-")[2]
+    let asyncTNValue = "asyncTN-" + scenario.split("-")[3]
+    let asyncIntValue = "asyncInt-" + scenario.split("-")[4]
+
+    let theseTexts = {}
+    let l = ['overview', syncIntValue, asyncTNValue, asyncIntValue]
+    l.forEach(function(s){
+        let val = all_texts[scenarioValue]["text_" + s]
+        if (val != '-'){
+            theseTexts[s + 'Text'] = val
+        } else {
+            theseTexts[s + 'Text'] = all_texts['de-default']["text_" + s]
+        }
+    })
+    let overviewText = theseTexts['overviewText']
+    let syncIntText =  theseTexts[syncIntValue + "Text"]
+    let asyncTNText =  theseTexts[asyncTNValue + "Text"]
+    let asyncIntText =  theseTexts[asyncIntValue + "Text"]
+    let asyncText = asyncTNText + asyncIntText
+
+    // gathering tips
+    // synchronous
+    let syncTips = []
+    let tipsGeneral = tip_matching[scenarioValue]["tips_general"]
+    let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue]
+    let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue]
+    let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue]
+
+    
+    let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
+    let fullTipList = fullTipListAsString.split(", ").filter((k)=>k != "-")
+
+    let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
+    let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
+
+
+    // building document
+    document.querySelector("#resOverview > h3").innerHTML = scenarioTitle
+        document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
+        document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
+        document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
+
+        document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
+        let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
+        syncTipList.forEach(function(tipCode){
+            addTip(tipCode, syncTipsCont)
+        })
+
+        document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
+        let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
+        asyncTipList.forEach(function(tipCode){
+            if (tipCode != scenario){
+                addTip(tipCode, asyncTips)
+            }
+
+        })
+
+        let altResults = document.querySelector("#resMore > .blockContent > .altCont")
+        topTier.forEach(function(resCode){
+            if (resCode != scenario){
+                addAltResult(resCode, altResults)
+            }
+            
+        })
+}
+
+// creating HTML elements
+function addTip(tipCode, container){
+        let tipli = document.createElement("li"); container.append(tipli)
+                tipli.classList.add("tip")
+                let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
+                tipHeader.innerHTML = "<img src='../images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
+                let tipContent = document.createElement("p"); tipli.append(tipContent)
+                tipContent.classList.add("tipContent")
+                tipContent.innerHTML = all_tips[tipCode]["content"]
+
+                tipli.setAttribute("onclick", "showHideTip(this)")
+    }
+
+    function showHideTip(a){
+        if (a.classList.contains("open")){
+            a.classList.remove("open")
+        } else {
+            a.classList.add("open")
+        }
+
+    }
+
+    function addAltResult(resCode, container){
+        let li = document.createElement("li"); container.append(li)
+        li.classList.add("altScenario")
+        let a = document.createElement("a"); li.append(a)
+        a.setAttribute("href", "var_result.html?shownScenario=" + resCode + "&topTier=" + JSON.stringify(topTier))
+        a.innerHTML = all_scenarios[resCode]["unterrichtsformat"]
+        // a.setAttribute("onclick", "showResult('" + resCode + "', special_cases = [], topTier=topResults)")
+    }
+
+</script>
+</body>
+</html>
