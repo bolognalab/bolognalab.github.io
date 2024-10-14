@@ -1,0 +1,10 @@
+.profilBild {
+  display: inline-block;
+  margin-right: 100px;
+  width: 180px; 
+  height: 180px;
+}
+
+.profilDetails {
+  display: inline-block
+}
