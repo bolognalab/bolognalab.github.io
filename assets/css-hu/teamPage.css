@@ -1,3 +1,11 @@
+.sectionHeading {
+  margin-top: 70px;
+}
+
+.profilContainer {
+  margin-bottom: 40px;
+}
+  
 .profilBild {
   display: inline-block;
   margin-right: 100px;
