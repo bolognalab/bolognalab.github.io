@@ -3,7 +3,8 @@
   display: inline-block; 
   background-color: #ccd6e0; 
   color: #003366;
-  padding: 1em 1.5em
+  padding: 1em 1.5em;
+  overflow: hidden;
 }
 .half {
   width: calc(49% - 0.5em);
