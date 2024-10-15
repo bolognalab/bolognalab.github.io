@@ -8,11 +8,11 @@
 .half {
   width: calc(49% - 0.5em);
 }
-.half.left {
+.half.leftSide {
   margin-left: 0;
   margin-right: 0.5em
 }
-.half.right {
+.half.rightSide {
   margin-left: 0.5em;
   margin-right: 0;
 }
@@ -20,7 +20,7 @@
   .half {
     width: calc(99% - 1em);
   }
-  .half.left, .half.right {
+  .half.leftSide, .half.rightSide {
     margin-left: 0.5em;
     margin-right: 0.5em
 }
