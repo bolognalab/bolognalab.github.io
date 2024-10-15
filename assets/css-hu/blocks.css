@@ -28,11 +28,26 @@
   }
 }
 
-.previewFigure {
+.previewFigure.toEdge {
   width: calc(100% + 3em);
   margin-left: -1.5em;
   margin-top: -1em;
 }
-.previewFigure > figcaption {
+.previewFigure.toEdge > figcaption {
   padding-left: 1.5em;
 }
+
+.previewFigure.fixedHeight {
+  height: 15em;
+  text-align: center;
+  position: relative;
+}
+.previewFigure.fixedHeight > img {
+  height: 100%;
+}
+.previewFigure.fixedHeight > figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
