@@ -1,1 +1,18 @@
-
+.block {
+  margin-bottom: 1em;
+  display: inline-block; 
+  background-color: #ccd6e0; 
+  color: #003366;
+  padding: 1em 1.5em
+}
+.half {
+    width: calc(50% - 0.5em)
+}
+.half.left {
+  margin-left: 0;
+  margin-right: 0.5em
+}
+.half.right {
+  margin-left: 0.5em;
+  margin-right: 0;
+}
