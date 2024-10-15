@@ -6,7 +6,7 @@
   padding: 1em 1.5em
 }
 .half {
-    width: calc(50% - 0.5em)
+  width: calc(49% - 0.5em);
 }
 .half.left {
   margin-left: 0;
@@ -15,4 +15,12 @@
 .half.right {
   margin-left: 0.5em;
   margin-right: 0;
+}
+@media only screen and (max-width: 600px){
+  .half {
+    width: calc(99% - 1em);
+  }
+  .half.left, .half.right {
+    margin-left: 0.5em;
+    margin-right: 0.5em
 }
