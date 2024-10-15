@@ -1,7 +1,8 @@
 .block {
   margin-bottom: 1em;
   display: inline-block; 
-  background-color: #ccd6e0; 
+  background-color: #ffffff; 
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   color: #003366;
   padding: 1em 1.5em;
   overflow: hidden;
