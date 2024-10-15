@@ -43,7 +43,7 @@
   position: relative;
 }
 .previewFigure.fixedHeight > img {
-  height: 100%;
+  height: calc(100% - 1em) !important;
 }
 .previewFigure.fixedHeight > figcaption {
   position: absolute;
