@@ -73,16 +73,21 @@ for code in list_of_scenarios:
     # if there are essential goals in person and there are other LV in the module, discourage those options and add note
     # if some nonessential learning goals in person, discourage online options and less so hybrid options
     if code.split("-")[1] in ["async", "onl", "ringonl"]:
-        setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
-        setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -2)
-        setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
-        setConditionalEffect("LZiP", "1", code, "modulCombo=ja", -1)
-        # updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
+        updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -100
+        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -2
+        # setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
+        # setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -2)
+        # setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
+        # setConditionalEffect("LZiP", "1", code, "modulCombo=ja", -1)
+        updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
     if code.split("-")[1] in ["hyb", "ringhyb2", "onlhybwechs", "hybrem"]:
-        setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
-        setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -1)
-        setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
-        # updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
+        updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -3
+        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -1
+        # setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
+        # setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -1)
+        # setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
+        updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
+        setSpecialCase(code, "LZiP=2", "voraussetztenGelPraes")
 
     # LZsy: if important learning goals are exclusively attainable synchronously, exclude all options that are fully asynchronous or offer asynchronous alternatives
     if code.split("-")[3] == "3":
@@ -236,10 +241,10 @@ for code in list_of_scenarios:
     # SPECIAL CASES
     setSpecialCase(code, "intKoll=ja", "international")
 
-    #for online, hybrid and async options, if there are other LV in the same module, add note that the other LV should have in-person elements
-    if code.split("-")[1] in ["onl", "onlhybwechs", "ringonl", "ringhyb2", "hyb", "hybrem"]:
-        setSpecialCase(code, "modulCombo=ja+LZiP=2", "alternativPraes")
-        setSpecialCase(code, "modulCombo=ja+LZiP=1", "alternativPraes")
+    # #for online, hybrid and async options, if there are other LV in the same module, add note that the other LV should have in-person elements
+    # if code.split("-")[1] in ["onl", "onlhybwechs", "ringonl", "ringhyb2", "hyb", "hybrem"]:
+    #     setSpecialCase(code, "modulCombo=ja+LZiP=2", "alternativPraes")
+    #     setSpecialCase(code, "modulCombo=ja+LZiP=1", "alternativPraes")
     
     #add special case for hybrid excursion
     if code.split("-")[1] in ["onlhybwechs", "praeshybwechs", "hyb", "ringhyb2"]:

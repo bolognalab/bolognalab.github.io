@@ -1,0 +1,55 @@
+.block {
+  margin-bottom: 1em;
+  display: inline-block; 
+  background-color: #ffffff; 
+/*   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  color: #003366;
+  padding: 1em 1.5em;
+  overflow: hidden;
+}
+.half {
+  width: calc(49% - 0.5em);
+}
+.half.leftSide {
+  margin-left: 0;
+  margin-right: 0.5em
+}
+.half.rightSide {
+  margin-left: 0.5em;
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 600px){
+  .half {
+    width: calc(99% - 1em);
+  }
+  .half.leftSide, .half.rightSide {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+
+.previewFigure.toEdge {
+  width: calc(100% + 3em);
+  margin-left: -1.5em;
+  margin-top: -1em;
+}
+.previewFigure.toEdge > figcaption {
+  padding-left: 1.5em;
+}
+
+.previewFigure.fixedHeight {
+  height: 15em;
+  text-align: center;
+  position: relative;
+}
+.previewFigure.fixedHeight > img {
+  height: calc(100% - 1em) !important;
+}
+.previewFigure.fixedHeight > figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
