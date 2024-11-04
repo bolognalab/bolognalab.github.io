@@ -37,9 +37,9 @@
 			-ms-transition: -ms-transform 0.5s ease, opacity 0.5s ease;
 			transition: transform 0.5s ease, opacity 0.5s ease;
 			position: relative;			
-			width: calc(50% - 2.5em);
-			aspect-ratio: 1;
-			margin: 0.6em 0.6em;
+			width: calc(48% - 2.5em);
+			aspect-ratio: 1.1;
+			margin: 1em 1em;
 			overflow: hidden;
 			box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 			border-radius: 4px;
@@ -154,8 +154,8 @@
 					color: rgb(255,255,255);
 				}
 				.tiles article > .content {
-					margin-top: 2em;
-					padding: 0 10%;
+					margin-top: 1em;
+					padding: 0 6%;
 				}
 
 /* 			body:not(.is-touch) .tiles article:hover > .image {
