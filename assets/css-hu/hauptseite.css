@@ -42,7 +42,7 @@ a.smallLink {
 	margin: 1em 2em 2em 1em;
 	background: rgb(240,240,240);
 	color: #00376c;
-	transform: all 0.4s ease
+	transition: all 0.4s ease
 }
 .smallLink:hover {
 	background: rgb(250,250,250);
