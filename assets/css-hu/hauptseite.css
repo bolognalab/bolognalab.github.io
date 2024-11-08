@@ -28,6 +28,11 @@
 	padding: 0 0 ;
 	margin: 0;
 }
+
+a.smallLink {
+	display:flex;
+	align-items:center
+}
 .smallLink {
 	font-size: 1.1em;
 	font-weight: bold;
@@ -36,7 +41,23 @@
 	height: 3.5em;
 	margin: 1em 2em 2em 1em;
 	background: rgb(240,240,240);
-	color: #00376c
+	color: #00376c;
+	transform: all 0.4s ease
+}
+.smallLink:hover {
+	background: rgb(250,250,250);
+	transform: scale(105%,105%);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+a.smallLink::after {
+	content: '';
+	margin-left: 0.7em;
+	height: 1em;
+	aspect-ratio: 0.71;
+	background-image: url(https://bolognalab.github.io/images/fwd3.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	filter: brightness(0) saturate(100%) invert(96%) sepia(5%) saturate(60%) hue-rotate(202deg) brightness(85%) contrast(96%);
 }
 
 /* Tiles */
