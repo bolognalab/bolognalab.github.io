@@ -101,7 +101,7 @@ a.smallLink.ext::after {
 			box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 			border-radius: 4px;
 		}
-		body:not(.is-touch) .tiles article:hover {
+		body:not(.is-touch) .tiles article:not(.inactiveBlock):hover {
 				-moz-transform: scale(1.1);
 				-webkit-transform: scale(1.1);
 				-ms-transform: scale(1.1);
