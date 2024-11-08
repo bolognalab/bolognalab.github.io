@@ -68,7 +68,7 @@ a.smallLink.ext::after {
 @media only screen and (max-width:736px){
 	a.smallLink {
 		width: calc(100% - 0.5em);
-		margin:auto
+		margin: 0 auto 1em
 	}
 }
 
