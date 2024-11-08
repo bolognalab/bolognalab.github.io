@@ -53,7 +53,7 @@ a.smallLink {
 	padding-right: 3em;
 	min-width: 12em;
 }
-a.smallLink::after {
+a.smallLink.ext::after {
 	content: '';
 	height: 1em;
 	aspect-ratio: 0.71;
