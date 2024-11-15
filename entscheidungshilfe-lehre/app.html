@@ -260,20 +260,20 @@
         'artLV', 
         // 'modulCombo',
         'LZiP',
-        // 'niePr',
-        // 'nieSync',
-        // 'regAbw',
-        // "onlBereit", 
-        // "limZPSt",
-        // "onlZugang",
-        // 'LZsy', 
-        // "IntAsync",
-        // 'gaeste', 
-        // 'gaesteMittel',
-        // "exkur",
-        // "exkurMittel",
-        // 'begrAnz',
-        // "intKoll"
+        'LZsy', 
+        'niePr',
+        'nieSync',
+        'regAbw',
+        "onlBereit", 
+        "limZPSt",
+        "onlZugang",
+        "IntAsync",
+        'gaeste', 
+        'gaesteMittel',
+        "exkur",
+        "exkurMittel",
+        'begrAnz',
+        "intKoll"
     ]
 
     var answers = {}
@@ -470,7 +470,7 @@
         let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
 
         Object.entries(effects).forEach((entry)=>{
-            if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+            if (Object.keys(activeScenarios).includes(entry[0])){ //  && entry[1] != "FUNC"){
                 let scoreVal = +(activeScenarios[entry[0]])
                 newScoreVal = scoreVal + entry[1]
                 activeScenarios[entry[0]] = newScoreVal
@@ -542,7 +542,7 @@
         recent = []
         // calculate score provided by last answer for each code (but this time subtract it!)
         Object.entries(effects).forEach((entry)=>{
-            if (Object.keys(activeScenarios).includes(entry[0]) && entry[1] != "FUNC"){
+            if (Object.keys(activeScenarios).includes(entry[0])){ // && entry[1] != "FUNC"){
                 let scoreVal = +(activeScenarios[entry[0]])
                 newScoreVal = scoreVal - entry[1]
                 activeScenarios[entry[0]] = newScoreVal

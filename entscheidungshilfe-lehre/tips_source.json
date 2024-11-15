@@ -35,6 +35,11 @@
             "title": "Mehrere Darstellungsformen",
             "content": "Durch die Bereitstellung derselben Inhalte in verschiedenen Formaten, z. B. Text, Bildern und Audio, wird sichergestellt, dass jede*r Studierende die Informationen auf die für sich selbst effektivste Weise aufnehmen kann. Darüber hinaus können multiple Repräsentationen Sprachbarrieren sowie Barrieren für Studierende mit Behinderungen abbauen. Wenn Sie im Unterricht Folien zeigen oder an die Tafel schreiben, sollten Sie darauf achten, dass das, was Sie sagen, und das, was angezeigt wird, klar miteinander verbunden sind."
         },
+        "zugangGrwechs": {
+            "type": "synchron",
+            "title": "Auf Onlinezugang achten",
+            "content": "Bei einem Seminar oder Vorlesung mit Gruppenwechsel zwischen Online- und Präsenzteilnahme sollte sichergestellt werden, dass alle Teilnehmenden in der Lage sind, online teilzunehmen. Falls es Studierende gibt, die keinen Zugang zu einer stabilen Internetverbindung und einer privaten Umgebung haben, um online Teilzunehmen, können Sie diesen Studierenden ausnahmsweise erlauben, immer in Präsenz teilzunehmen."
+        },
         "woechCheckin": {
             "type": "asynchron",
             "title": "Wöchentliches Check-In",
