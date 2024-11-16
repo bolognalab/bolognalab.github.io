@@ -54,6 +54,16 @@
             "type": "asynchron",
             "title": "Regelmäßige Reflexionsbeiträge",
             "content": "Bei einem Reflexionsbeitrag werden die Studierenden in einem Online-Kurs gebeten, regelmäßig (z. B. einmal pro Woche) einen Forumsbeitrag im LMS des Kurses zu verfassen, in dem sie über einen Aspekt ihres Lernens reflektieren. Diese Reflexion kann einer bestimmten Aufforderung folgen (z. B. „Was halten Sie von der Lektüre dieser Woche“) oder völlig offen sein, solange sie sich auf den Kurs bezieht. Die Studierenden haben die Möglichkeit, müssen aber nicht, die Reflexionen anderer Studierender zu lesen und darauf zu antworten. Reflexionsbeiträge helfen dabei, eine Gemeinschaft zwischen Studierenden aufzubauen, indem sie sich über ihre gemeinsamen Lernerfahrungen austauschen. Eine solche Vorgehensweise hilft den Studierenden auch, ihr Lernen zu strukturieren, wenn der Kurs asynchron ist.  <br> <a href='https://edtechbooks.org/hyflex/student_experience#h4_EZxm'>Mehr zu Reflexionsbeiträgen und ihrer Wirksamkeit (auf Englisch)</a>"
+        },
+        "zeitZonen": {
+            "type": "international",
+            "title": "Zeitzonen berücksichtigen",
+            "content": "Selbstverständlich sollte eine synchrone universitäts- oder landübergreifende Sitzung so geplannt werden, dass die Studierenden in allen betroffenen Zeitzonen sie zu einer verünftigen Uhrzeit besuchen können. Die Zeitzonen sollten zusätzlich berücksichtigt werden, wenn Sie während des Kurses Fristen (z.B. für die Einreichung von Materialien) setzen."
+        },
+        "sprachbarrieren": {
+            "type": "international",
+            "title": "Zeitzonen berücksichtigen",
+            "content": ""
         }
     },
     "specialCases": {
