@@ -9,14 +9,27 @@
   <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
   <link rel="stylesheet" href="../assets/css/eb.css" />
 <script src="../assets/js/jquery.min.js"></script>
+<style>
+    #qChoiceCont {
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        margin-bottom: 0.5em;
+    }
+</style>
 </head>
 <body class="is-preload" lang="de">
 <h2>Fragereihe-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
 <div style="display: table; width: 100%">
+    <h3>Fragen auswählen</h3>
+    <div id="qChoiceCont"></div>
+    <button id="chooseQ">Auswählen</button>
+    <hr />
+    <h3>Fragen beantworten</h3>
     <div id="questions" class="qCont"></div>
     <hr />
-    <div id="result" class="rCont"></div>
-    <hr />
+    <!-- <div id="result" class="rCont"></div>
+    <hr /> -->
+    <h3>Szenarien und Scores</h3>
     <div id="scenarios" class="sCont"></div>
     
 </div>
@@ -41,27 +54,26 @@
         "2": "#A9D08E",
         "FUNC": "#FFFFAA"
     }
-
-    const questionOrder = [ 
+    const all_questions = [ 
         'artLV', 
-        // 'modulCombo',
         'LZiP',
         'LZsy', 
         'niePr',
-        // 'nieSync',
-        // // 'wohnLP',
-        // 'regAbw',
-        // "onlBereit", 
-        // "limZPSt",
-        // "onlZugang",
-        // "IntAsync",
-        // 'gaeste', 
-        // 'gaesteMittel',
-        // "exkur",
-        // "exkurMittel",
-        // 'begrAnz',
-        // "intKoll"
+        'nieSync',
+        'regAbw',
+        "onlBereit", 
+        "limZPSt",
+        "onlZugang",
+        "IntAsync",
+        'gaeste', 
+        'gaesteMittel',
+        "exkur",
+        "exkurMittel",
+        'begrAnz',
+        "intKoll",
     ]
+
+    var questionOrder
 
 
 
@@ -87,7 +99,7 @@
     let nButton = document.createElement("button"); document.body.append(nButton)
     nButton.classList.add("nextButton")
     nButton.setAttribute("id", "nextButton")
-    nButton.innerHTML = "Nächste Frage"
+    nButton.innerHTML = "Berechnen & Nächste Frage"
     nButton.addEventListener("click", function(){
         submitAnswer()
     })
@@ -96,18 +108,26 @@
     let sButton = document.createElement("button"); document.body.append(sButton)
     sButton.classList.add("nextButton")
     sButton.setAttribute("id", "submitButton")
-    sButton.innerHTML = "Absenden"
+    sButton.innerHTML = "Berechnen"
     sButton.addEventListener("click", function(){
-        getResult(activeScenarios)
+        submitAnswer()
+        // getResult(activeScenarios)
     })
     sButton.style.display = "none"
+
+    document.getElementById("chooseQ").addEventListener("click", function(){
+        questionOrder = getCheckedBoxes("qChoice")
+        initializeQuestions()
+    })
+
 
     $.getJSON("data.json", function(json){
         all_data = json
         questionInfo = json['questions']
         all_scenarios = json['scenarios']
-        Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
-        displayQuestion(questionOrder[nextQuestionIdx])
+        questionChoices()
+        questionOrder = getCheckedBoxes("qChoice")
+        initializeQuestions()
         $.get( "texts_tips_matrix.csv", function(CSVdata) {
             let csvData = $.csv.toObjects(CSVdata, {separator:';'});
             all_texts = {}
@@ -126,6 +146,43 @@
             
         });
     })
+
+    function questionChoices(){
+        all_questions.forEach(function(qId){
+            let block = document.createElement("div")
+            let input = document.createElement("input")
+            input.setAttribute("type", "checkbox")
+            input.setAttribute("id", qId)
+            input.setAttribute("name", "qChoice")
+            input.checked = true;
+            let label = document.createElement("label")
+            label.setAttribute("for", qId)
+            label.innerHTML = qId
+            block.append(input)
+            block.append(label)
+            document.getElementById("qChoiceCont").append(block)
+        })
+    }
+
+    function getCheckedBoxes(chkboxName){
+        var checkboxes = document.getElementsByName(chkboxName)
+        var checkboxesChecked = []
+        for (var i=0; i<checkboxes.length; i++){
+            if (checkboxes[i].checked) {
+                checkboxesChecked.push(checkboxes[i].id);
+            }
+        }
+        return checkboxesChecked.length > 0 ? checkboxesChecked : null;
+    }
+
+    function initializeQuestions(){
+        Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
+        qCont.innerHTML="" 
+        displayQuestion(questionOrder[0])
+        setTimeout(()=>{
+            listActiveScenarios(activeScenarios)
+        }, 100)
+    }
 
     function displayQuestion(qKey){
         let q = questionInfo[qKey]
@@ -147,7 +204,7 @@
             let aConditionalEffects= a[1].conditionalEffects
 
             let aDiv = document.createElement("div"); qDiv.append(aDiv)
-            aDiv.classList.append("aDiv")
+            aDiv.classList.add("aDiv")
             let aRadio = document.createElement("input")
             aRadio.setAttribute("type", "radio")
             aRadio.setAttribute("name", "Q_" + qKey)
@@ -600,6 +657,7 @@
         a.setAttribute("onclick", "showResult('" + resCode + "', special_cases = [], topTier=topResults)")
     }
 
+    
      
 </script>
 </body>
