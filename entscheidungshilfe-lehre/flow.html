@@ -11,9 +11,23 @@
 <script src="../assets/js/jquery.min.js"></script>
 <style>
     #qChoiceCont {
-        display: grid;
-        grid-template-columns: 20% 20% 20%;
+        /* display: grid;
+        grid-template-columns: 20% 20% 20%; */
         margin-bottom: 0.5em;
+        -webkit-column-count: 3;  /* Chrome, Safari, Opera */
+        -moz-column-count: 3;     /* Firefox */
+        column-count: 3;
+        width: 50%;
+        min-width: 500px;
+    }
+    @media only screen and (max-width: 450px){
+        #qChoiceCont {
+            -webkit-column-count: 2;  /* Chrome, Safari, Opera */
+            -moz-column-count: 2;     /* Firefox */
+            column-count: 2;
+            width: 80%;
+            min-width: 400px;
+        }
     }
 </style>
 </head>
@@ -22,7 +36,7 @@
 <div style="display: table; width: 100%">
     <h3>Fragen auswählen</h3>
     <div id="qChoiceCont"></div>
-    <button id="chooseQ">Auswählen</button>
+    <button id="chooseQ">Auswählen und wieder anfangen</button>
     <hr />
     <h3>Fragen beantworten</h3>
     <div id="questions" class="qCont"></div>
@@ -75,8 +89,6 @@
 
     var questionOrder
 
-
-
     var answers = {}
     var activeScenarios = {}
     var recent = []
@@ -94,7 +106,7 @@
     pButton.addEventListener("click", function(){
         undoAnswer()
     })
-    pButton.style.display = "none"
+    
 
     let nButton = document.createElement("button"); document.body.append(nButton)
     nButton.classList.add("nextButton")
@@ -148,7 +160,7 @@
     })
 
     function questionChoices(){
-        all_questions.forEach(function(qId){
+        all_questions.forEach(function(qId, i){
             let block = document.createElement("div")
             let input = document.createElement("input")
             input.setAttribute("type", "checkbox")
@@ -157,7 +169,7 @@
             input.checked = true;
             let label = document.createElement("label")
             label.setAttribute("for", qId)
-            label.innerHTML = qId
+            label.innerHTML = (i+1) + ". " + qId
             block.append(input)
             block.append(label)
             document.getElementById("qChoiceCont").append(block)
@@ -179,6 +191,7 @@
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         qCont.innerHTML="" 
         displayQuestion(questionOrder[0])
+        pButton.style.display = "none"
         setTimeout(()=>{
             listActiveScenarios(activeScenarios)
         }, 100)
