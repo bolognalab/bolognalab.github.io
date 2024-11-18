@@ -66,7 +66,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario') : "se-rem-2-1-2"
 const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : ["se-rem-2-0-0","se-rem-2-3-0","se-hyb-2-0-0","se-hyb-2-3-0"]
 const specialCases = urlParams.has('specialCases') ? urlParams.get('specialCases') : []
-
+const providedAnswers = JSON.parse(sessionStorage.getItem("answers"))
 
 // var shownScenario = 'se-rem-2-1-1'
 

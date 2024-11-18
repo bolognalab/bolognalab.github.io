@@ -88,7 +88,7 @@ for code in list_of_scenarios:
         # setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -1)
         # setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
         # updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
-        setSpecialCase(code, "LZiP=2", "voraussetztenGelPraes")
+        # setSpecialCase(code, "LZiP=2", "voraussetztenGelPraes")
 
 
     # LZsy
@@ -133,8 +133,6 @@ for code in list_of_scenarios:
         updated_questions["LZsy"]["antworten"]["0"]["effects"][code] = + 1
 
 
-
-
     # niePr; if some students can never make it to class in-person, then exclude all options exclusively in-person for students
     if code.split("-")[1] in ["praes", "ringpraes", "rem", "ringhyb1", "grwechs", "praesonlwechs", "praeshybwechs", "onlpraeswechs", "hybpraeswechs"]:
         # do not exclude options with asynchronous participation alternative
@@ -142,8 +140,6 @@ for code in list_of_scenarios:
             updated_questions["niePr"]["antworten"]["ja"]["effects"][code] = -100
         else:
             updated_questions["niePr"]["antworten"]["ja"]["effects"][code] = -2
-
-
 
 
     # nieSync; if some students cannot regularly make it to class synchronously, then exclude all options where material is exclusively shared synchronously
@@ -155,8 +151,11 @@ for code in list_of_scenarios:
     if code.split("-")[3] == "2":
         updated_questions["nieSync"]["antworten"]["ja"]["effects"][code] = -1
     # and encourage options with asynchronous participation alternatives, unless there are essential learning goals in person
+    # TODO: falls LZsy = 2 und nieSync=ja, es muss eine Anmerkung über dieses Dilemma im Ergebnis angezeigt werden
     if code.split("-")[3] in ["3", "4"]: 
         setConditionalEffect("nieSync", "ja", code, "LZsy!=2", +1)
+    
+
     
     # DEPRECATED # wohnLP: if the instructor lives far from the university, favor online and mostly-online options, unless there are essential learning goals in person!
     # if code.split("-")[1] in ["onl", "ringonl", "onlhybwechs", "onlpraeswechs", "async"]: 
@@ -164,6 +163,8 @@ for code in list_of_scenarios:
 
     # regAbw
     # if instructor is occasionally absent from campus, encourage switching options with more in-person character
+    # TODO: Optionen mit keiner solchen Möglichkeit (z.B. praes) leicht benachteiligen. Online-only stays unaffected
+
     if code.split("-")[1] in ["praesonlwechs", "praeshybwechs", "hyb", "ringhyb1", "ringhyb2", "hybrem", "hybpraeswechs"]: 
         # note: hybrid options also count, because the hybrid room can easily be moved fully online for individual classes
         updated_questions["regAbw"]["antworten"]["abundzu"]["effects"][code] = + 2
