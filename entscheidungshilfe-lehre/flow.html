@@ -33,10 +33,14 @@
 </head>
 <body class="is-preload" lang="de">
 <h2>Fragereihe-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
+<p>Auf dieser Seite können Sie betrachten, wie jede Frage im Entscheidungshilfe-Tool auf die Scores der verschiedenen Ergbnisse auswirkt.</p>
 <div style="display: table; width: 100%">
     <h3>Fragen auswählen</h3>
+    <button id="selectAll">alle auswählen</button>
+    <button id="deselectAll">alle abwählen </button>
     <div id="qChoiceCont"></div>
-    <button id="chooseQ">Auswählen und wieder anfangen</button>
+    <button id="chooseQ">Auswahl bestätigen</button>
+    <p style="font-size: small; color:rgb(100,100,100)">Anmerkung: Die Fragen <em>gaesteMittel</em> und <em>exkurMittel</em> haben keinen Effekt, wenn die voherigen Fragen <em>gaeste</em> bzw. <em>exkur</em> nicht mit "ja" beantwortet sind.</em></p>
     <hr />
     <h3>Fragen beantworten</h3>
     <div id="questions" class="qCont"></div>
@@ -127,10 +131,24 @@
     })
     sButton.style.display = "none"
 
+    document.getElementById("selectAll").addEventListener("click", function(){
+        let checkboxes = document.getElementsByName("qChoice")
+        for (var i=0; i<checkboxes.length; i++){
+            checkboxes[i].checked = true
+            }
+    })
+    document.getElementById("deselectAll").addEventListener("click", function(){
+        let checkboxes = document.getElementsByName("qChoice")
+        for (var i=0; i<checkboxes.length; i++){
+            checkboxes[i].checked = false
+            }
+    })
+
     document.getElementById("chooseQ").addEventListener("click", function(){
         questionOrder = getCheckedBoxes("qChoice")
         initializeQuestions()
     })
+
 
 
     $.getJSON("data.json", function(json){
