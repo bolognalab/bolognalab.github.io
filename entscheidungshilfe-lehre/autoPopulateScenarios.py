@@ -163,17 +163,28 @@ for code in list_of_scenarios:
 
     # regAbw
     # if instructor is occasionally absent from campus, encourage switching options with more in-person character
-    # TODO: Optionen mit keiner solchen Möglichkeit (z.B. praes) leicht benachteiligen. Online-only stays unaffected
-
     if code.split("-")[1] in ["praesonlwechs", "praeshybwechs", "hyb", "ringhyb1", "ringhyb2", "hybrem", "hybpraeswechs"]: 
         # note: hybrid options also count, because the hybrid room can easily be moved fully online for individual classes
         updated_questions["regAbw"]["antworten"]["abundzu"]["effects"][code] = + 2
+        #TODO: for praeshybwechs, hyb, ringhyb2, hybrem, hybpraeswechs add note about instructor needing to tune in online to an in-person room
+
+    # discourage options where instructor would ALWAYS have to be in person
+    if code.split("-")[1] in ["praes", "ringpraes", "rem", "grwechs"]:
+        updated_questions["regAbw"]["antworten"]["abundzu"]["effects"][code] = + -1
+
     # if they are regularly absent from campus, enccourage switching options with more online character and fully online options (for the instructor)
     if code.split("-")[1] in ["onlpraeswechs", "onl", "ringonl", "onlhybwechs"]:
         updated_questions["regAbw"]["antworten"]["oft"]["effects"][code] = + 2
     # also encourage async options
     if code.split("-")[3] == "4": 
         updated_questions["regAbw"]["antworten"]["oft"]["effects"][code] = + 2
+    
+    # define special case if the instructor would be tuning in hybridly when they are away
+    if code.split("-")[1] in ["praeshybwechs", "hyb", "ringhyb1", "ringhyb2", "hybrem", "hybpraeswechs"]:
+        setSpecialCase(code, "regAbw=abundzu", "onlineZuschaltungLP")
+        setSpecialCase(code, "regAbw=oft", "onlineZuschaltungLP")
+
+
 
     # onlBereit: if instructor doesn't want to teach online at all, exclude fully online and switching options
     if code.split("-")[1] in ["async", "onl", "ringonl", "onlhybwechs", "onlpraeswechs", "praesonlwechs"]:
