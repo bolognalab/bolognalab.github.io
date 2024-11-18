@@ -35,6 +35,14 @@
     #welcome {
         background: rgba(255,255,255, 0.8)
     }
+    #welcomeLogo {
+        width: 40%
+    }
+    @media only screen and (max-width: 600px){
+        #welcomeLogo {
+        width: 60%
+    }
+    }
     #welcome h1 {
         color: var(--networkBlack);
         text-align: center;
@@ -51,6 +59,9 @@
         padding: 0.8em 1em 1.5em 1em;
         color: var(--networkBlack);
         text-align: center;
+    }
+    #welcome h1, #welcome p {
+        width: 90%;
     }
     #start {
         background: var(--networkTurqoise)
@@ -81,6 +92,17 @@
         transition: all 0.5s ease;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
+    @media only screen and (max-width: 600px){
+        .qCont {
+            height: 40em
+        }
+        .qDiv {
+            top: 20px;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    
     .qDiv.upcoming {
         left: 150%;
         opacity: 0;
@@ -199,10 +221,11 @@
         width: 32%;
     }
     .infoIcon {
-        display: table-cell;
-        vertical-align: middle;
+        display: block;
+        text-align:center;
         width: 20px;
-        margin-right: 0.5em;
+        margin: auto;
+        /* margin-right: 0.5em; */
         filter: var(--networkTurqoise);
         transition: all 0.2s ease;
 
@@ -225,8 +248,7 @@
         border-radius: 0.5em;
     }
     .infoText.opened {
-        display: table-cell;
-        vertical-align: middle;
+        display: block;
         color: rgba(255,255,255,1);
         opacity: 1;
     }
@@ -238,7 +260,7 @@
     <div id="questions" class="qCont">
         <img class="backgroundImage" src = "../images/entscheidungshilfe/treeTemp.svg" />
         <div id="welcome" class="qDiv">
-            <h2 style="text-align: center"><img src="../images/entscheidungshilfe/NHL_logo.svg" style="width: 40%" /></h2>
+            <h2 style="text-align: center"><img id="welcomeLogo" src="../images/entscheidungshilfe/NHL_logo.svg" /></h2>
             <h1>Entscheidungsbaum Online und Hybride Lehre</h3>
             <p>Überlegen Sie, in einem neuen Format zu unterrichten? Beantworten Sie die folgenden Fragen und entdecken Sie, welches Szenario für Sie am besten passt!</p>
             <div class="buttonContainer"><button id="start" class="submitButton" onclick="start()" style="display:none">Beginnen</button></div>
@@ -258,7 +280,7 @@
 
     const questionOrder = [ 
         'artLV', 
-        // 'modulCombo',
+        // // 'modulCombo',
         'LZiP',
         'LZsy', 
         'niePr',
@@ -392,27 +414,28 @@
         if (q.addInfo){
             let infoContainer = document.createElement("p"); buttonContainer.append(infoContainer)
             infoContainer.classList.add("infoContainer", "closed")
-            let infoIcon = document.createElement("img");infoContainer.append(infoIcon)
+            let infoIcon = document.createElement("img"); infoContainer.append(infoIcon)
             infoIcon.setAttribute("src", "../images/entscheidungshilfe/infoIcon.svg")
             infoIcon.classList.add("infoIcon")
             let infoText = document.createElement("span"); infoContainer.append(infoText)
             infoText.classList.add("infoText")
             infoText.innerHTML = q.addInfo
 
+            infoContainer.addEventListener("click", ()=>{
+                if(window.matchMedia("(pointer: coarse)").matches) {
+                    let infoContainer = document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer")
+                    if (infoContainer.classList.contains("closed")){
+                        openInfoContainer(qKey)
+                    } else if (infoContainer.classList.contains("opened")){
+                        closeInfoContainer(qKey)
+                    }
+                }
+            })
             infoContainer.addEventListener("mouseenter", ()=>{
-                infoTimeout = setTimeout(()=>{
-                    document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer").classList.remove("closed")
-                    document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer").classList.add("opened")
-                    setTimeout(()=>{
-                        document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer > .infoText").classList.add("opened")
-                    }, 400)   
-                }, 200)
+                openInfoContainer(qKey)
             })
             infoContainer.addEventListener("mouseleave", ()=>{
-                clearTimeout(infoTimeout); clearTimeout(infoTimeout2)
-                document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer > .infoText").classList.remove("opened")
-                document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer").classList.remove("opened")
-                document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer").classList.add("closed")   
+                closeInfoContainer(qKey)
             })
         }
 
@@ -422,6 +445,23 @@
         }, 100)
         
         nextQuestionIdx += 1
+    }
+
+    function openInfoContainer(qKey){
+        infoTimeout = setTimeout(()=>{
+            document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer").classList.remove("closed")
+            document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer").classList.add("opened")
+            setTimeout(()=>{
+                document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer > .infoText").classList.add("opened")
+            }, 400)   
+        }, 200)
+    }
+
+    function closeInfoContainer(qKey){
+        clearTimeout(infoTimeout); clearTimeout(infoTimeout2)
+        document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer > .infoText").classList.remove("opened")
+        document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer").classList.remove("opened")
+        document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer").classList.add("closed")  
     }
 
     function selectAnswer(qKey, aKey){
@@ -454,9 +494,9 @@
     }
 
     function submitAnswer(){
-        qKey = activeQ
-        pKey = qKey
-        aKey = activeA
+        let qKey = activeQ
+        let pKey = qKey
+        let aKey = activeA
         let allRadios = document.getElementById("DIV_" + qKey).querySelectorAll("input")
         recent = []
         for (let radio of allRadios){
