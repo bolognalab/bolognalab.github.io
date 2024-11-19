@@ -143,11 +143,11 @@
 
         "IntAsync": {
             "condition": true,
-            "text": "Wie viel studentische Interaktion ist <b>außerhalb der Kurssitzungen</b> für die Lernziele des Kurses benötigt?",
+            "text": "Wie wichtig eine Strukturierung der studentischen Interaktion <b>außerhalb der Kurssitzungen</b> für die Lernziele des Kurses?",
             "antworten": {
-                "0": "minimale oder gelegentliche Interaktion",
-                "1": "Interaktion hauptsächlich zw. Studierenden und der Lehrperson",
-                "2": "Interaktion sowohl zw. Studierenden als auch zw. Studierenden und der Lehrperson"
+                "0": "Nicht so wichtig; die informelle Kommunikation zwischen Studierenden über die von ihnen gewählten Kanäle reicht aus",
+                "1": "Gewünscht - ich möchte, dass Studierende regelmäßig und miteinander über die Inhalte des Kurses austauschen",
+                "2": "Notwendig - ohne strukturierte, regelmäßige studentische Interaktion sind manche Lernziele schlecht erreichbar"
             }
         },
 

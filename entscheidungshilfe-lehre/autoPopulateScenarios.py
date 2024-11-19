@@ -221,9 +221,13 @@ for code in list_of_scenarios:
     if code.split("-")[3] == "0":
         # check for answer to question: are certain students unable to attend synchronously ever?
         setConditionalEffect("limZPSt", "ja", code, "nieSync=nein", +1) 
+    
     # if everyone can make it to class synchronously and no one has restricted time plan, no need for high degree of asynchronous materials as a replacement
     if code.split("-")[3] in ["3, 4"]:
         setConditionalEffect("limZPSt", "nein", code, "nieSync=nein", -1)
+    # if everyone has sufficient time, encourage flipped classroom options, since the structure can help students reach learning goals more efficiently
+    if code.split("-")[2] == "2":
+        updated_questions["limZPSt"]["antworten"]["nein"]["effects"][code] = +1
 
     # onlZugang: if not all students have access to stable internet (for conferencing), exclude all online-only or mandatorily partially online options
     # options with higher online portion
@@ -246,6 +250,7 @@ for code in list_of_scenarios:
         else:
             updated_questions["onlZugang"]["antworten"]["nein"]["effects"][code] = -100
             updated_questions["onlZugang"]["antworten"]["idk"]["effects"][code] = -2
+    #TODO: if LZsy=0, reduce the negative effect if asyncTN=3 or 4
 
     # IntAsync: if desired asynchronous interaction is level 1 or 2, exclude options with less interaction.
     # in addition, slightly favor  each interaction level 0,1 or 2 according to what answer was given.
@@ -321,6 +326,7 @@ for code in list_of_scenarios:
     # if code.split("-")[1] in ["onlhybwechs", "praeshybwechs", "hyb", "ringhyb2"]:
     #     setSpecialCase(code, "exkur=ja", "hybrideExkursion")
 
+    # TODO: prüfen: was soll passieren, wenn onlZugang=nein und intKoll=ja? Dann würden alle Szenarien ausgeschlossen! Es muss eine Ausnahme erstellt werden.
 
 
 updated_json["questions"] = updated_questions
