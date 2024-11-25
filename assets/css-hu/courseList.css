@@ -94,7 +94,7 @@
 			transition: transform 0.5s ease, opacity 0.5s ease;
 			position: relative;			
 			width: calc(48% - 2.5em);
-			aspect-ratio: 0.83;
+			aspect-ratio: 0.88;
 			margin: 1em 1em;
 			overflow: hidden;
 			box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
