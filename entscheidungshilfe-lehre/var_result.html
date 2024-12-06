@@ -18,13 +18,22 @@
                 <p class="descText"></p>
                 <img class="descImg" src="" alt="Studenten und Studentinnen in einem Raum."/>
             </div>
-            <div id="vorteile" style="display: none">
-                <p>Hier sind einige Gründe, warum dieses Szenario gut für Sie ist:</p>
-                <ul class="reasonList"></ul>
-            </div>
-            <div id="nachteile" style="display: none">
-                <p>Hier sind einige Aspekte des Szenarios, die vielleicht nicht direkt mit Ihren Erwartungen übereinstimmen:</p>
-                <ul class="reasonList"></ul>
+            <div id="matchQuality" style="display:none; border-bottom: 0px" class="tip">
+                <h5 onclick="showHideTip(this)">
+                    <img src="../images/fwd3.svg" alt="">
+                    <span>Wie geeignet ist dieses Lehrszenario für mich?</span>
+                </h5>
+                <div class="tipContent">
+                    <div id="vorteile" style="display: none">
+                        <p>Hier sind einige Gründe, warum dieses Szenario gut für Sie ist:</p>
+                        <ul class="reasonList"></ul>
+                    </div>
+                    <div id="nachteile" style="display: none">
+                        <p>Hier sind einige Aspekte des Szenarios, die vielleicht nicht direkt mit Ihren Erwartungen übereinstimmen:</p>
+                        <ul class="reasonList"></ul>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div id="resSync" class="block sync">
@@ -115,15 +124,17 @@ function explainMatch(scenario, answers, rules){
             }
             let sentence = document.createElement("li")
             let subsentence = effect.reasonSummary.replace("Szenario XYZ", "dieses Szenario")
-            sentence.innerHTML = effect.answerSummary + " " + subsentence +  " <b>(rule ID: " + effect.globalId + ")</b>"
+            sentence.innerHTML = effect.answerSummary + " " + subsentence //+  " <b>(rule ID: " + effect.globalId + ")</b>"
 
             // if the effect is positive, add it to the first list (Vorteile)
             if (+effect.scoreChange > 0){
                 document.querySelector("#vorteile .reasonList").append(sentence)
+                document.querySelector("#matchQuality").style.display = "block"
                 document.querySelector("#vorteile").style.display = "block"
             } else {
                 // if the effect is negative, add it to the second list (Nachteile)
                 document.querySelector("#nachteile .reasonList").append(sentence)
+                document.querySelector("#matchQuality").style.display = "block"
                 document.querySelector("#nachteile").style.display = "block"
             }            
         }
@@ -219,7 +230,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let syncIntText =  theseTexts[syncIntValue + "Text"]
     let asyncTNText =  theseTexts[asyncTNValue + "Text"]
     let asyncIntText =  theseTexts[asyncIntValue + "Text"]
-    let asyncText = asyncTNText + asyncIntText
+    let asyncText = asyncTNText + " " + asyncIntText
 
     // gathering tips
     // synchronous

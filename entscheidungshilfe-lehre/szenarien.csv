@@ -1,790 +1,726 @@
 ﻿code;unterrichtsformat;syncInteraktion;asynchroneTN;asyncInteraktion
 so-async-0-4-0;Digital asynchroner Kurs;minimal;exklusiv asynchron;minimal
-so-async-0-4-1;Digital asynchroner Kurs;minimal;exklusiv asynchron;Interaktionsmöglichkeiten St-LP
-so-async-0-4-2;Digital asynchroner Kurs;minimal;exklusiv asynchron;Interaktionsmöglichkeiten St-St und St-LP
+so-async-0-4-1;Digital asynchroner Kurs;minimal;exklusiv asynchron;optional
+so-async-0-4-2;Digital asynchroner Kurs;minimal;exklusiv asynchron;hochstrukturiert
 vl-rem-0-0-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;exklusiv synchron;minimal
-vl-rem-0-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-rem-0-0-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-0-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;exklusiv synchron;optional
 vl-rem-0-1-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Nacharbeit;minimal
-vl-rem-0-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-rem-0-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-0-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Nacharbeit;optional
+vl-rem-0-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Nacharbeit;hochstrukturiert
 vl-rem-0-2-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-rem-0-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-rem-0-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-0-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-rem-0-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-rem-0-3-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-rem-0-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-rem-0-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-0-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-rem-0-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
 vl-rem-1-0-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;exklusiv synchron;minimal
-vl-rem-1-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-rem-1-0-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-1-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;exklusiv synchron;optional
 vl-rem-1-1-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Nacharbeit;minimal
-vl-rem-1-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-rem-1-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-1-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Nacharbeit;optional
+vl-rem-1-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Nacharbeit;hochstrukturiert
 vl-rem-1-2-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-rem-1-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-rem-1-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-1-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-rem-1-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-rem-1-3-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-rem-1-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-rem-1-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-1-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-rem-1-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
 vl-rem-2-0-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;exklusiv synchron;minimal
-vl-rem-2-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-rem-2-0-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-2-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;exklusiv synchron;optional
 vl-rem-2-1-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-rem-2-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-rem-2-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-2-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;optional
+vl-rem-2-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 vl-rem-2-2-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-rem-2-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-rem-2-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-2-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-rem-2-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-rem-2-3-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-rem-2-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-rem-2-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-rem-2-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-rem-2-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 se-rem-1-0-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;exklusiv synchron;minimal
-se-rem-1-0-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-rem-1-0-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-rem-1-0-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;exklusiv synchron;optional
 se-rem-1-1-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Nacharbeit;minimal
-se-rem-1-1-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-rem-1-1-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-rem-1-1-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Nacharbeit;optional
+se-rem-1-1-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Nacharbeit;hochstrukturiert
 se-rem-1-2-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-rem-1-2-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-rem-1-2-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-rem-1-2-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-rem-1-2-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-rem-1-3-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-rem-1-3-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-rem-1-3-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-rem-1-3-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-rem-1-3-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
 se-rem-2-0-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;exklusiv synchron;minimal
-se-rem-2-0-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-rem-2-0-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-rem-2-0-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;exklusiv synchron;optional
 se-rem-2-1-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;minimal
-se-rem-2-1-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-rem-2-1-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-rem-2-1-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;optional
+se-rem-2-1-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 se-rem-2-2-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-rem-2-2-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-rem-2-2-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-rem-2-2-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-rem-2-2-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse);St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-rem-2-3-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-rem-2-3-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-rem-2-3-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-rem-2-3-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-rem-2-3-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 vl-hyb-0-0-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;exklusiv synchron;minimal
-vl-hyb-0-0-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hyb-0-0-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-0-0-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;exklusiv synchron;optional
 vl-hyb-0-1-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;minimal
-vl-hyb-0-1-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hyb-0-1-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-0-1-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;optional
+vl-hyb-0-1-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;hochstrukturiert
 vl-hyb-0-2-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hyb-0-2-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hyb-0-2-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-0-2-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hyb-0-2-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hyb-0-3-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-hyb-0-3-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hyb-0-3-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-0-3-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-hyb-0-3-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
 vl-hyb-1-0-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;minimal
-vl-hyb-1-0-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hyb-1-0-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-1-0-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;optional
 vl-hyb-1-1-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;minimal
-vl-hyb-1-1-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hyb-1-1-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-1-1-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;optional
+vl-hyb-1-1-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;hochstrukturiert
 vl-hyb-1-2-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hyb-1-2-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hyb-1-2-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-1-2-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hyb-1-2-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hyb-1-3-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-hyb-1-3-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hyb-1-3-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-1-3-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-hyb-1-3-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
 vl-hyb-2-0-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;minimal
-vl-hyb-2-0-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hyb-2-0-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-2-0-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;optional
 vl-hyb-2-1-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-hyb-2-1-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hyb-2-1-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-2-1-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-hyb-2-1-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 vl-hyb-2-2-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hyb-2-2-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hyb-2-2-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-2-2-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hyb-2-2-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hyb-2-3-0;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-hyb-2-3-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hyb-2-3-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hyb-2-3-1;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-hyb-2-3-2;Synchron-Hybride Vorlesung mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 se-hyb-1-0-0;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;minimal
-se-hyb-1-0-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-hyb-1-0-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-hyb-1-0-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;optional
 se-hyb-1-1-0;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;minimal
-se-hyb-1-1-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-hyb-1-1-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-hyb-1-1-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;optional
+se-hyb-1-1-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;hochstrukturiert
 se-hyb-1-2-0;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-hyb-1-2-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-hyb-1-2-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hyb-1-2-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-hyb-1-2-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-hyb-1-3-0;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-hyb-1-3-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-hyb-1-3-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-hyb-1-3-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-hyb-1-3-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
 se-hyb-2-0-0;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;minimal
-se-hyb-2-0-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-hyb-2-0-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-hyb-2-0-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;optional
 se-hyb-2-1-0;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-hyb-2-1-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-hyb-2-1-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-hyb-2-1-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;optional
+se-hyb-2-1-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 se-hyb-2-2-0;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-hyb-2-2-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-hyb-2-2-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hyb-2-2-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-hyb-2-2-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-hyb-2-3-0;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-hyb-2-3-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-hyb-2-3-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-0-0-0;Online synchrone Vorlesung ;minimal;exklusiv synchron;minimal
-vl-onl-0-0-1;Online synchrone Vorlesung ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onl-0-0-2;Online synchrone Vorlesung ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-0-1-0;Online synchrone Vorlesung ;minimal;ergänzende Nacharbeit;minimal
-vl-onl-0-1-1;Online synchrone Vorlesung ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onl-0-1-2;Online synchrone Vorlesung ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-0-2-0;Online synchrone Vorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onl-0-2-1;Online synchrone Vorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onl-0-2-2;Online synchrone Vorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-0-3-0;Online synchrone Vorlesung ;minimal;asynchron als mgl. Ersatz.;minimal
-vl-onl-0-3-1;Online synchrone Vorlesung ;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onl-0-3-2;Online synchrone Vorlesung ;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-1-0-0;Online synchrone Vorlesung ;St-LP;exklusiv synchron;minimal
-vl-onl-1-0-1;Online synchrone Vorlesung ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onl-1-0-2;Online synchrone Vorlesung ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-1-1-0;Online synchrone Vorlesung ;St-LP;ergänzende Nacharbeit;minimal
-vl-onl-1-1-1;Online synchrone Vorlesung ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onl-1-1-2;Online synchrone Vorlesung ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-1-2-0;Online synchrone Vorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onl-1-2-1;Online synchrone Vorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onl-1-2-2;Online synchrone Vorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hyb-2-3-1;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-hyb-2-3-2;Synchron-Hybrides Seminar mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onl-0-0-0;Online synchrone Vorlesung ;minimal;exklusiv synchron;minimal
+vl-onl-0-0-1;Online synchrone Vorlesung ;minimal;exklusiv synchron;optional
+vl-onl-0-1-0;Online synchrone Vorlesung ;minimal;ergänzende Nacharbeit;minimal
+vl-onl-0-1-1;Online synchrone Vorlesung ;minimal;ergänzende Nacharbeit;optional
+vl-onl-0-1-2;Online synchrone Vorlesung ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-onl-0-2-0;Online synchrone Vorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onl-0-2-1;Online synchrone Vorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onl-0-2-2;Online synchrone Vorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
+vl-onl-0-3-0;Online synchrone Vorlesung ;minimal;asynchron als mgl. Ersatz.;minimal
+vl-onl-0-3-1;Online synchrone Vorlesung ;minimal;asynchron als mgl. Ersatz.;optional
+vl-onl-0-3-2;Online synchrone Vorlesung ;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onl-1-0-0;Online synchrone Vorlesung ;St-LP;exklusiv synchron;minimal
+vl-onl-1-0-1;Online synchrone Vorlesung ;St-LP;exklusiv synchron;optional
+vl-onl-1-1-0;Online synchrone Vorlesung ;St-LP;ergänzende Nacharbeit;minimal
+vl-onl-1-1-1;Online synchrone Vorlesung ;St-LP;ergänzende Nacharbeit;optional
+vl-onl-1-1-2;Online synchrone Vorlesung ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-onl-1-2-0;Online synchrone Vorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onl-1-2-1;Online synchrone Vorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onl-1-2-2;Online synchrone Vorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-onl-1-3-0;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-onl-1-3-1;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onl-1-3-2;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-2-0-0;Online synchrone Vorlesung ;St-LP und St-St;exklusiv synchron;minimal
-vl-onl-2-0-1;Online synchrone Vorlesung ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onl-2-0-2;Online synchrone Vorlesung ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-2-1-0;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-onl-2-1-1;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onl-2-1-2;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onl-2-2-0;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onl-2-2-1;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onl-2-2-2;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-onl-1-3-1;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-onl-1-3-2;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onl-2-0-0;Online synchrone Vorlesung ;St-LP und St-St;exklusiv synchron;minimal
+vl-onl-2-0-1;Online synchrone Vorlesung ;St-LP und St-St;exklusiv synchron;optional
+vl-onl-2-1-0;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-onl-2-1-1;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-onl-2-1-2;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-onl-2-2-0;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onl-2-2-1;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onl-2-2-2;Online synchrone Vorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-onl-2-3-0;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-onl-2-3-1;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onl-2-3-2;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-onl-1-0-0;Online synchrones Seminar ;St-LP;exklusiv synchron;minimal
-se-onl-1-0-1;Online synchrones Seminar ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-onl-1-0-2;Online synchrones Seminar ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-onl-1-1-0;Online synchrones Seminar ;St-LP;ergänzende Nacharbeit;minimal
-se-onl-1-1-1;Online synchrones Seminar ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-onl-1-1-2;Online synchrones Seminar ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-onl-1-2-0;Online synchrones Seminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-onl-1-2-1;Online synchrones Seminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-onl-1-2-2;Online synchrones Seminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-onl-2-3-1;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-onl-2-3-2;Online synchrone Vorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+se-onl-1-0-0;Online synchrones Seminar ;St-LP;exklusiv synchron;minimal
+se-onl-1-0-1;Online synchrones Seminar ;St-LP;exklusiv synchron;optional
+se-onl-1-1-0;Online synchrones Seminar ;St-LP;ergänzende Nacharbeit;minimal
+se-onl-1-1-1;Online synchrones Seminar ;St-LP;ergänzende Nacharbeit;optional
+se-onl-1-1-2;Online synchrones Seminar ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+se-onl-1-2-0;Online synchrones Seminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-onl-1-2-1;Online synchrones Seminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-onl-1-2-2;Online synchrones Seminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-onl-1-3-0;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-onl-1-3-1;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-onl-1-3-2;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-onl-2-0-0;Online synchrones Seminar ;St-LP und St-St;exklusiv synchron;minimal
-se-onl-2-0-1;Online synchrones Seminar ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-onl-2-0-2;Online synchrones Seminar ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-onl-2-1-0;Online synchrones Seminar ;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-onl-2-1-1;Online synchrones Seminar ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-onl-2-1-2;Online synchrones Seminar ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-onl-2-2-0;Online synchrones Seminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-onl-2-2-1;Online synchrones Seminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-onl-2-2-2;Online synchrones Seminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-onl-1-3-1;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-onl-1-3-2;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+se-onl-2-0-0;Online synchrones Seminar ;St-LP und St-St;exklusiv synchron;minimal
+se-onl-2-0-1;Online synchrones Seminar ;St-LP und St-St;exklusiv synchron;optional
+se-onl-2-1-0;Online synchrones Seminar ;St-LP und St-St;ergänzende Nacharbeit;minimal
+se-onl-2-1-1;Online synchrones Seminar ;St-LP und St-St;ergänzende Nacharbeit;optional
+se-onl-2-1-2;Online synchrones Seminar ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+se-onl-2-2-0;Online synchrones Seminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-onl-2-2-1;Online synchrones Seminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-onl-2-2-2;Online synchrones Seminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-onl-2-3-0;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-onl-2-3-1;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-onl-2-3-2;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-0-0-0;Präsenzvorlesung ;minimal;exklusiv synchron;minimal
-vl-praes-0-0-1;Präsenzvorlesung ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praes-0-0-2;Präsenzvorlesung ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-0-1-0;Präsenzvorlesung ;minimal;ergänzende Nacharbeit;minimal
-vl-praes-0-1-1;Präsenzvorlesung ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praes-0-1-2;Präsenzvorlesung ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-0-2-0;Präsenzvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praes-0-2-1;Präsenzvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praes-0-2-2;Präsenzvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-onl-2-3-1;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-onl-2-3-2;Online synchrones Seminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praes-0-0-0;Präsenzvorlesung ;minimal;exklusiv synchron;minimal
+vl-praes-0-0-1;Präsenzvorlesung ;minimal;exklusiv synchron;optional
+vl-praes-0-1-0;Präsenzvorlesung ;minimal;ergänzende Nacharbeit;minimal
+vl-praes-0-1-1;Präsenzvorlesung ;minimal;ergänzende Nacharbeit;optional
+vl-praes-0-1-2;Präsenzvorlesung ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-praes-0-2-0;Präsenzvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praes-0-2-1;Präsenzvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praes-0-2-2;Präsenzvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praes-0-3-0;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-praes-0-3-1;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praes-0-3-2;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-1-0-0;Präsenzvorlesung ;St-LP;exklusiv synchron;minimal
-vl-praes-1-0-1;Präsenzvorlesung ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praes-1-0-2;Präsenzvorlesung ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-1-1-0;Präsenzvorlesung ;St-LP;ergänzende Nacharbeit;minimal
-vl-praes-1-1-1;Präsenzvorlesung ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praes-1-1-2;Präsenzvorlesung ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-1-2-0;Präsenzvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praes-1-2-1;Präsenzvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praes-1-2-2;Präsenzvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praes-0-3-1;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-praes-0-3-2;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praes-1-0-0;Präsenzvorlesung ;St-LP;exklusiv synchron;minimal
+vl-praes-1-0-1;Präsenzvorlesung ;St-LP;exklusiv synchron;optional
+vl-praes-1-1-0;Präsenzvorlesung ;St-LP;ergänzende Nacharbeit;minimal
+vl-praes-1-1-1;Präsenzvorlesung ;St-LP;ergänzende Nacharbeit;optional
+vl-praes-1-1-2;Präsenzvorlesung ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-praes-1-2-0;Präsenzvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praes-1-2-1;Präsenzvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praes-1-2-2;Präsenzvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praes-1-3-0;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-praes-1-3-1;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praes-1-3-2;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-2-0-0;Präsenzvorlesung ;St-LP und St-St;exklusiv synchron;minimal
-vl-praes-2-0-1;Präsenzvorlesung ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praes-2-0-2;Präsenzvorlesung ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-2-1-0;Präsenzvorlesung ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-praes-2-1-1;Präsenzvorlesung ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praes-2-1-2;Präsenzvorlesung ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praes-2-2-0;Präsenzvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praes-2-2-1;Präsenzvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praes-2-2-2;Präsenzvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praes-1-3-1;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-praes-1-3-2;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praes-2-0-0;Präsenzvorlesung ;St-LP und St-St;exklusiv synchron;minimal
+vl-praes-2-0-1;Präsenzvorlesung ;St-LP und St-St;exklusiv synchron;optional
+vl-praes-2-1-0;Präsenzvorlesung ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-praes-2-1-1;Präsenzvorlesung ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-praes-2-1-2;Präsenzvorlesung ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-praes-2-2-0;Präsenzvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praes-2-2-1;Präsenzvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praes-2-2-2;Präsenzvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praes-2-3-0;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-praes-2-3-1;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praes-2-3-2;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-praes-1-0-0;Präsenzseminar ;St-LP;exklusiv synchron;minimal
-se-praes-1-0-1;Präsenzseminar ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-praes-1-0-2;Präsenzseminar ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-praes-1-1-0;Präsenzseminar ;St-LP;ergänzende Nacharbeit;minimal
-se-praes-1-1-1;Präsenzseminar ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-praes-1-1-2;Präsenzseminar ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-praes-1-2-0;Präsenzseminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-praes-1-2-1;Präsenzseminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-praes-1-2-2;Präsenzseminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praes-2-3-1;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-praes-2-3-2;Präsenzvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+se-praes-1-0-0;Präsenzseminar ;St-LP;exklusiv synchron;minimal
+se-praes-1-0-1;Präsenzseminar ;St-LP;exklusiv synchron;optional
+se-praes-1-1-0;Präsenzseminar ;St-LP;ergänzende Nacharbeit;minimal
+se-praes-1-1-1;Präsenzseminar ;St-LP;ergänzende Nacharbeit;optional
+se-praes-1-1-2;Präsenzseminar ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+se-praes-1-2-0;Präsenzseminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-praes-1-2-1;Präsenzseminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-praes-1-2-2;Präsenzseminar ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-praes-1-3-0;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-praes-1-3-1;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-praes-1-3-2;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-praes-2-0-0;Präsenzseminar ;St-LP und St-St;exklusiv synchron;minimal
-se-praes-2-0-1;Präsenzseminar ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-praes-2-0-2;Präsenzseminar ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-praes-2-1-0;Präsenzseminar ;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-praes-2-1-1;Präsenzseminar ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-praes-2-1-2;Präsenzseminar ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-praes-2-2-0;Präsenzseminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-praes-2-2-1;Präsenzseminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-praes-2-2-2;Präsenzseminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-praes-1-3-1;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-praes-1-3-2;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+se-praes-2-0-0;Präsenzseminar ;St-LP und St-St;exklusiv synchron;minimal
+se-praes-2-0-1;Präsenzseminar ;St-LP und St-St;exklusiv synchron;optional
+se-praes-2-1-0;Präsenzseminar ;St-LP und St-St;ergänzende Nacharbeit;minimal
+se-praes-2-1-1;Präsenzseminar ;St-LP und St-St;ergänzende Nacharbeit;optional
+se-praes-2-1-2;Präsenzseminar ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+se-praes-2-2-0;Präsenzseminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-praes-2-2-1;Präsenzseminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-praes-2-2-2;Präsenzseminar ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-praes-2-3-0;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-praes-2-3-1;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-praes-2-3-2;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-0-0-0;Präsenz-Ringvorlesung ;minimal;exklusiv synchron;minimal
-vl-ringpraes-0-0-1;Präsenz-Ringvorlesung ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-0-0-2;Präsenz-Ringvorlesung ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-0-1-0;Präsenz-Ringvorlesung ;minimal;ergänzende Nacharbeit;minimal
-vl-ringpraes-0-1-1;Präsenz-Ringvorlesung ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-0-1-2;Präsenz-Ringvorlesung ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-0-2-0;Präsenz-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringpraes-0-2-1;Präsenz-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringpraes-0-2-2;Präsenz-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-praes-2-3-1;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-praes-2-3-2;Präsenzseminar mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringpraes-0-0-0;Präsenz-Ringvorlesung ;minimal;exklusiv synchron;minimal
+vl-ringpraes-0-0-1;Präsenz-Ringvorlesung ;minimal;exklusiv synchron;optional
+vl-ringpraes-0-1-0;Präsenz-Ringvorlesung ;minimal;ergänzende Nacharbeit;minimal
+vl-ringpraes-0-1-1;Präsenz-Ringvorlesung ;minimal;ergänzende Nacharbeit;optional
+vl-ringpraes-0-1-2;Präsenz-Ringvorlesung ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-ringpraes-0-2-0;Präsenz-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringpraes-0-2-1;Präsenz-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringpraes-0-2-2;Präsenz-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringpraes-0-3-0;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-ringpraes-0-3-1;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-0-3-2;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-1-0-0;Präsenz-Ringvorlesung ;St-LP;exklusiv synchron;minimal
-vl-ringpraes-1-0-1;Präsenz-Ringvorlesung ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-1-0-2;Präsenz-Ringvorlesung ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-1-1-0;Präsenz-Ringvorlesung ;St-LP;ergänzende Nacharbeit;minimal
-vl-ringpraes-1-1-1;Präsenz-Ringvorlesung ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-1-1-2;Präsenz-Ringvorlesung ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-1-2-0;Präsenz-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringpraes-1-2-1;Präsenz-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringpraes-1-2-2;Präsenz-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringpraes-0-3-1;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-ringpraes-0-3-2;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringpraes-1-0-0;Präsenz-Ringvorlesung ;St-LP;exklusiv synchron;minimal
+vl-ringpraes-1-0-1;Präsenz-Ringvorlesung ;St-LP;exklusiv synchron;optional
+vl-ringpraes-1-1-0;Präsenz-Ringvorlesung ;St-LP;ergänzende Nacharbeit;minimal
+vl-ringpraes-1-1-1;Präsenz-Ringvorlesung ;St-LP;ergänzende Nacharbeit;optional
+vl-ringpraes-1-1-2;Präsenz-Ringvorlesung ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-ringpraes-1-2-0;Präsenz-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringpraes-1-2-1;Präsenz-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringpraes-1-2-2;Präsenz-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringpraes-1-3-0;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-ringpraes-1-3-1;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-1-3-2;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-2-0-0;Präsenz-Ringvorlesung ;St-LP und St-St;exklusiv synchron;minimal
-vl-ringpraes-2-0-1;Präsenz-Ringvorlesung ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-2-0-2;Präsenz-Ringvorlesung ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-2-1-0;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-ringpraes-2-1-1;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-2-1-2;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringpraes-2-2-0;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringpraes-2-2-1;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringpraes-2-2-2;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringpraes-1-3-1;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-ringpraes-1-3-2;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringpraes-2-0-0;Präsenz-Ringvorlesung ;St-LP und St-St;exklusiv synchron;minimal
+vl-ringpraes-2-0-1;Präsenz-Ringvorlesung ;St-LP und St-St;exklusiv synchron;optional
+vl-ringpraes-2-1-0;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-ringpraes-2-1-1;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-ringpraes-2-1-2;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-ringpraes-2-2-0;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringpraes-2-2-1;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringpraes-2-2-2;Präsenz-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringpraes-2-3-0;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-ringpraes-2-3-1;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringpraes-2-3-2;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-0-0-0;Online-Ringvorlesung ;minimal;exklusiv synchron;minimal
-vl-ringonl-0-0-1;Online-Ringvorlesung ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringonl-0-0-2;Online-Ringvorlesung ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-0-1-0;Online-Ringvorlesung ;minimal;ergänzende Nacharbeit;minimal
-vl-ringonl-0-1-1;Online-Ringvorlesung ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringonl-0-1-2;Online-Ringvorlesung ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-0-2-0;Online-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringonl-0-2-1;Online-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringonl-0-2-2;Online-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringpraes-2-3-1;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-ringpraes-2-3-2;Präsenz-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringonl-0-0-0;Online-Ringvorlesung ;minimal;exklusiv synchron;minimal
+vl-ringonl-0-0-1;Online-Ringvorlesung ;minimal;exklusiv synchron;optional
+vl-ringonl-0-1-0;Online-Ringvorlesung ;minimal;ergänzende Nacharbeit;minimal
+vl-ringonl-0-1-1;Online-Ringvorlesung ;minimal;ergänzende Nacharbeit;optional
+vl-ringonl-0-1-2;Online-Ringvorlesung ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-ringonl-0-2-0;Online-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringonl-0-2-1;Online-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringonl-0-2-2;Online-Ringvorlesung ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringonl-0-3-0;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-ringonl-0-3-1;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringonl-0-3-2;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-1-0-0;Online-Ringvorlesung ;St-LP;exklusiv synchron;minimal
-vl-ringonl-1-0-1;Online-Ringvorlesung ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringonl-1-0-2;Online-Ringvorlesung ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-1-1-0;Online-Ringvorlesung ;St-LP;ergänzende Nacharbeit;minimal
-vl-ringonl-1-1-1;Online-Ringvorlesung ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringonl-1-1-2;Online-Ringvorlesung ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-1-2-0;Online-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringonl-1-2-1;Online-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringonl-1-2-2;Online-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringonl-0-3-1;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-ringonl-0-3-2;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringonl-1-0-0;Online-Ringvorlesung ;St-LP;exklusiv synchron;minimal
+vl-ringonl-1-0-1;Online-Ringvorlesung ;St-LP;exklusiv synchron;optional
+vl-ringonl-1-1-0;Online-Ringvorlesung ;St-LP;ergänzende Nacharbeit;minimal
+vl-ringonl-1-1-1;Online-Ringvorlesung ;St-LP;ergänzende Nacharbeit;optional
+vl-ringonl-1-1-2;Online-Ringvorlesung ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-ringonl-1-2-0;Online-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringonl-1-2-1;Online-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringonl-1-2-2;Online-Ringvorlesung ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringonl-1-3-0;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-ringonl-1-3-1;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringonl-1-3-2;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-2-0-0;Online-Ringvorlesung ;St-LP und St-St;exklusiv synchron;minimal
-vl-ringonl-2-0-1;Online-Ringvorlesung ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringonl-2-0-2;Online-Ringvorlesung ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-2-1-0;Online-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-ringonl-2-1-1;Online-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringonl-2-1-2;Online-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringonl-2-2-0;Online-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringonl-2-2-1;Online-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringonl-2-2-2;Online-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringonl-1-3-1;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-ringonl-1-3-2;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringonl-2-0-0;Online-Ringvorlesung ;St-LP und St-St;exklusiv synchron;minimal
+vl-ringonl-2-0-1;Online-Ringvorlesung ;St-LP und St-St;exklusiv synchron;optional
+vl-ringonl-2-1-0;Online-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-ringonl-2-1-1;Online-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-ringonl-2-1-2;Online-Ringvorlesung ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-ringonl-2-2-0;Online-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringonl-2-2-1;Online-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringonl-2-2-2;Online-Ringvorlesung ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringonl-2-3-0;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-ringonl-2-3-1;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringonl-2-3-2;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-0-0-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;exklusiv synchron;minimal
-vl-ringhyb1-0-0-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-0-0-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-0-1-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Nacharbeit;minimal
-vl-ringhyb1-0-1-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-0-1-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-0-2-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringhyb1-0-2-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-0-2-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringonl-2-3-1;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-ringonl-2-3-2;Online-Ringvorlesung mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringhyb1-0-0-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;exklusiv synchron;minimal
+vl-ringhyb1-0-0-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;exklusiv synchron;optional
+vl-ringhyb1-0-1-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Nacharbeit;minimal
+vl-ringhyb1-0-1-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Nacharbeit;optional
+vl-ringhyb1-0-1-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-ringhyb1-0-2-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringhyb1-0-2-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringhyb1-0-2-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringhyb1-0-3-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-ringhyb1-0-3-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-0-3-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-1-0-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;exklusiv synchron;minimal
-vl-ringhyb1-1-0-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-1-0-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-1-1-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Nacharbeit;minimal
-vl-ringhyb1-1-1-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-1-1-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-1-2-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringhyb1-1-2-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-1-2-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringhyb1-0-3-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-ringhyb1-0-3-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringhyb1-1-0-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;exklusiv synchron;minimal
+vl-ringhyb1-1-0-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;exklusiv synchron;optional
+vl-ringhyb1-1-1-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Nacharbeit;minimal
+vl-ringhyb1-1-1-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Nacharbeit;optional
+vl-ringhyb1-1-1-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-ringhyb1-1-2-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringhyb1-1-2-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringhyb1-1-2-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringhyb1-1-3-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-ringhyb1-1-3-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-1-3-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-2-0-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;exklusiv synchron;minimal
-vl-ringhyb1-2-0-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-2-0-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-2-1-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-ringhyb1-2-1-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-2-1-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb1-2-2-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringhyb1-2-2-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-2-2-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringhyb1-1-3-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-ringhyb1-1-3-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringhyb1-2-0-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;exklusiv synchron;minimal
+vl-ringhyb1-2-0-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;exklusiv synchron;optional
+vl-ringhyb1-2-1-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-ringhyb1-2-1-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-ringhyb1-2-1-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-ringhyb1-2-2-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringhyb1-2-2-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringhyb1-2-2-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringhyb1-2-3-0;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-ringhyb1-2-3-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringhyb1-2-3-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-0-0-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;exklusiv synchron;minimal
-vl-ringhyb2-0-0-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-0-0-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-0-1-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Nacharbeit;minimal
-vl-ringhyb2-0-1-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-0-1-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-0-2-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringhyb2-0-2-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-0-2-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringhyb1-2-3-1;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-ringhyb1-2-3-2;Präsenz-Ringvorlesung mit Online-Zuschaltung von Gästen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringhyb2-0-0-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;exklusiv synchron;minimal
+vl-ringhyb2-0-0-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;exklusiv synchron;optional
+vl-ringhyb2-0-1-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Nacharbeit;minimal
+vl-ringhyb2-0-1-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Nacharbeit;optional
+vl-ringhyb2-0-1-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-ringhyb2-0-2-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringhyb2-0-2-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringhyb2-0-2-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringhyb2-0-3-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-ringhyb2-0-3-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-0-3-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-1-0-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;exklusiv synchron;minimal
-vl-ringhyb2-1-0-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-1-0-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-1-1-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Nacharbeit;minimal
-vl-ringhyb2-1-1-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-1-1-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-1-2-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringhyb2-1-2-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-1-2-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringhyb2-0-3-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-ringhyb2-0-3-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringhyb2-1-0-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;exklusiv synchron;minimal
+vl-ringhyb2-1-0-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;exklusiv synchron;optional
+vl-ringhyb2-1-1-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Nacharbeit;minimal
+vl-ringhyb2-1-1-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Nacharbeit;optional
+vl-ringhyb2-1-1-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-ringhyb2-1-2-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringhyb2-1-2-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringhyb2-1-2-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringhyb2-1-3-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-ringhyb2-1-3-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-1-3-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-2-0-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;exklusiv synchron;minimal
-vl-ringhyb2-2-0-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-2-0-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-2-1-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-ringhyb2-2-1-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-2-1-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-ringhyb2-2-2-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-ringhyb2-2-2-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-2-2-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-ringhyb2-1-3-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-ringhyb2-1-3-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-ringhyb2-2-0-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;exklusiv synchron;minimal
+vl-ringhyb2-2-0-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;exklusiv synchron;optional
+vl-ringhyb2-2-1-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-ringhyb2-2-1-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-ringhyb2-2-1-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-ringhyb2-2-2-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-ringhyb2-2-2-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-ringhyb2-2-2-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-ringhyb2-2-3-0;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-ringhyb2-2-3-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-ringhyb2-2-3-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-ringhyb2-2-3-1;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-ringhyb2-2-3-2;Hybride Ringvorlesung mit Online-Zuschaltung von Gästen und einzelnen Studierenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 pr-praes-2-1-0;Präsenzlabor;St-LP und St-St;ergänzende Nacharbeit;minimal
-pr-praes-2-1-1;Präsenzlabor;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-pr-praes-2-1-2;Präsenzlabor;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+pr-praes-2-1-1;Präsenzlabor;St-LP und St-St;ergänzende Nacharbeit;optional
+pr-praes-2-1-2;Präsenzlabor;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 pr-praes-2-2-0;Präsenzlabor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-pr-praes-2-2-1;Präsenzlabor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-pr-praes-2-2-2;Präsenzlabor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+pr-praes-2-2-1;Präsenzlabor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+pr-praes-2-2-2;Präsenzlabor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 pr-onl-0-4-0;Digital Asynchrones Labor;minimal;exklusiv asynchron;minimal
-pr-onl-0-4-1;Digital Asynchrones Labor;minimal;exklusiv asynchron;Interaktionsmöglichkeiten St-LP
-pr-onl-0-4-2;Digital Asynchrones Labor;minimal;exklusiv asynchron;Interaktionsmöglichkeiten St-St und St-LP
+pr-onl-0-4-1;Digital Asynchrones Labor;minimal;exklusiv asynchron;optional
+pr-onl-0-4-2;Digital Asynchrones Labor;minimal;exklusiv asynchron;hochstrukturiert
 pr-hyb-1-1-0;Synchron-hybrides Labor;St-LP;ergänzende Nacharbeit;minimal
-pr-hyb-1-1-1;Synchron-hybrides Labor;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-pr-hyb-1-1-2;Synchron-hybrides Labor;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+pr-hyb-1-1-1;Synchron-hybrides Labor;St-LP;ergänzende Nacharbeit;optional
+pr-hyb-1-1-2;Synchron-hybrides Labor;St-LP;ergänzende Nacharbeit;hochstrukturiert
 pr-hyb-1-2-0;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-pr-hyb-1-2-1;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-pr-hyb-1-2-2;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+pr-hyb-1-2-1;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+pr-hyb-1-2-2;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 pr-hyb-2-1-0;Synchron-hybrides Labor;St-LP und St-St;ergänzende Nacharbeit;minimal
-pr-hyb-2-1-1;Synchron-hybrides Labor;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-pr-hyb-2-1-2;Synchron-hybrides Labor;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+pr-hyb-2-1-1;Synchron-hybrides Labor;St-LP und St-St;ergänzende Nacharbeit;optional
+pr-hyb-2-1-2;Synchron-hybrides Labor;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 pr-hyb-2-2-0;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-pr-hyb-2-2-1;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-pr-hyb-2-2-2;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+pr-hyb-2-2-1;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+pr-hyb-2-2-2;Synchron-hybrides Labor mit asynchron-digitaler Einführung;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-grwechs-1-0-0;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;exklusiv synchron;minimal
-se-grwechs-1-0-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-grwechs-1-0-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-grwechs-1-0-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;exklusiv synchron;optional
 se-grwechs-1-1-0;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Nacharbeit;minimal
-se-grwechs-1-1-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-grwechs-1-1-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-grwechs-1-1-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Nacharbeit;optional
+se-grwechs-1-1-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Nacharbeit;hochstrukturiert
 se-grwechs-1-2-0;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-grwechs-1-2-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-grwechs-1-2-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-grwechs-1-2-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-grwechs-1-2-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-grwechs-2-0-0;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;exklusiv synchron;minimal
-se-grwechs-2-0-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-grwechs-2-0-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-grwechs-2-0-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;exklusiv synchron;optional
 se-grwechs-2-1-0;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-grwechs-2-1-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-grwechs-2-1-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-grwechs-2-1-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Nacharbeit;optional
+se-grwechs-2-1-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 se-grwechs-2-2-0;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-grwechs-2-2-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-grwechs-2-2-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
-se-onlpraeswechs-1-0-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;minimal
-se-onlpraeswechs-1-0-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-onlpraeswechs-1-0-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-onlpraeswechs-1-1-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;minimal
-se-onlpraeswechs-1-1-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-onlpraeswechs-1-1-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-onlpraeswechs-1-2-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-onlpraeswechs-1-2-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-onlpraeswechs-1-2-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-grwechs-2-2-1;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-grwechs-2-2-2;Seminar mit Gruppenwechsel zwischen Online und Präsenz;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
+se-onlpraeswechs-1-0-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;minimal
+se-onlpraeswechs-1-0-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;optional
+se-onlpraeswechs-1-1-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;minimal
+se-onlpraeswechs-1-1-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;optional
+se-onlpraeswechs-1-1-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+se-onlpraeswechs-1-2-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-onlpraeswechs-1-2-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-onlpraeswechs-1-2-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-onlpraeswechs-1-3-0;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-onlpraeswechs-1-3-1;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-onlpraeswechs-1-3-2;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-onlpraeswechs-2-0-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;minimal
-se-onlpraeswechs-2-0-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-onlpraeswechs-2-0-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-onlpraeswechs-2-1-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-onlpraeswechs-2-1-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-onlpraeswechs-2-1-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-onlpraeswechs-2-2-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-onlpraeswechs-2-2-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-onlpraeswechs-2-2-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-onlpraeswechs-1-3-1;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-onlpraeswechs-1-3-2;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+se-onlpraeswechs-2-0-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;minimal
+se-onlpraeswechs-2-0-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;optional
+se-onlpraeswechs-2-1-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+se-onlpraeswechs-2-1-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;optional
+se-onlpraeswechs-2-1-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+se-onlpraeswechs-2-2-0;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-onlpraeswechs-2-2-1;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-onlpraeswechs-2-2-2;Online Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-onlpraeswechs-2-3-0;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-onlpraeswechs-2-3-1;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-onlpraeswechs-2-3-2;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-onlhybwechs-1-0-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;minimal
-se-onlhybwechs-1-0-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-onlhybwechs-1-0-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-onlhybwechs-1-1-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;minimal
-se-onlhybwechs-1-1-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-onlhybwechs-1-1-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-onlhybwechs-1-2-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-onlhybwechs-1-2-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-onlhybwechs-1-2-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-onlpraeswechs-2-3-1;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-onlpraeswechs-2-3-2;Online Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+se-onlhybwechs-1-0-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;minimal
+se-onlhybwechs-1-0-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;optional
+se-onlhybwechs-1-1-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;minimal
+se-onlhybwechs-1-1-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;optional
+se-onlhybwechs-1-1-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+se-onlhybwechs-1-2-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-onlhybwechs-1-2-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-onlhybwechs-1-2-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-onlhybwechs-1-3-0;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-onlhybwechs-1-3-1;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-onlhybwechs-1-3-2;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-onlhybwechs-2-0-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;minimal
-se-onlhybwechs-2-0-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-onlhybwechs-2-0-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-onlhybwechs-2-1-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-onlhybwechs-2-1-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-onlhybwechs-2-1-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-onlhybwechs-2-2-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-onlhybwechs-2-2-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-onlhybwechs-2-2-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-onlhybwechs-1-3-1;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-onlhybwechs-1-3-2;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+se-onlhybwechs-2-0-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;minimal
+se-onlhybwechs-2-0-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;optional
+se-onlhybwechs-2-1-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+se-onlhybwechs-2-1-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;optional
+se-onlhybwechs-2-1-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+se-onlhybwechs-2-2-0;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-onlhybwechs-2-2-1;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-onlhybwechs-2-2-2;Online Seminar mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-onlhybwechs-2-3-0;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-onlhybwechs-2-3-1;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-onlhybwechs-2-3-2;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-onlhybwechs-2-3-1;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-onlhybwechs-2-3-2;Online Seminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 se-praesonlwechs-1-0-0;Präsenzseminar mit einzelnen Online-Terminen;St-LP;exklusiv synchron;minimal
-se-praesonlwechs-1-0-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-praesonlwechs-1-0-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-praesonlwechs-1-0-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP;exklusiv synchron;optional
 se-praesonlwechs-1-1-0;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Nacharbeit;minimal
-se-praesonlwechs-1-1-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-praesonlwechs-1-1-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-praesonlwechs-1-1-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Nacharbeit;optional
+se-praesonlwechs-1-1-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Nacharbeit;hochstrukturiert
 se-praesonlwechs-1-2-0;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-praesonlwechs-1-2-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-praesonlwechs-1-2-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-praesonlwechs-1-2-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-praesonlwechs-1-2-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-praesonlwechs-1-3-0;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-praesonlwechs-1-3-1;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-praesonlwechs-1-3-2;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-praesonlwechs-1-3-1;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-praesonlwechs-1-3-2;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
 se-praesonlwechs-2-0-0;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;exklusiv synchron;minimal
-se-praesonlwechs-2-0-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-praesonlwechs-2-0-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-praesonlwechs-2-0-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;exklusiv synchron;optional
 se-praesonlwechs-2-1-0;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-praesonlwechs-2-1-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-praesonlwechs-2-1-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-praesonlwechs-2-1-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Nacharbeit;optional
+se-praesonlwechs-2-1-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 se-praesonlwechs-2-2-0;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-praesonlwechs-2-2-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-praesonlwechs-2-2-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-praesonlwechs-2-2-1;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-praesonlwechs-2-2-2;Präsenzseminar mit einzelnen Online-Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-praesonlwechs-2-3-0;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-praesonlwechs-2-3-1;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-praesonlwechs-2-3-2;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-praesonlwechs-2-3-1;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-praesonlwechs-2-3-2;Präsenzseminar mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 se-praeshybwechs-1-0-0;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;exklusiv synchron;minimal
-se-praeshybwechs-1-0-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-praeshybwechs-1-0-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-praeshybwechs-1-0-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;exklusiv synchron;optional
 se-praeshybwechs-1-1-0;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Nacharbeit;minimal
-se-praeshybwechs-1-1-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-praeshybwechs-1-1-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-praeshybwechs-1-1-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Nacharbeit;optional
+se-praeshybwechs-1-1-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Nacharbeit;hochstrukturiert
 se-praeshybwechs-1-2-0;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-praeshybwechs-1-2-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-praeshybwechs-1-2-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-praeshybwechs-1-2-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-praeshybwechs-1-2-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-praeshybwechs-1-3-0;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-praeshybwechs-1-3-1;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-praeshybwechs-1-3-2;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-praeshybwechs-1-3-1;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-praeshybwechs-1-3-2;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
 se-praeshybwechs-2-0-0;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;exklusiv synchron;minimal
-se-praeshybwechs-2-0-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-praeshybwechs-2-0-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-praeshybwechs-2-0-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;exklusiv synchron;optional
 se-praeshybwechs-2-1-0;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-praeshybwechs-2-1-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-praeshybwechs-2-1-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-praeshybwechs-2-1-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Nacharbeit;optional
+se-praeshybwechs-2-1-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 se-praeshybwechs-2-2-0;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-praeshybwechs-2-2-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-praeshybwechs-2-2-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-praeshybwechs-2-2-1;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-praeshybwechs-2-2-2;Präsenzseminar mit einzelnen hybriden Terminen;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-praeshybwechs-2-3-0;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-praeshybwechs-2-3-1;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-praeshybwechs-2-3-2;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-praeshybwechs-2-3-1;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-praeshybwechs-2-3-2;Präsenzseminar mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 se-hybpraeswechs-0-3-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-se-hybpraeswechs-0-3-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-0-3-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-hybpraeswechs-1-0-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;minimal
-se-hybpraeswechs-1-0-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-1-0-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-hybpraeswechs-1-1-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;minimal
-se-hybpraeswechs-1-1-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-1-1-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-hybpraeswechs-1-2-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-hybpraeswechs-1-2-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-1-2-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hybpraeswechs-0-3-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+se-hybpraeswechs-0-3-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+se-hybpraeswechs-1-0-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;minimal
+se-hybpraeswechs-1-0-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;optional
+se-hybpraeswechs-1-1-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;minimal
+se-hybpraeswechs-1-1-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;optional
+se-hybpraeswechs-1-1-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+se-hybpraeswechs-1-2-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-hybpraeswechs-1-2-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-hybpraeswechs-1-2-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-hybpraeswechs-1-3-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-hybpraeswechs-1-3-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-1-3-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-se-hybpraeswechs-2-0-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;minimal
-se-hybpraeswechs-2-0-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-2-0-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-se-hybpraeswechs-2-1-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-hybpraeswechs-2-1-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-2-1-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-se-hybpraeswechs-2-2-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-hybpraeswechs-2-2-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-2-2-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hybpraeswechs-1-3-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-hybpraeswechs-1-3-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+se-hybpraeswechs-2-0-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;minimal
+se-hybpraeswechs-2-0-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;optional
+se-hybpraeswechs-2-1-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+se-hybpraeswechs-2-1-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;optional
+se-hybpraeswechs-2-1-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+se-hybpraeswechs-2-2-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+se-hybpraeswechs-2-2-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-hybpraeswechs-2-2-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-hybpraeswechs-2-3-0;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-hybpraeswechs-2-3-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-hybpraeswechs-2-3-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-0-0-0;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;minimal
-vl-onlpraeswechs-0-0-1;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-0-0-2;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-0-1-0;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;minimal
-vl-onlpraeswechs-0-1-1;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-0-1-2;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-0-2-0;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onlpraeswechs-0-2-1;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-0-2-2;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hybpraeswechs-2-3-1;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-hybpraeswechs-2-3-2;Synchron-hybrides Seminar mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onlpraeswechs-0-0-0;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;minimal
+vl-onlpraeswechs-0-0-1;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;optional
+vl-onlpraeswechs-0-1-0;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;minimal
+vl-onlpraeswechs-0-1-1;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;optional
+vl-onlpraeswechs-0-1-2;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-onlpraeswechs-0-2-0;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onlpraeswechs-0-2-1;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onlpraeswechs-0-2-2;Online-Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-onlpraeswechs-0-3-0;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-onlpraeswechs-0-3-1;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-0-3-2;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-1-0-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;minimal
-vl-onlpraeswechs-1-0-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-1-0-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-1-1-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;minimal
-vl-onlpraeswechs-1-1-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-1-1-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-1-2-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onlpraeswechs-1-2-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-1-2-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-onlpraeswechs-0-3-1;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-onlpraeswechs-0-3-2;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onlpraeswechs-1-0-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;minimal
+vl-onlpraeswechs-1-0-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;optional
+vl-onlpraeswechs-1-1-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;minimal
+vl-onlpraeswechs-1-1-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;optional
+vl-onlpraeswechs-1-1-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-onlpraeswechs-1-2-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onlpraeswechs-1-2-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onlpraeswechs-1-2-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-onlpraeswechs-1-3-0;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-onlpraeswechs-1-3-1;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-1-3-2;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-2-0-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;minimal
-vl-onlpraeswechs-2-0-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-2-0-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-2-1-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-onlpraeswechs-2-1-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-2-1-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlpraeswechs-2-2-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onlpraeswechs-2-2-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-2-2-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-onlpraeswechs-1-3-1;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-onlpraeswechs-1-3-2;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onlpraeswechs-2-0-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;minimal
+vl-onlpraeswechs-2-0-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;optional
+vl-onlpraeswechs-2-1-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-onlpraeswechs-2-1-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-onlpraeswechs-2-1-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-onlpraeswechs-2-2-0;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onlpraeswechs-2-2-1;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onlpraeswechs-2-2-2;Online-Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-onlpraeswechs-2-3-0;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-onlpraeswechs-2-3-1;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onlpraeswechs-2-3-2;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-0-0-0;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;minimal
-vl-onlhybwechs-0-0-1;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-0-0-2;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-0-1-0;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;minimal
-vl-onlhybwechs-0-1-1;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-0-1-2;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-0-2-0;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onlhybwechs-0-2-1;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-0-2-2;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-onlpraeswechs-2-3-1;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-onlpraeswechs-2-3-2;Online-Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onlhybwechs-0-0-0;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;minimal
+vl-onlhybwechs-0-0-1;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;optional
+vl-onlhybwechs-0-1-0;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;minimal
+vl-onlhybwechs-0-1-1;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;optional
+vl-onlhybwechs-0-1-2;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-onlhybwechs-0-2-0;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onlhybwechs-0-2-1;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onlhybwechs-0-2-2;Online-Vorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-onlhybwechs-0-3-0;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-onlhybwechs-0-3-1;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-0-3-2;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-1-0-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;minimal
-vl-onlhybwechs-1-0-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-1-0-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-1-1-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;minimal
-vl-onlhybwechs-1-1-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-1-1-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-1-2-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onlhybwechs-1-2-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-1-2-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-onlhybwechs-0-3-1;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-onlhybwechs-0-3-2;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onlhybwechs-1-0-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;minimal
+vl-onlhybwechs-1-0-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;optional
+vl-onlhybwechs-1-1-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;minimal
+vl-onlhybwechs-1-1-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;optional
+vl-onlhybwechs-1-1-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-onlhybwechs-1-2-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onlhybwechs-1-2-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onlhybwechs-1-2-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-onlhybwechs-1-3-0;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-onlhybwechs-1-3-1;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-1-3-2;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-2-0-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;minimal
-vl-onlhybwechs-2-0-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-2-0-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-2-1-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-onlhybwechs-2-1-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-2-1-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-onlhybwechs-2-2-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-onlhybwechs-2-2-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-2-2-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-onlhybwechs-1-3-1;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-onlhybwechs-1-3-2;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-onlhybwechs-2-0-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;minimal
+vl-onlhybwechs-2-0-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;optional
+vl-onlhybwechs-2-1-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-onlhybwechs-2-1-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-onlhybwechs-2-1-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-onlhybwechs-2-2-0;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-onlhybwechs-2-2-1;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-onlhybwechs-2-2-2;Online-Vorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-onlhybwechs-2-3-0;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-onlhybwechs-2-3-1;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-onlhybwechs-2-3-2;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-0-0-0;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;exklusiv synchron;minimal
-vl-praesonlwechs-0-0-1;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-0-0-2;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-0-1-0;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Nacharbeit;minimal
-vl-praesonlwechs-0-1-1;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-0-1-2;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-0-2-0;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praesonlwechs-0-2-1;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-0-2-2;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-onlhybwechs-2-3-1;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-onlhybwechs-2-3-2;Online-Vorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praesonlwechs-0-0-0;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;exklusiv synchron;minimal
+vl-praesonlwechs-0-0-1;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;exklusiv synchron;optional
+vl-praesonlwechs-0-1-0;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Nacharbeit;minimal
+vl-praesonlwechs-0-1-1;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Nacharbeit;optional
+vl-praesonlwechs-0-1-2;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-praesonlwechs-0-2-0;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praesonlwechs-0-2-1;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praesonlwechs-0-2-2;Präsenzvorlesung mit einzelnen Online-Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praesonlwechs-0-3-0;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-praesonlwechs-0-3-1;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-0-3-2;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-1-0-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;exklusiv synchron;minimal
-vl-praesonlwechs-1-0-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-1-0-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-1-1-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Nacharbeit;minimal
-vl-praesonlwechs-1-1-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-1-1-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-1-2-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praesonlwechs-1-2-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-1-2-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praesonlwechs-0-3-1;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-praesonlwechs-0-3-2;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praesonlwechs-1-0-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;exklusiv synchron;minimal
+vl-praesonlwechs-1-0-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;exklusiv synchron;optional
+vl-praesonlwechs-1-1-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Nacharbeit;minimal
+vl-praesonlwechs-1-1-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Nacharbeit;optional
+vl-praesonlwechs-1-1-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-praesonlwechs-1-2-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praesonlwechs-1-2-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praesonlwechs-1-2-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praesonlwechs-1-3-0;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-praesonlwechs-1-3-1;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-1-3-2;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-2-0-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;exklusiv synchron;minimal
-vl-praesonlwechs-2-0-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-2-0-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-2-1-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-praesonlwechs-2-1-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-2-1-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praesonlwechs-2-2-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praesonlwechs-2-2-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-2-2-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praesonlwechs-1-3-1;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-praesonlwechs-1-3-2;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praesonlwechs-2-0-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;exklusiv synchron;minimal
+vl-praesonlwechs-2-0-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;exklusiv synchron;optional
+vl-praesonlwechs-2-1-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-praesonlwechs-2-1-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-praesonlwechs-2-1-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-praesonlwechs-2-2-0;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praesonlwechs-2-2-1;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praesonlwechs-2-2-2;Präsenzvorlesung mit einzelnen Online-Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praesonlwechs-2-3-0;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-praesonlwechs-2-3-1;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praesonlwechs-2-3-2;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-0-0-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;minimal
-vl-praeshybwechs-0-0-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-0-0-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-0-1-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;minimal
-vl-praeshybwechs-0-1-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-0-1-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-0-2-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praeshybwechs-0-2-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-0-2-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praesonlwechs-2-3-1;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-praesonlwechs-2-3-2;Präsenzvorlesung mit einzelnen Online-Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praeshybwechs-0-0-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;minimal
+vl-praeshybwechs-0-0-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;exklusiv synchron;optional
+vl-praeshybwechs-0-1-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;minimal
+vl-praeshybwechs-0-1-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;optional
+vl-praeshybwechs-0-1-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-praeshybwechs-0-2-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praeshybwechs-0-2-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praeshybwechs-0-2-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praeshybwechs-0-3-0;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-praeshybwechs-0-3-1;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-0-3-2;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-1-0-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;minimal
-vl-praeshybwechs-1-0-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-1-0-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-1-1-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;minimal
-vl-praeshybwechs-1-1-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-1-1-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-1-2-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praeshybwechs-1-2-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-1-2-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praeshybwechs-0-3-1;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-praeshybwechs-0-3-2;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praeshybwechs-1-0-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;minimal
+vl-praeshybwechs-1-0-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;exklusiv synchron;optional
+vl-praeshybwechs-1-1-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;minimal
+vl-praeshybwechs-1-1-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;optional
+vl-praeshybwechs-1-1-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-praeshybwechs-1-2-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praeshybwechs-1-2-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praeshybwechs-1-2-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praeshybwechs-1-3-0;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-praeshybwechs-1-3-1;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-1-3-2;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-2-0-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;minimal
-vl-praeshybwechs-2-0-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-2-0-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-2-1-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-praeshybwechs-2-1-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-2-1-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-praeshybwechs-2-2-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-praeshybwechs-2-2-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-2-2-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praeshybwechs-1-3-1;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-praeshybwechs-1-3-2;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-praeshybwechs-2-0-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;minimal
+vl-praeshybwechs-2-0-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;exklusiv synchron;optional
+vl-praeshybwechs-2-1-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-praeshybwechs-2-1-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-praeshybwechs-2-1-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-praeshybwechs-2-2-0;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-praeshybwechs-2-2-1;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-praeshybwechs-2-2-2;Präsenzvorlesung mit einzelnen hybriden Terminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-praeshybwechs-2-3-0;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-praeshybwechs-2-3-1;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-praeshybwechs-2-3-2;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-0-0-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;minimal
-vl-hybpraeswechs-0-0-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-0-0-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-0-1-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;minimal
-vl-hybpraeswechs-0-1-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-0-1-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-0-2-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hybpraeswechs-0-2-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-0-2-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-praeshybwechs-2-3-1;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-praeshybwechs-2-3-2;Präsenzvorlesung mit einzelnen hybriden Terminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-hybpraeswechs-0-0-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;minimal
+vl-hybpraeswechs-0-0-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;exklusiv synchron;optional
+vl-hybpraeswechs-0-1-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;minimal
+vl-hybpraeswechs-0-1-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;optional
+vl-hybpraeswechs-0-1-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Nacharbeit;hochstrukturiert
+vl-hybpraeswechs-0-2-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-hybpraeswechs-0-2-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hybpraeswechs-0-2-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hybpraeswechs-0-3-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-hybpraeswechs-0-3-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-0-3-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-1-0-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;minimal
-vl-hybpraeswechs-1-0-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-1-0-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-1-1-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;minimal
-vl-hybpraeswechs-1-1-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-1-1-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-1-2-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hybpraeswechs-1-2-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-1-2-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hybpraeswechs-0-3-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-hybpraeswechs-0-3-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-hybpraeswechs-1-0-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;minimal
+vl-hybpraeswechs-1-0-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;exklusiv synchron;optional
+vl-hybpraeswechs-1-1-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;minimal
+vl-hybpraeswechs-1-1-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;optional
+vl-hybpraeswechs-1-1-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Nacharbeit;hochstrukturiert
+vl-hybpraeswechs-1-2-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-hybpraeswechs-1-2-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hybpraeswechs-1-2-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hybpraeswechs-1-3-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-hybpraeswechs-1-3-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-1-3-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-2-0-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;minimal
-vl-hybpraeswechs-2-0-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-2-0-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-2-1-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-hybpraeswechs-2-1-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-2-1-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
-vl-hybpraeswechs-2-2-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hybpraeswechs-2-2-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-2-2-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hybpraeswechs-1-3-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-hybpraeswechs-1-3-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
+vl-hybpraeswechs-2-0-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;minimal
+vl-hybpraeswechs-2-0-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;exklusiv synchron;optional
+vl-hybpraeswechs-2-1-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;minimal
+vl-hybpraeswechs-2-1-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-hybpraeswechs-2-1-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
+vl-hybpraeswechs-2-2-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
+vl-hybpraeswechs-2-2-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hybpraeswechs-2-2-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen ;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hybpraeswechs-2-3-0;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-hybpraeswechs-2-3-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hybpraeswechs-2-3-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybpraeswechs-2-3-1;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-hybpraeswechs-2-3-2;Synchron-hybride Vorlesung mit einzelnen Präsenzterminen und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 vl-hybrem-0-0-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;exklusiv synchron;minimal
-vl-hybrem-0-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hybrem-0-0-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-0-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;exklusiv synchron;optional
 vl-hybrem-0-1-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;minimal
-vl-hybrem-0-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hybrem-0-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-0-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;optional
+vl-hybrem-0-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Nacharbeit;hochstrukturiert
 vl-hybrem-0-2-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hybrem-0-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hybrem-0-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-0-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hybrem-0-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;minimal;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hybrem-0-3-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;minimal
-vl-hybrem-0-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hybrem-0-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-0-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;optional
+vl-hybrem-0-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;minimal;asynchron als mgl. Ersatz.;hochstrukturiert
 vl-hybrem-1-0-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;minimal
-vl-hybrem-1-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hybrem-1-0-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-1-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;optional
 vl-hybrem-1-1-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;minimal
-vl-hybrem-1-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hybrem-1-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-1-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;optional
+vl-hybrem-1-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;hochstrukturiert
 vl-hybrem-1-2-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hybrem-1-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hybrem-1-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-1-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hybrem-1-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hybrem-1-3-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-vl-hybrem-1-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hybrem-1-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-1-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+vl-hybrem-1-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
 vl-hybrem-2-0-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;minimal
-vl-hybrem-2-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-vl-hybrem-2-0-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-2-0-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;optional
 vl-hybrem-2-1-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;minimal
-vl-hybrem-2-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-vl-hybrem-2-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-2-1-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;optional
+vl-hybrem-2-1-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 vl-hybrem-2-2-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-vl-hybrem-2-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-vl-hybrem-2-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-2-2-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+vl-hybrem-2-2-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 vl-hybrem-2-3-0;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-vl-hybrem-2-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-vl-hybrem-2-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+vl-hybrem-2-3-1;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+vl-hybrem-2-3-2;Standortübergreifende Kollaborative Vorlesung (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
 se-hybrem-1-0-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;minimal
-se-hybrem-1-0-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-hybrem-1-0-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-1-0-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;exklusiv synchron;optional
 se-hybrem-1-1-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;minimal
-se-hybrem-1-1-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-hybrem-1-1-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-1-1-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;optional
+se-hybrem-1-1-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Nacharbeit;hochstrukturiert
 se-hybrem-1-2-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-hybrem-1-2-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-hybrem-1-2-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-1-2-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-hybrem-1-2-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-hybrem-1-3-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;minimal
-se-hybrem-1-3-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-hybrem-1-3-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-1-3-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;optional
+se-hybrem-1-3-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP;asynchron als mgl. Ersatz.;hochstrukturiert
 se-hybrem-2-0-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;minimal
-se-hybrem-2-0-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-LP
-se-hybrem-2-0-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-2-0-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;exklusiv synchron;optional
 se-hybrem-2-1-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;minimal
-se-hybrem-2-1-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-LP
-se-hybrem-2-1-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-2-1-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;optional
+se-hybrem-2-1-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Nacharbeit;hochstrukturiert
 se-hybrem-2-2-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);minimal
-se-hybrem-2-2-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-LP
-se-hybrem-2-2-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-2-2-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);optional
+se-hybrem-2-2-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden;St-LP und St-St;ergänzende Vor- und Nacharbeit (Flipped Classroom);hochstrukturiert
 se-hybrem-2-3-0;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;minimal
-se-hybrem-2-3-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-LP
-se-hybrem-2-3-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;Interaktionsmöglichkeiten St-St und St-LP
+se-hybrem-2-3-1;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;optional
+se-hybrem-2-3-2;Standortübergreifendes Kollaboratives Seminar (Partnerkurse) mit einzelnen Online-Teilnehmenden und mit asynchroner Teilnahme-Alternative;St-LP und St-St;asynchron als mgl. Ersatz.;hochstrukturiert
