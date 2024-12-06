@@ -76,22 +76,23 @@ const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) 
 const specialCases = urlParams.has('specialCases') ? urlParams.get('specialCases') : []
 const providedAnswers = JSON.parse(sessionStorage.getItem("answers"))
 
-const answers = {
-  "artLV": "SE",
-  "LZiP": "2",
-  "LZsy": "1",
-  "niePr": "nein",
-  "nieSync": "nein",
-  "regAbw": "abundzu",
-  "onlBereit": "geleg",
-  "limZPSt": "ja",
-  "onlZugang": "ja",
-  "IntAsync": "2",
-  "gaeste": "0",
-  "exkur": "nein",
-  "begrAnz": "nein",
-  "intKoll": "ja"
-}
+const answers = providedAnswers? providedAnswers : {}
+// {
+//   "artLV": "SE",
+//   "LZiP": "2",
+//   "LZsy": "1",
+//   "niePr": "nein",
+//   "nieSync": "nein",
+//   "regAbw": "abundzu",
+//   "onlBereit": "geleg",
+//   "limZPSt": "ja",
+//   "onlZugang": "ja",
+//   "IntAsync": "2",
+//   "gaeste": "0",
+//   "exkur": "nein",
+//   "begrAnz": "nein",
+//   "intKoll": "ja"
+// }
 
 function explainMatch(scenario, answers, rules){
     Object.entries(answers).forEach(function(item){
@@ -113,7 +114,9 @@ function explainMatch(scenario, answers, rules){
                 continue;
             }
             let sentence = document.createElement("li")
-            sentence.innerHTML = effect.formulierung1  + " <b>(rule ID: " + effect.globalId + ")</b>"
+            let subsentence = effect.reasonSummary.replace("Szenario XYZ", "dieses Szenario")
+            sentence.innerHTML = effect.answerSummary + " " + subsentence +  " <b>(rule ID: " + effect.globalId + ")</b>"
+
             // if the effect is positive, add it to the first list (Vorteile)
             if (+effect.scoreChange > 0){
                 document.querySelector("#vorteile .reasonList").append(sentence)

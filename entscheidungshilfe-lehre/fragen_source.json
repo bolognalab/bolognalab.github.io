@@ -75,7 +75,7 @@
             "antworten": {
                 "nein": "Nein, ich werde immer anwesend sein",
                 "abundzu": "Nur gelegentlich (z.B. Konferenzen)",
-                "oft": "Ja (z.B. Sabbatjahr)"
+                "oft": "Ja (z.B. Freisemester)"
             }
         },
 
@@ -126,8 +126,10 @@
             "antworten": {
                 "nein": "Nein",
                 "idk": "Ich weiß nicht",
-                "ja": "Ja bzw. ich könnte dafür sorgen"
-            }
+                "ja": "Ja bzw. meine Hochschule könnte dafür sorgen"
+            },
+
+            "addInfo": "Könnte z.B. die Hochschule durch ein Leihprogramm für Geräte oder durch die Bereitstellung von ausgestatteten Räumen für die Online-Teilnahme von Einzelpersonen oder Gruppen sorgen?"
         },
 
         "aufzTech": {
