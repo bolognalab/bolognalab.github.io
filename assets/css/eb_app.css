@@ -116,7 +116,7 @@
     border: 2px rgb(18, 161, 154) solid;
     color: white;
 }
-input[type='radio']{
+input[type='radio'], input[type='checkbox']{
    opacity: 0;
    width: 1px;
    height: 1px;
@@ -124,7 +124,7 @@ input[type='radio']{
    margin-right: 0;
    overflow: hidden;
 }
-input[type='radio'] + label {
+input[type='radio'] + label, input[type='checkbox'] + label {
     background: rgba(255,255,255,0);
     cursor: pointer;
     width: calc(100%);
@@ -134,7 +134,7 @@ input[type='radio'] + label {
     margin-right: -1em;
     border-radius: 0.4em;
 }
-input[type='radio']:disabled + label {
+input[type='radio']:disabled + label, input[type='checkbox']:disabled + label {
     cursor: auto;
 }
 .buttonContainer {

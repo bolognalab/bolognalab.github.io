@@ -43,7 +43,7 @@
 
         "niePr": {
             "condition": true,
-            "text": "Gibt es Studierende, die <b>nie oder fast nie</b> in Präsenz am Kurs teilnehmen können?",
+            "text": "Gibt es Studierende, die <b>nie oder fast nie in Präsenz</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein"
@@ -52,7 +52,7 @@
         },
         "nieSync": {
             "condition": true,
-            "text": "Gibt es Studierende, die <b>nie oder sehr schwierig</b> synchron am Kurs teilnehmen k\u00f6nnten?",
+            "text": "Gibt es Studierende, die <b>nie oder sehr schwierig synchron</b> am Kurs teilnehmen k\u00f6nnten?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein"
@@ -71,7 +71,7 @@
 
         "regAbw": {
             "condition": true,
-            "text": "Werden Sie als Lehrperson während des betreffenden Semesters oft vom Campus abwesend sein müssen?",
+            "text": "Werden Sie als <b>Lehrperson</b> während des betreffenden Semesters oft vom Campus <b>abwesend</b> sein müssen?",
             "antworten": {
                 "nein": "Nein, ich werde immer anwesend sein",
                 "abundzu": "Nur gelegentlich (z.B. Konferenzen)",
@@ -102,7 +102,7 @@
 
         "limZPSt": {
             "condition": true,
-            "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufstätigkeit) eingeschränkte Zeitpläne?",
+            "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufstätigkeit) <b>eingeschränkte Zeitpläne?</b>",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja",
@@ -122,7 +122,7 @@
 
         "onlZugang": {
             "condition": true,
-            "text": "Haben alle Studierenden <b>außerhalb des Lehrraums</b> Zugang zu einem Gerät und einer Umgebung, in der sie zuverlässig online am Kurs teilnehmen können?",
+            "text": "Haben alle Studierenden <b>Zugang außerhalb des Lehrraums</b> zu einem Gerät und einer Umgebung, in der sie zuverlässig <b>online</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
                 "idk": "Ich weiß nicht",
@@ -155,7 +155,7 @@
 
         "gaeste": {
             "condition": true,
-            "text": "Planen Sie, Gastvortragende zu Ihrem Kurs einzuladen?",
+            "text": "Planen Sie, <b>Gastvortragende</b> zu Ihrem Kurs einzuladen?",
             "antworten": {
                 "0": "Nein.",
                 "1": "Nur ab und zu.",
@@ -174,7 +174,7 @@
 
         "exkur": {
             "condition": true,
-            "text": "Planen Sie eine oder mehrere Exkursionen als festen Bestandteil Ihres Kurses?",
+            "text": "Planen Sie eine oder mehrere <b>Exkursionen</b> als festen Bestandteil Ihres Kurses?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
@@ -193,7 +193,7 @@
 
         "intKoll": {
             "condition": true,
-            "text": "Ist Ihr Kurs Teil einer nationalen oder internationalen Kollaboration mit Studierenden und Lehpersonen einer anderen Universität?",
+            "text": "Ist Ihr Kurs Teil einer <b>nationalen oder internationalen Kollaboration</b> mit Studierenden und Lehpersonen einer anderen Universität?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"

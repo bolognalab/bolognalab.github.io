@@ -18,7 +18,7 @@
         <img class="backgroundImage" src = "../images/entscheidungshilfe/treeTemp.svg" />
         <div id="welcome" class="qDiv">
             <h2 style="text-align: center"><img id="welcomeLogo" src="../images/entscheidungshilfe/NHL_logo.svg" /></h2>
-            <h1>Entscheidungsbaum Online und Hybride Lehre</h3>
+            <h1>Entscheidungshilfe Online und Hybride Lehre</h3>
             <p>Überlegen Sie, in einem neuen Format zu unterrichten? Beantworten Sie die folgenden Fragen und entdecken Sie, welches Szenario für Sie am besten passt!</p>
             <div class="buttonContainer"><button id="start" class="submitButton" onclick="start()" style="display:none">Beginnen</button></div>
         </div>
@@ -43,7 +43,6 @@
 
     const questionOrder = [ 
         'artLV', 
-        // 'modulCombo',
         'LZiP',
         'LZsy', 
         'niePr',
@@ -53,13 +52,25 @@
         "limZPSt",
         "onlZugang",
         "IntAsync",
+        "situations",
+        "exkurMittel",
         'gaeste', 
         'gaesteMittel',
-        "exkur",
-        "exkurMittel",
-        'begrAnz',
-        "intKoll"
+        // "exkur",
+        // 'begrAnz',
+        // "intKoll"
     ]   
+
+    const checkBoxQuestion = {
+        "condition": true,
+        "text": "Trifft eine oder mehrere dieser Situationen ihrer Lehrveranstaltung zu?",
+        "antworten": {
+            "exkur": {"text": "Eine oder mehrere <b>Exkursionen</b> sind Bestandteil meines Kurses", "effects":{}, "conditionalEffects":{}},
+            "intKoll": {"text": "Mein Kurs ist Teil einer <b>nationalen oder internationalen Kollaboration</b> (mit Studierenden und Lehpersonen einer anderen Universität)", "effects":{}, "conditionalEffects":{}},
+            "begrAnz": {"text": "Es gibt <b>geringere Raumkapazität oder -ausrüstung</b> als die Anzahl der Studierenden","effects":{}, "conditionalEffects":{}}
+        },
+        "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
+    }
     
     // Previous Question, Next Question, Submit buttons (will be moved around)
     var pButton = document.createElement("button"); document.body.append(pButton)
@@ -76,7 +87,16 @@
     nButton.setAttribute("id", "nextButton")
     // nButton.innerHTML = "Nächste Frage"
     nButton.addEventListener("click", function(){
-        submitAnswer()
+        if (activeQ != "situations"){
+            submitSingleAnswer()
+        } else {
+            submitMultipleAnswers({
+                "exkur":answers["exkur"],
+                "intKoll":answers["intKoll"],
+                "begrAnz":answers["begrAnz"]
+            })
+        }
+
     })
     nButton.style.display = "none"
 
@@ -85,7 +105,7 @@
     sButton.setAttribute("id", "submitButton")
     sButton.innerHTML = "Absenden"
     sButton.addEventListener("click", function(){
-        submitAnswer()
+        submitSingleAnswer()
         sessionStorage.setItem("answers", JSON.stringify(answers))
         getResult(activeScenarios)
     })
@@ -95,6 +115,7 @@
         
         all_data = json
         questionInfo = json['questions']
+        questionInfo["situations"] = checkBoxQuestion
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         document.querySelector("#start").style.display = "block"
@@ -135,6 +156,13 @@
         let qP = document.createElement("p"); qDiv.append(qP)
         qP.setAttribute("id", "Q_" + qKey)
         qP.innerHTML = qText
+        
+        if (qKey == "situations"){
+            // make all answers 'no' by default - they will be changed if someone checks the box
+            answers["exkur"] = "nein"
+            answers["begrAnz"] = "nein"
+            answers["intKoll"] = "nein"            
+        }
 
         Object.entries(q.antworten).forEach((a)=>{
             let aKey = a[0]
@@ -146,7 +174,13 @@
             aDiv.setAttribute("id", "A_" + aKey)
             aDiv.classList.add("aDiv")
             let aRadio = document.createElement("input")
-            aRadio.setAttribute("type", "radio")
+
+            // for checkbox question, create checkboxes, otherwise radio buttons
+            if (qKey == "situations"){
+                aRadio.setAttribute("type", "checkbox")  
+            } else {
+                aRadio.setAttribute("type", "radio")
+            }
             aRadio.setAttribute("name", "Q_" + qKey)
             aRadio.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
             aRadio.setAttribute("value", aKey)
@@ -169,7 +203,7 @@
 
         buttonContainer.append(pButton)
         buttonContainer.append(nButton)
-        nButton.disabled = true
+        nButton.disabled = qKey=="situations" ? false : true
         pButton.style.display = nextQuestionIdx == 0 ? "none" : "inline"
         nButton.style.display = "inline"
 
@@ -228,11 +262,33 @@
     }
 
     function selectAnswer(qKey, aKey){
-        // formatting
-        document.querySelectorAll("#DIV_" + qKey + " > .aDiv").forEach(function(aDiv){
-            aDiv.classList.remove("highlighted")
-        })
-        document.querySelector("#DIV_" + qKey + " > #A_" + aKey).classList.add("highlighted")
+        if (qKey == "situations"){
+            let aDiv = document.querySelector("#DIV_" + qKey + " > #A_" + aKey)
+            if (aDiv.classList.contains("highlighted")){
+                aDiv.classList.remove("highlighted")
+            } else {
+                aDiv.classList.add("highlighted")
+            }
+
+        } else {
+            // formatting
+            document.querySelectorAll("#DIV_" + qKey + " > .aDiv").forEach(function(aDiv){
+                aDiv.classList.remove("highlighted")
+            })
+            document.querySelector("#DIV_" + qKey + " > #A_" + aKey).classList.add("highlighted")
+            
+        }
+        
+        // store the answer temporarily (before hitting "next")
+        if (qKey!="situations"){
+            answers[qKey] = aKey 
+        } else {
+            let checked = document.querySelector("#Q_situations_A_"+aKey).checked
+            // case 1: the option was previously unselected and is being selected
+            // case 2: the option was previously selected and is being deselected
+            answers[aKey] = checked ? "ja" : "nein"
+        }
+        
         // check if there would be a next question if this answer is selected; if so, enable the "Next Button"
         let includeNextQuestion = false
         let dummyIdx = nextQuestionIdx
@@ -242,32 +298,44 @@
             }
         while (dummyIdx < questionOrder.length && includeNextQuestion == false){
             let nextQuestion = questionOrder[dummyIdx]
+            
             includeNextQuestion = includeCheck(nextQuestion)
             if (includeNextQuestion){
+                if (sButton.style.display == "inline"){
+                    document.body.appendChild(sButton)
+                    sButton.style.display="none"
+                }
                 nButton.disabled = false
                 break
             } else {
                 dummyIdx += 1
             }
-
+            // if we reach the end and don't find a valid question, display final submit button
+            if (dummyIdx >= questionOrder.length){
+                document.querySelector("#DIV_" + activeQ + " > .buttonContainer").append(sButton)
+                sButton.style.display="inline"
+            }
         }
 
-        answers[qKey] = aKey
         activeA = aKey
     }
 
-    function submitAnswer(){
-        let qKey = activeQ
+    function submitSingleAnswer(qq=null, aa=null, proceed=true){
+        let qKey = qq? qq : activeQ
         let pKey = qKey
-        let aKey = activeA
-        let allRadios = document.getElementById("DIV_" + qKey).querySelectorAll("input")
+        let aKey = aa? aa : activeA
+        
         recent = []
-        for (let radio of allRadios){
-            if (radio.id == "Q_" + qKey + "_A_" + aKey){
-                radio.classList.add("selected")   
+        if (proceed){
+            let allRadios = document.getElementById("DIV_" + qKey).querySelectorAll("input")
+            for (let radio of allRadios){
+                if (radio.id == "Q_" + qKey + "_A_" + aKey){
+                    radio.classList.add("selected")   
+                }
+                radio.setAttribute("disabled", true)
             }
-            radio.setAttribute("disabled", true)
         }
+
 
         let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
         let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
@@ -300,21 +368,31 @@
             
         })
 
-        // check if there is another question left to display and, if yes, do so.
-        let includeNextQuestion = false
-        while (nextQuestionIdx < questionOrder.length && includeNextQuestion == false){
-            let nextQuestion = questionOrder[nextQuestionIdx]
-            includeNextQuestion = includeCheck(nextQuestion)
-            if (includeNextQuestion){
-                hideQuestion(pKey)
-                displayQuestion(nextQuestion, from="upcoming")
-                break
-            } else {
-                nextQuestionIdx += 1
+        if (proceed){
+            // check if there is another question left to display and, if yes, do so.
+            let includeNextQuestion = false
+            while (nextQuestionIdx < questionOrder.length && includeNextQuestion == false){
+                let nextQuestion = questionOrder[nextQuestionIdx]
+                includeNextQuestion = includeCheck(nextQuestion)
+                if (includeNextQuestion){
+                    hideQuestion(pKey)
+                    displayQuestion(nextQuestion, from="upcoming")
+                    break
+                } else {
+                    nextQuestionIdx += 1
+                }
             }
         }
-    }
     
+    }
+    function submitMultipleAnswers(answersToSubmit){
+        Object.entries(answersToSubmit).forEach((aEntry)=>{
+            submitSingleAnswer(aEntry[0], aEntry[1], proceed=false)
+        })
+        // the following "submission" does nothing but advance to the next question
+        submitSingleAnswer("situations", "intKoll", proceed=true)
+    }
+
     function undoAnswer(){
         // remove current question
         let cQ = document.getElementById("DIV_" + activeQ)
@@ -326,51 +404,103 @@
         // if user has already selected an answer for the current question and not submitted it:
         // remove the current answer from 'answers' before proceeding
         if (activeA){
-            delete answers[activeQ]
+            if (activeQ && activeQ != "situations"){
+                delete answers[activeQ]
+            }            
+        }
+        // for checkBoxQuestion: delete answer regardless
+        if (activeQ == "situations"){
+            Object.keys(checkBoxQuestion["antworten"]).forEach((key)=>{
+                delete answers[key]
+            })            
         }
 
         // get information about the last answered question
-        activeQ = Object.keys(answers)[Object.keys(answers).length-1]
-        nextQuestionIdx = questionOrder.indexOf(activeQ)
-        activeA = null
-        let lastAnswer = answers[activeQ]
-        delete answers[activeQ]
-
-        let qKey = activeQ
-        let aKey = lastAnswer
-
-        let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
-        let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
-        
-        recent = []
-        // calculate score provided by last answer for each code (but this time subtract it!)
-        Object.entries(effects).forEach((entry)=>{
-            if (Object.keys(activeScenarios).includes(entry[0])){ // && entry[1] != "FUNC"){
-                let scoreVal = +(activeScenarios[entry[0]])
-                newScoreVal = scoreVal - entry[1]
-                activeScenarios[entry[0]] = newScoreVal
-                recent.push(entry[0])
+        if (activeQ == "situations"){
+            activeQ = questionOrder[questionOrder.indexOf("situations")-1]
+        } else {
+            if (Object.keys(checkBoxQuestion["antworten"]).includes(Object.keys(answers)[Object.keys(answers).length-1])){
+                activeQ = "situations"
+            } else {
+                activeQ = Object.keys(answers)[Object.keys(answers).length-1]
             }
-        })
+        }
+        
+        // if (Object.keys(checkBoxQuestion["antworten"]).includes(activeQ)){
+        //     activeQ = "situations"
+        // }
+        // console.log(activeQ)
 
-        Object.entries(conditionalEffects).forEach((entry)=>{
-            let sKey = entry[0]
-            let sEffects = entry[1]
-            Object.entries(sEffects).forEach((sEntry)=>{
-                let conditions = sEntry[0]
-                let score = sEntry[1]
-                
-                // separate conditions if more than one
-                let met = andCheck(conditions)
-                if (met){
+
+        nextQuestionIdx = questionOrder.indexOf(activeQ)
+        // if (Object.keys(checkBoxQuestion["antworten"]).includes(activeQ)){
+        //     nextQuestionIdx = questionOrder.indexOf("situations")
+        //     activeQ = "situations"
+        // }
+
+        activeA = null
+        let lastAnswer = {}
+        if (activeQ == "situations"){
+            Object.keys(checkBoxQuestion["antworten"]).forEach((key)=>{
+                lastAnswer[key] = answers[key]
+            })    
+        } else {
+            lastAnswer[activeQ] = answers[activeQ]  
+        }
+
+        
+        // delete the stored answers of the last answered question
+        delete answers[activeQ]
+        if (activeQ == "situations"){
+            Object.keys(checkBoxQuestion["antworten"]).forEach((key)=>{
+                delete answers[key]
+            })            
+        }
+
+        function undoAllEffects(qKey, aKey){
+            recent = []
+            // calculate score provided by last answer for each code (but this time subtract it!)
+            let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
+            let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
+
+            Object.entries(effects).forEach((entry)=>{
+                if (Object.keys(activeScenarios).includes(entry[0])){ // && entry[1] != "FUNC"){
                     let scoreVal = +(activeScenarios[entry[0]])
-                    newScoreVal = scoreVal - score
+                    newScoreVal = scoreVal - entry[1]
                     activeScenarios[entry[0]] = newScoreVal
-                    recent.push(sKey)
+                    recent.push(entry[0])
                 }
             })
+
+            Object.entries(conditionalEffects).forEach((entry)=>{
+                let sKey = entry[0]
+                let sEffects = entry[1]
+                Object.entries(sEffects).forEach((sEntry)=>{
+                    let conditions = sEntry[0]
+                    let score = sEntry[1]
+                    
+                    // separate conditions if more than one
+                    let met = andCheck(conditions)
+                    if (met){
+                        let scoreVal = +(activeScenarios[entry[0]])
+                        newScoreVal = scoreVal - score
+                        activeScenarios[entry[0]] = newScoreVal
+                        recent.push(sKey)
+                    }
+                })
+            })
+        }
+        Object.entries(lastAnswer).forEach((response)=>{
+            qKey = response[0]
+            aKey = response[1]
+
+            undoAllEffects(qKey, aKey)
+
             
         })
+        // let qKey = activeQ
+        // let aKey = lastAnswer
+
 
         // remove previous question and display it again
         document.getElementById("DIV_" + activeQ).remove()
@@ -452,6 +582,7 @@
         // checks if all conditions qKey=aKey are simultaneously true
         let i = 0
         while (i < 10){
+            
             [qKey, aKey] = conditions.split("+")[i].split("=")
             if (qKey.includes("!")){
                 // check if it's a NOT test
