@@ -141,6 +141,15 @@ li > .closeBtn {
     margin-bottom: 8em;
 }
 
+#scenarioTitle {
+    margin-bottom: 0;
+}
+#scenarioSubtitle {
+    color: #4d4d4c;
+    margin-top: 0;
+    display:none;
+}
+
 .blockContent {
     display: -webkit-box;
     display: -moz-box;
@@ -158,7 +167,9 @@ li > .closeBtn {
     align-items: flex-start
 }
 
-
+.overview .blockContent {
+    margin-top: 1em;
+}
 .blockContent > * {
     max-width: 100%;
     width: 100%;
@@ -168,10 +179,32 @@ li > .closeBtn {
     margin-top: 0;
 }
 
+.blockContent .descText a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--networkTurqoise)
+}
+.blockContent .descText a::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-right: 2px;
+    background-image: url("../../images/entscheidungshilfe/link.svg");
+    filter: var(--networkTurqoiseFilter);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+
 @media only screen and (min-width: 600px){
     .blockContent > * {
         max-width: 50%;
         flex: 1 1;
+    }
+    .overview .blockContent > .descText {
+        max-width: 70%;
+        flex: 1.5 1;
     }
 
 }

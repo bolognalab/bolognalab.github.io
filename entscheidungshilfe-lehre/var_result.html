@@ -13,7 +13,8 @@
     <div id="result" class="rCont">
         <p>Ihr Ergebnis:</p>
         <div id="resOverview" class="block overview">
-            <h3>Titel des Lehr-Lernszenarios</h3>
+            <h3 id="scenarioTitle">Titel des Lehr-Lernszenarios</h3>
+            <h4 id="scenarioSubtitle">mit asynchroner Teilnahme-Alternative</h4>
             <div class="blockContent">
                 <p class="descText"></p>
                 <img class="descImg" src="" alt="Studenten und Studentinnen in einem Raum."/>
@@ -51,15 +52,13 @@
             </div>
         </div>
         <div id="resTechn" class="block techn">
-            <h4>Technik, Raum und Software</h4>
+            <h4>Medientechnische Voraussetzungen</h4>
             <div class="blockContent">
                 <div class="descText">
-                    <p>Notwendige Raumeigenschaften:</p>
-                    <ul id="raumList" class="techList"></ul>
-                    <!-- <p>Notwendige Technik:</p>
-                    <ul id="hardwList" class="techList"></ul>
-                    <p>Software:</p>
-                    <ul id="softwList" class="techList"></ul> -->
+                    <p>Eigenschaften:</p>
+                    <ul id="propertyList" class="techList"></ul>
+                    <p>Raumskizzen, Signallaufpläne und Empfehlungen für Aufbau-Alternativen finden Sie im <b>Raumkonzept →</b></p>
+
                 </div>
                 <a href="" class="pdfLink">
                     <img src='../../images/entscheidungshilfe/raumkonzept_icon.png' alt="" />
@@ -185,11 +184,15 @@ function loadPage(){
             let key = dict["wert"]
             delete dict["wert"]
             all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
+            all_texts[key]["name"] = dict["name"]
             tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
         })
         $.get("tips_source.json", function(json){
             all_tips = json["tips"]
-            setTimeout(showResult(shownScenario, specialCases, topTier), 500)
+            setTimeout(function(){
+                showResult(shownScenario, specialCases, topTier)
+                createAriaLabels()
+            }, 500)
         })
         
     });
@@ -204,17 +207,13 @@ var fullTipList
 
 function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     // gathering texts
-    let scenarioTitle
-    if (scenario != 'de-default-0-0-0'){
-        scenarioTitle = all_scenarios[scenario]['unterrichtsformat']
-    } else {
-        scenarioTitle = 'Default Scenario'
-    }
     
     let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
     let syncIntValue = "syncInt-" + scenario.split("-")[2]
     let asyncTNValue = "asyncTN-" + scenario.split("-")[3]
     let asyncIntValue = "asyncInt-" + scenario.split("-")[4]
+
+    let scenarioTitle = all_texts[scenarioValue]['name']
 
     let theseTexts = {}
     let l = ['overview', syncIntValue, asyncTNValue, asyncIntValue]
@@ -249,33 +248,36 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
 
     // building document
-    document.querySelector("#resOverview > h3").innerHTML = scenarioTitle
-        document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
-        document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
-        document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
+    document.querySelector("#scenarioTitle").innerHTML = scenarioTitle
+    if (asyncTNValue == "asyncTN-3"){
+        document.querySelector("#scenarioSubtitle").style.display="block"
+    }
+    document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
+    document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
+    document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
 
-        document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
-        let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
-        syncTipList.forEach(function(tipCode){
-            addTip(tipCode, syncTipsCont)
-        })
+    document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
+    let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
+    syncTipList.forEach(function(tipCode){
+        addTip(tipCode, syncTipsCont)
+    })
 
-        document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
-        let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
-        asyncTipList.forEach(function(tipCode){
-            if (tipCode != scenario){
-                addTip(tipCode, asyncTips)
-            }
+    document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
+    let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
+    asyncTipList.forEach(function(tipCode){
+        if (tipCode != scenario){
+            addTip(tipCode, asyncTips)
+        }
 
-        })
+    })
 
-        let altResults = document.querySelector("#resMore > .blockContent > .altCont")
-        topTier.forEach(function(resCode){
-            if (resCode != scenario){
-                addAltResult(resCode, altResults)
-            }
-            
-        })
+    let altResults = document.querySelector("#resMore > .blockContent > .altCont")
+    topTier.forEach(function(resCode){
+        if (resCode != scenario){
+            addAltResult(resCode, altResults)
+        }
+        
+    })
 }
 
 // creating HTML elements
@@ -287,7 +289,7 @@ function addTip(tipCode, container){
                 let tipContent = document.createElement("p"); tipli.append(tipContent)
                 tipContent.classList.add("tipContent")
                 tipContent.innerHTML = all_tips[tipCode]["content"]
-
+                
                 tipHeader.setAttribute("onclick", "showHideTip(this)")
     }
 
@@ -306,10 +308,28 @@ function addTip(tipCode, container){
         li.classList.add("altScenario")
         let a = document.createElement("a"); li.append(a)
         a.setAttribute("href", "var_result.html?shownScenario=" + resCode + "&topTier=" + JSON.stringify(topTier))
-        a.innerHTML = all_scenarios[resCode]["unterrichtsformat"]
+        let resValue = resCode.split('-')[0] + '-' + resCode.split('-')[1]
+        let resAsyncTN = resCode.split('-')[3]
+        let extraStatement = resAsyncTN == '3'? ' (mit asynchroner Teilnahme-Alternative)' : ''
+        a.innerHTML = all_texts[resValue]["name"] + extraStatement
         // a.setAttribute("onclick", "showResult('" + resCode + "', special_cases = [], topTier=topResults)")
     }
 
+    function createAriaLabels(){
+        for (var a of document.querySelectorAll('a')){
+            console.log(a['aria-label'])
+            if (!a['aria-label']){
+                if (a['title']){
+                    a.setAttribute('aria-label', a['title'])
+                } else if (a.innerHTML != ''){
+                    a.setAttribute('aria-label', a.innerHTML)
+                } else {
+                    console.log(a, "no content found")
+                }
+            }
+        }
+        
+    }
 </script>
 </body>
 </html>

@@ -60,9 +60,7 @@ for code in list_of_scenarios:
     if code.split('-')[0] not in ["vl", "so"]:
         updated_questions["artLV"]["antworten"]["VL"]["effects"][code] = -100
     if code.split('-')[0] not in ["se", "so"]:
-        # allow Ringvorlesung format for seminar
-        if code.split('-')[1] not in ["ringpraes", "ringonl", "ringhyb1", "ringhyb2"]:
-            updated_questions["artLV"]["antworten"]["SE"]["effects"][code] = -100
+        updated_questions["artLV"]["antworten"]["SE"]["effects"][code] = -100
     if code.split('-')[0] not in ["pr"]:
         updated_questions["artLV"]["antworten"]["PR"]["effects"][code] = -100
     if code.split('-')[0] != "so":
