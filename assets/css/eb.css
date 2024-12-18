@@ -149,7 +149,9 @@ li > .closeBtn {
     margin-top: 0;
     display:none;
 }
-
+.descImg {
+    aspect-ratio: 1.6;
+}
 .blockContent {
     display: -webkit-box;
     display: -moz-box;
@@ -349,6 +351,35 @@ ul.tCont, ul.altCont {
     display: inline-block;
 }
 
+/* Format before loading */
+.notReady {
+    transition: all 0.4s ease
+}
+.notReady .block p, .notReady .block h4, .notReady .block h3 {
+    color: rgba(0,0,0,0);
+    border-radius: 1em;
+}
+.notReady .block:nth-child(2n+1) p {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.notReady .block:nth-child(2n+2) p {
+    background-color: #f1f7fc;
+}
+.notReady .block h4, .notReady .block h3 {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+}
+.notReady .descImg {
+    border-radius: 1em;
+    aspect-ratio: 1.6;
+}
+.notReady #linkRaumkonzept {
+    visibility: hidden;
+}
+.notReady .descText {
+    width: 50%;
+    height: 3em;
+}
 
 /* Accessibility CSS */
 .sr-only {
