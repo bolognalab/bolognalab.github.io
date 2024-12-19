@@ -372,13 +372,17 @@ ul.tCont, ul.altCont {
 .notReady .descImg {
     border-radius: 1em;
     aspect-ratio: 1.6;
+    opacity: 0.5;
 }
 .notReady #linkRaumkonzept {
     visibility: hidden;
 }
 .notReady .descText {
     width: 50%;
-    height: 3em;
+    height: 4em;
+}
+.notReady .overview .descText {
+    height: 18em;
 }
 
 /* Accessibility CSS */

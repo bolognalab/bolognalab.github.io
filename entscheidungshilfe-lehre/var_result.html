@@ -57,8 +57,7 @@
                 <div class="descText">
                     <p>Eigenschaften:</p>
                     <ul id="propertyList" class="techList"></ul>
-                    <p>Raumskizzen, Signallaufpläne und Empfehlungen für Aufbau-Alternativen finden Sie im <b>Raumkonzept →</b></p>
-
+                    <p id="refToRaumkonzept">Raumskizzen, Signallaufpläne und Empfehlungen finden Sie im <b>Raumkonzept →</b></p>
                 </div>
                 <a id="linkRaumkonzept" href="" class="pdfLink">
                     <img src='../../images/entscheidungshilfe/raumkonzept_icon.png' alt="" />
@@ -204,7 +203,7 @@ function loadPage(){
 })
 }
 
-var fullTipList 
+var fullTipList
 
 function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     // gathering texts
@@ -217,7 +216,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let scenarioTitle = all_texts[scenarioValue]['name']
 
     let theseTexts = {}
-    let l = ['overview', "overviewAsyncTN", syncIntValue, asyncTNValue, asyncIntValue]
+    let l = ['overview', "overviewAsyncTN", 'technik', syncIntValue, asyncTNValue, asyncIntValue]
     l.forEach(function(s){
         let val = all_texts[scenarioValue]["text_" + s]
         if (val != '-'){
@@ -228,6 +227,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     })
     let overviewText = theseTexts['overviewText']
     let overviewAsyncTNText = theseTexts['overviewAsyncTNText']
+    let technPoints = theseTexts['technikText']
     let syncIntText =  theseTexts[syncIntValue + "Text"]
     let asyncTNText =  theseTexts[asyncTNValue + "Text"]
     let asyncIntText =  theseTexts[asyncIntValue + "Text"]
@@ -245,11 +245,15 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
     fullTipList = fullTipListAsString.split(", ").filter((k)=>k != "-")
 
+    let fullTechnList = technPoints.split(', ')
+    console.log(fullTechnList)
+
     let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
     let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
 
 
     // building document
+    // Title and Overview
     document.querySelector("#scenarioTitle").innerHTML = scenarioTitle
     if (asyncTNValue == "asyncTN-3"){
         document.querySelector("#scenarioSubtitle").style.display="block"
@@ -259,12 +263,14 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
     document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
 
+    // Sync block
     document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
     let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
     syncTipList.forEach(function(tipCode){
         addTip(tipCode, syncTipsCont)
     })
 
+    // Async block
     document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
     let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
     asyncTipList.forEach(function(tipCode){
@@ -274,6 +280,23 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     })
 
+    // Medientechnik block
+    fullTechnList.forEach(function(s){
+        let li = document.createElement('li')
+        console.log(s)
+        li.innerHTML = s
+        document.querySelector("#propertyList").appendChild(li)
+        if (s == 'COMINGSOON'){
+            document.querySelector(".techn .descText").innerHTML = '<p>Die Medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
+        } else if (s == 'digital'){
+            document.querySelector(".techn .descText").innerHTML = '<p>Dieses Lehrszenario findet in rein-digitalem Format statt.</p>'
+            document.querySelector("#linkRaumkonzept").style.display='none'
+        }
+    }
+
+    )
+
+    // Alternative Results block
     let altResults = document.querySelector("#resMore > .blockContent > .altCont")
     topTier.forEach(function(resCode){
         if (resCode != scenario){
@@ -322,7 +345,6 @@ function addTip(tipCode, container){
 
     function createAriaLabels(){
         for (var a of document.querySelectorAll('a')){
-            console.log(a['aria-label'])
             if (!a['aria-label']){
                 if (a['title']){
                     a.setAttribute('aria-label', a['title'])
