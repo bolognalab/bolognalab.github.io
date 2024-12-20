@@ -16,8 +16,8 @@
             <h3 id="scenarioTitle">Titel des Lehr-Lernszenarios</h3>
             <h4 id="scenarioSubtitle">mit asynchroner Teilnahme-Alternative</h4>
             <div class="blockContent">
+                <img id="descImg" class="descImg" src="../images/pic05.jpg"/>
                 <p class="descText"></p>
-                <img class="descImg" src="../images/pic05.jpg"/>
             </div>
             <div id="matchQuality" style="display:none; border-bottom: 0px" class="tip">
                 <h5 onclick="showHideTip(this)">
@@ -246,7 +246,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     fullTipList = fullTipListAsString.split(", ").filter((k)=>k != "-")
 
     let fullTechnList = technPoints.split(', ')
-    console.log(fullTechnList)
 
     let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
     let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
@@ -260,8 +259,20 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         overviewText = overviewText + '<br><br>' + overviewAsyncTNText
     }
     document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
-    document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
-    document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
+    
+    // descriptive image
+    // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
+    // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
+    let primaryImgPath = "../images/entscheidungshilfe/descImg/" + scenarioValue + ".jpg"
+    let fallBackPath = "../images/entscheidungshilfe/descImg/de-default.jpg"
+    fetch(primaryImgPath).then(response => {
+        if (response.ok){
+            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", primaryImgPath)
+        } else {
+            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", fallBackPath) 
+        }
+    })
+        
 
     // Sync block
     document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
@@ -283,7 +294,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     // Medientechnik block
     fullTechnList.forEach(function(s){
         let li = document.createElement('li')
-        console.log(s)
         li.innerHTML = s
         document.querySelector("#propertyList").appendChild(li)
         if (s == 'COMINGSOON'){

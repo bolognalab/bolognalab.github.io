@@ -150,7 +150,7 @@ li > .closeBtn {
     display:none;
 }
 .descImg {
-    aspect-ratio: 1.6;
+    aspect-ratio: 1.33;
 }
 .blockContent {
     display: -webkit-box;
@@ -171,13 +171,14 @@ li > .closeBtn {
 
 .overview .blockContent {
     margin-top: 1em;
+    flex-direction: row-reverse;
 }
 .blockContent > * {
     max-width: 100%;
     width: 100%;
     /* flex: 1 1; */
 }
-.blockContent > p {
+.blockContent > p, .blockContent > * > p {
     margin-top: 0;
 }
 
@@ -355,6 +356,9 @@ ul.tCont, ul.altCont {
 .notReady {
     transition: all 0.4s ease
 }
+.notReady div.block {
+    border-radius: 1em;
+}
 .notReady .block p, .notReady .block h4, .notReady .block h3 {
     color: rgba(0,0,0,0);
     border-radius: 1em;
@@ -371,7 +375,7 @@ ul.tCont, ul.altCont {
 }
 .notReady .descImg {
     border-radius: 1em;
-    aspect-ratio: 1.6;
+    aspect-ratio: 1.33;
     opacity: 0.5;
 }
 .notReady #linkRaumkonzept {
@@ -379,7 +383,7 @@ ul.tCont, ul.altCont {
 }
 .notReady .descText {
     width: 50%;
-    height: 4em;
+    height: 5em;
 }
 .notReady .overview .descText {
     height: 18em;
