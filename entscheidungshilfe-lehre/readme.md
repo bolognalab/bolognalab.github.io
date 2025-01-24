@@ -1,8 +1,12 @@
 # Entscheidungshilfe Online & Hybride Lehre
 
-## Ziel und Zielgruppe
+## Zielgruppe
+### Ziel und Zielgruppe des Tools
 
 Der Entscheidungsbaum richtet sich an Lehrende (nicht nur HU-Lehrende), die eventuell eine Lehrveranstaltung (LV) in einem neuen Format als vorher unterrichten möchten (Use-Case 1) oder schon das Format kennen (Use-Case 2) und didaktische und technische Tipps für die Durchführung durchlesen möchten. Für Use-Case 1 hilft der Entscheidungsbaum den Lehrenden, je nach ihren Präferenzen und anderen Voraussetzungen ein passendes Lernszenario für sich zu finden (online, hybrid, vor Ort, oder abwechselnd). Für Use-Case 2 wählt die Lehrende Person das Lernszenario im Voraus und beantwortet ein paar zusätzliche Fragen (z.B. wie viel studentische Interaktion gewünscht ist). Bei beiden Use-Cases erhält die Lehrende Person am Ende didaktische und technische Tipps im Zusatz zu Informationen über das Lehr-Lernszenario.
+
+### Ziel und Zielgruppe dieser Dokumentation
+Diese Dokumentation dient dem Verständnis der "Backend"-Struktur des Tools, ohne das Programmierkenntnisse in JavaScript oder Python benötigt wird. Anhand dieser Dokumentation sollte jemand in der Lage sein, Texte in dem Entscheidungstool zu bearbeiten und Texte/Tipps zuzuordnen, sowie die Frage-Formulierungen anpassen. Diese Inhalte befinden sich hauptsächlich in ``.csv`` und ``.json``-Dateien, die bearbeitet werden können. Das hinzufügen von neuen Fragen, Antwortmöglichkeiten, Funktionen oder anderen Inhalten benötigt mindestens ein Grundverständnis von JavaScript, Python, HTML und CSS. 
 
 ## Vorschau
 
@@ -150,7 +154,9 @@ Die Fragen und Antworten können in der Datei [fragen_source.json](https://githu
 ![](dokumentation/img_questionComponents.png)
 *Abbildung 4. Eine Beispiel-Frage in der Datei fragen_source.md und ihre Abbildung im Entscheidungsbaum-App*
 
-Anmerkung: die _Reihenfolge_ der Fragen wird nicht durch diese Datei bestimmt, sondern wird durch eine andere Datei ([app.html](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/app.html)) definiert.
+Anmerkung 1: die _Reihenfolge_ der Fragen wird nicht durch diese Datei bestimmt, sondern wird durch eine andere Datei ([app.html](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/app.html)) definiert. Dort gibt es die Javascript-Variable ``questionOrder``, welche die Codes der verwendeten Fragen in der gewünschten Reihenfolge auflistet.
+
+**Anmerkung 2 (Wichtig!): manche Fragen in der Datei [fragen_source.json](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/fragen_source.json) sind nicht mehr im Entscheidungstool implementiert!!!** Diese Datei dient auch als Archiv für ältere Fragen. Die aktuellste Auswahl der Fragen wird (wie die Reihenfolge) in der Datei [app.html](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/app.html) definiert.
 
 #### Beantwortung der Fragen – Punktvergabe (Scores)
 
