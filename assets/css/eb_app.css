@@ -31,7 +31,7 @@
     width: 60%
 }
 }
-#welcome h1 {
+#welcome > h1 {
     color: var(--networkBlack);
     text-align: center;
     font-size: 24px;
@@ -39,7 +39,7 @@
     margin: auto;
     
 }
-#welcome p {
+#welcome > p {
     /* background: rgba(18, 161, 154, 0.8);; */
     border-radius: 0.8em;
     width: 60%;
@@ -48,7 +48,7 @@
     color: var(--networkBlack);
     text-align: center;
 }
-#welcome h1, #welcome p {
+#welcome > h1, #welcome > p {
     width: 90%;
 }
 #start {
@@ -60,6 +60,22 @@
 #start:hover {
     background: hwb(177 7% 27%);
 }
+#useCase2Container {
+    font-size: 0.7em;
+    width: 60%;
+    min-width: 200px;
+    margin: 2em auto;
+    text-align: center;
+}
+#useCase2Container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--networkBlue)
+}
+#useCase2Container a:hover {
+    text-decoration: underline;
+}
+
 .qCont .submitButton:hover {
     background: hwb(205 6% 12%);
 }
