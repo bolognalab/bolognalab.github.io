@@ -1,4 +1,5 @@
 # Entscheidungshilfe Online & Hybride Lehre
+*ein Tool des Berliner Netzwerks Hybride Lehre*
 
 ## Zielgruppe
 ### Ziel und Zielgruppe des Tools
