@@ -1,8 +1,8 @@
 
 :root {
     --whiteFilter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%);
-    --networkBlack: #373736;
-    --networkTurqoise: hwb(177 7% 37%);
+    --networkBlack: hwb(60 21% 79%);
+    --networkTurqoise: #12a19a;
     --networkBlue: hwb(205 6% 28%);
     --networkBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
     --vibrantBlue: #0F70B7;

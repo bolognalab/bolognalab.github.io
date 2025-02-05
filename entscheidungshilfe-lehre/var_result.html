@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="../assets/css/eb.css" />
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/jquery.csv.js"></script>
+  <link rel="stylesheet" href="assets/css/eb.css" />
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.csv.js"></script>
 </head>
 <body class="is-preload resultBg" lang="de" onload="loadPage()">
     <div id="result" class="rCont notReady">
@@ -16,12 +16,12 @@
             <h3 id="scenarioTitle">Titel des Lehr-Lernszenarios</h3>
             <h4 id="scenarioSubtitle">mit asynchroner Teilnahme-Alternative</h4>
             <div class="blockContent">
-                <img id="descImg" class="descImg" src="../images/pic05.jpg"/>
+                <img id="descImg" class="descImg" src="images/blurry/pic05.jpg"/>
                 <p class="descText"></p>
             </div>
             <div id="matchQuality" style="display:none; border-bottom: 0px" class="tip">
                 <h5 onclick="showHideTip(this)">
-                    <img src="../images/fwd3.svg" alt="">
+                    <img src="images/fwd3.svg" alt="">
                     <span>Wie geeignet ist dieses Lehrszenario für mich?</span>
                 </h5>
                 <div class="tipContent">
@@ -60,7 +60,7 @@
                     <p id="refToRaumkonzept">Raumskizzen, Signallaufpläne und Empfehlungen finden Sie im <b>Raumkonzept →</b></p>
                 </div>
                 <a id="linkRaumkonzept" href="" class="pdfLink">
-                    <img src='../../images/entscheidungshilfe/raumkonzept_icon.png' alt="" />
+                    <img src='images/raumkonzept_icon.png' alt="" />
                     <strong>Exemplarisches Raumkonzept (PDF)</strong>
                 </a>
             </div>
@@ -84,24 +84,24 @@ const specialCases = urlParams.has('specialCases') ? urlParams.get('specialCases
 const providedAnswers = JSON.parse(sessionStorage.getItem("answers"))
 
 const answers = providedAnswers? providedAnswers : {}
-// {
-//   "artLV": "SE",
-//   "LZiP": "2",
-//   "LZsy": "1",
-//   "niePr": "nein",
-//   "nieSync": "nein",
-//   "regAbw": "abundzu",
-//   "onlBereit": "geleg",
-//   "limZPSt": "ja",
-//   "onlZugang": "ja",
-//   "IntAsync": "2",
-//   "gaeste": "0",
-//   "exkur": "nein",
-//   "begrAnz": "nein",
-//   "intKoll": "ja"
-// }
+const dummyAnswers = {
+  "artLV": "SE",
+  "LZiP": "2",
+  "LZsy": "1",
+  "niePr": "nein",
+  "nieSync": "nein",
+  "regAbw": "abundzu",
+  "onlBereit": "geleg",
+  "limZPSt": "ja",
+  "onlZugang": "ja",
+  "IntAsync": "2",
+  "gaeste": "0",
+  "exkur": "nein",
+  "begrAnz": "nein",
+  "intKoll": "ja"
+}
 
-function explainMatch(scenario, answers, rules){
+function explainMatch(scenario, answers=dummyAnswers, rules=[]){
     Object.entries(answers).forEach(function(item){
         let qCode = item[0]
         let aCode = item[1]
@@ -263,8 +263,8 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     // descriptive image
     // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
     // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
-    let primaryImgPath = "../images/entscheidungshilfe/descImg/" + scenarioValue + ".jpg"
-    let fallBackPath = "../images/entscheidungshilfe/descImg/de-default.jpg"
+    let primaryImgPath = "images/descImg/" + scenarioValue + ".jpg"
+    let fallBackPath = "images/descImg/de-default.jpg"
     fetch(primaryImgPath).then(response => {
         if (response.ok){
             document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", primaryImgPath)
@@ -323,7 +323,7 @@ function addTip(tipCode, container){
         let tipli = document.createElement("li"); container.append(tipli)
                 tipli.classList.add("tip")
                 let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
-                tipHeader.innerHTML = "<img src='../images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
+                tipHeader.innerHTML = "<img src='images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
                 let tipContent = document.createElement("p"); tipli.append(tipContent)
                 tipContent.classList.add("tipContent")
                 tipContent.innerHTML = all_tips[tipCode]["content"]

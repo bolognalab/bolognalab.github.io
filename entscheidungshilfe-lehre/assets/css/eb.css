@@ -1,0 +1,406 @@
+
+:root {
+    --whiteFilter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%);
+    --networkBlack: hwb(60 21% 79%);
+    --networkTurqoise: #12a19a;
+    --networkBlue: hwb(205 6% 28%);
+    --networkBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
+    --vibrantBlue: #0F70B7;
+    --vibrantBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
+    --networkTurqoiseFilter: brightness(0) saturate(100%) invert(71%) sepia(67%) saturate(5756%) hue-rotate(142deg) brightness(88%) contrast(86%);
+    --backgroundLightBlue: #D2E4F1;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica', 'Arial', 'Roboto', sans-serif; 
+    color: var(--networkBlack)
+}
+h1, h2, h3, h4 {
+    color: black
+}
+th, td {
+    text-align: center;
+    min-width: 20px;
+    /* border: 0.5px dotted gray; */
+}
+table {
+    border-spacing: 0px;
+    margin: 20px 5px;
+}
+.sHeader, .rowHeader {
+    padding: 5px 7px;
+    cursor: pointer;
+    z-index: 3;
+}
+.clickable {
+    cursor: pointer;
+    margin: 2px 2px;
+    border: 1px solid rgb(255, 255, 255);
+    background: #cdeefc;
+}
+.clickable:hover {
+    background: #e7f8ff;
+}
+.active {
+    border: 0px;
+    background: white;
+}
+
+.answerKey, .answerVal {
+    padding: 5px 7px;
+}
+.answerKey {
+    font-weight: bold;
+    cursor: pointer;
+}
+.answerKey:nth-child(4n+5), .answerVal:nth-child(4n), .sHeader {
+    border-right: 2px solid black;
+}
+.answerVal {
+    z-index: 1;
+    border: 1px solid rgb(255, 255, 255);
+}
+.blankCell {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4JyBoZWlnaHQ9JzgnPgogIDxyZWN0IHdpZHRoPSc4JyBoZWlnaHQ9JzgnIGZpbGw9JyNmZmYnLz4KICA8cGF0aCBkPSdNMCAwTDggOFpNOCAwTDAgOFonIHN0cm9rZS13aWR0aD0nMC41JyBzdHJva2U9JyNhYWEnLz4KPC9zdmc+Cg=="); 
+    background-repeat: repeat;
+    pointer-events: none;
+}
+#textBox {
+    border-radius: 5px; 
+    border: solid 1px gray; 
+    width: 40%;
+    margin: 5px;
+    padding: 10px;
+    
+}
+#infoText {
+    color: gray;
+    margin-top: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 0.8em;
+}
+
+/* for table view */
+.closeBtn {
+    font-size: 0.5em;
+    color: blue;
+    border-radius: 0.5em;
+    padding-top: -0.5em;
+}
+li > .closeBtn {
+    margin-top: 0.5em;
+}
+
+/* for questionFlow view */
+.sCont {
+    color: rgb(4, 23, 133)
+}
+
+.rCont, .sCont, .qCont {
+    width: 95%;
+    max-width: 800px;
+    margin: auto;
+}
+.sCont {
+    width: 10%;
+}
+.qCont button {
+    margin: 1em 2em;
+    padding: 0.3em 0.8em;
+}
+
+.qCont button.selected {
+    background: #ffffff;
+    /* box-shadow: ""; */
+    border: 0px;
+    color: #0e7700;
+}
+
+.score {
+    margin-left: 7px;
+}
+.recent {
+    background: #ffed9f
+}
+
+/* result container */
+.rCont {
+    font-size: 14px;
+    background: white;
+    padding-top: 8em
+}
+
+.block {
+    padding: 15px 15px;
+}
+.block:nth-child(2n+1){
+    background-color: var(--backgroundLightBlue);
+    margin-top: 2em;
+}
+.block:last-child {
+    margin-bottom: 8em;
+}
+
+#scenarioTitle {
+    margin-bottom: 0;
+}
+#scenarioSubtitle {
+    color: #4d4d4c;
+    margin-top: 0;
+    display:none;
+}
+.descImg {
+    aspect-ratio: 1.33;
+}
+.blockContent {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    resize: both;
+    gap: 30px;
+    align-items: flex-start
+}
+
+.overview .blockContent {
+    margin-top: 1em;
+    flex-direction: row-reverse;
+}
+.blockContent > * {
+    max-width: 100%;
+    width: 100%;
+    /* flex: 1 1; */
+}
+.blockContent > p, .blockContent > * > p {
+    margin-top: 0;
+}
+
+.blockContent .descText a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--networkTurqoise)
+}
+.blockContent .descText a::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-right: 2px;
+    background-image: url("../../images/link.svg");
+    filter: var(--networkTurqoiseFilter);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+
+@media only screen and (min-width: 600px){
+    .blockContent > * {
+        max-width: 50%;
+        flex: 1 1;
+    }
+    .overview .blockContent > .descText {
+        max-width: 70%;
+        flex: 1.5 1;
+    }
+
+}
+
+ul.tCont, ul.altCont {
+    list-style-type: none; 
+    padding-left: 0;
+    margin: 0 0;
+}
+
+
+/* tips */
+.tip {
+    box-sizing: border-box;
+    margin: 0 0;
+    border-bottom: solid 0.5px rgb(226, 235, 255);
+}
+
+.tip h5{
+    font-size: inherit;
+    margin: 0 0;
+    padding: 0 0;
+    height: 3em;
+    box-sizing: border-box;
+    position: relative; 
+    cursor: pointer;
+    color: var(--vibrantBlue)
+}
+
+.tip h5 > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.tip h5 > img {
+    left:  1em;
+    height: 1em;
+    width: auto;
+    filter: var(--vibrantBlueFilter); 
+    
+}
+
+.tip h5 > span {
+    left: 2.5em
+}
+
+.tip .tipContent {
+    display: none;
+    color: var(--vibrantBlue);
+    padding: 0 1em;
+    margin-top: 0;
+}
+
+.tip .tipContent a {
+    display: block;
+    margin-top: 0.5em;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--networkTurqoise)
+}
+
+.tip .tipContent a::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-right: 4px;
+    background-image: url("../../images/link.svg");
+    filter: var(--networkTurqoiseFilter);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+
+.tip h5:hover{
+    background-color: var(--vibrantBlue);
+    color: white;
+}
+.tip h5:hover > img {
+    filter: brightness(0) saturate(100%) invert(95%) sepia(62%) saturate(2%) hue-rotate(116deg) brightness(109%) contrast(100%); 
+}
+
+.tip.open h5 {
+    color: var(--vibrantBlue);
+}
+.tip.open h5 > img {
+    transform: rotate(90deg) translate(-50%, 0);
+}
+.tip.open .tipContent {
+    display: block;
+}
+.tip.open h5:hover {
+    background-color: rgba(0,0,0,0);
+    color: var(--vibrantBlue);
+}
+.tip.open h5:hover > img {
+    filter: var(--vibrantBlueFilter)
+}
+
+/* technical sheets */
+.pdfLink {
+    margin: 0 0;
+    text-align: center
+}
+.pdfLink > img {
+    width: 80%;
+    max-width: 200px;
+    border-radius: 2em;
+    margin-bottom: 0.5em;
+    border: 2px solid var(--vibrantBlue);
+    cursor: pointer
+}
+.pdfLink > strong {
+    display: block;
+    font-size: 0.9em;
+}
+
+/* more results (alternative scenarios) */
+.altScenario {
+    box-sizing: border-box;
+    margin-bottom: 0.8em;
+    font-size: 0.9em
+}
+
+.altScenario a {
+    font-weight: bold;
+    color: var(--networkTurqoise);
+    text-decoration: none;
+}
+
+.altScenario a::before {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 4px;
+    background-image: url("../../images/fwd3.svg");
+    filter: var(--networkTurqoiseFilter);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+
+/* Format before loading */
+.notReady {
+    transition: all 0.4s ease
+}
+.notReady div.block {
+    border-radius: 1em;
+}
+.notReady .block p, .notReady .block h4, .notReady .block h3 {
+    color: rgba(0,0,0,0);
+    border-radius: 1em;
+}
+.notReady .block:nth-child(2n+1) p {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.notReady .block:nth-child(2n+2) p {
+    background-color: #f1f7fc;
+}
+.notReady .block h4, .notReady .block h3 {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50%;
+}
+.notReady .descImg {
+    border-radius: 1em;
+    aspect-ratio: 1.33;
+    opacity: 0.5;
+}
+.notReady #linkRaumkonzept {
+    visibility: hidden;
+}
+.notReady .descText {
+    width: 50%;
+    height: 5em;
+}
+.notReady .overview .descText {
+    height: 18em;
+}
+
+/* Accessibility CSS */
+.sr-only {
+    /* by https://kittygiraudel.com/2020/12/03/a11y-advent-hiding-content/ */
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }

@@ -1,0 +1,11 @@
+pages:
+    stage: deploy
+    script:
+    - mkdir public
+    - cp -r entscheidungshilfe-lehre/* public/  # all content moved from entscheidungshilfe-lehre
+    - mv app.html index.html # app.html renamed so that it appears as the default page
+    artifacts:
+        paths:
+        - public
+    only:
+    - main
