@@ -16,25 +16,64 @@
     <p>Entscheidungshilfe Lehre (Testversion)</p>
     <div id="questions" class="qCont">
         <img class="backgroundImage" src = "images/treeTemp.svg" />
-        <div id="welcome" class="qDiv">
+        <div id="DIV_TEXT_welcome" class="qDiv">
             <h2 style="text-align: center"><img id="welcomeLogo" src="images/NHL_logo.svg" /></h2>
-            <h1>Entscheidungshilfe Online und Hybride Lehre</h3>
+            <h1>Entscheidungshilfe Online und Hybride Lehre</h1>
             <p>Überlegen Sie, in einem neuen Format zu unterrichten? Beantworten Sie die folgenden Fragen und entdecken Sie, welches Szenario für Sie am besten passt!</p>
             <div class="buttonContainer"><button id="start" class="submitButton" onclick="start()" style="display:none">Beginnen</button></div>
             <div id="useCase2Container"><p>oder...</p><a href=''>Ich habe mich schon für ein Lehrformat entschieden und suche dafür didaktische und technische Tipps</a></div>
         </div>
-    </div>    
+        <div id="DIV_TEXT_intro" class="qDiv upcoming" style="display:none">
+            <h2>Los geht's!</h2>
+            <p>In den nächsten Schritten werden Sie aufgefordert, Gedanken über die folgenden Aspekten Ihrer Veranstaltung zu machen:</p>
+            <ul>
+                <li>Wie wichtig ist <b>physische Präsenz und Synchronität</b>, damit Studierende erfolgreich in Ihrem Kurs sind?</li>
+                <li>Welche Anforderungen hat Ihre studentische Kohorte an <b>Strukturierung</b> und <b>Flexibilität?</b></li>
+                <li>Inwieweit passt digitale Lehre zu Ihrem <b>Lehrstil</b> und zu den <b>Bedingungen Ihrer Hochschule?</b></li>
+            </ul>
+            <p>Es ist okay, wenn Sie für die Beantwortung mancher Fragen nicht sicher sind! Es gibt immer die Möglichkeit, zurückzugehen und andere Antwortmöglichkeiten auszuprobieren.</p>
+            <p>Als Ergebnis erhalten Sie - neben ein empfohlenes Lehrformat - Vorschläge und Tipps für die synchrone und asynchrone Planung Ihres Kurses.</p>
+        </div>
+        <div id="DIV_TEXT_group1" class="qDiv upcoming" style="display:none">
+            <h2 style="text-align:center"><img src="images/descImg/se-praes.jpg" style="width: 300px"/></h2>
+            <h2>Teil 1: Art und Ziele der Lehrveranstaltung</h2>
+            <p>Die ersten drei Fragen beziehen sich auf die <b>Art des Wissens und der Kompetenzen</b>, die Studierende am Ende des Kurses beherrschen sollen – diese grundlegenden <b>Lernziele</b> sollten im Kern der Entscheidung liegen, welches Format für die Lehrveranstaltung verwendet werden soll. 
+            </p>
+        </div>
+        <div id="DIV_TEXT_group2" class="qDiv upcoming" style="display:none">
+            <h2 style="text-align:center"><img src="images/descImg/se-hyb.jpg" style="width: 300px"/></h2>
+            <h2>Teil 2: Studentische Bedingungen und Teilnahme</h2>
+            <p>Die folgenden Fragen sollen Ihnen helfen, die <b>Flexibilitäts- und Strukturierungsbedürfnisse der Studierenden</b> in Ihrer Lehrveranstaltung zu verstehen.</p>
+            <p>Bei der Kursplanungsphase können Sie wahrscheinlich nicht alle Fragen zu Ihren zukünftigen Studierenden mit Sicherheit beantworten - das ist in Ordnung!</p>
+            <p>Sie können die Fragen auf der Grundlage <b>vorheriger oder "typischer" studentischer Kohorten</b> (z.B. Semester im Studium, Berufsfeld) beantworten oder indem Sie reflektieren, auf welche möglichen Szenarien Sie vorbereitet sein wollen, um eine <b>möglichst barrierearme Teilnahme</b> zu ermöglichen.</p>
+        </div>
+        <div id="DIV_TEXT_group3" class="qDiv upcoming" style="display:none">
+            <h2 style="text-align:center"><img src="images/descImg/se-onl.jpg" style="width: 300px"/></h2>
+            <h2>Teil 3: Teilnahme und Bedingungen der Lehrperson(en)</h2>
+            <p>Kurz vor dem Ende des Entscheidungsprozesses kommen wir jetzt zum Thema Lehrende: Ebenso wie die Studierenden haben auch die Lehrenden individuelle Bedürfnisse in Bezug auf die Flexibilität und das Lehrformat!</p>
+        </div>
+        <div id="DIV_TEXT_group4" class="qDiv upcoming" style="display:none">
+            <h2 style="text-align:center"><img src="images/descImg/vl-ringpraes.jpg" style="width: 300px"/></h2>
+            <h2>Teil 4: Zusätzliche Faktoren</h2>
+            <p>Wir sind fast fertig! In den letzten paar Fragen prüfen wir, ob es für Ihren Kurs besondere „Sonderbedingungen“ gelten.</p>
+        </div>
+    </div>
+    <h5>Quellen</h5>
+    <ol class="sources">
+        <li id ="source_uniHamburgSozialeInteraktion"><a href='https://www.hul.uni-hamburg.de/selbstlernmaterialien/6-soziale-interaktion.html'>Uni Hamburg: Social Design - Soziale Interaktion</a></li>
+        <li id ="source_moerthUFF21"><a href='https://www.youtube.com/watch?v=JkmYvK8j-zs'>M. Mörth, I. Ulrich, N. Enders: "Online, blended, hybrid, Präsenz?" - University:Future Festival 2021 (VideO)</a></li>
+        <li id="source_studienwahl"><a href='https://studienwahl.de/themen-des-monats/jobben-neben-dem-studium'>Studienwahl.de: Jobben neben dem Studium (03.09.2024)</a></li>
+    </ol>    
 </div>
 <script src="assets/js/jquery.csv.js"></script>
 <script>   
-    
     const qCont = document.getElementById("questions")
     const maxShownAnswers = 4
 
     var all_data, questionInfo, all_scenarios, infoTimeout, infoTimeout2
 
     var activeQ, activeA
-    var nextQuestionIdx = 0
+    var nextQuestionIdx = 1
 
     var scenarios = {}
     var answers = {}
@@ -43,23 +82,26 @@
     var topResults
 
     const questionOrder = [ 
+        "TEXT_welcome",
+        'TEXT_intro',
+        'TEXT_group1',
         'artLV', 
-        'LZiP',
         'LZsy', 
-        'niePr',
-        'nieSync',
-        'regAbw',
-        "onlBereit", 
+        'LZiP',
+        'TEXT_group2',
         "limZPSt",
+        'nieSync',
+        'niePr',
         "onlZugang",
         "IntAsync",
+        "TEXT_group3",
+        'regAbw',
+        "onlBereit", 
+        "TEXT_group4",
         "situations",
         "exkurMittel",
         'gaeste', 
         'gaesteMittel',
-        // "exkur",
-        // 'begrAnz',
-        // "intKoll"
     ]   
 
     const checkBoxQuestion = {
@@ -88,15 +130,20 @@
     nButton.setAttribute("id", "nextButton")
     // nButton.innerHTML = "Nächste Frage"
     nButton.addEventListener("click", function(){
-        if (activeQ != "situations"){
-            submitSingleAnswer()
+        if (activeQ.includes("TEXT_")){
+            proceedFromQuestion()
         } else {
-            submitMultipleAnswers({
-                "exkur":answers["exkur"],
-                "intKoll":answers["intKoll"],
-                "begrAnz":answers["begrAnz"]
-            })
+            if (activeQ != "situations"){
+                submitSingleAnswer()
+            } else {
+                submitMultipleAnswers({
+                    "exkur":answers["exkur"],
+                    "intKoll":answers["intKoll"],
+                    "begrAnz":answers["begrAnz"]
+                })
+            }
         }
+
 
     })
     nButton.style.display = "none"
@@ -120,13 +167,13 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         document.querySelector("#start").style.display = "block"
-        // displayQuestion(questionOrder[nextQuestionIdx], from="start")
+        start()
     })
 
     function start(){
-        document.querySelector("#welcome").classList.add("past")
+        document.querySelector("#DIV_TEXT_welcome").classList.add("past")
         setTimeout(()=>{
-            document.querySelector("#welcome").style.display="none"
+            document.querySelector("#DIV_TEXT_welcome").style.display="none"
         }, 800)
         displayQuestion(questionOrder[nextQuestionIdx], from='upcoming')
     }
@@ -134,109 +181,140 @@
     function hideQuestion(qKey){
         // hiding question container when next question arrives
         let qToHide = document.getElementById("DIV_" + qKey)
-        // if (qToHide.classList.contains(""))
         qToHide.classList.remove("upcoming")
         qToHide.classList.add("past")
+        if (qKey.includes("TEXT_")){
+            // remove buttonContainer, otherwise it will keep getting added!
+            setTimeout(()=>{
+                qToHide.querySelector(".buttonContainer").remove()
+            }, 500)
+        }
         // qToHide.style.display = "none"
     }
+    function showHideContext(th){
+        let a = th.parentElement
+        if (a.classList.contains("open")){
+            a.classList.remove("open")
+            a.querySelector(".contextContent").style.height = "0px"
+        } else {
+            a.classList.add("open")
+            a.querySelector(".contextContent").style.height = a.querySelector(".contextContent").scrollHeight + "px"
+        }
+    }
     function displayQuestion(qKey, from="upcoming"){
-        let q = questionInfo[qKey]
-        let qText = q.text
+        let q, qText, qDiv
 
         activeQ = qKey
         activeA = null
 
-        let qDiv = document.createElement("div"); qCont.append(qDiv)
-        qDiv.setAttribute("id", "DIV_" + qKey)
-        if (from != "start"){
-            qDiv.classList.add("qDiv", from)
-        } else {
-            qDiv.classList.add("qDiv")
+        if (qKey.includes("TEXT_")){
+            // if the panel is just a text block, just display its content
+            qDiv = document.getElementById("DIV_" + qKey)
+            qDiv.style.display='block'            
         }
-        
-        let qP = document.createElement("p"); qDiv.append(qP)
-        qP.setAttribute("id", "Q_" + qKey)
-        qP.innerHTML = qText
-        
-        if (qKey == "situations"){
-            // make all answers 'no' by default - they will be changed if someone checks the box
-            answers["exkur"] = "nein"
-            answers["begrAnz"] = "nein"
-            answers["intKoll"] = "nein"            
-        }
-
-        Object.entries(q.antworten).forEach((a)=>{
-            let aKey = a[0]
-            let aText = a[1].text
-            let aEffects = a[1].effects
-            let aConditionalEffects= a[1].conditionalEffects
-
-            let aDiv = document.createElement("div"); qDiv.append(aDiv)
-            aDiv.setAttribute("id", "A_" + aKey)
-            aDiv.classList.add("aDiv")
-            let aRadio = document.createElement("input")
-
-            // for checkbox question, create checkboxes, otherwise radio buttons
-            if (qKey == "situations"){
-                aRadio.setAttribute("type", "checkbox")  
+        else {
+            // if the panel contains a question, display the question, its answers, and any additional info
+            q = questionInfo[qKey]
+            qText = q.text
+            qDiv = document.createElement("div"); qCont.append(qDiv)
+            qDiv.setAttribute("id", "DIV_" + qKey)
+            if (from != "start"){
+                qDiv.classList.add("qDiv", from)
             } else {
-                aRadio.setAttribute("type", "radio")
+                qDiv.classList.add("qDiv")
             }
-            aRadio.setAttribute("name", "Q_" + qKey)
-            aRadio.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
-            aRadio.setAttribute("value", aKey)
-            aRadio.addEventListener("click", function(){  
-                selectAnswer(qKey, aKey)
-            })
-            let aLabel = document.createElement("label")
-            aLabel.setAttribute("for", "Q_" + qKey + "_A_" + aKey)
-            aLabel.innerHTML = aText
-
-            aDiv.append(aRadio, aLabel)
-            if (aKey == "PR" | aKey =="SO"){
-                aDiv.style.display = "none"
-            }            
-
-        })
-        let buttonContainer = document.createElement("div")
-        buttonContainer.classList.add("buttonContainer")
-        qDiv.append(buttonContainer)
-
-        buttonContainer.append(pButton)
-        buttonContainer.append(nButton)
-        nButton.disabled = qKey=="situations" ? false : true
-        pButton.style.display = nextQuestionIdx == 0 ? "none" : "inline"
-        nButton.style.display = "inline"
-
-        // add 'additional info' if present
-        if (q.addInfo){
-            let infoContainer = document.createElement("p"); buttonContainer.append(infoContainer)
-            infoContainer.classList.add("infoContainer", "closed")
-            let infoIcon = document.createElement("img"); infoContainer.append(infoIcon)
-            infoIcon.setAttribute("src", "images/infoIcon.svg")
-            infoIcon.classList.add("infoIcon")
-            let infoText = document.createElement("span"); infoContainer.append(infoText)
-            infoText.classList.add("infoText")
-            infoText.innerHTML = q.addInfo
-
-            infoContainer.addEventListener("click", ()=>{
-                if(window.matchMedia("(pointer: coarse)").matches) {
-                    let infoContainer = document.querySelector("#DIV_" + qKey + " .buttonContainer > .infoContainer")
-                    if (infoContainer.classList.contains("closed")){
-                        openInfoContainer(qKey)
-                    } else if (infoContainer.classList.contains("opened")){
-                        closeInfoContainer(qKey)
+            
+            let qP = document.createElement("p"); qDiv.append(qP)
+            qP.setAttribute("id", "Q_" + qKey); qP.classList.add("qText")
+            qP.innerHTML = qText
+            
+            //adding context
+            if (q.addInfo){
+                if (qKey == "situations"){
+                    let context = document.createElement("div"); context.classList.add("context"); qDiv.append(context)
+                    context.innerHTML = "<p>*<em>" + checkBoxQuestion["addInfo"] + "</em></p>"
+                } else {
+                    let context = document.createElement("div"); context.classList.add("context"); qDiv.append(context)
+                    let contextHeader = document.createElement("h5"); context.append(contextHeader)
+                    contextHeader.innerHTML = "<img src='images/fwd3.svg' alt=''/><span>Kontext</span>"
+                    let contextContent = document.createElement("div"); contextContent.innerHTML="<ul></ul>"; context.append(contextContent)
+                    contextContent.classList.add("contextContent")
+                    for (var i = 0; i < q.addInfo.length; i++){
+                        let ul = contextContent.querySelector("ul")
+                        let infoText = q.addInfo[i]
+                        let info // will be either p or ul > li
+                        // IMPORTANT: currently you can only a single list of statements + optionally a single paragraph statement above them
+                        if (infoText.includes("{NO BULLET}")){
+                            info = document.createElement('p'); info.innerHTML = infoText.split("{NO BULLET}")[1]; contextContent.insertBefore(info,ul)
+                        } else {
+                            info = document.createElement('li'); info.innerHTML = infoText; ul.append(info)
+                        }
+                        
+                        // if there are any sources, find them on the list of sources and link them
+                        info.querySelectorAll("a").forEach((a)=>{
+                            let target = a.getAttribute("href")
+                            let source = document.querySelector(target)
+                            let parent = source.parentNode
+                            a.innerHTML = Array.prototype.indexOf.call(parent.children, source)+1
+                        })
                     }
+                    contextHeader.setAttribute("onclick", "showHideContext(this)")
+                    }
+
+            }
+
+            if (qKey == "situations"){
+                // make all answers 'no' by default - they will be changed if someone checks the box
+                answers["exkur"] = "nein"
+                answers["begrAnz"] = "nein"
+                answers["intKoll"] = "nein"            
+            }
+
+            Object.entries(q.antworten).forEach((a)=>{
+                let aKey = a[0]
+                let aText = a[1].text
+                let aEffects = a[1].effects
+                let aConditionalEffects= a[1].conditionalEffects
+
+                let aDiv = document.createElement("div"); qDiv.append(aDiv)
+                aDiv.setAttribute("id", "A_" + aKey)
+                aDiv.classList.add("aDiv")
+                let aRadio = document.createElement("input")
+
+                // for checkbox question, create checkboxes, otherwise radio buttons
+                if (qKey == "situations"){
+                    aRadio.setAttribute("type", "checkbox")  
+                } else {
+                    aRadio.setAttribute("type", "radio")
                 }
-            })
-            infoContainer.addEventListener("mouseenter", ()=>{
-                openInfoContainer(qKey)
-            })
-            infoContainer.addEventListener("mouseleave", ()=>{
-                closeInfoContainer(qKey)
+                aRadio.setAttribute("name", "Q_" + qKey)
+                aRadio.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
+                aRadio.setAttribute("value", aKey)
+                aRadio.addEventListener("click", function(){  
+                    selectAnswer(qKey, aKey)
+                })
+                let aLabel = document.createElement("label")
+                aLabel.setAttribute("for", "Q_" + qKey + "_A_" + aKey)
+                aLabel.innerHTML = aText
+
+                aDiv.append(aRadio, aLabel)
+                if (aKey == "PR" | aKey =="SO"){
+                    aDiv.style.display = "none"
+                }            
             })
         }
 
+        if (qKey != "TEXT_welcome"){
+            let buttonContainer = document.createElement("div")
+            buttonContainer.classList.add("buttonContainer")
+            qDiv.append(buttonContainer)
+
+            buttonContainer.append(pButton)
+            buttonContainer.append(nButton)
+            nButton.disabled = qKey=="situations" || qKey.includes("TEXT_") ? false : true
+            pButton.style.display = nextQuestionIdx == 0 || qKey == "TEXT_welcome" ? "none" : "inline"
+            nButton.style.display = nextQuestionIdx != 0? "inline" : "none"
+        }
 
         setTimeout(function(){
             qDiv.classList.remove("upcoming", "past")
@@ -321,6 +399,22 @@
         activeA = aKey
     }
 
+    function proceedFromQuestion(cq=null){
+        let cKey = cq? cq : activeQ
+        // check if there is another question left to display and, if yes, do so.
+        let includeNextQuestion = false
+        while (nextQuestionIdx < questionOrder.length && includeNextQuestion == false){
+            let nextQuestion = questionOrder[nextQuestionIdx]
+            includeNextQuestion = includeCheck(nextQuestion)
+            if (includeNextQuestion){
+                hideQuestion(cKey)
+                displayQuestion(nextQuestion, from="upcoming")
+                break
+            } else {
+                nextQuestionIdx += 1
+            }
+        }
+    }
     function submitSingleAnswer(qq=null, aa=null, proceed=true){
         let qKey = qq? qq : activeQ
         let pKey = qKey
@@ -347,6 +441,7 @@
                 newScoreVal = scoreVal + entry[1]
                 activeScenarios[entry[0]] = newScoreVal
                 recent.push(entry[0])
+                // console.log("APPLIED EFFECT,", entry[0], qKey)
             }
         })
 
@@ -364,25 +459,14 @@
                     newScoreVal = scoreVal + score
                     activeScenarios[entry[0]] = newScoreVal
                     recent.push(sKey)
+                    // console.log("APPLIED CONDITIONAL EFFECT,", entry[0], qKey)
                 }
             })
             
         })
 
         if (proceed){
-            // check if there is another question left to display and, if yes, do so.
-            let includeNextQuestion = false
-            while (nextQuestionIdx < questionOrder.length && includeNextQuestion == false){
-                let nextQuestion = questionOrder[nextQuestionIdx]
-                includeNextQuestion = includeCheck(nextQuestion)
-                if (includeNextQuestion){
-                    hideQuestion(pKey)
-                    displayQuestion(nextQuestion, from="upcoming")
-                    break
-                } else {
-                    nextQuestionIdx += 1
-                }
-            }
+            proceedFromQuestion(pKey)
         }
     
     }
@@ -395,15 +479,23 @@
     }
 
     function undoAnswer(){
-        // remove current question
+        // remove current question, unless it's just a text box
         let cQ = document.getElementById("DIV_" + activeQ)
         cQ.classList.add("upcoming")
-        setTimeout(function(){
+        if (!activeQ.includes("TEXT_")){
+            setTimeout(function(){
             cQ.remove()
         }, 500)
+        } else {
+            setTimeout(function(){
+            cQ.querySelector(".buttonContainer").remove()
+        }, 500)
+        }
+
         
         // if user has already selected an answer for the current question and not submitted it:
         // remove the current answer from 'answers' before proceeding
+        // note: this doesn't have any effect if the 'question' was just a textbox
         if (activeA){
             if (activeQ && activeQ != "situations"){
                 delete answers[activeQ]
@@ -416,28 +508,21 @@
             })            
         }
 
-        // get information about the last answered question
+        // get information about the last answered question and change variable activeQ
         if (activeQ == "situations"){
             activeQ = questionOrder[questionOrder.indexOf("situations")-1]
         } else {
             if (Object.keys(checkBoxQuestion["antworten"]).includes(Object.keys(answers)[Object.keys(answers).length-1])){
                 activeQ = "situations"
             } else {
-                activeQ = Object.keys(answers)[Object.keys(answers).length-1]
+                // note: this works whether we are returning to a textbox or an actual question
+                activeQ = questionOrder[questionOrder.indexOf(activeQ)-1]
+                // activeQ = Object.keys(answers)[Object.keys(answers).length-1] //this wouldn't work for textboxes, since they don't give answers
+
             }
         }
         
-        // if (Object.keys(checkBoxQuestion["antworten"]).includes(activeQ)){
-        //     activeQ = "situations"
-        // }
-        // console.log(activeQ)
-
-
         nextQuestionIdx = questionOrder.indexOf(activeQ)
-        // if (Object.keys(checkBoxQuestion["antworten"]).includes(activeQ)){
-        //     nextQuestionIdx = questionOrder.indexOf("situations")
-        //     activeQ = "situations"
-        // }
 
         activeA = null
         let lastAnswer = {}
@@ -470,6 +555,7 @@
                     newScoreVal = scoreVal - entry[1]
                     activeScenarios[entry[0]] = newScoreVal
                     recent.push(entry[0])
+                    // console.log("REVERSED EFFECT,", entry[0], qKey)
                 }
             })
 
@@ -487,24 +573,29 @@
                         newScoreVal = scoreVal - score
                         activeScenarios[entry[0]] = newScoreVal
                         recent.push(sKey)
+                        // console.log("REVERSED CONDITIONAL EFFECT,", entry[0], qKey)
                     }
                 })
             })
         }
-        Object.entries(lastAnswer).forEach((response)=>{
+        if (!activeQ.includes("TEXT_")){
+            Object.entries(lastAnswer).forEach((response)=>{
             qKey = response[0]
             aKey = response[1]
-
             undoAllEffects(qKey, aKey)
-
-            
         })
+        }
+
         // let qKey = activeQ
         // let aKey = lastAnswer
 
-
         // remove previous question and display it again
-        document.getElementById("DIV_" + activeQ).remove()
+        if (activeQ.includes("TEXT_")){
+            document.getElementById("DIV_" + activeQ).style.display="none"
+        }
+        else {
+            document.getElementById("DIV_" + activeQ).remove()
+        }
         displayQuestion(activeQ, from="past")
     }
 
@@ -570,13 +661,16 @@
     function includeCheck(qKey){
         // checks if a question should be displayed
         // assumes that questions have been ordered correctly, otherwise results may be unexpected
-        let condition = questionInfo[qKey]["condition"]
-        if (condition == true){
+        if (qKey.includes("TEXT_")){
             return true
         } else {
-            return andCheck(condition)
-        }
-        
+            let condition = questionInfo[qKey]["condition"]
+            if (condition == true){
+                return true
+            } else {
+                return andCheck(condition)
+            }
+        }        
     }
 
     function andCheck(conditions){

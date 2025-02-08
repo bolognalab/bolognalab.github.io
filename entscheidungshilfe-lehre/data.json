@@ -2,7 +2,7 @@
     "questions": {
         "artLV": {
             "condition": true,
-            "text": "Um welche Art von Lehrveranstaltung handelt es sich?",
+            "text": "\u00dcber welche Art von Lehrveranstaltung m\u00f6chten Sie eine Entscheidung treffen?",
             "antworten": {
                 "VL": {
                     "text": "Vorlesung",
@@ -3313,7 +3313,13 @@
                     },
                     "conditionalEffects": {}
                 }
-            }
+            },
+            "addInfo": [
+                "Soziale Pr\u00e4senz ist auch online erreichbar, aber st\u00e4rker, wenn Personen im selben physischen Raum sind. Gleichzeitig kann Pr\u00e4senzteilnahme ein Hindernis f\u00fcr manche Studierende sein.",
+                "Bez\u00fcglich des Lernerfolgs (wenn es z.B. um Wissenstransfer oder Probleml\u00f6sen geht) kann gut gestaltete online oder hybride Lehre genauso effektiv sein wie Pr\u00e4senzlehre. [<a href='#source_moerthUFF21'></a>]",
+                "In dieser Frage geht es um die Notwendigkeit der Pr\u00e4senz <b>f\u00fcr den Lernerfolg</b> im Kurs und eher nicht um die sozialen Vorteile der physischen Pr\u00e4senz.",
+                "Einige Beispiele f\u00fcr ausschlie\u00dflich in Pr\u00e4senz erreichbaren Zielkompetenzen: Arbeit mit Ausr\u00fcstungen und Gegenst\u00e4nden, Exkursionen, oder Umgang mit sensiblen Informationen, die nicht online weitergegeben d\u00fcrfen."
+            ]
         },
         "LZsy": {
             "condition": true,
@@ -4973,11 +4979,16 @@
                     "conditionalEffects": {}
                 }
             },
-            "addInfo": "z.B. argumentative Diskussion, wichtige Gruppenaufgaben, usw."
+            "addInfo": [
+                "Synchrone Interaktion hat Vorteile f\u00fcr die soziale Eingebundenheit und das Wohlbefinden der Studierenden in der Hochschule. [<a href='#source_uniHamburgSozialeInteraktion'></a>]",
+                "Gleichzeitig bietet die M\u00f6glichkeit, asynchron die Inhalte des Kurses zu bearbeiten, mehr Flexibilit\u00e4t f\u00fcr Studierende, insbesondere Studierenden mit Erwerbst\u00e4tigkeit oder anderen zeitlichen Einschr\u00e4nkungen.",
+                "Diese Frage fragt, inwieweit die Synchronit\u00e4t (unabh\u00e4ngig von den sozialen Vorteilen) notwendig f\u00fcr den <b>Lernerfolg</b> in Ihrem Kurs ist, was nicht immer der Fall ist.",
+                "Einige Beispiele f\u00fcr <b>ausschlie\u00dflich synchron erreichbaren Zielkompetenzen</b>: Vortragen, Moderation, Debatten, oder Umgang mit sensiblen Informationen, die nicht asynchron weitergegeben d\u00fcrfen"
+            ]
         },
         "niePr": {
             "condition": true,
-            "text": "Gibt es Studierende, die <b>nie oder fast nie in Pr\u00e4senz</b> am Kurs teilnehmen k\u00f6nnen?",
+            "text": "Gibt es Studierende, die <b>nie oder sehr schwierig in Pr\u00e4senz</b> am Kurs teilnehmen k\u00f6nnen?",
             "antworten": {
                 "nein": {
                     "text": "Nein",
@@ -5455,7 +5466,13 @@
                     },
                     "conditionalEffects": {}
                 }
-            }
+            },
+            "addInfo": [
+                "{NO BULLET} Beispiele von zutreffenden Situationen (u.a.):",
+                "Studierende mit Aufenthalt in einem anderen Ort",
+                "Schwerbehinderte Studierende",
+                "Studierende, die unmittelbar vor oder nach Ihrer Veranstaltung eine Lehrveranstaltung an einem weiter entfernten Campus besuchen m\u00fcssen (z.B. Kombibachelor)"
+            ]
         },
         "nieSync": {
             "condition": true,
@@ -6724,7 +6741,13 @@
                         }
                     }
                 }
-            }
+            },
+            "addInfo": [
+                "{NO BULLET} Beispiele von zutreffenden Situationen (u.a.):",
+                "Studierende mit terminlichen \u00dcberschneidungen (die sonst mehrere Semester warten m\u00fcssen, bis Sie den Kurs belegen d\u00fcrfen)",
+                "Studierende in einer anderen Zeitzone",
+                "Studierende (z.B. im Praxissemester), deren Arbeitszeiten nicht flexibel sind"
+            ]
         },
         "wohnLP": {
             "condition": true,
@@ -7345,7 +7368,7 @@
                     "conditionalEffects": {}
                 },
                 "oft": {
-                    "text": "Ja (z.B. Freisemester)",
+                    "text": "Ja (z.B. Freisemester, Aufenthalt in einem anderen Ort)",
                     "effects": {
                         "so-async-0-4-0": 2,
                         "so-async-0-4-1": 2,
@@ -8726,11 +8749,14 @@
                     "conditionalEffects": {}
                 }
             },
-            "addInfo": "z.B. unter Ber\u00fccksichtigung der Anerkennung Ihrer Lehre f\u00fcr das Lehrdeputat oder nach pers\u00f6nlicher Pr\u00e4ferenz"
+            "addInfo": [
+                "In dieser Frage geht es wahrscheinlich nicht nur um Ihre pers\u00f6nliche Pr\u00e4ferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre f\u00fcr das Lehrdeputat.",
+                "In dieser Frage wird nach Ihrer eigenen Pr\u00e4senz- oder Online-Teilnahme gefragt (Studierende k\u00f6nnten prinzipiell online teilnehmen, w\u00e4hrend Sie von einem Lehrraum aus unterrichten)."
+            ]
         },
         "limZPSt": {
             "condition": true,
-            "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufst\u00e4tigkeit) <b>eingeschr\u00e4nkte Zeitpl\u00e4ne?</b>",
+            "text": "Haben die meisten Studierenden in Ihrem Kurs <b>beschr\u00e4nkte Zeit f\u00fcr Ihr Studium</b> (z.B. mehr als 10-15 Stunden Erwerbst\u00e4tigkeit pro Woche)?",
             "antworten": {
                 "nein": {
                     "text": "Nein",
@@ -10919,7 +10945,13 @@
                     "effects": {},
                     "conditionalEffects": {}
                 }
-            }
+            },
+            "addInfo": [
+                "\u00dcber 60% der Studierenden in Deutschland arbeiten neben dem Studium, [<a href='#source_studienwahl'></a>] wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann.",
+                "Regelm\u00e4\u00dfige Vor- und Nacharbeit der Kursinhalte au\u00dferhalb des Unterrichts ist f\u00fcr den Lernerfolg der Studierenden f\u00f6rderlich.",
+                "Studierende, die nur eine begrenzte Zeit pro Woche f\u00fcr ihr Studium aufwenden k\u00f6nnen, haben nicht so viel Zeit au\u00dferhalb der Unterrichtszeiten, um regelm\u00e4\u00dfige Aufgaben zu erledigen.",
+                "Solche Studierende profitieren zudem von mehr Flexibilit\u00e4t und weniger Pendelzeit."
+            ]
         },
         "studGeraete": {
             "condition": true,
@@ -11552,7 +11584,11 @@
                     "conditionalEffects": {}
                 }
             },
-            "addInfo": "K\u00f6nnte z.B. die Hochschule durch ein Leihprogramm f\u00fcr Ger\u00e4te oder durch die Bereitstellung von ausgestatteten R\u00e4umen f\u00fcr die Online-Teilnahme von Einzelpersonen oder Gruppen sorgen?"
+            "addInfo": [
+                "Falls Ihr Kurs oder Teile davon online stattfinden sollte, m\u00fcsstet dieser Faktor mitber\u00fccksichtigt werden.",
+                "Selbst wenn alle Studierenden zu Hause \u00fcber ein zuverl\u00e4ssiges Setup f\u00fcr die Online-Teilnahme verf\u00fcgen, k\u00f6nnte die Online-Teilnahme herausfordernd sein, wenn Studierende am selben Tag online und pers\u00f6nlich Kurse besuchen.",
+                "G\u00e4be es in diesem Fall geeignete R\u00e4umlichkeiten bzw. ein Ausleihsystem daf\u00fcr in der Hochschule?"
+            ]
         },
         "aufzTech": {
             "condition": true,
@@ -11574,14 +11610,16 @@
                     "conditionalEffects": {}
                 }
             },
-            "addInfo": "Hier wird eine 'Erfassung' des Raums entweder f\u00fcr eine Aufzeichnung oder f\u00fcr eine Live-Videokonferenz gemeint."
+            "addInfo": [
+                "Hier wird eine 'Erfassung' des Raums entweder f\u00fcr eine Aufzeichnung oder f\u00fcr eine Live-Videokonferenz gemeint."
+            ]
         },
         "IntAsync": {
             "condition": true,
-            "text": "Wie wichtig eine Strukturierung der studentischen Interaktion <b>au\u00dferhalb der Kurssitzungen</b> f\u00fcr die Lernziele des Kurses?",
+            "text": "Wie <b>strukturiert</b> sollte die studentische Interaktion <b>au\u00dferhalb der Kurssitzungen</b> sein?",
             "antworten": {
                 "0": {
-                    "text": "Nicht so wichtig; die informelle Kommunikation zwischen Studierenden \u00fcber die von ihnen gew\u00e4hlten Kan\u00e4le reicht aus",
+                    "text": "<b>Minimal</b> \u2013 ich m\u00f6chte den Studierenden nicht vorschreiben, wie sie Kursmaterialien nacharbeiten sollen oder wie sie miteinander asynchron interagieren",
                     "effects": {
                         "so-async-0-4-0": 1,
                         "so-async-0-4-2": -100,
@@ -12105,7 +12143,7 @@
                     "conditionalEffects": {}
                 },
                 "1": {
-                    "text": "Gew\u00fcnscht - ich m\u00f6chte, dass Studierende regelm\u00e4\u00dfig und miteinander \u00fcber die Inhalte des Kurses austauschen",
+                    "text": "<b>Optionale Struktur</b> \u2013 ich m\u00f6chte Strukturen f\u00fcr die asynchrone studentische Interaktion bereitstellen \u2013 es ist aber nicht so wichtig, dass die Strukturen von allen genutzt werden",
                     "effects": {
                         "so-async-0-4-0": -100,
                         "so-async-0-4-1": 1,
@@ -12701,7 +12739,7 @@
                     "conditionalEffects": {}
                 },
                 "2": {
-                    "text": "Notwendig - ohne strukturierte, regelm\u00e4\u00dfige studentische Interaktion sind manche Lernziele schlecht erreichbar",
+                    "text": "<b>Struktur plus Anreizen</b>  \u2013 ich m\u00f6chte Strukturen f\u00fcr die asynchrone studentische Interaktion bereitstellen sowie Anreize, damit m\u00f6glichst viele Studierende sie nutzen",
                     "effects": {
                         "so-async-0-4-0": -100,
                         "so-async-0-4-1": -100,
@@ -13519,7 +13557,13 @@
                     },
                     "conditionalEffects": {}
                 }
-            }
+            },
+            "addInfo": [
+                "Die gezielte asynchrone Bearbeitung von Materialien, (z.B. mit interaktiven digitalen Tools) sowie regelm\u00e4\u00dfiges Feedback k\u00f6nnen den Lernerfolg deutlich st\u00e4rken.",
+                "Zudem k\u00f6nnen Strukturen f\u00fcr asynchronen studentischen Diskurs (z.B. Foren oder Peer-Evaluationen) das Gef\u00fchl einer dauerhaften Lerngemeinschaft f\u00f6rdern",
+                "Studierende mit wenig Vorwissen und geringerer Selbststeuerungskompetenz (z.B. Erstsemesterstudierende) brauchen in der Regel mehr Strukturierung (oder auch extrinsische Motivation in Form von Anreizen), um ihre Selbstlernzeiten zu organisieren. [<a href='#source_moerthUFF21'></a>]",
+                "Wenn Studierende bereits eine gute Selbststeuerungskompetenz entwickelt haben (z.B. in sp\u00e4teren Semestern), k\u00f6nnte im Gegensatz eine \u00dcberregulierung der asynchronen Teilnahme eher eine Barriere als einen Vorteil darstellen."
+            ]
         },
         "gaeste": {
             "condition": true,

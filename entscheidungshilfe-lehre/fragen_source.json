@@ -2,7 +2,7 @@
     "questions":{
         "artLV":{
             "condition": true,
-            "text": "Um welche Art von Lehrveranstaltung handelt es sich?",
+            "text": "Über welche Art von Lehrveranstaltung möchten Sie eine Entscheidung treffen?",
             "antworten": {
                 "VL": "Vorlesung",
                 "SE": "Seminar oder Übung",
@@ -27,7 +27,13 @@
                 "0": "Alle Lernziele des Kurses können <b>sowohl in Präsenz als auch online</b> erreicht werden.",
                 "1": "Alle Lernziele können auch online erreicht werden, aber manche davon <b>nicht so gut online wie in Präsenz</b>.",
                 "2": "Manche Komponenten des Kurses <b>müssen</b> in Präsenz durchgeführt werden."
-            }
+            },
+            "addInfo": [
+                "Soziale Präsenz ist auch online erreichbar, aber stärker, wenn Personen im selben physischen Raum sind. Gleichzeitig kann Präsenzteilnahme ein Hindernis für manche Studierende sein.",
+                "Bezüglich des Lernerfolgs (wenn es z.B. um Wissenstransfer oder Problemlösen geht) kann gut gestaltete online oder hybride Lehre genauso effektiv sein wie Präsenzlehre. [<a href='#source_moerthUFF21'></a>]",
+                "In dieser Frage geht es um die Notwendigkeit der Präsenz <b>für den Lernerfolg</b> im Kurs und eher nicht um die sozialen Vorteile der physischen Präsenz.",
+                "Einige Beispiele für ausschließlich in Präsenz erreichbaren Zielkompetenzen: Arbeit mit Ausrüstungen und Gegenständen, Exkursionen, oder Umgang mit sensiblen Informationen, die nicht online weitergegeben dürfen."
+            ]
         },
 
         "LZsy":{
@@ -38,17 +44,27 @@
                 "1": "Wichtig - die synchrone Interaktion verbessert die Lernerfahrung der Studierenden erheblich - aber eine*r Studierende könnte auch ohne sie erfolgreich im Kurs sein",
                 "2": "Essentiel - ohne synchrone Interaktion und Gruppenarbeit können manche Lernziele des Kurses nicht erreicht werden."
             },
-            "addInfo": "z.B. argumentative Diskussion, wichtige Gruppenaufgaben, usw."
+            "addInfo": [
+                "Synchrone Interaktion hat Vorteile für die soziale Eingebundenheit und das Wohlbefinden der Studierenden in der Hochschule. [<a href='#source_uniHamburgSozialeInteraktion'></a>]",
+                "Gleichzeitig bietet die Möglichkeit, asynchron die Inhalte des Kurses zu bearbeiten, mehr Flexibilität für Studierende, insbesondere Studierenden mit Erwerbstätigkeit oder anderen zeitlichen Einschränkungen.",
+                "Diese Frage fragt, inwieweit die Synchronität (unabhängig von den sozialen Vorteilen) notwendig für den <b>Lernerfolg</b> in Ihrem Kurs ist, was nicht immer der Fall ist.",
+                "Einige Beispiele für <b>ausschließlich synchron erreichbaren Zielkompetenzen</b>: Vortragen, Moderation, Debatten, oder Umgang mit sensiblen Informationen, die nicht asynchron weitergegeben dürfen"
+        ]
         },
 
         "niePr": {
             "condition": true,
-            "text": "Gibt es Studierende, die <b>nie oder fast nie in Präsenz</b> am Kurs teilnehmen können?",
+            "text": "Gibt es Studierende, die <b>nie oder sehr schwierig in Präsenz</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein"
-                
-            }
+            },
+            "addInfo": [
+                "{NO BULLET} Beispiele von zutreffenden Situationen (u.a.):",
+                "Studierende mit Aufenthalt in einem anderen Ort",
+                "Schwerbehinderte Studierende",
+                "Studierende, die unmittelbar vor oder nach Ihrer Veranstaltung eine Lehrveranstaltung an einem weiter entfernten Campus besuchen müssen (z.B. Kombibachelor)"
+            ]
         },
         "nieSync": {
             "condition": true,
@@ -56,7 +72,13 @@
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein"
-            }
+            },
+            "addInfo": [
+                "{NO BULLET} Beispiele von zutreffenden Situationen (u.a.):",
+                "Studierende mit terminlichen Überschneidungen (die sonst mehrere Semester warten müssen, bis Sie den Kurs belegen dürfen)",
+                "Studierende in einer anderen Zeitzone",
+                "Studierende (z.B. im Praxissemester), deren Arbeitszeiten nicht flexibel sind"
+            ]
         },
 
         "wohnLP": {
@@ -75,7 +97,7 @@
             "antworten": {
                 "nein": "Nein, ich werde immer anwesend sein",
                 "abundzu": "Nur gelegentlich (z.B. Konferenzen)",
-                "oft": "Ja (z.B. Freisemester)"
+                "oft": "Ja (z.B. Freisemester, Aufenthalt in einem anderen Ort)"
             }
         },
 
@@ -97,17 +119,26 @@
                 "viel": "Ich möchte so viel wie möglich online unterrichten",
                 "egal" : "Es spielt für mich keine Rolle, wie viel ich online oder vor Ort unterrichte."
             },
-            "addInfo": "z.B. unter Berücksichtigung der Anerkennung Ihrer Lehre für das Lehrdeputat oder nach persönlicher Präferenz"
+            "addInfo": [
+                "In dieser Frage geht es wahrscheinlich nicht nur um Ihre persönliche Präferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre für das Lehrdeputat.",
+                "In dieser Frage wird nach Ihrer eigenen Präsenz- oder Online-Teilnahme gefragt (Studierende könnten prinzipiell online teilnehmen, während Sie von einem Lehrraum aus unterrichten)."
+            ]
         },
 
         "limZPSt": {
             "condition": true,
-            "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufstätigkeit) <b>eingeschränkte Zeitpläne?</b>",
+            "text": "Haben die meisten Studierenden in Ihrem Kurs <b>beschränkte Zeit für Ihr Studium</b> (z.B. mehr als 10-15 Stunden Erwerbstätigkeit pro Woche)?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja",
                 "idk": "Ich bin mir nicht sicher"
-            }
+            },
+            "addInfo": [
+                "Über 60% der Studierenden in Deutschland arbeiten neben dem Studium, [<a href='#source_studienwahl'></a>] wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann.",
+                "Regelmäßige Vor- und Nacharbeit der Kursinhalte außerhalb des Unterrichts ist für den Lernerfolg der Studierenden förderlich.",
+                "Studierende, die nur eine begrenzte Zeit pro Woche für ihr Studium aufwenden können, haben nicht so viel Zeit außerhalb der Unterrichtszeiten, um regelmäßige Aufgaben zu erledigen.",
+                "Solche Studierende profitieren zudem von mehr Flexibilität und weniger Pendelzeit."
+            ]
         },
 
         "studGeraete": {
@@ -129,7 +160,11 @@
                 "ja": "Ja bzw. meine Hochschule könnte dafür sorgen"
             },
 
-            "addInfo": "Könnte z.B. die Hochschule durch ein Leihprogramm für Geräte oder durch die Bereitstellung von ausgestatteten Räumen für die Online-Teilnahme von Einzelpersonen oder Gruppen sorgen?"
+            "addInfo": [
+                "Falls Ihr Kurs oder Teile davon online stattfinden sollte, müsstet dieser Faktor mitberücksichtigt werden.",
+                "Selbst wenn alle Studierenden zu Hause über ein zuverlässiges Setup für die Online-Teilnahme verfügen, könnte die Online-Teilnahme herausfordernd sein, wenn Studierende am selben Tag online und persönlich Kurse besuchen.",
+                "Gäbe es in diesem Fall geeignete Räumlichkeiten bzw. ein Ausleihsystem dafür in der Hochschule?"
+            ]
         },
 
         "aufzTech": {
@@ -140,17 +175,23 @@
                 "ja": "Ja",
                 "idk": "Ich bin mir nicht sicher"
             },
-            "addInfo": "Hier wird eine 'Erfassung' des Raums entweder für eine Aufzeichnung oder für eine Live-Videokonferenz gemeint."
+            "addInfo": ["Hier wird eine 'Erfassung' des Raums entweder für eine Aufzeichnung oder für eine Live-Videokonferenz gemeint."]
         },
 
         "IntAsync": {
             "condition": true,
-            "text": "Wie wichtig ist eine Strukturierung der studentischen Interaktion <b>außerhalb der Kurssitzungen</b> für die Lernziele des Kurses?",
+            "text": "Wie <b>strukturiert</b> sollte die studentische Interaktion <b>außerhalb der Kurssitzungen</b> sein?",
             "antworten": {
-                "0": "Nicht so wichtig; die informelle Kommunikation zwischen Studierenden über die von ihnen gewählten Kanäle reicht aus",
-                "1": "Gewünscht - ich möchte, dass Studierende regelmäßig und miteinander über die Inhalte des Kurses austauschen",
-                "2": "Notwendig - ohne strukturierte, regelmäßige studentische Interaktion sind manche Lernziele schlecht erreichbar"
-            }
+                "0": "<b>Minimal</b> – ich möchte den Studierenden nicht vorschreiben, wie sie Kursmaterialien nacharbeiten sollen oder wie sie miteinander asynchron interagieren",
+                "1": "<b>Optionale Struktur</b> – ich möchte Strukturen für die asynchrone studentische Interaktion bereitstellen – es ist aber nicht so wichtig, dass die Strukturen von allen genutzt werden",
+                "2": "<b>Struktur plus Anreizen</b>  – ich möchte Strukturen für die asynchrone studentische Interaktion bereitstellen sowie Anreize, damit möglichst viele Studierende sie nutzen"
+            },
+            "addInfo":[
+                "Die gezielte asynchrone Bearbeitung von Materialien, (z.B. mit interaktiven digitalen Tools) sowie regelmäßiges Feedback können den Lernerfolg deutlich stärken.",
+                "Zudem können Strukturen für asynchronen studentischen Diskurs (z.B. Foren oder Peer-Evaluationen) das Gefühl einer dauerhaften Lerngemeinschaft fördern",
+                "Studierende mit wenig Vorwissen und geringerer Selbststeuerungskompetenz (z.B. Erstsemesterstudierende) brauchen in der Regel mehr Strukturierung (oder auch extrinsische Motivation in Form von Anreizen), um ihre Selbstlernzeiten zu organisieren. [<a href='#source_moerthUFF21'></a>]",
+                "Wenn Studierende bereits eine gute Selbststeuerungskompetenz entwickelt haben (z.B. in späteren Semestern), könnte im Gegensatz eine Überregulierung der asynchronen Teilnahme eher eine Barriere als einen Vorteil darstellen."
+            ]
         },
 
         "gaeste": {
@@ -199,7 +240,6 @@
                 "ja": "Ja"
             },
             "addInfo": "z.B. Collaborative Online International Learning für alle oder ein Teil der Sitzungen"
-        }
-
+        }        
     }
 }

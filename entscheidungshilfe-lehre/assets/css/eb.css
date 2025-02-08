@@ -2,7 +2,7 @@
 :root {
     --whiteFilter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%);
     --networkBlack: hwb(60 21% 79%);
-    --networkTurqoise: #12a19a;
+    --networkTurqoise: rgb(18, 161, 154);
     --networkBlue: hwb(205 6% 28%);
     --networkBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
     --vibrantBlue: #0F70B7;
@@ -248,7 +248,7 @@ ul.tCont, ul.altCont {
     height: 1em;
     width: auto;
     filter: var(--vibrantBlueFilter); 
-    
+    transition: all 0.4s ease;
 }
 
 .tip h5 > span {
@@ -256,10 +256,13 @@ ul.tCont, ul.altCont {
 }
 
 .tip .tipContent {
-    display: none;
+    /* display: none; */
+    height: 0px;
+    overflow: hidden;
     color: var(--vibrantBlue);
     padding: 0 1em;
     margin-top: 0;
+    transition: all 0.4s ease
 }
 
 .tip .tipContent a {
@@ -297,9 +300,9 @@ ul.tCont, ul.altCont {
 .tip.open h5 > img {
     transform: rotate(90deg) translate(-50%, 0);
 }
-.tip.open .tipContent {
+/* .tip.open .tipContent {
     display: block;
-}
+} */
 .tip.open h5:hover {
     background-color: rgba(0,0,0,0);
     color: var(--vibrantBlue);

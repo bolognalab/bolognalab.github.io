@@ -335,10 +335,12 @@ function addTip(tipCode, container){
         let a = th.parentElement
         if (a.classList.contains("open")){
             a.classList.remove("open")
+            a.querySelector(".tipContent").style.height = "0px"
         } else {
             a.classList.add("open")
+            console.log(a.querySelector(".tipContent"))
+            a.querySelector(".tipContent").style.height = a.querySelector(".tipContent").scrollHeight + "px"
         }
-
     }
 
     function addAltResult(resCode, container){
