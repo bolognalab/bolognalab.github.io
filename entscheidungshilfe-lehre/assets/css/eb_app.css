@@ -266,6 +266,102 @@ input[type='radio']:disabled + label, input[type='checkbox']:disabled + label {
     transition: all 0.4s ease;
     cursor: auto;
 }
+
+div.progressBar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 1em;
+    opacity: 0;
+    border: 1px solid rgba(18, 161, 154, 0.2); 
+    border-radius: 1em;
+}
+div.progressBar.discreet {
+    height: 0.4em;
+    width: 15%;
+    left: 90%;
+    top: 5%;
+}
+
+.progressBar .phase {
+    width: calc(25% - 0px);
+    height: 100%;
+    position: absolute;
+    /* border: 1px solid rgba(18, 161, 154, 0.3); */
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 1px solid rgba(18, 161, 154, 0.3);
+    border-bottom: 1px solid rgba(18, 161, 154, 0.3); 
+}
+
+.progressBar .first.phase {
+    border-radius: 1em 0 0 1em;
+    left: 12.5%;
+}
+.progressBar .first.phase:not(.active) {
+    border-right: 1px solid rgba(18, 161, 154, 0.3);
+}
+.progressBar:not(.discreet) .first.phase.active {
+    border-radius: 1em 0.2em 0.2em 1em;
+    border: 1px solid rgba(18, 161, 154, 0.9);
+}
+
+.progressBar .second.phase {
+    left: 37.5%; 
+}
+.progressBar .second.phase:not(.active) {
+    border-right: 1px solid rgba(18, 161, 154, 0.3);
+}
+.progressBar:not(.discreet) .second.phase.active {
+    border-radius: 0.2em;
+    border: 1px solid rgba(18, 161, 154, 0.9);
+}
+
+.progressBar .third.phase {
+    left: 62.5%;
+}
+.progressBar .third.phase:not(.active) {
+    border-right: 1px solid rgba(18, 161, 154, 0.3);
+}
+.progressBar:not(.discreet) .third.phase.active {
+    border-radius: 0.2em;
+    border: 1px solid rgba(18, 161, 154, 0.9);
+}
+
+.progressBar .fourth.phase {
+    border-radius: 0 1em 1em 0em;
+    left: 87.5%;
+}
+.progressBar:not(.discreet) .fourth.phase.active {
+    border-radius: 0.2em 1em 1em 0.2em;
+    border: 1px solid rgba(18, 161, 154, 0.9);
+}
+
+.progressBar .full {
+    background: rgba(18, 161, 154, 0.2);
+    z-index:2
+}
+.progressBar .active {
+    background: rgba(18,161,154,0.1);
+    /* background: linear-gradient(90deg, rgba(18,161,154,0.2) 0%, rgba(255,255,255,1) 100%);     */
+    border-color: var(--networkTurqoise);
+    z-index:3;
+    /* box-shadow:rgb(18, 161, 154); */
+    box-shadow: rgba(18, 161, 154, 0.3) 0px 3px 12px;
+}
+.progressBar:not(.discreet) .active {
+    border: 1.5px solid rgba(18, 161, 154, 0.2);
+}
+div.progressBar.discreet .full {
+    background: rgba(18, 161, 154, 0.4);
+}
+div.progressBar.discreet .active {
+    background: rgb(18,161,154);
+    box-shadow: none;
+}
+
 .qCont .submitButton {
     left: 50%;
     border-radius: 1em;

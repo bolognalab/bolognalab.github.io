@@ -57,6 +57,12 @@
             <h2>Teil 4: Zusätzliche Faktoren</h2>
             <p>Wir sind fast fertig! In den letzten paar Fragen prüfen wir, ob es für Ihren Kurs besondere „Sonderbedingungen“ gelten.</p>
         </div>
+        <div id="progressBar" class="progressBar">
+            <div id="prog1" class="first phase"></div>
+            <div id="prog2" class="second phase"></div>
+            <div id="prog3" class="third phase"></div>
+            <div id="prog4" class="fourth phase"></div>
+        </div>
     </div>
     <h5>Quellen</h5>
     <ol class="sources">
@@ -69,6 +75,8 @@
 <script>   
     const qCont = document.getElementById("questions")
     const maxShownAnswers = 4
+    const progressBar = document.getElementById("progressBar")
+
 
     var all_data, questionInfo, all_scenarios, infoTimeout, infoTimeout2
 
@@ -103,6 +111,11 @@
         'gaeste', 
         'gaesteMittel',
     ]   
+
+    const group1start = questionOrder.indexOf("TEXT_group1")
+    const group2start = questionOrder.indexOf("TEXT_group2")
+    const group3start = questionOrder.indexOf("TEXT_group3")
+    const group4start = questionOrder.indexOf("TEXT_group4")
 
     const checkBoxQuestion = {
         "condition": true,
@@ -167,7 +180,7 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         document.querySelector("#start").style.display = "block"
-        // start()
+        start()
     })
 
     function start(){
@@ -314,6 +327,42 @@
             nButton.disabled = qKey=="situations" || qKey.includes("TEXT_") ? false : true
             pButton.style.display = nextQuestionIdx == 0 || qKey == "TEXT_welcome" ? "none" : "inline"
             nButton.style.display = nextQuestionIdx != 0? "inline" : "none"
+
+            // progress bar: check where we are!
+            let qIndex = questionOrder.indexOf(qKey)
+            console.log(qIndex)
+            document.querySelectorAll(".progressBar .phase").forEach((m)=>m.classList.remove("full", "active"))
+            if (qIndex >= group1start && qIndex < group2start){
+                document.querySelector("#prog1").classList.add("active")
+            }
+            if (qIndex >= group2start && qIndex < group3start){
+                document.querySelector("#prog1").classList.add("full")
+                document.querySelector("#prog2").classList.add("active")
+            }
+            if (qIndex >= group3start && qIndex < group4start){
+                document.querySelector("#prog1").classList.add("full")
+                document.querySelector("#prog2").classList.add("full")
+                document.querySelector("#prog3").classList.add("active")
+            }
+            if (qIndex >= group4start){
+                document.querySelector("#prog1").classList.add("full")
+                document.querySelector("#prog2").classList.add("full")
+                document.querySelector("#prog3").classList.add("full")
+                document.querySelector("#prog4").classList.add("active")
+            }
+
+            // add either to the bottom or to the top right
+            if (qKey.includes("TEXT_")){
+                progressBar.style.opacity=1
+                progressBar.classList.remove("discreet")
+                buttonContainer.append(progressBar)
+            } else {
+                progressBar.style.opacity=0.5
+                progressBar.classList.add("discreet")
+                qDiv.append(progressBar)
+            }
+            
+
         }
 
         setTimeout(function(){
@@ -374,6 +423,7 @@
         if (dummyIdx >= questionOrder.length){
             document.querySelector("#DIV_" + activeQ + " > .buttonContainer").append(sButton)
             sButton.style.display="inline"
+            progressBar.style.opacity=0
             }
         while (dummyIdx < questionOrder.length && includeNextQuestion == false){
             let nextQuestion = questionOrder[dummyIdx]
@@ -393,6 +443,7 @@
             if (dummyIdx >= questionOrder.length){
                 document.querySelector("#DIV_" + activeQ + " > .buttonContainer").append(sButton)
                 sButton.style.display="inline"
+                progressBar.style.opacity=0
             }
         }
 
