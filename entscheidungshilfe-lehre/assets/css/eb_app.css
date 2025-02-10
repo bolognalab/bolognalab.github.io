@@ -282,7 +282,7 @@ div.progressBar.discreet {
     height: 0.4em;
     width: 15%;
     left: 90%;
-    top: 5%;
+    top: 1em;
 }
 
 .progressBar .phase {
@@ -327,7 +327,7 @@ div.progressBar.discreet {
 }
 .progressBar:not(.discreet) .third.phase.active {
     border-radius: 0.2em;
-    border: 1px solid rgba(18, 161, 154, 0.9);
+    /* border: 1px solid rgba(18, 161, 154, 0.9); */
 }
 
 .progressBar .fourth.phase {
@@ -349,10 +349,12 @@ div.progressBar.discreet {
     border-color: var(--networkTurqoise);
     z-index:3;
     /* box-shadow:rgb(18, 161, 154); */
-    box-shadow: rgba(18, 161, 154, 0.3) 0px 3px 12px;
+    /* box-shadow: rgba(19, 143, 231, 0.3) 1px 1px 10px; */
 }
 .progressBar:not(.discreet) .active {
-    border: 1.5px solid rgba(18, 161, 154, 0.2);
+    border: 1.5px solid hsl(205, 85%, 49%);
+    background: hsl(205, 85%, 79%);
+    background: radial-gradient(hsl(205, 85%, 95%) 0%, hsl(205, 85%, 85%) 100%);
 }
 div.progressBar.discreet .full {
     background: rgba(18, 161, 154, 0.4);
