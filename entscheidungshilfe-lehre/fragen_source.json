@@ -24,7 +24,7 @@
             "condition": true,
             "text": "Gibt es Lernziele oder Kurskomponenten, die <b>ausschließlich in Präsenz</b> sinnvoll sind, oder könnte eine*r Studierende alle Lernziele auch online erreichen?",
             "antworten": {
-                "0": "Alle Lernziele des Kurses können <b>sowohl in Präsenz als auch online</b> erreicht werden.",
+                "0": "Alle Lernziele des Kurses können <b>sowohl in Präsenz als auch online</b> gut erreicht werden.",
                 "1": "Alle Lernziele können auch online erreicht werden, aber manche davon <b>nicht so gut online wie in Präsenz</b>.",
                 "2": "Manche Komponenten des Kurses <b>müssen</b> in Präsenz durchgeführt werden."
             },
@@ -32,7 +32,7 @@
                 "Soziale Präsenz ist auch online erreichbar, aber stärker, wenn Personen im selben physischen Raum sind. Gleichzeitig kann Präsenzteilnahme ein Hindernis für manche Studierende sein.",
                 "Bezüglich des Lernerfolgs (wenn es z.B. um Wissenstransfer oder Problemlösen geht) kann gut gestaltete online oder hybride Lehre genauso effektiv sein wie Präsenzlehre. [<a href='#source_moerthUFF21'></a>]",
                 "In dieser Frage geht es um die Notwendigkeit der Präsenz <b>für den Lernerfolg</b> im Kurs und eher nicht um die sozialen Vorteile der physischen Präsenz.",
-                "Einige Beispiele für ausschließlich in Präsenz erreichbare Zielkompetenzen: Arbeit mit Ausrüstungen und Gegenständen, Exkursionen, oder Umgang mit sensiblen Informationen, die nicht online weitergegeben dürfen."
+                "Einige Beispiele für ausschließlich in Präsenz erreichbare Zielkompetenzen: Arbeit mit Ausrüstungen und Gegenständen, Arbeit im Feld, oder Umgang mit sensiblen Informationen, die nicht online weitergegeben dürfen."
             ]
         },
 
@@ -61,7 +61,7 @@
             },
             "addInfo": [
                 "{NO BULLET} Beispiele von zutreffenden Situationen (u.a.):",
-                "Studierende mit Aufenthalt in einem anderen Ort",
+                "Studierende mit Aufenthalt an einem anderen Ort",
                 "Schwerbehinderte Studierende",
                 "Studierende, die unmittelbar vor oder nach Ihrer Veranstaltung eine Lehrveranstaltung an einem weiter entfernten Campus besuchen müssen (z.B. Kombibachelor)"
             ]
@@ -182,13 +182,13 @@
             "condition": true,
             "text": "Wie <b>strukturiert</b> sollte die studentische Interaktion <b>außerhalb der Kurssitzungen</b> sein?",
             "antworten": {
-                "0": "<b>Minimal</b> – ich möchte den Studierenden nicht vorschreiben, wie sie Kursmaterialien nacharbeiten sollen oder wie sie miteinander asynchron interagieren",
+                "0": "<b>Minimal</b> – ich möchte den Studierenden nicht vorschreiben, wie sie Kursmaterialien vor- und nacharbeiten sollen oder wie sie miteinander außerhalb der Sitzungen interagieren",
                 "1": "<b>Optionale Struktur</b> – ich möchte Strukturen für die asynchrone studentische Interaktion bereitstellen – es ist aber nicht so wichtig, dass die Strukturen von allen genutzt werden",
                 "2": "<b>Struktur plus Anreizen</b>  – ich möchte Strukturen für die asynchrone studentische Interaktion bereitstellen sowie Anreize, damit möglichst viele Studierende sie nutzen"
             },
             "addInfo":[
-                "Die gezielte asynchrone Bearbeitung von Materialien, (z.B. mit interaktiven digitalen Tools) sowie regelmäßiges Feedback können den Lernerfolg deutlich stärken.",
-                "Zudem können Strukturen für asynchronen studentischen Diskurs (z.B. Foren oder Peer-Evaluationen) das Gefühl einer dauerhaften Lerngemeinschaft fördern",
+                "Die strukturierte Bearbeitung von Materialien (z.B. mit interaktiven digitalen Tools) sowie das regelmäßige Feedback können den Lernerfolg deutlich stärken.",
+                "Zudem können Strukturen für asynchronen studentischen Diskurs (z.B. Foren oder Peer-Evaluationen) das Gefühl einer <b>dauerhaften Lerngemeinschaft</b> fördern.",
                 "Studierende mit wenig Vorwissen und geringerer Selbststeuerungskompetenz (z.B. Erstsemesterstudierende) brauchen in der Regel mehr Strukturierung (oder auch extrinsische Motivation in Form von Anreizen), um ihre Selbstlernzeiten zu organisieren. [<a href='#source_moerthUFF21'></a>]",
                 "Wenn Studierende bereits eine gute Selbststeuerungskompetenz entwickelt haben (z.B. in späteren Semestern), könnte im Gegensatz eine Überregulierung der asynchronen Teilnahme eher eine Barriere als einen Vorteil darstellen."
             ]
