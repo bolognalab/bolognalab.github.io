@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Die</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #2a2727;
+            background: radial-gradient(#bebec7, #9699c7);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            width: 50%;
+            max-width: 100px;
+            aspect-ratio: 0.5;
+            perspective: 600px;
+            /* background: rgba(255, 255, 255, 0.2) */
+        }
+        .die {
+            width: 100%;
+            aspect-ratio: 1;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 2s ease-in-out;
+            
+        }
+        .face {
+            position: absolute;
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 3px;
+            background: rgb(255, 255, 255);
+            border: 1px solid rgb(21, 20, 20);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: bold;
+            box-shadow: rgba(255, 255, 255, 0.16) 0px 5px 5px 0px, rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
+        }
+        .face img {
+            height: 100%;
+            width: 100%;
+        }
+        .front  { transform: translateZ(50px); background: rgb(145, 247, 189)}
+        .back   { transform: rotateY(180deg) translateZ(50px); background: rgb(153, 196, 209)}
+        .right  { transform: rotateY(90deg) translateZ(50px); background: rgb(188, 135, 237)}
+        .left   { transform: rotateY(-90deg) translateZ(50px); background: rgb(47, 171, 154)}
+        .top    { transform: rotateX(90deg) translateZ(50px); background: rgb(114, 175, 216)}
+        .bottom { transform: rotateX(-90deg) translateZ(50px); background: rgb(103, 121, 207)}
+        
+        button {
+            margin-top: 50px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="die" id="die">
+            <div class="face front"><img src="d6_faces/1.PNG" alt="1"></div>
+            <div class="face back"><img src="d6_faces/6.PNG" alt="6"/></div>
+            <div class="face right"><img src="d6_faces/3.PNG" alt="3"/></div>
+            <div class="face left"><img src="d6_faces/4.PNG" alt="4"/></div>
+            <div class="face top"><img src="d6_faces/5.PNG" alt="5"/></div>
+            <div class="face bottom"><img src="d6_faces/2.PNG" alt="2" /></div>
+        </div>
+    </div>
+    <button onclick="rollDie()">Würfeln</button>
+
+    <script>
+        let currentX = 0;
+        let currentY = 0;
+        const die = document.getElementById("die");
+
+        function rollDie() {
+            let rollNo = 0
+                        
+            // Ensure the die rotates significantly to avoid minimal movement
+            let extraRotationsX = 4 + Math.floor(Math.random() * 4); // At least 4 full spins
+            let extraRotationsY = 4 + Math.floor(Math.random() * 4); // At least 4 full spins
+            
+            let newXRotation = currentX + extraRotationsX * 90;
+            let newYRotation = currentY + extraRotationsY * 90;
+            
+            currentX = newXRotation;
+            currentY = newYRotation;
+            
+            die.style.transform = `rotateX(${newXRotation}deg) rotateY(${newYRotation}deg)`;
+            console.log(document.getElementsByClassName("front")[0].innerHTML)
+            // while (rollNo <4){
+            //     rollNo +=1
+            //     rollDie()
+                
+            // }
+        }
+
+    </script>
+</body>
+</html>
