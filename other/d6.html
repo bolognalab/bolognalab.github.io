@@ -19,7 +19,7 @@
             position: relative;
             width: 50%;
             max-width: 100px;
-            aspect-ratio: 0.5;
+            aspect-ratio: 1;
             perspective: 600px;
             /* background: rgba(255, 255, 255, 0.2) */
         }
@@ -29,6 +29,7 @@
             position: absolute;
             transform-style: preserve-3d;
             transition: transform 2s ease-in-out;
+            cursor: pointer;
             
         }
         .face {
@@ -66,7 +67,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="die" id="die">
+        <div class="die" id="die" onclick="rollDie()">
             <div class="face front"><img src="d6_faces/1.PNG" alt="1"></div>
             <div class="face back"><img src="d6_faces/6.PNG" alt="6"/></div>
             <div class="face right"><img src="d6_faces/3.PNG" alt="3"/></div>
