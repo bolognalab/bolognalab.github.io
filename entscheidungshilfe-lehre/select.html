@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Auswahl Lehr-/Lernszenarien</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="assets/css/eb.css" />
+    <link rel="stylesheet" href="assets/css/eb_app.css" />
+    <script src="assets/js/jquery.min.js"></script>
+</head>
+<style>
+    input[type="checkbox"] + label {
+        margin-left: 8px;
+    }
+    input[type="checkbox"] + label::before {
+        content: " ";
+        display: inline-block;
+        text-align: center;
+        width: 1.1em;
+        height: 1.1em;
+        line-height: 1.1em;
+        margin-right: 5px;
+        border-radius: 3px;
+        border: 1px solid var(--networkTurqoise);
+        color: var(--networkTurqoise)
+    }
+    input[type="checkbox"]:checked + label::before {
+        content: "✔";
+    }
+</style>
+<body class="is-preload" lang="de">
+<div style="width: 100%">
+    <div id="questions">
+        <img class="backgroundImage" src = "images/treeTemp.svg" />
+        <div id="DIV_FORM" class="qDiv">
+            <h2 style="text-align: center"><img id="welcomeLogo" src="images/NHL_logo.svg" /></h2>
+            <h1>Auswahl Lehr-/Lernszenarien</h1>
+            <p>Nutzen Sie die folgenden Filter, um ein Raumkonzept und Tipps für Ihre Lehrveranstaltung zu finden.</p>
+                 <!-- Art der Lehrveranstaltung -->
+                <h2>Art der Lehrveranstaltung</h2>
+                <p>Welche Art von Lehrveranstaltung bieten Sie an?</p>
+                <label for="veranstaltungsart">Wählen Sie die passende Option:</label>
+                <select id="veranstaltungsart" name="veranstaltungsart" required>
+                    <option value="" disabled selected>Bitte wählen...</option>
+                    <option value="vorlesung">Vorlesung</option>
+                    <option value="seminar">Seminar/Übung</option>
+                    <option value="labor">Labor</option>
+                </select>
+        
+                <!-- Format -->
+                <h2>Format</h2>
+                <p>In welchem Format findet Ihre Lehrveranstaltung statt?</p>
+                <label for="format">Wählen Sie die passende Option:</label>
+                <select id="format" name="format" required>
+                    <option value="" disabled selected>Bitte wählen...</option>
+                    <option value="praesenz">Präsenz</option>
+                    <option value="online">Online</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+        
+                <!-- Interaktionsgrad -->
+                <h2>Interaktionsgrad</h2>
+                <p>Wie hoch ist der Interaktionsgrad in Ihrer Lehrveranstaltung?</p>
+                <label for="interaktionsgrad">Wählen Sie die passende Option:</label>
+                <select id="interaktionsgrad" name="interaktionsgrad" required>
+                    <option value="" disabled selected>Bitte wählen...</option>
+                    <option value="niedrig">Niedrig</option>
+                    <option value="mittel">Mittel</option>
+                    <option value="hoch">Hoch</option>
+                </select>
+        
+                <!-- Zusätzliche Bedingungen -->
+                <h2>Zusätzliche Bedingungen</h2>
+                <p>Welche zusätzlichen Bedingungen treffen auf Ihre Lehrveranstaltung zu?</p>
+                
+                    <legend>Wählen Sie alle zutreffenden Optionen aus:</legend>
+                    <input type="checkbox" id="gastvortragende" name="zusaetzliche_bedingungen" value="gastvortragende">
+                    <label for="gastvortragende">Gastvortragende</label><br>
+        
+                    <input type="checkbox" id="exkursionen" name="zusaetzliche_bedingungen" value="exkursionen">
+                    <label for="exkursionen">Exkursionen</label><br>
+        
+                    <input type="checkbox" id="aufzeichnung" name="zusaetzliche_bedingungen" value="aufzeichnung">
+                    <label for="aufzeichnung">Aufzeichnung gewünscht</label>
+            
+        
+                <!-- Submit Button -->
+                <button type="submit">Absenden</button>
+        
+
+            
+            
+            <div id="useCase2Container"><p>oder...</p><a href=''>Ich habe mich schon für ein Lehrformat entschieden und suche dafür didaktische und technische Tipps</a></div>
+        </div>
+    </div>   
+</div>
+<script src="assets/js/jquery.csv.js"></script>
+</body>
+</html>
