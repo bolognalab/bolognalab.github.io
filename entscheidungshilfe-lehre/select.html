@@ -12,12 +12,20 @@
     <script src="assets/js/jquery.min.js"></script>
 </head>
 <style>
+    input[type="checkbox"] {
+        display: none;
+    }
     input[type="checkbox"] + label {
         margin-left: 8px;
+        position: relative
     }
     input[type="checkbox"] + label::before {
         content: " ";
-        display: inline-block;
+        display: block;
+        position: absolute;
+        left: -0.5em;
+        top: 50%;
+        transform: translateY(-50%);
         text-align: center;
         width: 1.1em;
         height: 1.1em;
@@ -25,7 +33,8 @@
         margin-right: 5px;
         border-radius: 3px;
         border: 1px solid var(--networkTurqoise);
-        color: var(--networkTurqoise)
+        color: var(--networkTurqoise);
+        overflow: hidden;
     }
     input[type="checkbox"]:checked + label::before {
         content: "✔";
@@ -40,63 +49,65 @@
             <h1>Auswahl Lehr-/Lernszenarien</h1>
             <p>Nutzen Sie die folgenden Filter, um ein Raumkonzept und Tipps für Ihre Lehrveranstaltung zu finden.</p>
                  <!-- Art der Lehrveranstaltung -->
-                <h2>Art der Lehrveranstaltung</h2>
-                <p>Welche Art von Lehrveranstaltung bieten Sie an?</p>
-                <label for="veranstaltungsart">Wählen Sie die passende Option:</label>
-                <select id="veranstaltungsart" name="veranstaltungsart" required>
-                    <option value="" disabled selected>Bitte wählen...</option>
-                    <option value="vorlesung">Vorlesung</option>
-                    <option value="seminar">Seminar/Übung</option>
-                    <option value="labor">Labor</option>
+                <h2>Welche Art von Lehrveranstaltung bieten Sie an?</h2>
+                <label for="artLV">Art der Lehrveranstaltung:</label>
+                <select id="artLV" name="artLV" required>
+                    <option value="vl" selected>Vorlesung</option>
+                    <option value="se">Seminar/Übung</option>
+                    <option value="pr">Labor oder alternatives Format</option>
                 </select>
         
                 <!-- Format -->
-                <h2>Format</h2>
-                <p>In welchem Format findet Ihre Lehrveranstaltung statt?</p>
-                <label for="format">Wählen Sie die passende Option:</label>
+                <h2>In welchem Format findet die Lehrveranstaltung statt?</h2>
+                <label for="format">Format:</label>
                 <select id="format" name="format" required>
-                    <option value="" disabled selected>Bitte wählen...</option>
-                    <option value="praesenz">Präsenz</option>
-                    <option value="online">Online</option>
-                    <option value="hybrid">Hybrid</option>
+                    <option value="praes" selected>Präsenz</option>
+                    <option value="onl">Online</option>
+                    <option value="hyb">Hybrid</option>
                 </select>
         
                 <!-- Interaktionsgrad -->
-                <h2>Interaktionsgrad</h2>
-                <p>Wie hoch ist der Interaktionsgrad in Ihrer Lehrveranstaltung?</p>
-                <label for="interaktionsgrad">Wählen Sie die passende Option:</label>
-                <select id="interaktionsgrad" name="interaktionsgrad" required>
-                    <option value="" disabled selected>Bitte wählen...</option>
-                    <option value="niedrig">Niedrig</option>
-                    <option value="mittel">Mittel</option>
-                    <option value="hoch">Hoch</option>
+                <h2>Wie hoch ist der Interaktionsgrad in Ihrer Lehrveranstaltung?</h2>
+                <label for="syncInt">Interaktionsgrad:</label>
+                <select id="syncInt" name="syncInt" required>
+                    <option value="0" selected>Niedrig</option>
+                    <option value="1">Mittel</option>
+                    <option value="2">Hoch</option>
                 </select>
         
                 <!-- Zusätzliche Bedingungen -->
                 <h2>Zusätzliche Bedingungen</h2>
                 <p>Welche zusätzlichen Bedingungen treffen auf Ihre Lehrveranstaltung zu?</p>
-                
-                    <legend>Wählen Sie alle zutreffenden Optionen aus:</legend>
-                    <input type="checkbox" id="gastvortragende" name="zusaetzliche_bedingungen" value="gastvortragende">
-                    <label for="gastvortragende">Gastvortragende</label><br>
-        
-                    <input type="checkbox" id="exkursionen" name="zusaetzliche_bedingungen" value="exkursionen">
-                    <label for="exkursionen">Exkursionen</label><br>
-        
-                    <input type="checkbox" id="aufzeichnung" name="zusaetzliche_bedingungen" value="aufzeichnung">
-                    <label for="aufzeichnung">Aufzeichnung gewünscht</label>
+                <input type="checkbox" id="gaeste" name="zusaetzliche_bedingungen" value="gaeste">
+                <label for="gaeste">Gastvortragende</label><br>
+    
+                <input type="checkbox" id="exkur" name="zusaetzliche_bedingungen" value="exkur">
+                <label for="exkur">Exkursionen</label><br>
+    
+                <input type="checkbox" id="aufz" name="zusaetzliche_bedingungen" value="aufz">
+                <label for="aufz">Aufzeichnung gewünscht</label>
             
         
                 <!-- Submit Button -->
-                <button type="submit">Absenden</button>
-        
-
-            
-            
-            <div id="useCase2Container"><p>oder...</p><a href=''>Ich habe mich schon für ein Lehrformat entschieden und suche dafür didaktische und technische Tipps</a></div>
+                <button onclick="selectConcept()" >Absenden</button>
+            <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung des Lehrformats</a></div>
         </div>
     </div>   
 </div>
 <script src="assets/js/jquery.csv.js"></script>
+<script>
+    function selectConcept(){
+        let artLV = document.getElementById("artLV").value
+        let format = document.getElementById("format").value
+        let syncInt = document.getElementById("syncInt").value
+        let gaeste = document.getElementById("gaeste").checked
+        let exkur = document.getElementById("exkur").checked
+        let aufz = document.getElementById("aufz").checked
+
+        let URLstring = `?artLV=${artLV}&format=${format}&syncInt=${syncInt}&gaeste=${gaeste}&exkur=${exkur}&aufz=${aufz}`
+        console.log(URLstring)
+        window.open("set_result.html"+URLstring, "_self")
+    }
+</script>
 </body>
 </html>
