@@ -20,7 +20,11 @@
 }
 h3.colorfulHeading {
     margin-top: 1.5em;
-    color: #5b89b0;
+    color: #009ee3 !important;
+    font-size: 1.2em;
+}
+h4.colorfulHeading {
+	font-size: 1em;
 }
 .colorfulHeading2 {
 	color: #003366;
