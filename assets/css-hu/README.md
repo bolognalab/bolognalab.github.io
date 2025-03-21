@@ -8,6 +8,7 @@ This folder contains CSS style sheets that are "hosted" here and used in the HU 
 * [landingPage.css](landingPage.css)
 * [teamPage.css](teamPage.css)
 * [courseList.css](courseList.css)
+* [themenwoche-2025.css](themenwoche-2025.css)
 * [thl-events.css](thl-events.css)
 * [thl-events-hiddenTOCp1.css](thl-events-hiddenTOCp1.css)
 * [thl-events-hiddenTOCp2.css](thl-events-hiddenTOCp2.css)
