@@ -1,4 +1,4 @@
-/* external hosting for styling HU content*/
+    /* external hosting for styling HU content*/
 
 .tableHeading {
 	color: #003366;
@@ -7,9 +7,20 @@
 .tabStop {
 	margin-left: 2em;
 }
+.tabStop h5 {
+    font-size: 1em;
+    margin-bottom: 0
+}
+.tabStop p {
+    margin-top: 0;
+}
 .colorfulHeading {
 	color: #003366;
 	font-weight: bold;
+}
+h3.colorfulHeading {
+    margin-top: 1.5em;
+    color: #5b89b0;
 }
 .colorfulHeading2 {
 	color: #003366;
@@ -84,18 +95,20 @@
 	height: 650px
 }
 @media screen and (max-width: 600px) {
-	.wrapperScheduleTHL {
-	overflow: scroll; 
-	height: 1000px
-}
-	
-.scheduleTHL {
-	transform: scale(0.6667, 06667) translate(-25%, -25%);
-}
+        .wrapperScheduleTHL {
+        overflow: scroll; 
+        height: 1000px
+    }
 
-/* hiding elements on desktop-mode */
-@media screen and (min-width: 736px) {
-	.mobileOnly {
-		display: none
-	}
+    .scheduleTHL {
+        transform: scale(0.6667, 06667) translate(-25%, -25%);
+    }
+
+    /* hiding elements on desktop-mode */
+    @media screen and (min-width: 736px) {
+        .mobileOnly {
+            display: none
+        }
+    }
+
 }
