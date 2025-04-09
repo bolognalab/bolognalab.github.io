@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Entscheidungshilfe</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="de">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="../../entscheidungshilfe-lehre/assets/css/eb.css" />
+  <script src="../../entscheidungshilfe-lehre/assets/js/jquery.min.js"></script>
+  <script src="../../entscheidungshilfe-lehre/assets/js/jquery.csv.js"></script>
+  <style>
+    .tCont .metadata {
+        font-size: 0.7em;
+        color: black;
+    }
+  </style>
+</head>
+<body class="is-preload resultBg" lang="de">
+<div id="result" class="rCont">
+    <h1>Alle Tipps</h1>
+    <div id="resSync" class="block sync">
+        <h3>Synchron</h3>
+        <ul class="tCont"></ul>
+    </div>
+    <div id="resAsync" class="block async">
+        <h3>Asynchron</h3>
+        <ul class="tCont"></ul>
+    </div>
+    <div id="resAnderes" class="block sync">
+        <h3>Andere</h3>
+        <ul class="tCont"></ul>
+    </div>
+</div>
+<script>
+    $.get( "../../entscheidungshilfe-lehre/texts_tips_matrix.csv", function(CSVdata) {
+        let csvData = $.csv.toObjects(CSVdata, {separator:';'});
+        all_texts = {}
+        tip_matching = {}
+        csvData.forEach(function(dict){
+            let key = dict["wert"]
+            delete dict["wert"]
+            all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
+            all_texts[key]["name"] = dict["name"]
+            tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
+        })
+        $.get("../../entscheidungshilfe-lehre/tips_source.json", function(json){
+            all_tips = json["tips"]
+            Object.entries(all_tips).forEach(function(item){
+                let tipType = item[1]["type"]
+                let containerId = tipType == "synchron" ? "resSync" : tipType == "asynchron" ? "resAsync" : "resAnderes"
+                let container = document.querySelector("#" + containerId + " > ul")
+                addTip(item[0], container)
+            })
+        })
+        
+    });
+
+    function addTip(tipCode, container){
+        let tipli = document.createElement("li"); container.append(tipli)
+                tipli.classList.add("tip")
+                let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
+                tipHeader.innerHTML = "<img src='../../entscheidungshilfe-lehre/images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
+                let tipContent = document.createElement("p"); tipli.append(tipContent)
+                tipContent.classList.add("tipContent")
+                tipContent.innerHTML = all_tips[tipCode]["content"] + "<br><span class='metadata'>Code:</span>"
+                
+                tipHeader.setAttribute("onclick", "showHideTip(this)")
+                labelTip(tipCode, tipli)
+
+    }
+
+    function labelTip(tipCode, container){
+        // adding metadata
+        let scenariosWithThisTip = Object.entries(tip_matching).filter(function([k,v]){
+            return Object.values(v).some((val)=>val.includes(tipCode))
+        })
+        let appearanceString = '<br>Erscheint bei: '
+        scenariosWithThisTip.forEach(([k,v])=>{
+            let keys = Object.keys(Object.fromEntries(Object.entries(v).filter(([key, val])=>val.includes(tipCode))))
+            let keysStripped = keys.map((string) => string.replace('tips_', ' ' ))
+            appearanceString = appearanceString + ( "<b>" + k + "</b> (" + keysStripped + ") ● ")
+        })
+        let metaDataBox = container.getElementsByClassName("metadata")[0]
+        setTimeout(()=>{metaDataBox.innerHTML = "Code: <b>" + tipCode + "</b>" + appearanceString}, 500)
+    }
+
+    function showHideTip(th){
+        let a = th.parentElement
+        if (a.classList.contains("open")){
+            a.classList.remove("open")
+            a.querySelector(".tipContent").style.height = "0px"
+        } else {
+            a.classList.add("open")
+            console.log(a.querySelector(".tipContent"))
+            a.querySelector(".tipContent").style.height = a.querySelector(".tipContent").scrollHeight + "px"
+        }
+    }
+
+</script>
+</body>
+</html?
