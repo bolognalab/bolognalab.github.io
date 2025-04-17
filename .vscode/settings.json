@@ -1,3 +1,8 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "bolognalab.github.io"
+    "liveServer.settings.multiRootWorkspaceName": "bolognalab.github.io",
+    "cSpell.language": "en,de-DE",
+    "cSpell.words": [
+        "Excalidraw",
+        "stummgeschaltet"
+    ]
 }
