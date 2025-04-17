@@ -6,9 +6,8 @@
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-  <link rel="stylesheet" href="../assets/css/eb.css" />
-<script src="../assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../entscheidungshilfe-lehre/assets/css/eb.css" />
+<script src="../../entscheidungshilfe-lehre/assets/js/jquery.min.js"></script>
 <style>
     #qChoiceCont {
         /* display: grid;
@@ -51,7 +50,7 @@
     <div id="scenarios" class="sCont"></div>
     
 </div>
-<script src="../assets/js/jquery.csv.js"></script>
+<script src="../../entscheidungshilfe-lehre/assets/js/jquery.csv.js"></script>
 <script>
     const qCont = document.getElementById("questions")
     const sCont = document.getElementById("scenarios")
@@ -151,14 +150,14 @@
 
 
 
-    $.getJSON("data.json", function(json){
+    $.getJSON("../../entscheidungshilfe-lehre/data.json", function(json){
         all_data = json
         questionInfo = json['questions']
         all_scenarios = json['scenarios']
         questionChoices()
         questionOrder = getCheckedBoxes("qChoice")
         initializeQuestions()
-        $.get( "texts_tips_matrix.csv", function(CSVdata) {
+        $.get( "../../entscheidungshilfe-lehre/texts_tips_matrix.csv", function(CSVdata) {
             let csvData = $.csv.toObjects(CSVdata, {separator:';'});
             all_texts = {}
             tip_matching = {}
@@ -169,7 +168,7 @@
                 all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
                 tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
             })
-            $.get("tips_source.json", function(json){
+            $.get("../../entscheidungshilfe-lehre/tips_source.json", function(json){
                 all_tips = json["tips"]
                 // setTimeout(showResult('se-rem-2-1-1', specialCases=[], topTier=['se-rem-2-1-1']), 500)
             })

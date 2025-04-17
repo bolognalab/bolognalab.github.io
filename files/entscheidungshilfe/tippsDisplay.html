@@ -58,6 +58,7 @@
     function addTip(tipCode, container){
         let tipli = document.createElement("li"); container.append(tipli)
                 tipli.classList.add("tip")
+                tipli.setAttribute("id", tipCode)
                 let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
                 tipHeader.innerHTML = "<img src='../../entscheidungshilfe-lehre/images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
                 let tipContent = document.createElement("p"); tipli.append(tipContent)

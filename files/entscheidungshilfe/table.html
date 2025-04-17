@@ -6,9 +6,9 @@
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-  <link rel="stylesheet" href="../assets/css/eb.css" />
-<script src="../assets/js/jquery.min.js"></script>
+  <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="../../assets/css/eb.css" />
+<script src="../../assets/js/jquery.min.js"></script>
 </head>
 <body class="is-preload" lang="de">
     <h2>Tabelle-Ansicht - Entscheidungshilfe Online und Hybride Lehre</h2>
@@ -39,7 +39,7 @@
  
     var shownScenarios = ['vl-ringhyb1-0-0-0', 'vl-ringhyb2-0-0-0', 'vl-ringonl-0-0-0', 'vl-ringpraes-0-0-0']
 
-    $.getJSON("data.json", function(json){
+    $.getJSON("../../entscheidungshilfe-lehre/data.json", function(json){
         all_data = json
         questionInfo = json['questions']
         all_scenarios = json['scenarios']
