@@ -8,7 +8,8 @@
     --vibrantBlue: #0F70B7;
     --vibrantBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
     --networkTurqoiseFilter: brightness(0) saturate(100%) invert(71%) sepia(67%) saturate(5756%) hue-rotate(142deg) brightness(88%) contrast(86%);
-    --backgroundLightBlue: #D2E4F1;
+    --backgroundLightBlue: #d0e3f1;
+    --backgroundLightGreen: #d8f3f2;
 }
 
 body {
