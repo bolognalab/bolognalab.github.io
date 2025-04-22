@@ -85,21 +85,33 @@
     }
     div.textImageOverlay {
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
         align-items: flex-start;
         justify-content: space-between;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
+
     .textImageOverlay > *:first-child {
         flex-grow: 2
     }
     .textImageOverlay img {
-        width: 30%;
+        width: 100%;
+        min-width: 210px;
         flex-grow: 1;
         padding-top: 2em;
-        padding-left: 1em;
         /* float:right; */
     }
+
+    @media only screen and (min-width: 600px){
+        div.textImageOverlay {
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+        .textImageOverlay img {
+            padding-left: 1em;
+        }
+    }
+
     #pageCover {
         position: fixed;
         top: 0%;
@@ -289,6 +301,7 @@
     </div>
     <div class="contentContainer article" id="diskussionsskript">
         <h2>Was ist ein Diskussionsskript?</h2>
+        <!-- <img style="width: 40%; float:right" class="preview" src="images/mini-artikel/diskussionsskript.jpg" alt="Zyklus einer beispielhaften strukturierten Interaktion im Klassenraum: Die Lehrperson stellt eine Frage, einige Zeit wird eingeplant, damit die Studierenden einzeln denken, und erst danach meldet sich eine/r der Studierenden."/> -->
         <p>Ein Diskussionsskript (auf Englisch <em>"discussion protocol"</em> oder <em>"discussion script"</em>) ist eine Anleitung, die Diskussionsphasen innerhalb eines Kurses eine gewisse Struktur gibt. Es könnte den Ablauf der Diskussion in <b>Phasen</b> gliedern oder Studierenden <b>Rollen</b> verteilen, um den Lernprozess zu fokussieren und um die aktive Beteiligung aller Kursteilnehmenden zu fördern.</p>
         <p>Diskussionen im Rahmen einer Lehrveranstaltung bringen eine Menge "versteckter" Erwartungen für Studierende mit sich: im Gegensatz zu informalen Gesprächen müssen sich Studierende in einer großen Gruppe von Studierenden als kompetent erweisen und relevante Fragen stellen, ohne dabei die Diskussion zu dominieren. Eine Strukturierung der Diskussion durch Diskussionsskripte hilft als Strategie der <b>inklusiven Lehre</b> dabei, Muster und Hierarchien zu unterbrechen, die manche Gruppen von Studierenden ausschließen oder systemische Ungleichheiten verstärken.</p>
         <p>Das folgende Beispiel-Diskussionsskript wurde von S. E. Silverman für eine Lernaktivität entwickelt, bei der Studierende Fallbeispiele zum Thema Neurodiversität in der Hochschullehre besprechen sollten. In diesem Beispiel haben Studierende zunächst die Möglichkeit, individuell zu denken, bevor sie in einer bestimmten Reihenfolge in verschiedenen Phasen zur Diskussion beitragen.</p>
