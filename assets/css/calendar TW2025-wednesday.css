@@ -425,7 +425,7 @@ Main Components
 .cd-schedule .single-event[data-event="event-4"],
 .cd-schedule [data-event="event-4"] .header-bg {
   /* this is used to set a background color for the event and the modal window */
-  background: #059931;
+  background: rgba(5, 153, 49, 0.9);
   /* border-radius: 5px; */
   border-radius: 0;
 }

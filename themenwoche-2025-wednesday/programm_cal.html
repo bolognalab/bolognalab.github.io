@@ -71,6 +71,32 @@
         overflow: hidden;
       }
 
+      /* minimized */
+      @media only screen and (min-width: 800px){
+        .events, .single-event, .events-group, .events-group > ul, .event-time, .event-name, .top-info, .timeline {
+          transition: all 0.5s ease;
+        }
+        .events.minimized {
+          border-bottom: 0 !important; 
+        }
+        .single-event.minimized {
+          background: rgba(5, 153, 49, 0.6) !important;
+        }
+        .events-group.minimized {
+          border: 0 !important;
+        }
+        .events-group.minimized > ul {
+          background: rgba(0,0,0,0) !important;
+        }
+        .event-time.minimized, .event-name.minimized {
+          color: rgba(0,0,0,0) !important;
+        }
+        .top-info.minimized, .timeline.minimized {
+          visibility: hidden;
+        }
+      }
+      
+
      </style> 
 	</head>
 	<body class="is-preload">

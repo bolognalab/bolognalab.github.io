@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  https://codepen.io/oltika/pen/GNvdgV
+-->
+<html lang="de-DE">
+	<head>
+		<title>Themenwoche 2025: Programm</title>
+		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/calendar.css" />
+    <link rel="stylesheet" href="../assets/css/md.css" />
+ 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <script src="../assets/js/jquery.min.js"></script>
+    <style>
+      /* Title */
+      .inner {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      .inner h1 {
+        font-size:2em;
+        font-weight: bold;
+        color: #00376c;
+        margin-top: 2em;
+      }
+      .inner .subtitle {
+        /* text-align: center;  */
+        font-size: 1.7em; 
+        font-weight: bold; 
+        color: #00376c; 
+        opacity: 0.5; 
+        margin-top: 0.2em;
+      }
+      @media screen and (min-width: 800px){
+        .inner .subtitle  {
+          text-align: center;
+        }
+      }
+      .inner h2 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 1.5em;
+      }
+      @media only screen and (min-width: 800px) {
+        .inner {
+        margin: auto;
+        max-width: 1500px;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      .inner h1 {
+        text-align: center;
+        font-size:2em;
+        font-weight: bold;
+        color: #00376c;
+        margin-top: 2em;
+      }
+      }
+      /* credits */
+      #credits {
+        color: #777;
+        padding-bottom: 10%;
+        font-size: 80%
+      }
+      #credits h2 {
+        margin-top: 3em;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #aaa
+      }
+      #credits p {
+        font-size:70%;
+        margin-top: 1em;
+      }
+      #credits a {
+        color: inherit;
+        border-bottom: solid 1px
+      }
+      @media only screen and (min-width: 800px) {
+      #credits p {
+        font-size: 100%;
+      }
+      }
+      .accordion, .panel {
+              max-width: 700px;
+            }
+            .accordion {
+              background-color: #ddd;
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              border: none;
+              text-align: left;
+              outline: none;
+              font-size: 15px;
+              transition: 0.4s;
+            }
+            .accordion::before {
+              content: '►';
+/*               font-size: 1.1em; */
+              font-weight: bold;
+              color: #aaa; 
+              padding-right: 1em;
+            }
+            .active, .accordion:hover {
+              background-color: #eee;
+            }
+            h2.active {
+              color: #777 !important;
+            }
+            .active::before {
+              content: '▼'
+            }
+            .panel {
+              padding: 0 18px;
+              max-height: 0;
+              background-color: #eee;
+              overflow: hidden;
+              transition: max-height 0.2s ease-out;
+            }
+            .panel > *:last-child {
+              margin-bottom: 1.2em;
+            }
+     </style>
+     <style>
+      /* neues */
+      .dayContainer {
+        width: 100%;
+        aspect-ratio: 0.9;
+        display: flex;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: space-evenly
+      }
+      .dayBlock {
+        width: calc(33.33% - 1em);;
+        height: 100%;
+        border-radius: 1em;
+        background: gray;
+        overflow: hidden;
+        transition: all 0.5s ease;
+      }
+      .dayBlock.notShown {
+        width: 0;
+      }
+      .dayBlock.shown {
+        overflow: visible;
+        z-index: 3;
+        width: 100%;
+      }
+      .dayBlock h2 {
+        text-align: center;
+      }
+      .dayBlock.shown iframe {
+        width: 100%;
+        transition: all 0.5s ease;
+      }
+      .dayBlock iframe.minimized {
+        visibility: hidden;
+        transform: scaleX(33.33%) translateX(-100%)        
+      }
+      .dayBlock.loaded iframe.minimized {
+        visibility: visible;
+        opacity: 0.5;
+      }
+      .dayBlock.loaded:hover {
+        cursor: pointer;
+      }
+      .dayBlock.loaded:hover > iframe {
+        visibility: visible;
+      }
+      .dayBlock.loaded:hover > iframe.minimized {
+        pointer-events: none;
+      }
+      
+     </style>
+
+	</head>
+
+
+	<body class="is-preload" lang="de">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+        <header id="header">
+          <div class="inner">
+            <h1>Themenwoche Lehre 2025 - Nachhaltiges Lehren und Lernen</h1>
+            <p class="subtitle" style="margin-bottom: 3em">Programm</p>
+          </div>
+        </header>
+
+				<!-- Main -->
+        <div class="inner">
+          <div class="dayContainer" style="width: 100%; aspect-ratio: 0.9">
+            <div class="dayBlock">
+              <h2>Dienstag, 3.6.</h2>
+              <iframe id="frameDi" class="iframe minimized" src="../themenwoche-2025-tdl/programm_cal.html" width="300%" height="100%"></iframe>
+            </div>
+            <div class="dayBlock">
+              <h2>Mittwoch, 4.6.</h2>
+          <iframe id="frameMi" class="iframe minimized" src="../themenwoche-2025-wednesday/programm_cal.html" width="300%" height="100%"></iframe>
+            </div>
+            <div class="dayBlock">
+              <h2>Donnerstag, 5.6.</h2>
+              <iframe id="frameDo" class="iframe minimized" src="../themenwoche-2025-thursday/programm_cal.html" width="300%" height="100%"></iframe>
+            </div>
+          </div>
+          
+          
+          
+        </div>
+        <div class="inner" id="credits">
+          <h2 class="accordion">Credits</h2>
+          <div class="panel">
+            <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> mithilfe von Github Pages, angepasst von Laura Schilow</p>
+            <p>Programmorganisation: bologna.lab</p>
+            <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+            <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
+          </div>
+        </div>  
+			</div>
+      <script>
+        // functions
+        function minimizeDay(iFrameId){
+          let iframe = document.getElementById(iFrameId)
+          iframe.classList.add("minimized")
+          iframe.contentDocument.querySelectorAll(".events, .event-time, .event-name, .single-event, .top-info, .timeline, .events-group").forEach((text)=>{
+              text.classList.add("minimized")
+            })
+          iframe.parentElement.classList.remove("shown")
+          document.querySelectorAll(".dayBlock").forEach((m)=>{
+            m.classList.remove("shown")
+            m.classList.remove("notShown")
+          })
+        }
+        function showDay(iFrameId){
+          let iframe = document.getElementById(iFrameId)
+          iframe.classList.remove("minimized")
+          iframe.contentDocument.querySelectorAll(".events, .event-time, .event-name, .single-event, .top-info, .timeline, .events-group").forEach((text)=>{
+              text.classList.remove("minimized")
+            })
+          document.querySelectorAll(".dayBlock").forEach((m)=>{
+            if (m.querySelector("iframe").id==iFrameId){
+              m.classList.add("shown")
+            } else {
+              m.classList.add("notShown")
+            }
+          })
+        }
+
+        // loading
+        setTimeout(()=>{
+          minimizeDay("frameDi")
+          minimizeDay("frameMi")
+          minimizeDay("frameDo")
+          document.querySelectorAll("iframe").forEach((m)=>{
+            m.parentElement.classList.add("loaded")
+            m.parentElement.addEventListener("click", function(){
+              if (m.parentElement.classList.contains("shown")){
+                minimizeDay(m.id)
+              } else {
+                showDay(m.id)
+              }
+            })
+          })
+        }, 1500)
+
+        
+
+
+
+      </script>
+	</body>
+</html>

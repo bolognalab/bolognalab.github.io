@@ -70,7 +70,32 @@
       div.event-modal {
         overflow: hidden;
       }
-
+      
+      /* minimized */
+      @media only screen and (min-width: 800px){
+              .events, .single-event, .events-group, .events-group > ul, .event-time, .event-name, .top-info, .timeline {
+                transition: all 0.5s ease;
+              }
+              .events.minimized {
+                border-bottom: 0 !important; 
+              }
+              .single-event.minimized {
+                background: rgba(5, 153, 49, 0.6) !important;
+              }
+              .events-group.minimized {
+                border: 0 !important;
+              }
+              .events-group.minimized > ul {
+                background: rgba(0,0,0,0) !important;
+              }
+              .event-time.minimized, .event-name.minimized {
+                color: rgba(0,0,0,0) !important;
+              }
+              .top-info.minimized, .timeline.minimized {
+                visibility: hidden;
+              }
+            }
+            
      </style> 
 	</head>
 	<body class="is-preload">
@@ -78,17 +103,35 @@
     <div class="cd-schedule loading" id="schedule">
       <div class="timeline">
         <ul>
-          <!-- <li><span>14:30</span></li>
-          <li><span>15:00</span></li> -->
+          <li><span>08:00</span></li>
+          <li><span>08:30</span></li>
+          <li><span>09:00</span></li>
+          <li><span>09:30</span></li>
+          <li><span>10:00</span></li>
+          <li><span>10:30</span></li>
+          <li><span>11:00</span></li>
+          <li><span>11:30</span></li>
+          <li><span>12:00</span></li>
+          <li><span>12:30</span></li>
+          <li><span>13:00</span></li>
+          <li><span>13:30</span></li>
+          <li><span>14:00</span></li>
+          <li><span>14:30</span></li>
+          <li><span>15:00</span></li>
           <li><span>15:30</span></li>
           <li><span>16:00</span></li>
           <li><span>16:30</span></li>
           <li><span>17:00</span></li>
           <li><span>17:30</span></li>
           <li><span>18:00</span></li>
-          <li><span>18:30</span></li>
+          <li><span>18:30</span></li> 
           <li><span>19:00</span></li>
-          <!-- <li><span>19:30</span></li> -->
+          <li><span>19:30</span></li> 
+          <li><span>20:00</span></li>
+          <li><span>20:30</span></li> 
+          <li><span>21:00</span></li>
+          <li><span>21:30</span></li> 
+          <li><span>22:00</span></li>
         </ul>
         
           
@@ -133,9 +176,9 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script>
       // Conflicts to place on the left
-      const conflictsLeft = ["event-bigworkshop"]
+      const conflictsLeft = []
       // Conflicts to place on the right
-      const conflictsRight = ["event-musik"]
+      const conflictsRight = []
 
       //define hashtags/topics for each event
       const eventTypes = {
