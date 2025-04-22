@@ -64,8 +64,11 @@
     p + h3, ul + h3 {
         margin-top: 2em;
     }
-    .citation {
-        color: var(--networkTurqoise)
+    .citation, .footnote {
+        color: var(--networkTurqoise);
+    }
+    .footnote {
+        text-align: right;
     }
     img.preview {
         cursor: pointer;
@@ -157,134 +160,156 @@
 </head>
 <body onload="listsAndCitations()"> 
 <div class="bgContainer">
-<img class="backgroundImage" src = "images/treeTemp.svg" />
-<div class="contentContainer overview">
-    <h2 style="text-align: center"><img src="images/NHL_logo.svg" style="width: 200px" /></h2>
-    <h1 style="text-align: center">Mini-Artikel</h1>
-    <h2 style="text-align:center">Entscheidungshilfe Hybride und Digitale Lehre</h2>
-    <p>Diese ergänzenden Mini-Artikel beziehen sich auf mehrere hybride und digitale Lernszenarien, die im <a href="app.html">Entscheidungshilfe-Tool Hybride und Digitale Lehre</a> vorgestellt werden, und enthalten ausführlichere Informationen zu ausgewählten Themen. Diese Seite ist nicht als eigenständiger Leitfaden gedacht, sondern als Sammlung von Mini-Artikeln, die als einzelne Einheiten zu verlinken sind.</p>
-    <h3>Liste der Mini-Artikel:</h3>
-    <ul id="toc">
-    </ul>
-
-</div>
-<div class="contentContainer article" id="methode-padlet">
-    <h2>Methoden-Idee: Erstellung und Präsentation von Gruppenarbeiten mit Padlet</h2>
-    <p>Hier wird am Beispiel des Tools <a href="https://padlet.com/">Padlet</a> beschrieben, wie Gruppenarbeiten während eines Seminars oder einer Vorlesung einfach und automatisch in eine gesamte Präsentation oder ein Dokument umgewandelt werden können. In einem Padlet-Board werden zuerst Abschnitte als "Breakout-Links" erstellt, so dass jede Gruppe in einem eigenen Padlet-Board arbeiten kann. In der Gruppenarbeit-Phase sammeln die Teilnehmenden Ergebnisse als Beiträge ("Posts") mit verschiedenen Formatmöglichkeiten. Für die Plenumsphase wird aus allen Breakout-Abschnitten durch die Funktion "Diashow" eine gesamte Präsentation erstellt, sodass alle Gruppen nacheinander ihre Ergebnisse präsentieren können. Die Methode wird hier für einen hybriden Raum beschrieben, ist aber auch für den rein-Online oder rein-vor-Ort Unterricht geeignet.</p>
-    <h3>Voraussetzungen</h3>
-    <ul>
-        <li>Vor-Ort-Teilnehmende haben mindestens ein Laptop mit Internetverbindung pro Gruppe.</li>
-        <li>Ausreichende Zeit für die Gruppen- und Präsentationsphasen (45-90 Minuten) oder asynchrone Gruppenphase</li>
-    </ul>
-    <h3>Vorbereitung durch die Lehrperson</h3>
-    <ul>
-        <li>Padlet im Format „Diashow“ erstellen, ein Abschnitt pro Gruppe</li>
-        <li>Nach Bedarf neue aufgabespezifische Post-Felder erstellen (z.B. „Quelle“)</li>
-        <li>Breakout-Links der Abschnitte zur Verfügung stellen (evtl. als QR mithilfe eines anderen Tools)</li>
-        <li>Ein Abschnitt mit Anweisungen als Einführung und Beispiel für die Studierenden</li>
-    </ul>
-    <h3>Gruppenarbeit im physischen Raum</h3>
-    <ul>
-        <li>Verteilung der TN auf Arbeitsgruppen</li>
-        <li>Empfehlung: Breakout-Link des Padlet-Abschnitts nutzen (weniger Ablenkung) und dies als QR-Code teilen oder im Learnmanagementsystem im Voraus bereitstellen.</li>
-        <li>Arbeit entweder direkt am Padlet, oder in einem anderen digitalen oder analogen Medium</li>
-        <li>Am Ende der Gruppenarbeitsphase: analoge Inhalte ggf. abfotografieren, digitale Inhalte ggf. als PDF/Bild exportieren, Inhalte auf Padlet hochladen, Reihenfolge usw. organisieren </li>
-    </ul>
-    <h3>Gruppenarbeit im virtuellen/hybriden Raum</h3>
-    <ul>
-        <li>Nutzung von Breakout-Rooms im Webkonferenz-Tool; Gruppierung entweder rein-online oder gemischt (eigenes Gerät der Präsenz-TN notwendig)</li>
-        <li>Empfehlung: Breakout-Link des Padlet-Abschnitts nutzen (weniger Ablenkung) und dies im Chat teilen.sketch</li>
-        <li>Arbeit direkt am Padlet oder mit einem anderen digitalen Tool</li>
-        <li>Am Ende der Gruppenarbeitsphase: Inhalte ggf. exportieren & auf Padlet hochladen, Reihenfolge usw. organisieren</li>
-    </ul>
-    <h3>Präsentationsphase im hybriden Raum</h3>
-    <ul>
-        <li>Präsentation automatisch erstellt (1 „Post“ = 1 Folie)</li>
-        <li>Lehrperson gibt Bildschirm mit der Präsentation frei</li>
-        <li>jemand aus jeder Gruppe präsentiert die Gruppenergebnisse</li>
-        <li>für die Online-TN muss evtl. jemand vor Ort die Steuerung der Folien übernehmen</li>
-    </ul>
-    <h3>Nachbereitung</h3>
-    <p>Das Padlet in Präsentationsform kann als PDF exportiert werden und allen Studierenden bereitgestellt, damit die Ergebnisse der Gruppenarbeit später nachlesbar sind.</p>
-    <h3>Zu beachten</h3>
-    <p>Padlet ist <a href="https://legal.padlet.com/gdpr" >laut seiner Datenschutzrichtlinie</a> DSGVO-konform, aber die Datenschutzrichtlinien der einzelnen Hochschulen könnten die Nutzung einschränken. Prüfen Sie die Richtlinien Ihrer Einrichtung und erwägen Sie die Verwendung alternativer Optionen, um ein ähnliches Ergebnis zu erzielen, wie z. B. <a href="https://www.taskcards.de/#/home/start" aria-label="Task Cards">Task Cards</a> (eine kostengünstigere Padlet-Alternative) oder eine Whiteboard-basierte App wie <a href="https://excalidraw.com/" aria-label="Excalidraw">Excalidraw</a>.</p>
-    <p class="citation"></p>
-</div>
-<div class="contentContainer article" id="breakoutRoomsHybrid">
-    <h2>Breakout-Gruppen für hybride Gruppenarbeiten</h2>
-    <p>Hier wird ein Vorschlag beschrieben, wie Breakout Sessions geplant werden können, damit in einem hybriden Setting gemischte Teilnehmergruppen von vor-Ort und Online-Teilnehmenden ("heterogene Gruppen") zusammenarbeiten können. Hier wird als Beispiel Zoom verwendet, aber ähnliche Funktionen sind in anderen Videokonferenzplatformen verfügbar</p>
-    <div class="importantText"><p><b>Wichtig</b>: Der Aufbau von hybriden Gruppenarbeiten in Breakout-Gruppen ist aufwendig und muss im Voraus getestet und den Teilnehmenden erklärt werden, um kritische Tonprobleme (Rückkopplung oder gegenseitige Störung der Gruppen) zu vermeiden. Es ist sehr empfehlenswert, sich ein:e Co-Moderator:in zu suchen (z.B. studentische Hilfskraft), wenn Sie hybride Gruppenaktivitäten auf diese Weise durchführen wollen.</p></div>
-    <h3>Voraussetzungen</h3>
-    <ul>
-        <li>Der Raum vor Ort muss groß genug sein, damit verschiedene Gruppen getrennt ohne gegenseitige Störung arbeiten können. Manche Raumkonzepte enthalten <a href="https://www.uv.uio.no/om/organisasjon/idea/english/resources-for-teachers/room-241/innovative-technology-and-flexible-layouts.html" aria-label="bewegliche Trennwände oder Tischtrennwände">bewegliche Trennwände oder Tischtrennwände</a>, die besonders geeignet für solche Gruppenarbeiten sind. Wenn die Anzahl an Gruppen sehr gering ist, könnten auch Nebenräume für die Gruppenarbeit benutzt werden.</li>
-        <li>Vor Ort muss für jede Gruppe mindestens ein Laptop/PC mit Internetverbindung und Stromanschluss <b>bereitgestellt</b> oder <b>von Studierenden mitgebracht</b> werden, womit die vor-Ort Teilnehmenden an einer Breakout-Sitzung teilnehmen können.</li>
-        <li>Online-Teilnehmenden müssen von einem Ort aus teilnehmen, wo sie laut sprechen dürfen und sich aktiv einbringen können.</li>
-        <li>Innerhalb einer Kurssitzung soll dieselbe Gruppenaufteilung benutzt werden, um den Prozess möglichst unkompliziert zu halten.</li>
-        <li>Planen Sie ausreichend Zeit für solche Gruppenarbeiten ein - für den Aufbau zu Beginn der Sitzung, um Anweisungen zu geben, und die Übergänge der Studierenden im physischen und im virtuellen Raum.</li>
-    </ul>
-    <h4 id="bghga-s1">Situation 1: Geräte für die Gruppenarbeit werden durch die Lehrkraft bereitgestellt</h4>
-    <h3>Im Vorfeld der Sitzung</h3>
-    <ul>
-        <li>Bereiten Sie einige Schilder vor, um die verschiedenen Tische oder Räume zu kennzeichnen, die für die Gruppenarbeit genutzt werden (Tisch 1, Tisch 2, etc.).</li>
-        <li>Bereiten Sie für jeden Tisch ein kurzes Handout vor, das den Teilnehmern vor Ort erklärt, wie und wann sie die Lautstärke ändern oder das Mikrofon des Geräts lauter und leiser stellen sollen - sowohl der Lautsprecher als auch das Mikrofon müssen außerhalb der Gruppenarbeitszeit (wenn sich alle in der „Hauptsitzung“ der Zoom-Konferenz befinden) stummgeschaltet, während der Breakout-Sitzungen lauter gestellt und danach wieder stummgeschaltet werden. Je nach der erwarteten Gruppengröße müssen auch Kopfhörer oder eine ausreichend niedrige Lautstärke verwendet werden.</li>
-        <li>Richten Sie die Breakout-Sitzungen vorab in Zoom ein. Wenn die Software es zulässt (Zoom schon), benennen Sie die Breakout-Rooms intuitiv um: Idealerweise sollte der Raumname sowohl den Namen des vor-Ort-teilnehmenden Geräts als auch etwaige spezielle Themen enthalten, die in der Gruppe diskutiert werden (z. B. „Tisch 1 - Thema A“). Aktivieren Sie die ggf. Option, dass die Teilnehmer sich selbst einen Breakout-Raum auswählen können. Dieser Schritt könnte auch am Anfang der Sitzung (nachdem die Videokonferenz gestartet ist) passieren.</li>
-    </ul>
-    <h3>Zu Beginn der Sitzung</h3>
-    <div class="textImageOverlay">
-
-    <ul>
-        <li>Geben Sie sich Zeit für den Aufbau (mindestens 15 Min.) der physischen und virtuellen Räume.</li>
-        <li>Stellen Sie sicher, dass alle nicht-fest-installierte Geräte (z.B. Laptops and verschiedenen Tischen) an die Stromversorgung angeschlossen sind.</li>
-        <li>Schalten Sie zu Beginn der Sitzung alle Geräte ein und nehmen Sie von jedem Gerät aus an der Zoom-Call teil. Geben Sie im Zoom jedem teilnehmenden Gerät einen intuitiven Namen, der idealerweise einem Ort oder dem physischen Raum entspricht (z. B. Tisch 1, Tisch 2, Raum 2). Stellen Sie an jedem Tisch Schilder auf, damit die vor-Ort-Teilnehmenden sie schnell identifizieren können.</li>
-        <li>Wenn sich alle Geräte im selben Raum befinden (auch wenn sie weit voneinander entfernt sind), stellen Sie sicher, dass die Lautstärke der Geräte auf Null gestellt <b>und</b> das Mikrofon stummgeschaltet ist.</li>
-        <li>Weisen Sie die teilnehmenden Geräte ("Tisch 1", "Tisch 2", usw., die sich bereits in dem Zoom-Call befinden sollten) den einzelnen Breakout-Räumen zu.</li>
-        <li>Ermöglichen Sie Teilnehmenden, jederzeit zur Hauptsitzung zurückzukehren, um Hilfe zu erhalten.</li>
-        <li>Falls noch nicht getan, bestimmen Sie sonstige Eigenschaften für die Breakout-Session, z.B. Zeitlimit oder Countdown-Timer</li>
-    </ul>
-    <img class="preview" src="images/mini-artikel/breakoutsHybrid_1.png" />
-    </div>
-    <h3>Nach dem Anfang der Sitzung, vor der Breakout-Phase</h3>
-    <div class="textImageOverlay">
-        
-        <div>
-            <p>Weisen Sie alle anderen Online-Teilnehmenden den Breakout-Räumen zu: 
-            <ul>
-                <li>Wenn Sie allein lehren, ist es am besten, den Teilnehmern Anweisungen zur Einteilung der Gruppen zu geben und sie ihren Breakout-Raum selbst auswählen zu lassen.</li>
-                <li>Wenn die Kurssitzung durch mehr als eine Person moderiert wird, sollte eine Person die Teilnehmenden manuell den Breakout-Räumen zuweisen, nachdem sie dem Zoom-Call beigetreten sind und vor Beginn der Breakout-Session, während die andere Person die Sitzung leitet. </li>
-            </ul>
-            </p>
-        </div>
-        <img class="preview" src="images/mini-artikel/breakoutsHybrid_2.png" />
-    </div>
-    
-    <h3>Zu Beginn und zum Ende der Breakout-Session</h3>
-    <div class="textImageOverlay">
-        <div>
-        <ul>
-            <li>Geben Sie allen Studierenden einen klaren Überblick darüber, was Sie während der Breakout-Session erleben und tun werden und (falls zutreffend) wie sie den Breakout-Raum auswählen sollten, den sie beitreten. Dies ist besonders dann notwendig, wenn Sie diesen Prozess zum ersten Mal mit Ihren Studierenden ausprobieren.</li>
-            <li>Geben Sie den vor-Ort-Teilnehmenden Zeit, sich an die entsprechenden Tische zu setzen (sie brauchen mehr Zeit als die Online-Teilnehmenden, um sich anzupassen). Wenn möglich, lassen Sie die Teilnehmenden während der gesamten Sitzung an den entsprechenden Tischen sitzen.</li>
-            <li>Falls mehrere vor-Ort Studierende aus derselben Gruppe sich wünschen, sich in dem Zoom-Call teilzunehmen und einen Breakout-Raum beizutreten (z.B. um ein Whiteboard oder den Chat zu nutzen), muss nochmal sichergestellt werden, dass sie an dem Zoom-Call <b>ohne Audio-Verbindung</b> teilnehmen, um Rückkopplungen zu vermeiden.</li>
-            <li>Die Lautstärke der vor-Ort Geräte muss angepasst werden, damit die Stimme der Online-Teilnehmenden nur für ihre Gruppenmitglieder hörbar ist.</li>
-            <li>Die Lehrperson(en) sollen in der Hauptsitzung bleiben - erstens, um sich Fragen zukommen lassen und zweitens, weil Tonprobleme entstehen könnten, wenn das Gerät der Lehrperson mit Audioverbindung denselben Breakout-Raum beitritt wie ein nahe gelegenes Gerät.</li>
+    <img class="backgroundImage" src = "images/treeTemp.svg" />
+    <div class="contentContainer overview">
+        <h2 style="text-align: center"><img src="images/NHL_logo.svg" style="width: 200px" /></h2>
+        <h1 style="text-align: center">Mini-Artikel</h1>
+        <h2 style="text-align:center">Entscheidungshilfe Hybride und Digitale Lehre</h2>
+        <p>Diese ergänzenden Mini-Artikel beziehen sich auf mehrere hybride und digitale Lernszenarien, die im <a href="app.html">Entscheidungshilfe-Tool Hybride und Digitale Lehre</a> vorgestellt werden, und enthalten ausführlichere Informationen zu ausgewählten Themen. Diese Seite ist nicht als eigenständiger Leitfaden gedacht, sondern als Sammlung von Mini-Artikeln, die als einzelne Einheiten zu verlinken sind.</p>
+        <h3>Liste der Mini-Artikel:</h3>
+        <ul id="toc">
         </ul>
-        </div>
-        <img class="preview" src="images/mini-artikel/breakoutsHybrid_3.png" />
+
     </div>
-    <div class="importantText">
-        <p><b>Wichtig:</b> kurz vor dem Ende der Breakout-Sessions müssen alle Geräte vor Ort wieder stummgeschaltet werden (sowohl das Mikrofon als auch der Lautsprecher), bevor sie zur Hauptsitzung zurückkehren. Nutzen Sie am Besten die Funktion eines Countdown-Timers, um den Studierenden diese Anweisung zu geben.</p>
+    <div class="contentContainer article" id="methode-padlet">
+        <h2>Methoden-Idee: Erstellung und Präsentation von Gruppenarbeiten mit Padlet</h2>
+        <p>Hier wird am Beispiel des Tools <a href="https://padlet.com/">Padlet</a> beschrieben, wie Gruppenarbeiten während eines Seminars oder einer Vorlesung einfach und automatisch in eine gesamte Präsentation oder ein Dokument umgewandelt werden können. In einem Padlet-Board werden zuerst Abschnitte als "Breakout-Links" erstellt, so dass jede Gruppe in einem eigenen Padlet-Board arbeiten kann. In der Gruppenarbeit-Phase sammeln die Teilnehmenden Ergebnisse als Beiträge ("Posts") mit verschiedenen Formatmöglichkeiten. Für die Plenumsphase wird aus allen Breakout-Abschnitten durch die Funktion "Diashow" eine gesamte Präsentation erstellt, sodass alle Gruppen nacheinander ihre Ergebnisse präsentieren können. Die Methode wird hier für einen hybriden Raum beschrieben, ist aber auch für den rein-Online oder rein-vor-Ort Unterricht geeignet.</p>
+        <h3>Voraussetzungen</h3>
+        <ul>
+            <li>Vor-Ort-Teilnehmende haben mindestens ein Laptop mit Internetverbindung pro Gruppe.</li>
+            <li>Ausreichende Zeit für die Gruppen- und Präsentationsphasen (45-90 Minuten) oder asynchrone Gruppenphase</li>
+        </ul>
+        <h3>Vorbereitung durch die Lehrperson</h3>
+        <ul>
+            <li>Padlet im Format „Diashow“ erstellen, ein Abschnitt pro Gruppe</li>
+            <li>Nach Bedarf neue aufgabespezifische Post-Felder erstellen (z.B. „Quelle“)</li>
+            <li>Breakout-Links der Abschnitte zur Verfügung stellen (evtl. als QR mithilfe eines anderen Tools)</li>
+            <li>Ein Abschnitt mit Anweisungen als Einführung und Beispiel für die Studierenden</li>
+        </ul>
+        <h3>Gruppenarbeit im physischen Raum</h3>
+        <ul>
+            <li>Verteilung der TN auf Arbeitsgruppen</li>
+            <li>Empfehlung: Breakout-Link des Padlet-Abschnitts nutzen (weniger Ablenkung) und dies als QR-Code teilen oder im Learnmanagementsystem im Voraus bereitstellen.</li>
+            <li>Arbeit entweder direkt am Padlet, oder in einem anderen digitalen oder analogen Medium</li>
+            <li>Am Ende der Gruppenarbeitsphase: analoge Inhalte ggf. abfotografieren, digitale Inhalte ggf. als PDF/Bild exportieren, Inhalte auf Padlet hochladen, Reihenfolge usw. organisieren </li>
+        </ul>
+        <h3>Gruppenarbeit im virtuellen/hybriden Raum</h3>
+        <ul>
+            <li>Nutzung von Breakout-Rooms im Webkonferenz-Tool; Gruppierung entweder rein-online oder gemischt (eigenes Gerät der Präsenz-TN notwendig)</li>
+            <li>Empfehlung: Breakout-Link des Padlet-Abschnitts nutzen (weniger Ablenkung) und dies im Chat teilen.sketch</li>
+            <li>Arbeit direkt am Padlet oder mit einem anderen digitalen Tool</li>
+            <li>Am Ende der Gruppenarbeitsphase: Inhalte ggf. exportieren & auf Padlet hochladen, Reihenfolge usw. organisieren</li>
+        </ul>
+        <h3>Präsentationsphase im hybriden Raum</h3>
+        <ul>
+            <li>Präsentation automatisch erstellt (1 „Post“ = 1 Folie)</li>
+            <li>Lehrperson gibt Bildschirm mit der Präsentation frei</li>
+            <li>jemand aus jeder Gruppe präsentiert die Gruppenergebnisse</li>
+            <li>für die Online-TN muss evtl. jemand vor Ort die Steuerung der Folien übernehmen</li>
+        </ul>
+        <h3>Nachbereitung</h3>
+        <p>Das Padlet in Präsentationsform kann als PDF exportiert werden und allen Studierenden bereitgestellt, damit die Ergebnisse der Gruppenarbeit später nachlesbar sind.</p>
+        <h3>Zu beachten</h3>
+        <p>Padlet ist <a href="https://legal.padlet.com/gdpr" >laut seiner Datenschutzrichtlinie</a> DSGVO-konform, aber die Datenschutzrichtlinien der einzelnen Hochschulen könnten die Nutzung einschränken. Prüfen Sie die Richtlinien Ihrer Einrichtung und erwägen Sie die Verwendung alternativer Optionen, um ein ähnliches Ergebnis zu erzielen, wie z. B. <a href="https://www.taskcards.de/#/home/start" aria-label="Task Cards">Task Cards</a> (eine kostengünstigere Padlet-Alternative) oder eine Whiteboard-basierte App wie <a href="https://excalidraw.com/" aria-label="Excalidraw">Excalidraw</a>.</p>
+        <p class="citation"></p>
+    </div>
+    <div class="contentContainer article" id="breakoutRoomsHybrid">
+        <h2>Breakout-Gruppen für hybride Gruppenarbeiten</h2>
+        <p>Hier wird ein Vorschlag beschrieben, wie Breakout Sessions geplant werden können, damit in einem hybriden Setting gemischte Teilnehmergruppen von vor-Ort und Online-Teilnehmenden ("heterogene Gruppen") zusammenarbeiten können. Hier wird als Beispiel Zoom verwendet, aber ähnliche Funktionen sind in anderen Videokonferenzplatformen verfügbar</p>
+        <div class="importantText"><p><b>Wichtig</b>: Der Aufbau von hybriden Gruppenarbeiten in Breakout-Gruppen ist aufwendig und muss im Voraus getestet und den Teilnehmenden erklärt werden, um kritische Tonprobleme (Rückkopplung oder gegenseitige Störung der Gruppen) zu vermeiden. Es ist sehr empfehlenswert, sich ein:e Co-Moderator:in zu suchen (z.B. studentische Hilfskraft), wenn Sie hybride Gruppenaktivitäten auf diese Weise durchführen wollen.</p></div>
+        <h3>Voraussetzungen</h3>
+        <ul>
+            <li>Der Raum vor Ort muss groß genug sein, damit verschiedene Gruppen getrennt ohne gegenseitige Störung arbeiten können. Manche Raumkonzepte enthalten <a href="https://www.uv.uio.no/om/organisasjon/idea/english/resources-for-teachers/room-241/innovative-technology-and-flexible-layouts.html" aria-label="bewegliche Trennwände oder Tischtrennwände">bewegliche Trennwände oder Tischtrennwände</a>, die besonders geeignet für solche Gruppenarbeiten sind. Wenn die Anzahl an Gruppen sehr gering ist, könnten auch Nebenräume für die Gruppenarbeit benutzt werden.</li>
+            <li>Vor Ort muss für jede Gruppe mindestens ein Laptop/PC mit Internetverbindung und Stromanschluss <b>bereitgestellt</b> oder <b>von Studierenden mitgebracht</b> werden, womit die vor-Ort Teilnehmenden an einer Breakout-Sitzung teilnehmen können.</li>
+            <li>Online-Teilnehmenden müssen von einem Ort aus teilnehmen, wo sie laut sprechen dürfen und sich aktiv einbringen können.</li>
+            <li>Innerhalb einer Kurssitzung soll dieselbe Gruppenaufteilung benutzt werden, um den Prozess möglichst unkompliziert zu halten.</li>
+            <li>Planen Sie ausreichend Zeit für solche Gruppenarbeiten ein - für den Aufbau zu Beginn der Sitzung, um Anweisungen zu geben, und die Übergänge der Studierenden im physischen und im virtuellen Raum.</li>
+        </ul>
+        <h4 id="bghga-s1">Situation 1: Geräte für die Gruppenarbeit werden durch die Lehrkraft bereitgestellt</h4>
+        <h3>Im Vorfeld der Sitzung</h3>
+        <ul>
+            <li>Bereiten Sie einige Schilder vor, um die verschiedenen Tische oder Räume zu kennzeichnen, die für die Gruppenarbeit genutzt werden (Tisch 1, Tisch 2, etc.).</li>
+            <li>Bereiten Sie für jeden Tisch ein kurzes Handout vor, das den Teilnehmern vor Ort erklärt, wie und wann sie die Lautstärke ändern oder das Mikrofon des Geräts lauter und leiser stellen sollen - sowohl der Lautsprecher als auch das Mikrofon müssen außerhalb der Gruppenarbeitszeit (wenn sich alle in der „Hauptsitzung“ der Zoom-Konferenz befinden) stummgeschaltet, während der Breakout-Sitzungen lauter gestellt und danach wieder stummgeschaltet werden. Je nach der erwarteten Gruppengröße müssen auch Kopfhörer oder eine ausreichend niedrige Lautstärke verwendet werden.</li>
+            <li>Richten Sie die Breakout-Sitzungen vorab in Zoom ein. Wenn die Software es zulässt (Zoom schon), benennen Sie die Breakout-Rooms intuitiv um: Idealerweise sollte der Raumname sowohl den Namen des vor-Ort-teilnehmenden Geräts als auch etwaige spezielle Themen enthalten, die in der Gruppe diskutiert werden (z. B. „Tisch 1 - Thema A“). Aktivieren Sie die ggf. Option, dass die Teilnehmer sich selbst einen Breakout-Raum auswählen können. Dieser Schritt könnte auch am Anfang der Sitzung (nachdem die Videokonferenz gestartet ist) passieren.</li>
+        </ul>
+        <h3>Zu Beginn der Sitzung</h3>
+        <div class="textImageOverlay">
+
+        <ul>
+            <li>Geben Sie sich Zeit für den Aufbau (mindestens 15 Min.) der physischen und virtuellen Räume.</li>
+            <li>Stellen Sie sicher, dass alle nicht-fest-installierte Geräte (z.B. Laptops and verschiedenen Tischen) an die Stromversorgung angeschlossen sind.</li>
+            <li>Schalten Sie zu Beginn der Sitzung alle Geräte ein und nehmen Sie von jedem Gerät aus an der Zoom-Call teil. Geben Sie im Zoom jedem teilnehmenden Gerät einen intuitiven Namen, der idealerweise einem Ort oder dem physischen Raum entspricht (z. B. Tisch 1, Tisch 2, Raum 2). Stellen Sie an jedem Tisch Schilder auf, damit die vor-Ort-Teilnehmenden sie schnell identifizieren können.</li>
+            <li>Wenn sich alle Geräte im selben Raum befinden (auch wenn sie weit voneinander entfernt sind), stellen Sie sicher, dass die Lautstärke der Geräte auf Null gestellt <b>und</b> das Mikrofon stummgeschaltet ist.</li>
+            <li>Weisen Sie die teilnehmenden Geräte ("Tisch 1", "Tisch 2", usw., die sich bereits in dem Zoom-Call befinden sollten) den einzelnen Breakout-Räumen zu.</li>
+            <li>Ermöglichen Sie Teilnehmenden, jederzeit zur Hauptsitzung zurückzukehren, um Hilfe zu erhalten.</li>
+            <li>Falls noch nicht getan, bestimmen Sie sonstige Eigenschaften für die Breakout-Session, z.B. Zeitlimit oder Countdown-Timer</li>
+        </ul>
+        <img class="preview" src="images/mini-artikel/breakoutsHybrid_1.png" />
+        </div>
+        <h3>Nach dem Anfang der Sitzung, vor der Breakout-Phase</h3>
+        <div class="textImageOverlay">
+            
+            <div>
+                <p>Weisen Sie alle anderen Online-Teilnehmenden den Breakout-Räumen zu: 
+                <ul>
+                    <li>Wenn Sie allein lehren, ist es am besten, den Teilnehmern Anweisungen zur Einteilung der Gruppen zu geben und sie ihren Breakout-Raum selbst auswählen zu lassen.</li>
+                    <li>Wenn die Kurssitzung durch mehr als eine Person moderiert wird, sollte eine Person die Teilnehmenden manuell den Breakout-Räumen zuweisen, nachdem sie dem Zoom-Call beigetreten sind und vor Beginn der Breakout-Session, während die andere Person die Sitzung leitet. </li>
+                </ul>
+                </p>
+            </div>
+            <img class="preview" src="images/mini-artikel/breakoutsHybrid_2.png" />
+        </div>
+        
+        <h3>Zu Beginn und zum Ende der Breakout-Session</h3>
+        <div class="textImageOverlay">
+            <div>
+            <ul>
+                <li>Geben Sie allen Studierenden einen klaren Überblick darüber, was Sie während der Breakout-Session erleben und tun werden und (falls zutreffend) wie sie den Breakout-Raum auswählen sollten, den sie beitreten. Dies ist besonders dann notwendig, wenn Sie diesen Prozess zum ersten Mal mit Ihren Studierenden ausprobieren.</li>
+                <li>Geben Sie den vor-Ort-Teilnehmenden Zeit, sich an die entsprechenden Tische zu setzen (sie brauchen mehr Zeit als die Online-Teilnehmenden, um sich anzupassen). Wenn möglich, lassen Sie die Teilnehmenden während der gesamten Sitzung an den entsprechenden Tischen sitzen.</li>
+                <li>Falls mehrere vor-Ort Studierende aus derselben Gruppe sich wünschen, sich in dem Zoom-Call teilzunehmen und einen Breakout-Raum beizutreten (z.B. um ein Whiteboard oder den Chat zu nutzen), muss nochmal sichergestellt werden, dass sie an dem Zoom-Call <b>ohne Audio-Verbindung</b> teilnehmen, um Rückkopplungen zu vermeiden.</li>
+                <li>Die Lautstärke der vor-Ort Geräte muss angepasst werden, damit die Stimme der Online-Teilnehmenden nur für ihre Gruppenmitglieder hörbar ist.</li>
+                <li>Die Lehrperson(en) sollen in der Hauptsitzung bleiben - erstens, um sich Fragen zukommen lassen und zweitens, weil Tonprobleme entstehen könnten, wenn das Gerät der Lehrperson mit Audioverbindung denselben Breakout-Raum beitritt wie ein nahe gelegenes Gerät.</li>
+            </ul>
+            </div>
+            <img class="preview" src="images/mini-artikel/breakoutsHybrid_3.png" />
+        </div>
+        <div class="importantText">
+            <p><b>Wichtig:</b> kurz vor dem Ende der Breakout-Sessions müssen alle Geräte vor Ort wieder stummgeschaltet werden (sowohl das Mikrofon als auch der Lautsprecher), bevor sie zur Hauptsitzung zurückkehren. Nutzen Sie am Besten die Funktion eines Countdown-Timers, um den Studierenden diese Anweisung zu geben.</p>
+        </div>
+        
+        <h4 id="bghga-s2">Situation 2: Studierende benutzen ihre eigenen Geräte für die Teilnahme an Breakout-Räumen</h4>
+        <p>Die Vorbereitung und Durchführung einer hybriden Gruppenarbeit mithilfe mitgebrachter Geräte der vor-Ort Studierenden läuft fast genauso wie die Situation mit bereitgestellten Geräten. Wichtig zu beachten ist, dass:</p>
+        <ul>
+            <li>Da es in dieser Situation mehr „Freiheitsgrade“ gibt, ist es umso wichtiger, mit den Studierenden über den technischen Aufbau zu sprechen und darüber, was sie tun sollten, um Tonprobleme zu vermeiden.</li>
+            <li>Wie in der ersten Situation, sollte <b>nur ein vor-Ort-Gerät mit Audioverbindung</b> pro Breakout-Raum teilnehmen. Weitere Studierende können sich ebenfalls den Breakout-Raum beitreten und ihre Camera einschalten, müssen das aber <b>ohne Audioverbindung</b> tun.</li>
+            <li>Die Lehrperson muss im Voraus einen Überblick davon haben, welche studentische Geräte vor Ort für die Breakout-Sitzung verbunden werden, damit die Zuweisung der Breakout-Räume nahtlos geschehen kann.</li>
+            <li>Zur schnelleren Identifizierung könnten sich die Studierenden, die mit Audioverbindung den Breakout-Raum beitreten werden, auf Zoom  umbenennen (z.B. "Christian B. (Gruppe 2)")</li>
+        </ul>
+        <p class="citation"></p>
+    </div>
+    <div class="contentContainer article" id="diskussionsskript">
+        <h2>Was ist ein Diskussionsskript?</h2>
+        <p>Ein Diskussionsskript (auf Englisch <em>"discussion protocol"</em> oder <em>"discussion script"</em>) ist eine Anleitung, die Diskussionsphasen innerhalb eines Kurses eine gewisse Struktur gibt. Es könnte den Ablauf der Diskussion in <b>Phasen</b> gliedern oder Studierenden <b>Rollen</b> verteilen, um den Lernprozess zu fokussieren und um die aktive Beteiligung aller Kursteilnehmenden zu fördern.</p>
+        <p>Diskussionen im Rahmen einer Lehrveranstaltung bringen eine Menge "versteckter" Erwartungen für Studierende mit sich: im Gegensatz zu informalen Gesprächen müssen sich Studierende in einer großen Gruppe von Studierenden als kompetent erweisen und relevante Fragen stellen, ohne dabei die Diskussion zu dominieren. Eine Strukturierung der Diskussion durch Diskussionsskripte hilft als Strategie der <b>inklusiven Lehre</b> dabei, Muster und Hierarchien zu unterbrechen, die manche Gruppen von Studierenden ausschließen oder systemische Ungleichheiten verstärken.</p>
+        <p>Das folgende Beispiel-Diskussionsskript wurde von S. E. Silverman für eine Lernaktivität entwickelt, bei der Studierende Fallbeispiele zum Thema Neurodiversität in der Hochschullehre besprechen sollten. In diesem Beispiel haben Studierende zunächst die Möglichkeit, individuell zu denken, bevor sie in einer bestimmten Reihenfolge in verschiedenen Phasen zur Diskussion beitragen.</p>
+        <div class="importantText">
+            <h3>Diskussionsskript für das Besprechen eines Fallbeispiels in einer Kleingruppe</h3>
+            <p>Kontext: Die Teilnehmer:innen des Kurses sollen über fiktionale Szenarien (Fallbeispiele) diskutieren, in denen eine oder mehrere Personen mit einer schwierigen Situation oder einem Dilemma in Bezug auf Neurodiversität in der Lehre konfrontiert sind. Es werden pro Fallbeispiel eine oder zwei allgemeine Diskussionsfragen bereitgestellt. Die Teilnehmer:innen müssen anhand dieser Fragen in Kleingrppen diskutieren, neue Diskussionsfragen entwickeln und mögliche "Lösungen" für das Dilemma des Fallbeispiels vorschlagen. Die folgenden Anweisungen werden als "Skript" für die Diskussion in Kleingruppen gegeben werden.</p>
+            <ol>
+                <li>Eine Person kann sich freiwillig melden, um das Fallbeispiel laut vorzulesen.</li>
+                <li>Geben Sie jeder Person Zeit, den Fall in Ruhe vorzulesen und sich Notizen zu machen.</li>
+                <li>Phase 1: Zu jedem Fall gibt es ein oder zwei Diskussionsfragen. Bevor Sie diese Fragen besprechen, gehen Sie um Ihren Tisch herum und geben Sie jeder Person die Möglichkeit, eine weitere Frage hinzuzufügen, die ihr beim Lesen in den Sinn gekommen ist.</li>
+                <li>Phase 2: Bieten Sie jeder Person die Möglichkeit, ihre Ideen darüber auszutauschen, wie die Personen in dem Fallbeispiel reagieren könnten. Ein Rundgang um den Tisch könnte eine gute Möglichkeit sein, um sicherzustellen, dass jeder zu Wort kommt.</li>
+                <li>Für die Diskussion im Plenum am Ende der Kleingruppenphase werden sowohl gesprochene als auch Textbeiträge erbeten.</li>
+            </ol>
+            <p class="footnote">Übersetztes Beispiel von Sarah E. Silverman (2024)</p>
+        </div>
+        <p>Mehr lesen (auf Englisch): <a href="https://beyondthescope.substack.com/p/discussion-protocols-in-defense-of?utm_campaign=post&utm_medium=web" aria-label="Sarah Silverman (2024): Discussion protocols: In defense of a 'script'">Sarah Silverman (2024): <b>Discussion protocols: In defense of a "script"</b>. <em>Beyond the Scope</em>.</a></p>
+        <p class="citation"></p>
     </div>
     
-    <h4 id="bghga-s2">Situation 2: Studierende benutzen ihre eigenen Geräte für die Teilnahme an Breakout-Räumen</h4>
-    <p>Die Vorbereitung und Durchführung einer hybriden Gruppenarbeit mithilfe mitgebrachter Geräte der vor-Ort Studierenden läuft fast genauso wie die Situation mit bereitgestellten Geräten. Wichtig zu beachten ist, dass:</p>
-    <ul>
-        <li>Da es in dieser Situation mehr „Freiheitsgrade“ gibt, ist es umso wichtiger, mit den Studierenden über den technischen Aufbau zu sprechen und darüber, was sie tun sollten, um Tonprobleme zu vermeiden.</li>
-        <li>Wie in der ersten Situation, sollte <b>nur ein vor-Ort-Gerät mit Audioverbindung</b> pro Breakout-Raum teilnehmen. Weitere Studierende können sich ebenfalls den Breakout-Raum beitreten und ihre Camera einschalten, müssen das aber <b>ohne Audioverbindung</b> tun.</li>
-        <li>Die Lehrperson muss im Voraus einen Überblick davon haben, welche studentische Geräte vor Ort für die Breakout-Sitzung verbunden werden, damit die Zuweisung der Breakout-Räume nahtlos geschehen kann.</li>
-        <li>Zur schnelleren Identifizierung könnten sich die Studierenden, die mit Audioverbindung den Breakout-Raum beitreten werden, auf Zoom  umbenennen (z.B. "Christian B. (Gruppe 2)")</li>
-    </ul>
-    <p class="citation"></p>
 </div>
-</div>
+
 <div id="pageCover"></div>
 <div id="imagePreviewer"><img src="" /><p id="imageClose">&#10006;</p></div>
 <script>
