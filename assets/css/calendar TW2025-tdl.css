@@ -247,8 +247,8 @@ Main Components
     width: 100%;
   }
   .cd-schedule .events .events-group {
-    /* this defines the width of the column, day */
-    width: 20%;
+    /* this defines the width of the column */
+    width: 25%;
     float: left;
     border: 1px solid #EAEAEA;
     /* reset style */
@@ -280,7 +280,7 @@ Main Components
     margin-bottom: 0;
   }
   .cd-schedule .events .events-group > ul {
-    height: 950px;
+    height:1350px;
     /* reset style */
     display: block;
     overflow: visible;
@@ -404,7 +404,9 @@ Main Components
 .hashtag.event-3 {
   background: #f59645;
 }
-
+.hashtag.event-4 {
+  background: #ffd400;
+}
 .cd-schedule .event-date, .cd-schedule .event-time {
   /* they are not included in the the HTML but added using JavScript */
   font-size: 1.5rem;
@@ -413,19 +415,21 @@ Main Components
   margin-bottom: .2em;
 }
 
-/* event-1: diskussion, event-2: impuls für die Praxis, event-3: Kompetenzentwicklung */
+/* event-1: diskussion, event-2: impuls für die Praxis, event-3: Kompetenzentwicklung, event-4: Aktivität */
 .cd-schedule .single-event[data-event="event-1"],
 .cd-schedule [data-event="event-1"] .header-bg,
 .cd-schedule .single-event[data-event="event-2"],
 .cd-schedule [data-event="event-2"] .header-bg,
 .cd-schedule .single-event[data-event="event-3"],
-.cd-schedule [data-event="event-3"] .header-bg {
+.cd-schedule [data-event="event-3"] .header-bg,
+.cd-schedule .single-event[data-event="event-4"],
+.cd-schedule [data-event="event-4"] .header-bg {
   /* this is used to set a background color for the event and the modal window */
-  background: #00376c;
+  background: #059931;
   /* border-radius: 5px; */
   border-radius: 0;
-  
 }
+
 .cd-schedule .single-event[data-event="event-1"]{
   border-top: solid 12px #ee4694;
 }
@@ -435,27 +439,17 @@ Main Components
 .cd-schedule .single-event[data-event="event-3"]{
   border-top: solid 12px #f59645;
 }
-
+.cd-schedule .single-event[data-event="event-4"]{
+  border-top: solid 12px #ffd400;
+}
+/* this is used to define the colour of the event when you hover */
 .cd-schedule .single-event[data-event="event-1"]:hover,
 .cd-schedule .single-event[data-event="event-2"]:hover,
-.cd-schedule .single-event[data-event="event-3"]:hover {
-  background: #618da1;
-  border-top: solid 12px rgba(255,255,255,0.4);
-}
-
-/* event-4 is Tag Der Lehre */
-.cd-schedule .single-event[data-event="event-4"],
-.cd-schedule [data-event="event-4"] .header-bg {
-  background: #f59645;
-}
-.cd-schedule .single-event[data-event="event-4"] {
-  border-top: solid 12px rgba(255,255,255,0.4);
-}
-
+.cd-schedule .single-event[data-event="event-3"]:hover,
 .cd-schedule .single-event[data-event="event-4"]:hover {
-  background: #f7bd7f;
+  background: #9bd6ac;
+  border-top: solid 12px rgba(255,255,255,0.4);
 }
-
 .cd-schedule .event-modal {
   position: fixed;
   z-index: 3;
