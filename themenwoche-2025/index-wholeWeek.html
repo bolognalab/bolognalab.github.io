@@ -129,54 +129,78 @@
      </style>
      <style>
       /* neues */
-      .dayContainer {
+      .daysContainer {
         width: 100%;
-        aspect-ratio: 0.9;
+        height: calc(800px + 2em);
         display: flex;
         flex-direction: row;
         align-content: stretch;
-        justify-content: space-evenly
+        justify-content: space-evenly;
+        overflow: hidden;
+        transition: all 0.5s ease;
+      }
+      .daysContainer.maximized {
+        height: calc(1440px + 3em);
       }
       .dayBlock {
         width: calc(33.33% - 1em);;
         height: 100%;
-        border-radius: 1em;
-        background: gray;
+        border-radius: 0.5em;
+        background: #1672f9;
         overflow: hidden;
         transition: all 0.5s ease;
-      }
-      .dayBlock.notShown {
-        width: 0;
-      }
-      .dayBlock.shown {
-        overflow: visible;
-        z-index: 3;
-        width: 100%;
+        padding-bottom: 1em;
       }
       .dayBlock h2 {
         text-align: center;
+        line-height: 2em;
+        margin-top: 0;
+        color: white;
       }
-      .dayBlock.shown iframe {
-        width: 100%;
+      .daysContainer.maximized .dayBlock:not(.shown) {
+        width: 0;
+      }
+
+      /* minimized view */
+      .dayBlock:not(.loaded) iframe {
+        visibility: hidden;
+        opacity: 0;
         transition: all 0.5s ease;
       }
       .dayBlock iframe.minimized {
-        visibility: hidden;
-        transform: scaleX(33.33%) translateX(-100%)        
+        width: 300%;
+        transform-origin: top;
+        transform: scale(33.33%, 54%) translate(-100%, 0%);
+        margin-bottom: 0.5em;   
+        overflow:hidden;     
       }
       .dayBlock.loaded iframe.minimized {
-        visibility: visible;
         opacity: 0.5;
+        overflow: hidden;
       }
       .dayBlock.loaded:hover {
         cursor: pointer;
       }
       .dayBlock.loaded:hover > iframe {
-        visibility: visible;
+        opacity: 0.8
       }
       .dayBlock.loaded:hover > iframe.minimized {
         pointer-events: none;
       }
+
+      /* view of one day shown */
+
+      .dayBlock.shown {
+        overflow: visible;
+        z-index: 3;
+        width: 100%;
+      }
+      .dayBlock.shown iframe {
+        width: 100%;
+        /* transform: scaleX(33.33%) translateX(-100%); */
+        transition: all 0.5s ease;
+      }
+      
       
      </style>
 
@@ -197,18 +221,20 @@
 
 				<!-- Main -->
         <div class="inner">
-          <div class="dayContainer" style="width: 100%; aspect-ratio: 0.9">
+          <div class="daysContainer" style="width: 100%; aspect-ratio: 0.9">
             <div class="dayBlock">
               <h2>Dienstag, 3.6.</h2>
-              <iframe id="frameDi" class="iframe minimized" src="../themenwoche-2025-tdl/programm_cal.html" width="300%" height="100%"></iframe>
+              <iframe id="frameDi" class="iframe minimized" src="../themenwoche-2025-tdl/programm_cal.html" width="300%" height="180%"></iframe>
             </div>
             <div class="dayBlock">
               <h2>Mittwoch, 4.6.</h2>
-          <iframe id="frameMi" class="iframe minimized" src="../themenwoche-2025-wednesday/programm_cal.html" width="300%" height="100%"></iframe>
+          <iframe id="frameMi" class="iframe minimized" src="../themenwoche-2025-wednesday/programm_cal.html" width="300%" height="180%"></iframe>
+          <script>console.log(document.getElementById("frameMi").contentDocument.readyState)</script>
             </div>
             <div class="dayBlock">
               <h2>Donnerstag, 5.6.</h2>
-              <iframe id="frameDo" class="iframe minimized" src="../themenwoche-2025-thursday/programm_cal.html" width="300%" height="100%"></iframe>
+              <iframe id="frameDo" class="iframe minimized" src="../themenwoche-2025-thursday/programm_cal.html" width="300%" height="180%"></iframe>
+              
             </div>
           </div>
           
@@ -225,56 +251,104 @@
           </div>
         </div>  
 			</div>
+
       <script>
+        const daysContainer = document.querySelector(".daysContainer")
+        const dayBlocks = {
+          "frameDi": document.querySelectorAll(".dayBlock")[0],
+          "frameMi": document.querySelectorAll(".dayBlock")[1],
+          "frameDo": document.querySelectorAll(".dayBlock")[2]
+        }
+        const iframes = {
+          "frameDi": document.querySelector("#frameDi"),
+          "frameMi": document.querySelector("#frameMi"),
+          "frameDo": document.querySelector("#frameDo")        
+        }
+        
         // functions
         function minimizeDay(iFrameId){
-          let iframe = document.getElementById(iFrameId)
+          let iframe = iframes[iFrameId]
           iframe.classList.add("minimized")
-          iframe.contentDocument.querySelectorAll(".events, .event-time, .event-name, .single-event, .top-info, .timeline, .events-group").forEach((text)=>{
-              text.classList.add("minimized")
-            })
-          iframe.parentElement.classList.remove("shown")
-          document.querySelectorAll(".dayBlock").forEach((m)=>{
-            m.classList.remove("shown")
-            m.classList.remove("notShown")
+          let classNames = ["events", "event-time", "event-name", "single-event", "top-info", "timeline", "events-group"]
+          classNames.forEach((className)=>{
+            iframe.contentDocument.querySelectorAll("."+className).forEach((text)=>{text.classList.add("minimized")})
           })
+          dayBlocks[iFrameId].classList.remove("shown")
+          
         }
         function showDay(iFrameId){
-          let iframe = document.getElementById(iFrameId)
+          let iframe = iframes[iFrameId]
           iframe.classList.remove("minimized")
           iframe.contentDocument.querySelectorAll(".events, .event-time, .event-name, .single-event, .top-info, .timeline, .events-group").forEach((text)=>{
               text.classList.remove("minimized")
             })
-          document.querySelectorAll(".dayBlock").forEach((m)=>{
-            if (m.querySelector("iframe").id==iFrameId){
-              m.classList.add("shown")
-            } else {
-              m.classList.add("notShown")
+          daysContainer.classList.add("maximized")
+          Object.entries(dayBlocks).forEach(([ifid, db])=>{
+            if (ifid==iFrameId){
+              db.classList.add("shown")
             }
           })
         }
 
         // loading
-        setTimeout(()=>{
-          minimizeDay("frameDi")
-          minimizeDay("frameMi")
-          minimizeDay("frameDo")
-          document.querySelectorAll("iframe").forEach((m)=>{
-            m.parentElement.classList.add("loaded")
-            m.parentElement.addEventListener("click", function(){
-              if (m.parentElement.classList.contains("shown")){
-                minimizeDay(m.id)
-              } else {
-                showDay(m.id)
-              }
-            })
+        async function minimizeFrames(){
+          await new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+              minimizeDay("frameDi")
+              minimizeDay("frameMi")
+              minimizeDay("frameDo")
+              resolve();
+            }, 2000)
+          });
+          return Promise.resolve()
+        }
+
+        async function addInteractivity(){
+          await new Promise((resolve, reject)=>{
+            Object.values(iframes).forEach((m)=>{
+              console.log(m.id)
+              m.parentElement.classList.add("loaded")
+              m.parentElement.addEventListener("click", function(){
+                if (m.parentElement.classList.contains("shown")){
+                  minimizeDay(m.id)
+                  daysContainer.classList.remove("maximized")
+                } else {
+                  showDay(m.id)
+                }
+              })
+            });
+          resolve();
           })
-        }, 1500)
+          return Promise.resolve()
+        }
 
-        
-
-
-
+        async function loadCalendar(){
+          try {
+            await minimizeFrames();
+            console.log("minimized Frames")
+            await addInteractivity();
+            console.log("added event listeners")
+          } catch (error) {
+            console.error("error occurred: ", error);
+          }
+        }
+        loadCalendar()  
       </script>
+      <script>
+        // Accordion-menu for credits
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
 	</body>
 </html>
