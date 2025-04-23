@@ -2,9 +2,8 @@
 ## Ort (z.B, Senatsaal)  
 ##### Adresse und Raum
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Aktivität
 Leitung: \
-**Name 1**  
-##### Einrichtung 1
-**Name 2**  
-##### Einrichtung 2 
+**Jurik Stiller**  
+##### Institut für Erziehungswissenschaften
+

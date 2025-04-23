@@ -1,4 +1,4 @@
-# Themenklasse Globale Gerechtigkeit und Nachhaltigkeit  
+# Themenklasse Globale Gerechtigkeit und Nachhaltigkeit -Interdisziplinäre Nachhaltigkeitsforschung für Studierende
 ## IRI Thesys  
 ##### Online
 ---

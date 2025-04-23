@@ -1,4 +1,4 @@
-# Eröffnung zur Themenwoche Lehre und zum Tag der Lehre "Nachhaltiges Lehren und Lernen"
+# Festakt zur Verleihung des Preis für gute Lehre "Nachhaltiges Lehren und Lernen"
 ## Lichthof (Ost)  
 ##### Unter den Linden 6
 ---

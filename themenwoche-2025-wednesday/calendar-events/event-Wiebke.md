@@ -1,10 +1,10 @@
-# Hands-On: Nachhaltigkeit als Querschnittsthema in den Fachdisziplinen  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+# Nachhaltigkeit in den Fachdisziplinen: Impulse und BNE-Methoden für die Lehre  
+## Marmorsaal 2249a  
+##### Hauptgebäude, Unter den Linden 6
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Workshop
 Leitung: \
-**Name 1**  
-##### Einrichtung 1
-**Name 2**  
-##### Einrichtung 2 
+**Wiebke Hampel**  
+##### Klimaschutzmanagement
+**Shalin Mathur**  
+##### Klimaschutzmanagement

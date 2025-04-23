@@ -1,10 +1,9 @@
-# Gemeinsames Fahrradfahren zur Aktivierung und Vernetzung  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+# Wake-Up with Us: Gemeinsames Fahrradfahren zur Aktivierung und Vernetzung  
+## Tempelhofer Feld
+##### Treffpunkt: 
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Aktivität
 Leitung: \
-**Name 1**  
-##### Einrichtung 1
-**Name 2**  
-##### Einrichtung 2 
+**Wolfgang Deicke**  
+##### bologna.lab
+
