@@ -196,14 +196,22 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 CREATED:20250423T094216Z
-LAST-MODIFIED:20250423T094449Z
-DTSTAMP:20250423T094449Z
+LAST-MODIFIED:20250423T135126Z
+DTSTAMP:20250423T135126Z
 UID:947c37c1-3852-4f4f-b525-e5d9bd3223c8
-SUMMARY:Wake-Up with Us: Gemeinsames Fahrradfahren zur Aktivierung und Vern
- etzung  
-DTSTART;TZID=Europe/Berlin:20250604T074500
-DTEND;TZID=Europe/Berlin:20250604T084500
+SUMMARY:Extrarunde(n) für nachhaltiges Lehren und Lernen
+DTSTART;TZID=Europe/Berlin:20250604T073000
+DTEND;TZID=Europe/Berlin:20250604T083000
 TRANSP:OPAQUE
-LOCATION:Tempelhofer Feld
+LOCATION:https://maps.app.goo.gl/Z4Dj4f8sn3RuLyTd9
+DESCRIPTION;ALTREP="data:text/html,Tempelhofer%20Feld%2C%20Treffpunkt%20am%
+ 20MenAtWorxx%20Coffee%20Shop%20zum%20Einstieg%2C%20sonst%20entgegen%20dem%2
+ 0Uhrzeigersinn%20fahren%20und%20nach%20HU-Shirts%20o.%C3%A4.%20Ausschau%20h
+ alten%3A%20%3Cbr%3Ehttps%3A%2F%2Fmaps.app.goo.gl%2FZ4Dj4f8sn3RuLyTd9":Tempe
+ lhofer Feld\, Treffpunkt am MenAtWorxx Coffee Shop zum Einstieg\, sonst ent
+ gegen dem Uhrzeigersinn fahren und nach HU-Shirts o.ä. Ausschau halten: \n
+ https://maps.app.goo.gl/Z4Dj4f8sn3RuLyTd9
+SEQUENCE:1
+X-MOZ-GENERATION:1
 END:VEVENT
 END:VCALENDAR

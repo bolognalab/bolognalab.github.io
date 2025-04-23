@@ -3,13 +3,13 @@
         "short-event-name": "Wake-Up with us: Stadtradeln",
         "long-event-name": "Gemeinsames Fahrradfahren zur Aktivierung und Vernetzung",
         "day": "thursday",
-        "start": "07:30",
+        "start": "08:00",
         "end": "09:00",
         "loc": "Tempelhofer Feld",
         "id": "event-Stadtradeln",
-        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/waking-up-mit-stadtradeln",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/extrarunde-nachhaltiges-lehren-und-lernen",
         "category": "event-4",
-        "start-ovr": "-",
+        "start-ovr": "07:30",
         "end-ovr": "08:45",
         "event-participants": "Wolfgang Deicke "
     },
@@ -21,11 +21,11 @@
         "end": "11:00",
         "loc": "Online",
         "id": "event-TwinTransformation",
-        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/twin-transormation/view",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/twin-transformation",
         "category": "event-1",
         "start-ovr": "-",
         "end-ovr": "-",
-        "event-participants": " Anna Gehlke (HfD) | Prof. Dr. Niels Pinkwart (VPL) | Uwe Pirr (CMS) | Timo Schmidt (TA) | Prof. Dr. Shintaro Miyazaki (#gnuHU)"
+        "event-participants": "Anna Gehlke (HfD) | Prof. Dr. Niels Pinkwart (VPL) | Uwe Pirr (CMS) | Timo Schmidt (TA) | Prof. Dr. Shintaro Miyazaki (#gnuHU)"
     },
     {
         "short-event-name": "Walk with us: Stadtarchitektur und Nachhaltigkeit",
@@ -70,14 +70,14 @@
         "event-participants": "Wiebke Hampel & Shalin Mathur (Klimaschutzmanagement)"
     },
     {
-        "short-event-name": "Humaner D\u00fcnger",
-        "long-event-name": "Human Feces as Fertilizer",
+        "short-event-name": "Neuartige D\u00fcngemittel",
+        "long-event-name": "aus der Foschung: neuartige recycelte D\u00fcngemittel ",
         "day": "tuesday",
         "start": "12:00",
         "end": "13:30",
         "loc": "Online",
         "id": "event-humanFeces",
-        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-lw2 ",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/neuartige-duengemittel",
         "category": "event-2",
         "start-ovr": "-",
         "end-ovr": "-",

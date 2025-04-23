@@ -2,7 +2,7 @@
 ## Lichthof (Ost)  
 ##### Unter den Linden 6
 ---
-### Shortlist zum diesjährigen Preis | Preisverleihung an die Gewinner*in | Wrap-Up Improtheater
+### Shortlist zum diesjährigen Preis | Preisverleihung |  Wrap-Up Improtheater
 Leitung: \
 **Prof. Dr. Niels Pinkwart**  
 ##### Vizepräsident für Lehre und Studium

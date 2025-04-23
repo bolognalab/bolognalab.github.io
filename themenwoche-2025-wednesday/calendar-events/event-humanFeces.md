@@ -1,6 +1,6 @@
-# Human Feces as Fertilizer  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+# Human Excreta as Fertilizer: Neuartige Düngemittel und ihre Klimawirkung 
+## Online  
+##### 
 ---
 ### Impuls
 Leitung: \
