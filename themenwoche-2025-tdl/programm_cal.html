@@ -92,10 +92,36 @@
                 color: rgba(0,0,0,0) !important;
               }
               .top-info.minimized, .timeline.minimized {
-                visibility: hidden;
+                opacity: 0;
               }
             }
-            
+      /* arrows */
+      #scrollDown {
+        opacity: 0
+      }
+      @media only screen and (min-width: 800px){
+        .events-group:not(.minimized) > #scrollDown{
+          opacity: 1
+        }
+
+        #tuesday {
+          position:relative
+        }
+        #scrollDown {
+          position: absolute;
+          left: 50%;
+          top: 240px;
+          width: 30%;
+          transform: translate(-50%, 0);
+        }
+        #scrollDown > img {
+          width:100%;
+          height: 50px;
+          opacity: 0.2;
+        }
+      }
+
+
      </style> 
 	</head>
 	<body class="is-preload">
@@ -143,6 +169,16 @@
           <li class="events-group" datestring="Di. 03.06.2025 - Tag der Lehre" id="tuesday">
             <div class="top-info"><span>Tag der Lehre</span></div>         
             <ul aria-label="dienstag"></ul>
+            <div id="scrollDown">
+              <!-- <img src = "../images/down.svg" /> -->
+              <img src = "../images/down.svg" />
+              <img src = "../images/down.svg" />
+              <div class="spacer" style="height:120px"></div>
+              <img src = "../images/down.svg" />
+              <img src = "../images/down.svg" />
+              <!-- <img src = "../images/down.svg" /> -->
+            </div>
+            
           </li>
         </ul>
       </div>
@@ -188,7 +224,7 @@
         "event-4": "Aktivität"
       }
     </script>
-    <script src="../assets/js/calendarEvents.js"></script>
+    <script src="../assets/js/calendarEvents2025.js"></script>
     <script src="../assets/js/browser.min.js"></script>
     <script src="../assets/js/breakpoints.min.js"></script>
     <script src="../assets/js/util.js"></script>

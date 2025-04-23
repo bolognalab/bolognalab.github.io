@@ -129,15 +129,21 @@
      </style>
      <style>
       /* neues */
+
       .daysContainer {
         width: 100%;
-        height: calc(800px + 2em);
+        height: 9em;
         display: flex;
         flex-direction: row;
         align-content: stretch;
         justify-content: space-evenly;
         overflow: hidden;
         transition: all 0.5s ease;
+      }
+      @media only screen and (min-width: 600px){
+        .daysContainer {
+          height: calc(800px + 2em);
+      }
       }
       .daysContainer.maximized {
         height: calc(1440px + 3em);
@@ -153,39 +159,68 @@
       }
       .dayBlock h2 {
         text-align: center;
-        line-height: 2em;
+        line-height: 3.5em;
         margin-top: 0;
         color: white;
+        position: relative;
+      }
+      @media only screen and (min-width:600px){
+        .dayBlock h2 {
+          line-height: 2em;
+        }
       }
       .daysContainer.maximized .dayBlock:not(.shown) {
         width: 0;
       }
 
-      /* minimized view */
+      /* before loading */
+      .dayBlock:not(.loaded) {
+        height: 2.5em;
+        opacity: 0;
+        /* width: 0; */
+      }
       .dayBlock:not(.loaded) iframe {
         visibility: hidden;
         opacity: 0;
+      }
+      .dayBlock iframe {
+        transform-origin: top;
         transition: all 0.5s ease;
       }
       .dayBlock iframe.minimized {
         width: 300%;
-        transform-origin: top;
-        transform: scale(33.33%, 54%) translate(-100%, 0%);
+        transform: scale(33.33%, 33.33%) translate(-100%, 0%);
         margin-bottom: 0.5em;   
         overflow:hidden;     
       }
+      @media only screen and (min-width: 600px){
+        .dayBlock iframe.minimized {
+          transform: scale(120%, 80%) translate(-100%, 0%);
+        }
+      }
+      @media only screen and (min-width: 800px){
+        .dayBlock iframe.minimized {
+          transform: scale(33.33%, 54.1%) translate(-100%, 0%);
+        }
+      }
+      /* minimized view */
       .dayBlock.loaded iframe.minimized {
         opacity: 0.5;
         overflow: hidden;
+        pointer-events: none;
       }
+      @media only screen and (min-width: 800px){
+        .dayBlock.loaded iframe.minimized {
+          opacity: 0.7;
+        }
+      }
+
       .dayBlock.loaded:hover {
         cursor: pointer;
       }
-      .dayBlock.loaded:hover > iframe {
-        opacity: 0.8
-      }
       .dayBlock.loaded:hover > iframe.minimized {
-        pointer-events: none;
+        opacity: 0.8;
+        transform: scale(34.33%, 55.1%) translate(-98%, 0%);
       }
 
       /* view of one day shown */
@@ -200,10 +235,38 @@
         /* transform: scaleX(33.33%) translateX(-100%); */
         transition: all 0.5s ease;
       }
-      
-      
      </style>
+      <style>
+        /* loading */
+        #loadingContainer {
+          opacity: 0;
+          height: 0;
+          overflow: hidden;
+          transition: all 0.8s ease;
+        }
+        #main:not(.is-loaded) > #loadingContainer {
+          opacity: 1;
+          height: 260px;
+        }
+        #loadingContainer > p {
+          margin: 0 0 0 0;
+          text-align: center;
+        }
+        .loader {
+          border: 8px solid #f3f3f3;       /* Light grey */
+          border-top: 8px solid #3498db;    /* Blue */
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          animation: spin 1s linear infinite;
+          margin: 100px auto;
+        }
 
+        @keyframes spin {
+          0%   { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
 	</head>
 
 
@@ -220,21 +283,24 @@
         </header>
 
 				<!-- Main -->
-        <div class="inner">
+        <div class="inner" id="main">
+          <div id="loadingContainer">
+            <p>lädt...</p>
+            <div class="loader"></div>
+          </div>
           <div class="daysContainer" style="width: 100%; aspect-ratio: 0.9">
             <div class="dayBlock">
-              <h2>Dienstag, 3.6.</h2>
+              <h2>Dienstag 3.6.</h2>
               <iframe id="frameDi" class="iframe minimized" src="../themenwoche-2025-tdl/programm_cal.html" width="300%" height="180%"></iframe>
             </div>
             <div class="dayBlock">
-              <h2>Mittwoch, 4.6.</h2>
+              <h2>Mittwoch 4.6.</h2>
           <iframe id="frameMi" class="iframe minimized" src="../themenwoche-2025-wednesday/programm_cal.html" width="300%" height="180%"></iframe>
           <script>console.log(document.getElementById("frameMi").contentDocument.readyState)</script>
             </div>
             <div class="dayBlock">
-              <h2>Donnerstag, 5.6.</h2>
+              <h2>Donnerstag 5.6.</h2>
               <iframe id="frameDo" class="iframe minimized" src="../themenwoche-2025-thursday/programm_cal.html" width="300%" height="180%"></iframe>
-              
             </div>
           </div>
           
@@ -266,6 +332,7 @@
         }
         
         // functions
+
         function minimizeDay(iFrameId){
           let iframe = iframes[iFrameId]
           iframe.classList.add("minimized")
@@ -288,6 +355,17 @@
               db.classList.add("shown")
             }
           })
+          // scrolling to the good stuff
+          // if (iFrameId=="frameDi"){
+          //   setTimeout(()=>{
+          //     // window.scrollTo({
+          //     //   "top": 666,
+          //     //   "left": 0,
+          //     //   "behavior": "smooth",
+          //     // });
+          //   },1000)
+
+          // }
         }
 
         // loading
@@ -297,26 +375,34 @@
               minimizeDay("frameDi")
               minimizeDay("frameMi")
               minimizeDay("frameDo")
-              resolve();
-            }, 2000)
+              setTimeout(()=>{
+                resolve()
+              },500)
+              ;
+            }, 2500)
           });
           return Promise.resolve()
         }
 
         async function addInteractivity(){
           await new Promise((resolve, reject)=>{
-            Object.values(iframes).forEach((m)=>{
-              console.log(m.id)
-              m.parentElement.classList.add("loaded")
-              m.parentElement.addEventListener("click", function(){
-                if (m.parentElement.classList.contains("shown")){
-                  minimizeDay(m.id)
-                  daysContainer.classList.remove("maximized")
-                } else {
-                  showDay(m.id)
-                }
+            setTimeout(()=>{
+              Object.values(iframes).forEach((m)=>{
+                console.log(m.id)
+
+                m.parentElement.classList.add("loaded")
+                m.parentElement.addEventListener("click", function(){
+                  if (m.parentElement.classList.contains("shown")){
+                    m.contentDocument.querySelector("a.close").click() 
+                    minimizeDay(m.id)
+                    daysContainer.classList.remove("maximized")
+                  } else {
+                    showDay(m.id)
+                  }
+                })
               })
-            });
+              document.querySelector("#main").classList.add("is-loaded")
+            }, 500);
           resolve();
           })
           return Promise.resolve()

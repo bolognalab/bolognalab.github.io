@@ -1,12 +1,12 @@
 async function executeFunctions() {
-    try {
-        await makeEvents();
+	try {
+		await makeEvents();
 		console.log("made events")
-        await formatEvents();
-        await squeezeConflicts();
-    } catch (error) {
-        console.error('Error occurred:', error);
-    }
+		await formatEvents();
+		await squeezeConflicts();
+	} catch (error) {
+		console.error('Error occurred:', error);
+	}
 }
 
 async function makeEvents() {
@@ -16,7 +16,7 @@ async function makeEvents() {
 			console.log("taking my time making events")
 			let eventCalendar = json
 			eventCalendar.forEach((e)=> {
-			eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"], category = e["category"], start_ovr = e["start-ovr"], end_ovr = e["end-ovr"], eventParticpants = e["event-participants"], eventDescription = e["long-event-name"]
+			eventName = e["short-event-name"], day = e["day"], start = e["start"], end = e["end"], loc = e["loc"], id = e["id"], web = e["web"], category = e["category"], start_ovr = e["start-ovr"], end_ovr = e["end-ovr"]
 			let groupToAppendTo = document.getElementById(day)
 			let listToAppendTo = document.querySelector('#'+day+' ul')
 			let item = document.createElement("li")
@@ -31,9 +31,6 @@ async function makeEvents() {
 			item.setAttribute("start-override", start_ovr)
 			item.setAttribute("end-override", end_ovr)
 			item.innerHTML= "<a href='#0'><em class='event-name'>"+ eventName +"</em></a>"
-			
-
-			;
 			listToAppendTo.append(item)
 			resolve();
 			}, 100)          
@@ -182,7 +179,7 @@ async function formatEvents() {
 						//place each event in the grid -> need to set top position and height
 						var start = getScheduleTimestamp($(this).attr('data-start')),
 							duration = getScheduleTimestamp($(this).attr('data-end')) - start;
-	
+						// console.log(self.eventSlotHeight, start, duration, self.timelineStart, self.timelineUnitDuration)
 						var eventTop = self.eventSlotHeight*(start - self.timelineStart)/self.timelineUnitDuration,
 							eventHeight = self.eventSlotHeight*duration/self.timelineUnitDuration;
 						
@@ -226,7 +223,7 @@ async function formatEvents() {
 								document.querySelectorAll(".event-info .hashtag")[0].innerHTML = "#" + eventTypes[event.parent().attr("data-event")]
 							}
 							
-							document.querySelectorAll(".event-info .moreInfoLink")[0].focus()
+							document.querySelectorAll(".event-info .moreInfoLink")[0].focus({ preventScroll: true})
 						}, 250)
 					});
 					// document.querySelector("#currentEventInfo").setAttribute("src", 'calendar-events/'+event.parent().attr('data-content')+'.md')
@@ -259,9 +256,10 @@ async function formatEvents() {
 	
 						var modalWidth = ( windowWidth*.8 > self.modalMaxWidth ) ? self.modalMaxWidth : windowWidth*.8,
 							modalHeight = ( windowHeight*.8 > self.modalMaxHeight ) ? self.modalMaxHeight : windowHeight*.8;
-	
+						
+						// factor of 1.8 below is because iFrame height in the combined programs was set to 180%
 						var modalTranslateX = parseInt((windowWidth - modalWidth)/2 - eventLeft),
-							modalTranslateY = parseInt((windowHeight - modalHeight)/2 - eventTop);
+							modalTranslateY = parseInt((windowHeight/1.8 - modalHeight)/2 - eventTop);
 						
 						var HeaderBgScaleY = modalHeight/eventHeight,
 							BodyBgScaleX = (modalWidth - eventWidth)*1.5;
@@ -493,7 +491,7 @@ async function formatEvents() {
 						'transform': value
 					});
 				}
-				document.getElementById("schedule").focus()
+				document.getElementById("schedule").focus({preventScroll: true})
 			resolve();
 			});
 		},100)
