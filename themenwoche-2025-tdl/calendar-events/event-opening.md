@@ -1,4 +1,4 @@
-# VORMACHEN. NACHHALTEN. Wie nachhaltig ist die Lehre an der HU?   
+# Eröffnung zur Themenwoche Lehre und zum Tag der Lehre "Nachhaltiges Lehren und Lernen" | VORMACHEN. NACHHALTEN. Wie nachhaltig ist die Lehre an der HU?   
 ## Lichthof (Ost)  
 ##### Unter den Linden 6
 ---

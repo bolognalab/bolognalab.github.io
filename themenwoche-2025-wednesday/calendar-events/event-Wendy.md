@@ -1,10 +1,8 @@
-# ideation workshop for developing solutions to global challenges  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+# How to cope with global challenges? The solution oriented approach
+## bologna.lab
+##### Hausvogteiplatz 5-7, Raum 0101-0103
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Workshop
 Leitung: \
-**Name 1**  
-##### Einrichtung 1
-**Name 2**  
-##### Einrichtung 2 
+**Wendy Morel**  
+##### Albrecht Daniel Thaer-Institut für Agrar- und Gartenbauwissenschaften
