@@ -43,7 +43,7 @@
         "woechCheckin": {
             "type": "asynchron",
             "title": "Wöchentliches Check-In",
-            "content": "Sowohl in synchronen als auch in asynchronen Kursen profitieren viele Studierende (vor allem in den ersten Semestern) von einer gewissen Strukturierung ihrer Kursarbeit. Eine wöchentliche E-Mail oder eine ähnliche Mitteilung ist eine gute Möglichkeit, die Studierenden daran zu erinnern, was sie in dieser Woche erledigen sollten oder in den kommenden Wochen erwarten können. Sie können die E-Mail auch zur Sammlung von studentischem Feedback nutzen, das Ihnen bei der Lehreplanung helfen kann. So eine regelmäßige Kommunikation hilft Ihnen, Vertrauen und Gemeinschaft zwischen Ihnen und Ihren Schülerinnen und Schülern aufzubauen, vor allem, wenn Sie zeigen, dass Sie persönlich an ihrem Erfolg interessiert sind.<a href=''>Beispiele von wöchentlichen E-Mails</a>"
+            "content": "Sowohl in synchronen als auch in asynchronen Kursen profitieren viele Studierende (vor allem in den ersten Semestern) von einer gewissen Strukturierung ihrer Kursarbeit. Eine wöchentliche E-Mail oder eine ähnliche Mitteilung ist eine gute Möglichkeit, die Studierenden daran zu erinnern, was sie in dieser Woche erledigen sollten oder in den kommenden Wochen erwarten können. Sie können die E-Mail auch zur Sammlung von studentischem Feedback nutzen, das Ihnen bei der Lehreplanung helfen kann. So eine regelmäßige Kommunikation hilft Ihnen, Vertrauen und Gemeinschaft zwischen Ihnen und Ihren Schülerinnen und Schülern aufzubauen, vor allem, wenn Sie zeigen, dass Sie persönlich an ihrem Erfolg interessiert sind.<a href=''>Beispiel für eine wöchentliche E-mail</a>"
         },
         "reflexionHyb": {
             "type": "asynchron",

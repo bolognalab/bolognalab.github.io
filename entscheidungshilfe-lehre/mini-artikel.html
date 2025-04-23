@@ -83,6 +83,30 @@
         padding: 5px 15px;
         display: block;
     }
+    .importantText h2 {
+        color: var(--networkBlack)
+    }
+    .importantText h3 {
+        color: rgba(0,0,0,0.5);
+        margin-top: 1em;
+    }
+    .importantText h3 + ul, .importantText h3 + p {
+        margin-top: 0.5em;
+    }
+
+    .importantText h4 {
+        color: var(--networkBlack);
+        margin-top: 0.3em;
+    }
+    .importantText h4 + p, .importantText h4 + ul {
+        color: var(--networkBlack);
+        margin-top: 0.3em;
+    }
+    .importantText h4 + p {
+        margin-bottom: 0.5em;
+    }
+
+
     div.textImageOverlay {
         display: flex;
         flex-direction: column-reverse;
@@ -168,6 +192,8 @@
         background: #999999;
         transform: translate(50%, -50%) scale(130%, 130%);
     }
+
+
   </style>
 </head>
 <body onload="listsAndCitations()"> 
@@ -320,6 +346,66 @@
         <p>Mehr lesen (auf Englisch): <a href="https://beyondthescope.substack.com/p/discussion-protocols-in-defense-of?utm_campaign=post&utm_medium=web" aria-label="Sarah Silverman (2024): Discussion protocols: In defense of a 'script'">Sarah Silverman (2024): <b>Discussion protocols: In defense of a "script"</b>. <em>Beyond the Scope</em>.</a></p>
         <p class="citation"></p>
     </div>
+    <div class="contentContainer article" id="weeklyEmail">
+        <h2>Beispiel für eine wöchentliche E-Mail</h2>
+        <p>Eine wöchentliche E-Mail von der Lehrperson ist eine gute Möglichkeit, die Studierenden daran zu erinnern, was sie in dieser Woche erledigen sollten oder in den kommenden Wochen erwarten können. Es kann besonders hilfreich sein, wenn der Kurs verschiedene Komponente hat. Das folgende Beispiel zeigt eine wöchentliche E-mail von einer Übungsleitgerin eines Kurses in analytischer Chemie, der mehrere Vorlesungs-, Übungs- und Laborsitzungen pro Woche umfasst. Diese E-mail wird an eine Kohorte von ca. 25 Studierenden adressiert, die gerade in kleinen Gruppen ein laborbasiertes Projekt (zum Thema Bier) durchführen.</p>
+        <div class="importantText">
+            <h2>Beispiel einer wöchentlichen E-mail</h2>
+            <p>Hallo zusammen,</p>
+            <p>könnt ihr glauben, dass wir schon in der letzten Februarwoche angekommen sind? Das Semester vergeht wirklich schnell – achtet also gut auf euch und bleibt gesund bei all dem, was gerade ansteht. :) </p>
+
+            <p>Hier ein kurzer Überblick der nächsten zwei Wochen:</p>
+
+            <h3>Montag</h3>
+            <ul>
+                <li><h4>Labor: Projekt-Tag Tag #4</h4>
+                    <p>Am Ende dieser Laborsitzung solltet ihr:</p>
+                    <ul>
+                        <li>Eine Spike-Recovery-Analyse eurer Bierprobe durchgeführt haben.</li>
+                        <li>Eine Bierprobe und eine Kontrollprobe zur ICP-MS-Analyse abgegeben haben. Die Anleitung zur ICP-MS findet ihr auf Canvas unter <em>ICP-MS Results</em>.</li>
+                    </ul>
+                    <p>Da dies der vorletzte Labortag für das Projekt ist, meldet euch bitte sofort, wenn ihr irgendwo Hilfe braucht. Die anderen Lehrpersonen und ich stehen euch gerne zur Seite.</p>
+                </li>
+            </ul>
+            
+
+            <h3>Mittwoch</h3>
+            <ul>
+                <li><h4>Abgabe von Übungsblatt #4</h4> (in Canvas)</li>
+                <li><h4>Labor: Projekt Tag #5</h4>
+                    <p>Das ist der letzter Tag des 1. Teils des Projekts! Am Ende dieser Laborsitzung solltet ihr:</p>
+                    <ul>
+                        <li>Alle Daten gesammelt haben, die unter <em>Deliverables</em> von Teil I (Aufgabe zur Verfahrensgestaltung) aufgelistet sind – das ist die Grundlage für euren <em>ersten Zwischenbereicht</em> (Abgabe: Freitag, 6.3.).</li>
+                        <li>Falls ihr bisher Daten gesammelt habt, deren Qualität fraglich ist, nutzt bitte die letzte Sitzung, um Versuche zu wiederholen und eure Datensätze zu verbessern.</li>
+                    </ul>
+                </li>
+            </ul>         
+            
+
+            <h3>Freitag</h3>
+            <ul>
+                <li><h4>Seminar: Präsentationen zum Projekt</h4>
+                    (hoffentlich diesmal ohne Beamer-Probleme!)
+                    <p>Die Vorgaben für diese Präsentation sind ähnlich wie letzte Woche – das Dokument liegt im Anhang und in Canvas.</p>
+                </li>
+                
+            </ul>
+
+            <h3>Vorschau: Nächste Woche</h3>
+            <ul>
+                <li>Am Montag erwartet euch im Labor das Fluoreszez-Experiment.</li>
+                <li>Am Mittwoch findet die <strong>Midterm-Klausur 1</strong> statt.</li>
+                <li>Am Freitag geht es regulär weiter mit der nächsten Seminareinheit (Thema: Säuren & Basen).</li>
+            </ul>
+
+            <p>Wir sehen uns morgen! Wie immer stehe ich persönlich und via E-mail zur Verfügung, falls ihr Fragen habt.</p>
+            <p>Liebe Grüße,</p>
+            <p><em>[ Name der Lehrperson ]</em></p>
+        </div>
+        <p>Eine wöchentliche E-Mail könnte auch zur Sammlung von studentischem Feedback genutzt werden (z.B. durch eine kurze Umfrage), das der Lehrperson bei der Lehreplanung helfen kann.</p>
+        <p class="citation"></p>
+    </div>
+    
     
 </div>
 
