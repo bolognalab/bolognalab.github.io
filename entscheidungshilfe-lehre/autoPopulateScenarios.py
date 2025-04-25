@@ -267,11 +267,12 @@ for code in list_of_scenarios:
 
     # gaeste: if having regular guest speakers, only display Ringvorlesung formats
     if "ring" not in code.split("-")[1]:
-        updated_questions["gaeste"]["antworten"]["2"]["effects"][code] = -100
+        updated_questions["gaeste"]["antworten"]["virtuell"]["effects"][code] = -100
+        updated_questions["gaeste"]["antworten"]["vorOrt"]["effects"][code] = -100
+        updated_questions["gaeste"]["antworten"]["both"]["effects"][code] = -100
     # and obviously don't display Ringvorlesung formats if no guests!
     if "ring" in code.split("-")[1]:
-        updated_questions["gaeste"]["antworten"]["0"]["effects"][code] = -100
-        updated_questions["gaeste"]["antworten"]["1"]["effects"][code] = -100
+        updated_questions["gaeste"]["antworten"]["nein"]["effects"][code] = -100
     
     # gaesteMittel: no in-person Ringvorlesung if no means to invite
     if code.split("-")[1] == "ringpraes":

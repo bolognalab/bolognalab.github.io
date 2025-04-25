@@ -13,7 +13,7 @@
 
         "anzahlVL": {
             "condition": "artLV=VL",
-            "text": "Wie viele Studierende erwarten Sie ugf. in Ihrem Kurs?",
+            "text": "Wie viele Studierende erwarten Sie ugf. in Ihrer Vorlesung?",
             "antworten": {
                 "klein": "bis 40",
                 "med": "40-80",
@@ -23,7 +23,7 @@
 
         "anzahlSE": {
             "condition": "artLV=SE",
-            "text": "Wie viele Studierende erwarten Sie ugf. in Ihrem Kurs?",
+            "text": "Wie viele Studierende erwarten Sie ugf. in Ihrem Seminar?",
             "antworten": {
                 "klein": "bis 30",
                 "gross": "mehr als 30"
@@ -44,34 +44,55 @@
             "condition": true,
             "text": "Welche der folgenden (bewerteten oder unbewerteten) Leistungen sind vorgesehen als integrale Bestandteile des Kurses?",
             "antworten": {
-                "liveVortrag": {
-                    "text": "Vortrag oder -projektvorstellung inkl. Q&A", "effects":{}, "conditionalEffects":{}
-                },
-                "debate": {
-                    "text": "Debatten, Interviewen oder Moderieren", "effects":{}, "conditionalEffects":{}
-                },
-                "praxis": {
-                    "text": "Versuch, Experiment oder andere praktische Übungen", "effects":{}, "conditionalEffects":{}
-                },
-                "privat": {
-                    "text": "Umgang mit sensiblen Informationen (z.B. Patientendaten)", "effects":{}, "conditionalEffects":{}
-                },
-                "LZiP": {
-                    "text": "andere Leistung(en) mit Präsenzpflicht", "effects":{}, "conditionalEffects":{}
-                },
-                "keine": {
-                    "text": "keine der Vorgenannten Leistungen", "effects":{}, "conditionalEffects":{}
-                }
+                "liveVortrag": "Vortrag oder -projektvorstellung inkl. Q&A",
+                "debate": "Debatten, Interviewen oder Moderieren",
+                "praxis": "Versuch, Experiment oder andere praktische Übungen",
+                "privat": "Umgang mit sensiblen Informationen (z.B. Patientendaten)",
+                "LZiP": "andere Leistung(en) mit Präsenzpflicht"
+            },
+            "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
+        },
+        "liveVortrag": {
+            "condition": true,
+            "text": "Proxy-Frage: liveVortrag?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
             }
         },
-
+        "debate": {
+            "condition": true,
+            "text": "Proxy-Frage: debate?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+        "praxis": {
+            "condition": true,
+            "text": "Proxy-Frage: praxis?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+        "privat": {
+            "condition": true,
+            "text": "Proxy-Frage: privat?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
         "LZiP":{
             "condition": true,
             "text": "Gibt es Lernziele oder Kurskomponenten, die <b>ausschließlich in Präsenz</b> sinnvoll sind, oder könnte eine*r Studierende alle Lernziele auch online erreichen?",
             "antworten": {
                 "0": "Alle Lernziele des Kurses können <b>sowohl in Präsenz als auch online</b> gut erreicht werden.",
                 "1": "Alle Lernziele können auch online erreicht werden, aber manche davon <b>nicht so gut online wie in Präsenz</b>.",
-                "2": "Manche Komponenten des Kurses <b>müssen</b> in Präsenz durchgeführt werden."
+                "2": "Manche Komponenten des Kurses <b>müssen</b> in Präsenz durchgeführt werden.",
+                "nein": "Nein", 
+                "ja": "Ja"
             },
             "addInfo": [
                 "Soziale Präsenz ist auch online erreichbar, aber stärker, wenn Personen im selben physischen Raum sind. Gleichzeitig kann Präsenzteilnahme ein Hindernis für manche Studierende sein.",
@@ -186,12 +207,10 @@
             "condition": true,
             "text": "Trifft eine oder mehrere dieser Situationen auf Ihre Lehrveranstaltung zu?",
             "antworten": {
-                "gruppenarb": {"text": "Es gibt <b>langfristige Gruppenprojekte</b> in meinem Kurs", "effects":{}, "conditionalEffects":{}},
-                "exkur": {"text": "Eine oder mehrere <b>Exkursionen</b> sind Bestandteil meines Kurses", "effects":{}, "conditionalEffects":{}},
-                "intKoll": {"text": "Mein Kurs ist Teil einer <b>nationalen oder internationalen Kollaboration</b> (mit Studierenden und Lehrpersonen einer anderen Hochschule)", "effects":{}, "conditionalEffects":{}},
-                "begrAnz": {"text": "Es gibt <b>geringere Raumkapazität oder -ausrüstung</b> als die Anzahl der Studierenden","effects":{}, "conditionalEffects":{}},
-                "keine": {"text": "Keine der genannten Situationen trifft zu","effects":{}, "conditionalEffects":{}}
-
+                "gruppenarb": "Es gibt <b>langfristige Gruppenprojekte</b> in meinem Kurs",
+                "exkur": "Eine oder mehrere <b>Exkursionen</b> sind Bestandteil meines Kurses",
+                "intKoll": "Mein Kurs ist Teil einer <b>nationalen oder internationalen Kollaboration</b> (mit Studierenden und Lehrpersonen einer anderen Hochschule)",
+                "begrAnz": "Es gibt <b>geringere Raumkapazität oder -ausrüstung</b> als die Anzahl der Studierenden"
             },
             "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
         },
