@@ -56,6 +56,14 @@
             <h2>Teil 4: Zusätzliche Faktoren</h2>
             <p>Wir sind fast fertig! In den letzten paar Fragen prüfen wir, ob es für Ihren Kurs besondere „Sonderbedingungen“ gelten.</p>
         </div>
+        <div id="DIV_TEXT_labore" class="qDiv upcoming" style="display:none">
+            <h2><em>Coming Soon: Hybride und virtuelle Laborkonzepte</em></h2>
+            <p>Wir sind noch dabei, didaktische Empfehlungen für verschiedene Online- und hybride Laborveranstaltungen zu entwickeln! Bis dann schauen Sie sich gern die folgenden Beispiele von hybriden und virtuellen Laborkursen als Inspiration:</p>
+            <ul>
+                <li><a href="https://leko.service.th-nuernberg.de/portal-digitale-lehre/anleitungen/hybride-laborpraktika-mit-mobilem-setup/" aria-label="TH Nürnberg: Hybride Laborpraktika mit mobilem Setup">TH Nürnberg: Hybride Laborpraktika mit mobilem Setup</a></li>
+                <li><a href="https://www.hs.mh.tum.de/exercisebiology/lehre-thesis/ilab/" aria-label="TU München: Projekt iLab (Laborvideos)">TU München: Projekt <em>iLab</em> (Laborvideos)</a></li>
+            </ul>
+        </div>
         <div id="progressBar" class="progressBar">
             <div id="prog1" class="first phase"></div>
             <div id="prog2" class="second phase"></div>
@@ -93,22 +101,22 @@
         'TEXT_intro',
         'TEXT_group1',
         'artLV', 
-        'LZsy', 
-        'LZiP',
+        'TEXT_labore',
+        'anzahlVL', 
+        'anzahlSE',
+        'intSync',
+        'leistungen',
         'TEXT_group2',
+        "niveauSt",
         "limZPSt",
         'nieSync',
         'niePr',
-        // "onlZugang",
-        "IntAsync",
         "TEXT_group3",
         'regAbw',
         "onlBereit", 
         "TEXT_group4",
         "situations",
-        "exkurMittel",
         'gaeste', 
-        'gaesteMittel',
     ]   
 
     const group1start = questionOrder.indexOf("TEXT_group1")
@@ -310,9 +318,16 @@
                 aLabel.innerHTML = aText
 
                 aDiv.append(aRadio, aLabel)
+
+                // Exceptions: Answers to not display
+                // hide formats that are not ready yet
                 if (aKey == "PR" | aKey =="SO"){
                     aDiv.style.display = "none"
-                }            
+                }
+                // hide least interaktive Option for Seminars
+                if (qKey == "intSync" && aKey == "0"){
+                    aDiv.style.display = "none"
+                }         
             })
         }
 
