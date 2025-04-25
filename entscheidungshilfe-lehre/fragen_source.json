@@ -86,11 +86,8 @@
         },
         "LZiP":{
             "condition": true,
-            "text": "Gibt es Lernziele oder Kurskomponenten, die <b>ausschließlich in Präsenz</b> sinnvoll sind, oder könnte eine*r Studierende alle Lernziele auch online erreichen?",
+            "text": "Proxy-Frage: LZiP?",
             "antworten": {
-                "0": "Alle Lernziele des Kurses können <b>sowohl in Präsenz als auch online</b> gut erreicht werden.",
-                "1": "Alle Lernziele können auch online erreicht werden, aber manche davon <b>nicht so gut online wie in Präsenz</b>.",
-                "2": "Manche Komponenten des Kurses <b>müssen</b> in Präsenz durchgeführt werden.",
                 "nein": "Nein", 
                 "ja": "Ja"
             },
@@ -216,7 +213,7 @@
         },
         "gruppenarb": {
             "condition": true,
-            "text": "Gibt es in dem Kurs <b>langfristige Gruppenprojekte</b>?",
+            "text": "Proxy-Frage: gruppenarb?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
@@ -224,7 +221,7 @@
         },
         "exkur": {
             "condition": true,
-            "text": "Planen Sie eine oder mehrere <b>Exkursionen</b> als festen Bestandteil Ihres Kurses?",
+            "text": "Proxy-Frage: exkur?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
@@ -232,7 +229,7 @@
         },
         "intKoll": {
             "condition": true,
-            "text": "Ist Ihr Kurs Teil einer <b>nationalen oder internationalen Kollaboration</b> mit Studierenden und Lehpersonen einer anderen Universität?",
+            "text": "Proxy-Frage: intKoll?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
@@ -241,7 +238,7 @@
         },
         "begrAnz": {
             "condition": true,
-            "text": "Ist die Anzahl der Studierenden, die Ihren Kurs persönlich besuchen können, durch eine geringe Raumkapazität, Verfügbarkeit von Ausrustung, o.ä. eingeschränkt? (z.B. Computerraum)",
+            "text": "Proxy-Frage: begrAnz?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
