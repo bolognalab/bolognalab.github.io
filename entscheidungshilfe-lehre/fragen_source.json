@@ -124,7 +124,7 @@
                 "grad": "überwiegend Master / PhD",
                 "kM": "keine überwiegende Mehrheit"
             },
-            "addInfo": ["{NO BULLET} <b>Warum fragen wir das?</b><br>Im Vergleich zu erfahrenen Studierenden haben Studierende in der Eingangsphase in der Regel mehr Bedarf daran, durch eine verstärkte Präsenz und Kursstrukturierung sich im Studium zu etablieren und Selbstlernstrategien zu entwickeln."]
+            "addInfo": ["{NO BULLET} Im Vergleich zu erfahrenen Studierenden haben Studierende in der Eingangsphase in der Regel mehr Bedarf daran, durch eine verstärkte Präsenz und Kursstrukturierung sich im Studium zu etablieren und Selbstlernstrategien zu entwickeln."]
         },
 
         "limZPSt": {
@@ -137,8 +137,7 @@
             },
             "addInfo": [
                 "Über 60% der Studierenden in Deutschland arbeiten neben dem Studium, [<a href='#source_studienwahl'></a>] wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann.",
-                "Regelmäßige Vor- und Nacharbeit der Kursinhalte außerhalb des Unterrichts ist für den Lernerfolg der Studierenden förderlich.",
-                "Studierende, die nur eine begrenzte Zeit pro Woche für ihr Studium aufwenden können, haben nicht so viel Zeit außerhalb der Unterrichtszeiten, um regelmäßige Aufgaben zu erledigen.",
+                "Studierende, die nur eine begrenzte Zeit pro Woche für ihr Studium aufwenden können, haben nicht so viel Zeit außerhalb der Unterrichtszeiten, um viele regelmäßige Aufgaben zu erledigen.",
                 "Solche Studierende profitieren zudem von mehr Flexibilität und weniger Pendelzeit."
             ]
         },

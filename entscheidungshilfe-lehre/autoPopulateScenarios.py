@@ -71,22 +71,22 @@ for code in list_of_scenarios:
     # LZiP: if essential learning goals in person and there are no other LV in the module, exclude hybrid and online options.
     # if there are essential goals in person, discourage those options and add note
     # if some nonessential learning goals in person, discourage online options and less so hybrid options
-    if code.split("-")[1] in ["async", "onl", "ringonl"]:
-        updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -100
-        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -2
-        # setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
-        # setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -2)
-        # setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
-        # setConditionalEffect("LZiP", "1", code, "modulCombo=ja", -1)
-        updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
-    if code.split("-")[1] in ["hyb", "ringhyb2", "onlhybwechs", "hybrem"]:
-        updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -3
-        updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -1
-        # setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
-        # setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -1)
-        # setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
-        # updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
-        # setSpecialCase(code, "LZiP=2", "voraussetztenGelPraes")
+    # if code.split("-")[1] in ["async", "onl", "ringonl"]:
+    #     updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -100
+    #     updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -2
+    #     # setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
+    #     # setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -2)
+    #     # setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
+    #     # setConditionalEffect("LZiP", "1", code, "modulCombo=ja", -1)
+    #     updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
+    # if code.split("-")[1] in ["hyb", "ringhyb2", "onlhybwechs", "hybrem"]:
+    #     updated_questions["LZiP"]["antworten"]["2"]["effects"][code] = -3
+    #     updated_questions["LZiP"]["antworten"]["1"]["effects"][code] = -1
+    #     # setConditionalEffect("LZiP", "2", code, "modulCombo=nein", -100)
+    #     # setConditionalEffect("LZiP", "1", code, "modulCombo=nein", -1)
+    #     # setConditionalEffect("LZiP", "2", code, "modulCombo=ja", -2)
+    #     # updated_questions["LZiP"]["antworten"]["0"]["effects"][code] = +1
+    #     # setSpecialCase(code, "LZiP=2", "voraussetztenGelPraes")
 
 
     # LZsy

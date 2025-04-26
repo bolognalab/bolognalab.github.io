@@ -1,9 +1,12 @@
 .qCont {
     background-color: var(--backgroundLightBlue);
     /* padding: 20px 20px; */
-    overflow: hidden;
+    overflow: scroll;
     position: relative;
-    height: 50em;
+    height: 60em;
+    width: 100%;
+    max-width: 100%;
+
     /* background-image: url("../images/entscheidungshilfe/treeTemp.svg");
     background-size: 80%; 
     background-repeat: no-repeat;
@@ -21,7 +24,7 @@
     opacity: 0.2;
 }
 #DIV_TEXT_welcome {
-    background: rgba(255,255,255, 0.8)
+    background: rgba(255,255,255, 0.8);
 }
 #welcomeLogo {
     width: 40%
@@ -36,17 +39,21 @@
     text-align: center;
     font-size: 24px;
     width: 60%;
-    margin: auto;
+    margin: 0 auto 2em;
     
 }
 #DIV_TEXT_welcome > p {
     /* background: rgba(18, 161, 154, 0.8);; */
     border-radius: 0.8em;
     width: 60%;
-    margin: 2em auto;
-    padding: 0.8em 1em 1.5em 1em;
+    margin: 1em auto;
+    /* padding: 0.8em 1em 1.5em 1em; */
     color: var(--networkBlack);
-    text-align: center;
+    /* text-align: center; */
+}
+#DIV_TEXT_welcome > ul {
+    width: 85%;
+    margin: auto;
 }
 #DIV_TEXT_welcome > h1, #DIV_TEXT_welcome > p {
     width: 90%;
@@ -87,7 +94,7 @@
     margin-bottom: 20px;
     position: absolute;
     left: 50%;
-    top: 15%;
+    top: 8%;
     width: calc(100% - 5em);
     max-width: 630px;
     transform: translate(-50%, 0);
@@ -97,7 +104,7 @@
 }
 @media only screen and (max-width: 600px){
     .qCont {
-        height: 40em
+        height: 60em
     }
     .qDiv {
         top: 20px;
@@ -267,6 +274,20 @@ input[type='radio']:disabled + label, input[type='checkbox']:disabled + label {
     cursor: auto;
 }
 
+#whichPart {
+    margin: 0 0 0 0 !important;
+    padding: 0 0 0 0;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 0.8em;
+    font-style: italic;
+    color: rgba(18, 161, 154, 0.4) !important;
+    visibility: hidden;
+}
+#whichPart.show {
+    visibility: visible
+}
 div.progressBar {
     position: absolute;
     left: 50%;
@@ -277,19 +298,23 @@ div.progressBar {
     opacity: 0;
     border: 1px solid rgba(18, 161, 154, 0.2); 
     border-radius: 1em;
-}
-div.progressBar.discreet {
-    height: 0.4em;
-    width: 15%;
-    left: 90%;
-    top: 1em;
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    overflow: hidden;
 }
 
-.progressBar .phase {
+.progressBar .bit {
+    flex-grow: 1;
+}
+.progressBar .bit.full {
+    background: rgba(18, 161, 154, 0.4);
+}
+
+/* .progressBar .phase {
     width: calc(25% - 0px);
     height: 100%;
     position: absolute;
-    /* border: 1px solid rgba(18, 161, 154, 0.3); */
     top: 50%;
     transform: translate(-50%, -50%);
     border-top: 1px solid rgba(18, 161, 154, 0.3);
@@ -327,7 +352,7 @@ div.progressBar.discreet {
 }
 .progressBar:not(.discreet) .third.phase.active {
     border-radius: 0.2em;
-    /* border: 1px solid rgba(18, 161, 154, 0.9); */
+    border: 1px solid rgba(18, 161, 154, 0.9);
 }
 
 .progressBar .fourth.phase {
@@ -345,11 +370,8 @@ div.progressBar.discreet {
 }
 .progressBar .active {
     background: rgba(18,161,154,0.1);
-    /* background: linear-gradient(90deg, rgba(18,161,154,0.2) 0%, rgba(255,255,255,1) 100%);     */
     border-color: var(--networkTurqoise);
     z-index:3;
-    /* box-shadow:rgb(18, 161, 154); */
-    /* box-shadow: rgba(19, 143, 231, 0.3) 1px 1px 10px; */
 }
 .progressBar:not(.discreet) .active {
     border: 1.5px solid hsl(205, 85%, 49%);
@@ -362,7 +384,7 @@ div.progressBar.discreet .full {
 div.progressBar.discreet .active {
     background: rgb(18,161,154);
     box-shadow: none;
-}
+} */
 
 .qCont .submitButton {
     left: 50%;
