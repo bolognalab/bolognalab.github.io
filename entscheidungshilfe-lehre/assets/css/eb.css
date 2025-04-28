@@ -97,13 +97,25 @@ li > .closeBtn {
     color: rgb(4, 23, 133)
 }
 
-.rCont, .sCont, .qCont {
+.rCont, .qCont {
     width: 95%;
     max-width: 800px;
     margin: auto;
 }
 .sCont {
-    width: 10%;
+    width: 90%;
+    height: 50em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    font-size: 0.8em;
+
+}
+.sCont p {
+    margin: 0 2em 0 0;
+}
+.sCont .sName {
+    font-weight: bold;
 }
 .qCont button {
     margin: 1em 2em;

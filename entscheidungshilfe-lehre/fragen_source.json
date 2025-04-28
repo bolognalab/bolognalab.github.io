@@ -32,7 +32,7 @@
 
         "intSync": {
             "condition": true,
-            "text": "Wie stellen Sie sich den <b>maximalen Interaktionsgrad</b> in ihrem Kurs vor?",
+            "text": "Wie stellen Sie sich den <b>maximalen Interaktionsgrad</b> während der Lehrveranstaltung vor?",
             "antworten": {
                 "0": "Eher frontaler Unterricht, ggf. mit kurzen Q&A (unidirektional)",
                 "1": "Diskussionen hauptsächlich im Plenum (bidirektional)",
@@ -44,7 +44,7 @@
             "condition": true,
             "text": "Welche der folgenden (bewerteten oder unbewerteten) Leistungen sind vorgesehen als integrale Bestandteile des Kurses?",
             "antworten": {
-                "liveVortrag": "Vortrag oder -projektvorstellung inkl. Q&A",
+                "referat": "Referat oder -projektvorstellung inkl. Q&A",
                 "debate": "Debatten, Interviewen oder Moderieren",
                 "praxis": "Versuch, Experiment oder andere praktische Übungen",
                 "privat": "Umgang mit sensiblen Informationen (z.B. Patientendaten)",
@@ -52,9 +52,9 @@
             },
             "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
         },
-        "liveVortrag": {
+        "referat": {
             "condition": true,
-            "text": "Proxy-Frage: liveVortrag?",
+            "text": "Proxy-Frage: referat?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
@@ -194,8 +194,7 @@
                 "egal" : "Es spielt für mich keine Rolle, wie viel ich online oder vor Ort unterrichte."
             },
             "addInfo": [
-                "In dieser Frage geht es wahrscheinlich nicht nur um Ihre persönliche Präferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre für das Lehrdeputat.",
-                "In dieser Frage wird nach Ihrer eigenen Präsenz- oder Online-Teilnahme gefragt (Studierende könnten prinzipiell online teilnehmen, während Sie von einem Lehrraum aus unterrichten)."
+                "{NO BULLET} In dieser Frage geht es wahrscheinlich nicht nur um Ihre persönliche Präferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre für das Lehrdeputat. Anmerkung: hier dieser Frage wird nach Ihrer eigenen Präsenz- oder Online-Teilnahme gefragt (Studierende könnten prinzipiell online teilnehmen, während Sie von einem Lehrraum aus unterrichten)."
             ]
         },
 

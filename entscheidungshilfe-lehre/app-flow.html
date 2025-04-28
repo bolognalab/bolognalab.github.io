@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Entscheidungshilfe</title>
+    <title>Entscheidungshilfe: FLOW</title>
     <meta charset="utf-8" />
     <meta http-equiv="content-language" content="de">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -13,7 +13,8 @@
 </head>
 <body class="is-preload" lang="de">
 <div style="width: 100%">
-    <div id="questions" class="qCont">
+    <h3>Entscheidungshilfe Lehre: Testversion mit Score-Anzeige</h3>
+    <div id="questions" class="qCont" style="height: 50em">
         <img class="backgroundImage" src = "images/treeTemp.svg" />
         <div id="DIV_TEXT_welcome" class="qDiv">
             <p id="whichPart">:)</p>
@@ -25,7 +26,7 @@
                 <li>Welche Anforderungen hat Ihre studentische Kohorte an <b>Strukturierung</b> und <b>Flexibilität?</b></li>
                 <li>Inwieweit passt virtuelle Lehre zu Ihrem <b>Lehrstil</b> und zu den <b>Bedingungen Ihrer Hochschule?</b></li>
             </ul>
-            <p style="margin-bottom: 1.5em">Als Ergebnis erhalten Sie - neben ein <b>empfohlenes Lehrformat</b> - Tipps für die <b>synchrone</b> und <b>asynchrone</b> Planung Ihres Kurses. Es ist okay, wenn Sie für die Beantwortung mancher Fragen nicht sicher sind! Es gibt immer die Möglichkeit, zurückzugehen und andere Antwortmöglichkeiten auszuprobieren.</p>
+            <p style="margin-bottom: 1.5em">Als Ergebnis erhalten Sie - neben einem <b>empfohlenen Lehrformat</b> - Tipps für die <b>synchrone</b> und <b>asynchrone</b> Planung Ihres Kurses. Es ist okay, wenn Sie für die Beantwortung mancher Fragen nicht sicher sind! Es gibt immer die Möglichkeit, zurückzugehen und andere Antwortmöglichkeiten auszuprobieren.</p>
             <div class="buttonContainer start"><button id="start" class="submitButton" onclick="start()" style="display:none">Beginnen</button></div>
             <div id="useCase2Container"><p>oder...</p><a href='select.html'>Ich habe mich schon für ein Lehrformat entschieden und suche dafür didaktische und technische Tipps</a></div>
         </div>
@@ -33,7 +34,7 @@
         <div id="DIV_TEXT_group1" class="qDiv upcoming" style="display:none">
             <h2 style="text-align:center"><img src="images/descImg/se-praes.jpg" style="width: 300px"/></h2>
             <h2 class="sectionTitle">Teil 1: Art und Ziele der Lehrveranstaltung</h2>
-            <p>Die ersten vier Fragen beziehen sich auf die Art des Kurses und der Lernziele, die die Studierenden am Ende des Semesters beherrschen sollen – diese grundlegenden Ziele liegen nämlich im Kern der Entscheidung über das Lehrformat.</p>
+            <p>In den ersten Fragen geht es um die Art des Kurses und der Lernziele, die die Studierenden am Ende des Semesters beherrschen sollen – diese grundlegenden Ziele liegen nämlich im Kern der Entscheidung über das Lehrformat.</p>
         </div>
         <div id="DIV_TEXT_group2" class="qDiv upcoming" style="display:none">
             <h2 style="text-align:center"><img src="images/descImg/se-hyb.jpg" style="width: 300px"/></h2>
@@ -62,6 +63,8 @@
         </div>
         <div id="progressBar" class="progressBar"></div>
     </div>
+    <h3>Szenarien und Scores</h3>
+    <div id="scenarios" class="sCont"></div>
     <div id="sources">
         <h5>Quellen</h5>
         <ol class="sources">
@@ -70,6 +73,7 @@
             <li id="source_studienwahl"><a href='https://studienwahl.de/themen-des-monats/jobben-neben-dem-studium'>Studienwahl.de: Jobben neben dem Studium (03.09.2024)</a></li>
         </ol> 
     </div>
+    
    
 </div>
 <script src="assets/js/jquery.csv.js"></script>
@@ -77,6 +81,7 @@
     const qCont = document.getElementById("questions")
     const maxShownAnswers = 4
 
+    const sCont = document.getElementById("scenarios")
 
     var all_data, questionInfo, all_scenarios, infoTimeout, infoTimeout2
 
@@ -95,8 +100,8 @@
         'TEXT_group1',
         'artLV', 
         'TEXT_labore',
-        'anzahlVL', 
-        'anzahlSE',
+        // 'anzahlVL', 
+        // 'anzahlSE',
         'intSync',
         'leistungen',
         'TEXT_group2',
@@ -185,6 +190,9 @@
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         document.querySelector("#start").style.display = "block"
+        setTimeout(()=>{
+            listActiveScenarios(activeScenarios)
+        }, 100)
         // start()
     })
 
@@ -586,6 +594,10 @@
             
         })
 
+        setTimeout(()=>{
+            listActiveScenarios(activeScenarios)
+        }, 100)
+
         if (proceed){
             proceedFromQuestion(pKey)
         }
@@ -740,6 +752,45 @@
             document.getElementById("DIV_" + activeQ).remove()
         }
         displayQuestion(activeQ, from="past")
+
+        setTimeout(()=>{
+            listActiveScenarios(activeScenarios)
+        }, 100)
+
+    }
+
+    // shows live-scores below tool for testing purposes
+    function listActiveScenarios(sObju){
+        sObj = Object.entries(sObju).sort(([,a],[,b]) => b-a).reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+        sCont.innerHTML = ""
+        Object.entries(sObj).forEach((entry)=>{
+            sKey = entry[0]
+            sVal = entry[1]
+            let tr = document.createElement("p")
+            let name = document.createElement("span")
+            name.classList.add("sName")
+            let score = document.createElement("span")
+            name.innerHTML = sKey 
+            score.innerHTML = sVal
+            score.setAttribute("id", "SCORE_" + sKey)
+            score.classList.add("score")
+            tr.append(name, score)
+            if (recent.includes(sKey)){
+                tr.classList.add("recent")
+            }
+            sCont.append(tr)
+        })
+
+        for (let score of document.querySelectorAll(".score")){
+            let value = +(score.innerHTML)
+            if (value > 0){
+                score.style.color = "#0e7700"
+            } else if (value <0){
+                score.style.color = "#d93300"
+            } else {
+                score.style.color = "#585858"
+            }
+        }
     }
 
     function getResult(finalResults){
