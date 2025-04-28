@@ -1,6 +1,6 @@
 [
     {
-        "short-event-name": "Student-Led Sustatinability",
+        "short-event-name": "Student-Led Sustainability",
         "long-event-name": "Universities as Drivers of Sustainability",
         "day": "monday",
         "start": "10:00",
@@ -14,7 +14,7 @@
     },
     {
         "short-event-name": "Walk-In Gallery SDG4",
-        "long-event-name": "Posters on Sustainability Goal 4",
+        "long-event-name": "Walk-In Gallery SDG4: Posters on Sustainability Goal 4",
         "day": "monday",
         "start": "16:00",
         "end": "17:00",
@@ -27,7 +27,7 @@
     },
     {
         "short-event-name": "Selbstwirksame Universtit\u00e4ten",
-        "long-event-name": "Wie wir Nachhaltigkeitsziele als Chancen ergreifen und unsere Resilienz gemeinsam st\u00e4rken",
+        "long-event-name": "Fishbowl Discussion \"Die selbstwirksame Universit\u00e4t:  Wie wir Nachhaltigkeitsziele als Chancen ergreifen und unsere Resilienz gemeinsam st\u00e4rken\"",
         "day": "monday",
         "start": "16:30",
         "end": "18:00",
@@ -40,7 +40,7 @@
     },
     {
         "short-event-name": "Science Slam",
-        "long-event-name": "Inklusion | Partizipation | Forschendes Lernen",
+        "long-event-name": "Science Slam: Inklusion, Partizipation, Forschendes Lernen",
         "day": "monday",
         "start": "18:00",
         "end": "19:30",
@@ -53,7 +53,7 @@
     },
     {
         "short-event-name": "Festive Finale",
-        "long-event-name": "Get-Together",
+        "long-event-name": "Festive Finale of Climate Day: Get-Together",
         "day": "monday",
         "start": "19:30",
         "end": "20:30",
@@ -66,7 +66,7 @@
     },
     {
         "short-event-name": "Opening",
-        "long-event-name": "Video Message @ all Circle U. Universities",
+        "long-event-name": "Opening: Video Message @ all Circle U. Universities",
         "day": "tuesday",
         "start": "09:30",
         "end": "10:30",
@@ -79,7 +79,7 @@
     },
     {
         "short-event-name": "Sustainable Personal Hygiene",
-        "long-event-name": "Student-Led",
+        "long-event-name": "Sustainable Personal Hygiene (student-led)",
         "day": "tuesday",
         "start": "13:00",
         "end": "15:30",
@@ -92,7 +92,7 @@
     },
     {
         "short-event-name": "Science is ignored",
-        "long-event-name": "Why should we still train future (climate) scientists?",
+        "long-event-name": "Science is ignored: Why should we still train future (climate) scientists?",
         "day": "tuesday",
         "start": "14:00",
         "end": "16:00",
@@ -105,7 +105,7 @@
     },
     {
         "short-event-name": "CUBES Circle",
-        "long-event-name": "virtual visit our circular research facility",
+        "long-event-name": "CUBES Circle - Virtually visit our circular research facility",
         "day": "wednesday",
         "start": "10:00",
         "end": "11:30",
@@ -144,7 +144,7 @@
     },
     {
         "short-event-name": "Human Responses to Climate Change",
-        "long-event-name": "UNIPI: Presentation",
+        "long-event-name": "Tracking human responses to climate change through bioarchaeology (UNIPI)",
         "day": "thursday",
         "start": "10:00",
         "end": "11:00",
@@ -157,7 +157,7 @@
     },
     {
         "short-event-name": "Reshaping Science",
-        "long-event-name": "The Next Generation's Role in Solving the Climate Crisis",
+        "long-event-name": "Reshaping Science: The Next Generation's Role in Solving the Climate Crisis",
         "day": "thursday",
         "start": "11:00",
         "end": "12:00",
@@ -170,7 +170,7 @@
     },
     {
         "short-event-name": "Crea.Visions",
-        "long-event-name": "Democatizing AI for Public Engagement",
+        "long-event-name": "Crea.Visions: Democatizing AI for Public Engagement in Climate Action",
         "day": "thursday",
         "start": "09:00",
         "end": "12:00",

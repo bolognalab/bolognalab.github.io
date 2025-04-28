@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# Um die Blöcke "Mehr Informationen" und "Zum Kalender hinzufügen automatisch anzeigen zu lassen, müssen Zeilen 57-58 (die jetzt kommentiert sind) wieder aktiviert werden und die Datei "events-dir.html" wieder gelöscht werden
 """
 Created on Fri Jun 28 11:18:54 2024
 
@@ -53,8 +54,8 @@ for event_id in events_list:
                                         'href': '#0'})
     aCal.text = r'&#x1F4C5; &nbsp; zum Kalender hinzuf&#xFC;gen (.ics)'
     
-    spanEL.append(aMoreInfo)
-    spanEL.append(aCal)
+    # spanEL.append(aMoreInfo)
+    # spanEL.append(aCal)
     div0.append(spanEL)
     body.append(ET.Comment("         " + event_id + "           "))
     body.append(div0)

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# Um die komplette Vorlage (laut template.md) zu benutzen (anstatt von "Information folgt"), muss Zeile 37 "kommentiert werden" und Zeilen 38-39 wieder inkludiert werden. Alle .md Dateien müssen gelöscht werden, damit sie wieder generiert werden.
 """
 Convert CSV to json
 """
@@ -32,8 +33,9 @@ for name in names_list:
     if not os.path.exists(fname):
         with open(fname, 'w', encoding="utf-8") as file:
             file.write("# " + titles[name] + '  \n')
-            for line in linesToWrite[1:]:
-                file.write(line)
+            file.write("Information folgt")
+            # for line in linesToWrite[1:]:
+            #     file.write(line)
             pass
 
 
