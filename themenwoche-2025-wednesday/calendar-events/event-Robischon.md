@@ -1,10 +1,9 @@
 # Spaziergang über den Campus zu invasiven Gewächsen in der Stadt  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+## weitere Details folgen so bald wie möglich  
+##### Campus Mitte oder Nord
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Aktivität
 Leitung: \
-**Name 1**  
-##### Einrichtung 1
-**Name 2**  
-##### Einrichtung 2 
+**Prof. Dr. Marcel Robischon**  
+##### Albrecht Daniel Thaer-Institut für Agrar- und Gartenbauwissenschaften
+

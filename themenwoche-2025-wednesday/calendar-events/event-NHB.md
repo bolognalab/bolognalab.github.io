@@ -1,8 +1,8 @@
 # Von Peer-to-Peer Learning zu den Change Agents von Morgen  
 ## 1066e und Online  
-##### Hauptgeäude, Unter den Linden 6
+##### Hauptgebäude, Unter den Linden 6
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Impuls
 Leitung: \
 **N.N.**  
 #####  studentische Initiative „Nachhaltigkeitsbüro“ der HU Berlin

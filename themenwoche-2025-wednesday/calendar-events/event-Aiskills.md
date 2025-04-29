@@ -1,10 +1,10 @@
 # OER als nachhaltige Bildungsressource  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+## weitere Details folgen so bald wie möglich  
+##### 
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Kurzworkshop
 Leitung: \
-**Name 1**  
-##### Einrichtung 1
-**Name 2**  
-##### Einrichtung 2 
+**Noah Baumann**  
+##### AI-Skills
+**Dr. Anna Faust**  
+##### AI-Skills 

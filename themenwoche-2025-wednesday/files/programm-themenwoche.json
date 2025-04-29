@@ -1,7 +1,7 @@
 [
     {
         "short-event-name": "Wake-Up with us: Stadtradeln",
-        "long-event-name": "Gemeinsames Fahrradfahren zur Aktivierung und Vernetzung",
+        "long-event-name": "Extrarunde(n) f\u00fcr nachhaltiges Lehren und Lernen",
         "day": "thursday",
         "start": "08:00",
         "end": "09:00",
@@ -42,8 +42,8 @@
         "event-participants": "Jurik Stiller"
     },
     {
-        "short-event-name": "Nachhaltigkeitsprojekte im StuROP",
-        "long-event-name": "Inklusion | Partizipation | Forschendes Lernen",
+        "short-event-name": "Nachhaltigkeit durch studentische Forschung?",
+        "long-event-name": "Einblicke in das Student Research Opportunities Program der BUA",
         "day": "tuesday",
         "start": "11:00",
         "end": "12:00",
@@ -70,8 +70,8 @@
         "event-participants": "Wiebke Hampel & Shalin Mathur (Klimaschutzmanagement)"
     },
     {
-        "short-event-name": "Neuartige D\u00fcngemittel",
-        "long-event-name": "aus der Foschung: neuartige recycelte D\u00fcngemittel ",
+        "short-event-name": "Zur\u00fcck zum Kreislauf",
+        "long-event-name": "Wie wertvoll sind unsere F\u00e4kalien?",
         "day": "tuesday",
         "start": "12:00",
         "end": "13:30",
@@ -91,7 +91,7 @@
         "end": "13:00",
         "loc": "Pr\u00e4senz",
         "id": "event-Aiskills",
-        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb6",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/oer-aiskills",
         "category": "event-3",
         "start-ovr": "-",
         "end-ovr": "-",
@@ -126,8 +126,8 @@
         "event-participants": "Wendy Morel (Thaer-Institut)"
     },
     {
-        "short-event-name": "Themenklasse IRIThesys",
-        "long-event-name": "Themenklasse Globale Gerechtigkeit und Nachhaltigkeit",
+        "short-event-name": "Globale Gerechtigkeit & Nachhaltigkeit",
+        "long-event-name": "Themenklasse des IRI Thesys",
         "day": "tuesday",
         "start": "15:00",
         "end": "16:00",
@@ -140,14 +140,14 @@
         "event-participants": "Franziska Knierim (IRI THESys)"
     },
     {
-        "short-event-name": "Studium Oecologicum",
-        "long-event-name": "Das Nachhaltigkeitsb\u00fcro stellt das Studium Oecologicum vor",
+        "short-event-name": "Studierende als Change Agents",
+        "long-event-name": "Von Peer-to-Peer Learning zu den Change Agents von Morgen",
         "day": "tuesday",
-        "start": "16:00",
-        "end": "17:00",
+        "start": "15:30",
+        "end": "16:30",
         "loc": "hybrid",
         "id": "event-NHB",
-        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-pb8 ",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/studium-oecologicum-to-change-agents",
         "category": "event-2",
         "start-ovr": "-",
         "end-ovr": "-",
@@ -161,7 +161,7 @@
         "end": "18:00",
         "loc": "Campus",
         "id": "event-Robischon",
-        "web": "https://www.digitale-lehre.hu-berlin.de/de/veranstaltungen/themenwoche-zur-hybriden-lehre/programm/thl-diskussion-studierende ",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/walk-with-us-invasive-pflanzen",
         "category": "event-4",
         "start-ovr": "-",
         "end-ovr": "-",

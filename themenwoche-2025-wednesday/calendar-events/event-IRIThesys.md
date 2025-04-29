@@ -2,7 +2,7 @@
 ## IRI Thesys  
 ##### Online
 ---
-### Impuls und Q&A
+### Impuls
 Leitung: \
 **Franziska Knierim**  
 ##### IRI Thesys

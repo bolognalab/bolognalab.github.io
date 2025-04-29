@@ -1,6 +1,6 @@
 # BNE; Umgebungsspaziergang  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+## weitere Details folgen so bald als möglich  
+##### Campus Mitte
 ---
 ### Aktivität
 Leitung: \

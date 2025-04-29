@@ -1,10 +1,12 @@
-# Inklusion | Partizipation | Forschendes Lernen  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+# Einblicke in das Student Research Opportunities Program der BUA
+## Online 
+##### 
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Impuls
 Leitung: \
-**Name 1**  
-##### Einrichtung 1
-**Name 2**  
-##### Einrichtung 2 
+**Dr. Nina Lorkowski**  
+##### Berlin University Alliance
+**Dr. Julia Rueß**  
+##### Berlin University Alliance 
+**et al.**  
+##### StuROPx 

@@ -1,9 +1,9 @@
-# Human Excreta as Fertilizer: Neuartige Düngemittel und ihre Klimawirkung 
+# Wie wertvoll sind unsere Fäkalien und warum nutzen wir sie nicht?
 ## Online  
 ##### 
 ---
-### Impuls
+### Impuls und Kurzworkshop
 Leitung: \
-**Dr. Jan-Ole Boness**  
+**Jan-Ole Boness**  
 ##### Albrecht Daniel Thaer-Institut für Agrar- und Gartenbauwissenschaften
 
