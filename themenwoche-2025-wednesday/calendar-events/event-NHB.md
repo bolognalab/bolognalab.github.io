@@ -1,10 +1,10 @@
-# Das Nachhaltigkeitsbüro stellt das Studium Oecologicum vor  
-## Ort (z.B, Senatsaal)  
-##### Adresse und Raum
+# Von Peer-to-Peer Learning zu den Change Agents von Morgen  
+## 1066e und Online  
+##### Hauptgeäude, Unter den Linden 6
 ---
 ### Art der Veranstaltung (z.B. Workshop)
 Leitung: \
-**Name 1**  
-##### Einrichtung 1
-**Name 2**  
-##### Einrichtung 2 
+**N.N.**  
+#####  studentische Initiative „Nachhaltigkeitsbüro“ der HU Berlin
+**N.N.**  
+#####  studentische Initiative „Nachhaltigkeitsbüro“ der HU Berlin
