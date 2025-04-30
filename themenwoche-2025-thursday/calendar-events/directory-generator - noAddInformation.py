@@ -51,7 +51,9 @@ for event_id in events_list:
     aMoreInfo.text = r'&#128279; Mehr Infos & Anmeldung'
     
     aCal = ET.Element('a', attrib={'class': 'addToCalendar',
-                                        'href': '#0'})
+                                        'href': '#0',
+                                        "target": '_blank'
+                                        })
     aCal.text = r'&#x1F4C5; &nbsp; zum Kalender hinzuf&#xFC;gen (.ics)'
     
     # spanEL.append(aMoreInfo)
