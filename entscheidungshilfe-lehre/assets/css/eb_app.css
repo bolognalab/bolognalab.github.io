@@ -165,6 +165,7 @@ div.context {
 }
 .context .contextContent {
     height: 0;
+    visibility: hidden;
     overflow: hidden;
     /* display: none; */
     padding: 0 0.6em 0.2em 0;

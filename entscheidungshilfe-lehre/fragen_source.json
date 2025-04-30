@@ -48,7 +48,7 @@
                 "debate": "Debatten, Interviewen oder Moderieren",
                 "praxis": "Versuch, Experiment oder andere praktische Übungen",
                 "privat": "Umgang mit sensiblen Informationen (z.B. Patientendaten)",
-                "LZiP": "andere Leistung(en) mit Präsenzpflicht"
+                "LZiP": "andere nur vor Ort erbringbare Leistung(en)"
             },
             "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
         },
@@ -98,6 +98,14 @@
                 "Einige Beispiele für ausschließlich in Präsenz erreichbare Zielkompetenzen: Arbeit mit Ausrüstungen und Gegenständen, Arbeit im Feld, oder Umgang mit sensiblen Informationen, die nicht online weitergegeben dürfen."
             ]
         },
+        "keineLeistungen":{
+            "condition": true,
+            "text": "Proxy-Frage: keine der vorgenannten Leistungen?",
+            "antworten": {
+                "nein": "Nein", 
+                "ja": "Ja"
+            }
+        },
 
         "LZsy":{
             "condition": true,
@@ -143,35 +151,23 @@
         },
 
         "nieSync": {
-            "condition": true,
+            "condition": "referat=nein+debate=nein+privat=nein",
             "text": "Gibt es Studierende, die <b>nie oder fast nie</b> am Kurs <b>synchron</b> teilnehmen können (z.B. wegen Überschneidungen oder Zeitzonen)?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein",
                 "idk": "Ich bin mir nicht sicher"
-            },
-            "addInfo": [
-                "{NO BULLET} Beispiele von zutreffenden Situationen (u.a.):",
-                "Studierende mit terminlichen Überschneidungen (die sonst mehrere Semester warten müssen, bis Sie den Kurs belegen dürfen)",
-                "Studierende in einer anderen Zeitzone",
-                "Studierende (z.B. im Praxissemester), deren Arbeitszeiten nicht flexibel sind"
-            ]
+            }
         },
 
         "niePr": {
-            "condition": true,
+            "condition": "praxis=nein+LZiP=nein",
             "text": "Gibt es Studierende, die <b>nie oder sehr schwierig in Präsenz</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein",
                 "idk": "Ich bin mir nicht sicher"
-            },
-            "addInfo": [
-                "{NO BULLET} Beispiele von zutreffenden Situationen (u.a.):",
-                "Studierende mit Aufenthalt an einem anderen Ort",
-                "Schwerbehinderte Studierende",
-                "Studierende, die unmittelbar vor oder nach Ihrer Veranstaltung eine Lehrveranstaltung an einem weiter entfernten Campus besuchen müssen (z.B. Kombibachelor)"
-            ]
+            }
         },
 
         "regAbw": {

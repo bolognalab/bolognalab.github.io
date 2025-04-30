@@ -71,6 +71,8 @@
         "exkursion": "",
         "alternativPraes": "Einige Studierende haben die Möglichkeit, vollständig online an dieser LV teilzunehmen. Laut Ihrer Angaben gibt es aber wichtige Lernziele für Ihren Kurs, die nur in Präsenz erreicht werden können. Da Ihre Lehrveranstaltung Teil eines Moduls ist, wird empfohlen, dass die anderen Teile Ihres Moduls zumindest gelegentlich obligatorische Präsenzkomponenten haben, um diese Lernziele zu erreichen.",
         "hybrideExkursion": "Siehe <a href='https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion' target='_blank'>Stellvertreterexkursion</a>",
-        "onlineZuschaltungLP": "Lehperson wird online zugeschaltet, während Studierende und eine*r moderierenden Person in einem Lehrraum sind."
+        "onlineZuschaltungLP": "Lehperson wird online zugeschaltet, während Studierende und eine*r moderierenden Person in einem Lehrraum sind.",
+        "gastOnline": "",
+        "gasVorOrtHyb": ""
     }
 }

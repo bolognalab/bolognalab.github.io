@@ -14,7 +14,7 @@
 <body class="is-preload" lang="de">
 <div style="width: 100%">
     <h3>Entscheidungshilfe Lehre: Testversion mit Score-Anzeige</h3>
-    <div id="questions" class="qCont" style="height: 50em">
+    <div id="questions" class="qCont" style="height: 45em">
         <img class="backgroundImage" src = "images/treeTemp.svg" />
         <div id="DIV_TEXT_welcome" class="qDiv">
             <p id="whichPart">:)</p>
@@ -83,7 +83,7 @@
 
     const sCont = document.getElementById("scenarios")
 
-    var all_data, questionInfo, all_scenarios, infoTimeout, infoTimeout2
+    var all_data, questionInfo, all_scenarios, all_texts, infoTimeout, infoTimeout2
 
     var activeQ, activeA
     var nextQuestionIdx = 1
@@ -97,7 +97,7 @@
     const questionOrder = [ 
         "TEXT_welcome",
         // 'TEXT_intro',
-        'TEXT_group1',
+        // 'TEXT_group1',
         'artLV', 
         'TEXT_labore',
         // 'anzahlVL', 
@@ -160,6 +160,10 @@
                 Object.keys(questionInfo[activeQ]["antworten"]).forEach((a, idx, array)=>{
                     answersToSubmit[a] = answers[a]
                     if (idx === array.length -1 ){
+                        if (activeQ == "leistungen"){
+                            // special case: if none of the tasks are selected, set keineLeistungen=ja in order to apply some effects
+                            answersToSubmit["keineLeistungen"] = answers["keineLeistungen"]
+                        }
                         console.log(answersToSubmit)
                         submitMultipleAnswers(answersToSubmit, activeQ)
                     }
@@ -188,8 +192,22 @@
         situationsQuestion = questionInfo["situations"]
         leistungenQuestion = questionInfo["leistungen"]
         all_scenarios = json['scenarios']
-        Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
+        Object.entries(all_scenarios).forEach((s)=>{
+            activeScenarios[s[0]] = 0
+        })
         document.querySelector("#start").style.display = "block"
+        
+        // read texts_tips_matrix to get scenario titles
+        $.get( "texts_tips_matrix.csv", function(CSVdata) {
+        let csvData = $.csv.toObjects(CSVdata, {separator:';'});
+        all_texts = {}
+        csvData.forEach(function(dict){
+            let key = dict["wert"]
+            delete dict["wert"]
+            all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>!k.includes("text")))
+            all_texts[key]["name"] = dict["name"]
+        })        
+        });
         setTimeout(()=>{
             listActiveScenarios(activeScenarios)
         }, 100)
@@ -222,9 +240,11 @@
         if (a.classList.contains("open")){
             a.classList.remove("open")
             a.querySelector(".contextContent").style.height = "0px"
+            a.querySelector(".contextContent").style.visibility="hidden"
         } else {
             a.classList.add("open")
             a.querySelector(".contextContent").style.height = a.querySelector(".contextContent").scrollHeight + "px"
+            a.querySelector(".contextContent").style.visibility="visible"
         }
     }
     function displayQuestion(qKey, from="upcoming"){
@@ -303,6 +323,9 @@
                 Object.keys(questionInfo[qKey]["antworten"]).forEach((a)=>{
                     answers[a] = "nein"
                 })
+                if (qKey=="leistungen"){
+                    answers["keineLeistungen"] = "ja"
+                }
             }
 
             // add all answers to the question
@@ -341,7 +364,7 @@
                     aDiv.style.display = "none"
                 }
                     // hide least interaktive Option for Seminars
-                if (qKey == "intSync" && aKey == "0"){
+                if (qKey == "intSync" && aKey == "0" && answers["artLV"]=="SE"){
                     aDiv.style.display = "none"
                 }
 
@@ -480,9 +503,16 @@
                 // check if there are any options left selected, otherwise highlight 'none of the above'
                 if (document.querySelectorAll("#DIV_" + qKey + " > .highlighted").length == 0){
                     document.querySelector("#DIV_" + qKey + " > #A_none").classList.add("highlighted")
+                    if (qKey=="leistungen"){
+                        answers["keineLeistungen"] = "ja"
+                    }
+                    
                 } else {
                     // if other options are selected, deselect 'none of the above' option
                     document.querySelector("#DIV_" + qKey + " > #A_none").classList.remove("highlighted")
+                    if (qKey=="leistungen"){
+                        answers["keineLeistungen"] = "nein"
+                    }
                 }
 
 
@@ -545,12 +575,17 @@
             }
         }
     }
-    function submitSingleAnswer(qq=null, aa=null, proceed=true){
+    function submitSingleAnswer(qq=null, aa=null, proceed=true, resetRecent=true){
         let qKey = qq? qq : activeQ
+        console.log(qq,  aa)
         let pKey = qKey
         let aKey = aa? aa : activeA
         
-        recent = []
+        if (resetRecent){
+            console.log(recent, "reset")
+            recent = []
+        }
+        
         if (proceed){
             let allRadios = document.getElementById("DIV_" + qKey).querySelectorAll("input")
             for (let radio of allRadios){
@@ -605,9 +640,9 @@
     }
     function submitMultipleAnswers(answersToSubmit, parentQ){
         Object.entries(answersToSubmit).forEach((aEntry, idx, array)=>{
-            submitSingleAnswer(aEntry[0], aEntry[1], proceed=false)
+            submitSingleAnswer(aEntry[0], aEntry[1], proceed=false, resetRecent=idx==0)
             if (idx === array.length -1){
-                submitSingleAnswer(parentQ, aEntry[0], proceed=true)
+                submitSingleAnswer(parentQ, array[idx-1][0], proceed=true, resetRecent=false)
             } 
             
         })
@@ -666,6 +701,17 @@
                 } else if (oneBefore == "anzahlSE" && !answers["anzahlSE"]) {
                     // 3. question anzahlSE if Vorlesung had been chosen
                     activeQ = "anzahlVL"
+                } else if (oneBefore == "nieSync" && !answers["nieSync"]){
+                    // 4. question nieSync if it should have been skipped
+                    activeQ = "limZPSt"
+                } else if (oneBefore == "niePr" && !answers["niePr"]){
+                    // 5. question niePr if it should have been skipped
+                    if (!answers["nieSync"]){
+                        // 6. maybe both nieSync and niePr were skipped
+                        activeQ = "limZPSt"
+                    } else {
+                        activeQ = "nieSync"
+                    }
                 } else {
                     // default
                     activeQ = oneBefore
@@ -770,7 +816,9 @@
             let name = document.createElement("span")
             name.classList.add("sName")
             let score = document.createElement("span")
-            name.innerHTML = sKey 
+            name.innerHTML = sKey
+            let scenarioTitle = all_texts[sKey.slice(0,-6)].name
+            name.setAttribute("title", scenarioTitle)
             score.innerHTML = sVal
             score.setAttribute("id", "SCORE_" + sKey)
             score.classList.add("score")
