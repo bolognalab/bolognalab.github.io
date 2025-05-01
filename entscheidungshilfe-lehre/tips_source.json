@@ -64,6 +64,46 @@
             "type": "international",
             "title": "Sprachbarrieren abbauen",
             "content": "In einer internationalen Kurskollaboration kann die Muttersprache einiger Studierenden von der Unterrichtssprache abweichen. In diesem Fall kann die Verwendung mehrerer Darstellungsformen in Präsentationen (z. B. die Wiederholung der mündlich vermittelten Informationen in Textform) viel dazu beitragen, Sprachbarrieren abzubauen. Darüber hinaus kann es sinnvoll sein, Diskussionen in der Klasse stärker zu strukturieren (z. B. durch die Verwendung von <a href='https://www.gse.harvard.edu/ideas/usable-knowledge/17/05/starting-conversation'>Diskussionsprotokollen</a>), damit diejenigen, die ihre Gedanken aufgrund einer Sprachbarriere langsamer äußern können, nicht ungerechtfertigt benachteiligt werden."
+        },
+        "toolsDatenschutz": {
+            "type": "synchron",
+            "title": "Kollaborative Tools und Datenschutz",
+            "content": "Achten Sie auf die Datenschutzbestimmungen Ihrer Einrichtung. Viele kostenlose oder kostengünstige interaktive Online-Tools bieten sehr attraktive Funktionen, sind aber nicht GDPR-konform. Falls Sie eine neue Ressource verwenden möchten, sollten Sie sich zunächst mit der IT-Abteilung Ihrer Hochschule beraten und sich darüber informieren, wie das jeweilige Tool Nutzerdaten sammelt und speichert. Verwenden Sie vorrangig Tools, die von Ihrer Hochschule oder von Partneruniversitäten unterstützt werden, von denen Sie wissen, dass sie den Datenschutz für Studierende ebenfalls als wichtig erachten."
+        },
+        "chatiquetteLv1": {
+            "type": "synchron",
+            "title": "Chatiquette (Level 1)",
+            "content": "Legen Sie gemeinsam mit Ihren Studierenden Regeln fest, wie der Chat während der Sitzung genutzt und überwacht wird. Wenn Online-Teilnehmende im Präsenzraum nicht gehört werden können, kann der Chat ihre Hauptkommunikationsmethode sein. Entscheiden Sie, ob Sie die Chatfunktion in irgendeiner Weise einschränken wollen, um beispielsweise parallele, ablenkende Gespräche zu vermeiden. <br>Wenn Sie alleine unterrichten, legen Sie Zeitpunkte fest, an denen Sie Ihre Vorlesung unterbrechen und Fragen aus dem Chat vorlesen und beantworten. Alternativ können Sie eine andere Person im Raum beauftragen, sich in die Webkonferenz einzuwählen und Sie zu informieren, sobald im Chat eine Frage auftaucht."
+        },
+        "chatiquetteLv2": {
+            "type": "synchron",
+            "title": "Chatiquette (Level 2)",
+            "content": "Legen Sie gemeinsam mit Ihren Studierenden Regeln fest, wie der Chat genutzt und überwacht wird. Wann und wie oft werden Pausen eingelegt, um den Chat zu kontrollieren? Sollten Online-Studierende den schriftlichen Kommunikationskanal vermeiden und stattdessen die Hand heben, um mündlich beizutragen? Wenn Sie die Funktionalität des Chats einschränken, stellen Sie sicher, dass Sie immer noch eine Möglichkeit haben, wichtige Inhalte (z. B. Links) mit den Studierenden zu teilen. Außerdem sollte Studierenden, die nicht sprechen können (aufgrund von technischen Problemen, ihres Standorts oder einer Behinderung), weiterhin ein schriftlicher Kommunikationskanal zur Verfügung stehen, um ihnen eine aktive Teilhabe zu ermöglichen. Wichtig für das Verständnis und letztlich Akzeptanz der Regeln ist, dass Sie die Gründe für Ihre Entscheidungen transparent und damit für alle nachvollziehbar machen."
+        },
+        "camAnAus": {
+            "type": "synchron",
+            "title": "Kamera an oder aus?",
+            "content": "Niemand lehrt gern vor schwarzen Kacheln. Daher ist der Wunsch vieler Lehrender nach eingeschalteten Kameras seitens der Online-Teilnehmenden nur allzu verständlich. Allerdings ist die synchrone Bildübertragung aufgrund technischer Probleme, einer instabilen Internetverbindung oder anderen Einschränkungen nicht allen Studierenden jederzeit und überall möglich. Rechtlich betrachtet haben Sie keine Handhabe: Sie dürfen die Studierenden zwar bitten, aber nicht verbindlich auffordern, ihre Kameras zu aktivieren. Auch potenzielle Hemmungen und Ängste von Studierenden, für alle sichtbar zu sein, sollten mitbedacht und aufgefangen werden. Begegnen Sie den Teilnehmenden mit Verständnis und legen Sie die Vorteile von eingeschalteten Kameras offen. Schließlich soll die gegenseitige Sichtbarkeit weniger der sozialen Kontrolle dienen, als vielmehr ein Gefühl von sozialer Präsenz und Zusammengehörigkeit schaffen. Beides hat nachweislich einen positiven Einfluss auf die Lehr- und Lernqualität. Darüber hinaus können Sie als Lehrende auf sichtbare Mimik der Studierenden und bei Bedarf Feedback geben, Inhalte wiederholen, Fragen stellen.<br><a href='https://box.hu-berlin.de/f/407cad45781c4b42b903/' aria-label='Infografik Community in Online-Lehre'>Weitere Tipps für das Fördern virtueller Lerngemeinschaften</a>"
+        },
+        "audienceResponsePr": {
+            "type": "synchron",
+            "title": "Mit Audience-Response engagieren",
+            "content": "Audience-Response-Systeme und Reaktionen fördern Aktivierung, Interaktion und Selbstregulation. Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Reaktionen während der Sitzung fungieren als Stimmungsbarometer zur Verständnissicherung, Tempoabstimmung und Meinungsbildung. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>" 
+        },
+        "audienceResponseHyb": {
+            "type": "synchron",
+            "title": "Mit Audience-Response engagieren",
+            "content": "Audience-Response-Systeme und Reaktionen fördern Aktivierung, Interaktion und Selbstregulation. Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Reaktionen während der Sitzung fungieren als Stimmungsbarometer zur Verständnissicherung, Tempoabstimmung und Meinungsbildung. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>" 
+        },
+        "audienceResponseOnl": {
+            "type": "synchron",
+            "title": "Mit Audience-Response engagieren",
+            "content": "Audience-Response-Systeme und Reaktionen fördern Aktivierung, Interaktion und Selbstregulation. Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Reaktionen während der Sitzung fungieren als Stimmungsbarometer zur Verständnissicherung, Tempoabstimmung und Meinungsbildung. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>" 
+        },
+        "abwechselung": {
+            "type": "synchron",
+            "title": "Abwechselung bringt frischen Wind!",
+            "content": "Erhöhen Sie und steuern Sie die Aufmerksamkeit durch Abwechselung der Lehrmethoden (Kurze Inputs, visuelle Medien und interaktive Einheiten wie Quizze und Kurzbefragungen). In der Online- und hybride Lehre fällt es oft noch schwieriger als in Präsenz, lange Vorträge zu verfolgen. Kleine Aufgaben - vor allem in Kombination mit Gamification-Elementen - bieten Studierenden zusätzlich die Möglichkeit,  zwischendurch Erfolgserlebnisse zu haben. Dadurch können Spaß am Lernen, Motivation und Durchhaltevermögen gesteigert werden. Eine hohe Vielfalt an unterschiedlichen Lehrmaterialien und Medienformaten spricht außerdem unterschiedliche Lerntypen (z. B. visuell, auditiv, haptisch) an.<br><a href='https://box.hu-berlin.de/f/f1c539e31d5547fa84a4/' aria-label='Infografik Emotionales und soziales Lernen'>Infografik zu emotionalem und sozialem Lernen</a>" 
         }
     },
     "specialCases": {
