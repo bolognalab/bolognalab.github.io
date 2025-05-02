@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Entscheidungshilfe</title>
+  <base target="_blank" />
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -243,9 +244,11 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     
     let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
-    fullTipList = fullTipListAsString.split(", ").filter((k)=>k != "-")
-
-    let fullTechnList = technPoints.split(', ')
+    fullTipList = fullTipListAsString.split(",").filter((k)=>!k.includes("-"))
+    fullTipList.forEach((tip, idx, array)=>{
+        array[idx] = tip.trim()
+    })
+    let fullTechnList = technPoints.split(',')
 
     let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
     let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")

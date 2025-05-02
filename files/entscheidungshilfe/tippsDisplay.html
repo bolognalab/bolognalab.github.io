@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
   <title>Entscheidungshilfe</title>
+  <base href="../../../entscheidungshilfe-lehre/" target="_blank"/>
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="../../entscheidungshilfe-lehre/assets/css/eb.css" />
-  <script src="../../entscheidungshilfe-lehre/assets/js/jquery.min.js"></script>
-  <script src="../../entscheidungshilfe-lehre/assets/js/jquery.csv.js"></script>
+  <link rel="stylesheet" href="assets/css/eb.css" />
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.csv.js"></script>
   <style>
     .tCont .metadata {
         font-size: 0.7em;
         color: black;
+    }
+    .tCont .tipContent {
+        margin-bottom: 0;
+    }
+    .tCont .codeName {
+        margin-left: 3em;
+        margin-top: 0;
+        margin-bottom: 1.5em;
     }
   </style>
 </head>
@@ -32,7 +41,7 @@
     </div>
 </div>
 <script>
-    $.get( "../../entscheidungshilfe-lehre/texts_tips_matrix.csv", function(CSVdata) {
+    $.get( "texts_tips_matrix.csv", function(CSVdata) {
         let csvData = $.csv.toObjects(CSVdata, {separator:';'});
         all_texts = {}
         tip_matching = {}
@@ -43,7 +52,7 @@
             all_texts[key]["name"] = dict["name"]
             tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
         })
-        $.get("../../entscheidungshilfe-lehre/tips_source.json", function(json){
+        $.get("tips_source.json", function(json){
             all_tips = json["tips"]
             Object.entries(all_tips).forEach(function(item){
                 let tipType = item[1]["type"]
@@ -64,7 +73,9 @@
                 let tipContent = document.createElement("p"); tipli.append(tipContent)
                 tipContent.classList.add("tipContent")
                 tipContent.innerHTML = all_tips[tipCode]["content"] + "<br><span class='metadata'>Code:</span>"
-                
+                let tipName = document.createElement("p"); tipli.append(tipName)
+                tipName.classList.add("codeName");
+                tipName.innerHTML = "(Code: <b>" + tipCode + "</b>)"
                 tipHeader.setAttribute("onclick", "showHideTip(this)")
                 labelTip(tipCode, tipli)
 
@@ -82,7 +93,7 @@
             appearanceString = appearanceString + ( "<b>" + k + "</b> (" + keysStripped + ") ● ")
         })
         let metaDataBox = container.getElementsByClassName("metadata")[0]
-        setTimeout(()=>{metaDataBox.innerHTML = "Code: <b>" + tipCode + "</b>" + appearanceString}, 500)
+        setTimeout(()=>{metaDataBox.innerHTML = appearanceString}, 500)
     }
 
     function showHideTip(th){

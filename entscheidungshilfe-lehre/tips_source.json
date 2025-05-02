@@ -23,12 +23,22 @@
         "moderationHybGr": {
             "type": "synchron",
             "title": "Hybride (Co-)Moderation",
-            "content": "Die Moderation von Gruppenarbeiten für zwei Gruppen von Studierenden (online und vor Ort) kann für eine einzelne Person überwältigend sein, weshalb die Anwesenheit von zwei Moderator:innen sehr empfohlen wird. Ein/e Moderator:in kann die Präsenzteilnehmenden betreuen, während die andere einen Blick auf die Online-Teilnehmenden hat. Auch in Phasen ohne Gruppenarbeit kann eine zusätzliche Person aus technischer Sicht zu einem reibungslosen Ablauf der Sitzung beitragen. Die Moderatoren sollten sich im Voraus über den Ablauf der Arbeitsphasen verständigen und idealerweise während der Sitzung Zugang zu einem separaten Kommunikationskanal (z. B. Text oder Chat) miteinander haben. <br>Falls sich Ihre Einrichtung eine Co-Moderation für Ihre Lehrveranstaltung nicht leisten kann, können Sie die Moderationsrolle zu verschiedenen Zeiten an verschiedene Studierende vergeben (zusammen mit entsprechenden Anweisungen für die Moderation). Die Übernahme dieser Art von Verantwortung für das eigene Lernen ist für die Studierenden von Vorteil. Sie sollten sich jedoch auch um diese Art der Unterstützung durch Ihre Einrichtung einsetzen, da eine Co-Moderation die hybride Lehr- und Lernerfahrung für Sie und Ihre Studierenden erheblich verbessern kann. <br><a href='' >Mehr Ressourcen zur hybriden Moderation</a>"
+            "content": "Die Moderation von Gruppenarbeiten zweier Studierendengruppen (online und vor Ort) kann für eine einzelne Person überwältigend sein, weshalb die Anwesenheit von zwei Moderator:innen sehr empfohlen wird. Ein/e Moderator:in kann die Präsenzteilnehmenden betreuen, während die andere einen Blick auf die Online-Teilnehmenden hat. Auch in Phasen ohne Gruppenarbeit kann eine zusätzliche Person aus technischer Sicht zu einem reibungslosen Ablauf der Sitzung beitragen. Die Moderatoren sollten sich im Voraus über den Ablauf der Arbeitsphasen verständigen und idealerweise während der Sitzung Zugang zu einem separaten Kommunikationskanal (z. B. Text oder Chat) miteinander haben.<br>Falls es keine Möglichkeit für Co-Moderation durch eine zweite Lehrperson gibt, können Sie die Moderationsrolle temporär an verschiedene Studierende vergeben (zusammen mit entsprechenden Anweisungen für die Moderation) – so eine Verantwortungsübernahme ist auch für die Studierenden von Vorteil. Sie sollten sich jedoch auch bei Ihrer Universität für eine personelle Unterstützung einsetzen, da eine Co-Moderation die hybride Lehr- und Lernerfahrung erheblich verbessern kann."
         },
         "moderationHybSimple": {
             "type": "synchron",
             "title": "Online-Raum-Betreuung",
             "content": "Selbst wenn keine intensive Gruppenarbeit stattfindet, kann es für die Lehrperson eine Herausforderung sein, sowohl die Präsenz- als auch die Online-Studierende im Auge zu behalten. Die einfachste Lösung für dieses Problem besteht darin, eine andere Person mit der Überwachung des Online-Raums (und des Chats) zu beauftragen, um sicherzustellen, dass die Fragen und Beiträge der Online-Studierenden korrekt erfasst werden. Diese Rolle kann leicht von einem Studierenden übernommen werden. Als Lehrkraft sollten Sie dennoch in regelmäßigen Abständen Pausen einplanen und Fragen und Beiträge von Online- und Präsenzteilnehmenden einladen."
+        },
+        "moderationRem": {
+            "type": "synchron",
+            "title": "Standortübergreifende Co-Moderation",
+            "content": "Die Moderation von Interaktionen zwischen zwei Studierendengruppen (an zwei Orten) benötigt die Zusammenarbeit aller beteiligten Lehrpersonen und evtl. auch zusätzlicher Support-Personen. Falls die Studierenden an den zwei Orten sich gegenseitig nicht gut hören können, müssen an bestimmten Zeitpunkten die Lehrpersonen vor Ort jeweils die Beiträge ihre Kohorte sammeln und für alle wiederholen. Eine zusätzliche Person pro Ort könnte aus technischer Sicht zu einem reibungslosen Ablauf der Sitzung beitragen. Die Moderator:innen sollten sich im Voraus über den Ablauf der Arbeitsphasen verständigen und idealerweise während der Sitzung Zugang zu einem separaten Kommunikationskanal (z. B. Text oder Chat) miteinander haben."
+        },
+        "moderationHybRem": {
+            "type": "synchron",
+            "title": "Standortübergreifende hybride Co-Moderation",
+            "content": "Die Moderation von Interaktionen zwischen drei Studierendengruppen (an zwei Orten und online) benötigt die Zusammenarbeit aller beteiligten Lehrpersonen und eventuell auch zusätzlicher Moderator:innen. Die Präsenzteilnehmenden an jedem Ort können von der entsprechenden Lehrperson vor Ort betreut werden, während eine dritte Person ein Auge auf die Online-Teilnehmenden hat. Auch in Phasen ohne Gruppenarbeit kann eine zusätzliche Person aus technischer Sicht zu einem reibungslosen Ablauf der Sitzung beitragen. Die Moderator:innen sollten sich im Voraus über den Ablauf der Arbeitsphasen verständigen und idealerweise während der Sitzung Zugang zu einem separaten Kommunikationskanal (z. B. Text oder Chat) miteinander haben."
         },
         "darstellungsformen": {
             "type": "synchron",
@@ -40,40 +50,20 @@
             "title": "Auf Onlinezugang achten",
             "content": "Bei einem Seminar oder Vorlesung mit Gruppenwechsel zwischen Online- und Präsenzteilnahme sollte sichergestellt werden, dass alle Teilnehmenden in der Lage sind, online teilzunehmen. Falls es Studierende gibt, die keinen Zugang zu einer stabilen Internetverbindung und einer privaten Umgebung haben, um online Teilzunehmen, können Sie diesen Studierenden ausnahmsweise erlauben, immer in Präsenz teilzunehmen."
         },
-        "woechCheckin": {
-            "type": "asynchron",
-            "title": "Wöchentliches Check-In",
-            "content": "Sowohl in synchronen als auch in asynchronen Kursen profitieren viele Studierende (vor allem in den ersten Semestern) von einer gewissen Strukturierung ihrer Kursarbeit. Eine wöchentliche E-Mail oder eine ähnliche Mitteilung ist eine gute Möglichkeit, die Studierenden daran zu erinnern, was sie in dieser Woche erledigen sollten oder in den kommenden Wochen erwarten können. Sie können die E-Mail auch zur Sammlung von studentischem Feedback nutzen, das Ihnen bei der Lehreplanung helfen kann. So eine regelmäßige Kommunikation hilft Ihnen, Vertrauen und Gemeinschaft zwischen Ihnen und Ihren Schülerinnen und Schülern aufzubauen, vor allem, wenn Sie zeigen, dass Sie persönlich an ihrem Erfolg interessiert sind.<a href=''>Beispiel für eine wöchentliche E-mail</a>"
-        },
-        "reflexionHyb": {
-            "type": "asynchron",
-            "title": "Regelmäßige Reflexionsbeiträge",
-            "content": "Bei einem Reflexionsbeitrag werden die Studierenden in einem hybriden Kurs gebeten, regelmäßig (z. B. einmal pro Woche) einen Forumsbeitrag im LMS des Kurses zu verfassen, in dem sie über einen Aspekt ihres Lernens reflektieren. Diese Reflexion kann einer bestimmten Aufforderung folgen (z. B. „Was halten Sie von der Lektüre dieser Woche“) oder völlig offen sein, solange sie sich auf den Kurs bezieht. Die Studierenden haben die Möglichkeit, müssen aber nicht, die Reflexionen anderer Studierender zu lesen und darauf zu antworten. Reflexionsbeiträge helfen dabei, eine Gemeinschaft zwischen Präsenz- und Online-Studierenden aufzubauen, indem sie sich über ihre gemeinsamen Lernerfahrungen austauschen. <br> <a href='https://edtechbooks.org/hyflex/student_experience#h4_EZxm'>Mehr zu Reflexionsbeiträgen und ihrer Wirksamkeit (auf Englisch)</a>"
-        },
-        "reflexionAsync": {
-            "type": "asynchron",
-            "title": "Regelmäßige Reflexionsbeiträge",
-            "content": "Bei einem Reflexionsbeitrag werden die Studierenden in einem Online-Kurs gebeten, regelmäßig (z. B. einmal pro Woche) einen Forumsbeitrag im LMS des Kurses zu verfassen, in dem sie über einen Aspekt ihres Lernens reflektieren. Diese Reflexion kann einer bestimmten Aufforderung folgen (z. B. „Was halten Sie von der Lektüre dieser Woche“) oder völlig offen sein, solange sie sich auf den Kurs bezieht. Die Studierenden haben die Möglichkeit, müssen aber nicht, die Reflexionen anderer Studierender zu lesen und darauf zu antworten. Reflexionsbeiträge helfen dabei, eine Gemeinschaft zwischen Studierenden aufzubauen, indem sie sich über ihre gemeinsamen Lernerfahrungen austauschen. Eine solche Vorgehensweise hilft den Studierenden auch, ihr Lernen zu strukturieren, wenn der Kurs asynchron ist.  <br> <a href='https://edtechbooks.org/hyflex/student_experience#h4_EZxm'>Mehr zu Reflexionsbeiträgen und ihrer Wirksamkeit (auf Englisch)</a>"
-        },
-        "zeitzonen": {
-            "type": "international",
-            "title": "Zeitzonen berücksichtigen",
-            "content": "Selbstverständlich sollte eine synchrone universitäts- oder landübergreifende Sitzung so geplannt werden, dass die Studierenden in allen betroffenen Zeitzonen sie zu einer verünftigen Uhrzeit besuchen können. Die Zeitzonen sollten zusätzlich berücksichtigt werden, wenn Sie während des Kurses Fristen (z.B. für die Einreichung von Materialien) setzen."
-        },
-        "sprachbarrieren": {
-            "type": "international",
-            "title": "Sprachbarrieren abbauen",
-            "content": "In einer internationalen Kurskollaboration kann die Muttersprache einiger Studierenden von der Unterrichtssprache abweichen. In diesem Fall kann die Verwendung mehrerer Darstellungsformen in Präsentationen (z. B. die Wiederholung der mündlich vermittelten Informationen in Textform) viel dazu beitragen, Sprachbarrieren abzubauen. Darüber hinaus kann es sinnvoll sein, Diskussionen in der Klasse stärker zu strukturieren (z. B. durch die Verwendung von <a href='https://www.gse.harvard.edu/ideas/usable-knowledge/17/05/starting-conversation'>Diskussionsprotokollen</a>), damit diejenigen, die ihre Gedanken aufgrund einer Sprachbarriere langsamer äußern können, nicht ungerechtfertigt benachteiligt werden."
-        },
         "toolsDatenschutz": {
             "type": "synchron",
             "title": "Kollaborative Tools und Datenschutz",
             "content": "Achten Sie auf die Datenschutzbestimmungen Ihrer Einrichtung. Viele kostenlose oder kostengünstige interaktive Online-Tools bieten sehr attraktive Funktionen, sind aber nicht GDPR-konform. Falls Sie eine neue Ressource verwenden möchten, sollten Sie sich zunächst mit der IT-Abteilung Ihrer Hochschule beraten und sich darüber informieren, wie das jeweilige Tool Nutzerdaten sammelt und speichert. Verwenden Sie vorrangig Tools, die von Ihrer Hochschule oder von Partneruniversitäten unterstützt werden, von denen Sie wissen, dass sie den Datenschutz für Studierende ebenfalls als wichtig erachten."
         },
-        "chatiquetteLv1": {
+        "chatiquetteHybLv1": {
             "type": "synchron",
             "title": "Chatiquette (Level 1)",
-            "content": "Legen Sie gemeinsam mit Ihren Studierenden Regeln fest, wie der Chat während der Sitzung genutzt und überwacht wird. Wenn Online-Teilnehmende im Präsenzraum nicht gehört werden können, kann der Chat ihre Hauptkommunikationsmethode sein. Entscheiden Sie, ob Sie die Chatfunktion in irgendeiner Weise einschränken wollen, um beispielsweise parallele, ablenkende Gespräche zu vermeiden. <br>Wenn Sie alleine unterrichten, legen Sie Zeitpunkte fest, an denen Sie Ihre Vorlesung unterbrechen und Fragen aus dem Chat vorlesen und beantworten. Alternativ können Sie eine andere Person im Raum beauftragen, sich in die Webkonferenz einzuwählen und Sie zu informieren, sobald im Chat eine Frage auftaucht."
+            "content": "Legen Sie gemeinsam mit Ihren Studierenden Regeln fest, wie der Chat während der Sitzung genutzt und überwacht wird. Wenn Online-Teilnehmende im Präsenzraum nicht gehört werden können, kann der Chat ihre Hauptkommunikationsmethode sein. Entscheiden Sie, ob Sie die Chatfunktion in irgendeiner Weise einschränken wollen, um beispielsweise parallele, ablenkende Gespräche zu vermeiden. Wenn Sie alleine unterrichten, legen Sie Zeitpunkte fest, an denen Sie Ihre Vorlesung unterbrechen und Fragen aus dem Chat vorlesen und beantworten. Alternativ können Sie eine andere Person im Raum beauftragen, sich in die Webkonferenz einzuwählen und Sie zu informieren, sobald im Chat eine Frage auftaucht."
+        },
+        "chatiquetteOnlLv1": {
+            "type": "synchron",
+            "title": "Chatiquette (Level 1)",
+            "content": "Legen Sie gemeinsam mit Ihren Studierenden Regeln fest, wie der Chat während der Sitzung genutzt und überwacht wird. Entscheiden Sie, ob Sie die Chatfunktion in irgendeiner Weise einschränken wollen, um beispielsweise parallele, ablenkende Gespräche zu vermeiden. Wenn Sie alleine unterrichten, legen Sie Zeitpunkte fest, an denen Sie Ihre Vorlesung unterbrechen und Fragen aus dem Chat vorlesen und beantworten. Alternativ können Sie eine andere Person im Raum beauftragen, sich in die Webkonferenz einzuwählen und Sie zu informieren, sobald im Chat eine Frage auftaucht."
         },
         "chatiquetteLv2": {
             "type": "synchron",
@@ -88,23 +78,250 @@
         "audienceResponsePr": {
             "type": "synchron",
             "title": "Mit Audience-Response engagieren",
-            "content": "Audience-Response-Systeme und Reaktionen fördern Aktivierung, Interaktion und Selbstregulation. Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Reaktionen während der Sitzung fungieren als Stimmungsbarometer zur Verständnissicherung, Tempoabstimmung und Meinungsbildung. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>" 
+            "content": "In einer Präsenzveranstaltung können Audience-Response-Systeme (ARS) wie Slido, Mentimeter, Socrative usw. benutzt werden, um niedrigschwellig Antworten von allen Studierenden im Raum zu sammeln. In der Regel stellen Sie Studierenden einen QR-Code zur Verfügung, den Studierenden mit ihrem Smartphone scannen, um Fragen zu beantworten. <br> ARS fördern Aktivierung, Interaktion und Selbstregulation: Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>" 
         },
         "audienceResponseHyb": {
             "type": "synchron",
             "title": "Mit Audience-Response engagieren",
-            "content": "Audience-Response-Systeme und Reaktionen fördern Aktivierung, Interaktion und Selbstregulation. Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Reaktionen während der Sitzung fungieren als Stimmungsbarometer zur Verständnissicherung, Tempoabstimmung und Meinungsbildung. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>" 
+            "content": "Audience-Response-Systeme (ARS) und Reaktionen (z.B. über Slido, Mentimeter, Zoom, usw.) fördern Aktivierung, Interaktion und Selbstregulation und sind ein niedrigschwelliger Weg, Online- und vor-Ort Studierende zu engagieren. Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Reaktionen während der Sitzung fungieren als Stimmungsbarometer zur Verständnissicherung, Tempoabstimmung und Meinungsbildung. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle. Um ARS in einer hybriden Veranstaltung umzusetzen brauchen Sie in der Regel einen QR-Code, den die vor-Ort teilnehmenden scannen können und einen Link, der im Chat des Videokonferenzsystems geteilt wird.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>" 
         },
         "audienceResponseOnl": {
             "type": "synchron",
             "title": "Mit Audience-Response engagieren",
-            "content": "Audience-Response-Systeme und Reaktionen fördern Aktivierung, Interaktion und Selbstregulation. Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Reaktionen während der Sitzung fungieren als Stimmungsbarometer zur Verständnissicherung, Tempoabstimmung und Meinungsbildung. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>" 
+            "content": "Audience-Response-Systeme (ARS) und Reaktionen (z.B. über Slido, Mentimeter, Zoom, usw.) sind ein niedrigschwelliger Weg, Studierende zu engagieren - auch wenn die Kameras aus sind. Sie fördern Aktivierung, Interaktion und Selbstregulation: Zu Beginn der Sitzung ermöglichen sie durch Multi Choice, Rankings oder Wortwolken eine anonymisierte Erhebung des Vorwissens und erleichtern den thematischen Einstieg. Reaktionen während der Sitzung fungieren als Stimmungsbarometer zur Verständnissicherung, Tempoabstimmung und Meinungsbildung. Am Sitzungsende fördern metakognitive Impulse („z. B. „Was war neu/schwierig?“) die Reflexion und unterstützen die Selbstregulation des Lernprozesses. In der Prüfungsvorbereitung bieten Quizformate mit Wettbewerbscharakter eine motivierende Möglichkeit zur Aktivierung, Wiederholung und Selbstkontrolle.<br><a href='https://www.wbv.de/shop/Metakognitive-Fragen-in-der-Hochschullehre.-Steigerung-der-Partizipation-durch-Audience-Response-Systeme-HSL2318W' aria-label='Quelle zu Audience-Response-Systeme'>Mehr lesen (E-Paper im Open-Access)</a>"
         },
         "abwechselung": {
             "type": "synchron",
             "title": "Abwechselung bringt frischen Wind!",
             "content": "Erhöhen Sie und steuern Sie die Aufmerksamkeit durch Abwechselung der Lehrmethoden (Kurze Inputs, visuelle Medien und interaktive Einheiten wie Quizze und Kurzbefragungen). In der Online- und hybride Lehre fällt es oft noch schwieriger als in Präsenz, lange Vorträge zu verfolgen. Kleine Aufgaben - vor allem in Kombination mit Gamification-Elementen - bieten Studierenden zusätzlich die Möglichkeit,  zwischendurch Erfolgserlebnisse zu haben. Dadurch können Spaß am Lernen, Motivation und Durchhaltevermögen gesteigert werden. Eine hohe Vielfalt an unterschiedlichen Lehrmaterialien und Medienformaten spricht außerdem unterschiedliche Lerntypen (z. B. visuell, auditiv, haptisch) an.<br><a href='https://box.hu-berlin.de/f/f1c539e31d5547fa84a4/' aria-label='Infografik Emotionales und soziales Lernen'>Infografik zu emotionalem und sozialem Lernen</a>" 
+        },
+        "zeitmanagementV1": {
+            "type": "synchron",
+            "title": "Zeitmanagement",
+            "content": "Planen Sie Zeitpuffer für die Wiederholung von Aussagen, den Umgang mit möglichen technischen Verzögerungen und die Anleitung von Aktivitäten im Unterricht (in zwei Gruppen) ein! Um die Sitzung inhaltlich zu entzerren, können Sie überlegen, einige Inhalte als Vor- oder Nachbereitungsmaterialien auf Lernplattformen zur Verfügung zu stellen. So können Sie sich in Ihrer Lehrveranstaltung auf die praktische Anwendung und Diskussionen konzentrieren. (Flipped Classroom - s. Tipps für die asynchrone Interaktion)." 
+        },
+        "zeitmanagementV2": {
+            "type": "synchron",
+            "title": "Zeitmanagement",
+            "content": "Planen Sie Zeitpuffer für die Wiederholung von Aussagen, den Umgang mit möglichen technischen Verzögerungen und die Anleitung von Aktivitäten im Unterricht (in zwei Gruppen) ein! Um die Sitzung inhaltlich zu entzerren, können Sie überlegen, einige Inhalte als Nachbereitungsmaterialien auf Lernplattformen zur Verfügung zu stellen. So können Sie sich in Ihrer Lehrveranstaltung auf die praktische Anwendung und Diskussionen konzentrieren." 
+        },
+        "zeitmanagementV3": {
+            "type": "synchron",
+            "title": "Zeitmanagement",
+            "content": "Planen Sie Zeitpuffer für die Wiederholung von Aussagen, den Umgang mit möglichen technischen Verzögerungen und die Anleitung von Aktivitäten im Unterricht (in zwei Gruppen) ein! Es kann notwendig sein, Ihre Erwartungen an die Menge der im Kurs behandelten Inhalte anzupassen, um den Kurs hybrid zu adaptieren. Alternativ können Sie auch Teile des Inhalts in die Vor- oder Nachbereitung des Kurses verlagern (z.B. Flipped Classroom) — und die Studierenden motivieren, sich mit dem Inhalt asynchron zu beschäftigen." 
+        },
+        "strukturKommHyb": {
+            "type": "synchron",
+            "title": "Strukturierung der Kommunikation",
+            "content": "Um ein hybrides Gemeinschaftsgefühl zu schaffen, verwenden Sie Lehrmethoden, die explizit eine Interaktion zwischen Präsenz- und Online-Teilnehmenden (etwa durch gegenseitige namentliche Adressierung oder Rollenverteilung). Hier finden Sie beispielsweise einige Diskussionsmethoden sowie Ice-Breakers. Eine stärkere Strukturierung des Diskussionsflusses (z. B. mithilfe eines Diskussionsskripts) hilft auch allgemein dabei, mehr Studierende aktiv in die Diskussion zu integrieren und den Lernprozess zu fokussieren.<br><a href='mini-artikel.html#diskussionsskript'>Beispiel eines Diskussionsskripts</a>" 
+        },
+        "strukturKommPrOnl": {
+            "type": "synchron",
+            "title": "Barrieren durch strukturierte(re) Kommunikation abbauen",
+            "content": "Eine strukturierte Kommunikation kann den Lehr- und Lernerfolg fördern, indem sie den Inhalt der Diskussion fokussiert und die Erwartungen transparenter macht, was „aktive Teilnahme“ bedeutet. Eine stärkere Strukturierung des Diskussionsflusses (z. B. mithilfe eines Diskussionsskripts) trägt dazu bei, dass die Diskussion nicht von einigen wenigen Studierenden dominiert wird, und erleichtert die Teilnahme für (u.a. neurodivergente) Studierende), die ansonsten unausgesprochene Kommunikationsnormen „entschlüsseln“ müssten.<br><a href='mini-artikel.html#diskussionsskript'>Beispiel eines Diskussionsskripts</a>" 
+        },
+        "divSprache": {
+            "type": "synchron",
+            "title": "Positives Lernklima schaffen",
+            "content": "Nur in einem emotional und sozial sicheren Setting lassen sich potenzielle Hemmungen überwinden, die Interaktion fördern und aktiv ein Gemeinschaftsgefühl herstellen. Dafür ist es wichtig, dass Sie als Lehrende sowohl mündlich als auch schriftlich auf Transparenz hinsichtlich der Inhalte, Leistungsanforderungen, Erwartungshorizonte und Ablauf der Veranstaltung achten. Ein klarer, diversitätssensibler Sprachstil inkludiert alle Studierenden, kann Verständnislücken schließen und Miskommunikation vorbeugen. Das gemeinsame Etablieren von Regeln kann unterstützend wirken. Darüber hinaus trägt eine offen kommunizierte und praktizierte Fehlerkultur dazu bei, Barrieren abzubauen.<br><a href='https://tu-dresden.de/tu-dresden/universitaetskultur/diversitaet-inklusion/diversity-an-der-tu-dresden/diversity-lehre/kommunikation/index?utm_source=chatgpt.com' aria-label='Quelle zu diversitätssensibler Kommunikation'>Mehr lesen (TU Dresden)</a>" 
+        },
+        "gruppenarbHyb": {
+            "type": "synchron",
+            "title": "Homogene oder heterogene Gruppenarbeit?",
+            "content": "Falls Sie Gruppenarbeiten durchführen lassen wollen: Überlegen Sie vor der Sitzung, ob die Zusammensetzung der Gruppen homogen (ausschließlich Präsenzgruppen bzw. Online-Gruppen) oder heterogen (Mix aus Präsenz- und Online-Teilnehmenden) ausfallen soll. Für die zweite Option ist es notwendig, dass der Lehrraum groß genug ist, damit sich die Studierenden im Raum verteilen können. Unter Rückgriff auf eigene Endgeräte können sich die Präsenzstudierenden in das Webkonferenzsystem einloggen und in Breakoutrooms mit den virtuell zugeschalteten Gruppenmitgliedern austauschen ohne andere Gruppen im Präsenzraum zu stören. Hierfür ist eine klare Planung der Breakout-Sessions in der Videokonferenz erforderlich: Sollen die Studierenden ihren Breakout-Room selbstständig auswählen können, sollte vorher eine Anleitung erfolgen. Wollen Sie als Lehrperson die Raumzuweisung durchführen, sollten die Geräte der Präsenzstudierenden mitberücksichtigt werden. <br><a hhref='mini-artikel.html#breakoutRoomsHybrid'>Vorschlag: Aufbau hybrider Breakout-Rooms</a>" 
+        },
+        "gruppenarbPrOnl": {
+            "type": "synchron",
+            "title": "Bewusste Gruppenaufteilung vornehmen",
+            "content": "Für Gruppenaufgaben während der Sitzung ist es eine gute Idee, die Gruppenaufteilung im Vorfeld zu planen und ein Konzept dafür zu entwickeln. Wenn Sie über eine Liste der Studierenden und ihrer Studiengänge verfügen, können Sie diese nutzen, um Gruppen interdisziplinär zusammenzusetzen. <br> Wenn Sie den Studierenden die Entscheidung überlassen, sich in Gruppen aufzuteilen, geben Sie ihnen Kriterien für die Aufteilung vor, die zur Förderung der Vielfalt beitragen und die Isolierung von Studierenden mit unterrepräsentierten Identitäten vermeiden." 
+        },
+        "gruppenErgebPr": {
+            "type": "synchron",
+            "title": "Nachhaltige Darstellung/Aufbereitung der Gruppenergebnisse",
+            "content": "Sollen Studierende am Ende einer Gruppenarbeit im Plenum präsentieren, gibt es digitale Tools, die niedrigschwellig ermöglichen, Gruppenergebnisse multimedial und nachhaltig aufzubereiten und vorzustellen. Gruppen könnten z. B. an verschiedenen „Ecken“ eines Online-Whiteboards wie Excalidraw oder Zoom (auch außerhalb einer Videokonferenz verfügbar) arbeiten oder ein Tool wie TaskCards oder Padlet verwenden, um Ergebnisse strukturierter zu gestalten. Die meisten Tools bieten eine Export-Funktion an, damit Gruppenergebnisse auch später rezipiert werden können. Um solche Tools nutzen zu können, wird neben einer stabilen WLAN-Verbindung im Lehrraum auch mindestens ein Endgerät pro Gruppe vorausgesetzt. Dieses sollten die Studierenden in gemeinsamer Absprache selbst mitbringen oder über Ihre Institution ausleihen.<br><a href='mini-artikel.html#methode-padlet'>Beispiel: Erstellung und Präsentation von Gruppenarbeiten mit Padlet</a>" 
+        },
+        "gruppenErgebHyb": {
+            "type": "synchron",
+            "title": "Nachhaltige Darstellung/Aufbereitung der Gruppenergebnisse",
+            "content": "Sollen Studierende am Ende einer Gruppenarbeit etwas im Plenum präsentieren, gibt es digitale Tools, die niedrigschwellig ermöglichen, Gruppenergebnisse multimedial und nachhaltig aufzubereiten und vorzustellen. Gruppen könnten z. B. an verschiedenen „Ecken“ eines Online-Whiteboards wie Excalidraw oder Zoom arbeiten oder ein Tool wie TaskCards oder Padlet verwenden, um Ergebnisse strukturierter zu gestalten. Die meisten Tools bieten eine Export-Funktion an, damit Gruppenergebnisse auch später rezipiertwerden können. Für die Nutzung solcher Tools wird eine stabile WLAN-Verbindung im Lehrraum ebenso wie mindestens ein Endgerät pro Gruppe vor Ort (privat oder Ausleihe) vorausgesetzt.<br><a href='mini-artikel.html#methode-padlet'>Beispiel: Erstellung und Präsentation von Gruppenarbeiten mit Padlet</a>" 
+        },
+        "gruppenErgebOnl": {
+            "type": "synchron",
+            "title": "Nachhaltige Darstellung/Aufbereitung der Gruppenergebnisse",
+            "content": "Sollen Studierende am Ende einer Gruppenarbeit etwas im Plenum präsentieren, gibt es digitale Tools, die niedrigschwellig ermöglichen, Gruppenergebnisse multimedial und nachhaltig aufzubereiten und vorzustellen. Gruppen könnten z. B. an verschiedenen „Ecken“ eines Online-Whiteboards wie Excalidraw oder Zoom arbeiten, oder ein Tool wie TaskCards oder Padlet verwenden, um Ergebnisse strukturierter zu gestalten. Die meisten Tools bieten eine Export-Funktion an, damit Gruppenergebnisse auch nach Sitzungsende rezipiert werden können.<br><a href='mini-artikel.html#methode-padlet'>Beispiel: Erstellung und Präsentation von Gruppenarbeiten mit Padlet</a>" 
+        },
+        "diskGaesteBasic": {
+            "type": "synchron",
+            "title": "Zeit für Diskussionen mit den Gästen",
+            "content": "Sie und Ihre Studierenden haben in den meisten Fällen nur begrenzte Zeit mit der Person, die einen Gastvortrag hält. Auch wenn Ihre Lehrveranstaltung in der Regel eher frontal ist, sollte bei Gastvorträgen genügend Zeit für Diskussion eingeplant werden, damit Studierende die Chance haben, sich mit den Gästen zu verbinden. Der Vortragsteil könnte z. B. auf ca. die Hälfte der Unterrichtszeit beschränkt werden und der Rest der Zeit für die Diskussion genutzt werden. Bereiten Sie in diesem Fall (gemeinsam mit Studierenden) Diskussionsfragen für den zweiten Teil vor." 
+        },
+        "moderationGaestePrOnl": {
+            "type": "synchron",
+            "title": "Diskussionsrunde nach einem Gastvortrag moderieren",
+            "content": "Sie und Ihre Studierenden haben oft  nur begrenzte Zeit mit der Person, die einen Gastvortrag hält, zur Verfügung. Dennoch wäre es für einen lebendigen Austausch und nachhaltigen Mehrwert wichtig, für die Anschlussdiskussion nach dem Vortrag genügend Zeit einzuräumen. Daher lohnt sich eine vorherige zeitliche Absprache mit dem/der Gastdozierenden sowie gemeinsam mit den Studierenden vorbereitete Diskussionsfragen (z. B. zunächst Verständnisfragen, danach Detailfragen oder Anmerkungen) als grobe Orientierung. Pufferzeiten für mögliche technische Störungen oder auch kurze Pausen sollten in jedem Fall eingeplant werden." 
+        },
+        "moderationGaesteHyb": {
+            "type": "synchron",
+            "title": "Diskussionsrunde nach einem Gastvortrag moderieren",
+            "content": "Sie und Ihre Studierenden haben in den meisten Fällen nur begrenzte Zeit mit der vortragenden Person, zur Verfügung. Eine längere Diskussionsrunde wäre trotzdem wichtig. Sie dient dazu, dass Studierende sich mit den Gästen verbinden und dass es genügend Pufferzeit gibt, spontan entstehende Fragen zu besprechen. Legen Sie in diesem Fall in Absprache mit dem/der Gastdozierenden die Länge des Vortragsteils fest und bereiten Sie für den zweiten Teil (gemeinsam mit Studierenden) Diskussionsfragen. Geben Sie (als Moderator:in) der Diskussion eine gewisse Struktur vor, z. B. indem Sie mit Verständnisfragen beginnen und erst danach zu tiefer gehenden Fragen und Reaktionen übergehen. Wenn der Gast oder die Gästin vor Ort anwesend ist, erwägen Sie, die Fragen der Online-Studierenden zu priorisieren, da die vor-Ort-Studierenden nach Sitzungsende evtl. mehr Zeit mit dieser Person haben." 
+        },
+        "gaesteLGOnl": {
+            "type": "synchron",
+            "title": "Gäst:innen in die Online-Lerngemeinschaft integrieren",
+            "content": "Machen Sie die Gäste mit den Kommunikationsnormen vertraut, die Sie bisher mit den Studierenden festgelegt haben; dazu könnte gehören, wie man sich gegenseitig anspricht (z. B. mit Vornamen), wie die Reihenfolge der Redner:innen festgelegt wird und ob bestimmte Anpassungen erforderlich sind (z. B. Bereitstellung von Präsentationsfolien im Voraus oder langsameres Sprechen). Bitten Sie den/die Gastvortragende:n, auch zu kommunizieren, wie die Studierenden mit ihm oder ihr interagieren sollen (z. B. ob Zwischenfragen oder Anschlussfragen präferiert werden)." 
+        },
+        "gaesteLGHyb": {
+            "type": "synchron",
+            "title": "Gäst:innen in die hybride Lerngemeinschaft integrieren",
+            "content": "Machen Sie die Gäst:innen nicht nur mit dem technischen Aufbau Ihrer Lehrveranstaltung vertraut, sondern auch mit allen Kommunikationsnormen, die Sie bisher mit den Studierenden festgelegt haben; dazu könnte gehören, wie man sich gegenseitig anspricht (z. B. mit Vornamen), wie die Reihenfolge der Redner:innen festgelegt wird (z. B. mit Priorisierung der Online- oder Präsenzteilnehmenden) und ob bestimmte Anpassungen erforderlich sind (z. B. Bereitstellung von Präsentationsfolien im Voraus oder langsameres Sprechen). Bitten Sie den/die Gastvortragende:n auch zu kommunizieren, wie die Studierenden mit ihm oder ihr interagieren sollen (z. B. ob Fragen zwischendurch oder am Ende des Gastbeitrags beantwortet werden sollen)." 
+        },
+        "gaesteLGPr": {
+            "type": "synchron",
+            "title": "Gäst:innen in die Lerngemeinschaft integrieren",
+            "content": "Machen Sie die Gäst:innen mit den Kommunikationsnormen vertraut, die Sie bisher mit den Studierenden festgelegt haben; dazu könnte gehören, wie man sich gegenseitig anspricht (z. B. mit Vornamen), wie man sich zu Wort meldet und ob bestimmte Anpassungen erforderlich sind (z. B. Bereitstellung von Präsentationsfolien im Voraus oder langsameres Sprechen). Bitten Sie den/die Gastvortragende:nauch zu kommunizieren, wie die Studierenden mit ihm oder ihr interagieren sollen (z. B. ob Fragen zwischendurch oder am Ende des Gastbeitrags beantwortet werden sollen)." 
+        },
+        "techHowToGaeste": {
+            "type": "synchron",
+            "title": "Technische Anleitung für Gastvortragende?",
+            "content": "" 
+        },
+        "onlineZuschaltungLP": {
+            "type": "synchron",
+            "title": "Aus dem Digitalen in den Lehrraum sprechen",
+            "content": "Haben Sie vor, ab und zu als Lehrperson online an der Veranstaltung teilnehmen, während die Studierenden vor Ort sind? Falls ja, können Sie hier mehr Tipps lesen, wie Sie das reibungslos schaffen.<br><a href='mini-artikel.html#onlZuschaltungLP'>Mini-Artikel: Studierende Hybrid, Lehrende online zugeschaltet</a>" 
+        },
+        "woechCheckin": {
+            "type": "asynchron",
+            "title": "Wöchentliches Check-In",
+            "content": "Sowohl in synchronen als auch in asynchronen Kursen profitieren viele Studierende (vor allem in den ersten Semestern) von einer gewissen Strukturierung ihrer Kursarbeit. Eine wöchentliche E-Mail oder eine ähnliche Mitteilung ist eine gute Möglichkeit, die Studierenden daran zu erinnern, was sie in dieser Woche erledigen sollten oder in den kommenden Wochen erwarten können. Sie können die E-Mail auch zur Sammlung von studentischem Feedback nutzen, das Ihnen bei der Lehreplanung helfen kann. So eine regelmäßige Kommunikation hilft Ihnen, Vertrauen und Gemeinschaft zwischen Ihnen und Ihren Schülerinnen und Schülern aufzubauen, vor allem, wenn Sie zeigen, dass Sie persönlich an ihrem Erfolg interessiert sind.<a href='mini-artikel.html#weeklyEmail'>Beispiel für eine wöchentliche E-mail</a>"
+        },
+        "reflexionHyb": {
+            "type": "asynchron",
+            "title": "Regelmäßige Reflexionsbeiträge",
+            "content": "Bei einem Reflexionsbeitrag werden die Studierenden in einem hybriden Kurs gebeten, regelmäßig (z. B. einmal pro Woche) einen Forumsbeitrag im LMS des Kurses zu verfassen, in dem sie über einen Aspekt ihres Lernens reflektieren. Diese Reflexion kann einer bestimmten Aufforderung folgen (z. B. „Was halten Sie von der Lektüre dieser Woche“) oder völlig offen sein, solange sie sich auf den Kurs bezieht. Die Studierenden haben die Möglichkeit, müssen aber nicht, die Reflexionen anderer Studierender zu lesen und darauf zu antworten. Reflexionsbeiträge helfen dabei, eine Gemeinschaft zwischen Präsenz- und Online-Studierenden aufzubauen, indem sie sich über ihre gemeinsamen Lernerfahrungen austauschen. <br> <a href='https://edtechbooks.org/hyflex/student_experience#h4_EZxm'>Mehr zu Reflexionsbeiträgen und ihrer Wirksamkeit (auf Englisch)</a>"
+        },
+        "reflexionAsync": {
+            "type": "asynchron",
+            "title": "Regelmäßige Reflexionsbeiträge",
+            "content": "Bei einem Reflexionsbeitrag werden die Studierenden in einem Online-Kurs gebeten, regelmäßig (z. B. einmal pro Woche) einen Forumsbeitrag im LMS des Kurses zu verfassen, in dem sie über einen Aspekt ihres Lernens reflektieren. Diese Reflexion kann einer bestimmten Aufforderung folgen (z. B. „Was halten Sie von der Lektüre dieser Woche“) oder völlig offen sein, solange sie sich auf den Kurs bezieht. Die Studierenden haben die Möglichkeit, müssen aber nicht, die Reflexionen anderer Studierender zu lesen und darauf zu antworten. Reflexionsbeiträge helfen dabei, eine Gemeinschaft zwischen Studierenden aufzubauen, indem sie sich über ihre gemeinsamen Lernerfahrungen austauschen. Eine solche Vorgehensweise hilft den Studierenden auch, ihr Lernen zu strukturieren, wenn der Kurs asynchron ist.  <br> <a href='https://edtechbooks.org/hyflex/student_experience#h4_EZxm'>Mehr zu Reflexionsbeiträgen und ihrer Wirksamkeit (auf Englisch)</a>"
+        },
+        "hinweiseOnl": {
+            "type": "asynchron",
+            "title": "Hinweise zur Online-Teilnahme anbieten",
+            "content": "Studierende, die wenig Erfahrung mit Online-Veranstaltungen oder mit bestimmten Tools haben, können von Hinweisen für die Online-Teilnahme profitieren. Solche Tipps könnten u. a. umfassen:<ul><li>Mindestanforderungen und Empfehlungen für die Geräte und die Internetverbindung, die der/die Student:in für eine reibungslose Online-Teilnahme benötigt</li><li>die Auswahl eines ruhigen und privaten Orts für die Online-Teilnahme, wo die Person trotzdem laut sprechen darf</li><li>Verschiedene Ansichtsoptionen des Webkonferenzsystems (z. B. „Aufmerksamkeitsmodus“)</li><li>Anleitungen zu verschiedenen Tools und Funktionen</li><li>Unterschiedliche Modi der namentlichen Adressierung in Webkonferenzen - jeweils in Absprache mit den übrigen Teilnehmenden und gemäß institutionellen Vorgaben</li></ul>"
+        },
+        "hinweiseHyb": {
+            "type": "asynchron",
+            "title": "Hinweise zur hybriden Teilnahme anbieten",
+            "content": "Studierende, die wenig Erfahrung mit hybriden Veranstaltungen oder mit bestimmten Tools haben, können von Hinweisen für die Teilnahme an hybriden Kursen profitieren. Solche Tipps könnten u. a. umfassen:<ul><li>Mindestanforderungen und Empfehlungen für die Geräte und die Internetverbindung</li><li>die Auswahl eines ruhigen und privaten Orts für die Online-Teilnahme, wo die Person trotzdem laut sprechen darf</li><li>Anleitungen zu verschiedenen Tools und Funktionen</li><li>Für Online-Teilnehmende: Auf verschiedene Ansichtsoptionen des Webkonferenzsystems hinweisen (z. B. „Aufmerksamkeitsmodus“); Vorstellung und Absprache der unterschiedlichen Anrede-Modi im Online-Kontext</li><li>Für Präsenz-Teilnehmende: Kommunikationstipps für hybride Veranstaltungen, Namensschilder erstellen</li></ul>"
+        },
+        "notHyFlex": {
+            "type": "asynchron",
+            "title": "Hybrid ≠ HyFlex",
+            "content": "Den Studierenden volle Flexibilität bei der Wahl ihrer Teilnahmeoptionen zu bieten, klingt in der Theorie großartig, ist aber möglicherweise nicht für alle Situationen geeignet. Nehmen Sie sich etwas Zeit, um mit verschiedenen Hybridmodellen zu experimentieren, und berücksichtigen Sie dabei Ihren Lehrstil und die Bedürfnisse Ihrer Studierenden: Möchten Sie die hybride Teilnahme allen anbieten, oder nur nach Bedarf? Würden Sie sich als Dozent:in entmutigt fühlen, falls Sie gelegentlich in einem leeren Raum unterrichten müssen? Erwägen Sie, striktere Erwartungen an die Studierenden zu stellen (z. B. persönliche Teilnahme zu erwarten, bestimmte Umstände festzulegen, unter denen jemand online teilnehmen darf, und den Studierenden zuzutrauen, dies zu tun)."
+        },
+        "diskFutter": {
+            "type": "asynchron",
+            "title": "Futter zur Diskussion asynchron vorbereiten",
+            "content": "Lehrende hybrider Formate stehen unterschiedlichen Herausforderungen gegenüber. Eine davon ist die Aktivierung und Aufrechterhaltung von Interaktion unter den Studierenden, insbesondere der Remote-Gruppe im virtuellen Raum. Häufig bestehen Hemmungen, sich spontan mündlich an Diskussionen zu beteiligen oder Fragen zu vorgetragenen Inhalten zu stellen. Eine Lösung könnte die asynchrone Bereitstellung von Vorarbeiten sein, die für alle verpflichtend vor der Sitzung zu erledigen sind. Diese dienen den übrigen Studierenden als Basis und Bezugspunkt für die spätere Diskussion. Sie können die Aufgabe zusätzlich strukturieren, indem Sie entweder inhaltliche Leitfragen oder Reflexionsfragen stellen (<em>An welcher Stimmen Sie zu? Was halten Sie für kritikwürdig, und warum? Welchen Punkt finden Sie nicht nachvollziehbar?</em> etc.). Auf diese Weise legen Sie den Grundstein für eine spätere, lebendige Diskussion mit aktiver Beteiligung.<a href='https://www.youtube.com/watch?v=LCSV8MLesVI'>Erfahrungsbericht: Diskussion in einem internationalen Seminar anreizen</a> "
+        },
+        "aufzNichtErsatzVL": {
+            "type": "asynchron",
+            "title": "Vorlesungsaufzeichnung",
+            "content": "Eine Aufzeichnung der Vorlesung hilft nicht nur den Studierenden, die die Live-Sitzung verpasst haben, sondern auch den anwesenden Studierenden, die Teile des Vortrags beim ersten Zuhören nicht komplett verstanden haben. Die Vorlesungsaufzeichnung sollte über eine hohe Tonqualität verfügen und am besten von schriftlichen Notizen oder Folien begleitet werden; Ssie brauchen aber keine Zeit in das Schneiden des Videos zu investieren. Wichtiger als der Anspruch an Perfektion ist der nahbare und verständliche Zugang zu Ihren Inhalten. Die Aufzeichnung soll eine Ergänzung sein, kein Ersatz."
+        },
+        "aufzNichtErsatzSE": {
+            "type": "asynchron",
+            "title": "Seminaraufzeichnung",
+            "content": "Eine Aufzeichnung des Seminars hilft nicht nur den Studierenden, die die Live-Sitzung verpasst haben, sondern auch den anwesenden Studierenden, die Teile des Vortrags beim ersten Zuhören nicht komplett verstanden haben. Die Seminaraufzeichnung sollte über eine hohe Tonqualität verfügen und am besten von schriftlichen Notizen oder Folien begleitet werden; Sie brauchen aber keine Zeit in das Schneiden des Videos zu investieren. Wichtiger als der Anspruch an Perfektion ist der nahbare und verständliche Zugang zu Ihren Inhalten. Die Aufzeichnung soll eine Ergänzung sein, kein Ersatz."
+        },
+        "aufzErsatzVL": {
+            "type": "asynchron",
+            "title": "Vorlesungsaufzeichnung und darüber hinaus",
+            "content": "Eine Aufzeichnung der Vorlesung hilft nicht nur den Studierenden, die die Live-Sitzung verpasst haben, sondern auch den anwesenden Studierenden, die Teile des Vortrags beim ersten Zuhören nicht komplett verstanden haben. Wenn Sie den Studierenden die Möglichkeit geben wollen, Aufzeichnungen als Alternative zur Live-Teilnahme zu nutzen, verwenden Sie etwas Zeit darauf, das Video effizienter fürs Selbstlernen zu gestalten (z. B. durch Herausschneiden von Teilen, in denen keine Inhalte behandelt oder gehört werden). Wenn Sie interaktive Teile in Ihre Vorlesung eingebaut haben (z. B. kurze Quizfragen), stellen Sie neben den Folien und/oder Notizen eine alternative Version solcher Aufgaben bereit, die Studierende asynchron ausprobieren können."
+        },
+        "aufzErsatzSE": {
+            "type": "asynchron",
+            "title": "Seminaraufzeichnung und darüber hinaus",
+            "content": "Eine Aufzeichnung des Seminars hilft nicht nur den Studierenden, die die Live-Sitzung verpasst haben, sondern auch den anwesenden Studierenden, die Teile des Vortrags beim ersten Zuhören nicht komplett verstanden haben. Wenn Sie den Studierenden die Möglichkeit geben wollen, Aufzeichnungen als Alternative zur Live-Teilnahme zu nutzen, verwenden Sie etwas Zeit darauf, das Video effizienter fürs Selbstlernen zu gestalten (z. B. durch Herausschneiden von Teilen, in denen keine Inhalte behandelt oder gehört werden). Wenn Sie interaktive Teile in dem Seminar eingebaut haben (z. B. kurze Quizfragen), stellen Sie neben den Folien und/oder Notizen eine alternative Version solcher Aufgaben bereit, die Studierende asynchron ausprobieren können."
+        },
+        "aufzKurzvideosVL": {
+            "type": "asynchron",
+            "title": "Aufzeichnung oder Kurzvideos?",
+            "content": "Eine Aufzeichnung der Vorlesung zum Nachschauen kann für Studierende hilfreich sein, ist aber weniger praktisch, wenn die Vorlesung einen großen Teil an studentische Interaktion enthält. In diesem Fall könnten Sie entweder nur die Vortragsteile der Vorlesung aufzeichnen und bereitstellen, oder am besten – wenn Sie die zeitlichen und personellen Ressourcen dafür haben — zusätzliche Mini-Vorlesungsvideos produzieren (max. 15 Min.), die Studierende sich asynchron in verschiedenen Wiedergabegeschwindigkeiten ansehen können. Das erlaubt Ihnen, die synchronen Sitzungen interaktiv und flexibel zu halten, während gleichzeitig die Inhalte der Vorlesung in effizienter Video-Form als Nachbereitungsmaterial verfügbar sind.<br><a href='https://youtu.be/jOCa7WuaaJo?si=leuC1Tvx5F7JJHOh&t=385'>Erfahrungsbericht: Vergleich Kurzvideos mit Aufzeichnungen</a><a href='https://www.youtube.com/watch?v=RykUd2vnFho'>Anleitung zur Erstellung von „Mini-Lectures“ (Deutsche Untertitel)</a>"
+        },
+        "aufzKurzvideosSE": {
+            "type": "asynchron",
+            "title": "Aufzeichnung oder Kurzvideos?",
+            "content": "Eine Aufzeichnung der Vorlesung zum Nachschauen kann für Studierende hilfreich sein, ist aber weniger praktisch, wenn die Vorlesung einen großen Teil an studentische Interaktion enthält. In diesem Fall könnten Sie entweder nur die Vortragsteile der Vorlesung aufzeichnen und bereitstellen, oder am besten – wenn Sie die zeitlichen und personellen Ressourcen dafür haben — zusätzliche Mini-Vorlesungsvideos produzieren (max. 15 Min.), die Studierende sich asynchron in verschiedenen Wiedergabegeschwindigkeiten ansehen können. Das erlaubt Ihnen, die synchronen Sitzungen interaktiv und flexibel zu halten, während gleichzeitig die Inhalte der Vorlesung in effizienter Video-Form als Nachbereitungsmaterial verfügbar sind.<br><a href='https://youtu.be/jOCa7WuaaJo?si=leuC1Tvx5F7JJHOh&t=385'>Erfahrungsbericht: Vergleich Kurzvideos mit Aufzeichnungen</a><a href='https://www.youtube.com/watch?v=RykUd2vnFho'>Anleitung zur Erstellung von „Mini-Lectures“ (Deutsche Untertitel)</a>"
+        }, 
+        "miniLectures": {
+            "type": "asynchron",
+            "title": "Kurzvideos zum Selbstlernen",
+            "content": "Wenn eine Lehrveranstaltung einen hohen Grad an Interaktion enthält, sind separat produzierte Mini-Lecture-Videos (3-15 Min) effektiver als eine Aufzeichnung, um die Inhalte an abwesende Studierende zu vermitteln. Kurzvideos können asynchron in verschiedenen Wiedergabegeschwindigkeiten angesehen werden, während die synchronen Vortragsteile möglichst interaktiv und flexibel bleiben.<br><a href='https://youtu.be/jOCa7WuaaJo?si=leuC1Tvx5F7JJHOh&t=385'>Erfahrungsbericht: Vergleich Kurzvideos mit Aufzeichnungen</a><a href='https://www.youtube.com/watch?v=RykUd2vnFho'>Anleitung zur Erstellung von „Mini-Lectures“ (Deutsche Untertitel)</a>"
+        },
+        "asyncMotiv": {
+            "type": "asynchron",
+            "title": "Zu asynchroner Arbeit motivieren und unterstützen",
+            "content": "Der asynchrone „Konsum“ von Kursinhalten durch Studierende ist am sinnvollsten, wenn sie mit einer kurzen Aufgabe verknüpft ist. Je nach Kursinhalten könnte dies ein unbewertetes Quizz zur spielerischen Selbstüberprüfung oder ein verbindlicher Forenbeitrag zur Anzeige eigenständiger Reflexion und inhaltlicher Kritikfähigkeit sein. Diese und andere asynchrone Aufgaben geben Ihnen formatives Feedback, ob und wie die Studierenden die Materialien verarbeiten. Gleichzeitig bieten Sie den Teilnehmenden einen Anreiz, regelmäßig und mit Spaß zu lernen, ihren Lernfortschritt zu überprüfen und Feedback zu erhalten. Darüber hinaus profitieren insbesondere Studierende mit eingeschränkter Zeit, flexibel am Kurs zu partizieren."
+        },       
+        "barrierefreieMat": {
+            "type": "asynchron",
+            "title": "Materialien barrierefrei erstellen",
+            "content": "Asynchron bereitgestellte Materialien (v. a. Dokumente und Folien) müssen auf eine Art und Weise erstellt werden, die es auch sehbehinderten Personen erlaubt, alle  relevanten Informationen daraus nehmen können. Für das Erstellen von Dokumenten ist allgemein wichtig, dass hierarchische Überschriften sinnvoll verwendet werden und dass alle nicht-dekorativen Bilder einen Alt-Text aufweisen, der die wichtigsten Informationen aus dem Bild vermittelt. Für Folien sind zudem die Lesereihenfolge und die richtige Bezeichnung von dekorativen Elemente (z. B. Banner oder Hintergrund-Grafiken) relevant. Im Internet finden Sie detaillierte Guides (z. B. von agnes@work) mit zahlreichen Tipps und Tricks, wie Sie Materialien barrierefrei gestalten können.<br><a href='https://www.agnes-at-work.de/wp-content/uploads/2022/07/bf_QuickGuide_barrierefreie_PowerPoint-Folien.pdf'>Quick Guide: Barrierefreie PowerPoint-Folien</a>"
+        },
+        "sinnesKanaele": {
+            "type": "asynchron",
+            "title": "Viele Sinneskanäle ansprechen",
+            "content": "Wenn jemand online oder asynchron an einem Kurs teilnimmt, ist er oder sie anfälliger für Ablenkungen. Dies kann unter anderem daran liegen, dass andere Medien (z. B. Smartphone-Apps, E-Mail, oder soziale Medien) oft leichter zugänglich und interessanter erscheinen  als die Kursinhalte. Als Lehrkraft können Sie dieser Herausforderung begegnen, indem Sie Kursmaterialien entwerfen, die mehrere Sinneskanäle ansprechen und diese als Variation zur Verfügung stellen. Wenn möglich, sollten Sie Text zugunsten von Bildern oder Diagrammen minimieren und eine Vielzahl von Medien (Video-Inputs, Podcasts, kurze Tests usw.) in Abwechselung verwenden, um sicherzustellen, dass die Studierenden mehr tun, als nur zu lesen oder einer langen Vorlesung zuzuhören.<br><a href='mini-artikel.html#sinneskanaele'>Mehr lesen: Viele Sinneskanäle ansprechen</a><a href='https://box.hu-berlin.de/f/13fdba936e1041d38ab2/'>Infografik: Aufmerksamkeit in der Online-Lehre aktiv fördern</a>"
+        },
+        "feedbackAlsAnreiz": {
+            "type": "asynchron",
+            "title": "Feedback als Anreiz",
+            "content": "Regelmäßiges und leicht zu erhaltenes Feedback kann Studierende motivieren, sich asynchron mit den Kursinhalten zu engagieren. Geeignet ist etwa das <b>Peer-Review-Verfahren</b> mit gezielten Fragen, bei dem sich Studierende anhand eines (gemeinsam aufgestellten) Kriterienrasters und vorgegebener Leitfragen gegenseitig Rückmeldung geben. Ein (verbindlich gemachtes) asynchrones Diskussionsforum mit Fragen/Aufgabenstellung und Kommentaren auf vorherige Studierendenbeiträge kann die schriftliche Interaktion sichern. Andere Möglichkeiten des Austauschs bieten digitale, kollaborative Tools wie Padlet oder Miro, die sich in viele Lernmanagementsysteme (LMS) integrieren oder verlinken lassen. Um spielerisch ein individuelles Feedback zum aktuellen Wissensstand zu erhalten, sind Quizformate und Online-Tests ein unter Studierenden beliebtes Feedback-Werkzeug. Idealerweise nutzen Sie LMS-Aktivitäten oder Tools, die den Lernfortschritt über den gesamten Kursverlauf visuell abbilden, um die Motivation zu steigern."
+        },
+        "videoIntro3": {
+            "type": "asynchron",
+            "title": "Asynchrone (Video-)vorstellungen",
+            "content": "Eine asynchrone „Vorstellungsrunde“ von Lehrenden und Studierenden via Forum kann soziale Nähe und ein Gemeinschaftsgefühl in einem asynchronen Umfeld herstellen. Die Studierenden sind aufgrund der langfristig verfügbaren Vorstellungsmaterialien einfacher in der Lage, sich Namen, Aussehen, Verhalten und gelieferte persönliche Informationen ihrer Kommiliton:innen zu merken und in synchronen wie asynchronen Gesprächen zu nutzen. Das ist besonders wichtig, wenn nicht alle Teilnehmenden synchron bzw. am selben Ort am Kurs teilnehmen.<br> Um das noch einen Schritt weiterzubringen, können Studierende und Lehrende sogar persönliche Video-Vorstellungen in das Lernmanagementsystem des Kurses hochladen (was jedoch die Medienkompetenzen bzw. die Vortragetechnik mancher Studierender herausfordern könnte). Durch die Video-Vorstellungen werden Sie und die Studierenden als „echte Menschen“ wahrnehmbar. Zudem kann durch die gemeinsame Aufgabe die Verbundenheit untereinander gestärkt werden, was spätere Kollaborationen erleichtert.<br><a href='https://hochschuldidaktik-online.de/verbindung-zu-studierenden-in-online-lehre/'>Mehr lesen: Studierende online kennenlernen"
+        },
+        "videoIntro4": {
+            "type": "asynchron",
+            "title": "„Präsenz“ durch eine (Video-)Vorstellung stärken",
+            "content": "In einem asynchronen Umfeld ist die bewusste Herstellung von sozialer Nähe entscheidend für ein Präsenz- und Gemeinschaftsgefühl, für eine positive Lernatmosphäre und letztlich den Studienerfolg. Eine asynchrone Vorstellungsrunde (z.B. via Forum) wirkt dabei unterstützend: die Studierenden sind aufgrund der langfristig verfügbaren Vorstellungsmaterialien einfacher in der Lage, sich Namen, Aussehen, Verhalten und gelieferte persönliche Informationen ihrer Kommiliton:innen zu merken und in weiteren Gesprächen zu nutzen.<br>Um das noch einen Schritt weiterzubringen, können Studierende und Lehrende sogar persönliche Video-Vorstellungen in das Lernmanagementsystem des Kurses hochladen. Durch die Video-Vorstellungen werden Sie und die Studierenden als „echte Menschen“ wahrnehmbar. Zudem kann durch die gemeinsame Aufgabe die Verbundenheit untereinander gestärkt werden, was spätere Kollaborationen erleichtert. Auch wenn Video-Vorstellung die Medienkompetenzen bzw. die Vortragetechnik mancher Studierender etwa herausfordern kann, könnten wenigstens Sie als Lehrperson ein Willkommensvideo für den asynchronen Kurs vorbereiten, das der Orientierung dient.<br><a href='https://hochschuldidaktik-online.de/verbindung-zu-studierenden-in-online-lehre/'>Mehr lesen: Studierende online kennenlernen</a>"
+        },
+        "humFeedback": {
+            "type": "asynchron",
+            "title": "„Humanizing“ Feedback",
+            "content": "Humanizing Feedback beschreibt Rückmeldungen und Bewertungen, die persönlich, wertschätzend und dialogisch sind – auch bzw. besonders in asynchronen Formaten, in denen die Lernbegleitung ein wesentlicher Faktor für die dauerhafte Motivation und Leistungsbereitschaft der Studierenden ist. Gelingen kann dies, indem Sie als Lehrkraft bewusst empathisch formulieren, die Perspektive und den angenommenen Wissensstand adaptieren. So lassen sich individuelle Lücken und Probleme einfacher identifizieren und effektive Lösungsvorschläge unterbreiten. Verständnis- und Aktivierungsfragen sollten auf beiden Seiten willkommen sein. Gute Denkansätze und eine positive Entwicklung sind ebenso relevant und nennenswert wie notwendige Kritik. Für die Umsetzung können Sie als Lehrende eine synchrone Online-Sprechstunde anbieten oder asynchron mittels Video- und/oder Audio-Aufnahme ein Feedback geben. Wenn die Studierenden ein Gesicht vor sich haben und die Stimme der Lehrperson hören können, wirkt das Feedback deutlich persönlicher. Dennoch ist eine schriftliche Feedbackgabe über Feedbacktools in Lernmanagementsystemen (LMS) oder ein hochgeladenes Dokument eine zeitlich weniger aufwendige und ebenfalls hilfreiche Alternative dar. "
+        },
+        "teamcharta": {
+            "type": "asynchron",
+            "title": "Ein Vertrag für Gruppenprojekte?",
+            "content": "Im Vorfeld eines längerfristigen Gruppenprojekts (z.B. forschendes Lernen, Laborarbeit, Arbeit im Feld usw.) können Gruppenmitglieder eine „Teamcharta“ (eine Art von „Gruppenvertrag“) nutzen, um gemeinsam die Normen, Ziele und Erwartungen für ihr Team festzulegen. Als Lehrperson können Sie den Studierenden eine Vorlage der Teamcharta (mit vordefinierten Fragen) zur Verfügung stellen und ihnen Anweisungen geben, warum und wie sie diese ausfüllen sollen. Die Anleitung zum Ausfüllen der Teamcharta sollte am besten projektspezifische Informationen enthalten (z. B. die erwarteten Leistungen am Ende des Gruppenprojekts). Auf dieser Grundlage ist es den Studierenden möglich,  sich Gedanken über die Aufteilung der Aufgaben zu machen. Die Gruppe kann die Teamcharta zu bestimmten Zeitpunkten während des Semesters oder bei auftretenden Konflikten überarbeiten und situationsbedingt anpassen.<br><a href='files/Exemplarische%20Teamcharta.pdf'>Beispiel: Exemplarische Teamcharta-Aktivität</a>"
+        },
+        "asyncGaeste": {
+            "type": "asynchron",
+            "title": "Asynchrone Interaktion mit Gästen ermöglichen",
+            "content": "Nehmen entweder die Gäst:innen oder manche Studierende an dem Kurs online teil, wird die Zeit für die synchrone Interaktion mit dem/der Gastvortragenden noch kürzer. Fragen Sie den Gast oder die Gästin, ob es möglich ist, vor oder nach dem Gastvortrag asynchrone Kommunikationskanäle zwischen ihm/ihr und den Studierenden einzurichten. Gäste könnten z. B. zur Kursplattform (z. B. Moodle, Blackboard) eingeladen werden und dort in einem Forum ins Gespräch mit Studierenden kommen."
+        },
+        "materialGaeste": {
+            "type": "asynchron",
+            "title": "Gastvortrag-Materialien frühzeitig aussuchen",
+            "content": "Recherchieren Sie im Vorfeld – auch in Absprache mit dem/der Gastvortragenden - Materialien zu der Gastvorlesung, um sicherzustellen, dass Sie und der/die Gastdozierende sich über den Inhalt der Vorlesung einig sind. Teilen Sie den Studierenden einige dieser Materialien als Vorbereitung zu und stellen Sie sicher, dass auch Sie mit dem Inhalt vertraut sind. Vor allem, wenn Sie selbst und Ihr Gast bzw. Ihre Gästin aus unterschiedlichen Disziplinen kommen, muss man mit unterschiedlichen Zugängen, Terminologien und Modellen rechnen, die nicht allen Studierenden bekannt sein und Verwirrung stiften könnten.  Stellen Sie im Vorhinein sicher, etwaige Diskrepanzen mit Ihren Studierenden zu klären. Durch eine sorgfältige inhaltliche Vorbereitung erwerben Sie auch einen „Plan B“, mit dem Sie und die Studierenden sich mit dem externen Fachwissen beschäftigen können, falls der Gastvortrag unerwartet ausfällt.<br><a href='https://www.uis.edu/ion/resources/tutorials/pedagogy/guest-lecturers' aria-label='mehr lesen (auf Englisch): Guest lecturers in the online environment'>Mehr lesen (auf Englisch)</a>"
+        },
+
+        "zeitzonen": {
+            "type": "international",
+            "title": "Zeitzonen berücksichtigen",
+            "content": "Selbstverständlich sollte eine synchrone universitäts- oder landübergreifende Sitzung so geplannt werden, dass die Studierenden in allen betroffenen Zeitzonen sie zu einer verünftigen Uhrzeit besuchen können. Die Zeitzonen sollten zusätzlich berücksichtigt werden, wenn Sie während des Kurses Fristen (z.B. für die Einreichung von Materialien) setzen."
+        },
+        "sprachbarrieren": {
+            "type": "international",
+            "title": "Sprachbarrieren abbauen",
+            "content": "In einer internationalen Kurskollaboration kann die Muttersprache einiger Studierenden von der Unterrichtssprache abweichen. In diesem Fall kann die Verwendung mehrerer Darstellungsformen in Präsentationen (z. B. die Wiederholung der mündlich vermittelten Informationen in Textform) viel dazu beitragen, Sprachbarrieren abzubauen. Darüber hinaus kann es sinnvoll sein, Diskussionen in der Klasse stärker zu strukturieren (z. B. durch die Verwendung von <a href='https://www.gse.harvard.edu/ideas/usable-knowledge/17/05/starting-conversation'>Diskussionsskripten</a>), damit diejenigen, die ihre Gedanken aufgrund einer Sprachbarriere langsamer äußern können, nicht ungerechtfertigt benachteiligt werden."
         }
+
     },
     "specialCases": {
         "international": "", 
