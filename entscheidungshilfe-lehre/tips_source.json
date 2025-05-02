@@ -113,7 +113,7 @@
         "strukturKommHyb": {
             "type": "synchron",
             "title": "Strukturierung der Kommunikation",
-            "content": "Um ein hybrides Gemeinschaftsgefühl zu schaffen, verwenden Sie Lehrmethoden, die explizit eine Interaktion zwischen Präsenz- und Online-Teilnehmenden (etwa durch gegenseitige namentliche Adressierung oder Rollenverteilung). Hier finden Sie beispielsweise einige Diskussionsmethoden sowie Ice-Breakers. Eine stärkere Strukturierung des Diskussionsflusses (z. B. mithilfe eines Diskussionsskripts) hilft auch allgemein dabei, mehr Studierende aktiv in die Diskussion zu integrieren und den Lernprozess zu fokussieren.<br><a href='mini-artikel.html#diskussionsskript'>Beispiel eines Diskussionsskripts</a>" 
+            "content": "Um ein hybrides Gemeinschaftsgefühl zu schaffen, verwenden Sie Lehrmethoden, die explizit eine Interaktion zwischen Präsenz- und Online-Teilnehmenden (etwa durch gegenseitige namentliche Adressierung oder Rollenverteilung). Hier finden Sie beispielsweise einige <a href='https://wikis.fu-berlin.de/spaces/hybridlehr/pages/1441369698/Methodische+Hinweise+f%C3%BCr+hybride+Szenarien'>Diskussionsmethoden sowie Ice-Breakers</a>. Eine stärkere Strukturierung des Diskussionsflusses (z. B. mithilfe eines Diskussionsskripts) hilft auch allgemein dabei, mehr Studierende aktiv in die Diskussion zu integrieren und den Lernprozess zu fokussieren.<br><a href='mini-artikel.html#diskussionsskript'>Beispiel eines Diskussionsskripts</a>" 
         },
         "strukturKommPrOnl": {
             "type": "synchron",
@@ -183,7 +183,7 @@
         "techHowToGaeste": {
             "type": "synchron",
             "title": "Technische Anleitung für Gastvortragende?",
-            "content": "" 
+            "content": "Je nachdem, wie viel Erfahrung ein:e Gastvortragende:r mit Online-Lehre bzw. mit Ihrer Videokonferenzplattform hat, kann es sinnvoll sein, ihm oder ihr Hinweise für die Online-Teilnahme anzubieten. Dazu könnte z. B. die Möglichkeit gehören, relevante Funktionen der Videokonferenzplattform oder interaktive Tools im Vorhinein auszuprobieren. Falls die Person keine Erfahrung mit Online-Vorträgen hat, könnten Sie nach Bedarf auch Hinweise zur Gewährleistung einer stabilen Internetverbindung und guter Tonqualität anbieten: Für die stabile Internetverbindung sollte die Person am besten von einem Ort mit LAN-Verbindung aus teilnehmen oder einen Notfallplan für WLAN-Unterbrechungen haben (z. B. Mobile Daten). Um eine gute Tonqualität zu gewährleisten sollte die Person Kopfhörer verwenden." 
         },
         "onlineZuschaltungLP": {
             "type": "synchron",
