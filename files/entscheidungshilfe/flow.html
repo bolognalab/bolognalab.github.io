@@ -6,9 +6,8 @@
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
-  <link rel="stylesheet" href="../assets/css/eb.css" />
-<script src="../assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../entscheidungshilfe-lehre/assets/css/eb.css" />
+<script src="../../entscheidungshilfe-lehre/assets/js/jquery.min.js"></script>
 <style>
     #qChoiceCont {
         /* display: grid;
@@ -51,7 +50,7 @@
     <div id="scenarios" class="sCont"></div>
     
 </div>
-<script src="../assets/js/jquery.csv.js"></script>
+<script src="../../entscheidungshilfe-lehre/assets/js/jquery.csv.js"></script>
 <script>
     const qCont = document.getElementById("questions")
     const sCont = document.getElementById("scenarios")
@@ -74,23 +73,19 @@
     }
     const all_questions = [ 
         'artLV', 
-        'LZiP',
-        'LZsy', 
-        'niePr',
+        'anzahlVL', 
+        'anzahlSE',
+        'intSync',
+        'leistungen',
+        "niveauSt",
+        "limZPSt",
         'nieSync',
+        'niePr',
         'regAbw',
         "onlBereit", 
-        "limZPSt",
-        "onlZugang",
-        "IntAsync",
+        "situations",
         'gaeste', 
-        'gaesteMittel',
-        "exkur",
-        "exkurMittel",
-        'begrAnz',
-        "intKoll",
-    ]
-
+    ]   
     var questionOrder
 
     var answers = {}
@@ -151,14 +146,14 @@
 
 
 
-    $.getJSON("data.json", function(json){
+    $.getJSON("../../entscheidungshilfe-lehre/data.json", function(json){
         all_data = json
         questionInfo = json['questions']
         all_scenarios = json['scenarios']
         questionChoices()
         questionOrder = getCheckedBoxes("qChoice")
         initializeQuestions()
-        $.get( "texts_tips_matrix.csv", function(CSVdata) {
+        $.get( "../../entscheidungshilfe-lehre/texts_tips_matrix.csv", function(CSVdata) {
             let csvData = $.csv.toObjects(CSVdata, {separator:';'});
             all_texts = {}
             tip_matching = {}
@@ -169,7 +164,7 @@
                 all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
                 tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
             })
-            $.get("tips_source.json", function(json){
+            $.get("../../entscheidungshilfe-lehre/tips_source.json", function(json){
                 all_tips = json["tips"]
                 // setTimeout(showResult('se-rem-2-1-1', specialCases=[], topTier=['se-rem-2-1-1']), 500)
             })
@@ -228,7 +223,7 @@
         qP.setAttribute("id", "Q_" + qKey)
         qP.innerHTML = qText
 
-        Object.entries(q.antworten).forEach((a)=>{
+        Object.entries(q.antworten).forEach((a, idx, array)=>{
             let aKey = a[0]
             let aText = a[1].text
             let aEffects = a[1].effects
@@ -237,7 +232,12 @@
             let aDiv = document.createElement("div"); qDiv.append(aDiv)
             aDiv.classList.add("aDiv")
             let aRadio = document.createElement("input")
-            aRadio.setAttribute("type", "radio")
+                            // for checkbox question, create checkboxes, otherwise radio buttons
+                            if (qKey == "situations" || qKey == "leistungen"){
+                    aRadio.setAttribute("type", "checkbox")  
+                } else {
+                    aRadio.setAttribute("type", "radio")
+                }
             aRadio.setAttribute("name", "Q_" + qKey)
             aRadio.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
             aRadio.setAttribute("value", aKey)
@@ -249,11 +249,47 @@
             aLabel.innerHTML = aText
 
             aDiv.append(aRadio, aLabel)
-            if (aKey == "PR" | aKey =="SO"){
+            // Exceptions: Answers to not display
+            // hide formats that are not ready yet
+            if (aKey =="SO"){
                 aDiv.style.display = "none"
-            }            
+            }
+            // hide least interaktive Option for Seminars
+            if (qKey == "intSync" && aKey == "0"){
+                aDiv.style.display = "none"
+            }
+
+            // AT THE END OF THE LOOP: For checkbox questions, add "none of the above" as the last answer and highlight it
+            if (qKey == "situations" || qKey == "leistungen"){ 
+                if (idx === array.length -1){
+                    let aDiv = document.createElement("div"); qDiv.append(aDiv)
+                    aDiv.setAttribute("id", "A_none")
+                    aDiv.classList.add("aDiv","highlighted")
+                    let aRadio = document.createElement("input")
+                    aRadio.setAttribute("type", "checkbox")
+                    
+                    aRadio.setAttribute("name", "Q_" + qKey)
+                    aRadio.setAttribute("id", "Q_" + qKey + "_A_none")
+                    aRadio.setAttribute("value", "none")
+                    aRadio.addEventListener("click", function(){  
+                        selectAnswer(qKey, "none")
+                    })
+                    let aLabel = document.createElement("label")
+                    aLabel.setAttribute("for", "Q_" + qKey + "_A_none")
+                    aLabel.innerHTML = qKey == "situations" ? "Keine der genannten Situationen" : "Keine der vorgenannten Leistungen"
+                    aDiv.append(aRadio, aLabel)
+                } 
+            } 
+
 
         })
+
+        if (qKey == "situations" || qKey == "leistungen"){
+                // make all answers 'no' by default - they will be changed if someone checks the box
+                Object.keys(questionInfo[qKey]["antworten"]).forEach((a)=>{
+                    answers[a] = "nein"
+                })
+            }
 
         qDiv.append(pButton)
         qDiv.append(nButton)
@@ -265,6 +301,35 @@
     }
 
     function selectAnswer(qKey, aKey){
+        // store the answer temporarily (before hitting "next")
+        if (qKey!= "situations" && qKey != "leistungen"){
+            answers[qKey] = aKey 
+        } else {
+            // special treatment for checkbox questions
+            if (aKey != "none"){
+                // normal behavior:
+                let checked = document.querySelector("#Q_" + qKey + "_A_"+aKey).checked
+                // case 1: the option was previously unselected and is being selected
+                // case 2: the option was previously selected and is being deselected
+                answers[aKey] = checked ? "ja" : "nein"
+                // check if there are any options left selected, otherwise highlight 'none of the above'
+                // if (document.querySelectorAll("#DIV_" + qKey + " > .highlighted").length == 0){
+                //     document.querySelector("#DIV_" + qKey + " > #A_none").classList.add("highlighted")
+                // } else {
+                //     // if other options are selected, deselect 'none of the above' option
+                //     document.querySelector("#DIV_" + qKey + " > #A_none").classList.remove("highlighted")
+                // }
+
+
+            } else {
+                // clicking on "none of the above" cancels everything else
+                Object.keys(questionInfo[qKey]["antworten"]).forEach((a)=>{
+                    // document.querySelector("#DIV_" + qKey + " > #A_" + a).classList.remove("highlighted")
+                    answers[a] = "nein"
+                })
+            }
+            
+        }
         // check if there would be a next question if this answer is selected; if so, enable the "Next Button"
         let includeNextQuestion = false
         let dummyIdx = nextQuestionIdx
