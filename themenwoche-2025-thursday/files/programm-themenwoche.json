@@ -1,6 +1,6 @@
 [
     {
-        "short-event-name": "How to empower students to become active agents of change?",
+        "short-event-name": "How to empower students to become active agents of change? (HU Berlin)",
         "long-event-name": "Organized by the student-led Sustainability Office at Humboldt University in collaboration with Aarhus University, the workshop provides a platform for developing innovative solutions to global socio-ecological challenges",
         "day": "monday",
         "start": "10:00",
@@ -26,7 +26,7 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Berlin Higher Education institutions join forces to discuss sustainability goals",
+        "short-event-name": "Berlin HE-institutions join to discuss sustainability goals (BUA Berlin)",
         "long-event-name": "Participate in the fishbowl discussion organized by TU, FU, HU, HTW and Hertie School!",
         "day": "monday",
         "start": "16:30",
@@ -39,7 +39,7 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "The stage is calling: Science Slam at Circle U. Climate Day",
+        "short-event-name": "The stage is calling: Science Slam at Circle U. Climate Day (HU Berlin)",
         "long-event-name": " Students of all degree programs and qualification levels (BA, MA, PhD students) will have the opportunity to present their research projects or theses dealing with issues of climate change and/ or sustainability ",
         "day": "monday",
         "start": "18:00",
@@ -91,7 +91,7 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "responsibilities and limits of science in times of crises",
+        "short-event-name": "Responsibilities & Limits of Science (HU Berlin)",
         "long-event-name": "Join us for a thought-provoking discussion on the role of academia in shaping political and societal transformation",
         "day": "tuesday",
         "start": "14:00",
@@ -104,7 +104,7 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "HU-CUBES research facility",
+        "short-event-name": "HU-CUBES research facility (HU Berlin)",
         "long-event-name": "In our webinar, we take you on a virtual tour of our facility and offer insights into our applied research in circular economy.",
         "day": "wednesday",
         "start": "10:00",
@@ -117,7 +117,7 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Wanderung entlang der Panke",
+        "short-event-name": "Wanderung entlang der Panke (HU Berlin)",
         "long-event-name": "Tour entlang der Panke zum Campus Nord",
         "day": "wednesday",
         "start": "12:30",
@@ -130,7 +130,7 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Nachts unter B\u00e4umen",
+        "short-event-name": "Nachts unter B\u00e4umen (HU Berlin)",
         "long-event-name": "Sp\u00e4ttour durch das n\u00e4chtliche Sp\u00e4th-Arboretum",
         "day": "wednesday",
         "start": "21:00",
@@ -143,7 +143,7 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Human Responses to Climate Change",
+        "short-event-name": "Human Responses to Climate Change (Uni Pisa)",
         "long-event-name": "Tracking human responses to climate change through bioarchaeology (UNIPI)",
         "day": "thursday",
         "start": "10:00",
@@ -156,33 +156,33 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Reshaping Science",
-        "long-event-name": "Reshaping Science: The Next Generation's Role in Solving the Climate Crisis",
+        "short-event-name": "Recycle with Circle U. (Uni Paris)",
+        "long-event-name": "Find out how our household waste creates energy (Universit\u00e9 Paris Cit\u00e9)",
         "day": "thursday",
-        "start": "11:00",
-        "end": "12:00",
+        "start": "16:00",
+        "end": "17:00",
         "loc": "Online",
         "id": "event-wien",
-        "web": "-",
+        "web": "https://sondage.app.u-paris.fr/687589?newtest=Y&lang=en",
         "category": "event-4",
         "start-ovr": "-",
-        "end-ovr": "11:35"
+        "end-ovr": "16:30"
     },
     {
-        "short-event-name": "Crea.Visions",
-        "long-event-name": "Crea.Visions: Democatizing AI for Public Engagement in Climate Action",
+        "short-event-name": "Rethinking Research with and for Society (UCLouvain)",
+        "long-event-name": "This seminar will explore how citizen science can enrich research and enhance our understanding of key challenges, particularly environmental ones (UC Louvain)",
         "day": "thursday",
-        "start": "09:00",
-        "end": "12:00",
+        "start": "09:30",
+        "end": "13:00",
         "loc": "Online",
         "id": "event-aarhus1",
-        "web": "-",
+        "web": "https://www.circle-u.eu/events/2025/climate-day/citizen-science-rethinking-research.html",
         "category": "event-4",
         "start-ovr": "-",
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Rooftop Solar & Energy Communities",
+        "short-event-name": "Rooftop Solar & Energy Communities (Aarhus Uni)",
         "long-event-name": "Rooftop solar and energy community at Aarhus University",
         "day": "thursday",
         "start": "13:00",
@@ -191,19 +191,6 @@
         "id": "event-aarhus2",
         "web": "https://www.circle-u.eu/events/2025/climate-day/rooftop-solar-and-energy-communities.html",
         "category": "event-4",
-        "start-ovr": "-",
-        "end-ovr": "-"
-    },
-    {
-        "short-event-name": "Recycle with Circle U.",
-        "long-event-name": "Find out how our household waste creates energy",
-        "day": "thursday",
-        "start": "16:00",
-        "end": "16:30",
-        "loc": "Online",
-        "id": "event-paris",
-        "web": "https://www.circle-u.eu/events/2025/climate-day/recycle-with-circle-u.html",
-        "category": "event-2",
         "start-ovr": "-",
         "end-ovr": "-"
     }
