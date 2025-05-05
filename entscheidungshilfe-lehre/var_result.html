@@ -12,6 +12,52 @@
   <script src="assets/js/jquery.csv.js"></script>
 </head>
 <style>
+    .sync .blockContent > p {
+        margin-bottom: 0;
+    }
+    .sync .descText, .async .descText {
+        flex: auto;
+        margin-bottom: 0;
+    }
+    .sync .descText {
+        height: 3em;
+        position: relative;
+    }
+    .sync .descText > * {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 1.4em;
+    }
+    .gradText {
+        right: calc(66% + 1.2em);
+        /* font-style: italic; */
+        /* font-weight: bold; */
+        color: var(--networkBlack)
+    }
+    .sync .descText > .gradBoxes, .async .descText > .gradBoxes {
+        height: 1.4em;
+        left: 33%; 
+    }
+    .gradBoxes > * {
+        height: 100%;
+        aspect-ratio: 1;
+        border: 1px solid var(--networkTurqoise);
+        border-radius: 3px;
+        display: inline-block;
+        margin-left: 3px;        
+    }
+    .gradBoxes .full {
+        background: var(--networkTurqoise)
+    }
+    .gradDesc {
+        color: var(--networkTurqoise);
+        left: calc(33% + 4.2em + 1.2em + 9px);
+        font-weight: bold;
+    }
+
+
+
     .blockContent > * {
         transition: all 0.2s ease;
     }
@@ -187,7 +233,7 @@
                     </div>
                     <div class="sketchfab-embed-wrapper">
                         <div class="cover"></div>
-                        <iframe id = "raumIFrame" title="Seminarraum 1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=""></iframe>
+                        <iframe id = "raumIFrame" title="3D Raummodell" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=""></iframe>
                     </div>                    
                     <div class="midInfo"></div>
                     <div class="postInfo"></div>
@@ -201,12 +247,12 @@
         <div id="resSync" class="block sync">
             <h4>Tipps für die synchrone Interaktion</h4>
             <div class="blockContent">
-                <p class="descText"></p>
+                <p class="descText"><span class="gradText">Synchroner Interaktionsgrad: </span><span class="gradBoxes"></span><span class="gradDesc"></span></p>
                 <ul class="tCont"></ul>
             </div>
         </div>
         <div id="resAsync" class="block async">
-            <h4>Tipps für die asynchrone Teilnahme</h4>
+            <h4>Tipps für die asynchrone Kursgestaltung</h4>
             <div class="blockContent">
                 <p class="descText"></p>
                 <ul class="tCont"></ul>
@@ -246,6 +292,12 @@ const dummyAnswers = {
   "exkur": "nein",
   "begrAnz": "nein",
   "intKoll": "ja"
+}
+
+const descriptionsSync = {
+    "0": "(Eher frontal)",
+    "1": "(hauptsächlich im Plenum)",
+    "2": "(im Plenum und in Kleingruppen)"
 }
 
 function explainMatch(scenario, answers=dummyAnswers, rules=[]){
@@ -422,11 +474,11 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     // synchronous
     let syncTips = []
     let tipsGeneral = tip_matching[scenarioValue]["tips_general"]
-    let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue]
-    let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue]
-    let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue]
+    let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue] + ", " + tip_matching["de-default"]["tips_" + syncIntValue]
+    let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue] + ", " + tip_matching["de-default"]["tips_" + asyncTNValue]
+    let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
 
-    
+    console.log(tipsAsyncTN)
     let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
     fullTipList = fullTipListAsString.split(",").filter((k)=>!k.includes("-"))
     fullTipList.forEach((tip, idx, array)=>{
@@ -434,17 +486,48 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     })
     let fullTechnList = technPoints.split(',')
 
+    // remove some tips (due to reasons not captured in the .csv file)
+    let omittedTips = []
+    fullTipList.forEach((tipCode)=>{
+        if (["privateEcke"].includes(tipCode)){
+            omittedTips.push(tipCode)
+        } else if (tipCode == "humFeedback" && asyncIntValue == "asyncInt-0"){
+            omittedTips.push(tipCode)
+        } else if (tipCode == "videoIntro3" && asyncIntValue == "asyncInt-0"){
+            omittedTips.push(tipCode)
+        } else if (["aufzNichtErsatzVL", "aufzErsatzVL", "aufzKurzvideosVL"].includes(tipCode) && scenario.split("-")[0] != "vl"){
+            // omit special wording for VL
+            omittedTips.push(tipCode)
+        } else if (["aufzNichtErsatzSE", "aufzErsatzSE", "aufzKurzvideosSE"].includes(tipCode) && scenario.split("-")[0] != "se"){
+            // omit special wording for SE
+            omittedTips.push(tipCode)
+        } else if (["aufzNichtErsatzVL", "aufzNichtErsatzSE"].includes(tipCode) && syncIntValue == "syncInt-2" ){
+            // omit simple recording tip if high interaction
+            omittedTips.push(tipCode)
+        } else if (["aufzErsatzVL", "aufzErsatzSE"].includes(tipCode) && asyncTNValue =="asyncTN-3" && syncIntValue == "syncInt-2"){
+            // omit recording suggestion for replacing synchronous participation, if high interaction
+            omittedTips.push(tipCode)
+        } else if (["aufzKurzvideosVL", "aufzKurzvideosSE"].includes(tipCode) && asyncTNValue !="asyncTN-3" && syncIntValue != "syncInt-2"){
+            // omit kurzvideos suggestion unless there is high interaction (otherwise simple recording suffices)
+            omittedTips.push(tipCode)
+        } else if (tipCode == "miniLectures" && syncIntValue != "syncInt-2"){
+            // show Mini-Lectures as main option only if asyncTN=3 (defined in CSV) and syncInt=2
+            omittedTips.push(tipCode)
+        } else if (tipCode == "reflexionAsync" && asyncIntValue != "asyncInt-1"){
+            omittedTips.push(tipCode)
+        }
+    })
+    fullTipList = fullTipList.filter( t => !omittedTips.includes(t))
     let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
     let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
-
 
     // building document
     // Title and Overview
     document.querySelector("#scenarioTitle").innerHTML = scenarioTitle
-    if (asyncTNValue == "asyncTN-3"){
-        document.querySelector("#scenarioSubtitle").style.display="block"
-        overviewText = overviewText + '<br><br>' + overviewAsyncTNText
-    }
+    // if (asyncTNValue == "asyncTN-3"){
+    //     document.querySelector("#scenarioSubtitle").style.display="block"
+    //     overviewText = overviewText + '<br><br>' + overviewAsyncTNText
+    // }
     document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
     
     // descriptive image
@@ -462,17 +545,25 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         
 
     // Sync block
-    document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
+    // document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
+    let syncGradBoxes = document.querySelector("#resSync > .blockContent > .descText > .gradBoxes")
+    for (i=0; i<3; i++){
+        let box = document.createElement("span")
+        if (i <= +scenario.split("-")[2]){
+            box.classList.add("full")
+        }
+        syncGradBoxes.appendChild(box)
+    }
+    document.querySelector(".sync .gradDesc").innerHTML = descriptionsSync[scenario.split("-")[2]]
     let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
     syncTipList.forEach(function(tipCode){
-        if (!["privateEcke"].includes(tipCode)){
-            addTip(tipCode, syncTipsCont)
-        }
-            
+        addTip(tipCode, syncTipsCont)            
     })
 
     // Async block
-    document.querySelector("#resAsync > .blockContent > .descText").innerHTML = asyncText
+    if (asyncTNValue == "asyncTN-3"){
+        document.querySelector("#resAsync > .blockContent > .descText").innerHTML = overviewAsyncTNText
+    }
     let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
     asyncTipList.forEach(function(tipCode){
         if (tipCode != scenario){
@@ -521,14 +612,14 @@ function minimizeTech(){
 // creating HTML elements
 function addTip(tipCode, container){
         let tipli = document.createElement("li"); container.append(tipli)
-                tipli.classList.add("tip")
-                let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
-                tipHeader.innerHTML = "<img src='images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
-                let tipContent = document.createElement("p"); tipli.append(tipContent)
-                tipContent.classList.add("tipContent")
-                tipContent.innerHTML = all_tips[tipCode]["content"]
-                
-                tipHeader.setAttribute("onclick", "showHideTip(this)")
+            tipli.classList.add("tip")
+            let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
+            tipHeader.innerHTML = "<img src='images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
+            let tipContent = document.createElement("p"); tipli.append(tipContent)
+            tipContent.classList.add("tipContent")
+            tipContent.innerHTML = all_tips[tipCode]["content"]
+            
+            tipHeader.setAttribute("onclick", "showHideTip(this)")
     }
 
     function showHideTip(th){

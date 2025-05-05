@@ -3,7 +3,7 @@
     --whiteFilter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%);
     --networkBlack: hwb(60 21% 79%);
     --networkTurqoise: rgb(18, 161, 154);
-    --networkBlue: hwb(205 6% 28%);
+    --networkBlue: rgb(15, 113, 184);
     --networkBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
     --vibrantBlue: #0F70B7;
     --vibrantBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
@@ -181,6 +181,10 @@ li > .closeBtn {
     gap: 30px;
     align-items: flex-start
 }
+.sync .blockContent, .async .blockContent {
+    flex-direction: column;
+    gap: 0;
+}
 
 .overview .blockContent {
     margin-top: 1em;
@@ -215,7 +219,7 @@ li > .closeBtn {
 
 @media only screen and (min-width: 600px){
     .blockContent > * {
-        max-width: 50%;
+        /* max-width: 50%; */
         flex: 1 1;
     }
     .overview .blockContent > .descText {
@@ -238,7 +242,9 @@ ul.tCont, ul.altCont {
     margin: 0 0;
     border-bottom: solid 0.5px rgb(226, 235, 255);
 }
-
+.tip:not(.open){
+    height: 3em;
+}
 .tip h5{
     font-size: inherit;
     margin: 0 0;
@@ -400,6 +406,9 @@ ul.tCont, ul.altCont {
 .notReady .descText {
     width: 50%;
     height: 5em;
+}
+.notReady .descText > * {
+    visibility: hidden;
 }
 .notReady .overview .descText {
     height: 18em;
