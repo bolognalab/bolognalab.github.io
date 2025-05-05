@@ -1,137 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Entscheidungshilfe</title>
-  <base target="_blank" />
+  <title>Netzwerk Hybride Lehre: Lehr-/Lernformate</title>
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="shortcut icon" type="image/png" href="favicon.ico">
   <link rel="stylesheet" href="assets/css/eb.css" />
-    <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
 </head>
-<style>
-    #refToRaumkonzept {
-        height: 2em;
-        transition: all 0.2s ease;
-    }
-    .blockContent > * {
-        transition: all 0.2s ease;
-    }
-    .RKlink {
-        position: relative;
-        aspect-ratio: 1.5;
-    }
-    .RKlink > .sketchfab-embed-wrapper {
-        position: relative;
-        border-radius: 1em;
-        width: 90%;
-        height: 90%;
-        margin: 5% 5%;
-        overflow:hidden;
-        transition: all 0.4s ease;
-        /* left:50%;
-        top: 50%;
-        width: 90%;
-        height: 90%;
-        transform: translate(-50%,-50%); */
-    }
-        .sketchfab-embed-wrapper > .cover {
-            position: absolute;
-            left:50%;
-            top: 50%;
-            width: 105%;
-            height: 105%;
-            transform: translate(-50%,-50%);
-            z-index:10;
-            border-radius: 1em;
-            background: var(--networkBlue);
-            opacity: 0.5;
-            transition: all 0.4s ease;
-            cursor: pointer;
-        }
-            .sketchfab-embed-wrapper > iframe {
-                width:100%;
-                aspect-ratio: 1.5;
-                border-radius: 1em;
-            }
-
-        .techn:not(.maxed) .sketchfab-embed-wrapper:hover {
-            transform: scale(105%, 105%);
-        }
-        .sketchfab-embed-wrapper:hover > .cover {
-            opacity: 0.1;
-        }
-
-    .RKlink > .sketchfab-embed-wrapper > iframe {
-        pointer-events: none;
-    }
-    .block.techn:not(.maxed) .preInfo, .block.techn:not(.maxed) .midInfo, .block.techn:not(.maxed) .postInfo {
-        height: 0;
-        overflow: hidden;
-        visibility: hidden;
-    }
-
-    /* Technik-Block highlighted */
-    .maxed  #refToRaumkonzept {
-        height: 0;
-        overflow: hidden;
-    }
-    .tech .blockContent {
-        transition: all 0.5s ease;
-    }
-     .techn.maxed .descText {
-        max-width: 0;
-        overflow: hidden;
-        opacity: 0;
-     }
-    .techn.maxed .blockContent > .RKlink {
-        max-width: 100%;
-    }
-    .maxed #raumIFrame {
-        pointer-events: auto;
-    }
-    .maxed .RKlink {
-        aspect-ratio: auto;
-        margin-bottom: 15px;
-    }
-    .maxed .sketchfab-embed-wrapper > .cover {
-        opacity: 0;
-        pointer-events: none;
-    }
-    .maxed .RKlink > .sketchfab-embed-wrapper {
-        margin: 0 0;
-        width: calc(100% - 15px);
-    }
-    .maxed .preInfo, .maxed .midInfo, .maxed .postInfo{
-        height: auto;
-        visibility: visible
-    }
-    #minTech {
-        position: relative;
-        height: 1.3em;
-    }
-    #minTech > * {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%)
-    }
-    #minTech > img {
-        left: 1em;
-        height: 1em;
-        filter: var(--vibrantBlueFilter);
-    }
-    #minTech > span {
-        left: 2em;
-        font-size: 1.3em;
-        cursor: pointer;
-        color: var(--vibrantBlue)
-    }
-</style>
-<body class="is-preload resultBg" lang="de" onload="loadPage()">
+<body class="is-preload resultBg" lang="de" onload="loadResult()">
     <div id="result" class="rCont notReady">
-        <p>Ihr Ergebnis:</p>
+        <p>Raumkonzept für:</p>
+        <p>Art der Lehrveranstaltung: <span id="artLV"></span>, Format: <span id="format"></span>, Interaktionsgrad: <span id="syncInt"></span>, Gaeste: <span id="gaeste"></span>, Exkursionen: <span id="exkur"></span>, Aufzeichnung: <span id="aufz"></span>.</p>
         <div id="resOverview" class="block overview">
             <h3 id="scenarioTitle">Titel des Lehr-Lernszenarios</h3>
             <h4 id="scenarioSubtitle">mit asynchroner Teilnahme-Alternative</h4>
@@ -139,60 +20,9 @@
                 <img id="descImg" class="descImg" src="images/blurry/pic05.jpg"/>
                 <p class="descText"></p>
             </div>
-            <div id="matchQuality" style="display:none; border-bottom: 0px" class="tip">
-                <h5 onclick="showHideTip(this)">
-                    <img src="images/fwd3.svg" alt="">
-                    <span>Wie geeignet ist dieses Lehrszenario für mich?</span>
-                </h5>
-                <div class="tipContent">
-                    <div id="vorteile" style="display: none">
-                        <p>Hier sind einige Gründe, warum dieses Szenario gut für Sie ist:</p>
-                        <ul class="reasonList"></ul>
-                    </div>
-                    <div id="nachteile" style="display: none">
-                        <p>Hier sind einige Aspekte des Szenarios, die vielleicht nicht direkt mit Ihren Erwartungen übereinstimmen:</p>
-                        <ul class="reasonList"></ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div id="resTechn" class="block techn">
-            <div class="blockContent">
-                <div class="descText">
-                    <h4>Medientechnische Voraussetzungen</h4>
-                    <p>Eigenschaften:</p>
-                    <ul id="propertyList" class="techList"></ul>
-                    <p id="refToRaumkonzept">Raumskizzen und Empfehlungen finden Sie im <b>Raumkonzept →</b></p>
-                </div>
-                <div class="RKlink">
-                    <div class="preInfo">
-                        <h5 id="minTech" onclick="minimizeTech()"><img src="images/bwd3.svg" /><span>Zurück</span></h5>
-                        <h3>Umsetzung mit festinstallierter Raumtechnik</h3>
-                        <p>Dieses 3D-Modell zeigt eine beispielhafte Umsetzung des Lehr-/Lernszenarios mit festinstallierter Raumtechnik. Klicken Sie auf die verschiedenen Nummer, um sich technische Tipps anzusehen.</p>
-                    </div>
-                    <div class="sketchfab-embed-wrapper">
-                        <div class="cover"></div>
-                        <iframe id = "raumIFrame" title="Seminarraum 1" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=""></iframe>
-                    </div>                    
-                    <div class="midInfo"></div>
-                    <div class="postInfo"></div>
-                </div>                
-                <!-- <a id="linkRaumkonzept" href="" class="pdfLink">
-                    <img src='images/raumkonzept_icon.png' alt="" />
-                    <strong>Exemplarisches Raumkonzept</strong>
-                </a> -->
-            </div>
         </div>
         <div id="resSync" class="block sync">
             <h4>Tipps für die synchrone Interaktion</h4>
-            <div class="blockContent">
-                <p class="descText"></p>
-                <ul class="tCont"></ul>
-            </div>
-        </div>
-        <div id="resAsync" class="block async">
-            <h4>Tipps für die asynchrone Teilnahme</h4>
             <div class="blockContent">
                 <p class="descText"></p>
                 <ul class="tCont"></ul>
@@ -209,69 +39,24 @@
     <hr />
 <script>
 
-
 const urlParams = new URLSearchParams(window.location.search);
-const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario') : "se-rem-2-1-2"
-const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : ["se-rem-2-0-0","se-rem-2-3-0","se-hyb-2-0-0","se-hyb-2-3-0"]
-const specialCases = urlParams.has('specialCases') ? urlParams.get('specialCases') : []
-const providedAnswers = JSON.parse(sessionStorage.getItem("answers"))
+const artLV = urlParams.has('artLV') ? urlParams.get('artLV') : "vl" 
+const syncInt = urlParams.has('syncInt') ? JSON.parse(urlParams.get('syncInt')) : "0"
+const format = urlParams.has('format') ? urlParams.get('format') : "hyb"
+const gaeste = urlParams.has('gaeste') ? urlParams.get('gaeste') : false
+const exkur = urlParams.has('exkur') ? urlParams.get('exkur') : false
+const aufz = urlParams.has('aufz') ? urlParams.get('aufz') : false
 
-const answers = providedAnswers? providedAnswers : {}
-const dummyAnswers = {
-  "artLV": "SE",
-  "LZiP": "2",
-  "LZsy": "1",
-  "niePr": "nein",
-  "nieSync": "nein",
-  "regAbw": "abundzu",
-  "onlBereit": "geleg",
-  "limZPSt": "ja",
-  "onlZugang": "ja",
-  "IntAsync": "2",
-  "gaeste": "0",
-  "exkur": "nein",
-  "begrAnz": "nein",
-  "intKoll": "ja"
+function loadResult(){
+    document.getElementById("artLV").innerHTML = artLV
+    document.getElementById("syncInt").innerHTML = syncInt
+    document.getElementById("format").innerHTML = format
+    document.getElementById("gaeste").innerHTML = gaeste
+    document.getElementById("exkur").innerHTML = exkur
+    document.getElementById("aufz").innerHTML = aufz
+    
 }
 
-function explainMatch(scenario, answers=dummyAnswers, rules=[]){
-    Object.entries(answers).forEach(function(item){
-        let qCode = item[0]
-        let aCode = item[1]
-        let effectsForThisCombination = rule_data.filter((k)=>k.questionCode==qCode && k.answerCode==aCode)
-        for (let effect of effectsForThisCombination){
-
-            if (!isScenarioAffected(shownScenario, effect)){
-                // only include effects that affect the displayed scenario!
-                continue;
-            }
-            if (effect.scoreChange == "-100" || effect.scoreChange == "-"){
-                // ignore effects that would have excluded this scenario and "noEffect"
-                continue;
-            } 
-            if (effect.relevantVariable1 == "2" || effect.relevantVariable1 =="4"){
-                // ignore effects that just define syncInt and asyncInt
-                continue;
-            }
-            let sentence = document.createElement("li")
-            let subsentence = effect.reasonSummary.replace("Szenario XYZ", "dieses Szenario")
-            sentence.innerHTML = effect.answerSummary + " " + subsentence //+  " <b>(rule ID: " + effect.globalId + ")</b>"
-
-            // if the effect is positive, add it to the first list (Vorteile)
-            if (+effect.scoreChange > 0){
-                document.querySelector("#vorteile .reasonList").append(sentence)
-                document.querySelector("#matchQuality").style.display = "block"
-                document.querySelector("#vorteile").style.display = "block"
-            } else {
-                // if the effect is negative, add it to the second list (Nachteile)
-                document.querySelector("#nachteile .reasonList").append(sentence)
-                document.querySelector("#matchQuality").style.display = "block"
-                document.querySelector("#nachteile").style.display = "block"
-            }            
-        }
-    })
-    console.log("hallo")
-}
 // auxiliary functions for reading rules
 function isScenarioInRange(scenarioCode, variable, range){
     // console.log(scenarioCode, variable, range)
@@ -299,10 +84,7 @@ function isScenarioAffected(scenarioCode, effect){
 }
 
 
-
-// var shownScenario = 'se-rem-2-1-1'
-
-var all_tips, all_texts, tech_links, tip_matching, rule_data
+var all_tips, all_texts, tip_matching, rule_data
 
 function loadPage(){
     const rCont = document.getElementById("result")
@@ -313,14 +95,12 @@ function loadPage(){
         let csvData = $.csv.toObjects(CSVdata, {separator:';'});
         all_texts = {}
         tip_matching = {}
-        tech_links = {}
         csvData.forEach(function(dict){
             let key = dict["wert"]
             delete dict["wert"]
             all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
             all_texts[key]["name"] = dict["name"]
             tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
-            tech_links[key] = {"raum": dict["link_raumtechnik"]}
         })
         $.get("tips_source.json", function(json){
             all_tips = json["tips"]
@@ -360,12 +140,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             theseTexts[s + 'Text'] = all_texts['de-default']["text_" + s]
         }
     })
-    let raumLink = tech_links[scenarioValue]['raum']
-    document.querySelector("#raumIFrame").src = raumLink
-    document.querySelector(".RKlink .cover").addEventListener("click", ()=>{
-        document.querySelector(".block.techn").classList.add("maxed")
-    })
-
     let overviewText = theseTexts['overviewText']
     let overviewAsyncTNText = theseTexts['overviewAsyncTNText']
     let technPoints = theseTexts['technikText']
@@ -384,11 +158,9 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     
     let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
-    fullTipList = fullTipListAsString.split(",").filter((k)=>!k.includes("-"))
-    fullTipList.forEach((tip, idx, array)=>{
-        array[idx] = tip.trim()
-    })
-    let fullTechnList = technPoints.split(',')
+    fullTipList = fullTipListAsString.split(", ").filter((k)=>k != "-")
+
+    let fullTechnList = technPoints.split(', ')
 
     let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
     let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
@@ -421,10 +193,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
     let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
     syncTipList.forEach(function(tipCode){
-        if (!["privateEcke"].includes(tipCode)){
-            addTip(tipCode, syncTipsCont)
-        }
-            
+        addTip(tipCode, syncTipsCont)
     })
 
     // Async block
@@ -464,12 +233,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     document.getElementById("result").classList.remove("notReady")
 }
 
-// showing and hiding tech block
-function minimizeTech(){
-    document.querySelector(".maxed").classList.remove("maxed")
-}
-
-
 // creating HTML elements
 function addTip(tipCode, container){
         let tipli = document.createElement("li"); container.append(tipli)
@@ -508,7 +271,6 @@ function addTip(tipCode, container){
     }
 
     function createAriaLabels(){
-        // TODO: Links inside tips should open in new tab!
         for (var a of document.querySelectorAll('a')){
             if (!a['aria-label']){
                 if (a['title']){

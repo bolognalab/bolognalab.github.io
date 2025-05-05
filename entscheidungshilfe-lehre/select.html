@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Auswahl Lehr-/Lernszenarien</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="assets/css/eb.css" />
+    <link rel="stylesheet" href="assets/css/eb_app.css" />
+    <script src="assets/js/jquery.min.js"></script>
+</head>
+<style>
+    input[type="checkbox"] {
+        display: none;
+    }
+    input[type="checkbox"] + label {
+        margin-left: 8px;
+        position: relative
+    }
+    input[type="checkbox"] + label::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        left: -0.5em;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 1.1em;
+        height: 1.1em;
+        line-height: 1.1em;
+        margin-right: 5px;
+        border-radius: 3px;
+        border: 1px solid var(--networkTurqoise);
+        color: var(--networkTurqoise);
+        overflow: hidden;
+    }
+    input[type="checkbox"]:checked + label::before {
+        content: "✔";
+    }
+</style>
+<body class="is-preload" lang="de">
+<div style="width: 100%">
+    <div id="questions">
+        <img class="backgroundImage" src = "images/treeTemp.svg" />
+        <div id="DIV_FORM" class="qDiv">
+            <h2 style="text-align: center"><img id="welcomeLogo" src="images/NHL_logo.svg" /></h2>
+            <h1>Auswahl Lehr-/Lernszenarien</h1>
+            <p>Nutzen Sie die folgenden Filter, um ein Raumkonzept und Tipps für Ihre Lehrveranstaltung zu finden.</p>
+                 <!-- Art der Lehrveranstaltung -->
+                <h2>Welche Art von Lehrveranstaltung bieten Sie an?</h2>
+                <label for="artLV">Art der Lehrveranstaltung:</label>
+                <select id="artLV" name="artLV" required>
+                    <option value="vl" selected>Vorlesung</option>
+                    <option value="se">Seminar/Übung</option>
+                    <option value="pr">Labor oder alternatives Format</option>
+                </select>
+        
+                <!-- Format -->
+                <h2>In welchem Format findet die Lehrveranstaltung statt?</h2>
+                <label for="format">Format:</label>
+                <select id="format" name="format" required>
+                    <option value="praes" selected>Präsenz</option>
+                    <option value="onl">Online</option>
+                    <option value="hyb">Hybrid</option>
+                </select>
+        
+                <!-- Interaktionsgrad -->
+                <h2>Wie hoch ist der Interaktionsgrad in Ihrer Lehrveranstaltung?</h2>
+                <label for="syncInt">Interaktionsgrad:</label>
+                <select id="syncInt" name="syncInt" required>
+                    <option value="0" selected>Niedrig</option>
+                    <option value="1">Mittel</option>
+                    <option value="2">Hoch</option>
+                </select>
+        
+                <!-- Zusätzliche Bedingungen -->
+                <h2>Zusätzliche Bedingungen</h2>
+                <p>Welche zusätzlichen Bedingungen treffen auf Ihre Lehrveranstaltung zu?</p>
+                <input type="checkbox" id="gaeste" name="zusaetzliche_bedingungen" value="gaeste">
+                <label for="gaeste">Gastvortragende</label><br>
+    
+                <input type="checkbox" id="exkur" name="zusaetzliche_bedingungen" value="exkur">
+                <label for="exkur">Exkursionen</label><br>
+    
+                <input type="checkbox" id="aufz" name="zusaetzliche_bedingungen" value="aufz">
+                <label for="aufz">Aufzeichnung gewünscht</label>
+            
+        
+                <!-- Submit Button -->
+                <button onclick="selectConcept()" >Absenden</button>
+            <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung des Lehrformats</a></div>
+        </div>
+    </div>   
+</div>
+<script src="assets/js/jquery.csv.js"></script>
+<script>
+    function selectConcept(){
+        let artLV = document.getElementById("artLV").value
+        let format = document.getElementById("format").value
+        let syncInt = document.getElementById("syncInt").value
+        let gaeste = document.getElementById("gaeste").checked
+        let exkur = document.getElementById("exkur").checked
+        let aufz = document.getElementById("aufz").checked
+
+        let URLstring = `?artLV=${artLV}&format=${format}&syncInt=${syncInt}&gaeste=${gaeste}&exkur=${exkur}&aufz=${aufz}`
+        console.log(URLstring)
+        window.open("set_result.html"+URLstring, "_self")
+    }
+</script>
+</body>
+</html>
