@@ -26,7 +26,7 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Berlin HE-institutions join to discuss sustainability goals (BUA Berlin)",
+        "short-event-name": "Berlin HE-institutions discuss sustainability goals (BUA Berlin)",
         "long-event-name": "Participate in the fishbowl discussion organized by TU, FU, HU, HTW and Hertie School!",
         "day": "monday",
         "start": "16:30",
@@ -164,7 +164,7 @@
         "loc": "Online",
         "id": "event-wien",
         "web": "https://sondage.app.u-paris.fr/687589?newtest=Y&lang=en",
-        "category": "event-4",
+        "category": "event-2",
         "start-ovr": "-",
         "end-ovr": "16:30"
     },
