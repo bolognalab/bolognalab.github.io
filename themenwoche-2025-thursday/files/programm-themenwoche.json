@@ -1,13 +1,13 @@
 [
     {
-        "short-event-name": "Student-Led Sustainability",
-        "long-event-name": "Universities as Drivers of Sustainability",
+        "short-event-name": "How to empower students to become active agents of change?",
+        "long-event-name": "Organized by the student-led Sustainability Office at Humboldt University in collaboration with Aarhus University, the workshop provides a platform for developing innovative solutions to global socio-ecological challenges",
         "day": "monday",
         "start": "10:00",
         "end": "12:00",
         "loc": "Auditorium, Grimm Zentrum",
         "id": "event-SO",
-        "web": "-",
+        "web": "nachhaltigkeitsbuero@hu-berlin.de",
         "category": "event-1",
         "start-ovr": "-",
         "end-ovr": "-"
@@ -26,8 +26,8 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Selbstwirksame Universtit\u00e4ten",
-        "long-event-name": "Fishbowl Discussion \"Die selbstwirksame Universit\u00e4t:  Wie wir Nachhaltigkeitsziele als Chancen ergreifen und unsere Resilienz gemeinsam st\u00e4rken\"",
+        "short-event-name": "Berlin Higher Education institutions join forces to discuss sustainability goals",
+        "long-event-name": "Participate in the fishbowl discussion organized by TU, FU, HU, HTW and Hertie School!",
         "day": "monday",
         "start": "16:30",
         "end": "18:00",
@@ -39,8 +39,8 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Science Slam",
-        "long-event-name": "The stage is calling: Science Slam at Circle U. Climate Day",
+        "short-event-name": "The stage is calling: Science Slam at Circle U. Climate Day",
+        "long-event-name": " Students of all degree programs and qualification levels (BA, MA, PhD students) will have the opportunity to present their research projects or theses dealing with issues of climate change and/ or sustainability ",
         "day": "monday",
         "start": "18:00",
         "end": "19:30",
@@ -91,8 +91,8 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Science is ignored",
-        "long-event-name": "Science is ignored: Why should we still train future (climate) scientists?",
+        "short-event-name": "responsibilities and limits of science in times of crises",
+        "long-event-name": "Join us for a thought-provoking discussion on the role of academia in shaping political and societal transformation",
         "day": "tuesday",
         "start": "14:00",
         "end": "15:30",
@@ -104,8 +104,8 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "CUBES Circle",
-        "long-event-name": "CUBES Circle - Virtually visit our circular research facility",
+        "short-event-name": "HU-CUBES research facility",
+        "long-event-name": "In our webinar, we take you on a virtual tour of our facility and offer insights into our applied research in circular economy.",
         "day": "wednesday",
         "start": "10:00",
         "end": "11:30",
