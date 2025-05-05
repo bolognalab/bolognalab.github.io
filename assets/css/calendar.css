@@ -247,6 +247,7 @@ Main Components
     width: 100%;
   }
   .cd-schedule .events .events-group {
+    /* this defines the width of the column, day */
     width: 20%;
     float: left;
     border: 1px solid #EAEAEA;

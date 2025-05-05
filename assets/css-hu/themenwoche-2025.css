@@ -1,0 +1,118 @@
+    /* external hosting for styling HU content*/
+
+.tableHeading {
+	color: #003366;
+	font-weight: bold;
+}
+.tabStop {
+	margin-left: 2em;
+}
+.tabStop h5 {
+    font-size: 1em;
+    margin-bottom: 0
+}
+.tabStop p {
+    margin-top: 0;
+}
+.colorfulHeading {
+	color: #003366;
+	font-weight: bold;
+}
+h3.colorfulHeading {
+    margin-top: 1.5em;
+    color: #009ee3 !important;
+    font-size: 1.2em;
+}
+h4.colorfulHeading {
+	font-size: 1em;
+}
+.colorfulHeading2 {
+	color: #003366;
+	font-style: italic;
+}
+.colorfulHeading3 {
+	color: #575757;
+	font-weight:bold;
+}
+
+.fleximg {
+	width: 45%;
+	max-width: 300px;
+	padding-left: 1.5em;
+	float: right;
+	display: block;
+}
+.thumbnail {
+	width: 30%;
+}
+.flexp {
+	width: 55%;
+} 
+.sectionContainer {
+	overflow: auto
+}
+
+@media screen and (max-width: 980px) {
+	.fleximg {
+		width: 35%;
+	}
+	.flexp {
+		width: 65%;
+	} 
+}
+
+/* Für Gallerie */
+.galleryImage {
+	cursor: pointer;
+	height: 100%; 
+	display: inline;
+	}
+#closeImg {
+	cursor: pointer;
+	transition: all 0.1s ease;
+}
+#closeImg:hover {
+	color: rgba(255, 255, 255, 1);
+	font-size: 1.1em;
+}
+
+@media screen and (max-width: 736px) {
+	.fleximg {		
+		width: 100%;
+		float: none;
+		padding-bottom: 1.5em;
+		padding-left: 0;
+		margin: auto;
+	}
+	.flexp {
+		width: 100%;
+	} 
+	.thumbnail {
+	width: 100%;
+	}
+}
+
+
+/* iFrame fürs Hybride-Woche-Programm  */
+.wrapperScheduleTHL {
+	overflow: hidden; 
+	height: 650px
+}
+@media screen and (max-width: 600px) {
+        .wrapperScheduleTHL {
+        overflow: scroll; 
+        height: 1000px
+    }
+
+    .scheduleTHL {
+        transform: scale(0.6667, 06667) translate(-25%, -25%);
+    }
+
+    /* hiding elements on desktop-mode */
+    @media screen and (min-width: 736px) {
+        .mobileOnly {
+            display: none
+        }
+    }
+
+}

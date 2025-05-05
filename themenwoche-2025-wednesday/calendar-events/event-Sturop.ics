@@ -1,0 +1,264 @@
+BEGIN:VCALENDAR
+PRODID:-//Mozilla.org/NONSGML Mozilla Calendar V1.1//EN
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-TZINFO:Europe/Berlin[2025a]
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+005328
+TZNAME:Europe/Berlin(STD)
+DTSTART:18930401T000000
+RDATE:18930401T000000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19160430T230000
+RDATE:19160430T230000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19161001T010000
+RDATE:19161001T010000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19170416T020000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=3MO;UNTIL=19180415T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19170917T030000
+RRULE:FREQ=YEARLY;BYMONTH=9;BYDAY=3MO;UNTIL=19180916T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19400401T020000
+RDATE:19400401T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19421102T030000
+RDATE:19421102T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19430329T020000
+RDATE:19430329T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19440403T020000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=1MO;UNTIL=19450402T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+030000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19450524T020000
+RDATE:19450524T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19431004T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1MO;UNTIL=19441002T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+030000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19450924T030000
+RDATE:19450924T030000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19451118T030000
+RDATE:19451118T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19460414T020000
+RDATE:19460414T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19470406T030000
+RDATE:19470406T030000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+030000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19470511T030000
+RDATE:19470511T030000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19461007T030000
+RDATE:19461007T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+030000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19470629T030000
+RDATE:19470629T030000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19480418T020000
+RDATE:19480418T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19490410T020000
+RDATE:19490410T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19471005T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1SU;UNTIL=19491002T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19800406T020000
+RDATE:19800406T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19800928T030000
+RRULE:FREQ=YEARLY;BYMONTH=9;BYDAY=-1SU;UNTIL=19950924T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19810329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU;UNTIL=19960331T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19961027T030000
+RDATE:19961027T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:(DST)
+DTSTART:19970330T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:(STD)
+DTSTART:19971026T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+CREATED:20250429T132530Z
+LAST-MODIFIED:20250429T132634Z
+DTSTAMP:20250429T132634Z
+UID:672adfc3-db23-4df9-a3f0-8709be6646b8
+SUMMARY:Nachhaltigkeit durch studentische Forschung?
+DTSTART;TZID=Europe/Berlin:20250604T110000
+DTEND;TZID=Europe/Berlin:20250604T120000
+TRANSP:OPAQUE
+LOCATION:https://hu-berlin.zoom-x.de/j/67426334636
+DESCRIPTION;ALTREP="data:text/html,%3Cb%3EEinblicke%20in%20das%20Student%20
+ Research%20Opportunities%20Program%20der%20Berlin%20University%20Alliance%3
+ C%2Fb%3E%0A%3Cp%3EDie%20Berlin%20University%20Alliance%20hat%20sich%20zum%2
+ 0Ziel%20gesetzt%2C%20die%20%0AVerbindung%20von%20(Spitzen-)%20Forschung%20u
+ nd%20Lehre%20zu%20st%C3%A4rken.%20Zu%20diesem%20%0AZweck%20wurde%20das%20St
+ udent%20Research%20Opportunities%20Program%20(StuROPx)%20%0Aeingerichtet.%2
+ 0Es%20richtet%20sich%20sowohl%20an%20Studierende%20als%20auch%20an%20%0ANac
+ hwuchsforschende%20und%20besteht%20aus%20zwei%20Formaten%3A%20Im%20Rahmen%2
+ 0der%20%0AX-Tutorials%20initiieren%20Studierende%20eigenst%C3%A4ndig%20Fors
+ chungsprojekte%20und%20%0Asetzen%20diese%20gemeinsam%20mit%20anderen%20Stud
+ ierenden%20um.%20Bei%20den%20X-Student%20%0AResearch%20Groups%20leiten%20Pr
+ omovierende%20und%20Postdocs%20ein%20studentisches%20%0AForschungsteam%20un
+ d%20forschen%20gemeinsam%20mit%20den%20Studierenden%20an%20einer%20%0AFrage
+ stellung%2C%20die%20an%20ihre%20eigene%20wissenschaftliche%20Arbeit%20ankn%
+ C3%BCpft.%3Cbr%3EBeide%0A%20Formate%20werden%20semesterweise%20%C3%BCber%20
+ einen%20Call%20for%20Proposals%20%0Aausgeschrieben%20und%20durch%20ein%20fo
+ rschungsdidaktisches%20Begleitprogramm%20%0Aunterst%C3%BCtzt.%3C%2Fp%3E%0A%
+ 3Cp%3E%3Cbr%3EDer%20Impulsvortrag%20stellt%20die%20Rahmenbedingungen%20und%
+ 20Umsetzung%20des%20%0AProgramms%20sowie%20sein%20Qualifizierungsprogramm%2
+ 0vor.%20Im%20Zentrum%20steht%20die%20%0AFrage%2C%20wie%20StuROPx%20Impulse%
+ 20f%C3%BCr%20eine%20nachhaltige%20Entwicklung%20von%20Lehre%20%0Aund%20Lern
+ en%20an%20Hochschulen%20setzen%20kann.%20Ein%20besonderer%20Fokus%20liegt%2
+ 0dabei%20%0Aauf%20der%20Reflexion%20der%20eigenen%20Rolle%20als%20Lehrperso
+ n%20im%20Forschenden%20Lernen%0A%20und%20dem%20Potenzial%2C%20diese%20kriti
+ sch-reflektierende%20Haltung%20langfristig%20in%0A%20unterschiedlichen%20Le
+ rnsettings%20zu%20verankern.%20Zudem%20zeigt%20der%20Beitrag%20%0Aanhand%20
+ ausgew%C3%A4hlter%20Projekte%2C%20dass%20gesellschaftliche%20Problemstellun
+ gen%20%0Ah%C3%A4ufig%20den%20Ausgangspunkt%20studentischer%20Forschungsfrag
+ en%20bilden%20und%20%0Astudentische%20Forschung%20so%20auch%20als%20Beitrag
+ %20zu%20einer%20transformativen%20%0AWissenschaft%20verstanden%20werden%20k
+ ann.%3C%2Fp%3E%3Cp%3E%3Cstrong%3EWer%3A%20BUA%20%7C%20StuROPx%20-%20Dr.%20N
+ ina%20Lorkowski%20%26amp%3B%20Dr.%20Julia%20Rue%C3%9F%3C%2Fstrong%3E%3C%2Fp
+ %3E":Einblicke in das Student Research Opportunities Program der Berlin Uni
+ versity Alliance\n\nDie Berlin University Alliance hat sich zum Ziel gesetz
+ t\, die \nVerbindung von (Spitzen-) Forschung und Lehre zu stärken. Zu die
+ sem \nZweck wurde das Student Research Opportunities Program (StuROPx) \nei
+ ngerichtet. Es richtet sich sowohl an Studierende als auch an \nNachwuchsfo
+ rschende und besteht aus zwei Formaten: Im Rahmen der \nX-Tutorials initiie
+ ren Studierende eigenständig Forschungsprojekte und \nsetzen diese gemeins
+ am mit anderen Studierenden um. Bei den X-Student \nResearch Groups leiten 
+ Promovierende und Postdocs ein studentisches \nForschungsteam und forschen 
+ gemeinsam mit den Studierenden an einer \nFragestellung\, die an ihre eigen
+ e wissenschaftliche Arbeit anknüpft.\nBeide\n Formate werden semesterweise
+  über einen Call for Proposals \nausgeschrieben und durch ein forschungsdi
+ daktisches Begleitprogramm \nunterstützt.\n\n\nDer Impulsvortrag stellt di
+ e Rahmenbedingungen und Umsetzung des \nProgramms sowie sein Qualifizierung
+ sprogramm vor. Im Zentrum steht die \nFrage\, wie StuROPx Impulse für eine
+  nachhaltige Entwicklung von Lehre \nund Lernen an Hochschulen setzen kann.
+  Ein besonderer Fokus liegt dabei \nauf der Reflexion der eigenen Rolle als
+  Lehrperson im Forschenden Lernen\n und dem Potenzial\, diese kritisch-refl
+ ektierende Haltung langfristig in\n unterschiedlichen Lernsettings zu veran
+ kern. Zudem zeigt der Beitrag \nanhand ausgewählter Projekte\, dass gesell
+ schaftliche Problemstellungen \nhäufig den Ausgangspunkt studentischer For
+ schungsfragen bilden und \nstudentische Forschung so auch als Beitrag zu ei
+ ner transformativen \nWissenschaft verstanden werden kann.\n\nWer: BUA | St
+ uROPx - Dr. Nina Lorkowski & Dr. Julia Rueß
+END:VEVENT
+END:VCALENDAR

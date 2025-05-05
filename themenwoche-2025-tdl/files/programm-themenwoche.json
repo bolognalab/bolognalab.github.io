@@ -1,0 +1,30 @@
+[
+    {
+        "short-event-name": "Er\u00f6ffnung",
+        "long-event-name": "VORMACHEN. NACHHALTEN. Wie nachhaltig ist die Lehre an der HU? | Keynote | Podiumsdiskussion",
+        "day": "tuesday",
+        "start": "15:00",
+        "end": "17:30",
+        "loc": "Lichthof der Humboldt-Universit\u00e4t",
+        "id": "event-opening",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/tag-der-lehre",
+        "category": "event-1",
+        "start-ovr": "-",
+        "end-ovr": "-",
+        "event-participants": "Prof. Dr. Niels Pinkwart (VPL) | Prof. Dr. Christoph Wulf (Unesco) | Sara Schurmann (Netzwerk Klimajournalismus) | Wiebke Hampel (Klimaschutzmanagement) | Nachhaltigkeitsb\u00fcro"
+    },
+    {
+        "short-event-name": "Festakt Preis f\u00fcr gute Lehre",
+        "long-event-name": "Shortlist zum diesj\u00e4hrigen Preis | Preisverleihung an die Gewinner*in | Wrap-Up Improtheater",
+        "day": "tuesday",
+        "start": "17:30",
+        "end": "20:00",
+        "loc": "Lichthof der Humboldt-Universit\u00e4t",
+        "id": "event-Preisverleihung",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/tag-der-lehre",
+        "category": "event-1",
+        "start-ovr": "17:45",
+        "end-ovr": "19:45",
+        "event-participants": "Prof. Dr. Niels Pinkwart | Shortlister*innen des diesj\u00e4hrigen Preises | Gewinner*innen des Preises | Improtheater"
+    }
+]

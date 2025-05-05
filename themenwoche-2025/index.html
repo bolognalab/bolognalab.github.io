@@ -1,0 +1,440 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  https://codepen.io/oltika/pen/GNvdgV
+-->
+<html lang="de-DE">
+	<head>
+		<title>Themenwoche 2025: Programm</title>
+		<meta charset="utf-8" />
+    <meta http-equiv="content-language" content="de">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/calendar.css" />
+    <link rel="stylesheet" href="../assets/css/md.css" />
+ 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+    <script src="../assets/js/jquery.min.js"></script>
+    <style>
+      /* Title */
+      .inner {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      .inner h1 {
+        font-size:2em;
+        font-weight: bold;
+        color: #00376c;
+        margin-top: 2em;
+      }
+      .inner .subtitle {
+        /* text-align: center;  */
+        font-size: 1.7em; 
+        font-weight: bold; 
+        color: #00376c; 
+        opacity: 0.5; 
+        margin-top: 0.2em;
+      }
+      @media screen and (min-width: 800px){
+        .inner .subtitle  {
+          text-align: center;
+        }
+      }
+      .inner h2 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 1.5em;
+      }
+      @media only screen and (min-width: 800px) {
+        .inner {
+        margin: auto;
+        max-width: 1500px;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      .inner h1 {
+        text-align: center;
+        font-size:2em;
+        font-weight: bold;
+        color: #00376c;
+        margin-top: 2em;
+      }
+      }
+      /* credits */
+      #credits {
+        color: #777;
+        padding-bottom: 10%;
+        font-size: 80%
+      }
+      #credits h2 {
+        margin-top: 3em;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #aaa
+      }
+      #credits p {
+        font-size:70%;
+        margin-top: 1em;
+      }
+      #credits a {
+        color: inherit;
+        border-bottom: solid 1px
+      }
+      @media only screen and (min-width: 800px) {
+      #credits p {
+        font-size: 100%;
+      }
+      }
+      .accordion, .panel {
+              max-width: 700px;
+            }
+            .accordion {
+              background-color: #ddd;
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              border: none;
+              text-align: left;
+              outline: none;
+              font-size: 15px;
+              transition: 0.4s;
+            }
+            .accordion::before {
+              content: '►';
+/*               font-size: 1.1em; */
+              font-weight: bold;
+              color: #aaa; 
+              padding-right: 1em;
+            }
+            .active, .accordion:hover {
+              background-color: #eee;
+            }
+            h2.active {
+              color: #777 !important;
+            }
+            .active::before {
+              content: '▼'
+            }
+            .panel {
+              padding: 0 18px;
+              max-height: 0;
+              background-color: #eee;
+              overflow: hidden;
+              transition: max-height 0.2s ease-out;
+            }
+            .panel > *:last-child {
+              margin-bottom: 1.2em;
+            }
+     </style>
+     <style>
+      /* neues */
+
+      .daysContainer {
+        width: 100%;
+        height: 9em;
+        display: flex;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: space-evenly;
+        overflow: hidden;
+        transition: all 0.5s ease;
+      }
+      @media only screen and (min-width: 600px){
+        .daysContainer {
+          height: calc(800px + 2em);
+      }
+      }
+      .daysContainer.maximized {
+        height: calc(1440px + 3em);
+      }
+      .dayBlock {
+        width: calc(33.33% - 1em);;
+        height: 100%;
+        border-radius: 0.5em;
+        background: #1672f9;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        padding-bottom: 1em;
+      }
+      .dayBlock h2 {
+        text-align: center;
+        line-height: 3.5em;
+        margin-top: 0;
+        color: white;
+        position: relative;
+      }
+      @media only screen and (min-width:600px){
+        .dayBlock h2 {
+          line-height: 2em;
+        }
+      }
+      .daysContainer.maximized .dayBlock:not(.shown) {
+        width: 0;
+      }
+
+      /* before loading */
+      .dayBlock:not(.loaded) {
+        height: 2.5em;
+        opacity: 0;
+        /* width: 0; */
+      }
+      .dayBlock:not(.loaded) iframe {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .dayBlock iframe {
+        transform-origin: top;
+        transition: all 0.5s ease;
+      }
+      .dayBlock iframe.minimized {
+        width: 300%;
+        transform: scale(33.33%, 33.33%) translate(-100%, 0%);
+        margin-bottom: 0.5em;   
+        overflow:hidden;     
+      }
+      @media only screen and (min-width: 600px){
+        .dayBlock iframe.minimized {
+          transform: scale(120%, 80%) translate(-100%, 0%);
+        }
+      }
+      @media only screen and (min-width: 800px){
+        .dayBlock iframe.minimized {
+          transform: scale(33.33%, 54.1%) translate(-100%, 0%);
+        }
+      }
+      /* minimized view */
+      .dayBlock.loaded iframe.minimized {
+        opacity: 0.5;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      @media only screen and (min-width: 800px){
+        .dayBlock.loaded iframe.minimized {
+          opacity: 0.7;
+        }
+      }
+
+      .dayBlock.loaded:hover {
+        cursor: pointer;
+      }
+      .dayBlock.loaded:hover > iframe.minimized {
+        opacity: 0.8;
+        transform: scale(34.33%, 55.1%) translate(-98%, 0%);
+      }
+
+      /* view of one day shown */
+
+      .dayBlock.shown {
+        overflow: visible;
+        z-index: 3;
+        width: 100%;
+      }
+      .dayBlock.shown iframe {
+        width: 100%;
+        /* transform: scaleX(33.33%) translateX(-100%); */
+        transition: all 0.5s ease;
+      }
+     </style>
+      <style>
+        /* loading */
+        #loadingContainer {
+          opacity: 0;
+          height: 0;
+          overflow: hidden;
+          transition: all 0.8s ease;
+        }
+        #main:not(.is-loaded) > #loadingContainer {
+          opacity: 1;
+          height: 260px;
+        }
+        #loadingContainer > p {
+          margin: 0 0 0 0;
+          text-align: center;
+        }
+        .loader {
+          border: 8px solid #f3f3f3;       /* Light grey */
+          border-top: 8px solid #3498db;    /* Blue */
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          animation: spin 1s linear infinite;
+          margin: 100px auto;
+        }
+
+        @keyframes spin {
+          0%   { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+	</head>
+
+
+	<body class="is-preload" lang="de">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+        <header id="header">
+          <div class="inner">
+            <h1>Themenwoche Lehre 2025 - Nachhaltiges Lehren und Lernen</h1>
+            <p class="subtitle" style="margin-bottom: 3em">Programm</p>
+          </div>
+        </header>
+
+				<!-- Main -->
+        <div class="inner" id="main">
+          <div id="loadingContainer">
+            <p>lädt...</p>
+            <div class="loader"></div>
+          </div>
+          <div class="daysContainer" style="width: 100%; aspect-ratio: 0.9">
+            <div class="dayBlock">
+              <h2>Dienstag 3.6.</h2>
+              <iframe id="frameDi" class="iframe minimized" src="../themenwoche-2025-tdl/programm_cal.html" width="300%" height="180%"></iframe>
+            </div>
+            <div class="dayBlock">
+              <h2>Mittwoch 4.6.</h2>
+          <iframe id="frameMi" class="iframe minimized" src="../themenwoche-2025-wednesday/programm_cal.html" width="300%" height="180%"></iframe>
+          <script>console.log(document.getElementById("frameMi").contentDocument.readyState)</script>
+            </div>
+            <div class="dayBlock">
+              <h2>Donnerstag 5.6.</h2>
+              <iframe id="frameDo" class="iframe minimized" src="../themenwoche-2025-thursday/programm_cal.html" width="300%" height="180%"></iframe>
+            </div>
+          </div>
+          
+          
+          
+        </div>
+        <div class="inner" id="credits">
+          <h2 class="accordion">Credits</h2>
+          <div class="panel">
+            <p>Erstellt von <a href="https://github.com/naspitha">Natalía Spitha</a> und Laura Schilow mithilfe von Github Pages.</p>
+            <p>Programmorganisation: bologna.lab</p>
+            <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+            <p>basiert auf der Design-Vorlage von <a href="https://codepen.io/oltika/pen/GNvdgV">Oltika@codepen</a></p>
+          </div>
+        </div>  
+			</div>
+
+      <script>
+        const daysContainer = document.querySelector(".daysContainer")
+        const dayBlocks = {
+          "frameDi": document.querySelectorAll(".dayBlock")[0],
+          "frameMi": document.querySelectorAll(".dayBlock")[1],
+          "frameDo": document.querySelectorAll(".dayBlock")[2]
+        }
+        const iframes = {
+          "frameDi": document.querySelector("#frameDi"),
+          "frameMi": document.querySelector("#frameMi"),
+          "frameDo": document.querySelector("#frameDo")        
+        }
+        
+        // functions
+
+        function minimizeDay(iFrameId){
+          let iframe = iframes[iFrameId]
+          iframe.classList.add("minimized")
+          let classNames = ["events", "event-time", "event-name", "single-event", "top-info", "timeline", "events-group"]
+          classNames.forEach((className)=>{
+            iframe.contentDocument.querySelectorAll("."+className).forEach((text)=>{text.classList.add("minimized")})
+          })
+          dayBlocks[iFrameId].classList.remove("shown")
+          
+        }
+        function showDay(iFrameId){
+          let iframe = iframes[iFrameId]
+          iframe.classList.remove("minimized")
+          iframe.contentDocument.querySelectorAll(".events, .event-time, .event-name, .single-event, .top-info, .timeline, .events-group").forEach((text)=>{
+              text.classList.remove("minimized")
+            })
+          daysContainer.classList.add("maximized")
+          Object.entries(dayBlocks).forEach(([ifid, db])=>{
+            if (ifid==iFrameId){
+              db.classList.add("shown")
+            }
+          })
+          // scrolling to the good stuff
+          // if (iFrameId=="frameDi"){
+          //   setTimeout(()=>{
+          //     // window.scrollTo({
+          //     //   "top": 666,
+          //     //   "left": 0,
+          //     //   "behavior": "smooth",
+          //     // });
+          //   },1000)
+
+          // }
+        }
+
+        // loading
+        async function minimizeFrames(){
+          await new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+              minimizeDay("frameDi")
+              minimizeDay("frameMi")
+              minimizeDay("frameDo")
+              setTimeout(()=>{
+                resolve()
+              },500)
+              ;
+            }, 2500)
+          });
+          return Promise.resolve()
+        }
+
+        async function addInteractivity(){
+          await new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+              Object.values(iframes).forEach((m)=>{
+                console.log(m.id)
+
+                m.parentElement.classList.add("loaded")
+                m.parentElement.addEventListener("click", function(){
+                  if (m.parentElement.classList.contains("shown")){
+                    m.contentDocument.querySelector("a.close").click() 
+                    minimizeDay(m.id)
+                    daysContainer.classList.remove("maximized")
+                  } else {
+                    showDay(m.id)
+                  }
+                })
+              })
+              document.querySelector("#main").classList.add("is-loaded")
+            }, 500);
+          resolve();
+          })
+          return Promise.resolve()
+        }
+
+        async function loadCalendar(){
+          try {
+            await minimizeFrames();
+            console.log("minimized Frames")
+            await addInteractivity();
+            console.log("added event listeners")
+          } catch (error) {
+            console.error("error occurred: ", error);
+          }
+        }
+        loadCalendar()  
+      </script>
+      <script>
+        // Accordion-menu for credits
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
+	</body>
+</html>

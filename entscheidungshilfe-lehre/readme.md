@@ -151,11 +151,12 @@ Die Fragen und Antworten können in der Datei [fragen_source.json](https://githu
 - Den **text** der Frage
 - Eine Reihe von **antworten**. Jede Antwort hat einen für die Nutzer\*innen unsichtbaren **Antwortcode** (z.B. „kein“, „geleg“) und einen Text. Die Texte für die Frage und Antworten unterstützen Formatierung durch HTML, z.B. &lt;b&gt;&lt;/b&gt; für bold.
 - Eventuell einen Satz als zusätzliche Information (**addInfo**), welche die Frage länger erklärt.
+*TODO: Dieses "addInfo" Element wird weiterentwickelt, weil inzwischen festgestellt wurde, dass für die sinnvolle Beantwortung der Fragen mehr Kontext notwendig ist.*
 
 ![](dokumentation/img_questionComponents.png)
 *Abbildung 4. Eine Beispiel-Frage in der Datei fragen_source.md und ihre Abbildung im Entscheidungsbaum-App*
 
-Anmerkung 1: die _Reihenfolge_ der Fragen wird nicht durch diese Datei bestimmt, sondern wird durch eine andere Datei ([app.html](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/app.html)) definiert. Dort gibt es die Javascript-Variable ``questionOrder``, welche die Codes der verwendeten Fragen in der gewünschten Reihenfolge auflistet.
+Anmerkung 1: die _Reihenfolge_ der Fragen wird nicht durch diese Datei bestimmt, sondern sie wird durch eine andere Datei ([app.html](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/app.html)) definiert. Dort gibt es die Javascript-Variable ``questionOrder``, welche die Codes der verwendeten Fragen in der gewünschten Reihenfolge auflistet.
 
 **Anmerkung 2 (Wichtig!): manche Fragen in der Datei [fragen_source.json](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/fragen_source.json) sind nicht mehr im Entscheidungstool implementiert!!!** Diese Datei dient auch als Archiv für ältere Fragen. Die aktuellste Auswahl der Fragen wird (wie die Reihenfolge) in der Datei [app.html](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/app.html) definiert.
 
