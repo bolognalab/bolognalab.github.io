@@ -1,2 +1,2 @@
 # Rooftop solar and energy community at Aarhus University  
-Information folgt
+## Online: https://aarhusuniversity.zoom.us/j/6432864073
