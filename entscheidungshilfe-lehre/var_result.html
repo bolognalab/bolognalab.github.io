@@ -12,10 +12,6 @@
   <script src="assets/js/jquery.csv.js"></script>
 </head>
 <style>
-    #refToRaumkonzept {
-        height: 2em;
-        transition: all 0.2s ease;
-    }
     .blockContent > * {
         transition: all 0.2s ease;
     }
@@ -47,7 +43,7 @@
             z-index:10;
             border-radius: 1em;
             background: var(--networkBlue);
-            opacity: 0.5;
+            opacity: 0.2;
             transition: all 0.4s ease;
             cursor: pointer;
         }
@@ -57,10 +53,10 @@
                 border-radius: 1em;
             }
 
-        .techn:not(.maxed) .sketchfab-embed-wrapper:hover {
+        .techn:not(.maxed) .sketchfab-embed-wrapper.hovered {
             transform: scale(105%, 105%);
         }
-        .sketchfab-embed-wrapper:hover > .cover {
+        .sketchfab-embed-wrapper.hovered > .cover {
             opacity: 0.1;
         }
 
@@ -74,18 +70,35 @@
     }
 
     /* Technik-Block highlighted */
-    .maxed  #refToRaumkonzept {
-        height: 0;
-        overflow: hidden;
-    }
     .tech .blockContent {
         transition: all 0.5s ease;
     }
      .techn.maxed .descText {
         max-width: 0;
+        height: 0;
         overflow: hidden;
         opacity: 0;
      }
+        #linkTechnik {
+            padding: 1em 2em;
+            font-size: 1.1em;
+            font-weight: bold;
+            background: rgba(0,0,0,0);
+            box-shadow: none;
+            border: 2px solid var(--vibrantBlue);
+            border-radius: 1em;
+            color: var(--vibrantBlue);
+            transition: all 0.4s ease;
+            margin: 1em 2.5em;
+            cursor: pointer;
+        }
+        #linkTechnik.hovered {
+            /* background: rgba(18, 161, 154, 0.3); */
+            background: rgba(15, 113, 184, 0.2);
+            /* color: white; */
+            border: 2px solid rgba(18, 161, 154, 0);
+            transform: scale(105%, 105%)
+        }
     .techn.maxed .blockContent > .RKlink {
         max-width: 100%;
     }
@@ -128,6 +141,7 @@
         cursor: pointer;
         color: var(--vibrantBlue)
     }
+    
 </style>
 <body class="is-preload resultBg" lang="de" onload="loadPage()">
     <div id="result" class="rCont notReady">
@@ -163,13 +177,13 @@
                     <h4>Medientechnische Voraussetzungen</h4>
                     <p>Eigenschaften:</p>
                     <ul id="propertyList" class="techList"></ul>
-                    <p id="refToRaumkonzept">Raumskizzen und Empfehlungen finden Sie im <b>Raumkonzept →</b></p>
+                    <p id="refToRaumkonzept">Raumskizzen und Empfehlungen:</p>
                 </div>
                 <div class="RKlink">
                     <div class="preInfo">
                         <h5 id="minTech" onclick="minimizeTech()"><img src="images/bwd3.svg" /><span>Zurück</span></h5>
-                        <h3>Umsetzung mit festinstallierter Raumtechnik</h3>
-                        <p>Dieses 3D-Modell zeigt eine beispielhafte Umsetzung des Lehr-/Lernszenarios mit festinstallierter Raumtechnik. Klicken Sie auf die verschiedenen Nummer, um sich technische Tipps anzusehen.</p>
+                        <h3>Interaktives Raummodell</h3>
+                        <p>Dieses 3D-Modell zeigt eine beispielhafte Umsetzung des Lehr-/Lernszenarios <b>mit festinstallierter Raumtechnik</b>. Klicken Sie auf die verschiedenen Nummer, um sich technische Tipps anzusehen.</p>
                     </div>
                     <div class="sketchfab-embed-wrapper">
                         <div class="cover"></div>
@@ -361,7 +375,37 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         }
     })
     let raumLink = tech_links[scenarioValue]['raum']
-    document.querySelector("#raumIFrame").src = raumLink
+    if (raumLink == "COMINGSOON"){
+            document.querySelector("#refToRaumkonzept").innerHTML = "Ein interaktives Raummodell mit Empfehlungen folgt bald."
+            document.querySelector(".RKlink").style.display="none"
+    } else if (raumLink != "digital"){
+        document.querySelector("#raumIFrame").src = raumLink
+        let techButton = document.createElement("button")
+        techButton.innerHTML = "Interaktives Raummodell"
+        techButton.setAttribute("id", "linkTechnik")
+        techButton.addEventListener("click", maximizeTech)
+        techButton.addEventListener("mouseenter", (event)=>{
+            document.querySelector(".sketchfab-embed-wrapper").classList.add("hovered")
+            event.target.classList.add("hovered")
+        })
+        techButton.addEventListener("mouseleave", (event)=>{
+            document.querySelector(".sketchfab-embed-wrapper").classList.remove("hovered")
+            event.target.classList.remove("hovered")
+        })
+        document.querySelector(".techn .descText").appendChild(techButton)
+        document.querySelector(".sketchfab-embed-wrapper").addEventListener("mouseenter", (event)=>{
+            event.target.classList.add("hovered")
+            document.querySelector("#linkTechnik").classList.add("hovered")
+        })
+        document.querySelector(".sketchfab-embed-wrapper").addEventListener("mouseleave", (event)=>{
+            event.target.classList.remove("hovered")
+            document.querySelector("#linkTechnik").classList.remove("hovered")
+        })
+
+
+    }
+
+
     document.querySelector(".RKlink .cover").addEventListener("click", ()=>{
         document.querySelector(".block.techn").classList.add("maxed")
     })
@@ -439,14 +483,15 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     // Medientechnik block
     fullTechnList.forEach(function(s){
+        console.log(s)
         let li = document.createElement('li')
         li.innerHTML = s
         document.querySelector("#propertyList").appendChild(li)
         if (s == 'COMINGSOON'){
-            document.querySelector(".techn .descText").innerHTML = '<p>Die Medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
+            document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4> Die Medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
         } else if (s == 'digital'){
-            document.querySelector(".techn .descText").innerHTML = '<p>Dieses Lehrszenario findet in rein-digitalem Format statt.</p>'
-            document.querySelector("#linkRaumkonzept").style.display='none'
+            document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4>Dieses Lehrszenario findet in rein-digitalem Format statt.</p>'
+            document.querySelector(".techn.block").parentNode.removeChild(document.querySelector(".techn.block"))
         }
     }
 
@@ -465,6 +510,9 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 }
 
 // showing and hiding tech block
+function maximizeTech(){
+    document.querySelector(".block.techn").classList.add("maxed")
+}
 function minimizeTech(){
     document.querySelector(".maxed").classList.remove("maxed")
 }
