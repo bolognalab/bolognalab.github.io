@@ -1,6 +1,6 @@
 # OER als nachhaltige Bildungsressource  
 ## weitere Details folgen so bald wie möglich  
-##### 
+##### Grimm-Zentrum
 ---
 ### Kurzworkshop
 Leitung: \

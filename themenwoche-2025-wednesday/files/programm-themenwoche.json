@@ -28,12 +28,12 @@
         "event-participants": "Anna Gehlke (HfD) | Prof. Dr. Niels Pinkwart (VPL) | Uwe Pirr (CMS) | Timo Schmidt (TA) | Prof. Dr. Shintaro Miyazaki (#gnuHU)"
     },
     {
-        "short-event-name": "Walk with us: Stadtarchitektur und Nachhaltigkeit",
+        "short-event-name": "Walk with us: Umfairteilung \u00f6ffentlicher R\u00e4ume",
         "long-event-name": "BNE; Umgebungsspaziergang",
         "day": "thursday",
         "start": "10:00",
         "end": "12:00",
-        "loc": "Geschwister-Scholl-Str. ",
+        "loc": "Sch\u00f6nhauser Allee 10, 10119 Berlin",
         "id": "event-BNE",
         "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/nachhaltigkeit-walk-with-us",
         "category": "event-4",
@@ -88,7 +88,7 @@
         "long-event-name": "OER als nachhaltige Bildungsressource",
         "day": "wednesday",
         "start": "12:00",
-        "end": "13:00",
+        "end": "15:00",
         "loc": "Pr\u00e4senz",
         "id": "event-Aiskills",
         "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/oer-aiskills",
