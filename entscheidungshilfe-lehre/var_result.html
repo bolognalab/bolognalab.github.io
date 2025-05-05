@@ -12,13 +12,13 @@
   <script src="assets/js/jquery.csv.js"></script>
 </head>
 <style>
+    #netzwerkLogo {
+        width: 200px
+    }
     .sync .blockContent > p {
         margin-bottom: 0;
     }
-    .sync .descText, .async .descText {
-        flex: auto;
-        margin-bottom: 0;
-    }
+
     .sync .descText {
         height: 3em;
         position: relative;
@@ -62,6 +62,14 @@
     .RKlink {
         position: relative;
         aspect-ratio: 1.5;
+    }
+    @media only screen and (min-width: 800px){
+        .techn .blockContent > .descText {
+            max-width: 100%;
+        }
+        .techn .blockContent > .RKlink {
+            max-width: 100%;
+        }
     }
     .RKlink > .sketchfab-embed-wrapper {
         position: relative;
@@ -189,6 +197,8 @@
 </style>
 <body class="is-preload resultBg" lang="de" onload="loadPage()">
     <div id="result" class="rCont notReady">
+        <a href="https://www.tu.berlin/bzhl/netzwerk-hybride-lehre"><img id="netzwerkLogo" src="images/NHL_logo.svg" /></a>
+        <a href="app.html" style="text-decoration:none"><h3>Entscheidungshilfe Online und Hybride Lehre</h3></a>
         <p>Ihr Ergebnis:</p>
         <div id="resOverview" class="block overview">
             <h3 id="scenarioTitle">Titel des Lehr-Lernszenarios</h3>
@@ -263,6 +273,18 @@
                 <ul class="altCont"></ul>
             </div>
         </div>
+        <div class="inner" id="credits">
+            <h2 class="accordion">Credits</h2>
+            <div class="panel">
+                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
+                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
+                <p>Raumkonzepte: Philipp Kapser*</p>
+                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
+                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+                <p>*Humboldt-Universität zu Berlin</p>
+                <p>**Berliner Hochschule für Technik</p>
+                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
+            </div>
     </div>
     <hr />
 <script>
@@ -460,7 +482,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     }
 
-
     document.querySelector(".RKlink .cover").addEventListener("click", ()=>{
         document.querySelector(".block.techn").classList.add("maxed")
     })
@@ -474,24 +495,32 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let asyncIntText =  theseTexts[asyncIntValue + "Text"]
     let asyncText = asyncTNText + " " + asyncIntText
 
+    let syncTips, tipsGeneral, tipsSyncInt, tipsAsyncTN, tipsAsyncInt, fullTipList, omittedTips, syncTipList, asyncTipList
+
+    let primaryImgPath = "images/descImg/" + scenarioValue + ".jpg"
+    let fallBackPath = "images/descImg/de-default.jpg"
+
     if (asyncIntValue != "asyncInt-x"){
         // gathering tips
-        let syncTips = []
-        let tipsGeneral = tip_matching[scenarioValue]["tips_general"]
-        let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue] + ", " + tip_matching["de-default"]["tips_" + syncIntValue]
-        let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue] + ", " + tip_matching["de-default"]["tips_" + asyncTNValue]
-        let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+        syncTips = []
+        tipsGeneral = tip_matching[scenarioValue]["tips_general"]
+        tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue] + ", " + tip_matching["de-default"]["tips_" + syncIntValue]
+        tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue] + ", " + tip_matching["de-default"]["tips_" + asyncTNValue]
+        tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
         
 
         let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
-        fullTipList = fullTipListAsString.split(",").filter((k)=>!k.includes("-"))
+        fullTipList = fullTipListAsString.split(",").filter((k)=>{
+            return !k.includes("-") && k.length > 1
+        })
+
         fullTipList.forEach((tip, idx, array)=>{
             array[idx] = tip.trim()
         })
         
 
         // remove some tips (due to reasons not captured in the .csv file)
-        let omittedTips = []
+        omittedTips = []
         fullTipList.forEach((tipCode)=>{
             if (["privateEcke"].includes(tipCode)){
                 omittedTips.push(tipCode)
@@ -522,24 +551,18 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             }
         })
         fullTipList = fullTipList.filter( t => !omittedTips.includes(t))
-        let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
-        let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
+        console.log(fullTipList)
+        syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
+        asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
     }
+
     // building document
     // Title and Overview
     document.querySelector("#scenarioTitle").innerHTML = scenarioTitle
-    // if (asyncTNValue == "asyncTN-3"){
-    //     document.querySelector("#scenarioSubtitle").style.display="block"
-    //     overviewText = overviewText + '<br><br>' + overviewAsyncTNText
-    // }
     document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
 
     if (asyncIntValue != "asyncInt-x"){
-        // descriptive image
-        // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
-        // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
-        let primaryImgPath = "images/descImg/" + scenarioValue + ".jpg"
-        let fallBackPath = "images/descImg/de-default.jpg"
+        // descriptive imag
         fetch(primaryImgPath).then(response => {
             if (response.ok){
                 document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", primaryImgPath)
@@ -678,5 +701,21 @@ function addTip(tipCode, container){
         
     }
 </script>
+<script>
+    // Accordion-menu for credits
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
 </body>
 </html>

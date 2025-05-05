@@ -444,12 +444,43 @@
         <p>Mehr lesen: <a href='https://box.hu-berlin.de/f/ee320876c66b48ff951f/' aria-label="Infografik: SINN-VOLL lernen (Charité)">"Infografik: SINN-VOLL lernen (Charité)</a></p>
         <p class="citation"></p>
     </div>
-    
+    <div class="contentContainer article" style="background: rgba(0,0,0,0); box-shadow:none;">
+        <div class="inner" id="credits">
+            <h2 class="accordion">Credits</h2>
+            <div class="panel">
+                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
+                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
+                <p>Raumkonzepte: Philipp Kapser*</p>
+                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
+                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+                <p>*Humboldt-Universität zu Berlin</p>
+                <p>**Berliner Hochschule für Technik</p>
+                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
+            </div>
+        </div>          
+    </div>
+
     
 </div>
 
 <div id="pageCover"></div>
 <div id="imagePreviewer"><img src="" /><p id="imageClose">&#10006;</p></div>
+<script>
+    // Accordion-menu for credits
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
 <script>
     const idList = []
 
