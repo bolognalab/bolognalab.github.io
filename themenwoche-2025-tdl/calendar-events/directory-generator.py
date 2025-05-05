@@ -46,7 +46,9 @@ for event_id in events_list:
     
     spanEL = ET.Element('span', attrib={'class': 'event-links'})
     aMoreInfo = ET.Element('a', attrib={'class': 'moreInfoLink',
-                                        'href': '#0'})
+                                        'href': '#0',
+                                        "target": '_blank'
+                                        })
     aMoreInfo.text = r'&#128279; Mehr Infos & Anmeldung'
     
     aCal = ET.Element('a', attrib={'class': 'addToCalendar',
