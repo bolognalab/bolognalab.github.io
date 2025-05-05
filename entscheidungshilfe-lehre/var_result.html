@@ -56,8 +56,6 @@
         font-weight: bold;
     }
 
-
-
     .blockContent > * {
         transition: all 0.2s ease;
     }
@@ -233,7 +231,7 @@
                     </div>
                     <div class="sketchfab-embed-wrapper">
                         <div class="cover"></div>
-                        <iframe id = "raumIFrame" title="3D Raummodell" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src=""></iframe>
+                        <iframe id = "raumIFrame" title="3D Raummodell" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="">3D-Modell folgt</iframe>
                     </div>                    
                     <div class="midInfo"></div>
                     <div class="postInfo"></div>
@@ -428,8 +426,13 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     })
     let raumLink = tech_links[scenarioValue]['raum']
     if (raumLink == "COMINGSOON"){
-            document.querySelector("#refToRaumkonzept").innerHTML = "Ein interaktives Raummodell mit Empfehlungen folgt bald."
+        document.querySelector("#refToRaumkonzept").innerHTML = "Ein interaktives Raummodell mit Empfehlungen folgt bald."
+        if (asyncIntValue != "asyncInt-x"){
             document.querySelector(".RKlink").style.display="none"
+        } else {
+            document.querySelector(".RKlink .preInfo").innerHTML = "3D-Modell folgt."
+        }
+            
     } else if (raumLink != "digital"){
         document.querySelector("#raumIFrame").src = raumLink
         let techButton = document.createElement("button")
@@ -465,62 +468,63 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let overviewText = theseTexts['overviewText']
     let overviewAsyncTNText = theseTexts['overviewAsyncTNText']
     let technPoints = theseTexts['technikText']
+    let fullTechnList = technPoints.split(',')
     let syncIntText =  theseTexts[syncIntValue + "Text"]
     let asyncTNText =  theseTexts[asyncTNValue + "Text"]
     let asyncIntText =  theseTexts[asyncIntValue + "Text"]
     let asyncText = asyncTNText + " " + asyncIntText
 
-    // gathering tips
-    // synchronous
-    let syncTips = []
-    let tipsGeneral = tip_matching[scenarioValue]["tips_general"]
-    let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue] + ", " + tip_matching["de-default"]["tips_" + syncIntValue]
-    let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue] + ", " + tip_matching["de-default"]["tips_" + asyncTNValue]
-    let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+    if (asyncIntValue != "asyncInt-x"){
+        // gathering tips
+        let syncTips = []
+        let tipsGeneral = tip_matching[scenarioValue]["tips_general"]
+        let tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue] + ", " + tip_matching["de-default"]["tips_" + syncIntValue]
+        let tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue] + ", " + tip_matching["de-default"]["tips_" + asyncTNValue]
+        let tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+        
 
-    console.log(tipsAsyncTN)
-    let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
-    fullTipList = fullTipListAsString.split(",").filter((k)=>!k.includes("-"))
-    fullTipList.forEach((tip, idx, array)=>{
-        array[idx] = tip.trim()
-    })
-    let fullTechnList = technPoints.split(',')
+        let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
+        fullTipList = fullTipListAsString.split(",").filter((k)=>!k.includes("-"))
+        fullTipList.forEach((tip, idx, array)=>{
+            array[idx] = tip.trim()
+        })
+        
 
-    // remove some tips (due to reasons not captured in the .csv file)
-    let omittedTips = []
-    fullTipList.forEach((tipCode)=>{
-        if (["privateEcke"].includes(tipCode)){
-            omittedTips.push(tipCode)
-        } else if (tipCode == "humFeedback" && asyncIntValue == "asyncInt-0"){
-            omittedTips.push(tipCode)
-        } else if (tipCode == "videoIntro3" && asyncIntValue == "asyncInt-0"){
-            omittedTips.push(tipCode)
-        } else if (["aufzNichtErsatzVL", "aufzErsatzVL", "aufzKurzvideosVL"].includes(tipCode) && scenario.split("-")[0] != "vl"){
-            // omit special wording for VL
-            omittedTips.push(tipCode)
-        } else if (["aufzNichtErsatzSE", "aufzErsatzSE", "aufzKurzvideosSE"].includes(tipCode) && scenario.split("-")[0] != "se"){
-            // omit special wording for SE
-            omittedTips.push(tipCode)
-        } else if (["aufzNichtErsatzVL", "aufzNichtErsatzSE"].includes(tipCode) && syncIntValue == "syncInt-2" ){
-            // omit simple recording tip if high interaction
-            omittedTips.push(tipCode)
-        } else if (["aufzErsatzVL", "aufzErsatzSE"].includes(tipCode) && asyncTNValue =="asyncTN-3" && syncIntValue == "syncInt-2"){
-            // omit recording suggestion for replacing synchronous participation, if high interaction
-            omittedTips.push(tipCode)
-        } else if (["aufzKurzvideosVL", "aufzKurzvideosSE"].includes(tipCode) && asyncTNValue !="asyncTN-3" && syncIntValue != "syncInt-2"){
-            // omit kurzvideos suggestion unless there is high interaction (otherwise simple recording suffices)
-            omittedTips.push(tipCode)
-        } else if (tipCode == "miniLectures" && syncIntValue != "syncInt-2"){
-            // show Mini-Lectures as main option only if asyncTN=3 (defined in CSV) and syncInt=2
-            omittedTips.push(tipCode)
-        } else if (tipCode == "reflexionAsync" && asyncIntValue != "asyncInt-1"){
-            omittedTips.push(tipCode)
-        }
-    })
-    fullTipList = fullTipList.filter( t => !omittedTips.includes(t))
-    let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
-    let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
-
+        // remove some tips (due to reasons not captured in the .csv file)
+        let omittedTips = []
+        fullTipList.forEach((tipCode)=>{
+            if (["privateEcke"].includes(tipCode)){
+                omittedTips.push(tipCode)
+            } else if (tipCode == "humFeedback" && asyncIntValue == "asyncInt-0"){
+                omittedTips.push(tipCode)
+            } else if (tipCode == "videoIntro3" && asyncIntValue == "asyncInt-0"){
+                omittedTips.push(tipCode)
+            } else if (["aufzNichtErsatzVL", "aufzErsatzVL", "aufzKurzvideosVL"].includes(tipCode) && scenario.split("-")[0] != "vl"){
+                // omit special wording for VL
+                omittedTips.push(tipCode)
+            } else if (["aufzNichtErsatzSE", "aufzErsatzSE", "aufzKurzvideosSE"].includes(tipCode) && scenario.split("-")[0] != "se"){
+                // omit special wording for SE
+                omittedTips.push(tipCode)
+            } else if (["aufzNichtErsatzVL", "aufzNichtErsatzSE"].includes(tipCode) && syncIntValue == "syncInt-2" ){
+                // omit simple recording tip if high interaction
+                omittedTips.push(tipCode)
+            } else if (["aufzErsatzVL", "aufzErsatzSE"].includes(tipCode) && asyncTNValue =="asyncTN-3" && syncIntValue == "syncInt-2"){
+                // omit recording suggestion for replacing synchronous participation, if high interaction
+                omittedTips.push(tipCode)
+            } else if (["aufzKurzvideosVL", "aufzKurzvideosSE"].includes(tipCode) && asyncTNValue !="asyncTN-3" && syncIntValue != "syncInt-2"){
+                // omit kurzvideos suggestion unless there is high interaction (otherwise simple recording suffices)
+                omittedTips.push(tipCode)
+            } else if (tipCode == "miniLectures" && syncIntValue != "syncInt-2"){
+                // show Mini-Lectures as main option only if asyncTN=3 (defined in CSV) and syncInt=2
+                omittedTips.push(tipCode)
+            } else if (tipCode == "reflexionAsync" && asyncIntValue != "asyncInt-1"){
+                omittedTips.push(tipCode)
+            }
+        })
+        fullTipList = fullTipList.filter( t => !omittedTips.includes(t))
+        let syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
+        let asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
+    }
     // building document
     // Title and Overview
     document.querySelector("#scenarioTitle").innerHTML = scenarioTitle
@@ -529,48 +533,67 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     //     overviewText = overviewText + '<br><br>' + overviewAsyncTNText
     // }
     document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
-    
-    // descriptive image
-    // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
-    // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
-    let primaryImgPath = "images/descImg/" + scenarioValue + ".jpg"
-    let fallBackPath = "images/descImg/de-default.jpg"
-    fetch(primaryImgPath).then(response => {
-        if (response.ok){
-            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", primaryImgPath)
-        } else {
-            document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", fallBackPath) 
-        }
-    })
+
+    if (asyncIntValue != "asyncInt-x"){
+        // descriptive image
+        // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", "../images/entscheidungshilfe/sampleResult.png")
+        // document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("alt", "Studenten und Studentinnen in einem Raum.")
+        let primaryImgPath = "images/descImg/" + scenarioValue + ".jpg"
+        let fallBackPath = "images/descImg/de-default.jpg"
+        fetch(primaryImgPath).then(response => {
+            if (response.ok){
+                document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", primaryImgPath)
+            } else {
+                document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", fallBackPath) 
+            }
+        })
         
 
-    // Sync block
-    // document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
-    let syncGradBoxes = document.querySelector("#resSync > .blockContent > .descText > .gradBoxes")
-    for (i=0; i<3; i++){
-        let box = document.createElement("span")
-        if (i <= +scenario.split("-")[2]){
-            box.classList.add("full")
+        // Sync block
+        // document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
+        let syncGradBoxes = document.querySelector("#resSync > .blockContent > .descText > .gradBoxes")
+        for (i=0; i<3; i++){
+            let box = document.createElement("span")
+            if (i <= +scenario.split("-")[2]){
+                box.classList.add("full")
+            }
+            syncGradBoxes.appendChild(box)
         }
-        syncGradBoxes.appendChild(box)
-    }
-    document.querySelector(".sync .gradDesc").innerHTML = descriptionsSync[scenario.split("-")[2]]
-    let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
-    syncTipList.forEach(function(tipCode){
-        addTip(tipCode, syncTipsCont)            
-    })
+        document.querySelector(".sync .gradDesc").innerHTML = descriptionsSync[scenario.split("-")[2]]
+        let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
+        syncTipList.forEach(function(tipCode){
+            addTip(tipCode, syncTipsCont)            
+        })
 
-    // Async block
-    if (asyncTNValue == "asyncTN-3"){
-        document.querySelector("#resAsync > .blockContent > .descText").innerHTML = overviewAsyncTNText
-    }
-    let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
-    asyncTipList.forEach(function(tipCode){
-        if (tipCode != scenario){
-            addTip(tipCode, asyncTips)
+        // Async block
+        if (asyncTNValue == "asyncTN-3"){
+            document.querySelector("#resAsync > .blockContent > .descText").innerHTML = overviewAsyncTNText
         }
+        let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
+        asyncTipList.forEach(function(tipCode){
+            if (tipCode != scenario){
+                addTip(tipCode, asyncTips)
+            }
 
-    })
+        })
+
+            // Alternative Results block
+        let altResults = document.querySelector("#resMore > .blockContent > .altCont")
+        topTier.forEach(function(resCode){
+            if (resCode != scenario){
+                addAltResult(resCode, altResults)
+            }
+            
+        })
+    } else {
+        document.querySelector("#resOverview > .blockContent").removeChild(document.querySelector("#descImg"))
+        document.querySelector("#resOverview > .blockContent > .descText").style["max-width"] = "100%"
+        document.querySelector("#result").removeChild(document.querySelector("#resSync"))
+        document.querySelector("#result").removeChild(document.querySelector("#resAsync"))
+        document.querySelector("#result").removeChild(document.querySelector("#resMore"))
+        document.querySelector(".techn.block").classList.add("maxed")
+        // document.querySelector("#minTech").style.display = "none"
+    }
 
     // Medientechnik block
     fullTechnList.forEach(function(s){
@@ -588,14 +611,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     )
 
-    // Alternative Results block
-    let altResults = document.querySelector("#resMore > .blockContent > .altCont")
-    topTier.forEach(function(resCode){
-        if (resCode != scenario){
-            addAltResult(resCode, altResults)
-        }
-        
-    })
+
     
     document.getElementById("result").classList.remove("notReady")
 }

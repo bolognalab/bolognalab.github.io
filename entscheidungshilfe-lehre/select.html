@@ -12,6 +12,31 @@
     <script src="assets/js/jquery.min.js"></script>
 </head>
 <style>
+    h2 {
+        font-size: 1em;
+        margin-top: 2em;
+        color: var(--networkBlue)
+    }
+    label.sLabel {
+        display: inline-block;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    select {
+        font-size: 1em;
+        line-height: 1.3em;
+        border: solid 1px var(--networkTurqoise);
+        border-radius: 5px;
+        padding: 0.5em 1em;
+        color: var(--networkTurqoise);
+        background: white;
+        transition: all 0.4s ease;
+    }
+    select:hover {
+        background: rgba(18, 161, 154, 0.1);
+    }
     input[type="checkbox"] {
         display: none;
     }
@@ -44,22 +69,23 @@
 <div style="width: 100%">
     <div id="questions">
         <img class="backgroundImage" src = "images/treeTemp.svg" />
-        <div id="DIV_FORM" class="qDiv">
+        <div id="DIV_FORM" class="qDiv qCont">
             <h2 style="text-align: center"><img id="welcomeLogo" src="images/NHL_logo.svg" /></h2>
             <h1>Auswahl Lehr-/Lernszenarien</h1>
             <p>Nutzen Sie die folgenden Filter, um ein Raumkonzept und Tipps für Ihre Lehrveranstaltung zu finden.</p>
+            
                  <!-- Art der Lehrveranstaltung -->
                 <h2>Welche Art von Lehrveranstaltung bieten Sie an?</h2>
-                <label for="artLV">Art der Lehrveranstaltung:</label>
+                <label for="artLV" class="sLabel">Art der Lehrveranstaltung:</label>
                 <select id="artLV" name="artLV" required>
                     <option value="vl" selected>Vorlesung</option>
                     <option value="se">Seminar/Übung</option>
-                    <option value="pr">Labor oder alternatives Format</option>
+                    <!-- <option value="pr">Labor oder alternatives Format</option> -->
                 </select>
         
                 <!-- Format -->
-                <h2>In welchem Format findet die Lehrveranstaltung statt?</h2>
-                <label for="format">Format:</label>
+                <h2>Welches Format hat die Lehrveranstaltung?</h2>
+                <label for="format" class="sLabel">Format:</label>
                 <select id="format" name="format" required>
                     <option value="praes" selected>Präsenz</option>
                     <option value="onl">Online</option>
@@ -67,12 +93,20 @@
                 </select>
         
                 <!-- Interaktionsgrad -->
-                <h2>Wie hoch ist der Interaktionsgrad in Ihrer Lehrveranstaltung?</h2>
-                <label for="syncInt">Interaktionsgrad:</label>
+                <h2>Wie hoch ist der geplante Interaktionsgrad?</h2>
+                <label for="syncInt" class="sLabel" >Interaktionsgrad:</label>
                 <select id="syncInt" name="syncInt" required>
-                    <option value="0" selected>Niedrig</option>
-                    <option value="1">Mittel</option>
-                    <option value="2">Hoch</option>
+                    <option value="0" selected>eher frontaler Unterricht (unidirektional)</option>
+                    <option value="1">Interaktion hauptsächlich im Plenum (bidirektional)</option>
+                    <option value="2">Kollaboratives Arbeiten in Gruppen (omnidirektional)</option>
+                </select>
+
+                <!-- Aufzeichnung -->
+                <h2>Soll die Lehrveranstaltung aufgezeichnet werden?</h2>
+                <label for="syncInt" class="sLabel">Aufzeichnung?</label>
+                <select id="syncInt" name="syncInt" required>
+                    <option value="nein" selected>Nein</option>
+                    <option value="ja">Ja</option>
                 </select>
         
                 <!-- Zusätzliche Bedingungen -->
@@ -89,7 +123,11 @@
             
         
                 <!-- Submit Button -->
-                <button onclick="selectConcept()" >Absenden</button>
+                 <div class="buttonContainer">
+                    <button onclick="selectConcept()" class="submitButton">Absenden</button>
+                 </div>
+                 <p style="color: orange">Achtung: Das System ist noch im Aufbau - nicht alle Filter funktionieren wie geplant.</p>
+                
             <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung des Lehrformats</a></div>
         </div>
     </div>   
@@ -104,9 +142,10 @@
         let exkur = document.getElementById("exkur").checked
         let aufz = document.getElementById("aufz").checked
 
-        let URLstring = `?artLV=${artLV}&format=${format}&syncInt=${syncInt}&gaeste=${gaeste}&exkur=${exkur}&aufz=${aufz}`
+        // let URLstring = `?artLV=${artLV}&format=${format}&syncInt=${syncInt}&gaeste=${gaeste}&exkur=${exkur}&aufz=${aufz}`
+        let URLstring = `?shownScenario=${artLV}-${format}-${syncInt}-1-x`
         console.log(URLstring)
-        window.open("set_result.html"+URLstring, "_self")
+        window.open("var_result.html"+URLstring, "_self")
     }
 </script>
 </body>
