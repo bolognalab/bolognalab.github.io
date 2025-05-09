@@ -6,213 +6,17 @@
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/eb.css" />
+  <link rel="stylesheet" href="assets/css/eb_mini.css" />
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
-  <style>
-    .bgContainer {
-        position: relative;
-        width: 100%;
-        background-color: var(--backgroundLightBlue);
-        overflow-y: hidden;
-    }
-    .backgroundImage {
-        position: absolute;
-        top: 40%;
-        left: 30%;
-        width: 70%;
-        transform: translate(0, -0) rotate(180deg);
-        filter: var(--networkBlueFilter);
-        opacity: 0.2;
-    }
-    div.contentContainer {
-        position: relative;
-        background: rgba(255, 255, 255, 0.8);
-        padding: 20px 20px;
-        color: var(--networkBlack);
-        margin-bottom: 20px;
-        margin: auto;
-        width: calc(100% - 5em);
-        max-width: 800px;
-        opacity: 1;
-        transition: all 0.5s ease;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        margin-top: 3em;
-    }
-    div.contentContainer:last-child {
-        margin-bottom: 10em;
-    }
-    div.contentContainer.overview {
-        margin-top: 5em;
-        background: rgba(255, 255, 255, 0);
-        box-shadow: none;
-    }
-    .article h2 {
-        font-size: 1.3em;
-        color: var(--networkBlue)
-    }
-    .article h3 {
-        margin-bottom: 0;
-    }
-    .article h4 {
-        color: var(--networkBlue);
-        margin-bottom: 0;
-        margin-top: 2em;
-    }
-    h4 + h3 {
-        margin-top: 0.5em;
-    }
-    p + h3, ul + h3 {
-        margin-top: 2em;
-    }
-    .citation, .footnote {
-        color: var(--networkTurqoise);
-    }
-    .footnote {
-        text-align: right;
-    }
-    img.preview {
-        cursor: pointer;
-        transition: all 0.4s ease;
-    }
-    img.preview:hover {
-        transform: scale(98%, 98%)
-    }
-    div.importantText {
-        background-color: var(--backgroundLightGreen);
-        margin-top: 2em;
-        padding: 5px 15px;
-        display: block;
-    }
-    .importantText h2 {
-        color: var(--networkBlack)
-    }
-    .importantText h3 {
-        color: rgba(0,0,0,0.5);
-        margin-top: 1em;
-    }
-    .importantText h3 + ul, .importantText h3 + p {
-        margin-top: 0.5em;
-    }
-
-    .importantText h4 {
-        color: var(--networkBlack);
-        margin-top: 0.3em;
-    }
-    .importantText h4 + p, .importantText h4 + ul {
-        color: var(--networkBlack);
-        margin-top: 0.3em;
-    }
-    .importantText h4 + p {
-        margin-bottom: 0.5em;
-    }
-
-
-    div.textImageOverlay {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .textImageOverlay > *:first-child {
-        flex-grow: 2
-    }
-    .textImageOverlay img {
-        width: 100%;
-        min-width: 210px;
-        flex-grow: 1;
-        padding-top: 2em;
-        /* float:right; */
-    }
-
-    @media only screen and (min-width: 600px){
-        div.textImageOverlay {
-        flex-wrap: nowrap;
-        flex-direction: row;
-    }
-        .textImageOverlay img {
-            padding-left: 1em;
-        }
-    }
-
-    #pageCover {
-        position: fixed;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255,255, 255, 0.7);
-        opacity: 0;
-        visibility: hidden;
-        pointer-events:none;
-        transition: all 0.4s ease;
-    }
-    #imagePreviewer {
-        background: var(--backgroundLightBlue);
-        height: 80%;
-        position: fixed;
-        top: 10%;
-        left: 50%;
-        transform: translate(-50%, 0);
-        min-width: 300px;
-        padding: 15px 15px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        transition: all 0.4s ease;
-        opacity: 0;
-        visibility: hidden;
-    }
-    #imagePreviewer > img {
-        height: 100%;
-        cursor: zoom-out;
-    }
-    #imageClose {
-        position: absolute;
-        top: 0%;
-        right: 0%;
-        z-index:6;
-        background: #585858;
-        color: white;
-        height: 2em;
-        line-height: 2em;
-        width: 2em;
-        margin: 0 0 0 0;
-        padding: 0 0 0 0;
-        text-align: center;
-        visibility: hidden;
-        opacity: 0;
-        border-radius: 2em;
-        transform: translate(50%, -50%);
-        transition: all 0.2s;
-        font-family: Arial, Helvetica, sans-serif;
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    }
-    #imageClose:hover {
-        background: #999999;
-        transform: translate(50%, -50%) scale(130%, 130%);
-    }
-    figure {
-        width:100%; 
-        margin-left:0;
-        text-align: center;
-    }
-    figure > figcaption {
-        text-align: right;
-        font-size: 0.8em;
-        color: var(--networkBlue);
-        width: 90%;
-        margin: auto;
-    }
-  </style>
 </head>
 <body onload="listsAndCitations()"> 
 <div class="bgContainer">
     <img class="backgroundImage" src = "images/treeTemp.svg" />
     <div class="contentContainer overview">
         <h2 style="text-align: center"><img src="images/NHL_logo.svg" style="width: 200px" /></h2>
-        <h1 style="text-align: center">Mini-Artikel</h1>
-        <h2 style="text-align:center">Entscheidungshilfe Hybride und Digitale Lehre</h2>
+        <h1 style="text-align: center; margin-bottom:0">Mini-Artikel</h1>
+        <h2 style="text-align:center; margin-top:0">zu hybrider und Blended-Lehre</h2>
         <p>Diese ergänzenden Mini-Artikel beziehen sich auf mehrere hybride und digitale Lernszenarien, die im <a href="app.html">Entscheidungshilfe-Tool Hybride und Digitale Lehre</a> vorgestellt werden, und enthalten ausführlichere Informationen zu ausgewählten Themen. Diese Seite ist nicht als eigenständiger Leitfaden gedacht, sondern als Sammlung von Mini-Artikeln, die als einzelne Einheiten zu verlinken sind.</p>
         <h3>Liste der Mini-Artikel:</h3>
         <ul id="toc">
@@ -484,7 +288,7 @@
 <script>
     const idList = []
 
-    const citationTemplate = ["<hr />Zitiervorschlag: ", ". (2025). \"", "\". <em>Entscheidungshilfe Hybride und Digitale Lehre: Mini-Artikel (QIO Projekt \"Netzwerk Hybride Lehre\") [Zugriff am: XX.XX.XXXX]. Verfügbar unter: <span style='color:red'>URL</span>"]
+    const citationTemplate = ["<hr /><b>Zitiervorschlag:</b> ", ". (2025). \"", "\". <em>Mini-Artikel zu hybrider und Blended-Lehre (QIO Projekt \"Netzwerk Hybride Lehre\")</em> [Zugriff am: XX.XX.XXXX]. Verfügbar unter: <span style='color:red'><a href='https://pages.cms.hu-berlin.de/netzwerk-hybride-lehre/entscheidungstool/mini-artikel.html' aria-label='Entscheidungshilfe Tool: Mini-Artikel'>https://pages.cms.hu-berlin.de/netzwerk-hybride-lehre/entscheidungstool/mini-artikel.html</a></span>"]
     // automatically create citations and Table of Contents
     function listsAndCitations(){
         document.querySelectorAll(".contentContainer.article").forEach((m)=>{
