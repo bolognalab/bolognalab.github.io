@@ -22,7 +22,8 @@ special_cases =  {
         "2": "hybrideExkursion",
         "3": "onlineZuschaltungLP",
         "4": "gastOnline",
-        "5": "gastVorOrtHyb"
+        "5": "gastVorOrtHyb",
+        "6": "keineAufzeichnung", #nur für den Technik-Pfad
     }
 
 
