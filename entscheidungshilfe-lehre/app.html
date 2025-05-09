@@ -62,14 +62,14 @@
         </div>
         <div id="progressBar" class="progressBar"></div>
     </div>
-    <div id="sources">
+    <!-- <div id="sources">
         <h5>Quellen</h5>
         <ol class="sources">
             <li id ="source_uniHamburgSozialeInteraktion"><a href='https://www.hul.uni-hamburg.de/selbstlernmaterialien/6-soziale-interaktion.html'>Uni Hamburg: Social Design - Soziale Interaktion</a></li>
             <li id ="source_moerthUFF21"><a href='https://www.youtube.com/watch?v=JkmYvK8j-zs'>M. Mörth, I. Ulrich, N. Enders: "Online, blended, hybrid, Präsenz?" - University:Future Festival 2021 (VideO)</a></li>
             <li id="source_studienwahl"><a href='https://studienwahl.de/themen-des-monats/jobben-neben-dem-studium'>Studienwahl.de: Jobben neben dem Studium (03.09.2024)</a></li>
         </ol> 
-    </div>
+    </div> -->
    
 </div>
 <script src="assets/js/jquery.csv.js"></script>
@@ -284,12 +284,12 @@
                         }
                         
                         // if there are any sources, find them on the list of sources and link them
-                        info.querySelectorAll("a").forEach((a)=>{
-                            let target = a.getAttribute("href")
-                            let source = document.querySelector(target)
-                            let parent = source.parentNode
-                            a.innerHTML = Array.prototype.indexOf.call(parent.children, source)+1
-                        })
+                        // info.querySelectorAll("a").forEach((a)=>{
+                        //     let target = a.getAttribute("href")
+                        //     let source = document.querySelector(target)
+                        //     let parent = source.parentNode
+                        //     a.innerHTML = Array.prototype.indexOf.call(parent.children, source)+1
+                        // })
                     }
                     contextHeader.setAttribute("onclick", "showHideContext(this)")
                     }
@@ -341,7 +341,7 @@
                 if (aKey =="SO"){
                     aDiv.style.display = "none"
                 }
-                    // hide least interaktive Option for Seminars
+                    // hide least interactive option for Seminars
                 if (qKey == "intSync" && aKey == "0" && answers["artLV"]=="SE"){
                     aDiv.style.display = "none"
                 }
@@ -452,7 +452,7 @@
     function selectAnswer(qKey, aKey){
         if (qKey == "situations" || qKey == "leistungen"){
             let aDiv = document.querySelector("#DIV_" + qKey + " > #A_" + aKey)
-            if (aDiv.classList.contains("highlighted")){
+            if (aDiv.classList.contains("highlighted") && aKey != "none"){
                 aDiv.classList.remove("highlighted")
             } else {
                 aDiv.classList.add("highlighted")

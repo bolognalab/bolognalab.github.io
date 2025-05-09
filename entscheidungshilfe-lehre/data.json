@@ -7404,7 +7404,7 @@
             },
             "addInfo": [
                 "Soziale Pr\u00e4senz ist auch online erreichbar, aber st\u00e4rker, wenn Personen im selben physischen Raum sind. Gleichzeitig kann Pr\u00e4senzteilnahme ein Hindernis f\u00fcr manche Studierende sein.",
-                "Bez\u00fcglich des Lernerfolgs (wenn es z.B. um Wissenstransfer oder Probleml\u00f6sen geht) kann gut gestaltete online oder hybride Lehre genauso effektiv sein wie Pr\u00e4senzlehre. [<a href='#source_moerthUFF21'></a>]",
+                "Bez\u00fcglich des Lernerfolgs (wenn es z.B. um Wissenstransfer oder Probleml\u00f6sen geht) kann gut gestaltete online oder hybride Lehre genauso effektiv sein wie Pr\u00e4senzlehre.",
                 "In dieser Frage geht es um die Notwendigkeit der Pr\u00e4senz <b>f\u00fcr den Lernerfolg</b> im Kurs und eher nicht um die sozialen Vorteile der physischen Pr\u00e4senz.",
                 "Einige Beispiele f\u00fcr ausschlie\u00dflich in Pr\u00e4senz erreichbare Zielkompetenzen: Arbeit mit Ausr\u00fcstungen und Gegenst\u00e4nden, Arbeit im Feld, oder Umgang mit sensiblen Informationen, die nicht online weitergegeben d\u00fcrfen."
             ]
@@ -10061,7 +10061,7 @@
                     "conditionalEffects": {}
                 },
                 "ja": {
-                    "text": "Ja bzw. ich will f\u00fcr dieses Szenario vorbereitet sein.",
+                    "text": "Ja bzw. ich will f\u00fcr diesen Fall vorbereitet sein.",
                     "effects": {
                         "so-async-0-4-0": 3,
                         "so-async-0-4-1": 3,
@@ -10829,7 +10829,7 @@
                 }
             },
             "addInfo": [
-                "\u00dcber 60% der Studierenden in Deutschland arbeiten neben dem Studium, [<a href='#source_studienwahl'></a>] wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann.",
+                "\u00dcber 60% der Studierenden in Deutschland arbeiten neben dem Studium, wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann. (Studienwahl.de)",
                 "Studierende, die nur eine begrenzte Zeit pro Woche f\u00fcr ihr Studium aufwenden k\u00f6nnen, haben nicht so viel Zeit au\u00dferhalb der Unterrichtszeiten, um viele regelm\u00e4\u00dfige Aufgaben zu erledigen.",
                 "Solche Studierende profitieren zudem von mehr Flexibilit\u00e4t und weniger Pendelzeit."
             ]
@@ -10844,7 +10844,7 @@
                     "conditionalEffects": {}
                 },
                 "ja": {
-                    "text": "Ja bzw. ich will f\u00fcr dieses Szenario vorbereitet sein",
+                    "text": "Ja bzw. ich will f\u00fcr diesen Fall vorbereitet sein",
                     "effects": {
                         "so-async-0-4-0": 1,
                         "so-async-0-4-1": 1,
@@ -12959,7 +12959,7 @@
                     "conditionalEffects": {}
                 },
                 "ja": {
-                    "text": "Ja bzw. ich will f\u00fcr dieses Szenario vorbereitet sein",
+                    "text": "Ja bzw. ich will f\u00fcr diesen Fall vorbereitet sein",
                     "effects": {
                         "vl-rem-0-0-0": -100,
                         "vl-rem-0-0-1": -100,
@@ -18666,7 +18666,7 @@
             "addInfo": [
                 "Die strukturierte Bearbeitung von Materialien (z.B. mit interaktiven digitalen Tools) sowie das regelm\u00e4\u00dfige Feedback k\u00f6nnen den Lernerfolg deutlich st\u00e4rken.",
                 "Zudem k\u00f6nnen Strukturen f\u00fcr asynchronen studentischen Diskurs (z.B. Foren oder Peer-Evaluationen) das Gef\u00fchl einer <b>dauerhaften Lerngemeinschaft</b> f\u00f6rdern.",
-                "Studierende mit wenig Vorwissen und geringerer Selbststeuerungskompetenz (z.B. Erstsemesterstudierende) brauchen in der Regel mehr Strukturierung (oder auch extrinsische Motivation in Form von Anreizen), um ihre Selbstlernzeiten zu organisieren. [<a href='#source_moerthUFF21'></a>]",
+                "Studierende mit wenig Vorwissen und geringerer Selbststeuerungskompetenz (z.B. Erstsemesterstudierende) brauchen in der Regel mehr Strukturierung (oder auch extrinsische Motivation in Form von Anreizen), um ihre Selbstlernzeiten zu organisieren.",
                 "Wenn Studierende bereits eine gute Selbststeuerungskompetenz entwickelt haben (z.B. in sp\u00e4teren Semestern), k\u00f6nnte im Gegensatz eine \u00dcberregulierung der asynchronen Teilnahme eher eine Barriere als einen Vorteil darstellen."
             ]
         },

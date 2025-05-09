@@ -93,7 +93,7 @@
             },
             "addInfo": [
                 "Soziale Präsenz ist auch online erreichbar, aber stärker, wenn Personen im selben physischen Raum sind. Gleichzeitig kann Präsenzteilnahme ein Hindernis für manche Studierende sein.",
-                "Bezüglich des Lernerfolgs (wenn es z.B. um Wissenstransfer oder Problemlösen geht) kann gut gestaltete online oder hybride Lehre genauso effektiv sein wie Präsenzlehre. [<a href='#source_moerthUFF21'></a>]",
+                "Bezüglich des Lernerfolgs (wenn es z.B. um Wissenstransfer oder Problemlösen geht) kann gut gestaltete online oder hybride Lehre genauso effektiv sein wie Präsenzlehre.",
                 "In dieser Frage geht es um die Notwendigkeit der Präsenz <b>für den Lernerfolg</b> im Kurs und eher nicht um die sozialen Vorteile der physischen Präsenz.",
                 "Einige Beispiele für ausschließlich in Präsenz erreichbare Zielkompetenzen: Arbeit mit Ausrüstungen und Gegenständen, Arbeit im Feld, oder Umgang mit sensiblen Informationen, die nicht online weitergegeben dürfen."
             ]
@@ -140,11 +140,11 @@
             "text": "Ist ein großer Anteil Ihrer Studierenden aufgrund von Erwerbstätigkeit, Carearbeit, Krankheit etc. in der wöchentlichen Studienzeit eingeschränkt? (z.B. mehr als 15-20 Stunden Erwerbstätigkeit pro Woche)?",
             "antworten": {
                 "nein": "Nein",
-                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein.",
+                "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein.",
                 "idk": "Ich bin mir nicht sicher"
             },
             "addInfo": [
-                "Über 60% der Studierenden in Deutschland arbeiten neben dem Studium, [<a href='#source_studienwahl'></a>] wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann.",
+                "Über 60% der Studierenden in Deutschland arbeiten neben dem Studium, wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann. (Studienwahl.de)",
                 "Studierende, die nur eine begrenzte Zeit pro Woche für ihr Studium aufwenden können, haben nicht so viel Zeit außerhalb der Unterrichtszeiten, um viele regelmäßige Aufgaben zu erledigen.",
                 "Solche Studierende profitieren zudem von mehr Flexibilität und weniger Pendelzeit."
             ]
@@ -155,7 +155,7 @@
             "text": "Gibt es Studierende, die <b>nie oder fast nie</b> am Kurs <b>synchron</b> teilnehmen können (z.B. wegen Überschneidungen oder Zeitzonen)?",
             "antworten": {
                 "nein": "Nein",
-                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein",
+                "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein",
                 "idk": "Ich bin mir nicht sicher"
             }
         },
@@ -165,7 +165,7 @@
             "text": "Gibt es Studierende, die <b>nie oder sehr schwierig in Präsenz</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
-                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein",
+                "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein",
                 "idk": "Ich bin mir nicht sicher"
             }
         },
@@ -299,7 +299,7 @@
             "addInfo":[
                 "Die strukturierte Bearbeitung von Materialien (z.B. mit interaktiven digitalen Tools) sowie das regelmäßige Feedback können den Lernerfolg deutlich stärken.",
                 "Zudem können Strukturen für asynchronen studentischen Diskurs (z.B. Foren oder Peer-Evaluationen) das Gefühl einer <b>dauerhaften Lerngemeinschaft</b> fördern.",
-                "Studierende mit wenig Vorwissen und geringerer Selbststeuerungskompetenz (z.B. Erstsemesterstudierende) brauchen in der Regel mehr Strukturierung (oder auch extrinsische Motivation in Form von Anreizen), um ihre Selbstlernzeiten zu organisieren. [<a href='#source_moerthUFF21'></a>]",
+                "Studierende mit wenig Vorwissen und geringerer Selbststeuerungskompetenz (z.B. Erstsemesterstudierende) brauchen in der Regel mehr Strukturierung (oder auch extrinsische Motivation in Form von Anreizen), um ihre Selbstlernzeiten zu organisieren.",
                 "Wenn Studierende bereits eine gute Selbststeuerungskompetenz entwickelt haben (z.B. in späteren Semestern), könnte im Gegensatz eine Überregulierung der asynchronen Teilnahme eher eine Barriere als einen Vorteil darstellen."
             ]
         },

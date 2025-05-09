@@ -199,7 +199,7 @@
     <div id="result" class="rCont notReady">
         <a href="https://www.tu.berlin/bzhl/netzwerk-hybride-lehre"><img id="netzwerkLogo" src="images/NHL_logo.svg" /></a>
         <a href="app.html" style="text-decoration:none"><h3>Entscheidungshilfe Online und Hybride Lehre</h3></a>
-        <p>Ihr Ergebnis:</p>
+        <p style="margin-bottom: 0">Ihr Ergebnis:</p>
         <div id="resOverview" class="block overview">
             <h3 id="scenarioTitle">Titel des Lehr-Lernszenarios</h3>
             <h4 id="scenarioSubtitle">mit asynchroner Teilnahme-Alternative</h4>
@@ -560,6 +560,9 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     // building document
     // Title and Overview
     document.querySelector("#scenarioTitle").innerHTML = scenarioTitle
+    if (asyncTNValue == "asyncTN-3"){
+        document.querySelector("#scenarioSubtitle").style.display="block"
+    }
     document.querySelector("#resOverview > .blockContent > .descText").innerHTML = overviewText
 
     if (asyncIntValue != "asyncInt-x"){

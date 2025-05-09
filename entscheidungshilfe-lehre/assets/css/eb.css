@@ -291,11 +291,14 @@ ul.tCont, ul.altCont {
 }
 
 .tip .tipContent a {
-    display: block;
-    margin-top: 0.5em;
     text-decoration: none;
     font-weight: bold;
     color: var(--networkTurqoise)
+}
+
+.tip .tipContent a:not(.inl) {
+    display: block;
+    margin-top: 0.5em;
 }
 
 .tip .tipContent a::before {
