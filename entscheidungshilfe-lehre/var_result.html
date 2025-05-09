@@ -203,6 +203,8 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             document.querySelector(".RKlink").style.display="none"
         } else {
             document.querySelector(".RKlink .preInfo").innerHTML = "3D-Modell folgt."
+            document.querySelector(".RKlink .sketchfab-embed-wrapper").style.display="none"
+            
         }
             
     } else if (raumLink != "digital"){
@@ -228,7 +230,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             event.target.classList.remove("hovered")
             document.querySelector("#linkTechnik").classList.remove("hovered")
         })
-
+        document.querySelector("#minTech").style.display = "none"
 
     }
 
@@ -250,13 +252,18 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let primaryImgPath = "images/descImg/" + scenarioValue + ".jpg"
     let fallBackPath = "images/descImg/de-default.jpg"
 
-    if (asyncIntValue != "asyncInt-x"){
+    if (true){
         // gathering tips
         syncTips = []
         tipsGeneral = tip_matching[scenarioValue]["tips_general"]
         tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue] + ", " + tip_matching["de-default"]["tips_" + syncIntValue]
         tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue] + ", " + tip_matching["de-default"]["tips_" + asyncTNValue]
-        tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+        if (asyncIntValue != "asyncInt-x"){
+            tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+        } else {
+            tipsAsyncInt = tip_matching[scenarioValue]["tips_asyncInt-0"] + ", " + tip_matching["de-default"]["tips_asyncInt-0"]
+        }
+        
         
 
         let fullTipListAsString = tipsGeneral + ", " + tipsSyncInt + ", " + tipsAsyncTN + ", " + tipsAsyncInt
@@ -350,47 +357,51 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
                 document.querySelector("#resOverview > .blockContent > .descImg").setAttribute("src", fallBackPath) 
             }
         })
-        
+    } else {
+        document.querySelector("#resOverview > .blockContent").removeChild(document.querySelector("#descImg"))
+        document.querySelector("#resOverview > .blockContent > .descText").style["max-width"] = "100%"
+    }
 
-        // Sync block
-        // document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
-        let syncGradBoxes = document.querySelector("#resSync > .blockContent > .descText > .gradBoxes")
-        for (i=0; i<3; i++){
-            let box = document.createElement("span")
-            if (i <= +scenario.split("-")[2]){
-                box.classList.add("full")
-            }
-            syncGradBoxes.appendChild(box)
+    // Sync block
+    // document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
+    let syncGradBoxes = document.querySelector("#resSync > .blockContent > .descText > .gradBoxes")
+    for (i=0; i<3; i++){
+        let box = document.createElement("span")
+        if (i <= +scenario.split("-")[2]){
+            box.classList.add("full")
         }
-        document.querySelector(".sync .gradDesc").innerHTML = descriptionsSync[scenario.split("-")[2]]
-        let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
-        syncTipList.forEach(function(tipCode){
-            addTip(tipCode, syncTipsCont)            
-        })
+        syncGradBoxes.appendChild(box)
+    }
+    document.querySelector(".sync .gradDesc").innerHTML = descriptionsSync[scenario.split("-")[2]]
+    let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
+    syncTipList.forEach(function(tipCode){
+        console.log(tipCode)
+        addTip(tipCode, syncTipsCont)            
+    })
 
-        // Async block
-        if (asyncTNValue == "asyncTN-3"){
-            document.querySelector("#resAsync > .blockContent > .descText").innerHTML = overviewAsyncTNText
-        }
-        let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
-        asyncTipList.forEach(function(tipCode){
-            if (tipCode != scenario){
-                addTip(tipCode, asyncTips)
-            }
-
-        })
-
-        // Intl block
-        if (specialCases.includes("international")){
-            document.querySelector("#resIntl").style.display = "block"
-            let intlTipsCont = document.querySelector("#resIntl > .blockContent > .tCont")
-            intlTipList.forEach(function(tipCode){
-            addTip(tipCode, intlTipsCont)            
-        })
+    // Async block
+    if (asyncTNValue == "asyncTN-3"){
+        document.querySelector("#resAsync > .blockContent > .descText").innerHTML = overviewAsyncTNText
+    }
+    let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
+    asyncTipList.forEach(function(tipCode){
+        if (tipCode != scenario){
+            addTip(tipCode, asyncTips)
         }
 
+    })
 
-        // Alternative Results block
+    // Intl block
+    if (specialCases.includes("international")){
+        document.querySelector("#resIntl").style.display = "block"
+        let intlTipsCont = document.querySelector("#resIntl > .blockContent > .tCont")
+        intlTipList.forEach(function(tipCode){
+        addTip(tipCode, intlTipsCont)            
+    })
+    }
+
+    if (asyncIntValue != "asyncInt-x"){
+        // Alternative Results block: only for Hauptpfad
         let altResults = document.querySelector("#resMore > .blockContent > .altCont")
         if (topTier.length < 2 ){
             console.log(topTier)
@@ -400,19 +411,14 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             if (resCode != scenario){
                     addAltResult(resCode, altResults)
                 }
-                
             })
         }
-
     } else {
-        document.querySelector("#resOverview > .blockContent").removeChild(document.querySelector("#descImg"))
-        document.querySelector("#resOverview > .blockContent > .descText").style["max-width"] = "100%"
-        document.querySelector("#result").removeChild(document.querySelector("#resSync"))
-        document.querySelector("#result").removeChild(document.querySelector("#resAsync"))
-        document.querySelector("#result").removeChild(document.querySelector("#resIntl"))
+        // // document.querySelector("#result").removeChild(document.querySelector("#resSync"))
+        // document.querySelector("#result").removeChild(document.querySelector("#resAsync"))
+        // document.querySelector("#result").removeChild(document.querySelector("#resIntl"))
         document.querySelector("#result").removeChild(document.querySelector("#resMore"))
         document.querySelector(".techn.block").classList.add("maxed")
-        // document.querySelector("#minTech").style.display = "none"
     }
 
     // Medientechnik block
@@ -446,16 +452,16 @@ function minimizeTech(){
 
 // creating HTML elements
 function addTip(tipCode, container){
-        let tipli = document.createElement("li"); container.append(tipli)
-            tipli.classList.add("tip")
-            let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
-            tipHeader.innerHTML = "<img src='images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
-            let tipContent = document.createElement("p"); tipli.append(tipContent)
-            tipContent.classList.add("tipContent")
-            tipContent.innerHTML = all_tips[tipCode]["content"]
-            
-            tipHeader.setAttribute("onclick", "showHideTip(this)")
-    }
+    let tipli = document.createElement("li"); container.append(tipli)
+        tipli.classList.add("tip")
+        let tipHeader = document.createElement("h5"); tipli.append(tipHeader)
+        tipHeader.innerHTML = "<img src='images/fwd3.svg' alt=''/><span>" + all_tips[tipCode]["title"] + "</span>"
+        let tipContent = document.createElement("p"); tipli.append(tipContent)
+        tipContent.classList.add("tipContent")
+        tipContent.innerHTML = all_tips[tipCode]["content"]
+        
+        tipHeader.setAttribute("onclick", "showHideTip(this)")
+}
 
     function showHideTip(th){
         let a = th.parentElement
@@ -464,7 +470,6 @@ function addTip(tipCode, container){
             a.querySelector(".tipContent").style.height = "0px"
         } else {
             a.classList.add("open")
-            console.log(a.querySelector(".tipContent"))
             a.querySelector(".tipContent").style.height = a.querySelector(".tipContent").scrollHeight + "px"
         }
     }
