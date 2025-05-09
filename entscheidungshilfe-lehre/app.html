@@ -19,7 +19,7 @@
             <p id="whichPart">:)</p>
             <h2 style="text-align: center"><img id="welcomeLogo" src="images/NHL_logo.svg" /></h2>
             <h1>Entscheidungshilfe Online und Hybride Lehre</h1>
-            <p>Vor Ort, online, oder hybrid? Entdecken Sie, welches Format für Sie am besten passt! In den nächsten Schritten werden Sie aufgefordert, Gedanken über die folgenden Aspekten Ihrer Lehrveranstaltung zu machen:</p>
+            <p>Vor Ort, online, oder hybrid? Entdecken Sie, welches Format für Sie am besten passt! In den nächsten Schritten werden Sie aufgefordert, sich Gedanken über die folgenden Aspekten Ihrer Lehrveranstaltung zu machen:</p>
             <ul>
                 <li>Wie wichtig ist <b>physische Präsenz und Synchronität</b>, damit jemand erfolgreich in Ihrem Kurs sein kann?</li>
                 <li>Welche Anforderungen hat Ihre studentische Kohorte an <b>Strukturierung</b> und <b>Flexibilität?</b></li>
@@ -56,6 +56,7 @@
             <h2><em>Coming Soon: Hybride und virtuelle Laborkonzepte</em></h2>
             <p>Wir sind noch dabei, didaktische Empfehlungen für verschiedene Online- und hybride Laborveranstaltungen zu entwickeln! Bis dann schauen Sie sich gern die folgenden Beispiele von hybriden und virtuellen Laborkursen als Inspiration:</p>
             <ul>
+                <li><a href="https://www.bht-berlin.de/4500" aria-label="vituelle Labore an der BHT">Virtuelle Labore an der BHT</a>, darunter <a href="https://projekt.bht-berlin.de/mint-vr-labs" aria-label="MINT-VR-Labs">MINT-VR-labs</a></li>
                 <li><a href="https://leko.service.th-nuernberg.de/portal-digitale-lehre/anleitungen/hybride-laborpraktika-mit-mobilem-setup/" aria-label="TH Nürnberg: Hybride Laborpraktika mit mobilem Setup">TH Nürnberg: Hybride Laborpraktika mit mobilem Setup</a></li>
                 <li><a href="https://www.hs.mh.tum.de/exercisebiology/lehre-thesis/ilab/" aria-label="TU München: Projekt iLab (Laborvideos)">TU München: Projekt <em>iLab</em> (Laborvideos)</a></li>
             </ul>
@@ -78,7 +79,7 @@
     const maxShownAnswers = 4
 
 
-    var all_data, questionInfo, all_scenarios, infoTimeout, infoTimeout2
+    var all_data, questionInfo, all_scenarios, special_list, infoTimeout, infoTimeout2
 
     var activeQ, activeA
     var nextQuestionIdx = 1
@@ -184,6 +185,7 @@
     $.getJSON("data.json", function(json){
         all_data = json
         questionInfo = json['questions']
+        all_special_cases = json['special']
         situationsQuestion = questionInfo["situations"]
         leistungenQuestion = questionInfo["leistungen"]
         all_scenarios = json['scenarios']
@@ -772,7 +774,8 @@
         // decide which scenarios to show!
         topResults = getTopScenarios(finalResults)
         let firstResult = topResults[0]
-        window.open("var_result.html?shownScenario=" + firstResult + "&topTier=" + JSON.stringify(topResults), "_self")
+        // window.open("var_result.html?shownScenario=" + firstResult + "&topTier=" + JSON.stringify(topResults), "_self")
+        console.log("var_result.html?shownScenario=" + firstResult + "&topTier=" + JSON.stringify(topResults), "_self")
     }
 
     // Auxiliary funcitons (specialized)
@@ -788,13 +791,15 @@
         let thirdScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<secondScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
         let thirdTier = Object.entries(results).filter(([k,v])=>v==thirdScore).reduce((r, [k,v])=>[...r,k], [])
         
+        let sc
         for (let i=0; i<(topTier.length + secondTier.length + thirdTier.length); i++){
             // first tier: include all non-duplicates
             if (i<topTier.length){
                 let scenarioToAdd = topTier[i]
+                sc = getSpecialCases(scenarioToAdd)
                 // do not add scenarios with same format hyb, rem, ringonl, etc.
                 if (notDuplicate(scenarioToAdd, shownScenarios)){
-                    shownScenarios.push(scenarioToAdd)
+                    shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                 }
 
             } else {
@@ -802,8 +807,9 @@
                 if (i < (topTier.length+secondTier.length) && secondScore>=0){
                     let j = i - topTier.length
                     let scenarioToAdd = secondTier[j]
+                    sc = getSpecialCases(scenarioToAdd)
                     if (notDuplicate(scenarioToAdd, shownScenarios)){
-                        shownScenarios.push(scenarioToAdd)
+                        shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                     }
 
                 } else {
@@ -811,8 +817,9 @@
                     if (thirdScore>=0){
                         let k = i - topTier.length - secondTier.length
                         let scenarioToAdd = thirdTier[k]
+                        sc = getSpecialCases(scenarioToAdd)
                         if (notDuplicate(scenarioToAdd, shownScenarios)){
-                            shownScenarios.push(scenarioToAdd)
+                            shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                         }
                     }
 
@@ -825,6 +832,25 @@
         }
         return shownScenarios
     }
+
+        // get special cases from answers - called just before submitting the answer
+        function getSpecialCases(scenario){
+            // collects the special cases that should be added to a scenario based on what answers were provided
+            let answersToCheck = all_scenarios[scenario]["special_cases"]
+            let all_cases_rev = Object.fromEntries(Object.entries(all_special_cases).map(a => a.reverse()))
+            let applicableCases = []
+            let applicableIndices = []
+            Object.entries(answersToCheck).forEach(([r,c], i, arr)=>{
+                if (andCheck(r)){
+                    console.log("adding ", c)
+                    applicableCases.push(c)
+                    if (Object.values(all_special_cases).includes(c)){
+                        applicableIndices.push(Math.floor(all_cases_rev[c]))
+                    }
+                }
+            })
+            return applicableIndices
+        }
 
     // logic
     function includeCheck(qKey){

@@ -15,6 +15,17 @@ updated_json = {}
 updated_scenarios = {}
 list_of_scenarios = []
 
+# indexing of special cases (only defined here)
+special_cases =  {
+        "0": "international",
+        "1": "langfristGrupp",
+        "2": "hybrideExkursion",
+        "3": "onlineZuschaltungLP",
+        "4": "gastOnline",
+        "5": "gastVorOrtHyb"
+    }
+
+
 #importing scenarios from csv
 csv_file = 'szenarien.csv'
 with open(csv_file, mode='r', encoding='utf-8-sig') as csv_file:
@@ -439,6 +450,9 @@ for code in list_of_scenarios:
         setEffect("gaeste", "virtuell", code, -100)
     if lehrform == "ringonl":
         setEffect("gaeste", "vorOrt", code, -100)
+        setSpecialCase(code, "gaeste=virtuell", "gastOnline")
+        setEffect("gaeste", "both", code, -3)
+        setSpecialCase(code, "gaeste=both", "gastOnline")
     if lehrform in ["ringhyb1", "ringhyb2"]:
         setSpecialCase(code, "gaeste=virtuell", "gastOnline")
         setSpecialCase(code, "gaeste=both", "gastOnline")
@@ -449,6 +463,7 @@ for code in list_of_scenarios:
 
 updated_json["questions"] = updated_questions
 updated_json["scenarios"] = updated_scenarios
+updated_json["special"] = special_cases
 
 json_file = "data.json"
 def updateJSON(json_data, json_file):

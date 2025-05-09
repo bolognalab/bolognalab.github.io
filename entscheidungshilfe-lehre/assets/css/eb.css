@@ -181,7 +181,7 @@ li > .closeBtn {
     gap: 30px;
     align-items: flex-start
 }
-.sync .blockContent, .async .blockContent {
+.sync .blockContent, .async .blockContent, .international .blockContent {
     flex-direction: column;
     gap: 15px;
 }
@@ -227,7 +227,7 @@ li > .closeBtn {
         /* min-width: 50%; */
         flex: 1.5 1;
     }
-    .sync .blockContent > *, .async .blockContent > * {
+    .sync .blockContent > *, .async .blockContent > *, .international .blockContent > * {
         flex: auto;
         margin-bottom: 0;
         max-width: 100%;
@@ -337,6 +337,9 @@ ul.tCont, ul.altCont {
 }
 .tip.open h5:hover > img {
     filter: var(--vibrantBlueFilter)
+}
+.tip.open .tipContent {
+    margin-bottom: 2em;
 }
 
 /* technical sheets */
@@ -505,3 +508,187 @@ ul.tCont, ul.altCont {
                 .panel > *:last-child {
                   margin-bottom: 1.2em;
                 }
+
+
+/* Newest additions to result page - must be sorted */
+#netzwerkLogo {
+    width: 200px
+}
+.sync .blockContent > p {
+    margin-bottom: 0;
+}
+
+.sync .descText {
+    height: 3em;
+    position: relative;
+}
+.sync .descText > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1.4em;
+}
+.gradText {
+    right: calc(66% + 1.2em);
+    /* font-style: italic; */
+    /* font-weight: bold; */
+    color: var(--networkBlack)
+}
+.sync .descText > .gradBoxes, .async .descText > .gradBoxes {
+    height: 1.4em;
+    left: 33%; 
+}
+.gradBoxes > * {
+    height: 100%;
+    aspect-ratio: 1;
+    border: 1px solid var(--networkTurqoise);
+    border-radius: 3px;
+    display: inline-block;
+    margin-left: 3px;        
+}
+.gradBoxes .full {
+    background: var(--networkTurqoise)
+}
+.gradDesc {
+    color: var(--networkTurqoise);
+    left: calc(33% + 4.2em + 1.2em + 9px);
+    font-weight: bold;
+}
+
+.blockContent > * {
+    transition: all 0.2s ease;
+}
+.RKlink {
+    position: relative;
+    aspect-ratio: 1.5;
+}
+@media only screen and (min-width: 800px){
+    .techn .blockContent > .descText {
+        max-width: 100%;
+    }
+    .techn .blockContent > .RKlink {
+        max-width: 100%;
+    }
+}
+.RKlink > .sketchfab-embed-wrapper {
+    position: relative;
+    border-radius: 1em;
+    width: 90%;
+    height: 90%;
+    margin: 5% 5%;
+    overflow:hidden;
+    transition: all 0.4s ease;
+    /* left:50%;
+    top: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%,-50%); */
+}
+    .sketchfab-embed-wrapper > .cover {
+        position: absolute;
+        left:50%;
+        top: 50%;
+        width: 105%;
+        height: 105%;
+        transform: translate(-50%,-50%);
+        z-index:10;
+        border-radius: 1em;
+        background: var(--networkBlue);
+        opacity: 0.2;
+        transition: all 0.4s ease;
+        cursor: pointer;
+    }
+        .sketchfab-embed-wrapper > iframe {
+            width:100%;
+            aspect-ratio: 1.5;
+            border-radius: 1em;
+        }
+
+    .techn:not(.maxed) .sketchfab-embed-wrapper.hovered {
+        transform: scale(105%, 105%);
+    }
+    .sketchfab-embed-wrapper.hovered > .cover {
+        opacity: 0.1;
+    }
+
+.RKlink > .sketchfab-embed-wrapper > iframe {
+    pointer-events: none;
+}
+.block.techn:not(.maxed) .preInfo, .block.techn:not(.maxed) .midInfo, .block.techn:not(.maxed) .postInfo {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/* Technik-Block highlighted */
+.tech .blockContent {
+    transition: all 0.5s ease;
+}
+ .techn.maxed .descText {
+    max-width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+ }
+    #linkTechnik {
+        padding: 1em 2em;
+        font-size: 1.1em;
+        font-weight: bold;
+        background: rgba(0,0,0,0);
+        box-shadow: none;
+        border: 2px solid var(--vibrantBlue);
+        border-radius: 1em;
+        color: var(--vibrantBlue);
+        transition: all 0.4s ease;
+        margin: 1em 2.5em;
+        cursor: pointer;
+    }
+    #linkTechnik.hovered {
+        /* background: rgba(18, 161, 154, 0.3); */
+        background: rgba(15, 113, 184, 0.2);
+        /* color: white; */
+        border: 2px solid rgba(18, 161, 154, 0);
+        transform: scale(105%, 105%)
+    }
+.techn.maxed .blockContent > .RKlink {
+    max-width: 100%;
+}
+.maxed #raumIFrame {
+    pointer-events: auto;
+}
+.maxed .RKlink {
+    aspect-ratio: auto;
+    margin-bottom: 15px;
+}
+.maxed .sketchfab-embed-wrapper > .cover {
+    opacity: 0;
+    pointer-events: none;
+}
+.maxed .RKlink > .sketchfab-embed-wrapper {
+    margin: 0 0;
+    width: calc(100% - 15px);
+}
+.maxed .preInfo, .maxed .midInfo, .maxed .postInfo{
+    height: auto;
+    visibility: visible
+}
+#minTech {
+    position: relative;
+    height: 1.3em;
+}
+#minTech > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+#minTech > img {
+    left: 1em;
+    height: 1em;
+    filter: var(--vibrantBlueFilter);
+}
+#minTech > span {
+    left: 2em;
+    font-size: 1.3em;
+    cursor: pointer;
+    color: var(--vibrantBlue)
+}

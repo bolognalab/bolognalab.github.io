@@ -18197,6 +18197,61 @@
                         "se-praes-2-3-0": -100,
                         "se-praes-2-3-1": -100,
                         "se-praes-2-3-2": -100,
+                        "vl-ringonl-0-0-0": -3,
+                        "vl-ringonl-0-0-1": -3,
+                        "vl-ringonl-0-1-0": -3,
+                        "vl-ringonl-0-1-1": -3,
+                        "vl-ringonl-0-1-2": -3,
+                        "vl-ringonl-0-2-0": -3,
+                        "vl-ringonl-0-2-1": -3,
+                        "vl-ringonl-0-2-2": -3,
+                        "vl-ringonl-0-3-0": -3,
+                        "vl-ringonl-0-3-1": -3,
+                        "vl-ringonl-0-3-2": -3,
+                        "vl-ringonl-1-0-0": -3,
+                        "vl-ringonl-1-0-1": -3,
+                        "vl-ringonl-1-1-0": -3,
+                        "vl-ringonl-1-1-1": -3,
+                        "vl-ringonl-1-1-2": -3,
+                        "vl-ringonl-1-2-0": -3,
+                        "vl-ringonl-1-2-1": -3,
+                        "vl-ringonl-1-2-2": -3,
+                        "vl-ringonl-1-3-0": -3,
+                        "vl-ringonl-1-3-1": -3,
+                        "vl-ringonl-1-3-2": -3,
+                        "vl-ringonl-2-0-0": -3,
+                        "vl-ringonl-2-0-1": -3,
+                        "vl-ringonl-2-1-0": -3,
+                        "vl-ringonl-2-1-1": -3,
+                        "vl-ringonl-2-1-2": -3,
+                        "vl-ringonl-2-2-0": -3,
+                        "vl-ringonl-2-2-1": -3,
+                        "vl-ringonl-2-2-2": -3,
+                        "vl-ringonl-2-3-0": -3,
+                        "vl-ringonl-2-3-1": -3,
+                        "vl-ringonl-2-3-2": -3,
+                        "se-ringonl-1-0-0": -3,
+                        "se-ringonl-1-0-1": -3,
+                        "se-ringonl-1-1-0": -3,
+                        "se-ringonl-1-1-1": -3,
+                        "se-ringonl-1-1-2": -3,
+                        "se-ringonl-1-2-0": -3,
+                        "se-ringonl-1-2-1": -3,
+                        "se-ringonl-1-2-2": -3,
+                        "se-ringonl-1-3-0": -3,
+                        "se-ringonl-1-3-1": -3,
+                        "se-ringonl-1-3-2": -3,
+                        "se-ringonl-2-0-0": -3,
+                        "se-ringonl-2-0-1": -3,
+                        "se-ringonl-2-1-0": -3,
+                        "se-ringonl-2-1-1": -3,
+                        "se-ringonl-2-1-2": -3,
+                        "se-ringonl-2-2-0": -3,
+                        "se-ringonl-2-2-1": -3,
+                        "se-ringonl-2-2-2": -3,
+                        "se-ringonl-2-3-0": -3,
+                        "se-ringonl-2-3-1": -3,
+                        "se-ringonl-2-3-2": -3,
                         "pr-praes-2-1-0": -100,
                         "pr-praes-2-1-1": -100,
                         "pr-praes-2-1-2": -100,
@@ -20495,199 +20550,265 @@
         "vl-ringonl-0-0-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-0-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-1-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-1-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-1-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-2-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-2-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-2-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-3-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-3-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-0-3-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-0-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-0-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-1-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-1-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-1-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-2-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-2-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-2-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-3-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-3-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-1-3-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-0-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-0-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-1-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-1-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-1-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-2-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-2-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-2-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-3-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-3-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringonl-2-3-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "vl-ringhyb1-0-0-0": {
@@ -21584,133 +21705,177 @@
         "se-ringonl-1-0-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-0-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-1-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-1-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-1-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-2-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-2-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-2-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-3-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-3-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-1-3-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-0-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-0-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-1-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-1-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-1-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-2-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-2-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-2-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-3-0": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-3-1": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringonl-2-3-2": {
             "special_cases": {
                 "gruppenarb=ja": "langfristGrupp",
-                "intKoll=ja": "international"
+                "intKoll=ja": "international",
+                "gaeste=virtuell": "gastOnline",
+                "gaeste=both": "gastOnline"
             }
         },
         "se-ringhyb1-1-0-0": {
@@ -25050,5 +25215,13 @@
                 "intKoll=ja": "international"
             }
         }
+    },
+    "special": {
+        "0": "international",
+        "1": "langfristGrupp",
+        "2": "hybrideExkursion",
+        "3": "onlineZuschaltungLP",
+        "4": "gastOnline",
+        "5": "gastVorOrtHyb"
     }
 }

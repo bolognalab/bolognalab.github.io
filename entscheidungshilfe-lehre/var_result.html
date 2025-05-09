@@ -11,190 +11,6 @@
     <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
 </head>
-<style>
-    #netzwerkLogo {
-        width: 200px
-    }
-    .sync .blockContent > p {
-        margin-bottom: 0;
-    }
-
-    .sync .descText {
-        height: 3em;
-        position: relative;
-    }
-    .sync .descText > * {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 1.4em;
-    }
-    .gradText {
-        right: calc(66% + 1.2em);
-        /* font-style: italic; */
-        /* font-weight: bold; */
-        color: var(--networkBlack)
-    }
-    .sync .descText > .gradBoxes, .async .descText > .gradBoxes {
-        height: 1.4em;
-        left: 33%; 
-    }
-    .gradBoxes > * {
-        height: 100%;
-        aspect-ratio: 1;
-        border: 1px solid var(--networkTurqoise);
-        border-radius: 3px;
-        display: inline-block;
-        margin-left: 3px;        
-    }
-    .gradBoxes .full {
-        background: var(--networkTurqoise)
-    }
-    .gradDesc {
-        color: var(--networkTurqoise);
-        left: calc(33% + 4.2em + 1.2em + 9px);
-        font-weight: bold;
-    }
-
-    .blockContent > * {
-        transition: all 0.2s ease;
-    }
-    .RKlink {
-        position: relative;
-        aspect-ratio: 1.5;
-    }
-    @media only screen and (min-width: 800px){
-        .techn .blockContent > .descText {
-            max-width: 100%;
-        }
-        .techn .blockContent > .RKlink {
-            max-width: 100%;
-        }
-    }
-    .RKlink > .sketchfab-embed-wrapper {
-        position: relative;
-        border-radius: 1em;
-        width: 90%;
-        height: 90%;
-        margin: 5% 5%;
-        overflow:hidden;
-        transition: all 0.4s ease;
-        /* left:50%;
-        top: 50%;
-        width: 90%;
-        height: 90%;
-        transform: translate(-50%,-50%); */
-    }
-        .sketchfab-embed-wrapper > .cover {
-            position: absolute;
-            left:50%;
-            top: 50%;
-            width: 105%;
-            height: 105%;
-            transform: translate(-50%,-50%);
-            z-index:10;
-            border-radius: 1em;
-            background: var(--networkBlue);
-            opacity: 0.2;
-            transition: all 0.4s ease;
-            cursor: pointer;
-        }
-            .sketchfab-embed-wrapper > iframe {
-                width:100%;
-                aspect-ratio: 1.5;
-                border-radius: 1em;
-            }
-
-        .techn:not(.maxed) .sketchfab-embed-wrapper.hovered {
-            transform: scale(105%, 105%);
-        }
-        .sketchfab-embed-wrapper.hovered > .cover {
-            opacity: 0.1;
-        }
-
-    .RKlink > .sketchfab-embed-wrapper > iframe {
-        pointer-events: none;
-    }
-    .block.techn:not(.maxed) .preInfo, .block.techn:not(.maxed) .midInfo, .block.techn:not(.maxed) .postInfo {
-        height: 0;
-        overflow: hidden;
-        visibility: hidden;
-    }
-
-    /* Technik-Block highlighted */
-    .tech .blockContent {
-        transition: all 0.5s ease;
-    }
-     .techn.maxed .descText {
-        max-width: 0;
-        height: 0;
-        overflow: hidden;
-        opacity: 0;
-     }
-        #linkTechnik {
-            padding: 1em 2em;
-            font-size: 1.1em;
-            font-weight: bold;
-            background: rgba(0,0,0,0);
-            box-shadow: none;
-            border: 2px solid var(--vibrantBlue);
-            border-radius: 1em;
-            color: var(--vibrantBlue);
-            transition: all 0.4s ease;
-            margin: 1em 2.5em;
-            cursor: pointer;
-        }
-        #linkTechnik.hovered {
-            /* background: rgba(18, 161, 154, 0.3); */
-            background: rgba(15, 113, 184, 0.2);
-            /* color: white; */
-            border: 2px solid rgba(18, 161, 154, 0);
-            transform: scale(105%, 105%)
-        }
-    .techn.maxed .blockContent > .RKlink {
-        max-width: 100%;
-    }
-    .maxed #raumIFrame {
-        pointer-events: auto;
-    }
-    .maxed .RKlink {
-        aspect-ratio: auto;
-        margin-bottom: 15px;
-    }
-    .maxed .sketchfab-embed-wrapper > .cover {
-        opacity: 0;
-        pointer-events: none;
-    }
-    .maxed .RKlink > .sketchfab-embed-wrapper {
-        margin: 0 0;
-        width: calc(100% - 15px);
-    }
-    .maxed .preInfo, .maxed .midInfo, .maxed .postInfo{
-        height: auto;
-        visibility: visible
-    }
-    #minTech {
-        position: relative;
-        height: 1.3em;
-    }
-    #minTech > * {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%)
-    }
-    #minTech > img {
-        left: 1em;
-        height: 1em;
-        filter: var(--vibrantBlueFilter);
-    }
-    #minTech > span {
-        left: 2em;
-        font-size: 1.3em;
-        cursor: pointer;
-        color: var(--vibrantBlue)
-    }
-    
-</style>
 <body class="is-preload resultBg" lang="de" onload="loadPage()">
     <div id="result" class="rCont notReady">
         <a href="https://www.tu.berlin/bzhl/netzwerk-hybride-lehre"><img id="netzwerkLogo" src="images/NHL_logo.svg" /></a>
@@ -206,23 +22,6 @@
             <div class="blockContent">
                 <img id="descImg" class="descImg" src="images/blurry/pic05.jpg"/>
                 <p class="descText"></p>
-            </div>
-            <div id="matchQuality" style="display:none; border-bottom: 0px" class="tip">
-                <h5 onclick="showHideTip(this)">
-                    <img src="images/fwd3.svg" alt="">
-                    <span>Wie geeignet ist dieses Lehrszenario für mich?</span>
-                </h5>
-                <div class="tipContent">
-                    <div id="vorteile" style="display: none">
-                        <p>Hier sind einige Gründe, warum dieses Szenario gut für Sie ist:</p>
-                        <ul class="reasonList"></ul>
-                    </div>
-                    <div id="nachteile" style="display: none">
-                        <p>Hier sind einige Aspekte des Szenarios, die vielleicht nicht direkt mit Ihren Erwartungen übereinstimmen:</p>
-                        <ul class="reasonList"></ul>
-                    </div>
-                </div>
-
             </div>
         </div>
         <div id="resTechn" class="block techn">
@@ -246,10 +45,6 @@
                     <div class="midInfo"></div>
                     <div class="postInfo"></div>
                 </div>                
-                <!-- <a id="linkRaumkonzept" href="" class="pdfLink">
-                    <img src='images/raumkonzept_icon.png' alt="" />
-                    <strong>Exemplarisches Raumkonzept</strong>
-                </a> -->
             </div>
         </div>
         <div id="resSync" class="block sync">
@@ -260,9 +55,16 @@
             </div>
         </div>
         <div id="resAsync" class="block async">
-            <h4>Tipps für die asynchrone Kursgestaltung</h4>
+            <h4>Tipps für die Kursplanung</h4>
             <div class="blockContent">
                 <p class="descText"></p>
+                <ul class="tCont"></ul>
+            </div>
+        </div>
+        <div id="resIntl" class="block international" style="display: none">
+            <h4>Tipps für (inter)nationale Kurskollaborationen</h4>
+            <div class="blockContent">
+                <p class="descText">Hier fügen wir noch ein paar letzte Tipps bei, die bei der Planung standortübergreifender Kurskollaborationen hilfreich sein könnten. Wenn Sie Zeit und Interesse haben, empfehlen wir zusätzlich, sich das Video <a href="https://www.youtube.com/watch?v=LCSV8MLesVI" aria-label="Multiperspektivität durch einen internationalen Hybrid-Kurs">"Multiperspektivität durch einen internationalen Hybrid-Kurs"</a> aus unserer Best-Practices Serie anzusehen.</p>
                 <ul class="tCont"></ul>
             </div>
         </div>
@@ -292,28 +94,33 @@
 
 
 const urlParams = new URLSearchParams(window.location.search);
-const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario') : "se-rem-2-1-2"
-const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : ["se-rem-2-0-0","se-rem-2-3-0","se-hyb-2-0-0","se-hyb-2-3-0"]
-const specialCases = urlParams.has('specialCases') ? urlParams.get('specialCases') : []
+const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario').split("@")[0] : "se-rem-2-1-2"
+const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : ["se-rem-2-0-0@[0]","se-rem-2-3-0@[0]","se-hyb-2-0-0@[1]","se-hyb-2-3-0"]
+const specialCaseIndices = urlParams.has('shownScenario') && urlParams.get('shownScenario').includes("@") ? JSON.parse(urlParams.get('shownScenario').split("@")[1]) : []
 const providedAnswers = JSON.parse(sessionStorage.getItem("answers"))
 
-const answers = providedAnswers? providedAnswers : {}
 const dummyAnswers = {
-  "artLV": "SE",
-  "LZiP": "2",
-  "LZsy": "1",
-  "niePr": "nein",
-  "nieSync": "nein",
-  "regAbw": "abundzu",
-  "onlBereit": "geleg",
-  "limZPSt": "ja",
-  "onlZugang": "ja",
-  "IntAsync": "2",
-  "gaeste": "0",
-  "exkur": "nein",
-  "begrAnz": "nein",
-  "intKoll": "ja"
+    "artLV": "SE",
+    "intSync": "2",
+    "referat": "ja",
+    "debate": "nein",
+    "praxis": "nein",
+    "privat": "nein",
+    "LZiP": "nein",
+    "keineLeistungen": "nein",
+    "niveauSt": "freshmen",
+    "limZPSt": "ja",
+    "nieSync": "idk",
+    "niePr": "ja",
+    "regAbw": "abundzu",
+    "onlBereit": "egal",
+    "gruppenarb": "ja",
+    "exkur": "nein",
+    "intKoll": "nein",
+    "begrAnz": "nein",
+    "gaeste": "both"
 }
+const answers = providedAnswers? providedAnswers : dummyAnswers
 
 const descriptionsSync = {
     "0": "(Eher frontal)",
@@ -321,81 +128,22 @@ const descriptionsSync = {
     "2": "(im Plenum und in Kleingruppen)"
 }
 
-function explainMatch(scenario, answers=dummyAnswers, rules=[]){
-    Object.entries(answers).forEach(function(item){
-        let qCode = item[0]
-        let aCode = item[1]
-        let effectsForThisCombination = rule_data.filter((k)=>k.questionCode==qCode && k.answerCode==aCode)
-        for (let effect of effectsForThisCombination){
 
-            if (!isScenarioAffected(shownScenario, effect)){
-                // only include effects that affect the displayed scenario!
-                continue;
-            }
-            if (effect.scoreChange == "-100" || effect.scoreChange == "-"){
-                // ignore effects that would have excluded this scenario and "noEffect"
-                continue;
-            } 
-            if (effect.relevantVariable1 == "2" || effect.relevantVariable1 =="4"){
-                // ignore effects that just define syncInt and asyncInt
-                continue;
-            }
-            let sentence = document.createElement("li")
-            let subsentence = effect.reasonSummary.replace("Szenario XYZ", "dieses Szenario")
-            sentence.innerHTML = effect.answerSummary + " " + subsentence //+  " <b>(rule ID: " + effect.globalId + ")</b>"
-
-            // if the effect is positive, add it to the first list (Vorteile)
-            if (+effect.scoreChange > 0){
-                document.querySelector("#vorteile .reasonList").append(sentence)
-                document.querySelector("#matchQuality").style.display = "block"
-                document.querySelector("#vorteile").style.display = "block"
-            } else {
-                // if the effect is negative, add it to the second list (Nachteile)
-                document.querySelector("#nachteile .reasonList").append(sentence)
-                document.querySelector("#matchQuality").style.display = "block"
-                document.querySelector("#nachteile").style.display = "block"
-            }            
-        }
-    })
-    console.log("hallo")
-}
-// auxiliary functions for reading rules
-function isScenarioInRange(scenarioCode, variable, range){
-    // console.log(scenarioCode, variable, range)
-    let scenarioVariable = scenarioCode.split("-")[variable]
-    // turning the contents of the csv file into a list of strings
-    let rangeList = $.csv.toArray(range).map(str => str.trim())
-    return rangeList.includes(scenarioVariable)
-
-}
-function isScenarioAffected(scenarioCode, effect){
-    // console.log(effect)
-    let variable1 = effect.relevantVariable1, variable2 = effect.relevantVariable2
-    let inRange1 = effect.includedRange1, inRange2 = effect.includedRange2
-    let exRange1 = effect.excludedRange1, exRange2 = effect.excludedRange2
-    // console.log(variable1, variable2, inRange1, inRange2, exRange1, exRange2)
-
-    let match1 = variable1 == "-" ? true : isScenarioInRange(scenarioCode, variable1, inRange1)
-    let match2 = variable1 != "-" && exRange1 == "-" ? false : !isScenarioInRange(scenarioCode, variable1, exRange1)
-    let match3 = variable2 == "-" ? true : isScenarioInRange(scenarioCode, variable2, inRange2)
-    let match4 = variable2 != "-" && exRange2 == "-" ? false : !isScenarioInRange(scenarioCode, variable2, exRange2)
-
-    // console.log(match1, match2, match3, match4)
-    return (match1 || match2) && (match3 || match4)
-
-}
-
-
-
-// var shownScenario = 'se-rem-2-1-1'
-
-var all_tips, all_texts, tech_links, tip_matching, rule_data
+var all_tips, all_texts, tech_links, tip_matching, all_scenarios, all_special_cases
 
 function loadPage(){
     const rCont = document.getElementById("result")
     rCont.classList.add("notReady")
     $.getJSON("data.json", function(json){
     all_scenarios = json['scenarios']
+
+    // "decrypt" special cases
+    all_special_cases = json['special']
+    providedSpecialCases = specialCaseIndices.map((i)=>{
+        return all_special_cases[JSON.stringify(i)]
+    })
+
+
     $.get( "texts_tips_matrix.csv", function(CSVdata) {
         let csvData = $.csv.toObjects(CSVdata, {separator:';'});
         all_texts = {}
@@ -407,21 +155,21 @@ function loadPage(){
             all_texts[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("text")))
             all_texts[key]["name"] = dict["name"]
             tip_matching[key] = Object.fromEntries(Object.entries(dict).filter(([k,v])=>k.includes("tips")))
-            tech_links[key] = {"raum": dict["link_raumtechnik"]}
+            tech_links[key] = {
+                "raum-syncInt-0": dict["raum_syncInt-0"],
+                "raum-syncInt-1": dict["raum_syncInt-1"],
+                "raum-syncInt-2": dict["raum_syncInt-2"]
+            }
         })
         $.get("tips_source.json", function(json){
             all_tips = json["tips"]
             setTimeout(function(){
-                showResult(shownScenario, specialCases, topTier)
+                showResult(shownScenario, providedSpecialCases, topTier)
                 createAriaLabels()
             }, 500)
         })
         
     });
-    $.get("regeln_formulierungen.csv", function(CSVdata){
-        rule_data =  $.csv.toObjects(CSVdata, {separator:';'});
-        // explainMatch(shownScenario, answers, rule_data)  
-    })
 })
 }
 
@@ -429,7 +177,6 @@ var fullTipList
 
 function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     // gathering texts
-    
     let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
     let syncIntValue = "syncInt-" + scenario.split("-")[2]
     let asyncTNValue = "asyncTN-" + scenario.split("-")[3]
@@ -447,7 +194,9 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             theseTexts[s + 'Text'] = all_texts['de-default']["text_" + s]
         }
     })
-    let raumLink = tech_links[scenarioValue]['raum']
+
+    let raumLink = tech_links[scenarioValue]['raum-' + syncIntValue]
+    console.log("Raummodell: ", raumLink)
     if (raumLink == "COMINGSOON"){
         document.querySelector("#refToRaumkonzept").innerHTML = "Ein interaktives Raummodell mit Empfehlungen folgt bald."
         if (asyncIntValue != "asyncInt-x"){
@@ -496,7 +245,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let asyncIntText =  theseTexts[asyncIntValue + "Text"]
     let asyncText = asyncTNText + " " + asyncIntText
 
-    let syncTips, tipsGeneral, tipsSyncInt, tipsAsyncTN, tipsAsyncInt, fullTipList, omittedTips, syncTipList, asyncTipList
+    let syncTips, tipsGeneral, tipsSyncInt, tipsAsyncTN, tipsAsyncInt, fullTipList, omittedTips, syncTipList, asyncTipList, intlTipList
 
     let primaryImgPath = "images/descImg/" + scenarioValue + ".jpg"
     let fallBackPath = "images/descImg/de-default.jpg"
@@ -519,10 +268,33 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             // trim tip codes
             array[idx] = tip.trim()
         })
+
+        
+        // add tips for various special cases!
+        // Case 0: International
+        if (specialCases.includes("international")){
+            fullTipList.push("zeitzonen", "sprachbarrieren")
+        }
+        // Case 1: langfristige Gruppenarbeit
+        if (specialCases.includes("langfristGrupp")){
+            fullTipList.push("teamcharta")
+        }
+        // Case 2: langfristige Gruppenarbeit
+        if (specialCases.includes("hybrideExkursion")){
+            fullTipList.push("hybrideExkursion")
+        }
+        // Case 3: online-Zuschaltung Lehrperson
+        if (specialCases.includes("onlineZuschaltungLP")){
+            fullTipList.push("onlineZuschaltungLP")
+        }
+        // Case 4: Gast online zugeschaltet
+        if (specialCases.includes("gastOnline")){
+            fullTipList.push("techHowToGaeste")
+        }
+
         // shift array by one (to move "Datenschutz" tip to the end)
         let tipToShift = fullTipList.shift(1)
         fullTipList.push(tipToShift)
-        
 
         // remove some tips (due to reasons not captured in the .csv file)
         omittedTips = []
@@ -556,9 +328,9 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             }
         })
         fullTipList = fullTipList.filter( t => !omittedTips.includes(t))
-        console.log(fullTipList)
         syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
         asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
+        intlTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "international")
     }
 
     // building document
@@ -608,6 +380,16 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
         })
 
+        // Intl block
+        if (specialCases.includes("international")){
+            document.querySelector("#resIntl").style.display = "block"
+            let intlTipsCont = document.querySelector("#resIntl > .blockContent > .tCont")
+            intlTipList.forEach(function(tipCode){
+            addTip(tipCode, intlTipsCont)            
+        })
+        }
+
+
         // Alternative Results block
         let altResults = document.querySelector("#resMore > .blockContent > .altCont")
         if (topTier.length < 2 ){
@@ -627,6 +409,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         document.querySelector("#resOverview > .blockContent > .descText").style["max-width"] = "100%"
         document.querySelector("#result").removeChild(document.querySelector("#resSync"))
         document.querySelector("#result").removeChild(document.querySelector("#resAsync"))
+        document.querySelector("#result").removeChild(document.querySelector("#resIntl"))
         document.querySelector("#result").removeChild(document.querySelector("#resMore"))
         document.querySelector(".techn.block").classList.add("maxed")
         // document.querySelector("#minTech").style.display = "none"
@@ -634,7 +417,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     // Medientechnik block
     fullTechnList.forEach(function(s){
-        console.log(s)
         let li = document.createElement('li')
         li.innerHTML = s
         document.querySelector("#propertyList").appendChild(li)

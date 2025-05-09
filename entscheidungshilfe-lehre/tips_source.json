@@ -190,6 +190,11 @@
             "title": "Aus dem Digitalen in den Lehrraum sprechen",
             "content": "Haben Sie vor, ab und zu als Lehrperson online an der Veranstaltung teilnehmen, während die Studierenden vor Ort sind? Falls ja, können Sie hier mehr Tipps lesen, wie Sie das reibungslos schaffen.<br><a href='mini-artikel.html#onlZuschaltungLP'>Mini-Artikel: Studierende Hybrid, Lehrende online zugeschaltet</a>" 
         },
+        "hybrideExkursion": {
+            "type": "synchron",
+            "title": "Hybride Exkursion",
+            "content": "Eine Exkursion im Rahmen einer Lehrveranstaltung könnte hybrid gestaltet werden, um diverse Herausforderungen oder Wünsche gerecht zu werden - seien es begrenzte Zugänglichkeit, Reisekosten oder -aufwand, oder Ermöglichung der Teilnahme für Studierende, die nicht an den Ort reisen können. Eine ausführliche Erläuterung der Planung und Durchführung einer synchron-hybriden Exkursion finden Sie auf der Webseite des Projekts <em>e-teaching.org</em>:<br><a href='https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion' aria-label='Artikel zur Stellvertreterexkursion von e-teaching.org' >Stellvertreterexkursion (<em>e-teaching.org</em>)</a> " 
+        },
         "woechCheckin": {
             "type": "asynchron",
             "title": "Wöchentliches Check-In",
@@ -310,26 +315,15 @@
             "title": "Gastvortrag-Materialien frühzeitig aussuchen",
             "content": "Recherchieren Sie im Vorfeld – auch in Absprache mit dem/der Gastvortragenden - Materialien zu der Gastvorlesung, um sicherzustellen, dass Sie und der/die Gastdozierende sich über den Inhalt der Vorlesung einig sind. Teilen Sie den Studierenden einige dieser Materialien als Vorbereitung zu und stellen Sie sicher, dass auch Sie mit dem Inhalt vertraut sind. Vor allem, wenn Sie selbst und Ihr Gast bzw. Ihre Gästin aus unterschiedlichen Disziplinen kommen, muss man mit unterschiedlichen Zugängen, Terminologien und Modellen rechnen, die nicht allen Studierenden bekannt sein und Verwirrung stiften könnten.  Stellen Sie im Vorhinein sicher, etwaige Diskrepanzen mit Ihren Studierenden zu klären. Durch eine sorgfältige inhaltliche Vorbereitung erwerben Sie auch einen „Plan B“, mit dem Sie und die Studierenden sich mit dem externen Fachwissen beschäftigen können, falls der Gastvortrag unerwartet ausfällt.<br><a href='https://www.uis.edu/ion/resources/tutorials/pedagogy/guest-lecturers' aria-label='mehr lesen (auf Englisch): Guest lecturers in the online environment'>Mehr lesen (auf Englisch)</a>"
         },
-
         "zeitzonen": {
             "type": "international",
-            "title": "Zeitzonen berücksichtigen",
-            "content": "Selbstverständlich sollte eine synchrone universitäts- oder landübergreifende Sitzung so geplannt werden, dass die Studierenden in allen betroffenen Zeitzonen sie zu einer verünftigen Uhrzeit besuchen können. Die Zeitzonen sollten zusätzlich berücksichtigt werden, wenn Sie während des Kurses Fristen (z.B. für die Einreichung von Materialien) setzen."
+            "title": "Rücksichtsvolle Terminplanung",
+            "content": "Selbstverständlich sollte eine synchrone universitäts- oder landübergreifende Sitzung so geplannt werden, dass die Studierenden in allen betroffenen Zeitzonen sie zu einer verünftigen Uhrzeit besuchen können. Zeitunterschiede sollten zusätzlich berücksichtigt werden, wenn Sie während des Kurses Fristen (z.B. Uhrzeit für die Einreichung von Materialien) setzen. Zu guter Letzt sollten Sie bei der Planung einer Zusammenarbeit - insbesondere mit einem anderen Land - den Semesterplan auf nationale, regionale oder religiöse Feiertage überprüfen, da einige Studierende und/oder Dozierende zu manchen Zeiten möglicherweise nicht teilnehmen können."
         },
         "sprachbarrieren": {
             "type": "international",
             "title": "Sprachbarrieren abbauen",
             "content": "In einer internationalen Kurskollaboration kann die Muttersprache einiger Studierenden von der Unterrichtssprache abweichen. In diesem Fall kann die Verwendung mehrerer Darstellungsformen in Präsentationen (z. B. die Wiederholung der mündlich vermittelten Informationen in Textform) viel dazu beitragen, Sprachbarrieren abzubauen. Darüber hinaus kann es sinnvoll sein, Diskussionen in der Klasse stärker zu strukturieren (z. B. durch die Verwendung von <a class='inl' href='https://www.gse.harvard.edu/ideas/usable-knowledge/17/05/starting-conversation'>Diskussionsskripten</a>), damit diejenigen, die ihre Gedanken aufgrund einer Sprachbarriere langsamer äußern können, nicht ungerechtfertigt benachteiligt werden."
         }
-
-    },
-    "specialCases": {
-        "international": "", 
-        "exkursion": "",
-        "alternativPraes": "Einige Studierende haben die Möglichkeit, vollständig online an dieser LV teilzunehmen. Laut Ihrer Angaben gibt es aber wichtige Lernziele für Ihren Kurs, die nur in Präsenz erreicht werden können. Da Ihre Lehrveranstaltung Teil eines Moduls ist, wird empfohlen, dass die anderen Teile Ihres Moduls zumindest gelegentlich obligatorische Präsenzkomponenten haben, um diese Lernziele zu erreichen.",
-        "hybrideExkursion": "Siehe <a class='inl' href='https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion' target='_blank'>Stellvertreterexkursion</a>",
-        "onlineZuschaltungLP": "Lehperson wird online zugeschaltet, während Studierende und eine*r moderierenden Person in einem Lehrraum sind.",
-        "gastOnline": "",
-        "gasVorOrtHyb": ""
     }
 }

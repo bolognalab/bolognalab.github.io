@@ -121,6 +121,31 @@
     opacity: 0;
 }
 
+#DIV_TEXT_labore a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--networkTurqoise)
+}
+
+#DIV_TEXT_labore a::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-right: 4px;
+    background-image: url("../../images/link.svg");
+    filter: var(--networkTurqoiseFilter);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+#DIV_TEXT_labore ul {
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+#DIV_TEXT_labore li {
+    margin-bottom: 1em;
+}
 /* p.qText  {
     margin-bottom: 0;
 } */
