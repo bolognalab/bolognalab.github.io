@@ -110,7 +110,7 @@ body {
 }
 @media only screen and (max-width: 600px){
     .qCont {
-        height: 60em
+        height: 80em
     }
     .qDiv {
         top: 20px;
