@@ -34,9 +34,9 @@
             "condition": true,
             "text": "Wie stellen Sie sich den <b>maximalen Interaktionsgrad</b> während der Lehrveranstaltung vor?",
             "antworten": {
-                "0": "Eher frontaler Unterricht, ggf. mit kurzen Q&A (unidirektional)",
-                "1": "Diskussionen hauptsächlich im Plenum (bidirektional)",
-                "2": "Kollaboratives Arbeiten in Gruppen (omnidirektional)"
+                "0": "Eher frontaler Unterricht, ggf. mit kurzen Q&A (minimum)",
+                "1": "Diskussionen hauptsächlich im Plenum (medium)",
+                "2": "Kollaboratives Arbeiten in Gruppen (maximum)"
             }
         },
 
@@ -44,7 +44,7 @@
             "condition": true,
             "text": "Welche der folgenden (bewerteten oder unbewerteten) Leistungen sind vorgesehen als integrale Bestandteile des Kurses?",
             "antworten": {
-                "referat": "Referat oder -projektvorstellung inkl. Q&A",
+                "referat": "Referat oder Projektvorstellung inkl. Q&A",
                 "debate": "Debatten, Interviewen oder Moderieren",
                 "praxis": "Versuch, Experiment oder andere praktische Übungen",
                 "privat": "Umgang mit sensiblen Informationen (z.B. Patientendaten)",

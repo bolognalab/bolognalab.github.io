@@ -2505,7 +2505,7 @@
             "text": "Wie stellen Sie sich den <b>maximalen Interaktionsgrad</b> w\u00e4hrend der Lehrveranstaltung vor?",
             "antworten": {
                 "0": {
-                    "text": "Eher frontaler Unterricht, ggf. mit kurzen Q&A (unidirektional)",
+                    "text": "Eher frontaler Unterricht, ggf. mit kurzen Q&A (minimum)",
                     "effects": {
                         "so-async-0-4-0": 1,
                         "so-async-0-4-1": 1,
@@ -3002,7 +3002,7 @@
                     "conditionalEffects": {}
                 },
                 "1": {
-                    "text": "Diskussionen haupts\u00e4chlich im Plenum (bidirektional)",
+                    "text": "Diskussionen haupts\u00e4chlich im Plenum (medium)",
                     "effects": {
                         "so-async-0-4-0": -2,
                         "so-async-0-4-1": -2,
@@ -3821,7 +3821,7 @@
                     "conditionalEffects": {}
                 },
                 "2": {
-                    "text": "Kollaboratives Arbeiten in Gruppen (omnidirektional)",
+                    "text": "Kollaboratives Arbeiten in Gruppen (maximum)",
                     "effects": {
                         "so-async-0-4-0": -100,
                         "so-async-0-4-1": -100,
@@ -4646,7 +4646,7 @@
             "text": "Welche der folgenden (bewerteten oder unbewerteten) Leistungen sind vorgesehen als integrale Bestandteile des Kurses?",
             "antworten": {
                 "referat": {
-                    "text": "Referat oder -projektvorstellung inkl. Q&A",
+                    "text": "Referat oder Projektvorstellung inkl. Q&A",
                     "effects": {},
                     "conditionalEffects": {}
                 },
