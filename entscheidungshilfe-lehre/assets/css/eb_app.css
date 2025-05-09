@@ -1,4 +1,4 @@
-.qCont {
+.qCont, .fCont {
     background-color: var(--backgroundLightBlue);
     /* padding: 20px 20px; */
     overflow: scroll;
@@ -54,6 +54,9 @@
 #DIV_TEXT_welcome > ul {
     width: 85%;
     margin: auto;
+}
+#DIV_TEXT_welcome > ul > li {
+    margin-bottom: 0.5em;
 }
 #DIV_TEXT_welcome > h1, #DIV_TEXT_welcome > p {
     width: 90%;

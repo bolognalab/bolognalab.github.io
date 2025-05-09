@@ -11,7 +11,30 @@
     <link rel="stylesheet" href="assets/css/eb_app.css" />
     <script src="assets/js/jquery.min.js"></script>
 </head>
-<style>
+<style>    
+    #questions {
+        height: 80em;
+        font-size: 16px;
+        padding-bottom: 10%
+    }
+    .qDiv.fCont {
+        height: fit-content;
+        overflow: hidden;
+        max-width: 700px;
+        margin-bottom: 40px;
+    }
+    @media only screen and (max-width: 600px){
+        #questions {
+            font-size: 14px;
+        }
+        .qDiv.fCont {
+            width: 100%;
+            top: 0;
+        }
+        .fCont select {
+            font-size: 12px;
+        }
+    }
     #logoContainer {
         text-align: center
     }
@@ -95,9 +118,9 @@
 </style>
 <body class="is-preload" lang="de">
 <div style="width: 100%">
-    <div id="questions">
+    <div id="questions" class="fCont">
         <img class="backgroundImage" src = "images/treeTemp.svg" />
-        <div id="DIV_FORM" class="qDiv qCont">
+        <div id="DIV_FORM" class="qDiv fCont">
             <p id="logoContainer"><img id="welcomeLogo" src="images/NHL_logo.svg" /></p>
             <h1><a id="home" href="app.html">Entscheidungshilfe Online und Hybride Lehre</a></h1>
             <h2>Lehr-/Lernformate erkunden</h2>
@@ -156,9 +179,7 @@
                 <!-- Submit Button -->
                  <div class="buttonContainer">
                     <button onclick="selectConcept()" class="submitButton">Absenden</button>
-                 </div>
-                 <p style="color: orange">Achtung: Das System ist noch im Aufbau - nicht alle Filter funktionieren wie geplant.</p>
-                
+                 </div>                
             <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung des Lehrformats</a></div>
         </div>
     </div>   
