@@ -10835,7 +10835,7 @@
             ]
         },
         "nieSync": {
-            "condition": "referat=nein+debate=nein+privat=nein",
+            "condition": true,
             "text": "Gibt es Studierende, die <b>nie oder fast nie</b> am Kurs <b>synchron</b> teilnehmen k\u00f6nnen (z.B. wegen \u00dcberschneidungen oder Zeitzonen)?",
             "antworten": {
                 "nein": {
@@ -12484,7 +12484,7 @@
             }
         },
         "niePr": {
-            "condition": "praxis=nein+LZiP=nein",
+            "condition": true,
             "text": "Gibt es Studierende, die <b>nie oder sehr schwierig in Pr\u00e4senz</b> am Kurs teilnehmen k\u00f6nnen?",
             "antworten": {
                 "nein": {
@@ -20698,8 +20698,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-0-1": {
@@ -20710,8 +20709,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-1-0": {
@@ -20722,8 +20720,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-1-1": {
@@ -20734,8 +20731,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-1-2": {
@@ -20746,8 +20742,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-2-0": {
@@ -20758,8 +20753,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-2-1": {
@@ -20770,8 +20764,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-2-2": {
@@ -20782,8 +20775,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-3-0": {
@@ -20794,8 +20786,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-3-1": {
@@ -20806,8 +20797,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-0-3-2": {
@@ -20818,8 +20808,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-0-0": {
@@ -20830,8 +20819,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-0-1": {
@@ -20842,8 +20830,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-1-0": {
@@ -20854,8 +20841,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-1-1": {
@@ -20866,8 +20852,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-1-2": {
@@ -20878,8 +20863,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-2-0": {
@@ -20890,8 +20874,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-2-1": {
@@ -20902,8 +20885,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-2-2": {
@@ -20914,8 +20896,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-3-0": {
@@ -20926,8 +20907,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-3-1": {
@@ -20938,8 +20918,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-1-3-2": {
@@ -20950,8 +20929,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-0-0": {
@@ -20962,8 +20940,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-0-1": {
@@ -20974,8 +20951,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-1-0": {
@@ -20986,8 +20962,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-1-1": {
@@ -20998,8 +20973,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-1-2": {
@@ -21010,8 +20984,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-2-0": {
@@ -21022,8 +20995,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-2-1": {
@@ -21034,8 +21006,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-2-2": {
@@ -21046,8 +21017,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-3-0": {
@@ -21058,8 +21028,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-3-1": {
@@ -21070,8 +21039,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb1-2-3-2": {
@@ -21082,8 +21050,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-0-0": {
@@ -21091,11 +21058,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-0-1": {
@@ -21103,11 +21070,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-1-0": {
@@ -21115,11 +21082,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-1-1": {
@@ -21127,11 +21094,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-1-2": {
@@ -21139,11 +21106,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-2-0": {
@@ -21151,11 +21118,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-2-1": {
@@ -21163,11 +21130,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-2-2": {
@@ -21175,11 +21142,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-3-0": {
@@ -21187,11 +21154,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-3-1": {
@@ -21199,11 +21166,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-0-3-2": {
@@ -21211,11 +21178,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-0-0": {
@@ -21223,11 +21190,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-0-1": {
@@ -21235,11 +21202,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-1-0": {
@@ -21247,11 +21214,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-1-1": {
@@ -21259,11 +21226,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-1-2": {
@@ -21271,11 +21238,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-2-0": {
@@ -21283,11 +21250,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-2-1": {
@@ -21295,11 +21262,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-2-2": {
@@ -21307,11 +21274,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-3-0": {
@@ -21319,11 +21286,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-3-1": {
@@ -21331,11 +21298,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-1-3-2": {
@@ -21343,11 +21310,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-0-0": {
@@ -21355,11 +21322,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-0-1": {
@@ -21367,11 +21334,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-1-0": {
@@ -21379,11 +21346,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-1-1": {
@@ -21391,11 +21358,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-1-2": {
@@ -21403,11 +21370,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-2-0": {
@@ -21415,11 +21382,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-2-1": {
@@ -21427,11 +21394,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-2-2": {
@@ -21439,11 +21406,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-3-0": {
@@ -21451,11 +21418,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-3-1": {
@@ -21463,11 +21430,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "vl-ringhyb2-2-3-2": {
@@ -21475,11 +21442,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringpraes-1-0-0": {
@@ -21754,8 +21721,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-0-1": {
@@ -21766,8 +21732,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-1-0": {
@@ -21778,8 +21743,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-1-1": {
@@ -21790,8 +21754,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-1-2": {
@@ -21802,8 +21765,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-2-0": {
@@ -21814,8 +21776,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-2-1": {
@@ -21826,8 +21787,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-2-2": {
@@ -21838,8 +21798,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-3-0": {
@@ -21850,8 +21809,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-3-1": {
@@ -21862,8 +21820,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-1-3-2": {
@@ -21874,8 +21831,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-0-0": {
@@ -21886,8 +21842,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-0-1": {
@@ -21898,8 +21853,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-1-0": {
@@ -21910,8 +21864,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-1-1": {
@@ -21922,8 +21875,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-1-2": {
@@ -21934,8 +21886,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-2-0": {
@@ -21946,8 +21897,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-2-1": {
@@ -21958,8 +21908,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-2-2": {
@@ -21970,8 +21919,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-3-0": {
@@ -21982,8 +21930,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-3-1": {
@@ -21994,8 +21941,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb1-2-3-2": {
@@ -22006,8 +21952,7 @@
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=ja": "gastVorOrtHyb",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-0-0": {
@@ -22015,11 +21960,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-0-1": {
@@ -22027,11 +21972,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-1-0": {
@@ -22039,11 +21984,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-1-1": {
@@ -22051,11 +21996,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-1-2": {
@@ -22063,11 +22008,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-2-0": {
@@ -22075,11 +22020,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-2-1": {
@@ -22087,11 +22032,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-2-2": {
@@ -22099,11 +22044,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-3-0": {
@@ -22111,11 +22056,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-3-1": {
@@ -22123,11 +22068,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-1-3-2": {
@@ -22135,11 +22080,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-0-0": {
@@ -22147,11 +22092,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-0-1": {
@@ -22159,11 +22104,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-1-0": {
@@ -22171,11 +22116,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-1-1": {
@@ -22183,11 +22128,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-1-2": {
@@ -22195,11 +22140,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-2-0": {
@@ -22207,11 +22152,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-2-1": {
@@ -22219,11 +22164,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-2-2": {
@@ -22231,11 +22176,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-3-0": {
@@ -22243,11 +22188,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-3-1": {
@@ -22255,11 +22200,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "se-ringhyb2-2-3-2": {
@@ -22267,11 +22212,11 @@
                 "regAbw=abundzu": "onlineZuschaltungLP",
                 "regAbw=oft": "onlineZuschaltungLP",
                 "gruppenarb=ja": "langfristGrupp",
-                "exkur=ja": "gastVorOrtHyb",
+                "exkur=ja": "hybrideExkursion",
                 "intKoll=ja": "international",
                 "gaeste=virtuell": "gastOnline",
                 "gaeste=both": "gastOnline",
-                "exkur=both": "gastVorOrtHyb"
+                "gaeste=vorOrt": "gastVorOrtHyb"
             }
         },
         "pr-praes-2-1-0": {

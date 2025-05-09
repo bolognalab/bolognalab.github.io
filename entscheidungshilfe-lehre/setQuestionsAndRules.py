@@ -442,8 +442,8 @@ for code in list_of_scenarios:
     if lehrform in ["ringhyb1", "ringhyb2"]:
         setSpecialCase(code, "gaeste=virtuell", "gastOnline")
         setSpecialCase(code, "gaeste=both", "gastOnline")
-        setSpecialCase(code, "exkur=ja", "gastVorOrtHyb")
-        setSpecialCase(code, "exkur=both", "gastVorOrtHyb")
+        setSpecialCase(code, "gaeste=vorOrt", "gastVorOrtHyb")
+        setSpecialCase(code, "gaeste=vorOrt", "gastVorOrtHyb")
       
 
 

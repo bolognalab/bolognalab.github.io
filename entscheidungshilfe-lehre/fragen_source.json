@@ -151,7 +151,7 @@
         },
 
         "nieSync": {
-            "condition": "referat=nein+debate=nein+privat=nein",
+            "condition": true,
             "text": "Gibt es Studierende, die <b>nie oder fast nie</b> am Kurs <b>synchron</b> teilnehmen können (z.B. wegen Überschneidungen oder Zeitzonen)?",
             "antworten": {
                 "nein": "Nein",
@@ -161,7 +161,7 @@
         },
 
         "niePr": {
-            "condition": "praxis=nein+LZiP=nein",
+            "condition": true,
             "text": "Gibt es Studierende, die <b>nie oder sehr schwierig in Präsenz</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
