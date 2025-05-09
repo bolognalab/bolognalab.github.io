@@ -183,7 +183,7 @@ li > .closeBtn {
 }
 .sync .blockContent, .async .blockContent {
     flex-direction: column;
-    gap: 0;
+    gap: 15px;
 }
 
 .overview .blockContent {
@@ -248,14 +248,14 @@ ul.tCont, ul.altCont {
     margin: 0 0;
     border-bottom: solid 0.5px rgb(226, 235, 255);
 }
-.tip:not(.open){
-    height: 3em;
+.tip:not(.open) p {
+    margin-bottom: 0;
 }
 .tip h5{
     font-size: inherit;
     margin: 0 0;
     padding: 0 0;
-    height: 3em;
+    height: 3.8em;
     box-sizing: border-box;
     position: relative; 
     cursor: pointer;

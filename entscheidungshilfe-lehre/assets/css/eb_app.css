@@ -127,7 +127,8 @@
 /* "Context" accordeon */
 .context {
     color: var(--networkTurqoise);
-    transition: all 0.4s ease
+    transition: all 0.4s ease;
+    padding-left: 0.5em;
 }
 div.context {
     margin-top: -0.5em;
@@ -161,7 +162,8 @@ div.context {
     opacity: 0.8;
 }
 .context.open {
-    background: rgba(18, 161, 154, 0.08)
+    background: rgba(18, 161, 154, 0.08);
+    padding: 0.8em 0.5em 0.3em;
 }
 .context .contextContent {
     height: 0;

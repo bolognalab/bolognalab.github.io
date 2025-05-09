@@ -267,7 +267,7 @@
             </div>
         </div>
         <div id="resMore" class="block more">
-            <h4>Weitere Ergebnissse</h4>
+            <h4>Weitere Ergebnisse</h4>
             <div class="blockContent">
                 <p>Folgende Lehr-/Lernszenarien könnten auch für Sie passend sein:</p>
                 <ul class="altCont"></ul>
@@ -516,8 +516,12 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         })
 
         fullTipList.forEach((tip, idx, array)=>{
+            // trim tip codes
             array[idx] = tip.trim()
         })
+        // shift array by one (to move "Datenschutz" tip to the end)
+        let tipToShift = fullTipList.shift(1)
+        fullTipList.push(tipToShift)
         
 
         // remove some tips (due to reasons not captured in the .csv file)
@@ -604,14 +608,20 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
         })
 
-            // Alternative Results block
+        // Alternative Results block
         let altResults = document.querySelector("#resMore > .blockContent > .altCont")
-        topTier.forEach(function(resCode){
+        if (topTier.length < 2 ){
+            console.log(topTier)
+            document.querySelector("#resMore").style.display="none"
+        } else {
+            topTier.forEach(function(resCode){
             if (resCode != scenario){
-                addAltResult(resCode, altResults)
-            }
-            
-        })
+                    addAltResult(resCode, altResults)
+                }
+                
+            })
+        }
+
     } else {
         document.querySelector("#resOverview > .blockContent").removeChild(document.querySelector("#descImg"))
         document.querySelector("#resOverview > .blockContent > .descText").style["max-width"] = "100%"

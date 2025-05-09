@@ -190,7 +190,7 @@
                 "egal" : "Es spielt für mich keine Rolle, wie viel ich online oder vor Ort unterrichte."
             },
             "addInfo": [
-                "{NO BULLET} In dieser Frage geht es wahrscheinlich nicht nur um Ihre persönliche Präferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre für das Lehrdeputat. Anmerkung: hier dieser Frage wird nach Ihrer eigenen Präsenz- oder Online-Teilnahme gefragt (Studierende könnten prinzipiell online teilnehmen, während Sie von einem Lehrraum aus unterrichten)."
+                "{NO BULLET} In dieser Frage geht es wahrscheinlich nicht nur um Ihre persönliche Präferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre für das Lehrdeputat. <b>Anmerkung: in dieser Frage wird nach Ihrer eigenen Präsenz- oder Online-Teilnahme gefragt</b> (Studierende könnten prinzipiell online teilnehmen, während Sie von einem Lehrraum aus unterrichten)."
             ]
         },
 
