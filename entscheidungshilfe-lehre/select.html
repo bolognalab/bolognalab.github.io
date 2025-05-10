@@ -10,112 +10,167 @@
     <link rel="stylesheet" href="assets/css/eb.css" />
     <link rel="stylesheet" href="assets/css/eb_app.css" />
     <script src="assets/js/jquery.min.js"></script>
-</head>
-<style>    
-    #questions {
-        height: 80em;
-        font-size: 16px;
-        padding-bottom: 10%
-    }
-    .qDiv.fCont {
-        height: fit-content;
-        overflow: hidden;
-        max-width: 700px;
-        margin-bottom: 40px;
-    }
-    @media only screen and (max-width: 600px){
+    <style>    
         #questions {
-            font-size: 14px;
+            height: 80em;
+            font-size: 16px;
+            padding-bottom: 10%
         }
         .qDiv.fCont {
-            width: 100%;
-            top: 0;
+            height: fit-content;
+            overflow: hidden;
+            max-width: 700px;
+            margin-bottom: 40px;
         }
-        .fCont select {
-            font-size: 12px;
+        @media only screen and (max-width: 600px){
+            #questions {
+                font-size: 14px;
+            }
+            .qDiv.fCont {
+                width: 100%;
+                top: 0;
+            }
+            .fCont select {
+                font-size: 12px;
+            }
         }
-    }
-    #logoContainer {
-        text-align: center
-    }
-    #home {
-        text-decoration: none;
-        color: var(--networkBlack);
-    }
-    #DIV_FORM h1 {
-        color: var(--networkBlack);
-        text-align: center;
-        font-size: 24px;
-        width: 90%;
-        margin: 1.5em auto 1em;
-    }
-    #DIV_FORM h2 {
-        color: var(--networkBlack);
-        text-align: center;
-        font-size: 18px;
-        width: 60%;
-        margin: 0 auto 2em;
-    }
-    #DIV_FORM h3 {
-        font-size: 1em;
-        margin-top: 2em;
-        color: var(--networkBlue)
-    }
-    label.sLabel {
-        display: inline-block;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        visibility: hidden;
-    }
-    select {
-        font-size: 1em;
-        line-height: 1.3em;
-        border: solid 1px var(--networkTurqoise);
-        border-radius: 5px;
-        padding: 0.5em 1em;
-        color: var(--networkTurqoise);
-        background: white;
-        transition: all 0.4s ease;
-    }
-    select:hover {
-        background: rgba(18, 161, 154, 0.1);
-    }
-    input[type="checkbox"] {
-        display: none;
-    }
-    input[type="checkbox"] + label {
-        margin-left: 8px;
-        position: relative
-    }
-    input[type="checkbox"] + label::before {
-        content: " ";
-        display: block;
-        position: absolute;
-        left: -0.5em;
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: center;
-        width: 1.1em;
-        height: 1.1em;
-        line-height: 1.1em;
-        margin-right: 5px;
-        border-radius: 3px;
-        border: 1px solid var(--networkTurqoise);
-        color: var(--networkTurqoise);
-        overflow: hidden;
-    }
-    input[type="checkbox"]:checked + label::before {
-        content: "✔";
-    }
-    input[type="checkbox"].disabled + label {
-        color: rgb(180, 180, 180);
-    }
-    input[type="checkbox"].disabled + label::before {
-        border: 1px solid rgb(180, 180, 180);
-        color: rgb(180, 180, 180);
-    }
-</style>
+        #logoContainer {
+            text-align: center
+        }
+        #home {
+            text-decoration: none;
+            color: var(--networkBlack);
+        }
+        #DIV_FORM h1 {
+            color: var(--networkBlack);
+            text-align: center;
+            font-size: 24px;
+            width: 90%;
+            margin: 1.5em auto 1em;
+        }
+        #DIV_FORM h2 {
+            color: var(--networkBlack);
+            text-align: center;
+            font-size: 18px;
+            width: 60%;
+            margin: 0 auto 2em;
+        }
+        #DIV_FORM h3 {
+            font-size: 1em;
+            margin-top: 2em;
+            color: var(--networkBlue)
+        }
+        label.sLabel {
+            display: inline-block;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        select {
+            font-size: 1em;
+            line-height: 1.3em;
+            border: solid 1px var(--networkTurqoise);
+            border-radius: 5px;
+            padding: 0.5em 1em;
+            color: var(--networkTurqoise);
+            background: white;
+            transition: all 0.4s ease;
+        }
+        select:hover {
+            background: rgba(18, 161, 154, 0.1);
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+        input[type="checkbox"] + label {
+            margin-left: 8px;
+            position: relative
+        }
+        input[type="checkbox"] + label::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            left: -0.5em;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 1.1em;
+            height: 1.1em;
+            line-height: 1.1em;
+            margin-right: 5px;
+            border-radius: 3px;
+            border: 1px solid var(--networkTurqoise);
+            color: var(--networkTurqoise);
+            overflow: hidden;
+        }
+        input[type="checkbox"]:checked + label::before {
+            content: "✔";
+        }
+        input[type="checkbox"].disabled + label {
+            color: rgb(180, 180, 180);
+        }
+        input[type="checkbox"].disabled + label::before {
+            border: 1px solid rgb(180, 180, 180);
+            color: rgb(180, 180, 180);
+        }
+        .fCont .submitButton {
+            border: 3px solid rgba(255,255,255,0.7);
+        }
+        .fCont .submitButton:hover {
+            background: hwb(205 6% 12%);
+        }
+        .fCont .submitButton {
+            left: 50%;
+            border-radius: 1em;
+            padding: 0.5em 1em;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            background: var(--networkBlue)
+        }
+        .fCont .submitButton {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 3em;
+            margin: 0 0;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        #credits {
+            opacity: 0.8
+        }
+        #credits > * {
+            margin: auto;
+            background-color: rgba(15, 113, 184, 0.2);
+            color: var(--networkBlue)
+        }
+        #credits .accordion.active + .panel {
+            padding-bottom: 2em;
+        }
+        #credits .panel > h3 {
+            margin-left: 2em;
+        }
+        #credits .panel > p {
+            margin: 0 2.5em 0.5em;
+        }
+        #credits h2, #credits h3 {
+            color: var(--networkBlue)
+        }
+        #credits h2.active {
+            color: var(--networkBlue) !important;
+            padding-bottom: 0;
+        }
+        .accordion::before {
+            color: var(--networkBlue)
+        }
+    </style>
+</head>
+
 <body class="is-preload" lang="de">
 <div style="width: 100%">
     <div id="questions" class="fCont">
@@ -180,9 +235,22 @@
                  <div class="buttonContainer">
                     <button onclick="selectConcept()" class="submitButton">Absenden</button>
                  </div>                
-            <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung des Lehrformats</a></div>
+            <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung über das Lehrformat</a></div>
         </div>
-    </div>   
+    </div> 
+    <div class="inner" id="credits">
+        <h2 class="accordion">Credits</h2>
+        <div class="panel">
+            <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
+            <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
+            <p>Raumkonzepte: Philipp Kapser*</p>
+            <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
+            <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+            <p>*Humboldt-Universität zu Berlin</p>
+            <p>**Berliner Hochschule für Technik</p>
+            <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
+        </div>
+    </div> 
 </div>
 <script src="assets/js/jquery.csv.js"></script>
 <script>
@@ -287,5 +355,21 @@
         window.open("var_result.html"+URLstring, "_self")
     }
 </script>
+<script>
+    // Accordion-menu for credits
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
 </body>
 </html>

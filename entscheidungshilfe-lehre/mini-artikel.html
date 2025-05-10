@@ -9,6 +9,35 @@
   <link rel="stylesheet" href="assets/css/eb_mini.css" />
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
+  <style>
+    #credits {
+        opacity: 0.8
+    }
+    #credits > * {
+        margin: auto;
+        background-color: rgba(15, 113, 184, 0.2);
+        color: var(--networkBlue)
+    }
+    #credits .accordion.active + .panel {
+        padding-bottom: 2em;
+    }
+    #credits .panel > h3 {
+        margin-left: 2em;
+    }
+    #credits .panel > p {
+        margin: 0 2.5em 0.5em;
+    }
+    #credits h2, #credits h3 {
+        color: var(--networkBlue)
+    }
+    #credits h2.active {
+        color: var(--networkBlue) !important;
+        padding-bottom: 0;
+    }
+    .accordion::before {
+        color: var(--networkBlue)
+    }
+</style>
 </head>
 <body onload="listsAndCitations()"> 
 <div class="bgContainer">

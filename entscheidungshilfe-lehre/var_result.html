@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Entscheidungshilfe</title>
+  <title>Ihr Ergebnis: Entscheidungshilfe-Lehre</title>
   <base target="_blank" />
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
@@ -10,6 +10,35 @@
   <link rel="stylesheet" href="assets/css/eb.css" />
     <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
+  <style>
+    #credits {
+        opacity: 0.8
+    }
+    #credits > * {
+        margin: auto;
+        background-color: rgba(170, 170, 170, 0.2);
+        color: #777
+    }
+    #credits .accordion.active + .panel {
+        padding-bottom: 2em;
+    }
+    #credits .panel > h3 {
+        margin-left: 2em;
+    }
+    #credits .panel > p {
+        margin: 0 2.5em 0.5em;
+    }
+    #credits h2, #credits h3 {
+        color: #777
+    }
+    #credits h2.active {
+        color: #777 !important;
+        padding-bottom: 0;
+    }
+    .accordion::before {
+        color: #777
+    }
+</style>
 </head>
 <body class="is-preload resultBg" lang="de" onload="loadPage()">
     <div id="result" class="rCont notReady">
@@ -337,7 +366,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
                 omittedTips.push(tipCode)
             }
         })
-        console.log(fullTipList)
         // applying special case 6
       
         if (specialCases.includes("keineAufzeichnung") && asyncTNValue == "asyncTN-3" && omittedTips.includes("miniLectures")){
@@ -351,7 +379,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
         intlTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "international")
 
-        console.log(fullTipList)
     }
 
     // building document
@@ -389,7 +416,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     document.querySelector(".sync .gradDesc").innerHTML = descriptionsSync[scenario.split("-")[2]]
     let syncTipsCont = document.querySelector("#resSync > .blockContent > .tCont")
     syncTipList.forEach(function(tipCode){
-        console.log(tipCode)
         addTip(tipCode, syncTipsCont)            
     })
 
@@ -411,7 +437,9 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         let intlTipsCont = document.querySelector("#resIntl > .blockContent > .tCont")
         intlTipList.forEach(function(tipCode){
         addTip(tipCode, intlTipsCont)            
-    })
+        })
+    } else {
+        document.querySelector("#result").removeChild(document.querySelector("#resIntl"))
     }
 
     if (asyncIntValue != "asyncInt-x"){
@@ -441,7 +469,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         li.innerHTML = s
         document.querySelector("#propertyList").appendChild(li)
         if (s == 'COMINGSOON'){
-            document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4> Die Medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
+            document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4> Die medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
         } else if (s == 'digital'){
             document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4>Dieses Lehrszenario findet in rein-digitalem Format statt.</p>'
             document.querySelector(".techn.block").parentNode.removeChild(document.querySelector(".techn.block"))
