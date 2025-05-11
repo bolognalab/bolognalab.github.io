@@ -410,6 +410,10 @@
                 if (qKey == "intSync" && aKey == "0" && answers["artLV"]=="SE"){
                     aDiv.style.display = "none"
                 }
+                    // hide "geringe Raumkapazität" for Vorlesungen
+                if (qKey == "situations" && aKey == "begrAnz" && answers["artLV"]!="SE"){
+                    aDiv.style.display = "none"
+                }    
 
                 // AT THE END OF THE LOOP: For checkbox questions, add "none of the above" as the last answer and highlight it
                 if (qKey == "situations" || qKey == "leistungen"){ 

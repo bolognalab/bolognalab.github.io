@@ -11,30 +11,38 @@
     <link rel="stylesheet" href="assets/css/eb_app.css" />
     <script src="assets/js/jquery.min.js"></script>
 </head>
+<style>
+body {
+    background: white;
+    }
+.qCont {
+    background: var(--backgroundLightBlue);
+            background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
+}
+</style>
 <body class="is-preload" lang="de">
-<div style="width: 100%">
+<div style="width: 100%; height: 50em; overflow:scroll">
     <h3>Entscheidungshilfe Lehre: Testversion mit Score-Anzeige</h3>
     <div id="qWrapper">
         <script>
-            $("#qWrapper").load("app.html #questions", ()=>{loadQuestions()})
+            $("#qWrapper").load("app.html #questions", ()=>{
+                document.querySelector("#credits").style.display="none"
+                loadQuestions()
+            })
         </script>
-    </div>
-    <h3>Szenarien und Scores</h3>
-    <div id="scenarios" class="sCont"></div>
-    <div id="sources">
-        <h5>Quellen</h5>
-        <ol class="sources">
-            <li id ="source_uniHamburgSozialeInteraktion"><a href='https://www.hul.uni-hamburg.de/selbstlernmaterialien/6-soziale-interaktion.html'>Uni Hamburg: Social Design - Soziale Interaktion</a></li>
-            <li id ="source_moerthUFF21"><a href='https://www.youtube.com/watch?v=JkmYvK8j-zs'>M. Mörth, I. Ulrich, N. Enders: "Online, blended, hybrid, Präsenz?" - University:Future Festival 2021 (VideO)</a></li>
-            <li id="source_studienwahl"><a href='https://studienwahl.de/themen-des-monats/jobben-neben-dem-studium'>Studienwahl.de: Jobben neben dem Studium (03.09.2024)</a></li>
-        </ol> 
-    </div>
-    
-   
+    </div>  
 </div>
+<h3>Szenarien und Scores</h3>
+    <p>Filter: <input id="queryField" type="text"></input><button onclick="updateQuery()">Anwenden</button></p>
+    <div id="scenarios" class="sCont"></div>
 <script src="assets/js/jquery.csv.js"></script>
 <script>
     var qCot, maxShownAnswers, sCont, all_data, questionInfo, all_scenarios, all_texts, infoTimeout, infoTimeout2, activeQ, activeA, nextQuestionIdx, scenarios, answers, activeScenarios, recent, topResults, questionOrder, progressBar, whichPart, group1start, group2start, group3start, group4start, leistungenQuestion, situationsQuestion, pButton, nButton, sButton
+    var query = ""
+    function updateQuery(){
+        query = document.querySelector("#queryField").value
+        listActiveScenarios(activeScenarios)
+    }
 
     function loadQuestions(){
         qCont = document.getElementById("questions")
@@ -322,6 +330,10 @@
                 if (qKey == "intSync" && aKey == "0" && answers["artLV"]=="SE"){
                     aDiv.style.display = "none"
                 }
+                    // hide "geringe Raumkapazität" for Vorlesungen
+                if (qKey == "situations" && aKey == "begrAnz" && answers["artLV"]!="SE"){
+                    aDiv.style.display = "none"
+                }    
 
                 // AT THE END OF THE LOOP: For checkbox questions, add "none of the above" as the last answer and highlight it
                 if (qKey == "situations" || qKey == "leistungen"){ 
@@ -766,21 +778,24 @@
         Object.entries(sObj).forEach((entry)=>{
             sKey = entry[0]
             sVal = entry[1]
-            let tr = document.createElement("p")
-            let name = document.createElement("span")
-            name.classList.add("sName")
-            let score = document.createElement("span")
-            name.innerHTML = sKey
-            let scenarioTitle = all_texts[sKey.slice(0,-6)].name
-            name.setAttribute("title", scenarioTitle)
-            score.innerHTML = sVal
-            score.setAttribute("id", "SCORE_" + sKey)
-            score.classList.add("score")
-            tr.append(name, score)
-            if (recent.includes(sKey)){
-                tr.classList.add("recent")
+            if (query == "" || sKey.includes(query)){
+                let tr = document.createElement("p")
+                let name = document.createElement("span")
+                name.classList.add("sName")
+                let score = document.createElement("span")
+                name.innerHTML = sKey
+                let scenarioTitle = all_texts[sKey.slice(0,-6)].name
+                name.setAttribute("title", scenarioTitle)
+                score.innerHTML = sVal
+                score.setAttribute("id", "SCORE_" + sKey)
+                score.classList.add("score")
+                tr.append(name, score)
+                if (recent.includes(sKey)){
+                    tr.classList.add("recent")
+                }
+                sCont.append(tr)
             }
-            sCont.append(tr)
+
         })
 
         for (let score of document.querySelectorAll(".score")){
