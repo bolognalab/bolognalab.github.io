@@ -517,26 +517,50 @@ ul.tCont, ul.altCont {
     margin-bottom: 0;
 }
 
-.sync .descText {
-    height: 3em;
-    position: relative;
+.gradBlock  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 0;
 }
-.sync .descText > * {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+@media only screen and (max-width: 600px){
+    .gradBlock  {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+.gradBlock > * {
     line-height: 1.4em;
 }
+.gradBlock.asyncInt > .gradDesc {
+    display: none;
+}
 .gradText {
-    right: calc(66% + 1.2em);
-    /* font-style: italic; */
-    /* font-weight: bold; */
     color: var(--networkBlack)
 }
-.sync .descText > .gradBoxes, .async .descText > .gradBoxes {
+.gradBoxes {
     height: 1.4em;
     left: 33%; 
 }
+.gradBlock span.questionMark {
+    color: white;
+    background: var(--networkTurqoise);
+    border-radius: 1em;
+    width: 1.4em;
+    display: inline-block;
+    height: 1.4em;
+    text-align: center;
+    margin-left: 0.5em;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.gradBlock span.questionMark:hover {
+    transform: scale(110%)
+}
+
 .gradBoxes > * {
     height: 100%;
     aspect-ratio: 1;
@@ -553,7 +577,22 @@ ul.tCont, ul.altCont {
     left: calc(33% + 4.2em + 1.2em + 9px);
     font-weight: bold;
 }
-
+#hiddenAsyncText {
+    height: 0px;
+    visibility: hidden;
+    overflow:hidden;
+    color: var(--networkTurqoise);
+    padding: 1em 2em 0;
+    width: 60%;
+    min-width: 265px;
+    margin: 0 auto 1em;
+    transition: all 0.4s ease;
+}
+#hiddenAsyncText.open {
+    background: rgba(255, 255, 255, 0.3);
+    visibility: visible;
+    margin: 1em auto 2em;
+}
 .blockContent > * {
     transition: all 0.2s ease;
 }

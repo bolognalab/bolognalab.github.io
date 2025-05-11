@@ -35,15 +35,16 @@ with open(csv_file, mode='r', encoding='utf-8-sig') as csv_file:
     for r, row_data in enumerate(csvfiledata):
         # extract code to use as identifier 
         key = row_data.pop("code")
-        # intervention: remove all variation in terms of asyncInt
-        # shortkey = key[:-2]
         shortkey = key
-        list_of_scenarios.append(shortkey)
-        # 'pop' has removed the 'code' from row_data, so now we are collecting the rest of the information
-        subkeys = row_data.keys()
-        subvalues = row_data.values()
-        updated_scenarios[shortkey] = dict(zip(subkeys, subvalues))
-        updated_scenarios[shortkey]["special_cases"] = {}
+
+        # intervention: exclude combo syncInt=0, asyncTN=2
+        if shortkey.split("-")[2] != "0" or shortkey.split("-")[3] != "2":
+            list_of_scenarios.append(shortkey)
+            # 'pop' has removed the 'code' from row_data, so now we are collecting the rest of the information
+            subkeys = row_data.keys()
+            subvalues = row_data.values()
+            updated_scenarios[shortkey] = dict(zip(subkeys, subvalues))
+            updated_scenarios[shortkey]["special_cases"] = {}
 
 updated_questions = existing_questions.copy()
 

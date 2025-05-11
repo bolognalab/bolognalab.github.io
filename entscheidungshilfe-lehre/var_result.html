@@ -83,14 +83,24 @@
         <div id="resSync" class="block sync">
             <h4>Tipps für die synchrone Interaktion</h4>
             <div class="blockContent">
-                <p class="descText"><span class="gradText">Synchroner Interaktionsgrad: </span><span class="gradBoxes"></span><span class="gradDesc"></span></p>
+                <div class="descText">
+                    <p>Sie haben folgenden <b>maximalen</b> Interaktionsumfang während der Kurssitzungen angegeben:</p>
+                    <p class="gradBlock">
+                        <span class="gradText">Synchroner Interaktionsgrad: </span><span class="gradBoxes"></span><span class="gradDesc"></span>
+                    </p>
+                </div>
                 <ul class="tCont"></ul>
             </div>
         </div>
         <div id="resAsync" class="block async">
-            <h4>Tipps für die Kursplanung</h4>
+            <h4>Tipps und Ideen für die Kursplanung</h4>
             <div class="blockContent">
-                <p class="descText"></p>
+                <div class="descText">
+                    <p id="asyncIntro">Laut Ihrer Angaben wird Ihnen die folgende Strategie für die <b>asynchrone</b> Kursgestaltung empfohlen: </p>
+                    <p class="gradBlock asyncTN"><span class="gradText">Rolle der asynchronen Teilnahme: </span><span class="gradDesc"></p>
+                    <div id="hiddenAsyncText"><p></p></div>
+                    <p class="gradBlock asyncInt"><span class="gradText">Umfang der Interaktion: </span><span id="min" class="gradDesc">minimal</span><span id="StLP" class="gradDesc">✓ mit der Lehrperson</span><span id="StSt" class="gradDesc">✓ zwischen Studierenden</span></p>
+                </div>
                 <ul class="tCont"></ul>
             </div>
         </div>
@@ -162,7 +172,13 @@ const descriptionsSync = {
     "1": "(hauptsächlich im Plenum)",
     "2": "(im Plenum und in Kleingruppen)"
 }
-
+const descriptionsAsyncTN = {
+    "0": "minimal (völlig synchron)",
+    "1": "ergänzende Nacharbeit",
+    "2": "Flipped Classroom",
+    "3": "Teilnahmealternative <span class='questionMark'>?</span>",
+    "4": "völlig asynchroner Kurs"
+}
 
 var all_tips, all_texts, tech_links, tip_matching, all_scenarios, all_special_cases
 
@@ -371,6 +387,9 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             } else if (tipCode == "reflexionAsync" && asyncIntValue != "asyncInt-1"){
                 omittedTips.push(tipCode)
             }
+            if (tipCode == "diskFutter" && asyncTNValue == "asyncTN-0"){
+                omittedTips.push(tipCode)
+            }
         })
         // applying special case 6
       
@@ -411,7 +430,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     // Sync block
     // document.querySelector("#resSync > .blockContent > .descText").innerHTML = syncIntText
-    let syncGradBoxes = document.querySelector("#resSync > .blockContent > .descText > .gradBoxes")
+    let syncGradBoxes = document.querySelector("#resSync .gradBoxes")
     for (i=0; i<3; i++){
         let box = document.createElement("span")
         if (i <= +scenario.split("-")[2]){
@@ -426,9 +445,36 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     })
 
     // Async block
-    if (asyncTNValue == "asyncTN-3"){
-        document.querySelector("#resAsync > .blockContent > .descText").innerHTML = overviewAsyncTNText
+    if (asyncIntValue == "asyncInt-x"){
+        if (asyncTNValue == "asyncTN-3"){
+            document.querySelector("#resAsync div.descText").innerHTML = overviewAsyncTNText
+        } else {
+            document.querySelector("#resAsync div.descText").innerHTML = "Die folgenden Tipps könnten Ihnen bei der <b>asynchronen</b> Kursgestaltung helfen:"
+        }
+        
+    } else {
+        document.querySelector("#resAsync .asyncTN .gradDesc").innerHTML = descriptionsAsyncTN[scenario.split("-")[3]]
+        document.querySelector("#hiddenAsyncText").innerHTML = overviewAsyncTNText
+        if (asyncTNValue == "asyncTN-3"){
+            document.querySelector("#resAsync .questionMark").addEventListener("click", ()=>{
+                showHideTextBlock(document.querySelector("#hiddenAsyncText"))
+            })
+        }
+        if (asyncIntValue == "asyncInt-0"){
+            document.querySelector(".async #min").style.display = "block"
+        } else if (asyncIntValue == "asyncInt-1"){
+            document.querySelector(".async #StLP").style.display = "block"
+        } else if (asyncIntValue == "asyncInt-2"){
+            document.querySelector(".async #StLP").style.display = "block"
+            document.querySelector(".async #StSt").style.display = "block"
+        }
+        
+        if (asyncTNValue == "asyncTN-0"){
+            document.querySelector(".gradBlock.asyncInt").style.display = "none"
+            document.querySelector("#hiddenAsyncText").style.display = "none"
+        }
     }
+    
     let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
     asyncTipList.forEach(function(tipCode){
         if (tipCode != scenario){
@@ -519,6 +565,15 @@ function addTip(tipCode, container){
         } else {
             a.classList.add("open")
             a.querySelector(".tipContent").style.height = a.querySelector(".tipContent").scrollHeight + "px"
+        }
+    }
+    function showHideTextBlock(th){
+        if (th.classList.contains("open")){
+            th.classList.remove("open")
+            th.style.height = "0px"
+        } else {
+            th.classList.add("open")
+            th.style.height = th.scrollHeight + "px"
         }
     }
 
