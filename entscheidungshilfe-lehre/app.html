@@ -12,12 +12,30 @@
     <script src="assets/js/jquery.min.js"></script>
     <script async src="https://tally.so/widgets/embed.js"></script>
     <style>
+        body {
+            background: var(--backgroundLightBlue);
+            background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
+        }
+        .qCont {
+            background: none;
+        }
+        #credits {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translate(-50%,0)
+        }
+        #DIV_TEXT_welcome {
+            background: white;
+        }
+    </style>
+    <style>
         #credits {
             opacity: 0.8
         }
         #credits > * {
             margin: auto;
-            background-color: rgba(15, 113, 184, 0.2);
+            /* background-color: rgba(15, 113, 184, 0.2); */
             color: var(--networkBlue)
         }
         #credits .accordion.active + .panel {
@@ -45,9 +63,7 @@
     </style>
 </head>
 <body class="is-preload" lang="de">
-<div style="width: 100%">
     <div id="questions" class="qCont">
-        <img class="backgroundImage" src = "images/treeTemp.svg" />
         <div id="DIV_TEXT_welcome" class="qDiv">
             <p id="whichPart">:)</p>
             <h2 style="text-align: center"><img id="welcomeLogo" src="images/NHL_logo.svg" /></h2>
@@ -95,22 +111,23 @@
             </ul>
         </div>
         <div id="progressBar" class="progressBar"></div>
-    </div>
-    <div class="inner" id="credits">
-        <h2 class="accordion">Credits & Feedback</h2>
-        <div class="panel">
-            <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
-            <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
-            <p>Raumkonzepte: Philipp Kapser*</p>
-            <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
-            <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
-            <p>*Humboldt-Universität zu Berlin</p>
-            <p>**Berliner Hochschule für Technik</p>
-            <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
-            <h3>Kontakt</h3>
-            <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
+        <div class="inner" id="credits">
+            <h2 class="accordion">Credits & Feedback</h2>
+            <div class="panel">
+                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
+                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
+                <p>Raumkonzepte: Philipp Kapser*</p>
+                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
+                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+                <p>*Humboldt-Universität zu Berlin</p>
+                <p>**Berliner Hochschule für Technik</p>
+                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
+                <h3>Kontakt</h3>
+                <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
+            </div>
         </div>
     </div>
+
     <!-- <div id="sources">
         <h5>Quellen</h5>
         <ol class="sources">
@@ -119,8 +136,6 @@
             <li id="source_studienwahl"><a href='https://studienwahl.de/themen-des-monats/jobben-neben-dem-studium'>Studienwahl.de: Jobben neben dem Studium (03.09.2024)</a></li>
         </ol> 
     </div> -->
-   
-</div>
 <script src="assets/js/jquery.csv.js"></script>
 <script>   
     const qCont = document.getElementById("questions")

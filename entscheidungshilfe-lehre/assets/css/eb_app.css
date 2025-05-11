@@ -110,11 +110,12 @@ body {
 }
 @media only screen and (max-width: 600px){
     .qCont {
-        height: 80em
+        height: 100em
     }
     .qDiv {
-        top: 20px;
+        top: 0.5em;
         transform: translate(-50%, 0);
+        width: calc(100% - 3em);
     }
 }
 

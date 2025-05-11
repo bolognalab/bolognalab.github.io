@@ -13,14 +13,13 @@
     <script async src="https://tally.so/widgets/embed.js"></script>
     <style>    
         #questions {
-            height: 80em;
+            height: 120em;
             font-size: 16px;
-            padding-bottom: 10%
         }
         .qDiv.fCont {
             height: fit-content;
             overflow: hidden;
-            max-width: 700px;
+            max-width: 740px;
             margin-bottom: 40px;
         }
         @media only screen and (max-width: 600px){
@@ -142,12 +141,41 @@
         }
     </style>
     <style>
+        body {
+            background: var(--backgroundLightBlue);
+            background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
+        }
+        div.fCont {
+            background: none;
+            width: 100%;
+            height: 120em;
+            /* backdrop-filter: sepia(1) hue-rotate(120deg) saturate(250%) contrast(0.9) brightness(140%); */
+        }
+        #credits {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translate(-50%,0);
+            padding-bottom: 0;
+        }
+        #DIV_FORM {
+            background: white;
+            padding: 4em 3em 2em;
+            box-sizing: border-box;
+        }
+        @media only screen and (max-width: 800px){
+            #DIV_FORM {
+                padding: 4em 1em 2em;
+            }
+        }
+    </style>
+    <style>
         #credits {
             opacity: 0.8
         }
         #credits > * {
             margin: auto;
-            background-color: rgba(15, 113, 184, 0.2);
+            /* background-color: rgba(15, 113, 184, 0.2); */
             color: var(--networkBlue)
         }
         #credits .accordion.active + .panel {
@@ -177,9 +205,7 @@
 </head>
 
 <body class="is-preload" lang="de">
-<div style="width: 100%">
     <div id="questions" class="fCont">
-        <img class="backgroundImage" src = "images/treeTemp.svg" />
         <div id="DIV_FORM" class="qDiv fCont">
             <p id="logoContainer"><img id="welcomeLogo" src="images/NHL_logo.svg" /></p>
             <h1><a id="home" href="app.html">Entscheidungshilfe Online und Hybride Lehre</a></h1>
@@ -241,24 +267,24 @@
                     <button onclick="selectConcept()" class="submitButton">Absenden</button>
                  </div>                
             <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung über das Lehrformat</a></div>
+        </div>    
+        <div class="inner" id="credits">
+            <h2 class="accordion">Credits & Feedback</h2>
+            <div class="panel">
+                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
+                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
+                <p>Raumkonzepte: Philipp Kapser*</p>
+                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
+                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+                <p>*Humboldt-Universität zu Berlin</p>
+                <p>**Berliner Hochschule für Technik</p>
+                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
+                <h3>Kontakt</h3>
+                <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
+            </div>
         </div>
     </div> 
-    <div class="inner" id="credits">
-        <h2 class="accordion">Credits & Feedback</h2>
-        <div class="panel">
-            <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
-            <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
-            <p>Raumkonzepte: Philipp Kapser*</p>
-            <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
-            <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
-            <p>*Humboldt-Universität zu Berlin</p>
-            <p>**Berliner Hochschule für Technik</p>
-            <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
-            <h3>Kontakt</h3>
-            <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
-        </div>
-    </div> 
-</div>
+
 <script src="assets/js/jquery.csv.js"></script>
 <script>
 
