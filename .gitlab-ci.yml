@@ -3,7 +3,7 @@ pages:
     script:
     - mkdir public
     - cp -r entscheidungshilfe-lehre/* public/  # all content moved from entscheidungshilfe-lehre
-    - mv public/app.html public/index.html # app.html renamed so that it appears as the default page
+    - cp public/app.html public/index.html # app.html renamed so that it appears as the default page
     artifacts:
         paths:
         - public
