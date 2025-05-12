@@ -99,7 +99,8 @@
                     <p id="asyncIntro">Laut Ihrer Angaben wird Ihnen die folgende Strategie für die <b>asynchrone</b> Kursgestaltung empfohlen: </p>
                     <p class="gradBlock asyncTN"><span class="gradText">Rolle der asynchronen Teilnahme: </span><span class="gradDesc"></p>
                     <div id="hiddenAsyncText"><p></p></div>
-                    <p class="gradBlock asyncInt"><span class="gradText">Umfang der Interaktion: </span><span id="min" class="gradDesc">minimal</span><span id="StLP" class="gradDesc">✓ mit der Lehrperson</span><span id="StSt" class="gradDesc">✓ zwischen Studierenden</span></p>
+                    <p class="gradBlock asyncInt"><span class="gradText">Umfang der Interaktion: </span><span id="min" class="gradDesc">minimal <span class='questionMark'>?</span></span><span id="StLP" class="gradDesc">✓ individuelles Feedback</span><span id="StSt" class="gradDesc">✓ mit Peers</span></p>
+                    <div id="hiddenAsyncIntText"><p></p></div>
                 </div>
                 <ul class="tCont"></ul>
             </div>
@@ -456,12 +457,16 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         document.querySelector("#resAsync .asyncTN .gradDesc").innerHTML = descriptionsAsyncTN[scenario.split("-")[3]]
         document.querySelector("#hiddenAsyncText").innerHTML = overviewAsyncTNText
         if (asyncTNValue == "asyncTN-3"){
-            document.querySelector("#resAsync .questionMark").addEventListener("click", ()=>{
+            document.querySelector("#resAsync .asyncTN .questionMark").addEventListener("click", ()=>{
                 showHideTextBlock(document.querySelector("#hiddenAsyncText"))
             })
         }
         if (asyncIntValue == "asyncInt-0"){
             document.querySelector(".async #min").style.display = "block"
+            document.querySelector("#hiddenAsyncIntText").innerHTML = asyncIntText
+            document.querySelector("#resAsync .asyncInt .questionMark").addEventListener("click", ()=>{
+                showHideTextBlock(document.querySelector("#hiddenAsyncIntText"))
+            })
         } else if (asyncIntValue == "asyncInt-1"){
             document.querySelector(".async #StLP").style.display = "block"
         } else if (asyncIntValue == "asyncInt-2"){

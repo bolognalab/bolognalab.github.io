@@ -577,7 +577,7 @@ ul.tCont, ul.altCont {
     left: calc(33% + 4.2em + 1.2em + 9px);
     font-weight: bold;
 }
-#hiddenAsyncText {
+#hiddenAsyncText, #hiddenAsyncIntText {
     height: 0px;
     visibility: hidden;
     overflow:hidden;
@@ -588,7 +588,10 @@ ul.tCont, ul.altCont {
     margin: 0 auto 1em;
     transition: all 0.4s ease;
 }
-#hiddenAsyncText.open {
+#hiddenAsyncIntText {
+    margin: 0 auto 0;
+}
+#hiddenAsyncText.open,  #hiddenAsyncIntText.open {
     background: rgba(255, 255, 255, 0.3);
     visibility: visible;
     margin: 1em auto 2em;
