@@ -282,7 +282,9 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             event.target.classList.remove("hovered")
             document.querySelector("#linkTechnik").classList.remove("hovered")
         })
-        document.querySelector("#minTech").style.display = "none"
+        if (asyncIntValue == "asyncInt-x"){
+            document.querySelector("#minTech").style.display = "none"
+        }
 
     }
 
