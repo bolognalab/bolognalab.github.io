@@ -823,13 +823,16 @@ body {
         // determine top 3 scores (multiple scenarios can have the same score)
         let firstScore = Math.max(...Object.values(results))
         let topTier = Object.entries(results).filter(([k,v])=>v==firstScore).reduce((r, [k,v])=>[...r,k], []) // returns list of scenarios
+        topTier = sortByAsyncInt(topTier)
 
         let secondScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<firstScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
         let secondTier = Object.entries(results).filter(([k,v])=>v==secondScore).reduce((r, [k,v])=>[...r,k], [])
+        secondTier = sortByAsyncInt(secondTier)
 
         let thirdScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<secondScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
         let thirdTier = Object.entries(results).filter(([k,v])=>v==thirdScore).reduce((r, [k,v])=>[...r,k], [])
-        
+        thirdTier = sortByAsyncInt(thirdTier)
+
         for (let i=0; i<(topTier.length + secondTier.length + thirdTier.length); i++){
             // first tier: include all non-duplicates
             if (i<topTier.length){
@@ -950,7 +953,42 @@ body {
             return true
         }
     }
-     
+    function sortByAsyncInt(arr){
+        // Step 1: Group by prefix
+        const grouped = {};
+
+        arr.forEach(item => {
+        const match = item.match(/^(.*?)-(\d+-\d+-\d+)$/);
+        if (!match) return;
+
+        const prefix = match[1];
+        const digits = match[2];
+
+        if (!grouped[prefix]) grouped[prefix] = [];
+        grouped[prefix].push(digits);
+        });
+
+        // Step 2: Sort each group of digits
+        Object.keys(grouped).forEach(prefix => {
+        grouped[prefix].sort((b, a) => {
+            const [a1, a2, a3] = a.split("-").map(Number);
+            const [b1, b2, b3] = b.split("-").map(Number);
+
+            if (a1 !== b1) return a1 - b1;
+            if (a2 !== b2) return a2 - b2;
+            return a3 - b3;
+        });
+        });
+
+        // Step 3: Recombine into final array, keeping prefix order
+        const final = [];
+        Object.keys(grouped).forEach(prefix => {
+        grouped[prefix].forEach(digits => {
+            final.push(`${prefix}-${digits}`);
+        });
+        });
+        return final
+    }
 </script>
 </body>
 </html>
