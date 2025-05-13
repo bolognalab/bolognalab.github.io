@@ -1,9 +1,9 @@
-# BNE; Umgebungsspaziergang  
-## weitere Details folgen so bald als möglich  
-##### Campus Mitte
+# Umfairteilung öffentlicher Räume - das Fallbeispiel Mobilität
+## Spanderauer Str. 10  
+##### 10119 Berlin
 ---
-### Aktivität
+### Impulsvortrag und Exkursion
 Leitung: \
 **Jurik Stiller**  
-##### Institut für Erziehungswissenschaften
+##### Didaktik des Sachunterrichts
 

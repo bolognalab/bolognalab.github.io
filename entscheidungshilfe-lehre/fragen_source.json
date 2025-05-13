@@ -2,31 +2,108 @@
     "questions":{
         "artLV":{
             "condition": true,
-            "text": "Um welche Art von Lehrveranstaltung handelt es sich?",
+            "text": "Über welche Art von Lehrveranstaltung möchten Sie eine Entscheidung treffen?",
             "antworten": {
                 "VL": "Vorlesung",
-                "SE": "Seminar oder Übung",
-                "PR": "Praktikum",
+                "SE": "Seminar",
+                "PR": "Laboreinheit",
                 "SO": "Sonstiges"
             }
         },
 
-        "modulCombo": {
+        "anzahlVL": {
             "condition": "artLV=VL",
-            "text": "Ist die Lehrveranstaltung mit einer anderen Art von Lehrveranstaltung desselben Moduls kombiniert, die Studierende im selben Semester besuchen (z.B. Vorlesung und Seminar)?",
+            "text": "Wie viele Studierende erwarten Sie ugf. in Ihrer Vorlesung?",
+            "antworten": {
+                "klein": "bis 40",
+                "med": "40-80",
+                "gross": "mehr als 80"
+            }
+        },
+
+        "anzahlSE": {
+            "condition": "artLV=SE",
+            "text": "Wie viele Studierende erwarten Sie ugf. in Ihrem Seminar?",
+            "antworten": {
+                "klein": "bis 30",
+                "gross": "mehr als 30"
+            }
+        },
+
+        "intSync": {
+            "condition": true,
+            "text": "Wie stellen Sie sich den <b>maximalen Interaktionsgrad</b> während der Lehrveranstaltung vor?",
+            "antworten": {
+                "0": "Eher frontaler Unterricht, ggf. mit kurzen Q&A (minimum)",
+                "1": "Diskussionen hauptsächlich im Plenum (medium)",
+                "2": "Kollaboratives Arbeiten in Gruppen (maximum)"
+            }
+        },
+
+        "leistungen": {
+            "condition": true,
+            "text": "Welche der folgenden (bewerteten oder unbewerteten) Leistungen sind vorgesehen als integrale Bestandteile des Kurses?",
+            "antworten": {
+                "referat": "Referat oder Projektvorstellung inkl. Q&A",
+                "debate": "Debatten, Interviewen oder Moderieren",
+                "praxis": "Versuch, Experiment oder andere praktische Übungen",
+                "privat": "Umgang mit sensiblen Informationen (z.B. Patientendaten)",
+                "LZiP": "andere nur vor Ort erbringbare Leistung(en)"
+            },
+            "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
+        },
+        "referat": {
+            "condition": true,
+            "text": "Proxy-Frage: referat?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
             }
         },
-
+        "debate": {
+            "condition": true,
+            "text": "Proxy-Frage: debate?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+        "praxis": {
+            "condition": true,
+            "text": "Proxy-Frage: praxis?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+        "privat": {
+            "condition": true,
+            "text": "Proxy-Frage: privat?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
         "LZiP":{
             "condition": true,
-            "text": "Gibt es Lernziele oder Kurskomponenten, die <b>ausschließlich in Präsenz</b> sinnvoll sind, oder könnte eine*r Studierende alle Lernziele auch online erreichen?",
+            "text": "Proxy-Frage: LZiP?",
             "antworten": {
-                "0": "Alle Lernziele des Kurses können <b>sowohl in Präsenz als auch online</b> erreicht werden.",
-                "1": "Alle Lernziele können auch online erreicht werden, aber manche davon <b>nicht so gut online wie in Präsenz</b>.",
-                "2": "Manche Komponenten des Kurses <b>müssen</b> in Präsenz durchgeführt werden."
+                "nein": "Nein", 
+                "ja": "Ja"
+            },
+            "addInfo": [
+                "Soziale Präsenz ist auch online erreichbar, aber stärker, wenn Personen im selben physischen Raum sind. Gleichzeitig kann Präsenzteilnahme ein Hindernis für manche Studierende sein.",
+                "Bezüglich des Lernerfolgs (wenn es z.B. um Wissenstransfer oder Problemlösen geht) kann gut gestaltete online oder hybride Lehre genauso effektiv sein wie Präsenzlehre.",
+                "In dieser Frage geht es um die Notwendigkeit der Präsenz <b>für den Lernerfolg</b> im Kurs und eher nicht um die sozialen Vorteile der physischen Präsenz.",
+                "Einige Beispiele für ausschließlich in Präsenz erreichbare Zielkompetenzen: Arbeit mit Ausrüstungen und Gegenständen, Arbeit im Feld, oder Umgang mit sensiblen Informationen, die nicht online weitergegeben dürfen."
+            ]
+        },
+        "keineLeistungen":{
+            "condition": true,
+            "text": "Proxy-Frage: keine der vorgenannten Leistungen?",
+            "antworten": {
+                "nein": "Nein", 
+                "ja": "Ja"
             }
         },
 
@@ -38,75 +115,139 @@
                 "1": "Wichtig - die synchrone Interaktion verbessert die Lernerfahrung der Studierenden erheblich - aber eine*r Studierende könnte auch ohne sie erfolgreich im Kurs sein",
                 "2": "Essentiel - ohne synchrone Interaktion und Gruppenarbeit können manche Lernziele des Kurses nicht erreicht werden."
             },
-            "addInfo": "z.B. argumentative Diskussion, wichtige Gruppenaufgaben, usw."
+            "addInfo": [
+                "Synchrone Interaktion hat Vorteile für die soziale Eingebundenheit und das Wohlbefinden der Studierenden in der Hochschule. [<a href='#source_uniHamburgSozialeInteraktion'></a>]",
+                "Gleichzeitig bietet die Möglichkeit, asynchron die Inhalte des Kurses zu bearbeiten, mehr Flexibilität für Studierende, insbesondere Studierenden mit Erwerbstätigkeit oder anderen zeitlichen Einschränkungen.",
+                "Diese Frage fragt, inwieweit die Synchronität (unabhängig von den sozialen Vorteilen) notwendig für den <b>Lernerfolg</b> in Ihrem Kurs ist, was nicht immer der Fall ist.",
+                "Einige Beispiele für <b>ausschließlich synchron erreichbare Zielkompetenzen</b>: Vortragen, Moderation, Debatten, oder Umgang mit sensiblen Informationen, die nicht asynchron weitergegeben dürfen"
+        ]
+        },
+
+        "niveauSt": {
+            "condition": true,
+            "text": "Auf welchem Niveau befinden sich die <b>meisten</b> Studierenden?",
+            "antworten": {
+                "freshmen": "überwiegend Bachelor 1. - 2. Semester",
+                "upper": "überwiegend Bachelor ab dem 3. Semester",
+                "grad": "überwiegend Master / PhD",
+                "kM": "keine überwiegende Mehrheit"
+            },
+            "addInfo": ["{NO BULLET} Im Vergleich zu erfahrenen Studierenden haben Studierende in der Eingangsphase in der Regel mehr Bedarf daran, durch eine verstärkte Präsenz und Kursstrukturierung sich im Studium zu etablieren und Selbstlernstrategien zu entwickeln."]
+        },
+
+        "limZPSt": {
+            "condition": true,
+            "text": "Ist ein großer Anteil Ihrer Studierenden aufgrund von Erwerbstätigkeit, Carearbeit, Krankheit etc. in der wöchentlichen Studienzeit eingeschränkt? (z.B. mehr als 15-20 Stunden Erwerbstätigkeit pro Woche)?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein.",
+                "idk": "Ich bin mir nicht sicher"
+            },
+            "addInfo": [
+                "Über 60% der Studierenden in Deutschland arbeiten neben dem Studium, wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann. (Studienwahl.de)",
+                "Studierende, die nur eine begrenzte Zeit pro Woche für ihr Studium aufwenden können, haben nicht so viel Zeit außerhalb der Unterrichtszeiten, um viele regelmäßige Aufgaben zu erledigen.",
+                "Solche Studierende profitieren zudem von mehr Flexibilität und weniger Pendelzeit."
+            ]
+        },
+
+        "nieSync": {
+            "condition": true,
+            "text": "Gibt es Studierende, die <b>nie oder fast nie</b> am Kurs <b>synchron</b> teilnehmen können (z.B. wegen Überschneidungen oder Zeitzonen)?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein",
+                "idk": "Ich bin mir nicht sicher"
+            }
         },
 
         "niePr": {
             "condition": true,
-            "text": "Gibt es Studierende, die <b>nie oder fast nie in Präsenz</b> am Kurs teilnehmen können?",
+            "text": "Gibt es Studierende, die <b>nie oder sehr schwierig in Präsenz</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
-                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein"
-                
-            }
-        },
-        "nieSync": {
-            "condition": true,
-            "text": "Gibt es Studierende, die <b>nie oder sehr schwierig synchron</b> am Kurs teilnehmen k\u00f6nnten?",
-            "antworten": {
-                "nein": "Nein",
-                "ja": "Ja bzw. ich will für dieses Szenario vorbereitet sein"
-            }
-        },
-
-        "wohnLP": {
-            "condition": true,
-            "text": "Wohnen Sie als Lehrperson während des betreffenden Semesters in derselben Stadt wie die Universität, an der Sie lehren (oder höchstens 90 Min. von der Universität entfernt)?",
-            "antworten": {
-                "nein": "Nein",
-                "ja": "Ja"
-                
+                "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein",
+                "idk": "Ich bin mir nicht sicher"
             }
         },
 
         "regAbw": {
             "condition": true,
-            "text": "Werden Sie als <b>Lehrperson</b> während des betreffenden Semesters oft vom Campus <b>abwesend</b> sein müssen?",
+            "text": "Werden Sie als Lehrperson während des betreffenden Semesters oft vom Campus <b>abwesend</b> sein müssen?",
             "antworten": {
                 "nein": "Nein, ich werde immer anwesend sein",
                 "abundzu": "Nur gelegentlich (z.B. Konferenzen)",
-                "oft": "Ja (z.B. Freisemester)"
+                "oft": "Ja (z.B. Freisemester, Aufenthalt in einem anderen Ort)"
             }
         },
 
+        "onlBereit": {
+            "condition": true,
+            "text": "In welchem Umfang wären Sie bereit, den Kurs online zu unterrichten (d. h. nicht in einem Lehrraum, sondern vom Büro oder Home-Office aus)?",
+            "antworten": {
+                "kein": "Gar nicht - ich möchte bzw. darf ausschließlich in Präsenz in einem Lehrraum unterrichten.",
+                "geleg": "Ich bevorzuge (bzw. meine Hochschule bevorzugt) den Präsenzunterricht, ich bin aber bereit, gelegentlich online zu unterrichten",
+                "viel": "Ich möchte so viel wie möglich online unterrichten und darf das auch tun",
+                "egal" : "Es spielt für mich keine Rolle, wie viel ich online oder vor Ort unterrichte."
+            },
+            "addInfo": [
+                "{NO BULLET} In dieser Frage geht es wahrscheinlich nicht nur um Ihre persönliche Präferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre für das Lehrdeputat. <b>Anmerkung: in dieser Frage wird nach Ihrer eigenen Präsenz- oder Online-Teilnahme gefragt</b> (Studierende könnten prinzipiell online teilnehmen, während Sie von einem Lehrraum aus unterrichten)."
+            ]
+        },
+
+        "situations": {
+            "condition": true,
+            "text": "Trifft eine oder mehrere dieser Situationen auf Ihre Lehrveranstaltung zu?",
+            "antworten": {
+                "gruppenarb": "Es gibt <b>langfristige Gruppenprojekte</b> in meinem Kurs",
+                "exkur": "Eine oder mehrere <b>Exkursionen</b> sind Bestandteil meines Kurses",
+                "intKoll": "Mein Kurs ist Teil einer <b>nationalen oder internationalen Kollaboration</b> (mit Studierenden und Lehrpersonen einer anderen Hochschule)",
+                "begrAnz": "Es gibt <b>geringere Raumkapazität oder -ausrüstung</b> als die Anzahl der Studierenden"
+            },
+            "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
+        },
+        "gruppenarb": {
+            "condition": true,
+            "text": "Proxy-Frage: gruppenarb?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+        "exkur": {
+            "condition": true,
+            "text": "Proxy-Frage: exkur?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+        "intKoll": {
+            "condition": true,
+            "text": "Proxy-Frage: intKoll?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            },
+            "addInfo": "z.B. Collaborative Online International Learning für alle oder ein Teil der Sitzungen"
+        },
         "begrAnz": {
             "condition": true,
-            "text": "Ist die Anzahl der Studierenden, die Ihren Kurs persönlich besuchen können, durch eine geringe Raumkapazität, Verfügbarkeit von Ausrustung, o.ä. eingeschränkt? (z.B. Computerraum)",
+            "text": "Proxy-Frage: begrAnz?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
             }
         },
 
-        "onlBereit": {
-            "condition": true,
-            "text": "In welchem Umfang sind Sie bereit, den Kurs online zu unterrichten (d. h. vom eigenen Gerät aus und nicht in einem Lehrraum)?",
-            "antworten": {
-                "kein": "Gar nicht - ich möchte ausschließlich in Präsenz in einem Lehrraum unterrichten.",
-                "geleg": "Ich bin bereit, gelegentlich online zu unterrichten, bevorzuge aber das Präsenzunterrichten",
-                "viel": "Ich möchte so viel wie möglich online unterrichten",
-                "egal" : "Es spielt für mich keine Rolle, wie viel ich online oder vor Ort unterrichte."
-            },
-            "addInfo": "z.B. unter Berücksichtigung der Anerkennung Ihrer Lehre für das Lehrdeputat oder nach persönlicher Präferenz"
-        },
 
-        "limZPSt": {
+        "gaeste": {
             "condition": true,
-            "text": "Haben die meisten Studierenden in Ihrem Kurs (z.B. wegen Berufstätigkeit) <b>eingeschränkte Zeitpläne?</b>",
+            "text": "Planen Sie, <b>Gastvortragende</b> zu Ihrem Kurs einzuladen?",
             "antworten": {
-                "nein": "Nein",
-                "ja": "Ja",
-                "idk": "Ich bin mir nicht sicher"
+                "nein": "Nein.",
+                "vorOrt": "Ja - vor Ort",
+                "virtuell": "Ja - online zugeschaltet",
+                "both": "Ja, manchmal online, manchmal vor Ort"
             }
         },
 
@@ -129,7 +270,11 @@
                 "ja": "Ja bzw. meine Hochschule könnte dafür sorgen"
             },
 
-            "addInfo": "Könnte z.B. die Hochschule durch ein Leihprogramm für Geräte oder durch die Bereitstellung von ausgestatteten Räumen für die Online-Teilnahme von Einzelpersonen oder Gruppen sorgen?"
+            "addInfo": [
+                "Falls Ihr Kurs oder Teile davon online stattfinden sollte, müsstet dieser Faktor mitberücksichtigt werden.",
+                "Selbst wenn alle Studierenden zu Hause über ein zuverlässiges Setup für die Online-Teilnahme verfügen, könnte die Online-Teilnahme herausfordernd sein, wenn Studierende am selben Tag online und persönlich Kurse besuchen.",
+                "Gäbe es in diesem Fall geeignete Räumlichkeiten bzw. ein Ausleihsystem dafür in der Hochschule?"
+            ]
         },
 
         "aufzTech": {
@@ -140,27 +285,23 @@
                 "ja": "Ja",
                 "idk": "Ich bin mir nicht sicher"
             },
-            "addInfo": "Hier wird eine 'Erfassung' des Raums entweder für eine Aufzeichnung oder für eine Live-Videokonferenz gemeint."
+            "addInfo": ["Hier wird eine 'Erfassung' des Raums entweder für eine Aufzeichnung oder für eine Live-Videokonferenz gemeint."]
         },
 
         "IntAsync": {
             "condition": true,
-            "text": "Wie wichtig eine Strukturierung der studentischen Interaktion <b>außerhalb der Kurssitzungen</b> für die Lernziele des Kurses?",
+            "text": "Wie <b>strukturiert</b> sollte die studentische Interaktion <b>außerhalb der Kurssitzungen</b> sein?",
             "antworten": {
-                "0": "Nicht so wichtig; die informelle Kommunikation zwischen Studierenden über die von ihnen gewählten Kanäle reicht aus",
-                "1": "Gewünscht - ich möchte, dass Studierende regelmäßig und miteinander über die Inhalte des Kurses austauschen",
-                "2": "Notwendig - ohne strukturierte, regelmäßige studentische Interaktion sind manche Lernziele schlecht erreichbar"
-            }
-        },
-
-        "gaeste": {
-            "condition": true,
-            "text": "Planen Sie, <b>Gastvortragende</b> zu Ihrem Kurs einzuladen?",
-            "antworten": {
-                "0": "Nein.",
-                "1": "Nur ab und zu.",
-                "2": "Ja, regelmäßig (z.B. Ringvorlesung)"
-            }
+                "0": "<b>Minimal</b> – ich möchte den Studierenden nicht vorschreiben, wie sie Kursmaterialien vor- und nacharbeiten sollen oder wie sie miteinander außerhalb der Sitzungen interagieren",
+                "1": "<b>Optionale Struktur</b> – ich möchte Strukturen für die asynchrone studentische Interaktion bereitstellen – es ist aber nicht so wichtig, dass die Strukturen von allen genutzt werden",
+                "2": "<b>Struktur plus Anreizen</b>  – ich möchte Strukturen für die asynchrone studentische Interaktion bereitstellen sowie Anreize, damit möglichst viele Studierende sie nutzen"
+            },
+            "addInfo":[
+                "Die strukturierte Bearbeitung von Materialien (z.B. mit interaktiven digitalen Tools) sowie das regelmäßige Feedback können den Lernerfolg deutlich stärken.",
+                "Zudem können Strukturen für asynchronen studentischen Diskurs (z.B. Foren oder Peer-Evaluationen) das Gefühl einer <b>dauerhaften Lerngemeinschaft</b> fördern.",
+                "Studierende mit wenig Vorwissen und geringerer Selbststeuerungskompetenz (z.B. Erstsemesterstudierende) brauchen in der Regel mehr Strukturierung (oder auch extrinsische Motivation in Form von Anreizen), um ihre Selbstlernzeiten zu organisieren.",
+                "Wenn Studierende bereits eine gute Selbststeuerungskompetenz entwickelt haben (z.B. in späteren Semestern), könnte im Gegensatz eine Überregulierung der asynchronen Teilnahme eher eine Barriere als einen Vorteil darstellen."
+            ]
         },
 
         "gaesteMittel": {
@@ -172,14 +313,8 @@
             }
         },
 
-        "exkur": {
-            "condition": true,
-            "text": "Planen Sie eine oder mehrere <b>Exkursionen</b> als festen Bestandteil Ihres Kurses?",
-            "antworten": {
-                "nein": "Nein",
-                "ja": "Ja"
-            }
-        },
+
+        
 
         "exkurMittel": {
             "condition": "exkur=ja",
@@ -191,15 +326,22 @@
             }
         },
 
-        "intKoll": {
-            "condition": true,
-            "text": "Ist Ihr Kurs Teil einer <b>nationalen oder internationalen Kollaboration</b> mit Studierenden und Lehpersonen einer anderen Universität?",
+        "modulCombo": {
+            "condition": "artLV=VL",
+            "text": "Ist die Lehrveranstaltung mit einer anderen Art von Lehrveranstaltung desselben Moduls kombiniert, die Studierende im selben Semester besuchen (z.B. Vorlesung und Seminar)?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
-            },
-            "addInfo": "z.B. Collaborative Online International Learning für alle oder ein Teil der Sitzungen"
+            }
+        },
+        "wohnLP": {
+            "condition": true,
+            "text": "Wohnen Sie als Lehrperson während des betreffenden Semesters in derselben Stadt wie die Universität, an der Sie lehren (oder höchstens 90 Min. von der Universität entfernt)?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+                
+            }
         }
-
     }
 }

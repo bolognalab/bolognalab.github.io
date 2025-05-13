@@ -1,9 +1,15 @@
-.qCont {
+body {
+    background-color: var(--backgroundLightBlue);
+}
+.qCont, .fCont {
     background-color: var(--backgroundLightBlue);
     /* padding: 20px 20px; */
     overflow: hidden;
     position: relative;
-    height: 30em;
+    height: 100em;
+    width: 100%;
+    max-width: 100%;
+
     /* background-image: url("../images/entscheidungshilfe/treeTemp.svg");
     background-size: 80%; 
     background-repeat: no-repeat;
@@ -20,8 +26,8 @@
     filter: var(--networkBlueFilter);
     opacity: 0.2;
 }
-#welcome {
-    background: rgba(255,255,255, 0.8)
+#DIV_TEXT_welcome {
+    background: rgba(255,255,255, 0.8);
 }
 #welcomeLogo {
     width: 40%
@@ -31,24 +37,31 @@
     width: 60%
 }
 }
-#welcome h1 {
+#DIV_TEXT_welcome > h1 {
     color: var(--networkBlack);
     text-align: center;
     font-size: 24px;
     width: 60%;
-    margin: auto;
+    margin: 0 auto 2em;
     
 }
-#welcome p {
+#DIV_TEXT_welcome > p {
     /* background: rgba(18, 161, 154, 0.8);; */
     border-radius: 0.8em;
     width: 60%;
-    margin: 2em auto;
-    padding: 0.8em 1em 1.5em 1em;
+    margin: 1em auto;
+    /* padding: 0.8em 1em 1.5em 1em; */
     color: var(--networkBlack);
-    text-align: center;
+    /* text-align: center; */
 }
-#welcome h1, #welcome p {
+#DIV_TEXT_welcome > ul {
+    width: 85%;
+    margin: auto;
+}
+#DIV_TEXT_welcome > ul > li {
+    margin-bottom: 0.5em;
+}
+#DIV_TEXT_welcome > h1, #DIV_TEXT_welcome > p {
     width: 90%;
 }
 #start {
@@ -59,6 +72,21 @@
 }
 #start:hover {
     background: hwb(177 7% 27%);
+}
+#useCase2Container {
+    font-size: 0.9em;
+    width: 60%;
+    min-width: 200px;
+    margin: 2em auto;
+    text-align: center;
+}
+#useCase2Container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--networkBlue)
+}
+#useCase2Container a:hover {
+    text-decoration: underline;
 }
 .qCont .submitButton:hover {
     background: hwb(205 6% 12%);
@@ -72,24 +100,24 @@
     margin-bottom: 20px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 8%;
     width: calc(100% - 5em);
     max-width: 630px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     opacity: 1;
     transition: all 0.5s ease;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 @media only screen and (max-width: 600px){
     .qCont {
-        height: 40em
+        height: 100em
     }
     .qDiv {
-        top: 20px;
+        top: 0.5em;
         transform: translate(-50%, 0);
+        width: calc(100% - 3em);
     }
 }
-
 
 .qDiv.upcoming {
     left: 150%;
@@ -99,6 +127,107 @@
     left: -50%;
     opacity: 0;
 }
+
+#DIV_TEXT_labore a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--networkTurqoise)
+}
+
+#DIV_TEXT_labore a::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-right: 4px;
+    background-image: url("../../images/link.svg");
+    filter: var(--networkTurqoiseFilter);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+#DIV_TEXT_labore ul {
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+#DIV_TEXT_labore li {
+    margin-bottom: 1em;
+}
+/* p.qText  {
+    margin-bottom: 0;
+} */
+/* "Context" accordeon */
+.context {
+    color: var(--networkTurqoise);
+    transition: all 0.4s ease;
+    padding-left: 0.5em;
+}
+div.context {
+    margin-top: -0.5em;
+    margin-bottom: 1em;
+}
+.context h5 {
+    font-size: inherit;
+    margin: 0 0;
+    padding: 0 0;
+    height: 1.5em;
+    box-sizing: border-box;
+    position: relative; 
+    cursor: pointer;
+}
+.context h5 > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+}
+.context h5 > img {
+    left:  0.5em;
+    height: 0.5em;
+    width: auto;
+    filter: var(--networkTurqoiseFilter); 
+    transition: all 0.4s ease;
+}
+.context h5 > span {
+    left: 1.5em
+}
+.context h5:hover {
+    opacity: 0.8;
+}
+.context.open {
+    background: rgba(18, 161, 154, 0.08);
+    padding: 0.8em 0.5em 0.3em;
+}
+.context .contextContent {
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    /* display: none; */
+    padding: 0 0.6em 0.2em 0;
+    margin-top: 0;
+    font-size: 0.95em;
+    line-height: 1.25em;
+    transition: all 0.4s ease;
+}
+.context .contextContent ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: disc;
+}
+.context .contextContent p {
+    padding-left: 1.5em
+}
+.context .contextContent li, .context .contextContent p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+.context .contextContent a {
+    text-decoration: none;
+    color: inherit
+}
+.context.open h5 > img {
+    transform: rotate(90deg) translate(-50%, 0);
+}
+
 
 .aDiv {
     margin-bottom: 0.4em;
@@ -179,6 +308,119 @@ input[type='radio']:disabled + label, input[type='checkbox']:disabled + label {
     transition: all 0.4s ease;
     cursor: auto;
 }
+
+#whichPart {
+    margin: 0 0 0 0 !important;
+    padding: 0 0 0 0;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 0.8em;
+    font-style: italic;
+    color: rgba(18, 161, 154, 0.4) !important;
+    visibility: hidden;
+}
+#whichPart.show {
+    visibility: visible
+}
+div.progressBar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 1em;
+    opacity: 0;
+    border: 1px solid rgba(18, 161, 154, 0.2); 
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    align-content: space-evenly;
+    overflow: hidden;
+}
+
+.progressBar .bit {
+    flex-grow: 1;
+}
+.progressBar .bit.full {
+    background: rgba(18, 161, 154, 0.4);
+}
+
+/* .progressBar .phase {
+    width: calc(25% - 0px);
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 1px solid rgba(18, 161, 154, 0.3);
+    border-bottom: 1px solid rgba(18, 161, 154, 0.3); 
+}
+
+.progressBar .first.phase {
+    border-radius: 1em 0 0 1em;
+    left: 12.5%;
+}
+.progressBar .first.phase:not(.active) {
+    border-right: 1px solid rgba(18, 161, 154, 0.3);
+}
+.progressBar:not(.discreet) .first.phase.active {
+    border-radius: 1em 0.2em 0.2em 1em;
+    border: 1px solid rgba(18, 161, 154, 0.9);
+}
+
+.progressBar .second.phase {
+    left: 37.5%; 
+}
+.progressBar .second.phase:not(.active) {
+    border-right: 1px solid rgba(18, 161, 154, 0.3);
+}
+.progressBar:not(.discreet) .second.phase.active {
+    border-radius: 0.2em;
+    border: 1px solid rgba(18, 161, 154, 0.9);
+}
+
+.progressBar .third.phase {
+    left: 62.5%;
+}
+.progressBar .third.phase:not(.active) {
+    border-right: 1px solid rgba(18, 161, 154, 0.3);
+}
+.progressBar:not(.discreet) .third.phase.active {
+    border-radius: 0.2em;
+    border: 1px solid rgba(18, 161, 154, 0.9);
+}
+
+.progressBar .fourth.phase {
+    border-radius: 0 1em 1em 0em;
+    left: 87.5%;
+}
+.progressBar:not(.discreet) .fourth.phase.active {
+    border-radius: 0.2em 1em 1em 0.2em;
+    border: 1px solid rgba(18, 161, 154, 0.9);
+}
+
+.progressBar .full {
+    background: rgba(18, 161, 154, 0.2);
+    z-index:2
+}
+.progressBar .active {
+    background: rgba(18,161,154,0.1);
+    border-color: var(--networkTurqoise);
+    z-index:3;
+}
+.progressBar:not(.discreet) .active {
+    border: 1.5px solid hsl(205, 85%, 49%);
+    background: hsl(205, 85%, 79%);
+    background: radial-gradient(hsl(205, 85%, 95%) 0%, hsl(205, 85%, 85%) 100%);
+}
+div.progressBar.discreet .full {
+    background: rgba(18, 161, 154, 0.4);
+}
+div.progressBar.discreet .active {
+    background: rgb(18,161,154);
+    box-shadow: none;
+} */
+
 .qCont .submitButton {
     left: 50%;
     border-radius: 1em;
@@ -189,54 +431,6 @@ input[type='radio']:disabled + label, input[type='checkbox']:disabled + label {
     letter-spacing: 0.05em;
     background: var(--networkBlue)
 }
-.infoContainer {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12px;
-    transition: all 0.4s ease;
-    display: table;
-    margin: 0 0;
-}
-.infoContainer.closed {
-    top: 50%;
-    width: 25px;
-    overflow:hidden;
-}
-.infoContainer.opened {
-    top: 0%;
-    transform: translate(-50%, 0);
-    width: 32%;
-}
-.infoIcon {
-    display: block;
-    text-align:center;
-    width: 20px;
-    margin: auto;
-    /* margin-right: 0.5em; */
-    filter: var(--networkTurqoise);
-    transition: all 0.2s ease;
-
-}
-.infoContainer.closed > .infoIcon {
-    cursor: pointer
-}
-.infoContainer.closed > .infoIcon:hover {
-    width: 25px;
-}
-.infoText {
-    transition: all 0.4 ease;
-}
-.infoText {
-    display: none;
-    color: rgba(255,255,255,0);
-    opacity: 0;
-    background: rgba(55, 55, 54,0.6);
-    padding: 0.5em;
-    border-radius: 0.5em;
-}
-.infoText.opened {
-    display: block;
-    color: rgba(255,255,255,1);
-    opacity: 1;
+.sources {
+    font-size: 0.8em;
 }

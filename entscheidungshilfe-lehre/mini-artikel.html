@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Entscheidungshilfe Hybride und Digitale Lehre: Mini-Artikel</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="content-language" content="de">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/eb.css" />
+  <link rel="stylesheet" href="assets/css/eb_mini.css" />
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.csv.js"></script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <style>
+    body {
+            background: var(--backgroundLightBlue);
+            background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
+        }
+    #credits {
+        opacity: 0.8
+    }
+    #credits > * {
+        margin: auto;
+        background-color: rgba(15, 113, 184, 0.2);
+        color: var(--networkBlue)
+    }
+    #credits .accordion.active + .panel {
+        padding-bottom: 2em;
+    }
+    #credits .panel > h3 {
+        margin-left: 2em;
+    }
+    #credits .panel > p {
+        margin: 0 2.5em 0.5em;
+    }
+    #credits h2, #credits h3 {
+        color: var(--networkBlue)
+    }
+    #credits h2.active {
+        color: var(--networkBlue) !important;
+        padding-bottom: 0;
+    }
+    #credits h3 {
+        margin-top: 2em;
+    }
+    .accordion::before {
+        color: var(--networkBlue)
+    }
+</style>
+</head>
+<body onload="listsAndCitations()"> 
+<div class="bgContainer">
+    <div class="contentContainer overview">
+        <h2 style="text-align: center"><img src="images/NHL_logo.svg" style="width: 200px" /></h2>
+        <h1 style="text-align: center; margin-bottom:0">Mini-Artikel</h1>
+        <h2 style="text-align:center; margin-top:0">zu hybrider und Blended-Lehre</h2>
+        <p>Diese ergänzenden Mini-Artikel beziehen sich auf mehrere hybride und digitale Lernszenarien, die im <a href="app.html">Entscheidungshilfe-Tool Hybride und Digitale Lehre</a> vorgestellt werden, und enthalten ausführlichere Informationen zu ausgewählten Themen. Diese Seite ist nicht als eigenständiger Leitfaden gedacht, sondern als Sammlung von Mini-Artikeln, die als einzelne Einheiten zu verlinken sind.</p>
+        <h3>Liste der Mini-Artikel:</h3>
+        <ul id="toc">
+        </ul>
+
+    </div>
+    <div class="contentContainer article" id="methode-padlet" author="Natalia Spitha">
+        <h2>Methoden-Idee: Erstellung und Präsentation von Gruppenarbeiten mit Padlet</h2>
+        <p>Hier wird am Beispiel des Tools <a href="https://padlet.com/">Padlet</a> beschrieben, wie Gruppenarbeiten während eines Seminars oder einer Vorlesung einfach und automatisch in eine gesamte Präsentation oder ein Dokument umgewandelt werden können. In einem Padlet-Board werden zuerst Abschnitte als "Breakout-Links" erstellt, so dass jede Gruppe in einem eigenen Padlet-Board arbeiten kann. In der Gruppenarbeit-Phase sammeln die Teilnehmenden Ergebnisse als Beiträge ("Posts") mit verschiedenen Formatmöglichkeiten. Für die Plenumsphase wird aus allen Breakout-Abschnitten durch die Funktion "Diashow" eine gesamte Präsentation erstellt, sodass alle Gruppen nacheinander ihre Ergebnisse präsentieren können. Die Methode wird hier für einen hybriden Raum beschrieben, ist aber auch für den rein-Online oder rein-vor-Ort Unterricht geeignet.</p>
+        <h3>Voraussetzungen</h3>
+        <ul>
+            <li>Vor-Ort-Teilnehmende haben mindestens ein Laptop mit Internetverbindung pro Gruppe.</li>
+            <li>Ausreichende Zeit für die Gruppen- und Präsentationsphasen (45-90 Minuten) oder asynchrone Gruppenphase</li>
+        </ul>
+        <h3>Vorbereitung durch die Lehrperson</h3>
+        <ul>
+            <li>Padlet im Format „Diashow“ erstellen, ein Abschnitt pro Gruppe</li>
+            <li>Nach Bedarf neue aufgabespezifische Post-Felder erstellen (z.B. „Quelle“)</li>
+            <li>Breakout-Links der Abschnitte zur Verfügung stellen (evtl. als QR mithilfe eines anderen Tools)</li>
+            <li>Ein Abschnitt mit Anweisungen als Einführung und Beispiel für die Studierenden</li>
+        </ul>
+        <h3>Gruppenarbeit im physischen Raum</h3>
+        <ul>
+            <li>Verteilung der TN auf Arbeitsgruppen</li>
+            <li>Empfehlung: Breakout-Link des Padlet-Abschnitts nutzen (weniger Ablenkung) und dies als QR-Code teilen oder im Learnmanagementsystem im Voraus bereitstellen.</li>
+            <li>Arbeit entweder direkt am Padlet, oder in einem anderen digitalen oder analogen Medium</li>
+            <li>Am Ende der Gruppenarbeitsphase: analoge Inhalte ggf. abfotografieren, digitale Inhalte ggf. als PDF/Bild exportieren, Inhalte auf Padlet hochladen, Reihenfolge usw. organisieren </li>
+        </ul>
+        <h3>Gruppenarbeit im virtuellen/hybriden Raum</h3>
+        <ul>
+            <li>Nutzung von Breakout-Rooms im Webkonferenz-Tool; Gruppierung entweder rein-online oder gemischt (eigenes Gerät der Präsenz-TN notwendig)</li>
+            <li>Empfehlung: Breakout-Link des Padlet-Abschnitts nutzen (weniger Ablenkung) und dies im Chat teilen.sketch</li>
+            <li>Arbeit direkt am Padlet oder mit einem anderen digitalen Tool</li>
+            <li>Am Ende der Gruppenarbeitsphase: Inhalte ggf. exportieren & auf Padlet hochladen, Reihenfolge usw. organisieren</li>
+        </ul>
+        <h3>Präsentationsphase im hybriden Raum</h3>
+        <ul>
+            <li>Präsentation automatisch erstellt (1 „Post“ = 1 Folie)</li>
+            <li>Lehrperson gibt Bildschirm mit der Präsentation frei</li>
+            <li>jemand aus jeder Gruppe präsentiert die Gruppenergebnisse</li>
+            <li>für die Online-TN muss evtl. jemand vor Ort die Steuerung der Folien übernehmen</li>
+        </ul>
+        <h3>Nachbereitung</h3>
+        <p>Das Padlet in Präsentationsform kann als PDF exportiert werden und allen Studierenden bereitgestellt, damit die Ergebnisse der Gruppenarbeit später nachlesbar sind.</p>
+        <h3>Zu beachten</h3>
+        <p>Padlet ist <a href="https://legal.padlet.com/gdpr" >laut seiner Datenschutzrichtlinie</a> DSGVO-konform, aber die Datenschutzrichtlinien der einzelnen Hochschulen könnten die Nutzung einschränken. Prüfen Sie die Richtlinien Ihrer Einrichtung und erwägen Sie die Verwendung alternativer Optionen, um ein ähnliches Ergebnis zu erzielen, wie z. B. <a href="https://www.taskcards.de/#/home/start" aria-label="Task Cards">Task Cards</a> (eine kostengünstigere Padlet-Alternative) oder eine Whiteboard-basierte App wie <a href="https://excalidraw.com/" aria-label="Excalidraw">Excalidraw</a>.</p>
+        <p class="citation"></p>
+    </div>
+    <div class="contentContainer article" id="breakoutRoomsHybrid" author="Natalia Spitha">
+        <h2>Breakout-Gruppen für hybride Gruppenarbeiten</h2>
+        <p>Hier wird ein Vorschlag beschrieben, wie Breakout Sessions geplant werden können, damit in einem hybriden Setting gemischte Teilnehmergruppen von vor-Ort und Online-Teilnehmenden ("heterogene Gruppen") zusammenarbeiten können. Hier wird als Beispiel Zoom verwendet, aber ähnliche Funktionen sind in anderen Videokonferenzplatformen verfügbar</p>
+        <div class="importantText"><p><b>Wichtig</b>: Der Aufbau von hybriden Gruppenarbeiten in Breakout-Gruppen ist aufwendig und muss im Voraus getestet und den Teilnehmenden erklärt werden, um kritische Tonprobleme (Rückkopplung oder gegenseitige Störung der Gruppen) zu vermeiden. Es ist sehr empfehlenswert, sich ein:e Co-Moderator:in zu suchen (z.B. studentische Hilfskraft), wenn Sie hybride Gruppenaktivitäten auf diese Weise durchführen wollen.</p></div>
+        <h3>Voraussetzungen</h3>
+        <ul>
+            <li>Der Raum vor Ort muss groß genug sein, damit verschiedene Gruppen getrennt ohne gegenseitige Störung arbeiten können. Manche Raumkonzepte enthalten <a href="https://www.uv.uio.no/om/organisasjon/idea/english/resources-for-teachers/room-241/innovative-technology-and-flexible-layouts.html" aria-label="bewegliche Trennwände oder Tischtrennwände">bewegliche Trennwände oder Tischtrennwände</a>, die besonders geeignet für solche Gruppenarbeiten sind. Wenn die Anzahl an Gruppen sehr gering ist, könnten auch Nebenräume für die Gruppenarbeit benutzt werden.</li>
+            <li>Vor Ort muss für jede Gruppe mindestens ein Laptop/PC mit Internetverbindung und Stromanschluss <b>bereitgestellt</b> oder <b>von Studierenden mitgebracht</b> werden, womit die vor-Ort Teilnehmenden an einer Breakout-Sitzung teilnehmen können.</li>
+            <li>Online-Teilnehmenden müssen von einem Ort aus teilnehmen, wo sie laut sprechen dürfen und sich aktiv einbringen können.</li>
+            <li>Innerhalb einer Kurssitzung soll dieselbe Gruppenaufteilung benutzt werden, um den Prozess möglichst unkompliziert zu halten.</li>
+            <li>Planen Sie ausreichend Zeit für solche Gruppenarbeiten ein - für den Aufbau zu Beginn der Sitzung, um Anweisungen zu geben, und die Übergänge der Studierenden im physischen und im virtuellen Raum.</li>
+        </ul>
+        <h4 id="bghga-s1">Situation 1: Geräte für die Gruppenarbeit werden durch die Lehrkraft bereitgestellt</h4>
+        <h3>Im Vorfeld der Sitzung</h3>
+        <ul>
+            <li>Bereiten Sie einige Schilder vor, um die verschiedenen Tische oder Räume zu kennzeichnen, die für die Gruppenarbeit genutzt werden (Tisch 1, Tisch 2, etc.).</li>
+            <li>Bereiten Sie für jeden Tisch ein kurzes Handout vor, das den Teilnehmern vor Ort erklärt, wie und wann sie die Lautstärke ändern oder das Mikrofon des Geräts lauter und leiser stellen sollen - sowohl der Lautsprecher als auch das Mikrofon müssen außerhalb der Gruppenarbeitszeit (wenn sich alle in der „Hauptsitzung“ der Zoom-Konferenz befinden) stummgeschaltet, während der Breakout-Sitzungen lauter gestellt und danach wieder stummgeschaltet werden. Je nach der erwarteten Gruppengröße müssen auch Kopfhörer oder eine ausreichend niedrige Lautstärke verwendet werden.</li>
+            <li>Richten Sie die Breakout-Sitzungen vorab in Zoom ein. Wenn die Software es zulässt (Zoom schon), benennen Sie die Breakout-Rooms intuitiv um: Idealerweise sollte der Raumname sowohl den Namen des vor-Ort-teilnehmenden Geräts als auch etwaige spezielle Themen enthalten, die in der Gruppe diskutiert werden (z. B. „Tisch 1 - Thema A“). Aktivieren Sie die ggf. Option, dass die Teilnehmer sich selbst einen Breakout-Raum auswählen können. Dieser Schritt könnte auch am Anfang der Sitzung (nachdem die Videokonferenz gestartet ist) passieren.</li>
+        </ul>
+        <h3>Zu Beginn der Sitzung</h3>
+        <div class="textImageOverlay">
+
+        <ul>
+            <li>Geben Sie sich Zeit für den Aufbau (mindestens 15 Min.) der physischen und virtuellen Räume.</li>
+            <li>Stellen Sie sicher, dass alle nicht-fest-installierte Geräte (z.B. Laptops and verschiedenen Tischen) an die Stromversorgung angeschlossen sind.</li>
+            <li>Schalten Sie zu Beginn der Sitzung alle Geräte ein und nehmen Sie von jedem Gerät aus an der Zoom-Call teil. Geben Sie im Zoom jedem teilnehmenden Gerät einen intuitiven Namen, der idealerweise einem Ort oder dem physischen Raum entspricht (z. B. Tisch 1, Tisch 2, Raum 2). Stellen Sie an jedem Tisch Schilder auf, damit die vor-Ort-Teilnehmenden sie schnell identifizieren können.</li>
+            <li>Wenn sich alle Geräte im selben Raum befinden (auch wenn sie weit voneinander entfernt sind), stellen Sie sicher, dass die Lautstärke der Geräte auf Null gestellt <b>und</b> das Mikrofon stummgeschaltet ist.</li>
+            <li>Weisen Sie die teilnehmenden Geräte ("Tisch 1", "Tisch 2", usw., die sich bereits in dem Zoom-Call befinden sollten) den einzelnen Breakout-Räumen zu.</li>
+            <li>Ermöglichen Sie Teilnehmenden, jederzeit zur Hauptsitzung zurückzukehren, um Hilfe zu erhalten.</li>
+            <li>Falls noch nicht getan, bestimmen Sie sonstige Eigenschaften für die Breakout-Session, z.B. Zeitlimit oder Countdown-Timer</li>
+        </ul>
+        <img class="preview" src="images/mini-artikel/breakoutsHybrid_1.png" />
+        </div>
+        <h3>Nach dem Anfang der Sitzung, vor der Breakout-Phase</h3>
+        <div class="textImageOverlay">
+            
+            <div>
+                <p>Weisen Sie alle anderen Online-Teilnehmenden den Breakout-Räumen zu: 
+                <ul>
+                    <li>Wenn Sie allein lehren, ist es am besten, den Teilnehmern Anweisungen zur Einteilung der Gruppen zu geben und sie ihren Breakout-Raum selbst auswählen zu lassen.</li>
+                    <li>Wenn die Kurssitzung durch mehr als eine Person moderiert wird, sollte eine Person die Teilnehmenden manuell den Breakout-Räumen zuweisen, nachdem sie dem Zoom-Call beigetreten sind und vor Beginn der Breakout-Session, während die andere Person die Sitzung leitet. </li>
+                </ul>
+                </p>
+            </div>
+            <img class="preview" src="images/mini-artikel/breakoutsHybrid_2.png" />
+        </div>
+        
+        <h3>Zu Beginn und zum Ende der Breakout-Session</h3>
+        <div class="textImageOverlay">
+            <div>
+            <ul>
+                <li>Geben Sie allen Studierenden einen klaren Überblick darüber, was Sie während der Breakout-Session erleben und tun werden und (falls zutreffend) wie sie den Breakout-Raum auswählen sollten, den sie beitreten. Dies ist besonders dann notwendig, wenn Sie diesen Prozess zum ersten Mal mit Ihren Studierenden ausprobieren.</li>
+                <li>Geben Sie den vor-Ort-Teilnehmenden Zeit, sich an die entsprechenden Tische zu setzen (sie brauchen mehr Zeit als die Online-Teilnehmenden, um sich anzupassen). Wenn möglich, lassen Sie die Teilnehmenden während der gesamten Sitzung an den entsprechenden Tischen sitzen.</li>
+                <li>Falls mehrere vor-Ort Studierende aus derselben Gruppe sich wünschen, sich in dem Zoom-Call teilzunehmen und einen Breakout-Raum beizutreten (z.B. um ein Whiteboard oder den Chat zu nutzen), muss nochmal sichergestellt werden, dass sie an dem Zoom-Call <b>ohne Audio-Verbindung</b> teilnehmen, um Rückkopplungen zu vermeiden.</li>
+                <li>Die Lautstärke der vor-Ort Geräte muss angepasst werden, damit die Stimme der Online-Teilnehmenden nur für ihre Gruppenmitglieder hörbar ist.</li>
+                <li>Die Lehrperson(en) sollen in der Hauptsitzung bleiben - erstens, um sich Fragen zukommen lassen und zweitens, weil Tonprobleme entstehen könnten, wenn das Gerät der Lehrperson mit Audioverbindung denselben Breakout-Raum beitritt wie ein nahe gelegenes Gerät.</li>
+            </ul>
+            </div>
+            <img class="preview" src="images/mini-artikel/breakoutsHybrid_3.png"/>
+        </div>
+        <div class="importantText">
+            <p><b>Wichtig:</b> kurz vor dem Ende der Breakout-Sessions müssen alle Geräte vor Ort wieder stummgeschaltet werden (sowohl das Mikrofon als auch der Lautsprecher), bevor sie zur Hauptsitzung zurückkehren. Nutzen Sie am Besten die Funktion eines Countdown-Timers, um den Studierenden diese Anweisung zu geben.</p>
+        </div>
+        
+        <h4 id="bghga-s2">Situation 2: Studierende benutzen ihre eigenen Geräte für die Teilnahme an Breakout-Räumen</h4>
+        <p>Die Vorbereitung und Durchführung einer hybriden Gruppenarbeit mithilfe mitgebrachter Geräte der vor-Ort Studierenden läuft fast genauso wie die Situation mit bereitgestellten Geräten. Wichtig zu beachten ist, dass:</p>
+        <ul>
+            <li>Da es in dieser Situation mehr „Freiheitsgrade“ gibt, ist es umso wichtiger, mit den Studierenden über den technischen Aufbau zu sprechen und darüber, was sie tun sollten, um Tonprobleme zu vermeiden.</li>
+            <li>Wie in der ersten Situation, sollte <b>nur ein vor-Ort-Gerät mit Audioverbindung</b> pro Breakout-Raum teilnehmen. Weitere Studierende können sich ebenfalls den Breakout-Raum beitreten und ihre Camera einschalten, müssen das aber <b>ohne Audioverbindung</b> tun.</li>
+            <li>Die Lehrperson muss im Voraus einen Überblick davon haben, welche studentische Geräte vor Ort für die Breakout-Sitzung verbunden werden, damit die Zuweisung der Breakout-Räume nahtlos geschehen kann.</li>
+            <li>Zur schnelleren Identifizierung könnten sich die Studierenden, die mit Audioverbindung den Breakout-Raum beitreten werden, auf Zoom  umbenennen (z.B. "Christian B. (Gruppe 2)")</li>
+        </ul>
+        <p class="citation"></p>
+    </div>
+    <div class="contentContainer article" id="diskussionsskript" author="Natalia Spitha">
+        <h2>Was ist ein Diskussionsskript?</h2>
+        <!-- <img style="width: 40%; float:right" class="preview" src="images/mini-artikel/diskussionsskript.jpg" alt="Zyklus einer beispielhaften strukturierten Interaktion im Klassenraum: Die Lehrperson stellt eine Frage, einige Zeit wird eingeplant, damit die Studierenden einzeln denken, und erst danach meldet sich eine/r der Studierenden."/> -->
+        <p>Ein Diskussionsskript (auf Englisch <em>"discussion protocol"</em> oder <em>"discussion script"</em>) ist eine Anleitung, die Diskussionsphasen innerhalb eines Kurses eine gewisse Struktur gibt. Es könnte den Ablauf der Diskussion in <b>Phasen</b> gliedern oder Studierenden <b>Rollen</b> verteilen, um den Lernprozess zu fokussieren und um die aktive Beteiligung aller Kursteilnehmenden zu fördern.</p>
+        <p>Diskussionen im Rahmen einer Lehrveranstaltung bringen eine Menge "versteckter" Erwartungen für Studierende mit sich: im Gegensatz zu informalen Gesprächen müssen sich Studierende in einer großen Gruppe von Studierenden als kompetent erweisen und relevante Fragen stellen, ohne dabei die Diskussion zu dominieren. Eine Strukturierung der Diskussion durch Diskussionsskripte hilft als Strategie der <b>inklusiven Lehre</b> dabei, Muster und Hierarchien zu unterbrechen, die manche Gruppen von Studierenden ausschließen oder systemische Ungleichheiten verstärken.</p>
+        <p>Das folgende Beispiel-Diskussionsskript wurde von S. E. Silverman für eine Lernaktivität entwickelt, bei der Studierende Fallbeispiele zum Thema Neurodiversität in der Hochschullehre besprechen sollten. In diesem Beispiel haben Studierende zunächst die Möglichkeit, individuell zu denken, bevor sie in einer bestimmten Reihenfolge in verschiedenen Phasen zur Diskussion beitragen.</p>
+        <div class="importantText">
+            <h3>Diskussionsskript für das Besprechen eines Fallbeispiels in einer Kleingruppe</h3>
+            <p>Kontext: Die Teilnehmer:innen des Kurses sollen über fiktionale Szenarien (Fallbeispiele) diskutieren, in denen eine oder mehrere Personen mit einer schwierigen Situation oder einem Dilemma in Bezug auf Neurodiversität in der Lehre konfrontiert sind. Es werden pro Fallbeispiel eine oder zwei allgemeine Diskussionsfragen bereitgestellt. Die Teilnehmer:innen müssen anhand dieser Fragen in Kleingrppen diskutieren, neue Diskussionsfragen entwickeln und mögliche "Lösungen" für das Dilemma des Fallbeispiels vorschlagen. Die folgenden Anweisungen werden als "Skript" für die Diskussion in Kleingruppen gegeben werden.</p>
+            <ol>
+                <li>Eine Person kann sich freiwillig melden, um das Fallbeispiel laut vorzulesen.</li>
+                <li>Geben Sie jeder Person Zeit, den Fall in Ruhe vorzulesen und sich Notizen zu machen.</li>
+                <li>Phase 1: Zu jedem Fall gibt es ein oder zwei Diskussionsfragen. Bevor Sie diese Fragen besprechen, gehen Sie um Ihren Tisch herum und geben Sie jeder Person die Möglichkeit, eine weitere Frage hinzuzufügen, die ihr beim Lesen in den Sinn gekommen ist.</li>
+                <li>Phase 2: Bieten Sie jeder Person die Möglichkeit, ihre Ideen darüber auszutauschen, wie die Personen in dem Fallbeispiel reagieren könnten. Ein Rundgang um den Tisch könnte eine gute Möglichkeit sein, um sicherzustellen, dass jeder zu Wort kommt.</li>
+                <li>Für die Diskussion im Plenum am Ende der Kleingruppenphase werden sowohl gesprochene als auch Textbeiträge erbeten.</li>
+            </ol>
+            <p class="footnote">Übersetztes Beispiel von Sarah E. Silverman (2024)</p>
+        </div>
+        <p>Mehr lesen (auf Englisch): <a href="https://beyondthescope.substack.com/p/discussion-protocols-in-defense-of?utm_campaign=post&utm_medium=web" aria-label="Sarah Silverman (2024): Discussion protocols: In defense of a 'script'">Sarah Silverman (2024): <b>Discussion protocols: In defense of a "script"</b>. <em>Beyond the Scope</em>.</a></p>
+        <p class="citation"></p>
+    </div>
+    <div class="contentContainer article" id="weeklyEmail" author="Natalia Spitha">
+        <h2>Beispiel für eine wöchentliche E-Mail</h2>
+        <p>Eine wöchentliche E-Mail von der Lehrperson ist eine gute Möglichkeit, die Studierenden daran zu erinnern, was sie in dieser Woche erledigen sollten oder in den kommenden Wochen erwarten können. Es kann besonders hilfreich sein, wenn der Kurs verschiedene Komponente hat. Das folgende Beispiel zeigt eine wöchentliche E-mail von einer Übungsleitgerin eines Kurses in analytischer Chemie, der mehrere Vorlesungs-, Übungs- und Laborsitzungen pro Woche umfasst. Diese E-mail wird an eine Kohorte von ca. 25 Studierenden adressiert, die gerade in kleinen Gruppen ein laborbasiertes Projekt (zum Thema Bier) durchführen.</p>
+        <div class="importantText">
+            <h2>Beispiel:</h2>
+            <p>Hallo zusammen,</p>
+            <p>könnt ihr glauben, dass wir schon in der letzten Februarwoche angekommen sind? Das Semester vergeht wirklich schnell – achtet also gut auf euch und bleibt gesund bei all dem, was gerade ansteht. :) </p>
+
+            <p>Hier ein kurzer Überblick der nächsten zwei Wochen:</p>
+
+            <h3>Montag</h3>
+            <ul>
+                <li><h4>Labor: Projekt-Tag Tag #4</h4>
+                    <p>Am Ende dieser Laborsitzung solltet ihr:</p>
+                    <ul>
+                        <li>Eine Spike-Recovery-Analyse eurer Bierprobe durchgeführt haben.</li>
+                        <li>Eine Bierprobe und eine Kontrollprobe zur ICP-MS-Analyse abgegeben haben. Die Anleitung zur ICP-MS findet ihr auf Canvas unter <em>ICP-MS Results</em>.</li>
+                    </ul>
+                    <p>Da dies der vorletzte Labortag für das Projekt ist, meldet euch bitte sofort, wenn ihr irgendwo Hilfe braucht. Die anderen Lehrpersonen und ich stehen euch gerne zur Seite.</p>
+                </li>
+            </ul>
+            
+
+            <h3>Mittwoch</h3>
+            <ul>
+                <li><h4>Abgabe von Übungsblatt #4</h4> (in Canvas)</li>
+                <li><h4>Labor: Projekt Tag #5</h4>
+                    <p>Das ist der letzter Tag des 1. Teils des Projekts! Am Ende dieser Laborsitzung solltet ihr:</p>
+                    <ul>
+                        <li>Alle Daten gesammelt haben, die unter <em>Deliverables</em> von Teil I (Aufgabe zur Verfahrensgestaltung) aufgelistet sind – das ist die Grundlage für euren <em>ersten Zwischenbereicht</em> (Abgabe: Freitag, 6.3.).</li>
+                        <li>Falls ihr bisher Daten gesammelt habt, deren Qualität fraglich ist, nutzt bitte die letzte Sitzung, um Versuche zu wiederholen und eure Datensätze zu verbessern.</li>
+                    </ul>
+                </li>
+            </ul>         
+            
+
+            <h3>Freitag</h3>
+            <ul>
+                <li><h4>Seminar: Präsentationen zum Projekt</h4>
+                    (hoffentlich diesmal ohne Beamer-Probleme!)
+                    <p>Die Vorgaben für diese Präsentation sind ähnlich wie letzte Woche – das Dokument liegt im Anhang und in Canvas.</p>
+                </li>
+                
+            </ul>
+
+            <h3>Vorschau: Nächste Woche</h3>
+            <ul>
+                <li>Am Montag erwartet euch im Labor das Fluoreszez-Experiment.</li>
+                <li>Am Mittwoch findet die <strong>Midterm-Klausur 1</strong> statt.</li>
+                <li>Am Freitag geht es regulär weiter mit der nächsten Seminareinheit (Thema: Säuren & Basen).</li>
+            </ul>
+
+            <p>Wir sehen uns morgen! Wie immer stehe ich persönlich und via E-mail zur Verfügung, falls ihr Fragen habt.</p>
+            <p>Liebe Grüße,</p>
+            <p><em>[ Name der Lehrperson ]</em></p>
+        </div>
+        <p>Eine wöchentliche E-Mail könnte auch zur Sammlung von studentischem Feedback genutzt werden (z.B. durch eine kurze Umfrage), das der Lehrperson bei der Lehreplanung helfen kann.</p>
+        <p class="citation"></p>
+    </div>
+    <div class="contentContainer article" id="onlZuschaltungLP" author="Judith Stelter">
+        <h2>Studierende hybrid, Lehrperson online zugeschaltet</h2>
+        <figure>
+            <img style="width: 60%; min-width:200px" src="images/mini-artikel/onlZuschaltungLP1.jpg" alt="Studierende im Raum schauen sich eine Live-Vorlesung an. Die Lehrperson ist online zugeschaltet."/>
+            <figcaption>Bild: erstellt mit Adobe Firefly</figcaption>
+        </figure>
+        <p>Für den Fall, dass Sie als Lehrperson nur online an der Veranstaltung teilnehmen können, sind bestimmte Vorkehrungen ratsam, um einen reibungslosen Ablauf zu gewährleisten. Der gemeinsame Online-Raum ist in der Regel ein Webkonferenzsystem wie Zoom oder Big Blue Button. Vorteilhaft ist hier, dass Sie bei Kameraaktivierung die Teilnehmenden sehen, aber auch schriftlich die Namen lesen und als Anwesenheitsliste speichern können. Sollten Sie mit einem theoretischen Input starten und einen Vortrag halten wollen oder eine Studierendengruppe mit einem Referat beauftragen, dürfen die Kameras der Zuhörenden sowie die Mikrofone ausgeschaltet sein, um den Fokus auf den/die Speaker:innen zu legen. Sie können Leitfragen vorgeben, die die Studierenden während des Vorleseanteils beantworten müssen, um ein aktives Zuhören zumindest teilweise überprüfen zu können. Sollen in der Sitzung Aufgaben bearbeitet werden, bieten sich digitale Tools (Whiteboards, Tests, Umfragen etc.) an, weil Sie hier die schriftliche Bearbeitung synchron nachverfolgen können. In Breakout-Rooms können Studierende in Gruppen zusammen arbeiten und ihre Ergebnisse besprechen, bevor Sie in den Konferenzraum zurückkehren und vor allen präsentieren. Sowohl in den Breakout-Rooms als auch während einer Diskussion nach dem Vortrag sollten die Kameras aller Teilnehmenden eingeschaltet sein. Daneben ist die namentliche Ansprache der Studierenden ein effizientes Instrument. Beides fördert das Gefühl von sozialer Präsenz im virtuellen Raum und die Verbindlichkeit zur aktiven Teilnahme.</p>
+        <p>Wollen Sie selbst online teilnehmen, während sich die Studierenden im Präsenzraum befinden, liegt eine komplexere Situation vor. Häufig ist es Studierenden nicht erlaubt bzw. möglich, sich eigenständig Zugang zum Lehrraum zu verschaffen. Auch mobile Technik muss vorher ausgehändigt und in ihre Benutzung eingeführt werden. Ein:e Kolleg:in vor Ort könnte hier behilflich sein, würde dann aber auch die Verantwortung für Ihre Studierenden im Präsenzraum tragen. Falls es diese Möglichkeit gibt, könnten Sie selbst im Vorhinein eine Gruppe bestimmen, die für den technischen Auf- und Abbau sowie den Support während der Sitzung zuständig ist. Als Unterstützung könnte ein Studierenden-Duo vor Ort festgelegt werden, das den virtuellen Raum und den Präsenz-Raum im Blick behält, Wortmeldungen berücksichtigt etc.</p>
+        <p>Mehr lesen: <a href='https://www.e-teaching.org/praxis/hybride-lernraeume/lernkino' aria-label="Lernkinos (e-teaching.org)">"Lernkinos" (e-teaching.org)</a></p>
+        <p class="citation"></p>
+    </div>
+    <div class="contentContainer article" id="sinneskanaele" author="Judith Stelter & Natalia Spitha">
+        <h2>Viele Sinneskanäle ansprechen</h2>
+        <div class="textImageOverlay">
+            <p>Das Ansprechen vieler Sinneskanäle  hilft dabei, soziale Präsenz in der Online- und hybriden Lehre zu schaffen. Stark <b>visuell</b> orientierte Materialien, wie Texte, Bilder (Fotos, Zeichnungen, Videos), Farben und Diagramme sind sinnvoll, um eine Strukturierung der Inhalte vorzunehmen, den Studierenden einen Überblick zu geben und Erinnerungsanker zu setzen. Es bietet sich an, den Text zusätzlich mit Zwischenüberschriften, Bulletpoints und Fettmarkierungen zu versehen, um eine schnelle kognitive Aufnahme und Verarbeitung zu unterstützen. In Ihren Videos können Sie Timesteps nutzen, um für eine klare Struktur zu sorgen und die selektive Aufnahme der Inhalte zu ermöglichen. </p>
+            <figure style="text-align:right">
+                <img style="width: 100%; min-width:200px" src="images/mini-artikel/sinneskanaele.jpg" alt="Studierende im Raum schauen sich eine Live-Vorlesung an. Die Lehrperson ist online zugeschaltet."/>
+                <figcaption>Bild: erstellt mit Adobe Firefly</figcaption>
+            </figure>
+        </div>
+        <p>Der <b>auditive</b> Sinn lässt sich adressieren, indem Sie als Lehrende Podcasts aufnehmen (s. <a href="#bsp-podcast">Beispiel</a>) oder Videos aufzeichnen. Möchte man Videos diese barrierearm gestalten, sollten Untertitel hinzufügt werden. Über die mündliche Sprache ebenso wie Musik und Rhythmus lässt sich die Sprachverarbeitung sowohl in reinen Audio- als auch Videoformaten anregen und positiv Einfluss auf den emotionalen Zustand beim Lernen nehmen. Eine mündlich-sprachliche Betonung und Wiederholung relevanter Inhalte helfen Studierenden bei der Priorisierung des Lernstoffs. Auch gezielte Pausen im Sprechfluss erregen und lenken die Aufmerksamkeit auf die unmittelbar folgenden Inhalte, wodurch eine Gewichtung vorgenommen und angezeigt wird.</p>
+        <p>In Seminaren und vor allem praktischen Übungen ist das Handlungslernen essenziell. Die Studierenden müssen eigenständig Experimente durchführen, Maschinen bedienen, Zeichnungen anfertigen, um das jeweilige Kursziel zu erreichen. <b>Motorische Sinne</b> lassen sich präferiert in der Präsenzlehre adressieren und optimieren. In asynchronen Umgebungen besteht teilweise die Möglichkeit, Virtual Reality (VR) oder Augmented Reality (AR) einzusetzen. So können Versuche am Computer durchgeführt, mit toxischen Substanzen experimentiert und wiederholt Übungen ohne Risiko für Mensch und Maschine durchgeführt werden. Allerdings wird in den meisten Fällen die Praxis im Labor bzw. Seminarraum folgen, was Präsenzunterricht zumindest punktuell, d. h. in Abwechselung zur hybriden oder Online-Lehre, voraussetzt.</p>
+        <p>Nicht zuletzt spielt der <b>kognitiv-sensorische</b> Sinn eine relevante Rolle. Nach dem Wissenserwerb schließt auf der Metaebene die Phase der Interpretation und der Reflexion. Inhalte werden kritisch hinterfragt, gesamtkontextuell eingeordnet, unterschiedliche Perspektiven vergleichend gegenübergestellt. Unterstützen können Sie diese Prozesse dadurch, dass Sie schriftlich (Text) und/oder mündlich (Video) Leitfragen an die Hand geben oder bewusst Kontroversen anstoßen. Wollen Sie außerdem eine Interaktion unter den Studierenden initiieren, können Sie etwa auf ein Diskussionsforum zurückgreifen, das in den meisten Lernmanagementsystemen inkludiert ist.</p>
+        <h3 id="bsp-podcast">Beispiel: Einsatz eines Podcasts in einem Blended Kurs</h3>
+        <p>In diesem Video-Abschnitt erklärt Prof. Dr. Stefanie von Schnurbein (HU-Berlin), wie und warum sie ein Podcast als Bestandteil mehrerer Ihrer Lehrveranstaltungen verwendet.</p>
+        <iframe style="width:100%" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9zzu6FohU8Y?si=z7Czg1DNp_b1NYEf&amp;start=315" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>Mehr lesen: <a href='https://box.hu-berlin.de/f/ee320876c66b48ff951f/' aria-label="Infografik: SINN-VOLL lernen (Charité)">"Infografik: SINN-VOLL lernen (Charité)</a></p>
+        <p class="citation"></p>
+    </div>
+    <div class="contentContainer article" style="background: rgba(0,0,0,0); box-shadow:none;">
+        <div class="inner" id="credits">
+            <h2 class="accordion">Credits & Feedback</h2>
+            <div class="panel">
+                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
+                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
+                <p>Raumkonzepte: Philipp Kapser*</p>
+                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
+                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+                <p>*Humboldt-Universität zu Berlin</p>
+                <p>**Berliner Hochschule für Technik</p>
+                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
+                <h3>Kontakt</h3>
+                <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
+            </div>
+        </div>          
+    </div>
+
+    
+</div>
+
+<div id="pageCover"></div>
+<div id="imagePreviewer"><img src="" /><p id="imageClose">&#10006;</p></div>
+<script>
+    // Accordion-menu for credits
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
+<script>
+    const idList = []
+
+    const citationTemplate = ["<hr /><b>Zitiervorschlag:</b> ", ". (2025). \"", "\". <em>Mini-Artikel zu hybrider und Blended-Lehre (QIO Projekt \"Netzwerk Hybride Lehre\")</em> [Zugriff am: XX.XX.XXXX]. Verfügbar unter: <span style='color:red'><a href='https://pages.cms.hu-berlin.de/netzwerk-hybride-lehre/entscheidungstool/mini-artikel.html' aria-label='Entscheidungshilfe Tool: Mini-Artikel'>https://pages.cms.hu-berlin.de/netzwerk-hybride-lehre/entscheidungstool/mini-artikel.html</a></span>"]
+    // automatically create citations and Table of Contents
+    function listsAndCitations(){
+        document.querySelectorAll(".contentContainer.article").forEach((m)=>{
+        idList.push(m.id)
+        title = document.querySelector("#" + m.id + " h2").innerHTML
+        let author = document.querySelector("#" + m.id).getAttribute("author")
+        citation = citationTemplate[0] + author + citationTemplate[1] + title + citationTemplate[2]
+        console.log(m.id)
+        console.log(title)
+        console.log(citation)
+        let  li = document.createElement("li")
+        li.innerHTML = "<a href='#" + m.id + "'>" + title + "</a>"  
+        document.querySelector("#toc").appendChild(li)
+        document.querySelector("#" + m.id + " .citation").innerHTML = citation
+    })
+    }
+    
+    const pageCover = document.querySelector("#pageCover")
+    const imagePreviewer = document.querySelector("#imagePreviewer")
+    const imageShown = document.querySelector("#imagePreviewer img")
+    const imageClose = document.querySelector("#imageClose")
+    // click to open image
+    document.querySelectorAll("img.preview").forEach((m)=>{
+        m.addEventListener("click", (event)=>{
+            imageShown.setAttribute("src", event.target.src)
+            pageCover.style.visibility="visible";
+            pageCover.style.opacity=1;
+            imagePreviewer.style.visibility="visible";
+            imagePreviewer.style.opacity=1;
+            setTimeout(()=>{
+                imageClose.style.opacity=1;
+                imageClose.style.visibility="visible"
+            }, 500)
+        })
+    })
+    // close opened image
+    imageClose.addEventListener("click", ()=>{
+        imagePreviewer.style.opacity=0
+        setTimeout(()=>{
+            imagePreviewer.style.visibility="hidden"
+            pageCover.style.opacity=0
+            setTimeout(()=>{
+                pageCover.style.visibility="hidden"
+                imageShown.setAttribute("src", "")
+            },200)
+        }, 200)
+        
+
+    })
+</script>
+</body>
