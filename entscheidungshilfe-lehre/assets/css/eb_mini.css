@@ -96,32 +96,46 @@ div.importantText {
     margin-bottom: 0.5em;
 }
 
-
 div.textImageOverlay {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .textImageOverlay > *:first-child {
     flex-grow: 2
 }
-.textImageOverlay img {
+.textImageOverlay .imageColumn, .textImageOverlay img, .textImageOverlay figure {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 210px;
+    margin-right: 15px;
+}
+.textImageOverlay figure {
+    padding: 1em 0 0 0;
+    width: 100%;
+}
+figure > img {
+    padding: 0 0 0 0;
+}
+/* .textImageOverlay img {
     width: 100%;
     min-width: 210px;
     flex-grow: 1;
     padding-top: 2em;
     /* float:right; */
-}
+/* } */
 
 @media only screen and (min-width: 600px){
     div.textImageOverlay {
     flex-wrap: nowrap;
     flex-direction: row;
 }
-    .textImageOverlay img {
+    .textImageOverlay figure {
         padding-left: 1em;
     }
 }
@@ -140,12 +154,13 @@ div.textImageOverlay {
 }
 #imagePreviewer {
     background: var(--backgroundLightBlue);
-    height: 80%;
+    width: 90%;
     position: fixed;
     top: 10%;
     left: 50%;
     transform: translate(-50%, 0);
     min-width: 300px;
+    max-width: 600px;
     padding: 15px 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     transition: all 0.4s ease;
@@ -153,8 +168,19 @@ div.textImageOverlay {
     visibility: hidden;
 }
 #imagePreviewer > img {
-    height: 100%;
+    width: 100%;
     cursor: zoom-out;
+}
+@media only screen and (max-width:600px){
+    #imagePreviewer {
+        height: auto;
+        width: calc(100% - 80px);
+        min-width: auto;
+    }
+    #imagePreviewer > img {
+        width: 100%;
+        height: auto;
+    }
 }
 #imageClose {
     position: absolute;
