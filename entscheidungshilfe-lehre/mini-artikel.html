@@ -6,213 +6,53 @@
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/eb.css" />
+  <link rel="stylesheet" href="assets/css/eb_mini.css" />
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
   <style>
-    .bgContainer {
-        position: relative;
-        width: 100%;
-        background-color: var(--backgroundLightBlue);
-        overflow-y: hidden;
+    body {
+            background: var(--backgroundLightBlue);
+            background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
+        }
+    #credits {
+        opacity: 0.8
     }
-    .backgroundImage {
-        position: absolute;
-        top: 40%;
-        left: 30%;
-        width: 70%;
-        transform: translate(0, -0) rotate(180deg);
-        filter: var(--networkBlueFilter);
-        opacity: 0.2;
-    }
-    div.contentContainer {
-        position: relative;
-        background: rgba(255, 255, 255, 0.8);
-        padding: 20px 20px;
-        color: var(--networkBlack);
-        margin-bottom: 20px;
+    #credits > * {
         margin: auto;
-        width: calc(100% - 5em);
-        max-width: 800px;
-        opacity: 1;
-        transition: all 0.5s ease;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        margin-top: 3em;
-    }
-    div.contentContainer:last-child {
-        margin-bottom: 10em;
-    }
-    div.contentContainer.overview {
-        margin-top: 5em;
-        background: rgba(255, 255, 255, 0);
-        box-shadow: none;
-    }
-    .article h2 {
-        font-size: 1.3em;
+        background-color: rgba(15, 113, 184, 0.2);
         color: var(--networkBlue)
     }
-    .article h3 {
-        margin-bottom: 0;
+    #credits .accordion.active + .panel {
+        padding-bottom: 2em;
     }
-    .article h4 {
-        color: var(--networkBlue);
-        margin-bottom: 0;
+    #credits .panel > h3 {
+        margin-left: 2em;
+    }
+    #credits .panel > p {
+        margin: 0 2.5em 0.5em;
+    }
+    #credits h2, #credits h3 {
+        color: var(--networkBlue)
+    }
+    #credits h2.active {
+        color: var(--networkBlue) !important;
+        padding-bottom: 0;
+    }
+    #credits h3 {
         margin-top: 2em;
     }
-    h4 + h3 {
-        margin-top: 0.5em;
+    .accordion::before {
+        color: var(--networkBlue)
     }
-    p + h3, ul + h3 {
-        margin-top: 2em;
-    }
-    .citation, .footnote {
-        color: var(--networkTurqoise);
-    }
-    .footnote {
-        text-align: right;
-    }
-    img.preview {
-        cursor: pointer;
-        transition: all 0.4s ease;
-    }
-    img.preview:hover {
-        transform: scale(98%, 98%)
-    }
-    div.importantText {
-        background-color: var(--backgroundLightGreen);
-        margin-top: 2em;
-        padding: 5px 15px;
-        display: block;
-    }
-    .importantText h2 {
-        color: var(--networkBlack)
-    }
-    .importantText h3 {
-        color: rgba(0,0,0,0.5);
-        margin-top: 1em;
-    }
-    .importantText h3 + ul, .importantText h3 + p {
-        margin-top: 0.5em;
-    }
-
-    .importantText h4 {
-        color: var(--networkBlack);
-        margin-top: 0.3em;
-    }
-    .importantText h4 + p, .importantText h4 + ul {
-        color: var(--networkBlack);
-        margin-top: 0.3em;
-    }
-    .importantText h4 + p {
-        margin-bottom: 0.5em;
-    }
-
-
-    div.textImageOverlay {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-
-    .textImageOverlay > *:first-child {
-        flex-grow: 2
-    }
-    .textImageOverlay img {
-        width: 100%;
-        min-width: 210px;
-        flex-grow: 1;
-        padding-top: 2em;
-        /* float:right; */
-    }
-
-    @media only screen and (min-width: 600px){
-        div.textImageOverlay {
-        flex-wrap: nowrap;
-        flex-direction: row;
-    }
-        .textImageOverlay img {
-            padding-left: 1em;
-        }
-    }
-
-    #pageCover {
-        position: fixed;
-        top: 0%;
-        left: 0%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255,255, 255, 0.7);
-        opacity: 0;
-        visibility: hidden;
-        pointer-events:none;
-        transition: all 0.4s ease;
-    }
-    #imagePreviewer {
-        background: var(--backgroundLightBlue);
-        height: 80%;
-        position: fixed;
-        top: 10%;
-        left: 50%;
-        transform: translate(-50%, 0);
-        min-width: 300px;
-        padding: 15px 15px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        transition: all 0.4s ease;
-        opacity: 0;
-        visibility: hidden;
-    }
-    #imagePreviewer > img {
-        height: 100%;
-        cursor: zoom-out;
-    }
-    #imageClose {
-        position: absolute;
-        top: 0%;
-        right: 0%;
-        z-index:6;
-        background: #585858;
-        color: white;
-        height: 2em;
-        line-height: 2em;
-        width: 2em;
-        margin: 0 0 0 0;
-        padding: 0 0 0 0;
-        text-align: center;
-        visibility: hidden;
-        opacity: 0;
-        border-radius: 2em;
-        transform: translate(50%, -50%);
-        transition: all 0.2s;
-        font-family: Arial, Helvetica, sans-serif;
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    }
-    #imageClose:hover {
-        background: #999999;
-        transform: translate(50%, -50%) scale(130%, 130%);
-    }
-    figure {
-        width:100%; 
-        margin-left:0;
-        text-align: center;
-    }
-    figure > figcaption {
-        text-align: right;
-        font-size: 0.8em;
-        color: var(--networkBlue);
-        width: 90%;
-        margin: auto;
-    }
-  </style>
+</style>
 </head>
 <body onload="listsAndCitations()"> 
 <div class="bgContainer">
-    <img class="backgroundImage" src = "images/treeTemp.svg" />
     <div class="contentContainer overview">
         <h2 style="text-align: center"><img src="images/NHL_logo.svg" style="width: 200px" /></h2>
-        <h1 style="text-align: center">Mini-Artikel</h1>
-        <h2 style="text-align:center">Entscheidungshilfe Hybride und Digitale Lehre</h2>
+        <h1 style="text-align: center; margin-bottom:0">Mini-Artikel</h1>
+        <h2 style="text-align:center; margin-top:0">zu hybrider und Blended-Lehre</h2>
         <p>Diese ergänzenden Mini-Artikel beziehen sich auf mehrere hybride und digitale Lernszenarien, die im <a href="app.html">Entscheidungshilfe-Tool Hybride und Digitale Lehre</a> vorgestellt werden, und enthalten ausführlichere Informationen zu ausgewählten Themen. Diese Seite ist nicht als eigenständiger Leitfaden gedacht, sondern als Sammlung von Mini-Artikeln, die als einzelne Einheiten zu verlinken sind.</p>
         <h3>Liste der Mini-Artikel:</h3>
         <ul id="toc">
@@ -221,7 +61,7 @@
     </div>
     <div class="contentContainer article" id="methode-padlet" author="Natalia Spitha">
         <h2>Methoden-Idee: Erstellung und Präsentation von Gruppenarbeiten mit Padlet</h2>
-        <p>Hier wird am Beispiel des Tools <a href="https://padlet.com/">Padlet</a> beschrieben, wie Gruppenarbeiten während eines Seminars oder einer Vorlesung einfach und automatisch in eine gesamte Präsentation oder ein Dokument umgewandelt werden können. In einem Padlet-Board werden zuerst Abschnitte als "Breakout-Links" erstellt, so dass jede Gruppe in einem eigenen Padlet-Board arbeiten kann. In der Gruppenarbeit-Phase sammeln die Teilnehmenden Ergebnisse als Beiträge ("Posts") mit verschiedenen Formatmöglichkeiten. Für die Plenumsphase wird aus allen Breakout-Abschnitten durch die Funktion "Diashow" eine gesamte Präsentation erstellt, sodass alle Gruppen nacheinander ihre Ergebnisse präsentieren können. Die Methode wird hier für einen hybriden Raum beschrieben, ist aber auch für den rein-Online oder rein-vor-Ort Unterricht geeignet.</p>
+        <p>Hier wird am Beispiel des Tools <a href="https://padlet.com/">Padlet</a> beschrieben, wie Gruppenarbeiten während eines Seminars oder einer Vorlesung einfach und automatisch in eine gesamte Präsentation oder ein Dokument umgewandelt werden können. In einem Padlet-Board werden zuerst Abschnitte als „Breakout-Links“ erstellt, so dass jede Gruppe in einem eigenen Padlet-Board arbeiten kann. In der Gruppenarbeit-Phase sammeln die Teilnehmenden Ergebnisse als Beiträge („Posts“) mit verschiedenen Formatmöglichkeiten. Für die Plenumsphase wird aus allen Breakout-Abschnitten durch die Funktion „Diashow“ eine gesamte Präsentation erstellt, sodass alle Gruppen nacheinander ihre Ergebnisse präsentieren können. Die Methode wird hier für einen hybriden Raum beschrieben, ist aber auch für den rein-Online oder rein-vor-Ort Unterricht geeignet.</p>
         <h3>Voraussetzungen</h3>
         <ul>
             <li>Vor-Ort-Teilnehmende haben mindestens ein Laptop mit Internetverbindung pro Gruppe.</li>
@@ -263,8 +103,8 @@
     </div>
     <div class="contentContainer article" id="breakoutRoomsHybrid" author="Natalia Spitha">
         <h2>Breakout-Gruppen für hybride Gruppenarbeiten</h2>
-        <p>Hier wird ein Vorschlag beschrieben, wie Breakout Sessions geplant werden können, damit in einem hybriden Setting gemischte Teilnehmergruppen von vor-Ort und Online-Teilnehmenden ("heterogene Gruppen") zusammenarbeiten können. Hier wird als Beispiel Zoom verwendet, aber ähnliche Funktionen sind in anderen Videokonferenzplatformen verfügbar</p>
-        <div class="importantText"><p><b>Wichtig</b>: Der Aufbau von hybriden Gruppenarbeiten in Breakout-Gruppen ist aufwendig und muss im Voraus getestet und den Teilnehmenden erklärt werden, um kritische Tonprobleme (Rückkopplung oder gegenseitige Störung der Gruppen) zu vermeiden. Es ist sehr empfehlenswert, sich ein:e Co-Moderator:in zu suchen (z.B. studentische Hilfskraft), wenn Sie hybride Gruppenaktivitäten auf diese Weise durchführen wollen.</p></div>
+        <p>Hier wird ein Vorschlag beschrieben, wie Breakout Sessions geplant werden können, damit in einem hybriden Setting gemischte Teilnehmergruppen von vor-Ort und Online-Teilnehmenden (<b>„heterogene Gruppen“</b>) zusammenarbeiten können. Hier wird als Beispiel Zoom verwendet, aber ähnliche Funktionen sind in anderen Videokonferenzplatformen verfügbar</p>
+        <div class="importantText"><p><b>Wichtig</b>: Der Aufbau von hybriden Gruppenarbeiten in Breakout-Gruppen ist aufwendig und muss im Voraus getestet und den Teilnehmenden erklärt werden, um kritische Tonprobleme (Rückkopplung oder gegenseitige Störung der Gruppen) zu vermeiden. Es ist sehr empfehlenswert, sich ein:e Co-Moderator:in zu suchen (z.B. studentische Hilfskraft), wenn Sie hybride Gruppenaktivitäten auf diese Weise durchführen wollen. Als weniger aufwändige Alternative könnten Gruppenarbeiten in einer hybriden Lehrveranstaltung auch „homogen“ gestaltet werden (rein-Präsenzgruppen und rein-Online-Gruppen).</p></div>
         <h3>Voraussetzungen</h3>
         <ul>
             <li>Der Raum vor Ort muss groß genug sein, damit verschiedene Gruppen getrennt ohne gegenseitige Störung arbeiten können. Manche Raumkonzepte enthalten <a href="https://www.uv.uio.no/om/organisasjon/idea/english/resources-for-teachers/room-241/innovative-technology-and-flexible-layouts.html" aria-label="bewegliche Trennwände oder Tischtrennwände">bewegliche Trennwände oder Tischtrennwände</a>, die besonders geeignet für solche Gruppenarbeiten sind. Wenn die Anzahl an Gruppen sehr gering ist, könnten auch Nebenräume für die Gruppenarbeit benutzt werden.</li>
@@ -282,30 +122,48 @@
         </ul>
         <h3>Zu Beginn der Sitzung</h3>
         <div class="textImageOverlay">
-
-        <ul>
-            <li>Geben Sie sich Zeit für den Aufbau (mindestens 15 Min.) der physischen und virtuellen Räume.</li>
-            <li>Stellen Sie sicher, dass alle nicht-fest-installierte Geräte (z.B. Laptops and verschiedenen Tischen) an die Stromversorgung angeschlossen sind.</li>
-            <li>Schalten Sie zu Beginn der Sitzung alle Geräte ein und nehmen Sie von jedem Gerät aus an der Zoom-Call teil. Geben Sie im Zoom jedem teilnehmenden Gerät einen intuitiven Namen, der idealerweise einem Ort oder dem physischen Raum entspricht (z. B. Tisch 1, Tisch 2, Raum 2). Stellen Sie an jedem Tisch Schilder auf, damit die vor-Ort-Teilnehmenden sie schnell identifizieren können.</li>
-            <li>Wenn sich alle Geräte im selben Raum befinden (auch wenn sie weit voneinander entfernt sind), stellen Sie sicher, dass die Lautstärke der Geräte auf Null gestellt <b>und</b> das Mikrofon stummgeschaltet ist.</li>
-            <li>Weisen Sie die teilnehmenden Geräte ("Tisch 1", "Tisch 2", usw., die sich bereits in dem Zoom-Call befinden sollten) den einzelnen Breakout-Räumen zu.</li>
-            <li>Ermöglichen Sie Teilnehmenden, jederzeit zur Hauptsitzung zurückzukehren, um Hilfe zu erhalten.</li>
-            <li>Falls noch nicht getan, bestimmen Sie sonstige Eigenschaften für die Breakout-Session, z.B. Zeitlimit oder Countdown-Timer</li>
-        </ul>
-        <img class="preview" src="images/mini-artikel/breakoutsHybrid_1.png" />
+            <ul>
+                <li>Geben Sie sich Zeit für den Aufbau (mindestens 15 Min.) der physischen und virtuellen Räume.</li>
+                <li>Stellen Sie sicher, dass alle nicht-fest-installierte Geräte (z.B. Laptops and verschiedenen Tischen) an die Stromversorgung angeschlossen sind.</li>
+                <li>Schalten Sie zu Beginn der Sitzung alle Geräte ein und nehmen Sie von jedem Gerät aus an der Zoom-Call teil. Geben Sie im Zoom jedem teilnehmenden Gerät einen intuitiven Namen, der idealerweise einem Ort oder dem physischen Raum entspricht (z. B. Tisch 1, Tisch 2, Raum 2). Stellen Sie an jedem Tisch Schilder auf, damit die vor-Ort-Teilnehmenden sie schnell identifizieren können.</li>
+                <li>Wenn sich alle Geräte im selben Raum befinden (auch wenn sie weit voneinander entfernt sind), stellen Sie sicher, dass die Lautstärke der Geräte auf Null gestellt <b>und</b> das Mikrofon stummgeschaltet ist.</li>
+                <li>Weisen Sie die teilnehmenden Geräte ("Tisch 1", "Tisch 2", usw., die sich bereits in dem Zoom-Call befinden sollten) den einzelnen Breakout-Räumen zu.</li>
+                <li>Ermöglichen Sie Teilnehmenden, jederzeit zur Hauptsitzung zurückzukehren, um Hilfe zu erhalten.</li>
+                <li>Falls noch nicht getan, bestimmen Sie sonstige Eigenschaften für die Breakout-Session, z.B. Zeitlimit oder Countdown-Timer</li>
+            </ul>       
+            <div class="imageColumn">
+                <figure>
+                    <img class="preview" src="images/mini-artikel/breakoutsHybrid_1.png" alt="Raumkonfiguration zu Beginn der Sitzung: Eine Person kümmert sich um den Raumaufbau (Tisch-PCs einschalten, verbinden, stummschalten, Tische als 'Tisch 1', 'Tisch 2' usw. beschildern, Info-Blätter aufteilen). Eine zweite Person kümmert sich um den Videokonferenz-Aufbau (Breakout-Räume einrichten, Tisch-PCs in Breakout-Räume zuweisen). Bewegbare Trennwände sind im Raum aber weggeräumt." />
+                    <figcaption>Raumkonfiguration zu Beginn der Sitzung</figcaption>
+                </figure>
+                <figure>
+                    <img class="preview" src="images/mini-artikel/zoom-assignTables.png" alt="Tisch-PCs als Videokonferenz-Teilnehmer: zwei Zoom-Teilnehmer 'Tisch 1' und 'Tisch 2', die jeweils dem Breakout-Raum 'Tisch 1 - Thema A' und dem Breakout-Raum 'Tisch 2- Thema B' zugeordnet sind." />
+                    <figcaption>Tisch-PCs als Videokonferenz-Teilnehmer und Konfiguration der Breakout-Räume</figcaption>
+                </figure>
+                
+                
+            </div>
         </div>
         <h3>Nach dem Anfang der Sitzung, vor der Breakout-Phase</h3>
         <div class="textImageOverlay">
-            
             <div>
-                <p>Weisen Sie alle anderen Online-Teilnehmenden den Breakout-Räumen zu: 
+                <p>Weisen Sie alle anderen Online-Teilnehmenden den Breakout-Räumen zu:</p>
                 <ul>
                     <li>Wenn Sie allein lehren, ist es am besten, den Teilnehmern Anweisungen zur Einteilung der Gruppen zu geben und sie ihren Breakout-Raum selbst auswählen zu lassen.</li>
                     <li>Wenn die Kurssitzung durch mehr als eine Person moderiert wird, sollte eine Person die Teilnehmenden manuell den Breakout-Räumen zuweisen, nachdem sie dem Zoom-Call beigetreten sind und vor Beginn der Breakout-Session, während die andere Person die Sitzung leitet. </li>
                 </ul>
-                </p>
             </div>
-            <img class="preview" src="images/mini-artikel/breakoutsHybrid_2.png" />
+            <div class="imageColumn">
+                <figure>
+                    <img class="preview" src="images/mini-artikel/breakoutsHybrid_2.png" alt="Raumkonfiguration während der Plenumsphase: Eine Person leitet den Unterricht. Die andere Person arbeitet im Hintergrund dabei, weitere Online-Teilnehmende den Breakout-Räumen zuzuweisen und ggf. das Chat zu betreuen. Die Studierenden sitzen an den Tischen; die Tisch-PCs nehmen ohne Audio and der Videokonferenz teil." />
+                    <figcaption>Raumkonfiguration während der Plenumsphase</figcaption>
+                </figure>
+                <figure>
+                    <img class="preview" src="images/mini-artikel/zoom-assignParticipants.png" alt="Zuordnung einzelnen Online-Teilnehmenden zu den Breakout-Räumen" />
+                    <figcaption>Zuordnung einzelnen Teilnehmenden zu Breakout-Räumen</figcaption>
+                </figure>
+                
+            </div>            
         </div>
         
         <h3>Zu Beginn und zum Ende der Breakout-Session</h3>
@@ -319,7 +177,11 @@
                 <li>Die Lehrperson(en) sollen in der Hauptsitzung bleiben - erstens, um sich Fragen zukommen lassen und zweitens, weil Tonprobleme entstehen könnten, wenn das Gerät der Lehrperson mit Audioverbindung denselben Breakout-Raum beitritt wie ein nahe gelegenes Gerät.</li>
             </ul>
             </div>
-            <img class="preview" src="images/mini-artikel/breakoutsHybrid_3.png"/>
+            <figure>
+                <img class="preview" src="images/mini-artikel/breakoutsHybrid_3.png" alt="Raumkonfiguration während der Gruppenarbeitsphase: Eine Lehrperson bleibt in der Hauptsitzung (Main Room) um den Online-Studierenden Support anzubieten. Die andere Person bietet Support vor Ort. Die Tisch-PCs nehmen mit Audio an einzelnen Breakout-Räumen teil. Bewegbare Trennwände werden benutzt, um de Tische voneinander zu trennen."/>
+                <figcaption>Raumkonfiguration während der Gruppenarbeitsphase</figcaption>
+            </figure>
+            
         </div>
         <div class="importantText">
             <p><b>Wichtig:</b> kurz vor dem Ende der Breakout-Sessions müssen alle Geräte vor Ort wieder stummgeschaltet werden (sowohl das Mikrofon als auch der Lautsprecher), bevor sie zur Hauptsitzung zurückkehren. Nutzen Sie am Besten die Funktion eines Countdown-Timers, um den Studierenden diese Anweisung zu geben.</p>
@@ -444,16 +306,49 @@
         <p>Mehr lesen: <a href='https://box.hu-berlin.de/f/ee320876c66b48ff951f/' aria-label="Infografik: SINN-VOLL lernen (Charité)">"Infografik: SINN-VOLL lernen (Charité)</a></p>
         <p class="citation"></p>
     </div>
-    
+    <div class="contentContainer article" style="background: rgba(0,0,0,0); box-shadow:none;">
+        <div class="inner" id="credits">
+            <h2 class="accordion">Credits & Feedback</h2>
+            <div class="panel">
+                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
+                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
+                <p>Raumkonzepte: Philipp Kapser*</p>
+                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
+                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+                <p>*Humboldt-Universität zu Berlin</p>
+                <p>**Berliner Hochschule für Technik</p>
+                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
+                <h3>Kontakt</h3>
+                <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
+            </div>
+        </div>          
+    </div>
+
     
 </div>
 
 <div id="pageCover"></div>
 <div id="imagePreviewer"><img src="" /><p id="imageClose">&#10006;</p></div>
 <script>
+    // Accordion-menu for credits
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
+<script>
     const idList = []
 
-    const citationTemplate = ["<hr />Zitiervorschlag: ", ". (2025). \"", "\". <em>Entscheidungshilfe Hybride und Digitale Lehre: Mini-Artikel (QIO Projekt \"Netzwerk Hybride Lehre\") [Zugriff am: XX.XX.XXXX]. Verfügbar unter: <span style='color:red'>URL</span>"]
+    const citationTemplate = ["<hr /><b>Zitiervorschlag:</b> ", ". (2025). \"", "\". <em>Mini-Artikel zu hybrider und Blended-Lehre (QIO Projekt \"Netzwerk Hybride Lehre\")</em> [Zugriff am: XX.XX.XXXX]. Verfügbar unter: <span style='color:red'><a href='https://pages.cms.hu-berlin.de/netzwerk-hybride-lehre/entscheidungstool/mini-artikel.html' aria-label='Entscheidungshilfe Tool: Mini-Artikel'>https://pages.cms.hu-berlin.de/netzwerk-hybride-lehre/entscheidungstool/mini-artikel.html</a></span>"]
     // automatically create citations and Table of Contents
     function listsAndCitations(){
         document.querySelectorAll(".contentContainer.article").forEach((m)=>{

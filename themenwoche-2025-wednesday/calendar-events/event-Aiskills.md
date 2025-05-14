@@ -1,10 +1,10 @@
-# OER als nachhaltige Bildungsressource  
-## weitere Details folgen so bald wie möglich  
-##### Grimm-Zentrum
+# Bausteine nachhaltiger, offener Bildung: OER-Support trifft AI-SKILLS Community 
+## Jacob-und Wilhelm-Grimm-Zentrum, Raum 9.537/8 
+##### Universitätsbibliothek, Geschwister-Scholl-Str. 1-3
 ---
-### Kurzworkshop
+### Workshop
 Leitung: \
-**Noah Baumann**  
-##### AI-Skills
-**Dr. Anna Faust**  
-##### AI-Skills 
+**OER-Support-Team**  
+##### Universitätsbibliothek / CMS
+**AI-SKILLS-Team**  
+

@@ -1,0 +1,222 @@
+.bgContainer {
+    position: relative;
+    width: 100%;
+    background-color: var(--backgroundLightBlue);
+    overflow-y: hidden;
+}
+.backgroundImage {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 70%;
+    transform: translate(0, -0) rotate(180deg);
+    filter: var(--networkBlueFilter);
+    opacity: 0.2;
+}
+div.contentContainer {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 20px;
+    color: var(--networkBlack);
+    margin: 3em auto 8em;
+    width: calc(100% - 5em);
+    max-width: 800px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+div.contentContainer:last-child {
+    margin-bottom: 10em;
+}
+div.contentContainer.overview {
+    margin-top: 5em;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+}
+.article h2 {
+    font-size: 1.3em;
+    color: var(--networkBlue)
+}
+.article h3 {
+    margin-bottom: 0;
+}
+.article h4 {
+    color: var(--networkBlue);
+    margin-bottom: 0;
+    margin-top: 2em;
+}
+h4 + h3 {
+    margin-top: 0.5em;
+}
+p + h3, ul + h3 {
+    margin-top: 2em;
+}
+.citation, .footnote {
+    color: var(--networkTurqoise);
+}
+.footnote {
+    text-align: right;
+}
+    .citation a {
+        color: var(--networkTurqoise);
+    }
+img.preview {
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+img.preview:hover {
+    transform: scale(98%, 98%)
+}
+div.importantText {
+    background-color: var(--backgroundLightGreen);
+    margin-top: 2em;
+    padding: 5px 15px;
+    display: block;
+}
+.importantText h2 {
+    color: var(--networkBlack)
+}
+.importantText h3 {
+    color: rgba(0,0,0,0.5);
+    margin-top: 1em;
+}
+.importantText h3 + ul, .importantText h3 + p {
+    margin-top: 0.5em;
+}
+
+.importantText h4 {
+    color: var(--networkBlack);
+    margin-top: 0.3em;
+}
+.importantText h4 + p, .importantText h4 + ul {
+    color: var(--networkBlack);
+    margin-top: 0.3em;
+}
+.importantText h4 + p {
+    margin-bottom: 0.5em;
+}
+
+div.textImageOverlay {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.textImageOverlay > *:first-child {
+    flex-grow: 2
+}
+.textImageOverlay .imageColumn, .textImageOverlay img, .textImageOverlay figure {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 210px;
+    margin-right: 15px;
+}
+.textImageOverlay figure {
+    padding: 1em 0 0 0;
+    width: 100%;
+}
+figure > img {
+    padding: 0 0 0 0;
+}
+/* .textImageOverlay img {
+    width: 100%;
+    min-width: 210px;
+    flex-grow: 1;
+    padding-top: 2em;
+    /* float:right; */
+/* } */
+
+@media only screen and (min-width: 600px){
+    div.textImageOverlay {
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+    .textImageOverlay figure {
+        padding-left: 1em;
+    }
+}
+
+#pageCover {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255, 255, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events:none;
+    transition: all 0.4s ease;
+}
+#imagePreviewer {
+    background: var(--backgroundLightBlue);
+    width: 90%;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-width: 300px;
+    max-width: 600px;
+    padding: 15px 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#imagePreviewer > img {
+    width: 100%;
+    cursor: zoom-out;
+}
+@media only screen and (max-width:600px){
+    #imagePreviewer {
+        height: auto;
+        width: calc(100% - 80px);
+        min-width: auto;
+    }
+    #imagePreviewer > img {
+        width: 100%;
+        height: auto;
+    }
+}
+#imageClose {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    z-index:6;
+    background: #585858;
+    color: white;
+    height: 2em;
+    line-height: 2em;
+    width: 2em;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 2em;
+    transform: translate(50%, -50%);
+    transition: all 0.2s;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+#imageClose:hover {
+    background: #999999;
+    transform: translate(50%, -50%) scale(130%, 130%);
+}
+figure {
+    width:100%; 
+    margin-left:0;
+    text-align: center;
+}
+figure > figcaption {
+    text-align: right;
+    font-size: 0.8em;
+    color: var(--networkBlue);
+    width: 90%;
+    margin: auto;
+}

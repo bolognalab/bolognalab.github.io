@@ -15,6 +15,18 @@ updated_json = {}
 updated_scenarios = {}
 list_of_scenarios = []
 
+# indexing of special cases (only defined here)
+special_cases =  {
+        "0": "international",
+        "1": "langfristGrupp",
+        "2": "hybrideExkursion",
+        "3": "onlineZuschaltungLP",
+        "4": "gastOnline",
+        "5": "gastVorOrtHyb",
+        "6": "keineAufzeichnung", #nur für den Technik-Pfad
+    }
+
+
 #importing scenarios from csv
 csv_file = 'szenarien.csv'
 with open(csv_file, mode='r', encoding='utf-8-sig') as csv_file:
@@ -23,15 +35,16 @@ with open(csv_file, mode='r', encoding='utf-8-sig') as csv_file:
     for r, row_data in enumerate(csvfiledata):
         # extract code to use as identifier 
         key = row_data.pop("code")
-        # intervention: remove all variation in terms of asyncInt
-        # shortkey = key[:-2]
         shortkey = key
-        list_of_scenarios.append(shortkey)
-        # 'pop' has removed the 'code' from row_data, so now we are collecting the rest of the information
-        subkeys = row_data.keys()
-        subvalues = row_data.values()
-        updated_scenarios[shortkey] = dict(zip(subkeys, subvalues))
-        updated_scenarios[shortkey]["special_cases"] = {}
+
+        # intervention: exclude combo syncInt=0, asyncTN=2
+        if shortkey.split("-")[2] != "0" or shortkey.split("-")[3] != "2":
+            list_of_scenarios.append(shortkey)
+            # 'pop' has removed the 'code' from row_data, so now we are collecting the rest of the information
+            subkeys = row_data.keys()
+            subvalues = row_data.values()
+            updated_scenarios[shortkey] = dict(zip(subkeys, subvalues))
+            updated_scenarios[shortkey]["special_cases"] = {}
 
 updated_questions = existing_questions.copy()
 
@@ -439,16 +452,20 @@ for code in list_of_scenarios:
         setEffect("gaeste", "virtuell", code, -100)
     if lehrform == "ringonl":
         setEffect("gaeste", "vorOrt", code, -100)
+        setSpecialCase(code, "gaeste=virtuell", "gastOnline")
+        setEffect("gaeste", "both", code, -3)
+        setSpecialCase(code, "gaeste=both", "gastOnline")
     if lehrform in ["ringhyb1", "ringhyb2"]:
         setSpecialCase(code, "gaeste=virtuell", "gastOnline")
         setSpecialCase(code, "gaeste=both", "gastOnline")
-        setSpecialCase(code, "exkur=ja", "gastVorOrtHyb")
-        setSpecialCase(code, "exkur=both", "gastVorOrtHyb")
+        setSpecialCase(code, "gaeste=vorOrt", "gastVorOrtHyb")
+        setSpecialCase(code, "gaeste=vorOrt", "gastVorOrtHyb")
       
 
 
 updated_json["questions"] = updated_questions
 updated_json["scenarios"] = updated_scenarios
+updated_json["special"] = special_cases
 
 json_file = "data.json"
 def updateJSON(json_data, json_file):

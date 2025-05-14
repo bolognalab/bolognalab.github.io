@@ -1,9 +1,12 @@
-.qCont {
+body {
+    background-color: var(--backgroundLightBlue);
+}
+.qCont, .fCont {
     background-color: var(--backgroundLightBlue);
     /* padding: 20px 20px; */
-    overflow: scroll;
+    overflow: hidden;
     position: relative;
-    height: 60em;
+    height: 100em;
     width: 100%;
     max-width: 100%;
 
@@ -55,6 +58,9 @@
     width: 85%;
     margin: auto;
 }
+#DIV_TEXT_welcome > ul > li {
+    margin-bottom: 0.5em;
+}
 #DIV_TEXT_welcome > h1, #DIV_TEXT_welcome > p {
     width: 90%;
 }
@@ -104,11 +110,12 @@
 }
 @media only screen and (max-width: 600px){
     .qCont {
-        height: 60em
+        height: 100em
     }
     .qDiv {
-        top: 20px;
+        top: 0.5em;
         transform: translate(-50%, 0);
+        width: calc(100% - 3em);
     }
 }
 
@@ -121,13 +128,39 @@
     opacity: 0;
 }
 
+#DIV_TEXT_labore a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--networkTurqoise)
+}
+
+#DIV_TEXT_labore a::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    margin-right: 4px;
+    background-image: url("../../images/link.svg");
+    filter: var(--networkTurqoiseFilter);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+}
+#DIV_TEXT_labore ul {
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+#DIV_TEXT_labore li {
+    margin-bottom: 1em;
+}
 /* p.qText  {
     margin-bottom: 0;
 } */
 /* "Context" accordeon */
 .context {
     color: var(--networkTurqoise);
-    transition: all 0.4s ease
+    transition: all 0.4s ease;
+    padding-left: 0.5em;
 }
 div.context {
     margin-top: -0.5em;
@@ -161,7 +194,8 @@ div.context {
     opacity: 0.8;
 }
 .context.open {
-    background: rgba(18, 161, 154, 0.08)
+    background: rgba(18, 161, 154, 0.08);
+    padding: 0.8em 0.5em 0.3em;
 }
 .context .contextContent {
     height: 0;

@@ -84,7 +84,7 @@
         "event-participants": "Dr. Jan-Ole Boness (Thaer-Institut)"
     },
     {
-        "short-event-name": "Workshop: OER & AI-Skills",
+        "short-event-name": "Workshop: OER-Support trifft AI-SKILLS Community",
         "long-event-name": "OER als nachhaltige Bildungsressource",
         "day": "wednesday",
         "start": "12:00",
@@ -95,7 +95,7 @@
         "category": "event-3",
         "start-ovr": "-",
         "end-ovr": "-",
-        "event-participants": "Noah Baumenn & Dr. Anna Faust (AISkills)"
+        "event-participants": "OER-Support-Team & AI-SKILLS"
     },
     {
         "short-event-name": "Nachhaltige KI-Kompetenz",
@@ -154,11 +154,11 @@
         "event-participants": "N.N. (Nachhaltigkeitsb\u00fcro) "
     },
     {
-        "short-event-name": "Walk with us: Invasive Gew\u00e4chse in der Stadt",
+        "short-event-name": "Walk with us: Invasive B\u00e4ume in der Stadt",
         "long-event-name": "Spaziergang \u00fcber den Campus zu invasiven Gew\u00e4chsen in der Stadt",
         "day": "thursday",
-        "start": "17:00",
-        "end": "18:00",
+        "start": "16:30",
+        "end": "17:30",
         "loc": "Campus",
         "id": "event-Robischon",
         "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/walk-with-us-invasive-pflanzen",

@@ -10,104 +10,399 @@
     <link rel="stylesheet" href="assets/css/eb.css" />
     <link rel="stylesheet" href="assets/css/eb_app.css" />
     <script src="assets/js/jquery.min.js"></script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <style>    
+        #questions {
+            height: 120em;
+            font-size: 16px;
+        }
+        .qDiv.fCont {
+            height: fit-content;
+            overflow: hidden;
+            max-width: 740px;
+            margin-bottom: 40px;
+        }
+        @media only screen and (max-width: 600px){
+            #questions {
+                font-size: 14px;
+            }
+            .qDiv.fCont {
+                width: 100%;
+                top: 0;
+            }
+            .fCont select {
+                font-size: 12px;
+            }
+        }
+        #logoContainer {
+            text-align: center
+        }
+        #home {
+            text-decoration: none;
+            color: var(--networkBlack);
+        }
+        #DIV_FORM h1 {
+            color: var(--networkBlack);
+            text-align: center;
+            font-size: 24px;
+            width: 90%;
+            margin: 1.5em auto 1em;
+        }
+        #DIV_FORM h2 {
+            color: var(--networkBlack);
+            text-align: center;
+            font-size: 18px;
+            width: 60%;
+            margin: 0 auto 2em;
+        }
+        #DIV_FORM h3 {
+            font-size: 1em;
+            margin-top: 2em;
+            color: var(--networkBlue)
+        }
+        label.sLabel {
+            display: inline-block;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        select {
+            font-size: 1em;
+            line-height: 1.3em;
+            border: solid 1px var(--networkTurqoise);
+            border-radius: 5px;
+            padding: 0.5em 1em;
+            color: var(--networkTurqoise);
+            background: white;
+            transition: all 0.4s ease;
+        }
+        select:hover {
+            background: rgba(18, 161, 154, 0.1);
+        }
+        input[type="checkbox"] {
+            display: none;
+        }
+        input[type="checkbox"] + label {
+            margin-left: 8px;
+            position: relative
+        }
+        input[type="checkbox"] + label::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            left: -0.5em;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 1.1em;
+            height: 1.1em;
+            line-height: 1.1em;
+            margin-right: 5px;
+            border-radius: 3px;
+            border: 1px solid var(--networkTurqoise);
+            color: var(--networkTurqoise);
+            overflow: hidden;
+        }
+        input[type="checkbox"]:checked + label::before {
+            content: "✔";
+        }
+        input[type="checkbox"].disabled + label {
+            color: rgb(180, 180, 180);
+        }
+        input[type="checkbox"].disabled + label::before {
+            border: 1px solid rgb(180, 180, 180);
+            color: rgb(180, 180, 180);
+        }
+        .fCont .submitButton {
+            border: 3px solid rgba(255,255,255,0.7);
+        }
+        .fCont .submitButton:hover {
+            background: hwb(205 6% 12%);
+        }
+        .fCont .submitButton {
+            left: 50%;
+            border-radius: 1em;
+            padding: 0.5em 1em;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            background: var(--networkBlue)
+        }
+        .fCont .submitButton {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 3em;
+            margin: 0 0;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        body {
+            background: var(--backgroundLightBlue);
+            background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
+        }
+        div.fCont {
+            background: none;
+            width: 100%;
+            height: 120em;
+            /* backdrop-filter: sepia(1) hue-rotate(120deg) saturate(250%) contrast(0.9) brightness(140%); */
+        }
+        #credits {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translate(-50%,0);
+            padding-bottom: 0;
+        }
+        #DIV_FORM {
+            background: white;
+            padding: 4em 3em 2em;
+            box-sizing: border-box;
+        }
+        @media only screen and (max-width: 800px){
+            #DIV_FORM {
+                padding: 4em 1em 2em;
+            }
+        }
+    </style>
+    <style>
+        #credits {
+            opacity: 0.8
+        }
+        #credits > * {
+            margin: auto;
+            /* background-color: rgba(15, 113, 184, 0.2); */
+            color: var(--networkBlue)
+        }
+        #credits .accordion.active + .panel {
+            padding-bottom: 2em;
+        }
+        #credits .panel > h3 {
+            margin-left: 2em;
+        }
+        #credits .panel > p {
+            margin: 0 2.5em 0.5em;
+        }
+        #credits h2, #credits h3 {
+            color: var(--networkBlue)
+        }
+        #credits h2.active {
+            color: var(--networkBlue) !important;
+            padding-bottom: 0;
+        }
+        #credits h3 {
+            margin-top: 2em;
+        }
+        .accordion::before {
+            color: var(--networkBlue)
+        }
+
+    </style>
 </head>
-<style>
-    input[type="checkbox"] {
-        display: none;
-    }
-    input[type="checkbox"] + label {
-        margin-left: 8px;
-        position: relative
-    }
-    input[type="checkbox"] + label::before {
-        content: " ";
-        display: block;
-        position: absolute;
-        left: -0.5em;
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: center;
-        width: 1.1em;
-        height: 1.1em;
-        line-height: 1.1em;
-        margin-right: 5px;
-        border-radius: 3px;
-        border: 1px solid var(--networkTurqoise);
-        color: var(--networkTurqoise);
-        overflow: hidden;
-    }
-    input[type="checkbox"]:checked + label::before {
-        content: "✔";
-    }
-</style>
+
 <body class="is-preload" lang="de">
-<div style="width: 100%">
-    <div id="questions">
-        <img class="backgroundImage" src = "images/treeTemp.svg" />
-        <div id="DIV_FORM" class="qDiv">
-            <h2 style="text-align: center"><img id="welcomeLogo" src="images/NHL_logo.svg" /></h2>
-            <h1>Auswahl Lehr-/Lernszenarien</h1>
-            <p>Nutzen Sie die folgenden Filter, um ein Raumkonzept und Tipps für Ihre Lehrveranstaltung zu finden.</p>
+    <div id="questions" class="fCont">
+        <div id="DIV_FORM" class="qDiv fCont">
+            <p id="logoContainer"><img id="welcomeLogo" src="images/NHL_logo.svg" /></p>
+            <h1><a id="home" href="app.html">Entscheidungshilfe Online und Hybride Lehre</a></h1>
+            <h2>Lehr-/Lernformate erkunden</h2>
+            <p>Falls Sie bereits die Entscheidung über das Format Ihrer Lehrveranstaltung getroffen haben, nutzen Sie die folgenden Filter, um schneller zu den Ergebnissen und Tipps unseres Tools zu kommen. </p>
+            
                  <!-- Art der Lehrveranstaltung -->
-                <h2>Welche Art von Lehrveranstaltung bieten Sie an?</h2>
-                <label for="artLV">Art der Lehrveranstaltung:</label>
+                <h3>Welche Art von Lehrveranstaltung bieten Sie an?</h3>
+                <label for="artLV" class="sLabel">Art der Lehrveranstaltung:</label>
                 <select id="artLV" name="artLV" required>
                     <option value="vl" selected>Vorlesung</option>
                     <option value="se">Seminar/Übung</option>
-                    <option value="pr">Labor oder alternatives Format</option>
+                    <option value="pr" disabled>Coming soon: Laborbasiertes Format</option>
                 </select>
         
                 <!-- Format -->
-                <h2>In welchem Format findet die Lehrveranstaltung statt?</h2>
-                <label for="format">Format:</label>
+                <h3>Welches Format hat die Lehrveranstaltung?</h3>
+                <label for="format" class="sLabel">Format:</label>
                 <select id="format" name="format" required>
-                    <option value="praes" selected>Präsenz</option>
+                    <option value="praes">Präsenz</option>
                     <option value="onl">Online</option>
-                    <option value="hyb">Hybrid</option>
+                    <option value="hyb" selected>Hybrid</option>
                 </select>
         
                 <!-- Interaktionsgrad -->
-                <h2>Wie hoch ist der Interaktionsgrad in Ihrer Lehrveranstaltung?</h2>
-                <label for="syncInt">Interaktionsgrad:</label>
+                <h3>Wie hoch ist der geplante Interaktionsgrad?</h3>
+                <label for="syncInt" class="sLabel" >Interaktionsgrad:</label>
                 <select id="syncInt" name="syncInt" required>
-                    <option value="0" selected>Niedrig</option>
-                    <option value="1">Mittel</option>
-                    <option value="2">Hoch</option>
+                    <option value="0">eher frontaler Unterricht (unidirektional)</option>
+                    <option value="1" selected>Interaktion hauptsächlich im Plenum (bidirektional)</option>
+                    <option value="2">Kollaboratives Arbeiten in Gruppen (omnidirektional)</option>
+                </select>
+
+                <!-- Aufzeichnung -->
+                <h3>Soll die Lehrveranstaltung aufgezeichnet werden?</h3>
+                <label for="aufz" class="sLabel">Aufzeichnung?</label>
+                <select id="aufz" name="aufz" required>
+                    <option value="nein" selected>Nein</option>
+                    <option value="ja">Ja</option>
                 </select>
         
-                <!-- Zusätzliche Bedingungen -->
-                <h2>Zusätzliche Bedingungen</h2>
-                <p>Welche zusätzlichen Bedingungen treffen auf Ihre Lehrveranstaltung zu?</p>
-                <input type="checkbox" id="gaeste" name="zusaetzliche_bedingungen" value="gaeste">
-                <label for="gaeste">Gastvortragende</label><br>
+                <!-- Zusätzliche Informationen -->
+                <h3>Sonderbedingungen</h3>
+                <p>Möchten Sie zusätzliche Tipps zu folgenden Aspekten der Kursplanung und -durchführung erhalten?</p>
+                <input type="checkbox" id="async3" name="extras" value="async3">
+                <label for="async3">Ermöglichung asynchroner Teilnahmealternativen für Studierende</label><br>
     
-                <input type="checkbox" id="exkur" name="zusaetzliche_bedingungen" value="exkur">
-                <label for="exkur">Exkursionen</label><br>
-    
-                <input type="checkbox" id="aufz" name="zusaetzliche_bedingungen" value="aufz">
-                <label for="aufz">Aufzeichnung gewünscht</label>
-            
+                <input type="checkbox" id="gaesteOnl" name="extras" value="gaesteOnl">
+                <label for="gaesteOnl">Online-Zuschaltung von Gastvortragenden</label><br>
+
+                <input type="checkbox" id="exkur" name="situations" value="exkur">
+                <label for="exkur">Hybride Exkursionen</label><br>
+
+                <input type="checkbox" id="intKoll" name="extras" value="intKoll">
+                <label for="intKoll">(Inter)nationale Kurskollaborationen</label>
         
                 <!-- Submit Button -->
-                <button onclick="selectConcept()" >Absenden</button>
-            <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung des Lehrformats</a></div>
+                 <div class="buttonContainer">
+                    <button onclick="selectConcept()" class="submitButton">Absenden</button>
+                 </div>                
+            <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung über das Lehrformat</a></div>
+        </div>    
+        <div class="inner" id="credits">
+            <h2 class="accordion">Credits & Feedback</h2>
+            <div class="panel">
+                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
+                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
+                <p>Raumkonzepte: Philipp Kapser*</p>
+                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
+                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
+                <p>*Humboldt-Universität zu Berlin</p>
+                <p>**Berliner Hochschule für Technik</p>
+                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
+                <h3>Kontakt</h3>
+                <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
+            </div>
         </div>
-    </div>   
-</div>
+    </div> 
+
 <script src="assets/js/jquery.csv.js"></script>
 <script>
-    function selectConcept(){
-        let artLV = document.getElementById("artLV").value
-        let format = document.getElementById("format").value
-        let syncInt = document.getElementById("syncInt").value
-        let gaeste = document.getElementById("gaeste").checked
-        let exkur = document.getElementById("exkur").checked
-        let aufz = document.getElementById("aufz").checked
 
-        let URLstring = `?artLV=${artLV}&format=${format}&syncInt=${syncInt}&gaeste=${gaeste}&exkur=${exkur}&aufz=${aufz}`
+    // special_cases =  {
+    //         "0": "international",
+    //         "1": "langfristGrupp",
+    //         "2": "hybrideExkursion",
+    //         "3": "onlineZuschaltungLP",
+    //         "4": "gastOnline",
+    //         "5": "gastVorOrtHyb",
+    //         "6": "keineAufzeichnung", #nur für den Technik-Pfad
+    //     }
+
+    const optArtLV = document.getElementById("artLV")
+    const optFormat = document.getElementById("format")
+    const optSyncInt = document.getElementById("syncInt")    
+    const optAufz = document.getElementById("aufz")
+    const optAsync3 = document.getElementById("async3")
+    const optGaesteOnl = document.getElementById("gaesteOnl")
+    const optExkur = document.getElementById("exkur")
+    const optIntKoll = document.getElementById("intKoll")
+
+    // disable some option combinations
+    optFormat.addEventListener("change", ()=>{
+        if (optFormat.value != "hyb"){
+            optExkur.classList.add("disabled")
+            optExkur.disabled=true
+            optExkur.checked=false
+        } else {
+            optExkur.disabled=false
+            optExkur.classList.remove("disabled")
+        }
+    })
+    optFormat.addEventListener("change", ()=>{
+        if (optFormat.value == "praes"){
+            optIntKoll.classList.add("disabled")
+            optIntKoll.disabled=true
+            optIntKoll.checked=false
+        } else {
+            optIntKoll.disabled=false
+            optIntKoll.classList.remove("disabled")
+        }
+    })
+    optArtLV.addEventListener("change", ()=>{
+        if (optArtLV.value == "se"){
+            $("#syncInt option[value='0']").attr("disabled", "disabled")
+            if (optSyncInt.value == "0"){
+                optSyncInt.value = "1"
+            }
+        } else {
+            $("#syncInt option[value='0']").removeAttr("disabled")
+        }
+    })
+    
+
+    function selectConcept(){
+        let artLV = optArtLV.value
+        let format = optFormat.value
+        let syncInt = optSyncInt.value
+        let aufz = optAufz.value
+        let async3 = optAsync3.checked
+        let gaesteOnl = optGaesteOnl.checked
+        let exkur = optExkur.checked
+        let intKoll = optIntKoll.checked
+
+        // adjusting for different combinations
+        let asyncTN = async3 ? "3" : "2"
+        let adjFormat
+        let specialCases = []
+        
+        if (format=="hyb" && exkur){
+            specialCases.push(2)
+        }
+
+        if (gaesteOnl){
+            adjFormat = format=="praes" ? "ringhyb1" : format == "hyb" ? "ringhyb2" : "ringonl"
+            specialCases.push(4)
+        } 
+        if (intKoll){
+            specialCases.push(0)
+            if (!gaesteOnl){
+                adjFormat = format=="hyb" ? "hybrem" : format
+            } else {
+                // if both guests and intKoll are true: don't change the format
+                adjFormat = adjFormat
+            }
+        } 
+        if (!gaesteOnl && !intKoll){
+            adjFormat = format
+        }
+
+        if (aufz=="nein"){
+            specialCases.push(6)
+        }
+
+        let sc = JSON.stringify(specialCases)
+        // combining everything into a result
+        let URLstring = `?shownScenario=${artLV}-${adjFormat}-${syncInt}-${asyncTN}-x@[${specialCases}]`
+
         console.log(URLstring)
-        window.open("set_result.html"+URLstring, "_self")
+        window.open("var_result.html"+URLstring, "_self")
     }
 </script>
+<script>
+    // Accordion-menu for credits
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+  </script>
 </body>
 </html>
