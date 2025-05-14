@@ -1,6 +1,6 @@
-# Spaziergang über den Campus zu invasiven Gewächsen in der Stadt  
-## weitere Details folgen so bald wie möglich  
-##### Campus Mitte oder Nord
+# Wie weit ist der Wald weg? Spaziergang rund um das Hauptgebäude der HU 
+## Hermmann-von-Helmholtz-Denkmal vor dem Hauptgebäude 
+##### Unter den Linden 6
 ---
 ### Aktivität
 Leitung: \
