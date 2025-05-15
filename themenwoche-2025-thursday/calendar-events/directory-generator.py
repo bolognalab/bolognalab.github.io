@@ -56,8 +56,8 @@ for event_id in events_list:
                                         })
     aCal.text = r'&#x1F4C5; &nbsp; zum Kalender hinzuf&#xFC;gen (.ics)'
     
-    # spanEL.append(aMoreInfo)
-    # spanEL.append(aCal)
+    spanEL.append(aMoreInfo)
+    spanEL.append(aCal)
     div0.append(spanEL)
     body.append(ET.Comment("         " + event_id + "           "))
     body.append(div0)
