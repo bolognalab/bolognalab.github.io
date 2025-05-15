@@ -12,6 +12,8 @@ csv_file = '../files/programm-themenwoche.csv'
 template_file = 'template.md'
 names_list = []
 titles = {}
+locations = {}
+descriptions = {}
 
 with open(csv_file, mode='r', encoding='utf-8') as csv_file:
     csvfiledata = csv.DictReader(csv_file, delimiter=';')
@@ -21,6 +23,9 @@ with open(csv_file, mode='r', encoding='utf-8') as csv_file:
         json_list.append(fixed_data)
         names_list.append(fixed_data["id"])
         titles[fixed_data["id"]]=fixed_data["long-event-name"]
+        locations[fixed_data["id"]]=fixed_data["loc"]
+        descriptions[fixed_data["id"]]=fixed_data["description"]
+
 
 
 with open(template_file, 'r', encoding="utf-8") as file:
@@ -33,14 +38,16 @@ for name in names_list:
     if not os.path.exists(fname):
         with open(fname, 'w', encoding="utf-8") as file:
             file.write("# " + titles[name] + '  \n')
-            file.write("Information folgt")
-            # for line in linesToWrite[1:]:
-            #     file.write(line)
+            file.write("## " + locations[name] + '  \n')
+            # file.write("Information folgt")
+            for line in linesToWrite[2:5]:
+                file.write(line)
+            file.write(descriptions[name])
             pass
 
 
-with open("test.md", 'w', encoding="utf-8") as file:
-    file.write("# BigTitle \n")
+# with open("test.md", 'w', encoding="utf-8") as file:
+#     file.write("# BigTitle \n")
     
 
 

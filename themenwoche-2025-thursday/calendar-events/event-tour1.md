@@ -1,4 +1,5 @@
-# Eine Natur- und Stadthistorische Wanderung entlang der Panke
-## Treffpunkt: Weidendammbrücke, am Adler Richtung Brücke des Bahnhofs Friedrichstraße
-
-### registration needed: https://umfrage.hu-berlin.de/index.php/547661?lang=de 
+# Walk along the Panke: Urban nature and history hike  
+## Panke
+---
+### Walking Tour
+Walking tour entlang der Panke in Campus Nord - Sign-up at: https://umfrage.hu-berlin.de/index.php/547661?lang=de

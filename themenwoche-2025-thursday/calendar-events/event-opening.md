@@ -1,2 +1,5 @@
 # Opening: Video Message @ all Circle U. Universities  
-Information folgt
+## Online  
+##### Adresse und Raum
+---
+### Art der Veranstaltung (z.B. Workshop)
