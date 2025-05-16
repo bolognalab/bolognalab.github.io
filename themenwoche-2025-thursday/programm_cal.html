@@ -96,7 +96,11 @@
           opacity: 0;
         }
       }
-      
+      @media only screen and (min-width: 800px) {
+        .cd-schedule .events .events-group {
+          width: 33%;
+        }
+      }
      </style> 
 	</head>
 	<body class="is-preload">
@@ -142,23 +146,23 @@
       <div class="events">
         <ul class="wrap">
           <div class="mobile-fading-layer"></div>
-          <li class="events-group" datestring="DO 05.06.2025 - Live @HU" id="monday" >
+          <!-- <li class="events-group" datestring="DO 05.06.2025 - Live @HU" id="monday" >
             <div class="top-info"><span>Live @HU</span></div>
             <ul aria-label="montag"></ul>
-          </li>
+          </li> -->
     
           <li class="events-group" datestring="DO 05.06.2025 - Hybrid @HU" id="tuesday">
-            <div class="top-info"><span>Hybrid @HU</span></div>         
+            <div class="top-info"><span>Live @ HU</span></div>         
             <ul aria-label="dienstag"></ul>
           </li>
     
           <li class="events-group" datestring="DO 05.06.2025 -  Tours @HU" id="wednesday">
-            <div class="top-info"><span>Tours @HU</span></div>
+            <div class="top-info"><span>Online @ HU</span></div>
             <ul aria-label="mittwoch"></ul>
           </li>
     
           <li class="events-group" datestring="DO 05.06.2025 - Online @CircleU" id="thursday">
-            <div class="top-info"><span>online @CU</span></div>
+            <div class="top-info"><span>Online @ Circle U.</span></div>
             <ul aria-label="donnerstag">
             </ul>
           </li>
@@ -195,14 +199,14 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script>
       // Conflicts to place on the left
-      const conflictsLeft = ["event-hygiene", "event-unipi"]
+      const conflictsLeft = ["event-SO", "event-hygiene", "event-unipi"]
       // Conflicts to place on the right
-      const conflictsRight = ["event-Telschow", "event-aarhus1"]
+      const conflictsRight = ["event-cubes", "event-Telschow", "event-aarhus1"]
 
       //define hashtags/topics for each event
       const eventTypes = {
         "event-1": "Diskussion",
-        "event-2": "ImpulsFürDiePraxis",
+        "event-2": "Impuls",
         "event-3": "Kompetenzentwicklung", 
         "event-4": "Aktivität"
       }
