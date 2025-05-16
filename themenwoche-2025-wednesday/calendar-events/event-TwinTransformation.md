@@ -12,3 +12,5 @@ Diskussion: \
 ##### #gnuHU 
 **Tim Schmidt**  
 ##### Technische Abteilung
+**Prof. Dr. Christoph Schneider**  
+##### Vizepräsident für Forschung
