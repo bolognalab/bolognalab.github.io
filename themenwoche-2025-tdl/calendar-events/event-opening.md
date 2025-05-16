@@ -6,7 +6,7 @@
 ### Impuls und Podiumsdiskussion
 Grußwort: \
 **Prof. Dr. Christoph Wulf**  
-##### Vizepräsident der Geschäftsstelle für nachhaltige Entwicklung der Deutschen UNESCO-Kommission
+##### Vizepräsident der Deutschen UNESCO-Kommission
 Keynote: \
 **Sara Schurmann**  
 ##### Mitgründerin des Netzwerks Klimajournalismus
