@@ -3,4 +3,4 @@
 ##### Adresse und Raum
 ---
 ### Webinar
-Tracking human responses to climate change through bioarchaeology (University of Pisa)
+In diesem von der University of Pisa veranstalteten Webinar wird untersucht, wie die menschliche Archäologie neue Erkenntnisse über den Zusammenhang zwischen Klimawandel, menschlicher Gesundheit und Anpassung liefern kann.

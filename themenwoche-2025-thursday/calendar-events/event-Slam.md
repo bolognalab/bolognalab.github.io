@@ -3,4 +3,4 @@
 #####  Raum E'701, Geschwister-Scholl-Straße 1-3
 ---
 ### Input & Diskussion
-Students of all degree programs and qualification levels (BA, MA, PhD students) will have the opportunity to present their research projects or theses dealing with issues of climate change and/ or sustainability.
+In diesem Science Slam werden Studierende aller Studiengänge und Qualifikationsstufen (BA, MA, Doktoranden) die Möglichkeit haben, ihre Forschungsprojekte oder Abschlussarbeiten zu präsentieren, die sich mit Fragen des Klimawandels und/oder der Nachhaltigkeit beschäftigen. Das Science Slam findet in englischer Sprache statt und wird hybrid im Livestream übertragen.

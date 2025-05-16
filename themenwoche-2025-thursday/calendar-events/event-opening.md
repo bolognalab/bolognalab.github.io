@@ -1,5 +1,5 @@
 # Opening: Video Message @ all Circle U. Universities  
-## Online  
-##### Adresse und Raum
+## Online 
 ---
-### Art der Veranstaltung (z.B. Workshop)
+### Video-Message
+Der Startschuss für den Circle U. Climate Day!

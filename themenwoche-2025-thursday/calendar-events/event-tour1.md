@@ -2,4 +2,4 @@
 ## Panke
 ---
 ### Walking Tour
-Walking tour entlang der Panke in Campus Nord - Sign-up at: https://umfrage.hu-berlin.de/index.php/547661?lang=de
+Historische Walking-Tour entlang der Panke in Campus Nord. Melden Sie sich bis zum 28.05. an, um teilzunehmen!

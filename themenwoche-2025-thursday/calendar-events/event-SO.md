@@ -3,4 +3,4 @@
 #####  Raum E'701, Geschwister-Scholl-Straße 1-3
 ---
 ### Workshop
-Organized by the student-led Sustainability Office at Humboldt University in collaboration with Aarhus University, the workshop provides a platform for developing innovative solutions to global socio-ecological challenges.
+Der Workshop wird vom studentischen Nachhaltigkeitsbüro der Humboldt-Universität in Zusammenarbeit mit Aarhus University organisiert und bietet eine Plattform für die Entwicklung innovativer Lösungen für globale sozial-ökologische Herausforderungen. Der Workshop findet in englischer Sprache statt. Eine Anmeldung via Email bis 01.06. ist erforderlich.
