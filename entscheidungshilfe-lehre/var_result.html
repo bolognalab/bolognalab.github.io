@@ -143,10 +143,10 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario').split("@")[0] : "se-rem-2-1-2"
-const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : ["se-rem-2-0-0@[0]","se-rem-2-3-0@[0]","se-hyb-2-0-0@[1]","se-hyb-2-3-0"]
+const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : []
 const specialCaseIndices = urlParams.has('shownScenario') && urlParams.get('shownScenario').includes("@") ? JSON.parse(urlParams.get('shownScenario').split("@")[1]) : []
 const providedAnswers = JSON.parse(sessionStorage.getItem("answers"))
-
+// "se-rem-2-0-0@[0]","se-rem-2-3-0@[0]","se-hyb-2-0-0@[1]","se-hyb-2-3-0"
 const dummyAnswers = {
     "artLV": "SE",
     "intSync": "2",
