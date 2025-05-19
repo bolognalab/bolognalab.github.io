@@ -167,4 +167,4 @@ Die Regeln, die festlegen, wie sich die Art der Beantwortung der einzelnen Frage
 Zusätzlich können auf der Seite <https://bolognalab.github.io/entscheidungshilfe-lehre/app-flow.html> die Regeln in Praxis getestet werden, indem man die Fragen beantwortet und gleich den Einfluss auf die Scores der Ergebnisse sehen kann (Abbildung 5). Auf dieser Seite gibt es auch eine Filter-Funktion, wenn man bestimmte Szenarien verfolgen möchte. Um den Namen eines Szenarios zu sehen, könnte man mit den Mauszeiger für ein paar Sekunden auf dem Code des Szenarios lassen - so erscheint der Titel des Szenarios als Tooltip.
 
 ![](dokumentation/img_flowScreenshot.png)
-*Abbildung 5. Screenshot aus der Seite app-flow.html*
+*Abbildung 5. Screenshot aus der Seite app-flow.html. Die mit gelb markierten Szenarien sind die, die durch die letzte Frage beeinflusst wurden.*
