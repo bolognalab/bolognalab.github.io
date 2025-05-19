@@ -11,9 +11,7 @@ Diese Dokumentation dient dem Verständnis der "Backend"-Struktur des Tools, ohn
 
 ## Vorschau
 
-URL zur letzten Version: <https://bolognalab.github.io/entscheidungshilfe-lehre/app.html>
-
-- Anmerkung 10/10/2024 – im Moment ist nur die Use-Case 1 möglich.
+URL zur letzten Version: <https://bolognalab.github.io/entscheidungshilfe-lehre/app.html> oder <https://pages.cms.hu-berlin.de/netzwerk-hybride-lehre/entscheidungstool>
 
 Direkt zu einem Beispiel-Ergebnis: <https://bolognalab.github.io/entscheidungshilfe-lehre/var_result.html>
 
@@ -42,7 +40,7 @@ Es werden grundsätzlich 33 verschiedene Lehr-/Lernszenarien als Ergebnisse des 
   - 1 = Bereitstellung von Strukturen, damit einzelne Studierende miteinander interagieren können, ohne explizite Aufforderung oder Anreiz, dass sie diese Angebote nutzen z.B. Forum, Q&A, Peer-Feedback
   - 2 = Bereitstellung von Strukturen für St-LP und St-St interaktion und Anreize, sie zu benutzen
 
-Die drei Variablen beeinflussen, welche Tipps im Ergebnis angezeigt werden. Anmerkung: die Kombination asyncTN=0, asyncInt=2 ist nicht möglich, weil es nicht sinnvoll ist, bei einer rein-synchronen LV Anreize für asynchrone Interaktion zu erstellen.  
+Die drei Variablen beeinflussen, welche Tipps im Ergebnis angezeigt werden. Anmerkung: manche Kombinationen sind aus logischen Gründen nicht möglich (z.B. ``asyncTN = 0`` & ``asyncInt =2``).
 
 Jedes mögliche Ergebnis wird im Programm mit einem Code \[xx-yy...y-#-#-#\] beschrieben (z.B. vl-praes-2-1-2), der diese Parameter berücksichtigt:
 
@@ -51,7 +49,7 @@ Jedes mögliche Ergebnis wird im Programm mit einem Code \[xx-yy...y-#-#-#\] bes
 | Bsp: | Vorlesung | in Präsenz | hohe synchrone Interaktion | ergänzende Nacharbeit | St-LP und St-St |
 | Code: | ``vl`` | ``praes`` | ``2``| ``1`` | ``2`` |
 
-Die aktuelle Liste der Lernszenarien (alle Kombinationen) befindet sich in der Datei [**szenarien.csv**](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/szenarien.csv/). Aus dieser Datei sind nur die ersten zwei Spalten (Code und angezeigter Titel des Unterrichtformats) von Bedeutung für das Programm – die anderen Felder sind nur für uns intern zu verstehen.
+Die aktuelle Liste der Lernszenarien (alle Kombinationen) befindet sich in der Datei [**szenarien.csv**](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/szenarien.csv/).
 
 #### Blöcke
 
@@ -125,10 +123,10 @@ Es ist wichtig für das Programm, dass die Tippcodes in einer Zelle der Tabelle 
 privateEcke, warteZeitHyb, darstellungsformen
 
 #### Medientechnische Voraussetzungen
-Die Organisation der Informationen zu Medientechnik in Dateien steht noch nicht fest, aber die Zuordnung wird wahrscheinlich auch in der Datei [texts_tips_matrix.csv](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/texts_tips_matrix.csv) definiert werden.
+Die Organisation der Informationen zu Medientechnik in Dateien ist gerade in Entwicklung. Im Moment werden verschiedenen vor-Ort- und hybriden Szenarien Text und URL-Links für Raumkonzepte (die auf Sketchfab hochgeladen wurden) zugeordnet. Die Zuordnung wird in der Datei [texts_tips_matrix.csv](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/texts_tips_matrix.csv) definiert.
 
 #### Spezialfalle (Special Cases)
-Zwischen Blöcke 3 (Tipps für die asynchrone Teilnahme) und 4 (Medientechnik) können ggf. zusätzliche Tipps/Texte für bestimmte Sonderfallen angezeigt werden. Hier wird qualitativ beschrieben, was bei den verschiedenen Spezialfällen passieren sollte.
+Zwischen Blöcken 3 (Tipps für die asynchrone Teilnahme) und 4 (Medientechnik) können ggf. zusätzliche Tipps/Texte für bestimmte Sonderfallen angezeigt werden. Hier wird qualitativ beschrieben, was bei den verschiedenen Spezialfällen passieren sollte.
 
 <table><tbody><tr><th><p><strong>Fall</strong></p></th><th><p><strong>Implementiert?</strong></p></th></tr><tr><td><p><strong>Internationale Kollaboration (hybride Exkursion)</strong></p><ul><li>Ein Zusätzlicher Block „Tipps für internationale Kollaboration“ soll erscheinen</li><li>In dem Block „Tipps für internationale Kollaboration“ werden Tipps hinzugefügt, die in der Datei <strong>tips_source.json</strong> mit „type“: „international“ bezeichnet werden.<ul><li>Mehrsprachigkeit: Für Videoaufzeichnungen wo möglich Live-Untertitelung nutzen (-&gt; viele VC Systeme können das, ob die Funktion nutzbar/aktiviert ist, muss mit IT Services geklärt werden). Englisch i.d.R. gut, Deutsch geht so, Wechsel zwischen zwei Sprachen schwierig.</li><li>Übersetzungen: Live Übersetzung sind meistens noch ein zusätzlicher, kostenpflichtiger Service oder datenschutzrechtlich problematisch. Dokumente können asynchron zur Sinnerfassung inzwischen gut mit DeepL übersetzt werden (https://www.deepl.com/de/translator)</li><li>Dokumentation: Die meisten VC Plattformen können inzwischen automatisch Transkripte von Videokonferenzen generieren. Das funktioniert mit Englisch ganz gut, mit anderen Sprachen mäßig. Achtung: Die Software kann nur Beiträge der Online-Teilnehmer:innen namentlich zuordnen; bei Aufnahmen aus dem analogen Raum fällt im Nachhinein die Unterscheidung zwischen verschiedenen Sprecher:innen/Beiträgen schwer. Als wörtliche Mitschrift sind die Skripte sehr umfangreich und aufwendig in der Überarbeitung.</li></ul></li></ul></td><td><p>Noch nicht</p></td></tr><tr><td><p><strong>Hybride Exkursion (hybrideExkursion)</strong></p><ul><li>Ein Zusätzlicher Block „Tipps für Hybride Exkursionen“ soll erscheinen</li><li>Tipps werden für den Fall geschrieben; Quelle; <a href="https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion">https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion</a></li></ul></td><td><p>Noch nicht</p></td></tr><tr><td><p><strong>Online-Zuschaltung Lehrperson<br></strong>(Die Lehrperson ist online zugeschaltet, während Studierende mit einer moderierenden Person im Lehrraum sind)</p><ul><li>Zusätzliche Tipps werden im Block für die synchrone Teilnahme hinzugefügt.<ul><li>Technik-Check vor der LV</li><li>Studierende als Moderator:innen vor Ort</li></ul></li></ul></td><td><p>noch nicht</p></td></tr></tbody></table>
 
