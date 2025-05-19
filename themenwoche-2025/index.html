@@ -393,7 +393,9 @@
                 m.parentElement.classList.add("loaded")
                 m.parentElement.addEventListener("click", function(){
                   if (m.parentElement.classList.contains("shown")){
-                    m.contentDocument.querySelector("a.close").click() 
+                    if(m.contentDocument.querySelector("#schedule").classList.contains("modal-is-open")){
+                      m.contentDocument.querySelector("a.close").click() 
+                    }
                     minimizeDay(m.id)
                     daysContainer.classList.remove("maximized")
                   } else {
