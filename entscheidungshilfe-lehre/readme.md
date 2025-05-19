@@ -164,7 +164,7 @@ Wenn ein\*e Nutzer\*in sich am Anfang des Entscheidungsbaums befindet, erstellt 
 
 Die Regeln, die festlegen, wie sich die Art der Beantwortung der einzelnen Fragen auf dem Score der verschiedenen Ergebnisse auswirkt, werden in der Datei [setQuestionsRules.py](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/setQuestionsRules.py) geschrieben. Wenn dieses Python-Skript aufgeführt wird, dann werden alle Regeln als "Effekte" einer Antwortmöglichkeit auf die Punktzahl eines Szenarios in der Datei [data.json](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/data.json) gespeichert. In der Python-Datei ist auch die Logik hinter der Regeln in englischer Sprache kurz durch Kommentare erklärt.
 
-Zusätzlich können auf der Seite <https://bolognalab.github.io/entscheidungshilfe-lehre/app-flow.html> die Regeln in Praxis getestet werden, indem man die Fragen beantwortet und gleich den Einfluss auf die Scores der Ergebnisse sehen kann (Abbildung 5).
+Zusätzlich können auf der Seite <https://bolognalab.github.io/entscheidungshilfe-lehre/app-flow.html> die Regeln in Praxis getestet werden, indem man die Fragen beantwortet und gleich den Einfluss auf die Scores der Ergebnisse sehen kann (Abbildung 5). Auf dieser Seite gibt es auch eine Filter-Funktion, wenn man bestimmte Szenarien verfolgen möchte. Um den Namen eines Szenarios zu sehen, könnte man mit den Mauszeiger für ein paar Sekunden auf dem Code des Szenarios lassen - so erscheint der Titel des Szenarios als Tooltip.
 
 ![](dokumentation/img_flowScreenshot.png)
 *Abbildung 5. Screenshot aus der Seite app-flow.html*
