@@ -36,9 +36,9 @@ Es werden grundsätzlich 33 verschiedene Lehr-/Lernszenarien als Ergebnisse des 
   - 3 = asynchrone Teilnahme als möglicher Ersatz der synchr. Teilnahme
   - 4 = exklusiv asynchron
 - **Umfang der asynchronen Interaktion (Variabel ``asyncInt``)**: wie viel studentische Interaktion außerhalb der Kurssitzungen gewünscht ist und inwieweit die Lehrperson diese Interaktion strukturieren möchte
-  - 0 = minimal; keine Strukturierung der asynchronen Interaktion für Studierende und minimale Bereitstellung von Ressourcen dafür. Angebote für Interaktion mit der Lehrperson werden trotzdem empfohlen, z.B. Sprechstunden, Helpdesk, E-Mail, individuelles Feedback zu eingereichten Aufgaben
-  - 1 = Bereitstellung von Strukturen, damit einzelne Studierende miteinander interagieren können, ohne explizite Aufforderung oder Anreiz, dass sie diese Angebote nutzen z.B. Forum, Q&A, Peer-Feedback
-  - 2 = Bereitstellung von Strukturen für St-LP und St-St interaktion und Anreize, sie zu benutzen
+  - 0 = minimal; keine Strukturierung der asynchronen Interaktion für Studierende und minimale Bereitstellung von Ressourcen dafür. Die asynchrone Interaktion besteht hauptsächlich in dem Konsum/Nachlesen von Materialien
+  - 1 = Bereitstellung von Strukturen für Interaktion individueller Studierenden mit der Lehrperson oder mit Feedback-Tools
+  - 2 = Bereitstellung von Strukturen für individuelles Feedback und für Peer-Interaktion 
 
 Die drei Variablen beeinflussen, welche Tipps im Ergebnis angezeigt werden. Anmerkung: manche Kombinationen sind aus logischen Gründen nicht möglich (z.B. ``asyncTN = 0`` & ``asyncInt =2``).
 
