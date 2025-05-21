@@ -166,5 +166,19 @@
         "start-ovr": "-",
         "end-ovr": "-",
         "event-participants": "Prof. Dr. Marcel Robischon (Thaer-Institut)"
+    },
+    {
+        "short-event-name": "Lernen und Lehren mit der Gesellschaft",
+        "long-event-name": "Lernen und Lehren mit der Gesellschaft",
+        "day": "monday",
+        "start": "11:00",
+        "end": "12:00",
+        "loc": "Online",
+        "id": "event-hhzk",
+        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/lehren-und-lernen-mit-der-gesellschaft",
+        "category": "event-1",
+        "start-ovr": "-",
+        "end-ovr": "-",
+        "event-participants": "Xenia Muth & Leonie Kubigsteltig (Helmholtz-Zentrum f\u00fcr Kulturtechnik)"
     }
 ]

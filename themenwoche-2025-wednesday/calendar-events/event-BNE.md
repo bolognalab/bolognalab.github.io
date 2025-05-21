@@ -1,5 +1,5 @@
-# Umfairteilung öffentlicher Räume - das Fallbeispiel Mobilität
-## Spanderauer Str. 10  
+# Walk with us: Umfairteilung öffentlicher Räume - das Fallbeispiel Mobilität
+## Treffpunkt: Schönhauser Allee 10
 ##### 10119 Berlin
 ---
 ### Impulsvortrag und Exkursion

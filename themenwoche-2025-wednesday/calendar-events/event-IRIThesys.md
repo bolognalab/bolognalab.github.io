@@ -1,6 +1,5 @@
 # Themenklasse Globale Gerechtigkeit und Nachhaltigkeit -Interdisziplinäre Nachhaltigkeitsforschung für Studierende
-## IRI Thesys  
-##### Online
+## Online via Zoom
 ---
 ### Impuls
 Leitung: \

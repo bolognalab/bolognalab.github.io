@@ -1,0 +1,277 @@
+BEGIN:VCALENDAR
+PRODID:-//Mozilla.org/NONSGML Mozilla Calendar V1.1//EN
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+X-TZINFO:Europe/Berlin[2025a]
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+005328
+TZNAME:Europe/Berlin(STD)
+DTSTART:18930401T000000
+RDATE:18930401T000000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19160430T230000
+RDATE:19160430T230000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19161001T010000
+RDATE:19161001T010000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19170416T020000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=3MO;UNTIL=19180415T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19170917T030000
+RRULE:FREQ=YEARLY;BYMONTH=9;BYDAY=3MO;UNTIL=19180916T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19400401T020000
+RDATE:19400401T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19421102T030000
+RDATE:19421102T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19430329T020000
+RDATE:19430329T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19440403T020000
+RRULE:FREQ=YEARLY;BYMONTH=4;BYDAY=1MO;UNTIL=19450402T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+030000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19450524T020000
+RDATE:19450524T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19431004T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1MO;UNTIL=19441002T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+030000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19450924T030000
+RDATE:19450924T030000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19451118T030000
+RDATE:19451118T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19460414T020000
+RDATE:19460414T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19470406T030000
+RDATE:19470406T030000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+030000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19470511T030000
+RDATE:19470511T030000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19461007T030000
+RDATE:19461007T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+030000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19470629T030000
+RDATE:19470629T030000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19480418T020000
+RDATE:19480418T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19490410T020000
+RDATE:19490410T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19471005T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=1SU;UNTIL=19491002T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19800406T020000
+RDATE:19800406T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19800928T030000
+RRULE:FREQ=YEARLY;BYMONTH=9;BYDAY=-1SU;UNTIL=19950924T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:Europe/Berlin(DST)
+DTSTART:19810329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU;UNTIL=19960331T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:Europe/Berlin(STD)
+DTSTART:19961027T030000
+RDATE:19961027T030000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETTO:+020000
+TZOFFSETFROM:+010000
+TZNAME:(DST)
+DTSTART:19970330T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETTO:+010000
+TZOFFSETFROM:+020000
+TZNAME:(STD)
+DTSTART:19971026T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+CREATED:20250521T092054Z
+LAST-MODIFIED:20250521T093227Z
+DTSTAMP:20250521T093227Z
+UID:0a5001b3-de90-420b-9c03-091168b1bdfc
+SUMMARY:Lernen und Lehren in der Gesellschaft
+DTSTART;TZID=Europe/Berlin:20250604T110000
+DTEND;TZID=Europe/Berlin:20250604T120000
+TRANSP:OPAQUE
+LOCATION:Zoom: siehe https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025
+ /programm-themenwoche-2025/lehren-und-lernen-mit-der-gesellschaft 
+DESCRIPTION;ALTREP="data:text/html,%3Cp%3EVorstellung%20F%C3%B6rderprogramm
+ %20%E2%80%9ELernen%20und%20Lehren%20mit%20der%20Gesellschaft%3A%20%0Atransd
+ isziplin%C3%A4res%20Kursprogramm%20im%20Objektlabor%E2%80%9C%20%0A%26amp%3B
+ %C2%A0%C2%A0Erfahrungsaustausch%3C%2Fp%3E%0A%3Cp%3EF%C3%BCr%20die%20nachhal
+ tige%20Bew%C3%A4ltigung%20der%20gro%C3%9Fen%20gesellschaftlichen%20%0AHerau
+ sforderungen%20unserer%20Zeit%20kommt%20der%20Wissenschaft%20und%20Hochschu
+ len%20%0Aeine%20zentrale%20Verantwortung%20zu.%20Der%20Wissensaustausch%20m
+ it%20der%20%0AGesellschaft%20wird%20daher%20zunehmend%20auch%20in%20der%20L
+ ehre%20zu%20einem%20wichtigen%20%0ABestandteil.%20Das%20Lernen%20von%20und%
+ 20mit%20unterschiedlichen%20Akteur%3Ainnen%20der%20%0AZivilgesellschaft%2C%
+ 20Kultur%20oder%20Politik%20und%20die%20Integration%20von%20Erfahrung%0A%20
+ und%20Wissen%20aus%20der%20Gesellschaft%20in%20die%20Seminararbeit%20der%20
+ Studierenden%20%0Akann%20dabei%20helfen%2C%20gesellschaftliche%20Problemste
+ llungen%20und%20%0AForschungsfragen%20zu%20erkennen%2C%20einen%20positiven%
+ 20Perspektivwechsel%20f%C3%B6rdern%20%0Aund%20zu%20innovativen%20L%C3%B6sun
+ gen%20beitragen.%3C%2Fp%3E%0A%0A%3Cp%3EDas%20HU%20Kompetenzfeld%20Wissensau
+ stausch%20mit%20der%20Gesellschaft%20l%C3%A4dt%20Sie%20%0Azu%20einem%20Erfa
+ hrungsaustausch%20zu%20diesem%20Thema%20ein.%20Gemeinsam%20diskutieren%20%0
+ Awir%20Fragen%20wie%3A%3C%2Fp%3E%0A%3Cul%3E%3Cli%3EWas%20sind%20Ihre%20Erfa
+ hrungen%20mit%20Partizipation%20von%20gesellschaftlichen%20%0AAkteuren%20in
+ %20der%20Lehre%3F%20Welche%20innovativen%20Formate%20haben%20Sie%20ausprobi
+ ert%20%0Aund%20was%20waren%20die%20Learnings%2C%20positive%20Erfahrungen%20
+ und%20Herausforderungen%3F%3C%2Fli%3E%3Cli%3EWie%20kann%20ein%20gleichberec
+ htigter%20Austausch%20mit%20der%20Gesellschaft%20in%20die%20Kurse%20Ihrer%2
+ 0Fachdisziplin%20integriert%20werden%3F%3C%2Fli%3E%3Cli%3EWas%20f%C3%BCr%20
+ Rahmenbedingungen%2C%20Unterst%C3%BCtzung%20oder%20Voraussetzungen%20%0Abra
+ uchen%20Lehrveranstaltungen%20an%20Hochschulen%20um%20erfolgreich%20einen%2
+ 0solchen%0A%20Austausch%20zu%20gestalten%3F%3C%2Fli%3E%3C%2Ful%3E%0A%3Cp%3E
+ %C2%A0%3C%2Fp%3E%0A%3Cp%3EWir%20freuen%20uns%20auf%20den%20Austausch%20zum%
+ 20Thema%20Partizipation%20und%20Lernen%20%0Amit%20der%20Gesellschaft%20und%
+ 20stellen%20Ihnen%20ein%20neues%20F%C3%B6rderangebot%20an%20der%20HU%0A%20v
+ or%2C%20das%20Lehrende%20und%20Studierende%20fach%C3%BCbergreifend%20dabei%
+ 20unterst%C3%BCtzt%2C%20%0Awissenschaftliche%20Fragen%20und%20Seminararbeit
+ %20in%20Kooperation%20mit%20der%20%0AGesellschaft%20zu%20gestalten.%3C%2Fp%
+ 3E%0A%3Cbr%3E%0A%3Cp%3E%3Cstrong%3EWann%3A%20Mittwoch%2004.06.%20von%2011%3
+ A00-12%3A00Uhr%3C%2Fstrong%3E%3C%2Fp%3E%0A%0A%3Cp%3E%3Cstrong%3EWer%3A%20Xe
+ nia%20Muth%20%26amp%3B%20Leonie%20Kubigsteltig%20%3C%2Fstrong%3E%3Cbr%3EHU%
+ 20Kompetenzfeld%20%0AWissensaustausch%20mit%20der%20Gesellschaft%2C%3Cbr%3E
+ %20Zentralinstitut%20Zentrum%20f%C3%BCr%20%0AKulturtechnik%3C%2Fp%3E":Vorst
+ ellung Förderprogramm „Lernen und Lehren mit der Gesellschaft: \ntransdi
+ sziplinäres Kursprogramm im Objektlabor“ \n&  Erfahrungsaustausch\n\nFü
+ r die nachhaltige Bewältigung der großen gesellschaftlichen \nHerausforde
+ rungen unserer Zeit kommt der Wissenschaft und Hochschulen \neine zentrale 
+ Verantwortung zu. Der Wissensaustausch mit der \nGesellschaft wird daher zu
+ nehmend auch in der Lehre zu einem wichtigen \nBestandteil. Das Lernen von 
+ und mit unterschiedlichen Akteur:innen der \nZivilgesellschaft\, Kultur ode
+ r Politik und die Integration von Erfahrung\n und Wissen aus der Gesellscha
+ ft in die Seminararbeit der Studierenden \nkann dabei helfen\, gesellschaft
+ liche Problemstellungen und \nForschungsfragen zu erkennen\, einen positive
+ n Perspektivwechsel fördern \nund zu innovativen Lösungen beitragen.\n\n\
+ nDas HU Kompetenzfeld Wissensaustausch mit der Gesellschaft lädt Sie \nzu 
+ einem Erfahrungsaustausch zu diesem Thema ein. Gemeinsam diskutieren \nwir 
+ Fragen wie:\n\n    Was sind Ihre Erfahrungen mit Partizipation von gesellsc
+ haftlichen \n    Akteuren in der Lehre? Welche innovativen Formate haben Si
+ e ausprobiert \n    und was waren die Learnings\, positive Erfahrungen und 
+ Herausforderungen?\n    Wie kann ein gleichberechtigter Austausch mit der G
+ esellschaft in die Kurse Ihrer Fachdisziplin integriert werden?\n    Was f
+ ür Rahmenbedingungen\, Unterstützung oder Voraussetzungen \n    brauchen 
+ Lehrveranstaltungen an Hochschulen um erfolgreich einen solchen\n     Austa
+ usch zu gestalten?\n\n\n \n\nWir freuen uns auf den Austausch zum Thema Par
+ tizipation und Lernen \nmit der Gesellschaft und stellen Ihnen ein neues F
+ örderangebot an der HU\n vor\, das Lehrende und Studierende fachübergreif
+ end dabei unterstützt\, \nwissenschaftliche Fragen und Seminararbeit in Ko
+ operation mit der \nGesellschaft zu gestalten.\n\n\n\nWann: Mittwoch 04.06.
+  von 11:00-12:00Uhr\n\n\nWer: Xenia Muth & Leonie Kubigsteltig \nHU Kompete
+ nzfeld \nWissensaustausch mit der Gesellschaft\,\n Zentralinstitut Zentrum 
+ für \nKulturtechnik
+X-MOZ-GENERATION:1
+END:VEVENT
+END:VCALENDAR

@@ -1,9 +1,12 @@
 # Wie passen Digitalisierung und Nachhaltigkeit zusammen?   
-## Impuls und Diskussion
-##### Online
+## Online via Zoom
 ---
-### Impuls: Anna Gehlke (CHE Consult) - Digitalisierung und Nachhaltigkeit an deutschen Hochschulen
-Diskussion: \
+### Impuls 
+**Anna Gehlke** 
+##### (CHE Consult)
+**"Digitalisierung und Nachhaltigkeit an deutschen Hochschulen"**
+
+### Diskussion
 **Prof. Dr. Niels Pinkwart**  
 ##### Vizepräsident für Lehre und Studium
 **Uwe Pirr**  
