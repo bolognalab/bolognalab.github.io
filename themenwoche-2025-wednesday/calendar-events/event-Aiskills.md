@@ -1,6 +1,6 @@
 # Bausteine nachhaltiger, offener Bildung: OER-Support trifft AI-SKILLS Community 
 ## Jacob-und Wilhelm-Grimm-Zentrum, Raum 9.537/8 
-##### Universitätsbibliothek, Geschwister-Scholl-Str. 1-3
+##### Zugang: Planckstr. 16 („Personaleingang“, Aufzug rechts, weiße Tür)
 ---
 ### Workshop
 Leitung: \
