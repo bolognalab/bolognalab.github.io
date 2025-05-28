@@ -28,25 +28,11 @@
         "end-ovr": "-"
     },
     {
-        "short-event-name": "Science Slam: Climate Change & Sustainability",
-        "long-event-name": "Climate change and sustainability science slam",
-        "description": "Students of all degree programs and qualification levels (BA, MA, PhD students) will have the opportunity to present their research projects or theses dealing with issues of climate change and/ or sustainability.",
-        "day": "tuesday",
-        "start": "18:00",
-        "end": "19:30",
-        "loc": "Grimm Zentrum und Online",
-        "id": "event-Slam",
-        "web": "https://www.international.hu-berlin.de/en/veranstaltungsliste/circle-u-climate-day-science-slam-zu-klimawandel-und-nachhaltigkeit",
-        "category": "event-1",
-        "start-ovr": "18:15",
-        "end-ovr": "-"
-    },
-    {
         "short-event-name": "Festive Finale",
         "long-event-name": "Festive Finale of Climate Day: Get-Together",
         "description": "Festive Finale of Climate Day: Get-Together",
         "day": "tuesday",
-        "start": "19:30",
+        "start": "18:30",
         "end": "20:30",
         "loc": "Auditorium, Grimm Zentrum",
         "id": "event-GetTogether",
