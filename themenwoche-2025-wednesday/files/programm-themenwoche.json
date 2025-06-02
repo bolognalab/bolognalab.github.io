@@ -56,20 +56,6 @@
         "event-participants": "Dr. Nina Lorkowski & Dr. Julia Rue\u00df (BUA)"
     },
     {
-        "short-event-name": "Workshop: Nachhaltigkeit in den Fachdisziplinen",
-        "long-event-name": "Impulse und BNE-Methoden f\u00fcr die Lehre",
-        "day": "wednesday",
-        "start": "11:00",
-        "end": "13:30",
-        "loc": "2249a Hauptgeb\u00e4ude",
-        "id": "event-Wiebke",
-        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/nachhaltigkeit-in-den-fachdisziplinen",
-        "category": "event-3",
-        "start-ovr": "-",
-        "end-ovr": "-",
-        "event-participants": "Wiebke Hampel & Shalin Mathur (Klimaschutzmanagement)"
-    },
-    {
         "short-event-name": "Zur\u00fcck zum Kreislauf",
         "long-event-name": "Wie wertvoll sind unsere F\u00e4kalien?",
         "day": "tuesday",
@@ -82,20 +68,6 @@
         "start-ovr": "-",
         "end-ovr": "-",
         "event-participants": "Dr. Jan-Ole Boness (Thaer-Institut)"
-    },
-    {
-        "short-event-name": "Workshop: OER-Support trifft AI-SKILLS Community",
-        "long-event-name": "OER als nachhaltige Bildungsressource",
-        "day": "wednesday",
-        "start": "12:00",
-        "end": "15:00",
-        "loc": "Pr\u00e4senz",
-        "id": "event-Aiskills",
-        "web": "https://bolognalab.hu-berlin.de/de/gl/themenwoche/2025/programm-themenwoche-2025/oer-aiskills",
-        "category": "event-3",
-        "start-ovr": "-",
-        "end-ovr": "-",
-        "event-participants": "OER-Support-Team & AI-SKILLS"
     },
     {
         "short-event-name": "Nachhaltige KI-Kompetenz",

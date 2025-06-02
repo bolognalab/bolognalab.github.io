@@ -11,11 +11,13 @@ Keynote: \
 **Sara Schurmann**  
 ##### Mitgründerin des Netzwerks Klimajournalismus
 Podiumsdiskussion: \
-**Sara Schurmann**  
-##### Mitgründerin des Netzwerks Klimajournalismus
-**Prof. Dr. Niels Pinkwart**  
-##### Vizepräsident für Lehre und Studium
 **Wiebke Hampel**  
 ##### Klimaschutzmanagement
-**N.N.**  
+**Anna Isabel Hinderer**  
 ##### Nachhaltigkeitsbüro
+**Pascal Kraft**  
+##### Nachhaltigkeitsbüro
+**Prof. Dr. Niels Pinkwart**  
+##### Vizepräsident für Lehre und Studium
+**Sara Schurmann**  
+##### Mitgründerin des Netzwerks Klimajournalismus
