@@ -28,6 +28,12 @@
         #DIV_TEXT_welcome {
             background: white;
         }
+        #selectAtLeastOne {
+            background: rgba(18, 161, 154, 0);
+            transition: all 2s ease;
+            border-radius: 0.5em;
+            padding: 0.2em;
+        }
     </style>
     <style>
         #credits {
@@ -153,12 +159,12 @@
     const questionOrder = [ 
         "TEXT_welcome",
         // 'TEXT_intro',
-        'TEXT_group1',
-        'artLV', 
-        'TEXT_labore',
+        // 'TEXT_group1',
+        // 'artLV', 
+        // 'TEXT_labore',
         // 'anzahlVL', 
         // 'anzahlSE',
-        'intSync',
+        'interactions',
         'leistungen',
         'TEXT_group2',
         "niveauSt",
@@ -189,7 +195,7 @@
     const group3start = questionOrder.indexOf("TEXT_group3")
     const group4start = questionOrder.indexOf("TEXT_group4")
 
-    var leistungenQuestion, situationsQuestion
+    var leistungenQuestion, situationsQuestion, interactionsQuestion
     
     // Previous Question, Next Question, Submit buttons (will be moved around)
     var pButton = document.createElement("button"); document.body.append(pButton)
@@ -210,7 +216,14 @@
             proceedFromQuestion()
         } else {
             if (activeQ != "situations" && activeQ != "leistungen"){
-                submitSingleAnswer()
+                if (activeQ == "interactions"){
+                    submitSingleAnswer(qq="intSync", aa=answers["intSync"], proceed=false)
+                    // this doesn't do anything but proceed
+                    submitSingleAnswer(qq = "interactions", aa="inputs", proceed=true)
+                } else {
+                    submitSingleAnswer()
+                }
+                
             } else {
                 answersToSubmit = {}
                 Object.keys(questionInfo[activeQ]["antworten"]).forEach((a, idx, array)=>{
@@ -248,6 +261,7 @@
         all_special_cases = json['special']
         situationsQuestion = questionInfo["situations"]
         leistungenQuestion = questionInfo["leistungen"]
+        interactionsQuestion = questionInfo["interactions"]
         all_scenarios = json['scenarios']
         Object.entries(all_scenarios).forEach((s)=>{activeScenarios[s[0]] = 0})
         document.querySelector("#start").style.display = "block"
@@ -325,7 +339,7 @@
             
             //adding context
             if (q.addInfo){
-                if (qKey == "situations" ||  qKey == "leistungen"){
+                if (qKey == "situations" ||  qKey == "leistungen" || qKey == "interactions"){
                     let context = document.createElement("div"); context.classList.add("context"); qDiv.append(context)
                     context.innerHTML = "<p>*<em>" + questionInfo[qKey]["addInfo"] + "</em></p>"
                 } else {
@@ -358,7 +372,7 @@
 
             }
 
-            if (qKey == "situations" || qKey == "leistungen"){
+            if (qKey == "situations" || qKey == "leistungen" || qKey == "interactions"){
                 // make all answers 'no' by default - they will be changed if someone checks the box
                 Object.keys(questionInfo[qKey]["antworten"]).forEach((a)=>{
                     answers[a] = "nein"
@@ -381,7 +395,7 @@
                 let aRadio = document.createElement("input")
 
                 // for checkbox question, create checkboxes, otherwise radio buttons
-                if (qKey == "situations" || qKey == "leistungen"){
+                if (qKey == "situations" || qKey == "leistungen" || qKey == "interactions"){
                     aRadio.setAttribute("type", "checkbox")  
                 } else {
                     aRadio.setAttribute("type", "radio")
@@ -448,7 +462,7 @@
             }
             buttonContainer.append(pButton)
             buttonContainer.append(nButton)
-            nButton.disabled = qKey=="situations" ||qKey=="leistungen" || qKey.includes("TEXT_") && qKey != "TEXT_labore" ? false : true
+            nButton.disabled = qKey=="situations" || qKey=="leistungen" || qKey.includes("TEXT_") && qKey != "TEXT_labore" ? false : true
             pButton.style.display = nextQuestionIdx == 0 || qKey == "TEXT_welcome" ? "none" : "inline"
             nButton.style.display = nextQuestionIdx == 0 ? "none" : qKey == "TEXT_labore" ? "none" : "inline"
 
@@ -516,7 +530,7 @@
     }
 
     function selectAnswer(qKey, aKey){
-        if (qKey == "situations" || qKey == "leistungen"){
+        if (qKey == "situations" || qKey == "leistungen" || qKey == "interactions"){
             let aDiv = document.querySelector("#DIV_" + qKey + " > #A_" + aKey)
             if (aDiv.classList.contains("highlighted") && aKey != "none"){
                 aDiv.classList.remove("highlighted")
@@ -535,7 +549,31 @@
         
         // store the answer temporarily (before hitting "next")
         if (qKey!= "situations" && qKey != "leistungen"){
-            answers[qKey] = aKey 
+            if (qKey == "interactions"){
+                // special case: interactions
+                let checked = document.querySelector("#Q_" + qKey + "_A_"+aKey).checked
+                // case 1: the option was previously unselected and is being selected
+                // case 2: the option was previously selected and is being deselected
+                answers[aKey] = checked ? "ja" : "nein"
+                // check if there are any options left selected, otherwise prevent deselection
+                if (document.querySelectorAll("#DIV_" + qKey + " > .highlighted").length == 0){
+                    document.querySelector("#Q_" + qKey + "_A_"+aKey).checked = true
+                    setTimeout(()=>{
+                        document.querySelector("#DIV_" + qKey + " > #A_" + aKey).classList.add("highlighted")
+                    }, 100)
+                    document.querySelector("#selectAtLeastOne").style.background = "rgba(117, 208, 131, 0.2)"
+                    setTimeout(()=>{
+                        document.querySelector("#selectAtLeastOne").style.background = "rgba(18, 161, 154, 0)"
+                    }, 2100)
+                    answers[aKey] = "ja"
+                }
+                // update "intSync" answer based on what is checked: 
+                let gruppen = answers["gruppen"] == "ja"
+                let plenum = answers["plenum"] == "ja"
+                answers["intSync"] = gruppen ? "2" : plenum ? "1" : "0"
+            } else {
+                answers[qKey] = aKey 
+            }
         } else {
             // special treatment for checkbox questions
             if (aKey != "none"){
@@ -619,6 +657,7 @@
         }
     }
     function submitSingleAnswer(qq=null, aa=null, proceed=true){
+        console.log("submitting, ", qq, aa, proceed)
         let qKey = qq? qq : activeQ
         let pKey = qKey
         let aKey = aa? aa : activeA
@@ -713,6 +752,13 @@
                 delete answers[key]
             })            
         }
+        // for interactions question: delete intSync answer
+        if (activeQ == "interactions"){
+            Object.keys(interactionsQuestion["antworten"]).forEach((key)=>{
+                delete answers[key]
+            })            
+            delete answers["intSync"]
+        }
 
         // get information about the last answered question and change variable activeQ
         if (activeQ == "situations"){
@@ -750,7 +796,6 @@
                     // default
                     activeQ = oneBefore
                 }                
-
             }
         }
         
@@ -758,27 +803,35 @@
 
         activeA = null
         let lastAnswer = {}
-        if (activeQ == "situations"  || activeQ == "leistungen"){
+        if (activeQ == "situations" || activeQ == "leistungen"){
             Object.keys(questionInfo[activeQ]["antworten"]).forEach((key)=>{
                 lastAnswer[key] = answers[key]
             })    
         } else {
-            lastAnswer[activeQ] = answers[activeQ]  
+            if (activeQ == "interactions"){
+                lastAnswer["intSync"] = answers["intSync"]
+            } else {
+                lastAnswer[activeQ] = answers[activeQ]  
+            }
         }
 
         
         // delete the stored answers of the last answered question
         delete answers[activeQ]
-        if (activeQ == "situations" || activeQ == "leistungen"){
+        if (activeQ == "situations" || activeQ == "leistungen" || activeQ == "interactions"){
             Object.keys(questionInfo[activeQ]["antworten"]).forEach((key)=>{
                 delete answers[key]
-            })            
+            })
+            if (activeQ == "interactions"){
+                delete answers["intSync"]
+            }     
         }
 
         function undoAllEffects(qKey, aKey){
             console.log(qKey, aKey)
             recent = []
             // calculate score provided by last answer for each code (but this time subtract it!)
+            console.log(qKey, aKey)
             let effects = questionInfo[qKey]["antworten"][aKey]["effects"]
             let conditionalEffects = questionInfo[qKey]["antworten"][aKey]["conditionalEffects"]
 
@@ -813,7 +866,6 @@
         }
 
         if (!activeQ.includes("TEXT_")){
-            console.log(lastAnswer)
             Object.entries(lastAnswer).forEach((response)=>{
             qKey = response[0]
             aKey = response[1]

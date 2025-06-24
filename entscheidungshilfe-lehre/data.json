@@ -2374,12 +2374,82 @@
                 }
             }
         },
+        "interactions": {
+            "condition": true,
+            "text": "Welche Forme der Interaktion sind w\u00e4hrend der Lehrveranstaltung vorgesehen?",
+            "antworten": {
+                "inputs": {
+                    "text": "Inputs oder Vortr\u00e4ge durch die Lehrperson",
+                    "effects": {},
+                    "conditionalEffects": {}
+                },
+                "plenum": {
+                    "text": "Diskussionen im Plenum (\u00fcber kurze Q&A hinaus)",
+                    "effects": {},
+                    "conditionalEffects": {}
+                },
+                "gruppen": {
+                    "text": "Kollaboratives Arbeiten in Gruppen",
+                    "effects": {},
+                    "conditionalEffects": {}
+                }
+            },
+            "addInfo": "W\u00e4hlen Sie alle zutreffenden Punkte \u2014<span id='selectAtLeastOne'> mindestens eine Option </span>\u2014 aus."
+        },
+        "inputs": {
+            "condition": true,
+            "text": "Proxy-Frage: inputs?",
+            "antworten": {
+                "nein": {
+                    "text": "Nein",
+                    "effects": {},
+                    "conditionalEffects": {}
+                },
+                "ja": {
+                    "text": "Ja",
+                    "effects": {},
+                    "conditionalEffects": {}
+                }
+            }
+        },
+        "plenum": {
+            "condition": true,
+            "text": "Proxy-Frage: plenum?",
+            "antworten": {
+                "nein": {
+                    "text": "Nein",
+                    "effects": {},
+                    "conditionalEffects": {}
+                },
+                "ja": {
+                    "text": "Ja",
+                    "effects": {},
+                    "conditionalEffects": {}
+                }
+            }
+        },
+        "gruppen": {
+            "condition": true,
+            "text": "Proxy-Frage: gruppen?",
+            "antworten": {
+                "nein": {
+                    "text": "Nein",
+                    "effects": {},
+                    "conditionalEffects": {}
+                },
+                "ja": {
+                    "text": "Ja",
+                    "effects": {},
+                    "conditionalEffects": {}
+                }
+            }
+        },
         "intSync": {
             "condition": true,
-            "text": "Wie stellen Sie sich den <b>maximalen Interaktionsgrad</b> w\u00e4hrend der Lehrveranstaltung vor?",
+            "text": "Proxy-Frage: intSync",
             "antworten": {
                 "0": {
-                    "text": "Eher frontaler Unterricht, ggf. mit kurzen Q&A (minimum)",
+                    "text": "minimum",
                     "effects": {
                         "so-async-0-4-0": 1,
                         "so-async-0-4-1": 1,
@@ -2834,7 +2904,7 @@
                     "conditionalEffects": {}
                 },
                 "1": {
-                    "text": "Diskussionen haupts\u00e4chlich im Plenum (medium)",
+                    "text": "medium",
                     "effects": {
                         "so-async-0-4-0": -2,
                         "so-async-0-4-1": -2,
@@ -3611,7 +3681,7 @@
                     "conditionalEffects": {}
                 },
                 "2": {
-                    "text": "Kollaboratives Arbeiten in Gruppen (maximum)",
+                    "text": "maximum",
                     "effects": {
                         "so-async-0-4-0": -100,
                         "so-async-0-4-1": -100,

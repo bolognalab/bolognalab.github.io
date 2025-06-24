@@ -30,16 +30,49 @@
             }
         },
 
-        "intSync": {
+        "interactions": {
             "condition": true,
-            "text": "Wie stellen Sie sich den <b>maximalen Interaktionsgrad</b> während der Lehrveranstaltung vor?",
+            "text": "Welche Forme der Interaktion sind während der Lehrveranstaltung vorgesehen?",
             "antworten": {
-                "0": "Eher frontaler Unterricht, ggf. mit kurzen Q&A (minimum)",
-                "1": "Diskussionen hauptsächlich im Plenum (medium)",
-                "2": "Kollaboratives Arbeiten in Gruppen (maximum)"
+                "inputs": "Inputs oder Vorträge durch die Lehrperson",
+                "plenum": "Diskussionen im Plenum (über kurze Q&A hinaus)",
+                "gruppen": "Kollaboratives Arbeiten in Gruppen"
+            },
+            "addInfo": "Wählen Sie alle zutreffenden Punkte —<span id='selectAtLeastOne'> mindestens eine Option </span>— aus."
+        },
+        "inputs": {
+            "condition": true,
+            "text": "Proxy-Frage: inputs?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
             }
         },
-
+        "plenum": {
+            "condition": true,
+            "text": "Proxy-Frage: plenum?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+        "gruppen": {
+            "condition": true,
+            "text": "Proxy-Frage: gruppen?",
+            "antworten": {
+                "nein": "Nein",
+                "ja": "Ja"
+            }
+        },
+        "intSync": {
+            "condition": true,
+            "text": "Proxy-Frage: intSync",
+            "antworten": {
+                "0": "minimum",
+                "1": "medium",
+                "2": "maximum"
+            }
+        },
         "leistungen": {
             "condition": true,
             "text": "Welche der folgenden (bewerteten oder unbewerteten) Leistungen sind vorgesehen als integrale Bestandteile des Kurses?",
