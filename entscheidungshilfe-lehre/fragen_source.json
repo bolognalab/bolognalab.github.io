@@ -75,7 +75,7 @@
         },
         "leistungen": {
             "condition": true,
-            "text": "Welche der folgenden (bewerteten oder unbewerteten) Leistungen sind vorgesehen als integrale Bestandteile des Kurses?",
+            "text": "Sind eine oder mehrere dieser Leistungen als <b>integrale Bestandteile des Kurses</b> vorgesehen? Wenn ja, welche?",
             "antworten": {
                 "referat": "Referat oder Projektvorstellung inkl. Q&A",
                 "debate": "Debatten, Interviewen oder Moderieren",

@@ -67,7 +67,7 @@ body {
         questionOrder = [ 
             "TEXT_welcome",
             // 'TEXT_intro',
-            // 'TEXT_group1',
+            'TEXT_group1',
             'artLV', 
             'TEXT_labore',
             // 'anzahlVL', 
@@ -157,7 +157,7 @@ body {
         sButton.addEventListener("click", function(){
             submitSingleAnswer()
             sessionStorage.setItem("answers", JSON.stringify(answers))
-            getResult(activeScenarios)
+            // getResult(activeScenarios)
         })
         sButton.style.display = "none"
 
@@ -504,6 +504,10 @@ body {
                 // case 1: the option was previously unselected and is being selected
                 // case 2: the option was previously selected and is being deselected
                 answers[aKey] = checked ? "ja" : "nein"
+                // special case: selecting 'praxis' in the 'leistungen' question also activates 'LZiP'
+                if (qKey == "leistungen"){
+                    answers["LZiP"] = document.querySelector("#Q_leistungen_A_LZiP").checked ? "ja" : answers["praxis"] == "ja"? "ja" : "nein"
+                }
                 // check if there are any options left selected, otherwise highlight 'none of the above'
                 if (document.querySelectorAll("#DIV_" + qKey + " > .highlighted").length == 0){
                     document.querySelector("#DIV_" + qKey + " > #A_none").classList.add("highlighted")
@@ -883,14 +887,16 @@ body {
         let thirdScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<secondScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
         let thirdTier = Object.entries(results).filter(([k,v])=>v==thirdScore).reduce((r, [k,v])=>[...r,k], [])
         thirdTier = sortByAsyncInt(thirdTier)
-
+        
+        let sc
         for (let i=0; i<(topTier.length + secondTier.length + thirdTier.length); i++){
             // first tier: include all non-duplicates
             if (i<topTier.length){
                 let scenarioToAdd = topTier[i]
+                sc = getSpecialCases(scenarioToAdd)
                 // do not add scenarios with same format hyb, rem, ringonl, etc.
                 if (notDuplicate(scenarioToAdd, shownScenarios)){
-                    shownScenarios.push(scenarioToAdd)
+                    shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                 }
 
             } else {
@@ -898,8 +904,9 @@ body {
                 if (i < (topTier.length+secondTier.length) && secondScore>=0){
                     let j = i - topTier.length
                     let scenarioToAdd = secondTier[j]
+                    sc = getSpecialCases(scenarioToAdd)
                     if (notDuplicate(scenarioToAdd, shownScenarios)){
-                        shownScenarios.push(scenarioToAdd)
+                        shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                     }
 
                 } else {
@@ -907,8 +914,9 @@ body {
                     if (thirdScore>=0){
                         let k = i - topTier.length - secondTier.length
                         let scenarioToAdd = thirdTier[k]
+                        sc = getSpecialCases(scenarioToAdd)
                         if (notDuplicate(scenarioToAdd, shownScenarios)){
-                            shownScenarios.push(scenarioToAdd)
+                            shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                         }
                     }
 
@@ -920,6 +928,24 @@ body {
             
         }
         return shownScenarios
+    }
+    // get special cases from answers - called just before submitting the answer
+    function getSpecialCases(scenario){
+        // collects the special cases that should be added to a scenario based on what answers were provided
+        let answersToCheck = all_scenarios[scenario]["special_cases"]
+        let all_cases_rev = Object.fromEntries(Object.entries(all_special_cases).map(a => a.reverse()))
+        let applicableCases = []
+        let applicableIndices = []
+        Object.entries(answersToCheck).forEach(([r,c], i, arr)=>{
+            if (andCheck(r)){
+                console.log("adding ", c)
+                applicableCases.push(c)
+                if (Object.values(all_special_cases).includes(c)){
+                    applicableIndices.push(Math.floor(all_cases_rev[c]))
+                }
+            }
+        })
+        return applicableIndices
     }
 
     // logic
@@ -948,7 +974,6 @@ body {
         // checks if all conditions qKey=aKey are simultaneously true
         let i = 0
         while (i < 10){
-            
             [qKey, aKey] = conditions.split("+")[i].split("=")
             if (qKey.includes("!")){
                 // check if it's a NOT test

@@ -159,8 +159,8 @@
     const questionOrder = [ 
         "TEXT_welcome",
         // 'TEXT_intro',
-        // 'TEXT_group1',
-        // 'artLV', 
+        'TEXT_group1',
+        'artLV', 
         // 'TEXT_labore',
         // 'anzahlVL', 
         // 'anzahlSE',
@@ -555,6 +555,10 @@
                 // case 1: the option was previously unselected and is being selected
                 // case 2: the option was previously selected and is being deselected
                 answers[aKey] = checked ? "ja" : "nein"
+                // special case: selecting 'praxis' in the 'leistungen' question also activates 'LZiP'
+                if (qKey == "leistungen"){
+                    answers["LZiP"] = document.querySelector("#Q_leistungen_A_LZiP").checked ? "ja" : answers["praxis"] == "ja"? "ja" : "nein"
+                }
                 // check if there are any options left selected, otherwise prevent deselection
                 if (document.querySelectorAll("#DIV_" + qKey + " > .highlighted").length == 0){
                     document.querySelector("#Q_" + qKey + "_A_"+aKey).checked = true
@@ -657,7 +661,7 @@
         }
     }
     function submitSingleAnswer(qq=null, aa=null, proceed=true){
-        console.log("submitting, ", qq, aa, proceed)
+        // console.log("submitting, ", qq, aa, proceed)
         let qKey = qq? qq : activeQ
         let pKey = qKey
         let aKey = aa? aa : activeA
