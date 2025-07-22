@@ -145,7 +145,7 @@
     const maxShownAnswers = 4
 
 
-    var all_data, questionInfo, all_scenarios, special_list, infoTimeout, infoTimeout2
+    var all_data, questionInfo, all_scenarios, special_list, infoTimeout, infoTimeout2, all_special_cases
 
     var activeQ, activeA
     var nextQuestionIdx = 1
@@ -698,7 +698,7 @@
                 let conditions = sEntry[0]
                 let score = sEntry[1]
                 // separate conditions if more than one
-                let met = andCheck(conditions)
+                let met = andOrCheck(conditions)
                 if (met){
                     let scoreVal = +(activeScenarios[entry[0]])
                     newScoreVal = scoreVal + score
@@ -857,7 +857,7 @@
                     let score = sEntry[1]
                     
                     // separate conditions if more than one
-                    let met = andCheck(conditions)
+                    let met = andOrCheck(conditions)
                     if (met){
                         let scoreVal = +(activeScenarios[entry[0]])
                         newScoreVal = scoreVal - score
@@ -964,7 +964,7 @@
             let applicableCases = []
             let applicableIndices = []
             Object.entries(answersToCheck).forEach(([r,c], i, arr)=>{
-                if (andCheck(r)){
+                if (andOrCheck(r)){
                     console.log("adding ", c)
                     applicableCases.push(c)
                     if (Object.values(all_special_cases).includes(c)){
@@ -985,57 +985,49 @@
             if (condition == true){
                 return true
             } else {
-                return andCheck(condition)
+                return andOrCheck(condition)
             }
         } else {
             let condition = questionInfo[qKey]["condition"]
             if (condition == true){
                 return true
             } else {
-                return andCheck(condition)
+                return andOrCheck(condition)
             }
         }        
     }
 
-    function andCheck(conditions){
-        // checks if all conditions qKey=aKey are simultaneously true
-        let i = 0
-        while (i < 10){
-            
-            [qKey, aKey] = conditions.split("+")[i].split("=")
-            if (qKey.includes("!")){
-                // check if it's a NOT test
-                qKeyR = qKey.split("!")[0]
-                if (answers[qKeyR] == aKey || !answers[qKeyR]){
-                    return false
+    function andOrCheck(conditionString) {
+        const orGroups = conditionString.split("|");
+
+        for (let group of orGroups) {
+            const conditions = group.split("+");
+            let allTrue = true;
+
+            for (let condition of conditions) {
+                let isNegation = condition.includes("!=");
+                let [qKey, aKey] = isNegation
+                    ? condition.split("!=")
+                    : condition.split("=");
+                if (isNegation) {
+                    if (answers[qKey] === aKey) {
+                        allTrue = false;
+                        break;
+                    }
                 } else {
-                    i += 1
-                }
-            } else {
-                if (answers[qKey] != aKey){
-                return false
-                } else {
-                    i += 1
+                    if (answers[qKey] !== aKey) {
+                        allTrue = false;
+                        break;
+                    }
                 }
             }
 
-            if (i >= conditions.split("+").length){
-                return true
-            }
+            if (allTrue) return true; // at least one OR group passed
         }
-        conditions.split("+").forEach((condition, i)=>{
-            [qKey, aKey] = condition.split("=")
-            if (answers[qKey] != aKey){
-                if (i <4){
-                    realConditions[i] = false
-                } else {
-                    console.log("only up to 4 simultaneous conditions supported; the rest are ignored")
-                }
-            }
-        })
-        
+
+        return false; // none of the OR groups passed
     }
-    
+
     function notDuplicate(newScenario, shownScenarios){
         sType = newScenario.split("-")[1]
         if (shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){

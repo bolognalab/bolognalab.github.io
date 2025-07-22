@@ -471,8 +471,6 @@ for code in list_of_scenarios:
     # - exclude purely-online formats
     if lehrform in ["ringonl", "async"]:
         setEffect("gaeste", "vorOrt", code, -100)
-    # - set special case for guests in-person for all viable formats
-    setSpecialCase(code, "gaeste=vorOrt", "gastVorOrtHyb")
 
     # CASE 3: if guests are only invited online:
     # - exclude simple formats without guests (they have corresponding 'ring' formats)
@@ -481,8 +479,6 @@ for code in list_of_scenarios:
     # - exclude formats without synchronous online components:
     if lehrform in ["ringpraes", "async"]:
         setEffect("gaeste", "virtuell", code, -100)
-    # - set special case for guests online for all viable formats
-    setSpecialCase(code, "gaeste=virtuell", "gastOnline")
 
     # CASE 4: if guests are sometimes online, sometimes in-person:
     # - exclude all simple formats without guests (they have corresponding 'ring' formats)
@@ -492,8 +488,10 @@ for code in list_of_scenarios:
     if lehrform in ["ringpraes", "ringonl", "async"]:
         setEffect("gaeste", "both", code, -100)
     # - set special cases for both guests online and guests in-person for all viable formats
-    setSpecialCase(code, "gaeste=both", "gastVorOrtHyb")   
-    setSpecialCase(code, "gaeste=both", "gastOnline")
+    setSpecialCase(code, "gaeste=both|gaeste=virtuell", "gastOnline")
+    if lehrform in ["ringhyb2", "hyb", "onlhybwechs", "hybpraeswechs", "praeshybwechs", "rem", "hybrem", "grwechshyb", "grwechs"]:
+        setSpecialCase(code, "gaeste=both|gaeste=vorOrt", "gastVorOrtHyb")   
+    
    
 
 

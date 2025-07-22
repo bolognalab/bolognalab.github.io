@@ -43,7 +43,7 @@ body {
     <div id="scenarios" class="sCont"></div>
 <script src="assets/js/jquery.csv.js"></script>
 <script>
-    var qCot, maxShownAnswers, sCont, all_data, questionInfo, all_scenarios, all_texts, infoTimeout, infoTimeout2, activeQ, activeA, nextQuestionIdx, scenarios, answers, activeScenarios, recent, topResults, questionOrder, progressBar, whichPart, group1start, group2start, group3start, group4start, leistungenQuestion, situationsQuestion, interactionsQuestion, pButton, nButton, sButton
+    var qCot, maxShownAnswers, sCont, all_data, questionInfo, all_scenarios, all_texts, infoTimeout, infoTimeout2, activeQ, activeA, nextQuestionIdx, scenarios, answers, activeScenarios, recent, topResults, questionOrder, progressBar, whichPart, group1start, group2start, group3start, group4start, leistungenQuestion, situationsQuestion, interactionsQuestion, pButton, nButton, sButton, all_special_cases
     var query = ""
     function updateQuery(){
         query = document.querySelector("#queryField").value
@@ -166,6 +166,7 @@ body {
             questionInfo = json['questions']
             situationsQuestion = questionInfo["situations"]
             leistungenQuestion = questionInfo["leistungen"]
+            all_special_cases = json['special']
             interactionsQuestion = questionInfo["interactions"]
             all_scenarios = json['scenarios']
             Object.entries(all_scenarios).forEach((s)=>{
@@ -937,7 +938,7 @@ body {
         let applicableCases = []
         let applicableIndices = []
         Object.entries(answersToCheck).forEach(([r,c], i, arr)=>{
-            if (andCheck(r)){
+            if (andOrCheck(r)){
                 console.log("adding ", c)
                 applicableCases.push(c)
                 if (Object.values(all_special_cases).includes(c)){
@@ -958,56 +959,66 @@ body {
             if (condition == true){
                 return true
             } else {
-                return andCheck(condition)
+                return andOrCheck(condition)
             }
         } else {
             let condition = questionInfo[qKey]["condition"]
             if (condition == true){
                 return true
             } else {
-                return andCheck(condition)
+                return andOrCheck(condition)
             }
         }        
     }
 
-    function andCheck(conditions){
-        // checks if all conditions qKey=aKey are simultaneously true
-        let i = 0
-        while (i < 10){
-            [qKey, aKey] = conditions.split("+")[i].split("=")
-            if (qKey.includes("!")){
-                // check if it's a NOT test
-                qKeyR = qKey.split("!")[0]
-                if (answers[qKeyR] == aKey || !answers[qKeyR]){
-                    return false
-                } else {
-                    i += 1
-                }
+    function andCheck(conditionString){
+        const conditions = conditionString.split("+");
+        for (let condition of conditions) {
+            let isNegation = condition.includes("!=");
+            let [qKey, aKey] = isNegation
+                ? condition.split("!=")
+                : condition.split("=");
+
+            if (isNegation) {
+                if (answers[qKey] === aKey) return false;
             } else {
-                if (answers[qKey] != aKey){
-                return false
+                if (answers[qKey] !== aKey) return false;
+            }
+        }
+        return true;
+    }
+    
+    function andOrCheck(conditionString) {
+        const orGroups = conditionString.split("|");
+
+        for (let group of orGroups) {
+            const conditions = group.split("+");
+            let allTrue = true;
+
+            for (let condition of conditions) {
+                let isNegation = condition.includes("!=");
+                let [qKey, aKey] = isNegation
+                    ? condition.split("!=")
+                    : condition.split("=");
+                if (isNegation) {
+                    if (answers[qKey] === aKey) {
+                        allTrue = false;
+                        break;
+                    }
                 } else {
-                    i += 1
+                    if (answers[qKey] !== aKey) {
+                        allTrue = false;
+                        break;
+                    }
                 }
             }
 
-            if (i >= conditions.split("+").length){
-                return true
-            }
+            if (allTrue) return true; // at least one OR group passed
         }
-        conditions.split("+").forEach((condition, i)=>{
-            [qKey, aKey] = condition.split("=")
-            if (answers[qKey] != aKey){
-                if (i <4){
-                    realConditions[i] = false
-                } else {
-                    console.log("only up to 4 simultaneous conditions supported; the rest are ignored")
-                }
-            }
-        })
-        
+
+        return false; // none of the OR groups passed
     }
-    
+
     function notDuplicate(newScenario, shownScenarios){
         sType = newScenario.split("-")[1]
         if (shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){
