@@ -2415,7 +2415,7 @@
         },
         "interactions": {
             "condition": true,
-            "text": "Welche Forme der Interaktion sind w\u00e4hrend der Lehrveranstaltung vorgesehen?",
+            "text": "Welche Formen der Interaktion sind w\u00e4hrend der Lehrveranstaltung vorgesehen?",
             "antworten": {
                 "inputs": {
                     "text": "Inputs oder Vortr\u00e4ge durch die Lehrperson",

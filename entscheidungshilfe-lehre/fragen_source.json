@@ -32,7 +32,7 @@
 
         "interactions": {
             "condition": true,
-            "text": "Welche Forme der Interaktion sind während der Lehrveranstaltung vorgesehen?",
+            "text": "Welche Formen der Interaktion sind während der Lehrveranstaltung vorgesehen?",
             "antworten": {
                 "inputs": "Inputs oder Vorträge durch die Lehrperson",
                 "plenum": "Diskussionen im Plenum (über kurze Q&A hinaus)",
