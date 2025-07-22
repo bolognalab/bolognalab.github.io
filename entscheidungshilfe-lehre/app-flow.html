@@ -19,6 +19,12 @@ body {
     background: var(--backgroundLightBlue);
             background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
 }
+#selectAtLeastOne {
+    background: rgba(18, 161, 154, 0);
+    transition: all 2s ease;
+    border-radius: 0.5em;
+    padding: 0.2em;
+}
 </style>
 <body class="is-preload" lang="de">
 <div style="width: 100%; height: 50em; overflow:scroll">
@@ -37,7 +43,7 @@ body {
     <div id="scenarios" class="sCont"></div>
 <script src="assets/js/jquery.csv.js"></script>
 <script>
-    var qCot, maxShownAnswers, sCont, all_data, questionInfo, all_scenarios, all_texts, infoTimeout, infoTimeout2, activeQ, activeA, nextQuestionIdx, scenarios, answers, activeScenarios, recent, topResults, questionOrder, progressBar, whichPart, group1start, group2start, group3start, group4start, leistungenQuestion, situationsQuestion, pButton, nButton, sButton
+    var qCot, maxShownAnswers, sCont, all_data, questionInfo, all_scenarios, all_texts, infoTimeout, infoTimeout2, activeQ, activeA, nextQuestionIdx, scenarios, answers, activeScenarios, recent, topResults, questionOrder, progressBar, whichPart, group1start, group2start, group3start, group4start, leistungenQuestion, situationsQuestion, interactionsQuestion, pButton, nButton, sButton, all_special_cases
     var query = ""
     function updateQuery(){
         query = document.querySelector("#queryField").value
@@ -61,12 +67,12 @@ body {
         questionOrder = [ 
             "TEXT_welcome",
             // 'TEXT_intro',
-            // 'TEXT_group1',
+            'TEXT_group1',
             'artLV', 
             'TEXT_labore',
             // 'anzahlVL', 
             // 'anzahlSE',
-            'intSync',
+            'interactions',
             'leistungen',
             'TEXT_group2',
             "niveauSt",
@@ -117,7 +123,13 @@ body {
                 proceedFromQuestion()
             } else {
                 if (activeQ != "situations" && activeQ != "leistungen"){
-                    submitSingleAnswer()
+                    if (activeQ == "interactions"){
+                        submitSingleAnswer(qq="intSync", aa=answers["intSync"], proceed=false)
+                        // this doesn't do anything but proceed
+                        submitSingleAnswer(qq = "interactions", aa="inputs", proceed=true, resetRecent=false)
+                    } else {
+                        submitSingleAnswer()
+                    }
                 } else {
                     answersToSubmit = {}
                     Object.keys(questionInfo[activeQ]["antworten"]).forEach((a, idx, array)=>{
@@ -145,7 +157,7 @@ body {
         sButton.addEventListener("click", function(){
             submitSingleAnswer()
             sessionStorage.setItem("answers", JSON.stringify(answers))
-            getResult(activeScenarios)
+            // getResult(activeScenarios)
         })
         sButton.style.display = "none"
 
@@ -154,6 +166,8 @@ body {
             questionInfo = json['questions']
             situationsQuestion = questionInfo["situations"]
             leistungenQuestion = questionInfo["leistungen"]
+            all_special_cases = json['special']
+            interactionsQuestion = questionInfo["interactions"]
             all_scenarios = json['scenarios']
             Object.entries(all_scenarios).forEach((s)=>{
                 activeScenarios[s[0]] = 0
@@ -248,7 +262,7 @@ body {
             
             //adding context
             if (q.addInfo){
-                if (qKey == "situations" ||  qKey == "leistungen"){
+                if (qKey == "situations" ||  qKey == "leistungen" || qKey == "interactions"){
                     let context = document.createElement("div"); context.classList.add("context"); qDiv.append(context)
                     context.innerHTML = "<p>*<em>" + questionInfo[qKey]["addInfo"] + "</em></p>"
                 } else {
@@ -281,7 +295,7 @@ body {
 
             }
 
-            if (qKey == "situations" || qKey == "leistungen"){
+            if (qKey == "situations" || qKey == "leistungen" || qKey == "interactions"){
                 // make all answers 'no' by default - they will be changed if someone checks the box
                 Object.keys(questionInfo[qKey]["antworten"]).forEach((a)=>{
                     answers[a] = "nein"
@@ -304,7 +318,7 @@ body {
                 let aRadio = document.createElement("input")
 
                 // for checkbox question, create checkboxes, otherwise radio buttons
-                if (qKey == "situations" || qKey == "leistungen"){
+                if (qKey == "situations" || qKey == "leistungen" || qKey == "interactions"){
                     aRadio.setAttribute("type", "checkbox")  
                 } else {
                     aRadio.setAttribute("type", "radio")
@@ -439,7 +453,7 @@ body {
     }
 
     function selectAnswer(qKey, aKey){
-        if (qKey == "situations" || qKey == "leistungen"){
+        if (qKey == "situations" || qKey == "leistungen" || qKey == "interactions"){
             let aDiv = document.querySelector("#DIV_" + qKey + " > #A_" + aKey)
             if (aDiv.classList.contains("highlighted")){
                 aDiv.classList.remove("highlighted")
@@ -458,7 +472,31 @@ body {
         
         // store the answer temporarily (before hitting "next")
         if (qKey!= "situations" && qKey != "leistungen"){
-            answers[qKey] = aKey 
+            if (qKey == "interactions"){
+                // special case: interactions
+                let checked = document.querySelector("#Q_" + qKey + "_A_"+aKey).checked
+                // case 1: the option was previously unselected and is being selected
+                // case 2: the option was previously selected and is being deselected
+                answers[aKey] = checked ? "ja" : "nein"
+                // check if there are any options left selected, otherwise prevent deselection
+                if (document.querySelectorAll("#DIV_" + qKey + " > .highlighted").length == 0){
+                    document.querySelector("#Q_" + qKey + "_A_"+aKey).checked = true
+                    setTimeout(()=>{
+                        document.querySelector("#DIV_" + qKey + " > #A_" + aKey).classList.add("highlighted")
+                    }, 100)
+                    document.querySelector("#selectAtLeastOne").style.background = "rgba(117, 208, 131, 0.2)"
+                    setTimeout(()=>{
+                        document.querySelector("#selectAtLeastOne").style.background = "rgba(18, 161, 154, 0)"
+                    }, 2100)
+                    answers[aKey] = "ja"
+                }
+                // update "intSync" answer based on what is checked: 
+                let gruppen = answers["gruppen"] == "ja"
+                let plenum = answers["plenum"] == "ja"
+                answers["intSync"] = gruppen ? "2" : plenum ? "1" : "0"
+            } else {
+                answers[qKey] = aKey 
+            }
         } else {
             // special treatment for checkbox questions
             if (aKey != "none"){
@@ -467,6 +505,10 @@ body {
                 // case 1: the option was previously unselected and is being selected
                 // case 2: the option was previously selected and is being deselected
                 answers[aKey] = checked ? "ja" : "nein"
+                // special case: selecting 'praxis' in the 'leistungen' question also activates 'LZiP'
+                if (qKey == "leistungen"){
+                    answers["LZiP"] = document.querySelector("#Q_leistungen_A_LZiP").checked ? "ja" : answers["praxis"] == "ja"? "ja" : "nein"
+                }
                 // check if there are any options left selected, otherwise highlight 'none of the above'
                 if (document.querySelectorAll("#DIV_" + qKey + " > .highlighted").length == 0){
                     document.querySelector("#DIV_" + qKey + " > #A_none").classList.add("highlighted")
@@ -645,6 +687,13 @@ body {
                 delete answers[key]
             })            
         }
+        // for interactions question: delete intSync answer
+        if (activeQ == "interactions"){
+            Object.keys(interactionsQuestion["antworten"]).forEach((key)=>{
+                delete answers[key]
+            })            
+            delete answers["intSync"]
+        }
 
         // get information about the last answered question and change variable activeQ
         if (activeQ == "situations"){
@@ -695,16 +744,23 @@ body {
                 lastAnswer[key] = answers[key]
             })    
         } else {
-            lastAnswer[activeQ] = answers[activeQ]  
+            if (activeQ == "interactions"){
+                lastAnswer["intSync"] = answers["intSync"]
+            } else {
+                lastAnswer[activeQ] = answers[activeQ]  
+            }
         }
 
         
         // delete the stored answers of the last answered question
         delete answers[activeQ]
-        if (activeQ == "situations" || activeQ == "leistungen"){
+        if (activeQ == "situations" || activeQ == "leistungen" || activeQ == "interactions"){
             Object.keys(questionInfo[activeQ]["antworten"]).forEach((key)=>{
                 delete answers[key]
-            })            
+            })
+            if (activeQ == "interactions"){
+                delete answers["intSync"]
+            }     
         }
 
         function undoAllEffects(qKey, aKey){
@@ -832,14 +888,16 @@ body {
         let thirdScore = Math.max(...Object.values(Object.entries(results).filter(([k,v])=>v<secondScore).reduce((r, [k, v]) => ({ ...r, [k]: v }), {})))
         let thirdTier = Object.entries(results).filter(([k,v])=>v==thirdScore).reduce((r, [k,v])=>[...r,k], [])
         thirdTier = sortByAsyncInt(thirdTier)
-
+        
+        let sc
         for (let i=0; i<(topTier.length + secondTier.length + thirdTier.length); i++){
             // first tier: include all non-duplicates
             if (i<topTier.length){
                 let scenarioToAdd = topTier[i]
+                sc = getSpecialCases(scenarioToAdd)
                 // do not add scenarios with same format hyb, rem, ringonl, etc.
                 if (notDuplicate(scenarioToAdd, shownScenarios)){
-                    shownScenarios.push(scenarioToAdd)
+                    shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                 }
 
             } else {
@@ -847,8 +905,9 @@ body {
                 if (i < (topTier.length+secondTier.length) && secondScore>=0){
                     let j = i - topTier.length
                     let scenarioToAdd = secondTier[j]
+                    sc = getSpecialCases(scenarioToAdd)
                     if (notDuplicate(scenarioToAdd, shownScenarios)){
-                        shownScenarios.push(scenarioToAdd)
+                        shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                     }
 
                 } else {
@@ -856,8 +915,9 @@ body {
                     if (thirdScore>=0){
                         let k = i - topTier.length - secondTier.length
                         let scenarioToAdd = thirdTier[k]
+                        sc = getSpecialCases(scenarioToAdd)
                         if (notDuplicate(scenarioToAdd, shownScenarios)){
-                            shownScenarios.push(scenarioToAdd)
+                            shownScenarios.push(scenarioToAdd+"@"+JSON.stringify(sc))
                         }
                     }
 
@@ -870,6 +930,24 @@ body {
         }
         return shownScenarios
     }
+    // get special cases from answers - called just before submitting the answer
+    function getSpecialCases(scenario){
+        // collects the special cases that should be added to a scenario based on what answers were provided
+        let answersToCheck = all_scenarios[scenario]["special_cases"]
+        let all_cases_rev = Object.fromEntries(Object.entries(all_special_cases).map(a => a.reverse()))
+        let applicableCases = []
+        let applicableIndices = []
+        Object.entries(answersToCheck).forEach(([r,c], i, arr)=>{
+            if (andOrCheck(r)){
+                console.log("adding ", c)
+                applicableCases.push(c)
+                if (Object.values(all_special_cases).includes(c)){
+                    applicableIndices.push(Math.floor(all_cases_rev[c]))
+                }
+            }
+        })
+        return applicableIndices
+    }
 
     // logic
     function includeCheck(qKey){
@@ -881,57 +959,66 @@ body {
             if (condition == true){
                 return true
             } else {
-                return andCheck(condition)
+                return andOrCheck(condition)
             }
         } else {
             let condition = questionInfo[qKey]["condition"]
             if (condition == true){
                 return true
             } else {
-                return andCheck(condition)
+                return andOrCheck(condition)
             }
         }        
     }
 
-    function andCheck(conditions){
-        // checks if all conditions qKey=aKey are simultaneously true
-        let i = 0
-        while (i < 10){
-            
-            [qKey, aKey] = conditions.split("+")[i].split("=")
-            if (qKey.includes("!")){
-                // check if it's a NOT test
-                qKeyR = qKey.split("!")[0]
-                if (answers[qKeyR] == aKey || !answers[qKeyR]){
-                    return false
-                } else {
-                    i += 1
-                }
+    function andCheck(conditionString){
+        const conditions = conditionString.split("+");
+        for (let condition of conditions) {
+            let isNegation = condition.includes("!=");
+            let [qKey, aKey] = isNegation
+                ? condition.split("!=")
+                : condition.split("=");
+
+            if (isNegation) {
+                if (answers[qKey] === aKey) return false;
             } else {
-                if (answers[qKey] != aKey){
-                return false
+                if (answers[qKey] !== aKey) return false;
+            }
+        }
+        return true;
+    }
+    
+    function andOrCheck(conditionString) {
+        const orGroups = conditionString.split("|");
+
+        for (let group of orGroups) {
+            const conditions = group.split("+");
+            let allTrue = true;
+
+            for (let condition of conditions) {
+                let isNegation = condition.includes("!=");
+                let [qKey, aKey] = isNegation
+                    ? condition.split("!=")
+                    : condition.split("=");
+                if (isNegation) {
+                    if (answers[qKey] === aKey) {
+                        allTrue = false;
+                        break;
+                    }
                 } else {
-                    i += 1
+                    if (answers[qKey] !== aKey) {
+                        allTrue = false;
+                        break;
+                    }
                 }
             }
 
-            if (i >= conditions.split("+").length){
-                return true
-            }
+            if (allTrue) return true; // at least one OR group passed
         }
-        conditions.split("+").forEach((condition, i)=>{
-            [qKey, aKey] = condition.split("=")
-            if (answers[qKey] != aKey){
-                if (i <4){
-                    realConditions[i] = false
-                } else {
-                    console.log("only up to 4 simultaneous conditions supported; the rest are ignored")
-                }
-            }
-        })
-        
+
+        return false; // none of the OR groups passed
     }
-    
+
     function notDuplicate(newScenario, shownScenarios){
         sType = newScenario.split("-")[1]
         if (shownScenarios.map((str)=>str.split("-")[1]).includes(sType)){

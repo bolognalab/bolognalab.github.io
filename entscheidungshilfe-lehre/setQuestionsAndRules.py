@@ -96,7 +96,7 @@ for code in list_of_scenarios:
     # ------------------------
     # - intSync
     # ------------------------
-    # If max synchronous interaction includes small group work (LZsy = 2)
+    # If max synchronous interaction includes small group work (intSync = 2)
     # exclude syncInt=0 or 1
     if syncInt in ["0", "1"]:
         setEffect("intSync", "2", code, -100)
@@ -110,7 +110,7 @@ for code in list_of_scenarios:
         if asyncTN == "4":
             setEffect("intSync", "2", code, -100)
 
-    # If max synchronous interaction is just in plenum (LZsy = 1)
+    # If max synchronous interaction is just in plenum (intSync = 1)
     # - exlude syncInt=0 or 2
     if syncInt in ["0", "2"] and lehrform != "async":
         setEffect("intSync", "1", code, -100)
@@ -138,18 +138,22 @@ for code in list_of_scenarios:
     # ------------------------
     #          referat
     # ------------------------ 
-    # exclude asyncTN=0,3 or 4
+    # exclude/discourage asyncTN=0,3 or 4
     if asyncTN in ["0", "3", "4"]:
         setEffect("referat", "ja", code, -100)
+    if asyncTN == "3":
+        setEffect("referat", "ja", code, -3)
     # favor asyncTN = 2 (preparing for the presentation)
     if asyncTN == "2":
         setEffect("referat", "ja", code, +1)
     # ------------------------
     #          debate
     # ------------------------ 
-    # exclude asyncTN=0,3 or 4
-    if asyncTN in ["0", "3", "4"]:
+    # exclude/discourage asyncTN=0,3 or 4
+    if asyncTN in ["0", "4"]:
         setEffect("debate", "ja", code, -100)
+    if asyncTN == "3":
+        setEffect("debate", "ja", code, -3)
     # favor asyncTN = 2 (preparing for the debate)
     if asyncTN == "2":
         setEffect("debate", "ja", code, +1)
@@ -160,7 +164,7 @@ for code in list_of_scenarios:
     if asyncTN in ["3", "4"]:
         setEffect("praxis", "ja", code, -100)
     # exclude options without mandatory in-person components
-    if lehrform in ["async", "onl", "ringonl", "hyb", "ringhyb2", "onlhybwechs", "hybrem"]:
+    if lehrform in ["async", "onl", "ringonl", "hyb", "ringhyb2", "onlhybwechs", "hybrem", "grwechshyb"]:
         setEffect("praxis", "ja", code, -100)
     # ------------------------
     #          privat
@@ -168,8 +172,8 @@ for code in list_of_scenarios:
     # exclude asyncTN=3 or 4
     if asyncTN in ["3", "4"]:
         setEffect("privat", "ja", code, -100)
-    #discourage options with online broadcasting and no mandatory in-person components (risk of sensitive data being recorded)
-    if lehrform in ["async", "onl", "ringonl", "hyb", "ringhyb2", "ringhyb1", "onlhybwechs", "hybrem", "grwechs"]:
+    # discourage options with online broadcasting and no mandatory in-person components (risk of sensitive data being recorded)
+    if lehrform in ["async", "onl", "ringonl", "hyb", "ringhyb2", "ringhyb1", "onlhybwechs", "hybrem", "grwechs", "grwechshyb"]:
         setEffect("privat", "ja", code, -2)
     # ------------------------
     #          LZiP
@@ -178,7 +182,7 @@ for code in list_of_scenarios:
     if asyncTN in ["3", "4"]:
         setEffect("LZiP", "ja", code, -100)
     # exclude options without mandatory in-person components
-    if lehrform in ["async", "onl", "ringonl", "hyb", "ringhyb2", "onlhybwechs", "hybrem"]:
+    if lehrform in ["async", "onl", "ringonl", "hyb", "ringhyb2", "onlhybwechs", "hybrem", "grwechshyb"]:
         setEffect("LZiP", "ja", code, -100)
     # ------------------------
     #          keineLeistungen
@@ -242,8 +246,8 @@ for code in list_of_scenarios:
     #  -  encourage asynchronous alternative options
     if asyncTN in ["3", "4"]: 
         setEffect("limZPSt" , "ja", code, +2)
-    # - lightly encourage online and hybrid options (async is already favored above), controling for LZiP
-    if lehrform in ["hyb", "onl", "ringonl", "ringhyb2", "onlhybwechs", "hybrem", "onlpraeswechs", "hybpraeswechs"]:
+    # - lightly encourage online and hybrid options (async is already favored above)
+    if lehrform in ["hyb", "onl", "ringonl", "ringhyb2", "onlhybwechs", "hybrem", "onlpraeswechs", "hybpraeswechs", "grwechshyb"]:
         setEffect("limZPSt" , "ja", code, +1)
     # - lightly encourage synchronous only options
     if asyncTN == "0":
@@ -260,7 +264,7 @@ for code in list_of_scenarios:
     if asyncTN in ["3", "4"]: 
         setEffect("limZPSt" , "ja", code, +1)
     # - lightly encourage online and hybrid options (async is already favored above), controling for LZiP
-    if lehrform in ["hyb", "onl", "ringonl", "ringhyb2", "onlhybwechs", "hybrem", "onlpraeswechs", "hybpraeswechs"]:
+    if lehrform in ["hyb", "onl", "ringonl", "ringhyb2", "onlhybwechs", "hybrem", "onlpraeswechs", "hybpraeswechs", "grwechshyb"]:
         setEffect("limZPSt" , "ja", code, +0.5)
     # - lightly encourage synchronous only options
     if asyncTN == "0":
@@ -320,12 +324,27 @@ for code in list_of_scenarios:
     # if some students can never make it to class in-person, then exclude all options exclusively in-person for students
     if lehrform in ["praes", "ringpraes", "rem", "ringhyb1", "grwechs", "praesonlwechs", "praeshybwechs", "onlpraeswechs", "hybpraeswechs"]:
         # do not exclude options with asynchronous participation alternative
+        # exception: if LZiP=ja or praxis=ja, then do not exclude the options with "wechs" - otherwise there is no solution left!
         if asyncTN != "3":
-            setEffect("niePr" , "ja", code, -100)
+            if lehrform == "hybpraeswechs": 
+                setConditionalEffect("niePr" , "ja", code, "LZiP=ja", -1)
+                setConditionalEffect("niePr" , "ja", code, "LZiP=nein", -100)
+            elif lehrform == "onlpraeswechs":
+                setConditionalEffect("niePr", "ja", code, "LZiP=ja", -2)
+                setConditionalEffect("niePr", "ja", code, "LZiP=nein", -100)
+            else:
+                setEffect("niePr" , "ja", code, -100)
         else:
-            setEffect("niePr" , "ja", code, -2)
+            if lehrform == "hybpraeswechs":
+                setConditionalEffect("niePr", "ja", code, "LZiP=ja", -0.5)
+                setConditionalEffect("niePr", "ja", code, "LZiP=nein", -2)
+            elif lehrform == "onlpraeswechs":
+                setConditionalEffect("niePr", "ja", code, "LZiP=ja", -1)
+                setConditionalEffect("niePr", "ja", code, "LZiP=nein", -2)
+            else: 
+                setEffect("niePr" , "ja", code, -2)
     # encourage online and hybrid
-    if lehrform in ["onl", "ringonl", "ringhyb2", "hybrem", "onlhybwechs", "hybpraeswechs", "onlpraeswechs"]:
+    if lehrform in ["onl", "ringonl", "ringhyb2", "hybrem", "onlhybwechs", "hybpraeswechs", "onlpraeswechs", "grwechshyb"]:
         setEffect("niePr" , "ja", code, +1)
     # slightly encourage incentivizing asynchronous interaction (to include the people who can't attend)
     if asyncInt == "2":
@@ -339,7 +358,7 @@ for code in list_of_scenarios:
         else:
             setEffect("niePr" , "idk", code, -0.5)
      # encourage online and hybrid
-    if lehrform in ["onl", "ringonl", "ringhyb2", "hybrem", "onlhybwechs", "hybpraeswechs", "onlpraeswechs"]:
+    if lehrform in ["onl", "ringonl", "ringhyb2", "hybrem", "onlhybwechs", "hybpraeswechs", "onlpraeswechs", "grwechshyb"]:
         setEffect("niePr" , "ja", code, +0.5)
     # slightly encourage incentivizing asynchronous interaction (to include the people who can't attend)
     if asyncInt == "2":
@@ -359,7 +378,7 @@ for code in list_of_scenarios:
     # - regAbw
     # ------------------------
     # if instructor is occasionally absent from campus, encourage switching options with more in-person character
-    if lehrform in ["praesonlwechs", "praeshybwechs", "hyb", "ringhyb1", "ringhyb2", "hybrem", "hybpraeswechs"]: 
+    if lehrform in ["praesonlwechs", "praeshybwechs", "hyb", "ringhyb1", "ringhyb2", "hybrem", "hybpraeswechs", "grwechshyb"]: 
         # note: hybrid options also count, because the hybrid room can easily be moved fully online for individual classes
         setEffect("regAbw" , "abundzu", code, 2)
         #TODO: for praeshybwechs, hyb, ringhyb2, hybrem, hybpraeswechs add note about instructor needing to tune in online to an in-person room
@@ -376,7 +395,7 @@ for code in list_of_scenarios:
         setEffect("regAbw" , "oft", code, 2)
     
     # define special case if the instructor would be tuning in hybridly when they are away
-    if lehrform in ["praeshybwechs", "hyb", "ringhyb1", "ringhyb2", "hybrem", "hybpraeswechs"]:
+    if lehrform in ["praeshybwechs", "hyb", "ringhyb1", "ringhyb2", "hybrem", "hybpraeswechs", "grwechshyb"]:
         setSpecialCase(code, "regAbw=abundzu", "onlineZuschaltungLP")
         setSpecialCase(code, "regAbw=oft", "onlineZuschaltungLP")
 
@@ -409,7 +428,7 @@ for code in list_of_scenarios:
     # ------------------------
     #          exkur
     # ------------------------
-    if lehrform in ["rem", "hybrem", "hyb", "ringhyb2", "grwechs", "onlhybwechs", "hybpraeswechs", "praeshybwechs"]:
+    if lehrform in ["rem", "hybrem", "hyb", "ringhyb2", "grwechs", "onlhybwechs", "hybpraeswechs", "praeshybwechs", "grwechshyb"]:
         setSpecialCase(code, "exkur=ja", "hybrideExkursion")
     if lehrform in ["onl", "ringonl", "async"]:
         setEffect("exkur", "ja", code, -100)
@@ -419,7 +438,7 @@ for code in list_of_scenarios:
     # ------------------------   
     setSpecialCase(code, "intKoll=ja", "international")
     #intKoll: only include remote, online, switching, and hybrid options
-    if lehrform not in ["onl", "onlhybwechs", "ringonl", "onlpraeswechs", "ringhyb2", "rem", "hyb", "hybrem", "hybpraeswechs"]:
+    if lehrform not in ["onl", "onlhybwechs", "ringonl", "onlpraeswechs", "ringhyb2", "rem", "hyb", "hybrem", "hybpraeswechs", "grwechshyb"]:
         if asyncTN in ["3", "4"]:
             setEffect("intKoll", "ja", code, -2)
         else: 
@@ -432,7 +451,7 @@ for code in list_of_scenarios:
     #          begrAnz
     # ------------------------ 
     # begrAnz: gruppenwechsel is pointless if everyone can fit in the room
-    if lehrform == "grwechs":
+    if lehrform in ["grwechs", "grwechshyb"]:
         setEffect("begrAnz", "nein", code, -100)
         setEffect("begrAnz", "ja", code, +2)
    
@@ -440,27 +459,40 @@ for code in list_of_scenarios:
     # ------------------------
     # - gaeste
     # ------------------------
-    # gaeste: if having regular guest speakers, only display Ringvorlesung formats
-    if "ring" not in lehrform:
-        setEffect("gaeste", "virtuell", code, -100)
-        setEffect("gaeste", "vorOrt", code, -100)
-        setEffect("gaeste", "both", code, -100)
-    # and obviously don't display Ringvorlesung formats if no guests!
+    # note: there is currently no special case/ tips for having guests in-person in a non-hybrid environment
+    # CASE 1: if no guests are invited: don't display 'ring' formats
     if "ring" in lehrform:
         setEffect("gaeste", "nein", code, -100)
-    if lehrform == "ringpraes":
-        setEffect("gaeste", "virtuell", code, -100)
-    if lehrform == "ringonl":
+    
+    # CASE 2: if guests are only invited in-person:
+    # - exclude simple formats without guests (they have corresponding "ring" formats) and 'ringhyb1' (where guest would be online):
+    if lehrform in ["praes", "onl", "hyb", "ringhyb1"]:
         setEffect("gaeste", "vorOrt", code, -100)
-        setSpecialCase(code, "gaeste=virtuell", "gastOnline")
-        setEffect("gaeste", "both", code, -3)
-        setSpecialCase(code, "gaeste=both", "gastOnline")
-    if lehrform in ["ringhyb1", "ringhyb2"]:
-        setSpecialCase(code, "gaeste=virtuell", "gastOnline")
-        setSpecialCase(code, "gaeste=both", "gastOnline")
-        setSpecialCase(code, "gaeste=vorOrt", "gastVorOrtHyb")
-        setSpecialCase(code, "gaeste=vorOrt", "gastVorOrtHyb")
-      
+    # - exclude purely-online formats
+    if lehrform in ["ringonl", "async"]:
+        setEffect("gaeste", "vorOrt", code, -100)
+
+    # CASE 3: if guests are only invited online:
+    # - exclude simple formats without guests (they have corresponding 'ring' formats)
+    if lehrform in ["praes", "onl", "hyb", "ringpraes"]:
+        setEffect("gaeste", "virtuell", code, -100)
+    # - exclude formats without synchronous online components:
+    if lehrform in ["ringpraes", "async"]:
+        setEffect("gaeste", "virtuell", code, -100)
+
+    # CASE 4: if guests are sometimes online, sometimes in-person:
+    # - exclude all simple formats without guests (they have corresponding 'ring' formats)
+    if lehrform in ["praes", "onl", "hyb"]:
+        setEffect("gaeste", "both", code, -100)
+    # - exclude purely in-person and purely online formats:
+    if lehrform in ["ringpraes", "ringonl", "async"]:
+        setEffect("gaeste", "both", code, -100)
+    # - set special cases for both guests online and guests in-person for all viable formats
+    setSpecialCase(code, "gaeste=both|gaeste=virtuell", "gastOnline")
+    if lehrform in ["ringhyb2", "hyb", "onlhybwechs", "hybpraeswechs", "praeshybwechs", "rem", "hybrem", "grwechshyb", "grwechs"]:
+        setSpecialCase(code, "gaeste=both|gaeste=vorOrt", "gastVorOrtHyb")   
+    
+   
 
 
 updated_json["questions"] = updated_questions
