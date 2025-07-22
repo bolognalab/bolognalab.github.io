@@ -42,77 +42,13 @@
     .accordion::before {
         color: #777
     }
-    #resultAndChangeContainer {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        font-size: 16px;
-    }
-    #resultAndChangeContainer > p {
-        margin: 0 0;
-    }
-    #viewChangeAnswers {
-        border: 0px;
-        background: rgba(0,0,0,0);
-        font-size: 0.8em;
-        font-weight: bold;
-        color: var(--networkTurqoise);
-        cursor:pointer;
-    }
-    #viewChangeAnswers::before {
-        content: "";
-        width: 0.8em;
-        height: 0.8em;
-        margin-right: 4px;
-        background-image: url("../../images/fwd3.svg");
-        filter: var(--networkTurqoiseFilter);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: inline-block;
-    }
-    #answerSummary {
-        width: 100%;
-        margin-top: 1em;
-        font-size: 0.9em;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    #answerSummary > * {
-        width: 50%;
-    }
-    #answerSummary > * > h4 {
-        text-align:center;
-    }
 </style>
 </head>
 <body class="is-preload resultBg" lang="de" onload="loadPage()">
     <div id="result" class="rCont notReady">
         <a href="https://www.tu.berlin/bzhl/netzwerk-hybride-lehre"><img id="netzwerkLogo" src="images/NHL_logo.svg" /></a>
         <a href="app.html" style="text-decoration:none"><h3>Entscheidungshilfe Online und Hybride Lehre</h3></a>
-        <div id="resultAndChangeContainer">
-            <p>Ihr Ergebnis:</p>
-            <button id="viewChangeAnswers">Angaben ansehen / ändern</button>
-            <div id="answerSummary">
-                <div id="answerBlock1">
-                    <h4>Lehrveranstaltung</h4>
-                </div>
-                <div id="answerBlock2">
-                    <h4>Studierende</h4>
-                </div>
-                <div id="answerBlock3">
-                    <h4>Lehrperson</h4>
-                </div>
-                <div id="answerBlock4">
-                    <h4>Sonderbedingungen</h4>
-                </div>
-                
-                
-            </div>
-        </div>
+        <p style="margin-bottom: 0">Ihr Ergebnis:</p>
         <div id="resOverview" class="block overview">
             <h3 id="scenarioTitle">Titel des Lehr-Lernszenarios</h3>
             <h4 id="scenarioSubtitle">mit asynchroner Teilnahme-Alternative</h4>
