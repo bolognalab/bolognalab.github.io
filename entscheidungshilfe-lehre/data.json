@@ -2374,6 +2374,12 @@
                     },
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "VL": "Vorlesung",
+                "SE": "Seminar",
+                "PR": "Laboreinheit",
+                "SO": "Sonstige Art der Lehrveranstaltung"
             }
         },
         "anzahlVL": {
@@ -2432,6 +2438,11 @@
                     "effects": {},
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "inputs": "Inputs",
+                "plenum": "Plenumsdiskussionen",
+                "gruppen": "Gruppenarbeit"
             },
             "addInfo": "W\u00e4hlen Sie alle zutreffenden Punkte \u2014<span id='selectAtLeastOne'> mindestens eine Option </span>\u2014 aus."
         },
@@ -4558,6 +4569,13 @@
                     "effects": {},
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "referat": "Referat o.\u00e4.",
+                "debate": "Debatten o.\u00e4.",
+                "praxis": "Praxisanteil",
+                "privat": "Sensible Daten",
+                "LZiP": "andere nur vor Ort erbringbare Leistung(en)"
             },
             "addInfo": "W\u00e4hlen Sie alle zutreffenden Punkte aus."
         },
@@ -9286,6 +9304,12 @@
                     "conditionalEffects": {}
                 }
             },
+            "shorthand": {
+                "freshmen": "Studierende im Bachelor 1. - 2. Semester",
+                "upper": "Studierende im Bachelor ab dem 3. Semester",
+                "grad": "Studierende im Master / PhD",
+                "kM": "variables Niveau von Studierenden"
+            },
             "addInfo": [
                 "{NO BULLET} Im Vergleich zu erfahrenen Studierenden haben Studierende in der Eingangsphase in der Regel mehr Bedarf daran, durch eine verst\u00e4rkte Pr\u00e4senz und Kursstrukturierung sich im Studium zu etablieren und Selbstlernstrategien zu entwickeln."
             ]
@@ -10467,6 +10491,11 @@
                     "effects": {},
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "nein": "Studierende nicht sehr zeitlich eingeschr\u00e4nkt",
+                "ja": "Studierende zum gro\u00dfen Teil zeitlich eingeschr\u00e4nkt",
+                "idk": "Zeitliche Einschr\u00e4nkungen der Studierenden: unklar"
             },
             "addInfo": [
                 "\u00dcber 60% der Studierenden in Deutschland arbeiten neben dem Studium, wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann. (Studienwahl.de)",
@@ -12063,6 +12092,11 @@
                     },
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "nein": "Synchrone Teilnahme f\u00fcr alle m\u00f6glich",
+                "ja": "Synchrone Teilnahme f\u00fcr manche sehr schwierig",
+                "idk": "Studentische M\u00f6glichkeiten zur synchronen Teilnahme: unklar"
             }
         },
         "niePr": {
@@ -14097,6 +14131,11 @@
                     },
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "nein": "Vor-Ort-Teilnahme f\u00fcr alle m\u00f6glich",
+                "ja": "Vor-Ort-Teilnahme f\u00fcr manche sehr schwierig",
+                "idk": "Studentische M\u00f6glichkeiten zur vor-Ort-Teilnahme: unklar"
             }
         },
         "regAbw": {
@@ -14904,6 +14943,11 @@
                     },
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "nein": "Lehrperson immer anwesend",
+                "abundzu": "Lehrperson gelegentlich abwesend",
+                "oft": "Lehrperson oft abwesend"
             }
         },
         "onlBereit": {
@@ -15625,6 +15669,12 @@
                     "conditionalEffects": {}
                 }
             },
+            "shorthand": {
+                "kein": "Keine Bereitschaft zum Online-Lehren",
+                "geleg": "Lehre vor Ort bevorzugt, Bereitschaft auch zum Online-Lehren",
+                "viel": "Hohe Bereitschaf zum Online-Lehren",
+                "egal": "keine Pr\u00e4ferenz f\u00fcr vor-Ort oder Online-Lehre"
+            },
             "addInfo": [
                 "{NO BULLET} In dieser Frage geht es wahrscheinlich nicht nur um Ihre pers\u00f6nliche Pr\u00e4ferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre f\u00fcr das Lehrdeputat. <b>Anmerkung: in dieser Frage wird nach Ihrer eigenen Pr\u00e4senz- oder Online-Teilnahme gefragt</b> (Studierende k\u00f6nnten prinzipiell online teilnehmen, w\u00e4hrend Sie von einem Lehrraum aus unterrichten)."
             ]
@@ -15653,6 +15703,12 @@
                     "effects": {},
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "gruppenarb": "Langfristige Gruppenprojekte",
+                "exkur": "Exkursionen",
+                "intKoll": "(Inter)nationale Kollaboration",
+                "begrAnz": "begrenzte Raumkapazit\u00e4t"
             },
             "addInfo": "W\u00e4hlen Sie alle zutreffenden Punkte aus."
         },
@@ -17325,6 +17381,12 @@
                     },
                     "conditionalEffects": {}
                 }
+            },
+            "shorthand": {
+                "nein": "G\u00e4ste: nein",
+                "vorOrt": "G\u00e4ste vor Ort",
+                "virtuell": "G\u00e4ste online",
+                "both": "G\u00e4ste vor Ort und online"
             }
         },
         "studGeraete": {
