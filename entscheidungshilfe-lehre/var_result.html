@@ -87,6 +87,58 @@
     #answerSummary > * > h4 {
         text-align:center;
     }
+    li.groups {
+        list-style-type: none;
+    }
+    .groups h4 {
+        margin-bottom: 0.2em;
+    }
+    ul.answers {
+        padding-left: 20%;
+    }
+    .answers > li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+    }
+    .answers p {
+        font-size: 0.8em;
+        text-align: center;
+        margin: 0.3em 0;
+    }
+    .answers button.aChange {
+        border: 0px;
+        background: rgba(0,0,0,0);
+        font-size: 0.8em;
+        color: var(--networkTurqoise);
+        text-align: left;
+        margin-left: 0.5em;
+        min-width: 8em;
+        cursor: pointer;
+    }
+    .answers button.aChange::before {
+        content: "";
+        display: inline-block;
+        width: 0.9em;
+        height: 0.9em;
+        /* margin-right: 4px; */
+        background-image: url("images/pencil-box.svg");
+        filter: var(--networkTurqoiseFilter);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .answers .aChange > span {
+        opacity: 0;
+        margin-left: 0.2em;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
+    .answers .aChange:hover > span {
+        opacity: 1;
+    }
 </style>
 </head>
 <body class="is-preload resultBg" lang="de" onload="loadPage()">
@@ -96,22 +148,39 @@
         <div id="resultAndChangeContainer">
             <p>Ihr Ergebnis:</p>
             <button id="viewChangeAnswers">Angaben ansehen / ändern</button>
-            <div id="answerSummary">
-                <div id="answerBlock1">
+            <ul id="answerSummary">
+                <li id="answers-group1" class="groups">
                     <h4>Lehrveranstaltung</h4>
-                </div>
-                <div id="answerBlock2">
+                    <ul class="answers">
+                        <li id="answer-artLV"></li>
+                        <li id="answer-interactions"></li>
+                        <li id="answer-leistungen"></li>
+                    </ul>
+                </li>
+                <li id="answers-group2" class="groups">
                     <h4>Studierende</h4>
-                </div>
-                <div id="answerBlock3">
+                    <ul class="answers">
+                        <li id="answer-niveauSt"></li>
+                        <li id="answer-limZPSt"></li>
+                        <li id="answer-nieSync"></li>
+                        <li id="answer-niePr"></li>
+                    </ul>
+                </li>
+                <li id="answers-group3" class="groups">
                     <h4>Lehrperson</h4>
-                </div>
-                <div id="answerBlock4">
+                    <ul class="answers">
+                        <li id="answer-regAbw"></li>
+                        <li id="answer-onlBereit"></li>
+                    </ul>
+                </li>
+                <li id="answers-group4" class="groups">
                     <h4>Sonderbedingungen</h4>
-                </div>
-                
-                
-            </div>
+                    <ul class="answers">
+                        <li id="answer-situations"></li>
+                        <li id="answer-gaeste"></li>                        
+                    </ul>
+                </li>                
+            </ul>
         </div>
         <div id="resOverview" class="block overview">
             <h3 id="scenarioTitle">Titel des Lehr-Lernszenarios</h3>
@@ -202,9 +271,8 @@
         </div>
     </div>
     <hr />
+<script src="assets/js/questionFlow.js"></script>
 <script>
-
-
 const urlParams = new URLSearchParams(window.location.search);
 const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario').split("@")[0] : "se-rem-2-1-2"
 const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : []
@@ -233,6 +301,7 @@ const dummyAnswers = {
     "gaeste": "both"
 }
 const answers = providedAnswers? providedAnswers : dummyAnswers
+var answersToList = {}
 
 const descriptionsSync = {
     "0": "(Eher frontal)",
@@ -247,14 +316,14 @@ const descriptionsAsyncTN = {
     "4": "völlig asynchroner Kurs"
 }
 
-var all_tips, all_texts, tech_links, tip_matching, all_scenarios, all_special_cases
+var all_tips, all_texts, tech_links, tip_matching, all_scenarios, all_questions, all_special_cases
 
 function loadPage(){
     const rCont = document.getElementById("result")
     rCont.classList.add("notReady")
     $.getJSON("data.json", function(json){
     all_scenarios = json['scenarios']
-
+    all_questions = json['questions']
     // "decrypt" special cases
     all_special_cases = json['special']
     providedSpecialCases = specialCaseIndices.map((i)=>{
@@ -294,6 +363,7 @@ function loadPage(){
 var fullTipList
 
 function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
+    showProvidedAnswers(answers)
     // gathering texts
     let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
     let syncIntValue = "syncInt-" + scenario.split("-")[2]
@@ -606,6 +676,51 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     
     document.getElementById("result").classList.remove("notReady")
+    
+    // show provided answers
+    function showProvidedAnswers(answers){
+        // 1. collect single-response answers among those listed on this page
+        Object.entries(answers).forEach(([qKey, aKey])=>{
+            let shorthand = all_questions[qKey]["shorthand"]
+            if (document.querySelector("#answer-" + qKey) && shorthand){
+                let answerText = all_questions[qKey]["shorthand"][aKey]
+                answersToList[qKey] = answerText
+            }
+        }
+        )
+        // 2. collect multiple-choice answers as list separated by commas
+        let multipleChoiceQKeys = ["interactions", "leistungen", "situations"]
+        let headings = ["Interaktion: ", "Leistungen: ", ""]
+        multipleChoiceQKeys.forEach((mqKey, i)=>{
+            // 2a. identify options for the multiple-choice questions
+            let options = Object.keys(all_questions[mqKey]["antworten"])
+                // exception: delete "begrAnz" if the format is not SE
+            if (mqKey=="situations" && shownScenario.split("-")[0] != "se"){
+                options.splice(options.indexOf("begrAnz"), 1)
+            }
+            console.log(mqKey, options)
+            // 2b. find the 'shorthand' notation for all the options that are ACTIVE and join them into a list
+            let optionsToJoin = []
+            options.forEach((option)=>{
+                if (answers[option]=="ja"){
+                    optionsToJoin.push(all_questions[mqKey]["shorthand"][option])
+                }
+                console.log(mqKey, option, answers[option])
+            })
+            answersToList[mqKey] = headings[i] + optionsToJoin.join(", ")
+        })
+        // 3. add answers to the page
+        Object.entries(answersToList).forEach(([qKey, text])=>{
+            aCont = document.querySelector("#answer-" + qKey)
+            aDesc = document.createElement("p"); aCont.appendChild(aDesc)
+            aDesc.innerHTML = text
+            aChange = document.createElement("button"); aCont.appendChild(aChange)
+            aChange.classList.add("aChange")
+            aChange.innerHTML = "<span>ändern</span>"
+        })
+    }
+    
+
 }
 
 // showing and hiding tech block
@@ -677,6 +792,8 @@ function addTip(tipCode, container){
         }
         
     }
+
+
 </script>
 <script>
     // Accordion-menu for credits
