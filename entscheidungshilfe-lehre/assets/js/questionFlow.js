@@ -31,7 +31,7 @@
             a.querySelector(".contextContent").style.visibility="visible"
         }
     }
-    function displayQuestion(qKey, from="upcoming"){
+    function displayQuestion(qKey, from="upcoming", addButtons=true){
         let q, qText, qDiv
 
         activeQ = qKey
@@ -134,7 +134,7 @@
                 aRadio.setAttribute("id", "Q_" + qKey + "_A_" + aKey)
                 aRadio.setAttribute("value", aKey)
                 aRadio.addEventListener("click", function(){  
-                    selectAnswer(qKey, aKey)
+                    selectAnswer(qKey, aKey, addButtons)
                 })
                 let aLabel = document.createElement("label")
                 aLabel.setAttribute("for", "Q_" + qKey + "_A_" + aKey)
@@ -169,7 +169,7 @@
                         aRadio.setAttribute("id", "Q_" + qKey + "_A_none")
                         aRadio.setAttribute("value", "none")
                         aRadio.addEventListener("click", function(){  
-                            selectAnswer(qKey, "none")
+                            selectAnswer(qKey, "none", addButtons)
                         })
                         let aLabel = document.createElement("label")
                         aLabel.setAttribute("for", "Q_" + qKey + "_A_none")
@@ -183,13 +183,14 @@
 
         }
 
-        if (true){
-            let buttonContainer = document.createElement("div")
-            buttonContainer.classList.add("buttonContainer")
-            qDiv.append(buttonContainer)
-            if (qKey == "TEXT_welcome"){
-                buttonContainer.style.display = "none"
-            }
+        
+        let buttonContainer = document.createElement("div")
+        buttonContainer.classList.add("buttonContainer")
+        qDiv.append(buttonContainer)
+        if (qKey == "TEXT_welcome"){
+            buttonContainer.style.display = "none"
+        }
+        if (addButtons){
             buttonContainer.append(pButton)
             buttonContainer.append(nButton)
             nButton.disabled = qKey=="situations" || qKey=="leistungen" || qKey.includes("TEXT_") && qKey != "TEXT_labore" ? false : true
@@ -243,7 +244,7 @@
     }
 
 
-    function selectAnswer(qKey, aKey){
+    function selectAnswer(qKey, aKey, addButtons=true){
         if (qKey == "situations" || qKey == "leistungen" || qKey == "interactions"){
             let aDiv = document.querySelector("#DIV_" + qKey + " > #A_" + aKey)
             if (aDiv.classList.contains("highlighted") && aKey != "none"){
@@ -325,35 +326,38 @@
             
         }
         
-        // check if there would be a next question if this answer is selected; if so, enable the "Next Button"
-        let includeNextQuestion = false
-        let dummyIdx = nextQuestionIdx
-        if (dummyIdx >= questionOrder.length){
-            document.querySelector("#DIV_" + activeQ + " > .buttonContainer").append(sButton)
-            sButton.style.display="inline"
-            progressBar.style.opacity=0
-            }
-        while (dummyIdx < questionOrder.length && includeNextQuestion == false){
-            let nextQuestion = questionOrder[dummyIdx]
-            
-            includeNextQuestion = includeCheck(nextQuestion)
-            if (includeNextQuestion){
-                if (sButton.style.display == "inline"){
-                    document.body.appendChild(sButton)
-                    sButton.style.display="none"
-                }
-                nButton.disabled = false
-                break
-            } else {
-                dummyIdx += 1
-            }
-            // if we reach the end and don't find a valid question, display final submit button
+        if (addButtons){
+            // check if there would be a next question if this answer is selected; if so, enable the "Next Button"
+            let includeNextQuestion = false
+            let dummyIdx = nextQuestionIdx
             if (dummyIdx >= questionOrder.length){
                 document.querySelector("#DIV_" + activeQ + " > .buttonContainer").append(sButton)
                 sButton.style.display="inline"
                 progressBar.style.opacity=0
-            }
+                }
+            while (dummyIdx < questionOrder.length && includeNextQuestion == false){
+                let nextQuestion = questionOrder[dummyIdx]
+                
+                includeNextQuestion = includeCheck(nextQuestion)
+                if (includeNextQuestion){
+                    if (sButton.style.display == "inline"){
+                        document.body.appendChild(sButton)
+                        sButton.style.display="none"
+                    }
+                    nButton.disabled = false
+                    break
+                } else {
+                    dummyIdx += 1
+                }
+                // if we reach the end and don't find a valid question, display final submit button
+                if (dummyIdx >= questionOrder.length){
+                    document.querySelector("#DIV_" + activeQ + " > .buttonContainer").append(sButton)
+                    sButton.style.display="inline"
+                    progressBar.style.opacity=0
+                }
+            }            
         }
+
 
         activeA = aKey
     }
@@ -378,7 +382,7 @@
         let qKey = qq? qq : activeQ
         let pKey = qKey
         let aKey = aa? aa : activeA
-        
+
         if (resetRecent && verbose){
             recent = []
         }

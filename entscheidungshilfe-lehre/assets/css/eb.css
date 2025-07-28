@@ -98,7 +98,7 @@ li > .closeBtn {
 }
 
 .rCont, .qCont {
-    width: 95%;
+    width: 100%;
     max-width: 800px;
     margin: auto;
 }
@@ -140,13 +140,13 @@ li > .closeBtn {
 .rCont {
     font-size: 14px;
     background: white;
-    padding-top: 8em
+    /* padding-top: 8em */
 }
 
 .block {
     padding: 15px 15px;
 }
-.block:nth-child(2n+1){
+.block:nth-child(2n+2){
     background-color: var(--backgroundLightBlue);
     margin-top: 2em;
 }
