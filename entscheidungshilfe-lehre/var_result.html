@@ -87,52 +87,68 @@
     #resultAndChangeContainer > p {
         margin: 0 0;
     }
-    #viewChangeAnswers, #applyChanges > button {
+    .notReady #viewChangeAnswers {
+        background:rgba(18, 161, 154, 0.4);
+        border-radius: 1em;
+        color: rgba(0,0,0,0)
+    }
+    .notReady #viewChangeAnswers > img {
+        opacity: 0;
+    }
+    #viewChangeAnswers, #applyChanges {
         border: 0px;
         background: rgba(0,0,0,0);
+        border-radius: 0;
         /* font-size: 0.8em; */
         font-weight: bold;
         color: var(--networkTurqoise);
         cursor:pointer;
     }
-    #viewChangeAnswers > img, #applyChanges > * >  img {
+    #viewChangeAnswers > img, #answerSummaryContainer > * >  img {
         content: "";
         /* width: 0.8em; */
         height: 0.8em;
-        margin-right: 5px;
         filter: var(--networkTurqoiseFilter);
         display: inline-block;
         transition: all 0.5s ease
     }
     #viewChangeAnswers > img {
         transform: rotate(90deg);
+        margin-right: 5px;
     }
     #viewChangeAnswers.answersAreHidden > img {
         transform: rotate(0);
     }
-    #answerSummary {
+    #answerSummaryContainer {
         overflow: hidden;
+        margin-top: 0.5em;
         width: 100%;
-        margin-top: 1em;
         font-size: 0.9em;
+        background: rgba(216, 243, 242, 0.5);
+        padding: 0 1em;
+        transition: all 0.4s ease;
+    }
+    #answerSummaryContainer > *:last-child {
+        margin-bottom: 1em;
+    }
+    #answerSummary {
+        margin-top: 1em;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         transition: all 0.4s ease;
         justify-content: center;
-        padding: 0 1em;
-        background: rgba(216, 243, 242, 0.5);
+        padding: 0 0;
+        gap: 2em;
     }
-    #answerSummary > * {
+    #answerSummary > li, #answerSummary > p {
         width: 100%;
     }
-    #answerSummary > *:last-child {
-        margin-bottom: 1em;
-    }
+
 
     @media only screen and (min-width:600px){
-        #answerSummary > * {
-            width: 50%;
+        #answerSummary > li {
+            width: calc(50% - 2em);
         }
     }
     #answerSummary > * > h4 {
@@ -151,29 +167,29 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: start;
+        gap: 0.5em;
+        justify-content: space-between;
         list-style-type: none;
     }
     .answers p {
-        font-size: 0.8em;
         text-align: left;
         margin: 0.3em 0;
+        display: inline-block;
     }
     .answers button.aChange {
         border: 0px;
         background: rgba(0,0,0,0);
-        font-size: 0.8em;
+        font-size: 0.9em;
         color: var(--networkTurqoise);
         text-align: left;
-        margin-left: 0.5em;
-        min-width: 8em;
+        min-width: 5em;
         cursor: pointer;
     }
     .answers button.aChange::before {
         content: "";
         display: inline-block;
-        width: 0.9em;
-        height: 0.9em;
+        width: 1em;
+        height: 1em;
         /* margin-right: 4px; */
         background-image: url("images/pencil-box.svg");
         filter: var(--networkTurqoiseFilter);
@@ -190,12 +206,15 @@
     .answers .aChange:hover > span {
         opacity: 1;
     }
-    #answerSummary > #applyChanges {
-        width: 100%;
-        text-align: right;
+
+    .answers .changed {
+        color: var(--networkTurqoise);
+    }
+    #answerSummaryContainer > #applyChanges {
+        float: right;
         margin-top: 1em;
     }
-    
+
     /* adjusting answers */
     .qCont {
         position: absolute;
@@ -205,22 +224,25 @@
         background-color: rgba(0,0,0,0);
         transition: all 0.5s ease;
     }
-    .qCont .saveButton, .qCont .cancelButton {
-        height: 3em;
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
+    .qCont .saveButton, .qCont .cancelButton, #applyChanges {
         cursor: pointer;
         border: 3px solid rgba(255,255,255,0.7);
         margin: 0 0;
         border-radius: 1em;
         padding: 0.5em 1em;
         color: white;
-        font-size: 14px;
         font-weight: bold;
         letter-spacing: 0.05em;
         background: rgba(18, 161, 154, 0.7);
         transition: all 0.4s ease;
+    }
+
+    .qCont .saveButton, .qCont .cancelButton {
+        height: 3em;
+        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
     }
     .cancelButton {
         left: 5%;
@@ -233,6 +255,10 @@
     }
     .saveButton:hover{
         background: var(--networkBlue)
+    }
+    button:disabled {
+        opacity: 0.2;
+        pointer-events: none;
     }
     .answerBeingChanged .qCont {
         left: 0%;
@@ -261,40 +287,44 @@
             <div id="resultAndChangeContainer">
                 <p>Ihr Ergebnis:</p>
                 <button id="viewChangeAnswers" onclick="showHideAnswers()" class="answersAreHidden"><img src="images/fwd3.svg" /><span>Angaben ansehen / ändern</span></button>
-                <ul id="answerSummary" style="height:0">
-                    <li id="answers-group1" class="groups">
-                        <h4>Lehrveranstaltung</h4>
-                        <ul class="answers">
-                            <li id="answer-artLV"></li>
-                            <li id="answer-interactions"></li>
-                            <li id="answer-leistungen"></li>
-                        </ul>
-                    </li>
-                    <li id="answers-group2" class="groups">
-                        <h4>Studierende</h4>
-                        <ul class="answers">
-                            <li id="answer-niveauSt"></li>
-                            <li id="answer-limZPSt"></li>
-                            <li id="answer-nieSync"></li>
-                            <li id="answer-niePr"></li>
-                        </ul>
-                    </li>
-                    <li id="answers-group3" class="groups">
-                        <h4>Lehrperson</h4>
-                        <ul class="answers">
-                            <li id="answer-regAbw"></li>
-                            <li id="answer-onlBereit"></li>
-                        </ul>
-                    </li>
-                    <li id="answers-group4" class="groups">
-                        <h4>Sonderbedingungen</h4>
-                        <ul class="answers">
-                            <li id="answer-situations"></li>
-                            <li id="answer-gaeste"></li>                        
-                        </ul>
-                    </li>   
-                    <div id="applyChanges"><button><img src="images/update.svg" /><span>Ergebnis aktualisieren</span></button></div>             
-                </ul>
+                <div id="answerSummaryContainer" style="height:0">
+                    <p>Klicken Sie neben einer Antwort auf <img src="images/pencil-box.svg" alt="'ändern'"/>, um sie zu ändern. Wenn Sie fertig sind, klicken Sie auf "Ergebnis aktualisieren" um Ihre Änderungen anzuwenden.</p>
+                    <ul id="answerSummary">
+                        <li id="answers-group1" class="groups">
+                            <h4>Lehrveranstaltung</h4>
+                            <ul class="answers">
+                                <li id="answer-artLV"></li>
+                                <li id="answer-interactions"></li>
+                                <li id="answer-leistungen"></li>
+                            </ul>
+                        </li>
+                        <li id="answers-group2" class="groups">
+                            <h4>Studierende</h4>
+                            <ul class="answers">
+                                <li id="answer-niveauSt"></li>
+                                <li id="answer-limZPSt"></li>
+                                <li id="answer-nieSync"></li>
+                                <li id="answer-niePr"></li>
+                            </ul>
+                        </li>
+                        <li id="answers-group3" class="groups">
+                            <h4>Lehrperson</h4>
+                            <ul class="answers">
+                                <li id="answer-regAbw"></li>
+                                <li id="answer-onlBereit"></li>
+                            </ul>
+                        </li>
+                        <li id="answers-group4" class="groups">
+                            <h4>Sonderbedingungen</h4>
+                            <ul class="answers">
+                                <li id="answer-situations"></li>
+                                <li id="answer-gaeste"></li>                        
+                            </ul>
+                        </li>      
+                    </ul>
+                    <button id="applyChanges" onclick="loadNewResult(adjustedAnswers)">Ergebnis aktualisieren</button>
+                </div>
+                
                 
             </div>
             <div id="resOverview" class="block overview">
@@ -400,12 +430,12 @@ const dummyAnswers = {
     "inputs": "ja",
     "plenum": "ja", 
     "gruppen": "nein",
-    "intSync": "2",
-    // "referat": "ja",
-    // "debate": "nein",
-    // "praxis": "nein",
-    // "privat": "nein",
-    // "LZiP": "nein",
+    "intSync": "1",
+    "referat": "ja",
+    "debate": "nein",
+    "praxis": "nein",
+    "privat": "nein",
+    "LZiP": "nein",
     "keineLeistungen": "ja",
     "niveauSt": "freshmen",
     "limZPSt": "ja",
@@ -421,6 +451,7 @@ const dummyAnswers = {
 }
 const answers = providedAnswers? providedAnswers : dummyAnswers
 const previousAnswers = {...answers}
+var adjustedAnswers = {...answers}
 var answersToList = {}
 
 const descriptionsSync = {
@@ -438,6 +469,9 @@ const descriptionsAsyncTN = {
 
 var all_tips, all_texts, tech_links, tip_matching, all_scenarios, all_questions, all_special_cases, questionInfo
 var nextQuestionIdx = 0
+var recent = []
+var activeScenarios = {}
+const maxShownAnswers = 4
 
 function loadPage(){
     const rCont = document.getElementById("result")
@@ -485,7 +519,7 @@ function loadPage(){
 var fullTipList
 
 function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
-    showProvidedAnswers(answers)
+    showProvidedAnswers(previousAnswers)
     // gathering texts
     let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
     let syncIntValue = "syncInt-" + scenario.split("-")[2]
@@ -506,7 +540,6 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     })
 
     let raumLink = tech_links[scenarioValue]['raum-' + syncIntValue]
-    console.log("Raummodell: ", raumLink)
     if (raumLink == "COMINGSOON"){
         document.querySelector("#refToRaumkonzept").innerHTML = "Ein interaktives Raummodell mit Empfehlungen folgt bald."
         if (asyncIntValue != "asyncInt-x"){
@@ -795,14 +828,14 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     )
 
-
     
     document.getElementById("result").classList.remove("notReady")
     
     // show provided answers
-    function showProvidedAnswers(answers){
+    function showProvidedAnswers(allAnswers){
+        document.querySelector("#applyChanges").disabled = true
         // 1. collect single-response answers among those listed on this page
-        Object.entries(answers).forEach(([qKey, aKey])=>{
+        Object.entries(allAnswers).forEach(([qKey, aKey])=>{
             let shorthand = all_questions[qKey]["shorthand"]
             if (document.querySelector("#answer-" + qKey) && shorthand){
                 let answerText = all_questions[qKey]["shorthand"][aKey]
@@ -820,11 +853,11 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             if (mqKey=="situations" && shownScenario.split("-")[0] != "se"){
                 options.splice(options.indexOf("begrAnz"), 1)
             }
-            console.log(mqKey, options)
+
             // 2b. find the 'shorthand' notation for all the options that are ACTIVE and join them into a list
             let optionsToJoin = []
             options.forEach((option)=>{
-                if (answers[option]=="ja"){
+                if (allAnswers[option]=="ja"){
                     optionsToJoin.push(all_questions[mqKey]["shorthand"][option])
                 }
             })
@@ -839,26 +872,58 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
                 if (mqKey == "situations"){
                     answersToList[mqKey] = "keine Sonderbedingungen"
                 }
+                if (mqKey == "interactions"){
+                    answersToList[mqKey] = "keine Interaktion"
+                }
             }
             
         })
-        // 3. add answers to the page
-        console.log(answersToList)
+        // 3. add answers to the page and add functionality
         Object.entries(answersToList).forEach(([qKey, text])=>{
             aCont = document.querySelector("#answer-" + qKey)
             aDesc = document.createElement("p"); aCont.appendChild(aDesc)
             aDesc.innerHTML = text
-            aChange = document.createElement("button"); aCont.appendChild(aChange)
+            aChange = document.createElement("button"); aCont.appendChild(aChange); 
             aChange.classList.add("aChange")
             aChange.setAttribute("id", "aChange-" + qKey)
             aChange.innerHTML = "<span>ändern</span>"
             aChange.addEventListener("click", ()=>{
                 body = document.body
                 body.classList.add("answerBeingChanged")
-                displayQuestion(qKey, "upcoming", addButtons=false)
+                compareByKeys(answers, adjustedAnswers)
+                // display question when clicked
+                if (qKey == "artLV"){
+                    displayQuestion(qKey, "upcoming", addButtons=false, addTitle=true, excludekeys=["PR"])
+                } else {
+                    displayQuestion(qKey, "upcoming", addButtons=false, addTitle=true)
+                }
+
+                // after question is displayed: add buttons + pre-select answers
                 setTimeout(()=>{
+                    // pre-select answers
+                        let selectedAnswers = []
+                        // for single-choice questions
+                        if (!multipleChoiceQKeys.includes(qKey)){
+                            selectedAnswers.push(adjustedAnswers[qKey])
+                        } else {
+                            let options = Object.keys(all_questions[qKey]["antworten"])
+                            options.forEach((option)=>{
+                                if (adjustedAnswers[option] == "ja"){
+                                    selectedAnswers.push(option)
+                                }
+                            })
+                        }
+                        selectedAnswers.forEach((aKey)=>{
+                            document.querySelector("#Q_" + qKey + "_A_"+aKey).click()
+                            // selectAnswer(qKey, aKey, addButtons=false)
+                            // document.querySelector("#DIV_"+qKey).querySelector("#A_"+aKey).classList.add("highlighted")
+                        })
+                        
+                        // compareByKeys(answers, adjustedAnswers)
+
                     let buttonContainer = document.querySelector(".buttonContainer")
                     buttonContainer.classList.add("answerAdj")
+
                     // button to return to result without changing anything
                     let cButton = document.createElement("button"); buttonContainer.append(cButton)
                     cButton.classList.add("cancelButton")
@@ -867,6 +932,12 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
                     cButton.addEventListener("click", function(){
                         let cQ = document.querySelector("#DIV_" + qKey)
                         cQ.classList.add("upcoming")
+                        // reset 'answers' variable to what it was prior to opening the question
+                        Object.keys(adjustedAnswers).forEach(key => {
+                            if (answers.hasOwnProperty(key)) {
+                                answers[key] = adjustedAnswers[key];
+                            }
+                        });
                         setTimeout(function(){
                             cQ.querySelector(".buttonContainer").remove()
                             cQ.remove()
@@ -875,17 +946,57 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
                     })
 
                     // button to save answers
-                    let svButton = document.createElement("button"); buttonContainer.append(svButton)
+                    let svButton = document.createElement("button"); buttonContainer.append(svButton)    
                     svButton.classList.add("saveButton")
                     svButton.setAttribute("id", "saveButton")
                     svButton.innerHTML = "Änderung speichern"
+                    svButton.addEventListener("click", function(){
+                        let cQ = document.querySelector("#DIV_" + qKey)
+                        cQ.classList.add("upcoming")
+                        // updated 'adjustedAnswers' variable to reflect changes
+                        adjustedAnswers = {...answers}
+                        updateProvidedAnswer(adjustedAnswers, qKey)
+                        document.querySelector("#applyChanges").disabled = false
+                        setTimeout(function(){
+                            cQ.querySelector(".buttonContainer").remove()
+                            cQ.remove()
+                            body.classList.remove("answerBeingChanged")
+                        }, 100)                        
+                    })
+                    svButton.disabled = true
 
-                }, 500)
+                    // extra functionality for selecting answers: activate svButton if a change has been made
+                    let aDivs = document.querySelectorAll(".aDiv")
+                    aDivs.forEach((a)=>{
+                        a.addEventListener("click", ()=>{
+                            if (!multipleChoiceQKeys.includes(qKey)){
+                                // simple check for single-choice options: compare answers[qKey] with adjusted-and-saved-answers
+                                if (answers[qKey] != adjustedAnswers[qKey]){
+                                    svButton.disabled = false
+                                } else {
+                                    svButton.disabled = true
+                                }
+                            } else {
+                                // for multiple choice options: "change" means that ANY of the options have changed
+                                let options = Object.keys(all_questions[qKey]["antworten"])
+                                let isChanged = false;
+                                for (let option of options) {
+                                    if (answers[option] !== adjustedAnswers[option]) {
+                                        isChanged = true;
+                                        break;  // No need to check further
+                                    }
+                                }
+                                svButton.disabled = !isChanged;
+                                
+                            }
+                        })
+                    })
+
+                }, 200)
             })
         })
     }
     
-
 }
 
 // showing and hiding tech block
@@ -960,15 +1071,114 @@ function addTip(tipCode, container){
 
 function showHideAnswers(){
     let button = document.querySelector("#viewChangeAnswers")
-    let answerSummary = document.querySelector("#answerSummary")
+    let answerSummaryContainer = document.querySelector("#answerSummaryContainer")
     if (button.classList.contains("answersAreHidden")){
-        answerSummary.style.height = answerSummary.scrollHeight + "px"
+        answerSummaryContainer.style.height = answerSummaryContainer.scrollHeight + "px"
         button.classList.remove("answersAreHidden")
     } else {
-        answerSummary.style.height = "0px"
+        answerSummaryContainer.style.height = "0px"
         button.classList.add("answersAreHidden")
     }
+}
+
+function updateProvidedAnswer(allAnswers, questionToUpdate){
+        let qKey = questionToUpdate
+        let aDesc = document.querySelector("#answer-" + qKey).querySelector("p")
+        let multipleChoiceQKeys = ["interactions", "leistungen", "situations"]
+        let headings = {
+            "interactions": "Interaktion: ",
+            "leistungen": "Leistungen: ",
+            "situations": ""
+        }
+        let answerText
+
+        if (!multipleChoiceQKeys.includes(qKey)){
+            // single-choice options
+            let aKey = allAnswers[qKey]
+            answerText = all_questions[qKey]["shorthand"][aKey]
+
+        } else {
+            // multiple-choice options
+            let options = Object.keys(all_questions[qKey]["antworten"])
+                // exception: delete "begrAnz" if the format is not SE
+            if (qKey=="situations" && shownScenario.split("-")[0] != "se"){
+                options.splice(options.indexOf("begrAnz"), 1)
+            }
+            let optionsToJoin = []
+            options.forEach((option)=>{
+                if (allAnswers[option]=="ja"){
+                    optionsToJoin.push(all_questions[qKey]["shorthand"][option])
+                }
+            })
+            
+            if (optionsToJoin.length >=1){
+                answerText = headings[qKey] + optionsToJoin.join(", ")
+            } else {
+                // special cases if no options are selected:
+                if (qKey == "leistungen"){
+                    answerText = "keine besonderen Leistungen"
+                }
+                if (qKey == "situations"){
+                    answerText = "keine Sonderbedingungen"
+                }
+                if (qKey == "interactions"){
+                    answerText = "keine Interaktion"
+                }
+            }
+        }
+
+        aDesc.innerHTML = answerText
+        aDesc.classList.add("changed")
+    }
+
+function loadNewResult(newAnswers){
+    // set question order
+    let questionOrder = []
+    let aL = document.querySelectorAll(".answers li")
+    aL.forEach(n=>{
+        questionOrder.push(n.id.split("-")[1])
+    })
+
+    // initialize activeScenarios
     
+    Object.entries(all_scenarios).forEach((s)=>{
+        activeScenarios[s[0]] = 0
+    })
+
+    // begin calculating scores from first answer; handle single-choice vs multiple-choice
+    let multipleChoiceQKeys = ["interactions", "leistungen", "situations"]
+    questionOrder.forEach(qKey=>{
+        if (qKey != "situations" && qKey != "leistungen"){
+            if (qKey == "interactions"){
+                submitSingleAnswer(qq="intSync", aa=newAnswers["intSync"], proceed=false, verbose=false)
+            } else {
+                submitSingleAnswer(qq=qKey, aa=newAnswers[qKey], proceed=false, verbose=false)
+            }
+        } else {
+            answersToSubmit = {}
+            
+            Object.keys(questionInfo[qKey]["antworten"]).forEach((a, idx, array)=>{
+                answersToSubmit[a] = newAnswers[a]
+                if (idx === array.length -1 ){
+                    if (qKey == "leistungen"){
+                        // special case: if none of the tasks are selected, set keineLeistungen=ja in order to apply some effects
+                        answersToSubmit["keineLeistungen"] = newAnswers["keineLeistungen"]
+                    }
+                    submitMultipleAnswers(answersToSubmit, qKey, verbose=false, proceed=false)
+                }
+            })
+        }
+    })
+    console.log(activeScenarios)
+    sessionStorage.setItem("answers", JSON.stringify(newAnswers))
+    getResult(activeScenarios)
+
+}
+
+function compareByKeys(obj1, obj2){
+    Object.keys(obj1).forEach(key=>{
+        console.log(key, ": ", obj1[key], "-", obj2[key])
+        })
 }
 </script>
 <script>

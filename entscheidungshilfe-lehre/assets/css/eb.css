@@ -390,9 +390,9 @@ ul.tCont, ul.altCont {
 .notReady {
     transition: all 0.4s ease
 }
-.notReady div.block {
+/* .notReady div.block {
     border-radius: 1em;
-}
+} */
 .notReady .block p, .notReady .block h4, .notReady .block h3 {
     color: rgba(0,0,0,0);
     border-radius: 1em;

@@ -434,3 +434,7 @@ div.progressBar.discreet .active {
 .sources {
     font-size: 0.8em;
 }
+
+h3.addedTitle {
+    text-align: center;
+}

@@ -31,7 +31,7 @@
             a.querySelector(".contextContent").style.visibility="visible"
         }
     }
-    function displayQuestion(qKey, from="upcoming", addButtons=true){
+    function displayQuestion(qKey, from="upcoming", addButtons=true, addTitle=false, excludekeys=[]){
         let q, qText, qDiv
 
         activeQ = qKey
@@ -63,6 +63,13 @@
                 qDiv.classList.add("qDiv")
             }
             
+            if (addTitle){
+                // used for adjusting answer at result page; ignored usually
+                let t = document.createElement("h3"); qDiv.append(t)
+                t.classList.add("addedTitle")
+                t.innerHTML = "Antwort ändern"
+            }
+
             let qP = document.createElement("p"); qDiv.append(qP)
             qP.setAttribute("id", "Q_" + qKey); qP.classList.add("qText")
             qP.innerHTML = qText
@@ -155,6 +162,10 @@
                 if (qKey == "situations" && aKey == "begrAnz" && answers["artLV"]!="SE"){
                     aDiv.style.display = "none"
                 }    
+                    // hide answers explicitly excluded
+                if (excludekeys.includes(aKey)){
+                    aDiv.style.display = "none"
+                }
 
                 // AT THE END OF THE LOOP: For checkbox questions, add "none of the above" as the last answer and highlight it
                 if (qKey == "situations" || qKey == "leistungen"){ 
@@ -439,11 +450,11 @@
         }
     
     }
-    function submitMultipleAnswers(answersToSubmit, parentQ, isVerbose=false){
+    function submitMultipleAnswers(answersToSubmit, parentQ, isVerbose=false, proceed=true){
         Object.entries(answersToSubmit).forEach((aEntry, idx, array)=>{
             submitSingleAnswer(aEntry[0], aEntry[1], proceed=false, resetRecent=idx==0, verbose=isVerbose)
             if (idx === array.length -1){
-                submitSingleAnswer(parentQ, array[idx-1][0], proceed=true, resetRecent=false, verbose=isVerbose)
+                submitSingleAnswer(parentQ, array[idx-1][0], proceed=proceed, resetRecent=false, verbose=isVerbose)
             } 
         })
     }
@@ -623,7 +634,7 @@
         window.open("var_result.html?shownScenario=" + firstResult + "&topTier=" + JSON.stringify(topResults), "_self")
     }
 
-    // Auxiliary funcitons (specialized)
+    // Auxiliary functions (specialized)
     function getTopScenarios(results){
         shownScenarios = []
         // determine top 3 scores (multiple scenarios can have the same score)
@@ -681,24 +692,61 @@
         return shownScenarios
     }
 
-        // get special cases from answers - called just before submitting the answer
-        function getSpecialCases(scenario){
-            // collects the special cases that should be added to a scenario based on what answers were provided
-            let answersToCheck = all_scenarios[scenario]["special_cases"]
-            let all_cases_rev = Object.fromEntries(Object.entries(all_special_cases).map(a => a.reverse()))
-            let applicableCases = []
-            let applicableIndices = []
-            Object.entries(answersToCheck).forEach(([r,c], i, arr)=>{
-                if (andOrCheck(r)){
-                    console.log("adding ", c)
-                    applicableCases.push(c)
-                    if (Object.values(all_special_cases).includes(c)){
-                        applicableIndices.push(Math.floor(all_cases_rev[c]))
-                    }
+    // get special cases from answers - called just before submitting the answer
+    function getSpecialCases(scenario){
+        // collects the special cases that should be added to a scenario based on what answers were provided
+        let answersToCheck = all_scenarios[scenario]["special_cases"]
+        let all_cases_rev = Object.fromEntries(Object.entries(all_special_cases).map(a => a.reverse()))
+        let applicableCases = []
+        let applicableIndices = []
+        Object.entries(answersToCheck).forEach(([r,c], i, arr)=>{
+            if (andOrCheck(r)){
+                console.log("adding ", c)
+                applicableCases.push(c)
+                if (Object.values(all_special_cases).includes(c)){
+                    applicableIndices.push(Math.floor(all_cases_rev[c]))
                 }
-            })
-            return applicableIndices
-        }
+            }
+        })
+        return applicableIndices
+    }
+
+    function sortByAsyncInt(arr){
+        // Step 1: Group by prefix
+        const grouped = {};
+
+        arr.forEach(item => {
+        const match = item.match(/^(.*?)-(\d+-\d+-\d+)$/);
+        if (!match) return;
+
+        const prefix = match[1];
+        const digits = match[2];
+
+        if (!grouped[prefix]) grouped[prefix] = [];
+        grouped[prefix].push(digits);
+        });
+
+        // Step 2: Sort each group of digits
+        Object.keys(grouped).forEach(prefix => {
+        grouped[prefix].sort((b, a) => {
+            const [a1, a2, a3] = a.split("-").map(Number);
+            const [b1, b2, b3] = b.split("-").map(Number);
+
+            if (a1 !== b1) return a1 - b1;
+            if (a2 !== b2) return a2 - b2;
+            return a3 - b3;
+        });
+        });
+
+        // Step 3: Recombine into final array, keeping prefix order
+        const final = [];
+        Object.keys(grouped).forEach(prefix => {
+        grouped[prefix].forEach(digits => {
+            final.push(`${prefix}-${digits}`);
+        });
+        });
+        return final
+    }
 
     // logic
     function includeCheck(qKey){
