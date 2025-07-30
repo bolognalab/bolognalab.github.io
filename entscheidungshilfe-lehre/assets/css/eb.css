@@ -1,20 +1,22 @@
-
 :root {
     --whiteFilter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(0%) hue-rotate(11deg) brightness(109%) contrast(100%);
     --networkBlack: hwb(60 21% 79%);
-    --networkTurqoise: rgb(18, 161, 154);
+    --networkTurqoise: #10938c;
     --networkBlue: rgb(15, 113, 184);
     --networkBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
     --vibrantBlue: #0F70B7;
     --vibrantBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
-    --networkTurqoiseFilter: brightness(0) saturate(100%) invert(71%) sepia(67%) saturate(5756%) hue-rotate(142deg) brightness(88%) contrast(86%);
-    --backgroundLightBlue: #d0e3f1;
+    --networkTurqoiseFilter: brightness(0) saturate(100%) invert(38%) sepia(69%) saturate(568%) hue-rotate(128deg) brightness(105%) contrast(87%);
+    --backgroundLightBlue: hsl(205, 56%, 93%);
     --backgroundLightGreen: #d8f3f2;
 }
 
 body {
     font-family: 'Segoe UI', 'Helvetica', 'Arial', 'Roboto', sans-serif; 
-    color: var(--networkBlack)
+    color: var(--networkBlack);
+    background: var(--backgroundLightBlue);
+    background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
+
 }
 h1, h2, h3, h4 {
     color: black
@@ -97,7 +99,7 @@ li > .closeBtn {
     color: rgb(4, 23, 133)
 }
 
-.rCont, .qCont {
+.qCont {
     width: 100%;
     max-width: 800px;
     margin: auto;
@@ -138,9 +140,19 @@ li > .closeBtn {
 
 /* result container */
 .rCont {
+    width: 100%;
+    max-width: 900px;
+    margin: auto
     font-size: 14px;
     background: white;
     /* padding-top: 8em */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding-top: 40px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: all 0.4s ease;
 }
 
 .block {
@@ -150,6 +162,21 @@ li > .closeBtn {
     background-color: var(--backgroundLightBlue);
     margin-top: 2em;
 }
+/* .block.more {
+    background-color: rgba(255,255,255,0);
+    position: relative;
+    border-top: dotted 2px var(--backgroundLightBlue)
+} */
+
+/* .divLine {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    background-color: var(--backgroundLightBlue); 
+    height: 1px;
+    width: 80%;
+
+} */
 .block:last-child {
     margin-bottom: 8em;
 }
@@ -247,6 +274,9 @@ ul.tCont, ul.altCont {
     box-sizing: border-box;
     margin: 0 0;
     border-bottom: solid 0.5px rgb(226, 235, 255);
+}
+.tip:last-child {
+    border-bottom: solid 0.5px rgba(0,0,0,0);
 }
 .tip:not(.open) p {
     margin-bottom: 0;
@@ -442,71 +472,70 @@ ul.tCont, ul.altCont {
     white-space: nowrap !important;
   }
 
-
-        /* credits */
-        #credits {
-            color: #777;
-            padding-bottom: 2em;
-            font-size: 80%
-          }
-          #credits h2 {
-            margin-top: 3em;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #aaa
-          }
-          #credits p {
-            font-size:70%;
-            margin-top: 1em;
-          }
-          #credits a {
-            color: inherit;
-            border-bottom: solid 1px
-          }
-          @media only screen and (min-width: 800px) {
-          #credits p {
-            font-size: 100%;
-          }
-          }
-          .accordion, .panel {
-                  max-width: 700px;
-                }
-                .accordion {
-                  background-color: #fff;
-                  cursor: pointer;
-                  padding: 18px;
-                  border: none;
-                  text-align: left;
-                  outline: none;
-                  font-size: 15px;
-                  transition: 0.4s;
-                }
-                .accordion::before {
-                  content: '►';
-    /*               font-size: 1.1em; */
-                  font-weight: bold;
-                  color: inherit;
-                  padding-right: 1em;
-                }
-                /* .active, .accordion:hover {
-                  background-color: #eee;
-                } */
-                h2.active {
-                  color: #777 !important;
-                }
-                .active::before {
-                  content: '▼'
-                }
-                .panel {
-                  padding: 0 18px;
-                  max-height: 0;
-                  background-color: #fff;
-                  overflow: hidden;
-                  transition: max-height 0.2s ease-out;
-                }
-                .panel > *:last-child {
-                  margin-bottom: 1.2em;
-                }
+/* credits */
+#credits {
+    color: #777;
+    padding-bottom: 2em;
+    font-size: 80%
+}
+#credits h2 {
+    margin-top: 3em;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #aaa
+}
+#credits p {
+    font-size:70%;
+    margin-top: 1em;
+}
+#credits a {
+    color: inherit;
+    border-bottom: solid 1px
+}
+@media only screen and (min-width: 800px) {
+    #credits p {
+        font-size: 100%;
+        }
+}
+.accordion, .panel {
+    max-width: 700px;
+}
+.accordion {
+    background-color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+.accordion::before {
+    content: '►';
+    /*  font-size: 1.1em; */
+    font-weight: bold;
+    color: inherit;
+    padding-right: 1em;
+}
+/* .active, .accordion:hover {
+    background-color: #eee;
+} */
+h2.active {
+        color: #777 !important;
+    }
+.active::before {
+    content: '▼'
+}
+.panel {
+    padding: 0 18px;
+    max-height: 0;
+    background-color: #fff;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.panel > *:last-child {
+    margin-bottom: 1.2em;
+}
 
 
 /* Newest additions to result page - must be sorted */
@@ -673,7 +702,7 @@ ul.tCont, ul.altCont {
  }
     #linkTechnik {
         padding: 1em 2em;
-        font-size: 1.1em;
+        font-size: 1.05em;
         font-weight: bold;
         background: rgba(0,0,0,0);
         box-shadow: none;
@@ -681,7 +710,7 @@ ul.tCont, ul.altCont {
         border-radius: 1em;
         color: var(--vibrantBlue);
         transition: all 0.4s ease;
-        margin: 1em 2.5em;
+        margin: 1em auto;
         cursor: pointer;
     }
     #linkTechnik.hovered {
@@ -691,6 +720,9 @@ ul.tCont, ul.altCont {
         border: 2px solid rgba(18, 161, 154, 0);
         transform: scale(105%, 105%)
     }
+.techn.maxed .blockContent {
+    gap: 0;
+}
 .techn.maxed .blockContent > .RKlink {
     max-width: 100%;
 }

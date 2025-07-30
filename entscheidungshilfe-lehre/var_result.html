@@ -9,43 +9,11 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
   <link rel="stylesheet" href="assets/css/eb.css" />
   <link rel="stylesheet" href="assets/css/eb_app.css" />
+  <link rel="stylesheet" href="assets/css/eb_result.css">
     <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
   <script async src="https://tally.so/widgets/embed.js"></script>
   <style>
-    body {
-        background: var(--backgroundLightBlue);
-        background: linear-gradient(90deg, rgba(18, 161, 154, 0.5) 0%, rgba(15, 113, 184, 0.5) 100%)
-    }
-    .pageContainer {
-        position:relative;
-        width: 100%;
-        height: 100%;
-    }
-    .rCont { 
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        padding-top: 20px;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, 0);
-        transition: all 0.4s ease;
-    }
-    #header {
-        padding-top: 20px;
-        padding-bottom: 0;
-    }
-    #header, #resultAndChangeContainer, .block {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    @media only screen and (min-width: 600px){
-        #header, #resultAndChangeContainer, .block {
-            padding-left: 30px;
-            padding-right: 30px;
-            /* width: calc(100% - 60px) */
-        }
-    }
     #credits {
         opacity: 0.8;
         background-color: white;
@@ -76,218 +44,6 @@
     }
     .accordion::before {
         color: #777
-    }
-    #resultAndChangeContainer {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        font-size: 16px;
-    }
-    #resultAndChangeContainer > p {
-        margin: 0 0;
-    }
-    .notReady #viewChangeAnswers {
-        background:rgba(18, 161, 154, 0.4);
-        border-radius: 1em;
-        color: rgba(0,0,0,0)
-    }
-    .notReady #viewChangeAnswers > img {
-        opacity: 0;
-    }
-    #viewChangeAnswers, #applyChanges, #toSelection {
-        border: 0px;
-        background: rgba(0,0,0,0);
-        border-radius: 0;
-        /* font-size: 0.8em; */
-        font-weight: bold;
-        color: var(--networkTurqoise);
-        cursor:pointer;
-        text-decoration:none;
-    }
-    #viewChangeAnswers > img, #answerSummaryContainer > * >  img {
-        content: "";
-        /* width: 0.8em; */
-        height: 0.8em;
-        filter: var(--networkTurqoiseFilter);
-        display: inline-block;
-        transition: all 0.5s ease
-    }
-    #viewChangeAnswers > img {
-        transform: rotate(90deg);
-        margin-right: 5px;
-    }
-    #viewChangeAnswers.answersAreHidden > img {
-        transform: rotate(0);
-    }
-    #answerSummaryContainer {
-        overflow: hidden;
-        margin-top: 0.5em;
-        width: 100%;
-        font-size: 0.9em;
-        background: rgba(216, 243, 242, 0.5);
-        padding: 0 1em;
-        transition: all 0.4s ease;
-    }
-    #answerSummaryContainer > *:last-child {
-        margin-bottom: 1em;
-    }
-    #answerSummary {
-        margin-top: 1em;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        transition: all 0.4s ease;
-        justify-content: center;
-        padding: 0 0;
-        gap: 2em;
-    }
-    #answerSummary > li, #answerSummary > p {
-        width: 100%;
-    }
-
-
-    @media only screen and (min-width:600px){
-        #answerSummary > li {
-            width: calc(50% - 2em);
-        }
-    }
-    #answerSummary > * > h4 {
-        text-align: left;
-    }
-    li.groups {
-        list-style-type: none;
-    }
-    .groups h4 {
-        margin-bottom: 0.2em;
-    }
-    ul.answers {
-        padding-left: 0;
-    }
-    .answers > li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5em;
-        justify-content: space-between;
-        list-style-type: none;
-    }
-    .answers p {
-        text-align: left;
-        margin: 0.3em 0;
-        display: inline-block;
-    }
-    .answers button.aChange {
-        border: 0px;
-        background: rgba(0,0,0,0);
-        font-size: 0.9em;
-        color: var(--networkTurqoise);
-        text-align: left;
-        min-width: 5em;
-        cursor: pointer;
-    }
-    .answers button.aChange::before {
-        content: "";
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        /* margin-right: 4px; */
-        background-image: url("images/pencil-box.svg");
-        filter: var(--networkTurqoiseFilter);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-    .answers .aChange > span {
-        opacity: 0;
-        margin-left: 0.2em;
-        overflow: hidden;
-        transition: all 0.5s ease;
-    }
-    .answers .aChange:hover > span {
-        opacity: 1;
-    }
-
-    .answers .changed {
-        color: var(--networkTurqoise);
-    }
-    #answerSummaryContainer > #applyChanges {
-        float: right;
-        margin-top: 1em;
-    }
-    #toSelection:hover {
-        text-decoration: underline;
-    }
-    /* #toSelection::before {
-        content: "";
-        background-image: url("images/bwd3.svg");
-        height: 0.6em;
-        width: 0.6em;
-        margin-right: 0.3em;
-        filter: var(--networkTurqoiseFilter);
-        display: inline-block;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    } */
-    /* adjusting answers */
-    .qCont {
-        position: absolute;
-        left: 150%;
-        top: 0;
-        width: 80%;
-        background-color: rgba(0,0,0,0);
-        transition: all 0.5s ease;
-    }
-    .qCont .saveButton, .qCont .cancelButton, #applyChanges {
-        cursor: pointer;
-        border: 3px solid rgba(255,255,255,0.7);
-        margin: 0 0;
-        border-radius: 1em;
-        padding: 0.5em 1em;
-        color: white;
-        font-weight: bold;
-        letter-spacing: 0.05em;
-        background: rgba(18, 161, 154, 0.7);
-        transition: all 0.4s ease;
-    }
-
-    .qCont .saveButton, .qCont .cancelButton {
-        height: 3em;
-        font-size: 14px;
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
-    .cancelButton {
-        left: 5%;
-    }
-    .saveButton {
-        right: 5%;
-    }
-    .cancelButton:hover{
-        background: var(--networkBlack)
-    }
-    .saveButton:hover{
-        background: var(--networkBlue)
-    }
-    button:disabled {
-        opacity: 0.2;
-        pointer-events: none;
-    }
-    .answerBeingChanged .qCont {
-        left: 0%;
-        transition: all 0.4s ease;
-    }
-    .answerBeingChanged .rCont {
-        /* left: -10%; */
-        opacity: 0.3;
-        pointer-events: none;
-    }
-    .buttonContainer.answerAdj {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
     }
 </style>
 </head>
@@ -361,7 +117,7 @@
                     <div class="RKlink">
                         <div class="preInfo">
                             <h5 id="minTech" onclick="minimizeTech()"><img src="images/bwd3.svg" /><span>Zurück</span></h5>
-                            <h3>Interaktives Raummodell</h3>
+                            <h4>Interaktives Raummodell</h4>
                             <p>Dieses 3D-Modell zeigt eine beispielhafte Umsetzung des Lehr-/Lernszenarios <b>mit festinstallierter Raumtechnik</b>. Klicken Sie auf die verschiedenen Nummer, um sich technische Tipps anzusehen.</p>
                         </div>
                         <div class="sketchfab-embed-wrapper">
@@ -406,6 +162,7 @@
                 </div>
             </div>
             <div id="resMore" class="block more">
+                <!-- <div class="divLine"></div> -->
                 <h4>Weitere Ergebnisse</h4>
                 <div class="blockContent">
                     <p>Folgende Lehr-/Lernszenarien könnten auch für Sie passend sein:</p>
@@ -508,7 +265,11 @@ function loadPage(){
             setTimeout(function(){
                 showResult(shownScenario, providedSpecialCases, topTier)
                 createAriaLabels()
-                document.querySelector(".pageContainer").style.height = document.querySelector(".pageContainer").scrollHeight + "px"
+                setTimeout(()=>{
+                    document.querySelector(".pageContainer").style.height = document.body.scrollHeight + "px"
+
+                },500)
+                
             }, 500)
         })
         
