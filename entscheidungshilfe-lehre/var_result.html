@@ -941,7 +941,7 @@ function loadNewResult(newAnswers){
                         // special case: if none of the tasks are selected, set keineLeistungen=ja in order to apply some effects
                         answersToSubmit["keineLeistungen"] = newAnswers["keineLeistungen"]
                     }
-                    submitMultipleAnswers(answersToSubmit, qKey, verbose=false, proceed=false)
+                    submitMultipleAnswers(answersToSubmit, qKey, verbose=false, moveOn=false)
                 }
             })
         }

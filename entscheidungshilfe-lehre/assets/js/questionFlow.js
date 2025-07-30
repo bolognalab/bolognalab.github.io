@@ -450,11 +450,11 @@
         }
     
     }
-    function submitMultipleAnswers(answersToSubmit, parentQ, isVerbose=false, proceed=true){
+    function submitMultipleAnswers(answersToSubmit, parentQ, isVerbose=false, moveOn=true){
         Object.entries(answersToSubmit).forEach((aEntry, idx, array)=>{
             submitSingleAnswer(aEntry[0], aEntry[1], proceed=false, resetRecent=idx==0, verbose=isVerbose)
             if (idx === array.length -1){
-                submitSingleAnswer(parentQ, array[idx-1][0], proceed=proceed, resetRecent=false, verbose=isVerbose)
+                submitSingleAnswer(parentQ, array[idx-1][0], proceed=moveOn, resetRecent=false, verbose=isVerbose)
             } 
         })
     }

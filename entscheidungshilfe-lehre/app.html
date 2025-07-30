@@ -210,8 +210,7 @@
                                 // special case: if none of the tasks are selected, set keineLeistungen=ja in order to apply some effects
                                 answersToSubmit["keineLeistungen"] = answers["keineLeistungen"]
                             }
-                            console.log(answersToSubmit)
-                            submitMultipleAnswers(answersToSubmit, activeQ, verbose=testing)
+                            submitMultipleAnswers(answersToSubmit, activeQ, verbose=testing, moveOn=true)
                         }
                     })
                 }
