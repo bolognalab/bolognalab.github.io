@@ -1,7 +1,7 @@
 .bgContainer {
     position: relative;
     width: 100%;
-    background-color: var(--backgroundLightBlue);
+    /* background-color: var(--backgroundLightBlue); */
     overflow-y: hidden;
 }
 .backgroundImage {
@@ -30,8 +30,22 @@ div.contentContainer:last-child {
 }
 div.contentContainer.overview {
     margin-top: 5em;
-    background: rgba(255, 255, 255, 0);
-    box-shadow: none;
+    /* background: rgba(255, 255, 255, 0); */
+    /* box-shadow: none; */
+}
+/* lines connecting boxes */
+.contentContainer.article::before {
+  content: "";
+  position: absolute;
+  top: -4em;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(255,255,255,0.6);
+  width: 0.2em;
+  height: 8em;
+}
+.contentContainer.article.credits::before {
+    background-color: rgba(0,0,0,0)
 }
 .article h2 {
     font-size: 1.3em;

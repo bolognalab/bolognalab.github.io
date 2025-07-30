@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/eb.css" />
   <link rel="stylesheet" href="assets/css/eb_mini.css" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
   <script async src="https://tally.so/widgets/embed.js"></script>
@@ -20,7 +21,7 @@
     }
     #credits > * {
         margin: auto;
-        background-color: rgba(15, 113, 184, 0.2);
+        background-color: rgba(255,255,255, 0.2);
         color: var(--networkBlue)
     }
     #credits .accordion.active + .panel {
@@ -306,24 +307,8 @@
         <p>Mehr lesen: <a href='https://box.hu-berlin.de/f/ee320876c66b48ff951f/' aria-label="Infografik: SINN-VOLL lernen (Charité)">"Infografik: SINN-VOLL lernen (Charité)</a></p>
         <p class="citation"></p>
     </div>
-    <div class="contentContainer article" style="background: rgba(0,0,0,0); box-shadow:none;">
-        <div class="inner" id="credits">
-            <h2 class="accordion">Credits & Feedback</h2>
-            <div class="panel">
-                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
-                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
-                <p>Raumkonzepte: Philipp Kapser*</p>
-                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
-                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
-                <p>*Humboldt-Universität zu Berlin</p>
-                <p>**Berliner Hochschule für Technik</p>
-                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
-                <h3>Kontakt</h3>
-                <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>
-                <h3>Liszenz</h3>
-                <p>GNU General Public License v3.0</p>
-            </div>
-        </div>          
+    <div class="contentContainer article credits" style="background: rgba(0,0,0,0); box-shadow:none;">
+        <div class="inner" id="credits"></div>          
     </div>
 
     
@@ -332,20 +317,23 @@
 <div id="pageCover"></div>
 <div id="imagePreviewer"><img src="" /><p id="imageClose">&#10006;</p></div>
 <script>
-    // Accordion-menu for credits
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
-      });
-    }
+    $("#credits").load("credits.html", ()=>{
+        // Accordion-menu for credits
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+        }
+        })
+
   </script>
 <script>
     const idList = []

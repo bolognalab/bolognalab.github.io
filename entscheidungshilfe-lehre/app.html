@@ -7,6 +7,7 @@
     <meta http-equiv="content-language" content="de">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link rel="stylesheet" href="assets/css/eb.css" />
     <link rel="stylesheet" href="assets/css/eb_app.css" />
     <script src="assets/js/jquery.min.js"></script>
@@ -118,23 +119,7 @@
             </ul>
         </div>
         <div id="progressBar" class="progressBar"></div>
-        <div class="inner" id="credits">
-            <h2 class="accordion">Credits & Feedback</h2>
-            <div class="panel">
-                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
-                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
-                <p>Raumkonzepte: Philipp Kapser*</p>
-                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
-                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
-                <p>*Humboldt-Universität zu Berlin</p>
-                <p>**Berliner Hochschule für Technik</p>
-                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
-                <h3>Kontakt</h3>
-                <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
-                <h3>Liszenz</h3>
-                <p>GNU General Public License v3.0</p>
-            </div>
-        </div>
+        <div class="inner" id="credits"></div>
     </div>
     <div id="beta" style="position: absolute; left: 0; top:0; background: rgba(70, 70, 70, 0.7); padding: 0.5em 1.5em; color: white; font-size: 0.8em; box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;">
        Beta-Version
@@ -271,56 +256,22 @@
     loadQuestions()
 </script>
 <script>
-    // Accordion-menu for credits
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
-      });
-    }
-    function sortByAsyncInt(arr){
-        // Step 1: Group by prefix
-        const grouped = {};
-
-        arr.forEach(item => {
-        const match = item.match(/^(.*?)-(\d+-\d+-\d+)$/);
-        if (!match) return;
-
-        const prefix = match[1];
-        const digits = match[2];
-
-        if (!grouped[prefix]) grouped[prefix] = [];
-        grouped[prefix].push(digits);
+    $("#credits").load("credits.html", ()=>{
+        // Accordion-menu for credits
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
         });
-
-        // Step 2: Sort each group of digits
-        Object.keys(grouped).forEach(prefix => {
-        grouped[prefix].sort((b, a) => {
-            const [a1, a2, a3] = a.split("-").map(Number);
-            const [b1, b2, b3] = b.split("-").map(Number);
-
-            if (a1 !== b1) return a1 - b1;
-            if (a2 !== b2) return a2 - b2;
-            return a3 - b3;
-        });
-        });
-
-        // Step 3: Recombine into final array, keeping prefix order
-        const final = [];
-        Object.keys(grouped).forEach(prefix => {
-        grouped[prefix].forEach(digits => {
-            final.push(`${prefix}-${digits}`);
-        });
-        });
-        return final
-    }
+        }
+        })
   </script>
 </body>
 </html>

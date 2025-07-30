@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="content-language" content="de">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="shortcut icon" type="image/png" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
   <link rel="stylesheet" href="assets/css/eb.css" />
   <link rel="stylesheet" href="assets/css/eb_app.css" />
     <script src="assets/js/jquery.min.js"></script>
@@ -38,7 +38,6 @@
     #header, #resultAndChangeContainer, .block {
         padding-left: 20px;
         padding-right: 20px;
-        /* width: calc(100% - 40px) */
     }
     @media only screen and (min-width: 600px){
         #header, #resultAndChangeContainer, .block {
@@ -48,11 +47,12 @@
         }
     }
     #credits {
-        opacity: 0.8
+        opacity: 0.8;
+        background-color: white;
     }
     #credits > * {
         margin: auto;
-        background-color: rgba(170, 170, 170, 0.2);
+        /* background-color: rgba(170, 170, 170, 0.2); */
         color: #777
     }
     #credits .accordion.active + .panel {
@@ -95,7 +95,7 @@
     .notReady #viewChangeAnswers > img {
         opacity: 0;
     }
-    #viewChangeAnswers, #applyChanges {
+    #viewChangeAnswers, #applyChanges, #toSelection {
         border: 0px;
         background: rgba(0,0,0,0);
         border-radius: 0;
@@ -103,6 +103,7 @@
         font-weight: bold;
         color: var(--networkTurqoise);
         cursor:pointer;
+        text-decoration:none;
     }
     #viewChangeAnswers > img, #answerSummaryContainer > * >  img {
         content: "";
@@ -214,7 +215,21 @@
         float: right;
         margin-top: 1em;
     }
-
+    #toSelection:hover {
+        text-decoration: underline;
+    }
+    /* #toSelection::before {
+        content: "";
+        background-image: url("images/bwd3.svg");
+        height: 0.6em;
+        width: 0.6em;
+        margin-right: 0.3em;
+        filter: var(--networkTurqoiseFilter);
+        display: inline-block;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    } */
     /* adjusting answers */
     .qCont {
         position: absolute;
@@ -397,23 +412,7 @@
                     <ul class="altCont"></ul>
                 </div>
             </div>
-            <div class="inner" id="credits">
-                <h2 class="accordion">Credits & Feedback</h2>
-                <div class="panel">
-                    <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
-                    <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
-                    <p>Raumkonzepte: Philipp Kapser*</p>
-                    <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
-                    <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
-                    <p>*Humboldt-Universität zu Berlin</p>
-                    <p>**Berliner Hochschule für Technik</p>
-                    <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
-                    <h3>Kontakt</h3>
-                    <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
-                    <h3>Liszenz</h3>
-                    <p>GNU General Public License v3.0</p>
-                </div>
-            </div>
+            <div class="inner" id="credits"></div>
         </div>
         <div id="qCont" class="qCont"></div>        
     </div>
@@ -509,6 +508,7 @@ function loadPage(){
             setTimeout(function(){
                 showResult(shownScenario, providedSpecialCases, topTier)
                 createAriaLabels()
+                document.querySelector(".pageContainer").style.height = document.querySelector(".pageContainer").scrollHeight + "px"
             }, 500)
         })
         
@@ -519,7 +519,8 @@ function loadPage(){
 var fullTipList
 
 function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
-    showProvidedAnswers(previousAnswers)
+
+    
     // gathering texts
     let scenarioValue = scenario.split("-")[0] + "-" + scenario.split("-")[1]
     let syncIntValue = "syncInt-" + scenario.split("-")[2]
@@ -538,6 +539,21 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             theseTexts[s + 'Text'] = all_texts['de-default']["text_" + s]
         }
     })
+
+    // Angaben ändern usw.
+    if (asyncIntValue != "asyncInt-x"){
+        showProvidedAnswers(previousAnswers)
+    } else {
+        let rcc = document.querySelector("#resultAndChangeContainer")
+        rcc.innerHTML="<p>Ihr Ergebnis:</p>"
+        let toSelection = document.createElement("a"); rcc.appendChild(toSelection)
+        toSelection.setAttribute("id", "toSelection")
+        toSelection.classList.add("toSelection")
+        toSelection.setAttribute("href", "select.html")
+        toSelection.setAttribute("target", "_self")
+        toSelection.innerHTML = "Zurück zur Auswahl"
+
+    }
 
     let raumLink = tech_links[scenarioValue]['raum-' + syncIntValue]
     if (raumLink == "COMINGSOON"){
@@ -1182,20 +1198,23 @@ function compareByKeys(obj1, obj2){
 }
 </script>
 <script>
-    // Accordion-menu for credits
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
-      });
-    }
+    $("#credits").load("credits.html", ()=>{
+        // Accordion-menu for credits
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+        }
+        })
+
   </script>
 </body>
 </html>

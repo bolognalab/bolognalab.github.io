@@ -7,6 +7,7 @@
     <meta http-equiv="content-language" content="de">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <link rel="stylesheet" href="assets/css/eb.css" />
     <link rel="stylesheet" href="assets/css/eb_app.css" />
     <script src="assets/js/jquery.min.js"></script>
@@ -240,12 +241,15 @@
                 </select>
 
                 <!-- Aufzeichnung -->
-                <h3>Soll die Lehrveranstaltung aufgezeichnet werden?</h3>
-                <label for="aufz" class="sLabel">Aufzeichnung?</label>
-                <select id="aufz" name="aufz" required>
-                    <option value="nein" selected>Nein</option>
-                    <option value="ja">Ja</option>
-                </select>
+                 <div style="display:none">
+                    <h3>Soll die Lehrveranstaltung aufgezeichnet werden?</h3>
+                    <label for="aufz" class="sLabel">Aufzeichnung?</label>
+                    <select id="aufz" name="aufz" required>
+                        <option value="nein" selected>Nein</option>
+                        <option value="ja">Ja</option>
+                    </select>
+                 </div>
+
         
                 <!-- Zusätzliche Informationen -->
                 <h3>Sonderbedingungen</h3>
@@ -268,23 +272,7 @@
                  </div>                
             <div id="useCase2Container"><p>oder...</p><a href='app.html'>Ich brauche Hilfe bei der Entscheidung über das Lehrformat</a></div>
         </div>    
-        <div class="inner" id="credits">
-            <h2 class="accordion">Credits & Feedback</h2>
-            <div class="panel">
-                <h3>Entscheidungshilfe Online und Hybride Lehre</h3>
-                <p>Erstellt von Natalía Spitha* mithilfe von Github Pages</p>
-                <p>Raumkonzepte: Philipp Kapser*</p>
-                <p>Didaktische Tipps: Natalia Spitha & Judith Stelter**</p>
-                <p>GitHub Repository: <a href="https://github.com/bolognalab/bolognalab.github.io">bolognalab.github.io</a></p>
-                <p>*Humboldt-Universität zu Berlin</p>
-                <p>**Berliner Hochschule für Technik</p>
-                <p>Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)</p>
-                <h3>Kontakt</h3>
-                <p>Haben Sie Feedback oder Fragen zum Entscheidungshilfe-Tool? Nutzen Sie dafür das Kontaktformular. <button class="contactForm" data-tally-open="mVdqEE" data-tally-emoji-text="👋" data-tally-emoji-animation="wave">Kontaktformular</button></p>  
-                <h3>Liszenz</h3>
-                <p>GNU General Public License v3.0</p>
-            </div>
-        </div>
+        <div class="inner" id="credits"></div>
     </div> 
 
 <script src="assets/js/jquery.csv.js"></script>
@@ -391,20 +379,22 @@
     }
 </script>
 <script>
-    // Accordion-menu for credits
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        } 
-      });
-    }
+    $("#credits").load("credits.html", ()=>{
+        // Accordion-menu for credits
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+        }
+        })
   </script>
 </body>
 </html>
