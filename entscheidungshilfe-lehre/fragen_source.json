@@ -8,6 +8,12 @@
                 "SE": "Seminar",
                 "PR": "Laboreinheit",
                 "SO": "Sonstiges"
+            },
+            "shorthand": {
+                "VL": "Vorlesung",
+                "SE": "Seminar",
+                "PR": "Laboreinheit",
+                "SO": "Sonstige Art der Lehrveranstaltung"
             }
         },
 
@@ -37,6 +43,11 @@
                 "inputs": "Inputs oder Vorträge durch die Lehrperson",
                 "plenum": "Diskussionen im Plenum (über kurze Q&A hinaus)",
                 "gruppen": "Kollaboratives Arbeiten in Gruppen"
+            },
+            "shorthand": {
+                "inputs": "Inputs",
+                "plenum": "Plenumsdiskussionen",
+                "gruppen": "Gruppenarbeit"
             },
             "addInfo": "Wählen Sie alle zutreffenden Punkte —<span id='selectAtLeastOne'> mindestens eine Option </span>— aus."
         },
@@ -82,6 +93,13 @@
                 "praxis": "Versuch, Experiment oder andere praktische Übungen",
                 "privat": "Umgang mit sensiblen Informationen (z.B. Patientendaten)",
                 "LZiP": "andere nur vor Ort erbringbare Leistung(en)"
+            },
+            "shorthand": {
+                 "referat": "Referat o.ä.",
+                "debate": "Debatten o.ä.",
+                "praxis": "Praxisanteil",
+                "privat": "sensible Daten",
+                "LZiP": "anderes vor Ort"
             },
             "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
         },
@@ -165,6 +183,12 @@
                 "grad": "überwiegend Master / PhD",
                 "kM": "keine überwiegende Mehrheit"
             },
+            "shorthand": {
+                "freshmen": "Studierende im Bachelor 1. - 2. Semester",
+                "upper": "Studierende im Bachelor ab dem 3. Semester",
+                "grad": "Studierende im Master / PhD",
+                "kM": "variables Niveau von Studierenden"
+            },
             "addInfo": ["{NO BULLET} Im Vergleich zu erfahrenen Studierenden haben Studierende in der Eingangsphase in der Regel mehr Bedarf daran, durch eine verstärkte Präsenz und Kursstrukturierung sich im Studium zu etablieren und Selbstlernstrategien zu entwickeln."]
         },
 
@@ -175,6 +199,11 @@
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein.",
                 "idk": "Ich bin mir nicht sicher"
+            },
+            "shorthand": {
+                "nein": "Studierende nicht sehr zeitlich eingeschränkt",
+                "ja": "Studierende zum großen Teil zeitlich eingeschränkt",
+                "idk": "Zeitliche Einschränkungen der Studierenden: unklar"
             },
             "addInfo": [
                 "Über 60% der Studierenden in Deutschland arbeiten neben dem Studium, wobei der zeitliche Umfang der Arbeit sehr unterschiedlich sein kann. (Studienwahl.de)",
@@ -190,6 +219,11 @@
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein",
                 "idk": "Ich bin mir nicht sicher"
+            },
+            "shorthand": {
+                "nein": "Synchrone Teilnahme für alle möglich",
+                "ja": "Synchrone Teilnahme für manche sehr schwierig",
+                "idk": "Studentische Möglichkeiten zur synchronen Teilnahme: unklar"
             }
         },
 
@@ -200,6 +234,11 @@
                 "nein": "Nein",
                 "ja": "Ja bzw. ich will für diesen Fall vorbereitet sein",
                 "idk": "Ich bin mir nicht sicher"
+            },
+            "shorthand": {
+                "nein": "Vor-Ort-Teilnahme für alle möglich",
+                "ja": "Vor-Ort-Teilnahme für manche sehr schwierig",
+                "idk": "Studentische Möglichkeiten zur vor-Ort-Teilnahme: unklar"
             }
         },
 
@@ -210,6 +249,11 @@
                 "nein": "Nein, ich werde immer anwesend sein",
                 "abundzu": "Nur gelegentlich (z.B. Konferenzen)",
                 "oft": "Ja (z.B. Freisemester, Aufenthalt in einem anderen Ort)"
+            },
+            "shorthand": {
+                "nein": "Lehrperson immer anwesend",
+                "abundzu": "Lehrperson gelegentlich abwesend",
+                "oft": "Lehrperson oft abwesend"
             }
         },
 
@@ -221,6 +265,12 @@
                 "geleg": "Ich bevorzuge (bzw. meine Hochschule bevorzugt) den Präsenzunterricht, ich bin aber bereit, gelegentlich online zu unterrichten",
                 "viel": "Ich möchte so viel wie möglich online unterrichten und darf das auch tun",
                 "egal" : "Es spielt für mich keine Rolle, wie viel ich online oder vor Ort unterrichte."
+            },
+            "shorthand": {
+                "kein": "Keine Bereitschaft zum Online-Lehren",
+                "geleg": "Lehre vor Ort bevorzugt, Bereitschaft auch zum Online-Lehren",
+                "viel": "Hohe Bereitschaf zum Online-Lehren",
+                "egal" : "keine Präferenz für vor-Ort oder Online-Lehre"
             },
             "addInfo": [
                 "{NO BULLET} In dieser Frage geht es wahrscheinlich nicht nur um Ihre persönliche Präferenz, sondern auch um Faktoren wie die Anerkennung von Online-Lehre für das Lehrdeputat. <b>Anmerkung: in dieser Frage wird nach Ihrer eigenen Präsenz- oder Online-Teilnahme gefragt</b> (Studierende könnten prinzipiell online teilnehmen, während Sie von einem Lehrraum aus unterrichten)."
@@ -235,6 +285,12 @@
                 "exkur": "Eine oder mehrere <b>Exkursionen</b> sind Bestandteil meines Kurses",
                 "intKoll": "Mein Kurs ist Teil einer <b>nationalen oder internationalen Kollaboration</b> (mit Studierenden und Lehrpersonen einer anderen Hochschule)",
                 "begrAnz": "Es gibt <b>geringere Raumkapazität oder -ausrüstung</b> als die Anzahl der Studierenden"
+            },
+            "shorthand":{
+                "gruppenarb": "Langfristige Gruppenprojekte",
+                "exkur": "Exkursionen",
+                "intKoll": "(Inter)nationale Kollaboration",
+                "begrAnz": "begrenzte Raumkapazität"
             },
             "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
         },
@@ -281,6 +337,12 @@
                 "vorOrt": "Ja - vor Ort",
                 "virtuell": "Ja - online zugeschaltet",
                 "both": "Ja, manchmal online, manchmal vor Ort"
+            },
+            "shorthand": {
+                "nein": "Gäste: nein",
+                "vorOrt": "Gäste vor Ort",
+                "virtuell": "Gäste online",
+                "both": "Gäste vor Ort und online"
             }
         },
 

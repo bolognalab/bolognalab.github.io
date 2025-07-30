@@ -3,7 +3,7 @@
     "cSpell.language": "en,de-DE",
     "cSpell.words": [
         "Excalidraw",
-        "stummgeschaltet"
+        "stummgeschaltet",
         "Aiskills",
         "Deicke",
         "Gehlke",
@@ -18,5 +18,8 @@
         "Sturop",
         "Thesys",
         "Worxx"
-    ]
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python-envs.pythonProjects": []
 }
