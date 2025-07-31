@@ -174,10 +174,15 @@ ul.answers {
     position: absolute;
     left: 150%;
     top: 0;
-    width: 80%;
+    width: 100%;
     background-color: rgba(0,0,0,0);
     transition: all 0.5s ease;
 }
+/* @media only screen and (min-width: 600px){
+    .qCont {
+        width: 80%;
+    }
+} */
 .qCont .saveButton, .qCont .cancelButton, #applyChanges {
     cursor: pointer;
     border: 3px solid rgba(255,255,255,0.7);
@@ -194,9 +199,9 @@ ul.answers {
 .qCont .saveButton, .qCont .cancelButton {
     height: 3em;
     font-size: 14px;
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    transform: translate(0, -50%);
+    transform: translate(0, -50%); */
 }
 .cancelButton {
     left: 5%;
@@ -226,5 +231,14 @@ button:disabled {
 .buttonContainer.answerAdj {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    margin-top: 2em
+}
+@media only screen and (min-width: 600px){
+    .buttonContainer.answerAdj {
+        justify-content: space-between
+    }
 }
