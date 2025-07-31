@@ -176,7 +176,7 @@
 <script src="assets/js/questionFlow.js"></script>
 <script>
 const urlParams = new URLSearchParams(window.location.search);
-const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario').split("@")[0] : "se-rem-2-1-2"
+const shownScenario = urlParams.has('shownScenario') ? urlParams.get('shownScenario').split("@")[0] : "se-hyb-2-1-2"
 const topTier = urlParams.has('topTier') ? JSON.parse(urlParams.get('topTier')) : []
 const specialCaseIndices = urlParams.has('shownScenario') && urlParams.get('shownScenario').includes("@") ? JSON.parse(urlParams.get('shownScenario').split("@")[1]) : []
 const providedAnswers = JSON.parse(sessionStorage.getItem("answers"))
@@ -184,27 +184,29 @@ const providedAnswers = JSON.parse(sessionStorage.getItem("answers"))
 const dummyAnswers = {
     "artLV": "SE",
     "inputs": "ja",
-    "plenum": "ja", 
-    "gruppen": "nein",
-    "intSync": "1",
-    "referat": "ja",
-    "debate": "nein",
+    "plenum": "ja",
+    "gruppen": "ja",
+    "intSync": "2",
+    "referat": "nein",
+    "debate": "ja",
     "praxis": "nein",
     "privat": "nein",
     "LZiP": "nein",
-    "keineLeistungen": "ja",
+    "keineLeistungen": "nein",
     "niveauSt": "freshmen",
     "limZPSt": "ja",
     "nieSync": "idk",
     "niePr": "ja",
-    "regAbw": "abundzu",
-    "onlBereit": "egal",
-    "gruppenarb": "ja",
+    "regAbw": "nein",
+    "onlBereit": "geleg",
+    "gruppenarb": "nein",
     "exkur": "nein",
     "intKoll": "nein",
     "begrAnz": "nein",
-    "gaeste": "both"
+    "gaeste": "nein"
 }
+
+
 const answers = providedAnswers? providedAnswers : dummyAnswers
 const previousAnswers = {...answers}
 var adjustedAnswers = {...answers}
