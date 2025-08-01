@@ -1,0 +1,172 @@
+﻿graphID;graphName;cat1;cat2;cat3;cat4;count
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Planung;;;14
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Qualitätsverlust;;;15
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Engagement & Aufmerksamkeit Studierender;;;24
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Interaktion & Kommunikation;;;25
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Soziales;;;12
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Organisation;Belastung Lehrperson;;;27
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Organisation;Anwesenheit;;;11
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Organisation;Sonstiges;;;9
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Organisation;Durchführung;;;2
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Remote-Technik;;;5
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Ausstattung;;;25
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Usability;;;28
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Störungen & Qualität;;;21
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Sonstiges;;;6
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Planung;;;10
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Qualitätsverlust;;;5
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Engagement & Aufmerksamkeit Studierender;;;18
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Interaktion & Kommunikation;;;19
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Soziales;;;1
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Sonstiges;;;3
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Organisation;Belastung Lehrperson;;;31
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Organisation;Anwesenheit;;;3
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Organisation;Durchführung;;;7
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Organisation;Sonstiges;;;2
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Remote-Technik;;;9
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Ausstattung;;;20
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Usability;;;31
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Störungen & Qualität;;;37
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Sonstiges;;;3
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Engagement & Aufmerksamkeit Studierender;;;;24
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Interaktion & Kommunikation;;;;25
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Planung;neue Methoden;;;9
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Planung;Inhalte abdecken;;;5
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Sorge um Qualitätsverlulst;;;5
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Gleichstellung der Gruppen;;;4
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;niedriger Lernerfolg;;;4
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Selbstreguliertes Lernen;;;2
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Soziales;Soziale Präsenz;;;9
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Soziales;Sozialisation;;;3
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Engagement & Aufmerksamkeit Studierender;;;;18
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Interaktion & Kommunikation;;;;19
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Planung;neue Methoden;;;8
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Planung;Inhalte abdecken;;;2
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Sorge um Qualitätsverlulst;;;1
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Gleichstellung der Gruppen;;;4
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Sonstiges;Unklar;;;3
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Soziales;Soziale Präsenz;;;1
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Ausstattung;Allgemein;;;7
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Ausstattung;Ungeeignet;;;6
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Ausstattung;Fehlt;;;12
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Remote-Technik;Internet;;;2
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Remote-Technik;Räume für Online-TN;;;1
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Remote-Technik;Sonstiges;;;2
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Sonstiges;Unklar;;;5
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Sonstiges;Allgemein;;;1
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Allgemein;;;2
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Internet;Internet @Uni;;6
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Internet;Internet allgemein;;2
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Audio;;;10
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Video;;;1
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Usability;Allgemein;;;11
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Usability;Abläufe;;;6
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Usability;Inhalte teilen;;;0
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Usability;Auf- und Abbau;;;7
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Usability;Kompetenz;;;3
+tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Usability;Software;;;1
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Ausstattung;Allgemein;;;7
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Ausstattung;Ungeeignet;;;9
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Ausstattung;Fehlt;;;4
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Remote-Technik;Internet zu Hause;;;5
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Remote-Technik;Räume für Online-TN;;;2
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Remote-Technik;Sonstiges;;;2
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Sonstiges;Unklar;;;3
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Allgemein;;;1
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Internet;Internet @Uni;;6
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Internet;Internet allgemein;;6
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Audio;;;16
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Störungen & Qualität;Video;;;8
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Usability;Allgemein;;;11
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Usability;Abläufe;;;6
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Usability;Inhalte teilen;;;6
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Usability;Auf- und Abbau;;;5
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Usability;Kompetenz;;;0
+tech_hybrid-lehrende;Hybrid-Lehrende: Technische Herausforderungen;Usability;Software;;;3
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Anwesenheit;Sinkende Anwesenheit;;;10
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Anwesenheit;Planung Gruppengrößen;;;1
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Belastung Lehrperson;kein Tech-Support;;;2
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Belastung Lehrperson;Multitasking;;;17
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Belastung Lehrperson;Zusatzaufwand;;;8
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Durchführung;Abläufe & Moderation;;;2
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Sonstiges;Rechtliches;;;4
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Sonstiges;kein Wunsch der Uni;;;2
+org_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Organisatorische Herausforderungen;Sonstiges;Unklar;;;3
+org_hybrid-lehrende;Hybrid-Lehrende: Organisatorische Herausforderungen;Anwesenheit;Sinkende Anwesenheit;;;0
+org_hybrid-lehrende;Hybrid-Lehrende: Organisatorische Herausforderungen;Anwesenheit;Planung Gruppengrößen;;;3
+org_hybrid-lehrende;Hybrid-Lehrende: Organisatorische Herausforderungen;Belastung Lehrperson;kein Tech-Support;;;3
+org_hybrid-lehrende;Hybrid-Lehrende: Organisatorische Herausforderungen;Belastung Lehrperson;Multitasking;;;27
+org_hybrid-lehrende;Hybrid-Lehrende: Organisatorische Herausforderungen;Belastung Lehrperson;Zusatzaufwand;;;7
+org_hybrid-lehrende;Hybrid-Lehrende: Organisatorische Herausforderungen;Durchführung;Abläufe & Moderation;;;7
+org_hybrid-lehrende;Hybrid-Lehrende: Organisatorische Herausforderungen;Sonstiges;Unklar;;;2
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Engagement & Aufmerksamkeit Studierender;;;24
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Planung;neue Methoden;;9
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Planung;Inhalte abdecken;;5
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Interaktion & Kommunikation;;;25
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Sorge um Qualitätsverlulst;;5
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Gleichstellung der Gruppen;;4
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;niedriger Lernerfolg;;4
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Selbstreguliertes Lernen;;2
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Soziales;Soziale Präsenz;;9
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Soziales;Sozialisation;;3
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Ausstattung;Allgemein;;7
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Ausstattung;Ungeeignet;;6
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Ausstattung;Fehlt;;12
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Remote-Technik;Internet;;2
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Remote-Technik;Räume für Online-TN;;1
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Remote-Technik;Sonstiges;;2
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Allgemein;;2
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Internet;Internet @Uni;6
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Internet;Internet allgemein;2
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Audio;;10
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Video;;1
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Allgemein;;11
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Abläufe;;6
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Inhalte teilen;;0
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Auf- und Abbau;;7
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Kompetenz;;3
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Software;;1
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Sonstiges;Unklar;;5
+supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Sonstiges;Allgemein;;1
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Anwesenheit;Sinkende Anwesenheit;;10
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Anwesenheit;Planung Gruppengrößen;;1
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Belastung Lehrperson;kein Tech-Support;;2
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Belastung Lehrperson;Multitasking;;17
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Belastung Lehrperson;Zusatzaufwand;;8
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Durchführung;Abläufe & Moderation;;2
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Sonstiges;Rechtliches;;4
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Sonstiges;kein Wunsch der Uni;;2
+supergraph;Nicht-Hybrid-Lehrende;Organisation;Sonstiges;Unklar;;3
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Engagement & Aufmerksamkeit Studierender;;;18
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Planung;neue Methoden;;8
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Planung;Inhalte abdecken;;2
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Interaktion & Kommunikation;;;19
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Sorge um Qualitätsverlulst;;1
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Gleichstellung der Gruppen;;4
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Sonstiges;Unklar;;3
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Soziales;Soziale Präsenz;;1
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Ausstattung;Allgemein;;7
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Ausstattung;Ungeeignet;;9
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Ausstattung;Fehlt;;4
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Remote-Technik;Internet zu Hause;;5
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Remote-Technik;Räume für Online-TN;;2
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Remote-Technik;Sonstiges;;2
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Allgemein;;1
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Internet;Internet @Uni;6
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Internet;Internet allgemein;6
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Audio;;16
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Störungen & Qualität;Video;;8
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Allgemein;;11
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Abläufe;;6
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Inhalte teilen;;6
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Auf- und Abbau;;5
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Kompetenz;;0
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Usability;Software;;3
+supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Sonstiges;Unklar;;3
+supergraph;Hybrid-Lehrende;Organisation;Anwesenheit;Sinkende Anwesenheit;;0
+supergraph;Hybrid-Lehrende;Organisation;Anwesenheit;Planung Gruppengrößen;;3
+supergraph;Hybrid-Lehrende;Organisation;Belastung Lehrperson;kein Tech-Support;;3
+supergraph;Hybrid-Lehrende;Organisation;Belastung Lehrperson;Multitasking;;27
+supergraph;Hybrid-Lehrende;Organisation;Belastung Lehrperson;Zusatzaufwand;;7
+supergraph;Hybrid-Lehrende;Organisation;Durchführung;Abläufe & Moderation;;7
+supergraph;Hybrid-Lehrende;Organisation;Sonstiges;Unklar;;2

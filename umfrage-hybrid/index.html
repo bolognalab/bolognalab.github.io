@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!-- Inspired by https://www.anychart.com/blog/2023/06/19/sunburst-chart-js/ -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Sunburst Chart</title>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.csv.js"></script>
+    <script src="assets/js/anychart-core.min.js"></script>
+    <script src="assets/js/anychart-sunburst.min.js"></script>
+    <style type="text/css">      
+        html, body, #containerOfContainers { 
+            width: 100%; 
+            height: 100%; 
+            margin: 0; 
+            padding: 0; 
+        } 
+        #containerOfContainers {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+        #container { 
+            width: 60%; 
+            min-width: 600px;
+            aspect-ratio: 1;
+            margin: 0; 
+            padding: 0; 
+        } 
+        #quoteContainer {
+            box-sizing: border-box;
+            padding: 1em 1em;
+            min-width: 300px;
+            width: 40%;
+            background: rgb(117, 117, 210);
+            font-family: Helvetica;
+        }
+        #quoteContainer > h4 {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.5em;
+        }
+        #quoteContainer > h3 {
+            color: white;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        #quoteContainer > ul {
+            list-style-type: none;
+        }
+        #quoteContainer > ul > li {
+            background: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1em;
+            padding: 0.5em 0.5em;
+            border-radius: 0.5em;
+        }
+        text {
+            pointer-events: none !important;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="containerOfContainers">
+        <div id="container"></div>
+        <div id="quoteContainer">
+            <h4 id="quotesPath"></h4>
+            <h3 id="quotesHeader">Click on an outer category to view related quotes</h3>
+            <ul id="listedQuotes"></ul>
+        </div>
+    </div>
+    
+    <script>
+        var all_graph_data = {}
+        var uniqueGraphs = []
+        var csvData, quoteCollection
+        var data
+        var chart
+
+        $.get("alle_codierten_herausforderungen.csv", function(CSVdata){
+            quoteCollection = $.csv.toObjects(CSVdata, {separator:';'});
+        })
+        $.get( "quant_herausforderungen.csv", function(CSVdata) {
+            csvData = $.csv.toObjects(CSVdata, {separator:';'});
+            uniqueGraphs = [...new Set(csvData.map(row => row["graphID"]))];
+            uniqueGraphs.forEach(graphID=>{
+                // create the graph data object (actually a list of length=1) for each graph
+                let graph_data = csvData.filter(row => row["graphID"] === graphID)
+                let aggregated_data = aggregateByColumn(graph_data)
+                all_graph_data[graphID] = aggregated_data
+            })
+            data = [{"name": "Herausforderungen", "value":432, "children":all_graph_data[uniqueGraphs[8]] }]
+            
+            // SHORTENING SOME NAMES
+            // - Level 1
+            data[0].children[0].children[0]["name"] = "Didaktik"
+            data[0].children[1].children[0]["name"] = "Didaktik"
+            data[0].children[0].children[1]["name"] = "Technik"
+            data[0].children[1].children[1]["name"] = "Technik"
+            data[0].children[0].children[2]["name"] = "Organisation"
+            data[0].children[1].children[2]["name"] = "Organisation"
+
+            // - Level 2
+            data[0].children[0].children[0].children[0]["name"] = "Engagement"
+            data[0].children[1].children[0].children[0]["name"] = "Engagement"
+            data[0].children[0].children[0].children[2]["name"] = "Interaktion"
+            data[0].children[1].children[0].children[2]["name"] = "Interaktion"
+            data[0].children[0].children[0].children[3]["name"] = "Qualität"
+            data[0].children[1].children[0].children[3]["name"] = "Qualität"
+            
+            data[0].children[0].children[1].children[1]["name"] = "Remote"
+            data[0].children[1].children[1].children[1]["name"] = "Remote"            
+            data[0].children[0].children[1].children[2]["name"] = "Störungen"
+            data[0].children[1].children[1].children[2]["name"] = "Störungen"
+
+            data[0].children[0].children[2].children[1]["name"] = "Belastung"
+            data[0].children[1].children[2].children[1]["name"] = "Belastung"   
+            
+            // - Level 3
+            data[0].children[0].children[0].children[3].children[0]["name"] = "Qualitätsverlust"
+            data[0].children[1].children[0].children[3].children[0]["name"] = "Qualitätsverlust"
+            data[0].children[0].children[0].children[3].children[1]["name"] = "Gleichstellung"
+            data[0].children[1].children[0].children[3].children[1]["name"] = "Gleichstellung"
+            data[0].children[0].children[0].children[3].children[2]["name"] = "Lernerfolg"
+            // data[0].children[1].children[0].children[3].children[2]["name"] = "Lernerfolg"
+
+            data[0].children[0].children[2].children[0].children[0]["name"] = "Anw. sinkt"
+
+            // CHANGING COLORS
+            // Center
+            data[0].children[1]["normal"] = {fill: "#585858"}
+            data[0].children[0]["normal"] = {fill: "#787878"}
+
+            // Technik
+            data[0].children[0].children[1]["normal"] = {fill: "#386084"}
+            data[0].children[1].children[1]["normal"] = {fill: "#386084"}
+            // -- Ausstattung
+            data[0].children[0].children[1].children[0]["normal"] = {fill: "#4374A0"}
+            data[0].children[1].children[1].children[0]["normal"] = {fill: "#4374A0"}
+            // -- Remote-Technik
+            data[0].children[0].children[1].children[1]["normal"] = {fill: "#5089BC"}
+            data[0].children[1].children[1].children[1]["normal"] = {fill: "#5089BC"}
+            // -- Störungen & Qualität
+            data[0].children[0].children[1].children[2]["normal"] = {fill: "#82ACDA"}
+            data[0].children[1].children[1].children[2]["normal"] = {fill: "#82ACDA"}
+            // -- Usability
+            data[0].children[0].children[1].children[3]["normal"] = {fill: "#5B9BD5"}
+            data[0].children[1].children[1].children[3]["normal"] = {fill: "#5B9BD5"}            
+             // -- Sonstiges
+            data[0].children[0].children[1].children[4]["normal"] = {fill: "#AFCEEB"}
+            data[0].children[1].children[1].children[4]["normal"] = {fill: "#AFCEEB"}            
+            
+            // Didaktik
+            data[0].children[0].children[0]["normal"] = {fill: "#455e35"}
+            data[0].children[1].children[0]["normal"] = {fill: "#455e35"}
+            // -- Engagement
+            data[0].children[0].children[0].children[0]["normal"] = {fill: "#507e32"}
+            data[0].children[1].children[0].children[0]["normal"] = {fill: "#507e32"}
+            // -- Interaktion
+            data[0].children[0].children[0].children[2]["normal"] = {fill: "#5f933b"}
+            data[0].children[1].children[0].children[2]["normal"] = {fill: "#5f933b"}
+            // -- Planung
+            data[0].children[0].children[0].children[1]["normal"] = {fill: "#88b76e"}
+            data[0].children[1].children[0].children[1]["normal"] = {fill: "#88b76e"}
+            // -- Qualität
+            data[0].children[0].children[0].children[3]["normal"] = {fill: "#81ad6d"}
+            data[0].children[1].children[0].children[3]["normal"] = {fill: "#81ad6d"}
+            // -- Soziales
+            data[0].children[0].children[0].children[4]["normal"] = {fill: "#6ba543"}
+            data[0].children[1].children[0].children[4]["normal"] = {fill: "#6ba543"}
+            // --Sonstiges
+            data[0].children[1].children[0].children[5]["normal"] = {fill: "#c9dbc1"}
+
+            // Organisation
+            data[0].children[0].children[2]["normal"] = {fill: "#de752d"}
+            data[0].children[1].children[2]["normal"] = {fill: "#de752d"}            
+            // -- Anwesenheit
+            data[0].children[0].children[2].children[0]["normal"] = {fill: "#f09971"}
+            data[0].children[1].children[2].children[0]["normal"] = {fill: "#f09971"}
+            // -- Belastung
+            data[0].children[0].children[2].children[1]["normal"] = {fill: "#cb7e48"}
+            data[0].children[1].children[2].children[1]["normal"] = {fill: "#cb7e48"}
+            // -- Durchführung 
+            data[0].children[0].children[2].children[2]["normal"] = {fill: "#e18342"}
+            data[0].children[1].children[2].children[2]["normal"] = {fill: "#e18342"}
+            // -- Sonstiges 
+            data[0].children[0].children[2].children[3]["normal"] = {fill: "#e8af9b"}
+            data[0].children[1].children[2].children[3]["normal"] = {fill: "#e8af9b"}             
+            plotSunburst(data)
+        })
+
+
+        // Function definitions
+        function aggregateByColumn(graphData){
+            const result = Object.values(
+                graphData.reduce((acc, row) => {
+                    const { graphName, cat1, cat2, cat3, cat4, count } = row;
+                    const countValue = parseInt(count, 10);
+
+                    // --- graphName level ---
+                    if (!acc[graphName]) {
+                    acc[graphName] = {
+                        name: graphName,
+                        longName: graphName,
+                        value: 0,
+                        children: []
+                    };
+                    }
+                    acc[graphName].value += countValue;
+
+                    // --- cat1 level ---
+                    let cat1Node = acc[graphName].children.find(c => c.name === cat1);
+                    if (!cat1Node) {
+                    cat1Node = {
+                        name: cat1,
+                        longName: cat1,
+                        value: 0,
+                        children: []
+                    };
+                    acc[graphName].children.push(cat1Node);
+                    }
+                    cat1Node.value += countValue;
+
+                    if (!cat2) return acc;
+
+                    // --- cat2 level ---
+                    let cat2Node = cat1Node.children.find(c => c.name === cat2);
+                    if (!cat2Node) {
+                    cat2Node = {
+                        name: cat2,
+                        longName: cat2,
+                        value: 0,
+                        children: []
+                    };
+                    cat1Node.children.push(cat2Node);
+                    }
+                    cat2Node.value += countValue;
+
+                    if (!cat3) return acc;
+
+                    // --- cat3 level ---
+                    let cat3Node = cat2Node.children.find(c => c.name === cat3);
+                    if (!cat3Node) {
+                    cat3Node = {
+                        name: cat3,
+                        longName: cat3,
+                        value: 0,
+                        children: []
+                    };
+                    cat2Node.children.push(cat3Node);
+                    }
+                    cat3Node.value += countValue;
+
+                    if (!cat4) return acc;
+
+                    // --- cat4 level ---
+                    let cat4Node = cat3Node.children.find(c => c.name === cat4);
+                    if (!cat4Node) {
+                    cat4Node = {
+                        name: cat4,
+                        longName: cat4,
+                        value: 0,
+                        children: []
+                    };
+                    cat3Node.children.push(cat4Node);
+                    }
+                    cat4Node.value += countValue;
+
+                    return acc;
+                }, {})
+            );
+            return result
+        }
+
+        function plotSunburst(data){
+            chart = anychart.sunburst(data, "as-tree")
+            chart.container("container");
+            chart.draw();
+            chart.tooltip().useHtml(true);
+            chart.tooltip().format("<h5 style='font-size:14px; font-weight:400; margin: 0.25rem 0;'>{%longName}</h5><h5 style='font-size:12px; font-weight:400; margin: 0.25rem 0;'># Herausforderungen: {%value}</h5");
+            chart.palette(['#345E80', '#00838F', '#00BFA5', '#ff6e40', '#d4e157', '#64B5F6']);
+            chart.calculationMode("parent-dependent");
+            
+            chart.labels().position("radial");
+            chart.level(1).labels().position('circular')
+
+            // center label
+            let label = anychart.standalones.label()
+            label.text("")
+            label.width("100%");
+            label.height("100%");
+            // label.fontColor("#64B5F6");
+            label.fontSize(12);
+            label.fontWeight(600);
+            label.hAlign("center");
+            label.vAlign("middle");
+            // set the center content
+            chart.center().content(label);
+            // set a space for the center content
+            chart.innerRadius(0);
+            // hide the central level
+            chart.level(0).enabled(false);
+            
+            chart.fill(function () {
+                if (this.parent)
+                    return anychart.color.lighten(this.parentColor, 0.2);
+                return this.mainColor;
+            });
+
+            chart.listen("pointClick", function(e){
+                e.preventDefault()
+                let node = e.point.node
+                let name = node.la.longName
+                let value = node.la.value                
+                let depth = node.Bi.depth - 1
+                let isLeaf = node.Bi.isLeaf
+                
+
+                if (isLeaf){
+                    // get entire "drilldown" leading up to this node
+                    let quoteFilters = {}
+                    quoteFilters["cat"+depth] = name
+                    let iter_node = node
+                    for (let lvl =  depth-1; lvl >= 1; lvl--){
+                        iter_node = iter_node.getParent()
+                        quoteFilters["cat"+lvl] = iter_node.la.longName
+                    }
+                    quoteFilters["graphName"] = iter_node.getParent().la.longName
+                    let fillcolor = iter_node.Bi.fill
+                    console.log(quoteFilters)
+
+                    // now, find the quotes that match
+                    let codings = quoteCollection.filter(row => {
+                        if (row["graphName"] != quoteFilters["graphName"]){
+                            return false
+                        }
+                        if (row["cat1_new"] != quoteFilters["cat1"]){
+                            return false
+                        }
+                        if (row["cat2_new"] != quoteFilters["cat2"]){
+                            return false
+                        }
+                        if (quoteFilters["cat3"] && row["cat3_new"] != quoteFilters["cat3"]){
+                            return false
+                        }
+                        if (quoteFilters["cat4"] && row["cat4_new"] != quoteFilters["cat4"]){
+                            return false
+                        }
+                        return true
+                    })
+                    
+                    let quoteList = codings.map(obj=>obj.quote)
+                    let path = [...Object.values(quoteFilters)].reverse()
+                    t = path.pop()
+                    document.querySelector("#quoteContainer").style.background = fillcolor
+                    document.querySelector("#quoteContainer > h4").innerHTML = path.join(" > ") + ":"
+                    document.querySelector("#quoteContainer > h3").innerHTML = t
+
+                    document.querySelector("#listedQuotes").innerHTML = ""
+                    quoteList.forEach((quote)=>{
+                        let li = document.createElement("li")
+                        li.innerHTML = quote
+                        document.querySelector("#listedQuotes").appendChild(li)
+                    })
+                }
+
+            })
+        }
+    </script>
+  </body>
+</html>
