@@ -14,7 +14,11 @@
             height: 100%; 
             margin: 0; 
             padding: 0; 
+            font-family: Source Sans Pro;
         } 
+        #header {
+            margin-left: 5%;
+        }
         #containerOfContainers {
             display: flex;
             flex-direction: row;
@@ -49,6 +53,7 @@
         }
         #quoteContainer > ul {
             list-style-type: none;
+            padding-left: 0;
         }
         #quoteContainer > ul > li {
             background: rgba(255, 255, 255, 0.8);
@@ -63,11 +68,18 @@
   </head>
   <body>
     <div id="header">
-        <p>Click on an inner category to view its sub-categories in more detail.</p>
+        <h3>Rad der Herausforderungen</h3>
+        <ul>
+            <li>Klicken Sie auf eine Kategorie <b>im inneren Bereich</b> des Rads, um ihre <b>Unterkategorien</b> in Detail zu sehen.</li>
+            <li>Klicken Sie auf eine Kategorie <b>im außeren Bereich</b> des Rads, um <b>relevante Aussagen</b> von Lehrenden zu lesen.</li>
+            <li>Hinweis: viele der Aussagen wurden mehr als einer Kategorie zugeordnet.</li>
+            <li>Klicken Sie ggf. im Zentrum des Rads, um eine Ebene zurückzugehen.</li>
+        </ul>
+        <p></p>
     </div>
     <div id="containerOfContainers">
         <div id="container"></div>
-        <div id="quoteContainer">
+        <div id="quoteContainer" style="opacity:0" idx="0">
             <h4 id="quotesPath"></h4>
             <h3 id="quotesHeader">Click on an outer category to view related quotes</h3>
             <ul id="listedQuotes"></ul>
@@ -93,8 +105,11 @@
                 let aggregated_data = aggregateByColumn(graph_data)
                 all_graph_data[graphID] = aggregated_data
             })
-            data = [{"name": "Herausforderungen", "value":432, "children":all_graph_data[uniqueGraphs[8]] }]
+            data = [{"name": "Herausforderungen","children":all_graph_data[uniqueGraphs[8]] }]
             
+            data[0].children[0]["percent"] = 100
+            data[0].children[1]["percent"] = 100
+
             // SHORTENING SOME NAMES
             // - Level 1
             data[0].children[0].children[0]["name"] = "Didaktik"
@@ -132,8 +147,8 @@
 
             // CHANGING COLORS
             // Center
-            data[0].children[1]["normal"] = {fill: "#585858"}
-            data[0].children[0]["normal"] = {fill: "#787878"}
+            data[0].children[1]["normal"] = {fill: "#ffffff"}
+            data[0].children[0]["normal"] = {fill: "#ffffff"}
 
             // Technik
             data[0].children[0].children[1]["normal"] = {fill: "#386084"}
@@ -145,14 +160,16 @@
             data[0].children[0].children[1].children[1]["normal"] = {fill: "#5089BC"}
             data[0].children[1].children[1].children[1]["normal"] = {fill: "#5089BC"}
             // -- Störungen & Qualität
-            data[0].children[0].children[1].children[2]["normal"] = {fill: "#82ACDA"}
-            data[0].children[1].children[1].children[2]["normal"] = {fill: "#82ACDA"}
+            data[0].children[0].children[1].children[2]["normal"] = {fill: "#5f91c7"}
+            data[0].children[1].children[1].children[2]["normal"] = {fill: "#5f91c7"}
             // -- Usability
             data[0].children[0].children[1].children[3]["normal"] = {fill: "#5B9BD5"}
             data[0].children[1].children[1].children[3]["normal"] = {fill: "#5B9BD5"}            
              // -- Sonstiges
             data[0].children[0].children[1].children[4]["normal"] = {fill: "#AFCEEB"}
-            data[0].children[1].children[1].children[4]["normal"] = {fill: "#AFCEEB"}            
+            data[0].children[0].children[1].children[4]["label"] = {fontColor: "#333333"}  
+            data[0].children[1].children[1].children[4]["normal"] = {fill: "#AFCEEB"} 
+            data[0].children[1].children[1].children[4]["label"] = {fontColor: "#333333"}           
             
             // Didaktik
             data[0].children[0].children[0]["normal"] = {fill: "#455e35"}
@@ -171,9 +188,10 @@
             data[0].children[1].children[0].children[3]["normal"] = {fill: "#81ad6d"}
             // -- Soziales
             data[0].children[0].children[0].children[4]["normal"] = {fill: "#6ba543"}
-            data[0].children[1].children[0].children[4]["normal"] = {fill: "#6ba543"}
+            data[0].children[1].children[0].children[5]["normal"] = {fill: "#6ba543"}
             // --Sonstiges
-            data[0].children[1].children[0].children[5]["normal"] = {fill: "#c9dbc1"}
+            data[0].children[1].children[0].children[4]["normal"] = {fill: "#c9dbc1"}
+            data[0].children[1].children[0].children[4]["label"] = {fontColor: "#333333"}  
 
             // Organisation
             data[0].children[0].children[2]["normal"] = {fill: "#de752d"}
@@ -190,6 +208,10 @@
             // -- Sonstiges 
             data[0].children[0].children[2].children[3]["normal"] = {fill: "#e8af9b"}
             data[0].children[1].children[2].children[3]["normal"] = {fill: "#e8af9b"}             
+            data[0].children[0].children[2].children[3]["label"] = {fontColor: "#333333"}  
+            data[0].children[1].children[2].children[3]["label"] = {fontColor: "#333333"}     
+
+
             plotSunburst(data)
         })
 
@@ -198,8 +220,15 @@
         function aggregateByColumn(graphData){
             const result = Object.values(
                 graphData.reduce((acc, row) => {
-                    const { graphName, cat1, cat2, cat3, cat4, count } = row;
+                    const { graphName, cat1, cat2, cat3, cat4, count, percent } = row;
                     const countValue = parseInt(count, 10);
+                    var percentValue = 0
+                    if (graphName == "Hybrid-Lehrende"){
+                        percentValue = countValue/205 * 100
+                    } else {
+                        percentValue = countValue/224 * 100
+                    }
+                    // const percentValue = parseFloat(percent.replace(',', '.'))
 
                     // --- graphName level ---
                     if (!acc[graphName]) {
@@ -207,6 +236,7 @@
                         name: graphName,
                         longName: graphName,
                         value: 0,
+                        percent: 0,
                         children: []
                     };
                     }
@@ -219,11 +249,13 @@
                         name: cat1,
                         longName: cat1,
                         value: 0,
+                        percent: 0,
                         children: []
                     };
                     acc[graphName].children.push(cat1Node);
                     }
                     cat1Node.value += countValue;
+                    if (percentValue){cat1Node.percent += percentValue}
 
                     if (!cat2) return acc;
 
@@ -234,11 +266,13 @@
                         name: cat2,
                         longName: cat2,
                         value: 0,
+                        percent: 0,
                         children: []
                     };
                     cat1Node.children.push(cat2Node);
                     }
                     cat2Node.value += countValue;
+                    if (percentValue){cat2Node.percent += percentValue}
 
                     if (!cat3) return acc;
 
@@ -249,9 +283,11 @@
                         name: cat3,
                         longName: cat3,
                         value: 0,
+                        percent: 0,
                         children: []
                     };
                     cat2Node.children.push(cat3Node);
+                    if (percentValue){cat3Node.percent += percentValue}
                     }
                     cat3Node.value += countValue;
 
@@ -264,11 +300,13 @@
                         name: cat4,
                         longName: cat4,
                         value: 0,
+                        percent: 0,
                         children: []
                     };
                     cat3Node.children.push(cat4Node);
                     }
                     cat4Node.value += countValue;
+                    if (percentValue){cat4Node.percent += percentValue}
 
                     return acc;
                 }, {})
@@ -281,12 +319,39 @@
             chart.container("container");
             chart.draw();
             chart.tooltip().useHtml(true);
-            chart.tooltip().format("<h5 style='font-size:14px; font-weight:400; margin: 0.25rem 0;'>{%longName}</h5><h5 style='font-size:12px; font-weight:400; margin: 0.25rem 0;'># Herausforderungen: {%value}</h5");
+            chart.tooltip().format(function(){
+                if (this.level ===1){
+                    return "<h5 style='font-size:14px; font-weight:400; margin: 0.25rem 0;'>"+ this.getData("longName") + "</h5><h5 style='font-size:12px; font-weight:400; margin: 0.25rem 0;'># Herausforderungen: "+ this.value + "</h5>"
+                } else {
+                    return "<h5 style='font-size:14px; font-weight:400; margin: 0.25rem 0;'>"+ this.getData("longName") + "</h5><h5 style='font-size:12px; font-weight:400; margin: 0.25rem 0;'># Herausforderungen: "+ this.value + "</h5><p>("+ this.getData("percent").toFixed(1) + "\%)</p>"
+                }
+            });
             chart.palette(['#345E80', '#00838F', '#00BFA5', '#ff6e40', '#d4e157', '#64B5F6']);
             chart.calculationMode("parent-dependent");
+
+            // styling
+            chart.stroke("0.3 black")
+            chart.level(1).labels().fontColor("#333333")
+            chart.level(4).labels().fontColor("#333333")
+            chart.level(5).labels().fontColor("#333333")
+            chart.labels().fontFamily("Source Sans Pro")
             
+            chart.selected().fill(function(){
+                if (this.level >= 4){
+                    return "#e8fffe"
+                } else {
+                    return
+                }
+            })
+            chart.selected().stroke(function(){
+                if (this.level >= 4){
+                    return "0 #fcba03"
+                } else {
+                    return
+                }
+            })
+
             chart.labels().position("radial");
-            chart.level(1).labels().position('circular')
 
             // center label
             let label = anychart.standalones.label()
@@ -307,66 +372,81 @@
             
             chart.fill(function () {
                 if (this.parent)
-                    return anychart.color.lighten(this.parentColor, 0.2);
+                    return anychart.color.lighten(this.parentColor, 0.4);
                 return this.mainColor;
             });
 
             chart.listen("pointClick", function(e){
                 e.preventDefault()
-                let node = e.point.node
-                let name = node.la.longName
-                let value = node.la.value                
-                let depth = node.Bi.depth - 1
-                let isLeaf = node.Bi.isLeaf
-                
-
-                if (isLeaf){
-                    // get entire "drilldown" leading up to this node
-                    let quoteFilters = {}
-                    quoteFilters["cat"+depth] = name
-                    let iter_node = node
-                    for (let lvl =  depth-1; lvl >= 1; lvl--){
-                        iter_node = iter_node.getParent()
-                        quoteFilters["cat"+lvl] = iter_node.la.longName
-                    }
-                    quoteFilters["graphName"] = iter_node.getParent().la.longName
-                    let fillcolor = iter_node.Bi.fill
-                    console.log(quoteFilters)
-
-                    // now, find the quotes that match
-                    let codings = quoteCollection.filter(row => {
-                        if (row["graphName"] != quoteFilters["graphName"]){
-                            return false
-                        }
-                        if (row["cat1_new"] != quoteFilters["cat1"]){
-                            return false
-                        }
-                        if (row["cat2_new"] != quoteFilters["cat2"]){
-                            return false
-                        }
-                        if (quoteFilters["cat3"] && row["cat3_new"] != quoteFilters["cat3"]){
-                            return false
-                        }
-                        if (quoteFilters["cat4"] && row["cat4_new"] != quoteFilters["cat4"]){
-                            return false
-                        }
-                        return true
-                    })
+                if (e.point){
+                    let node = e.point.node
+                    let name = node.la.longName
+                    let value = node.la.value                
+                    let depth = node.Bi.depth - 1
+                    let isLeaf = node.Bi.isLeaf
                     
-                    let quoteList = codings.map(obj=>obj.quote)
-                    let path = [...Object.values(quoteFilters)].reverse()
-                    t = path.pop()
-                    document.querySelector("#quoteContainer").style.background = fillcolor
-                    document.querySelector("#quoteContainer > h4").innerHTML = path.join(" > ") + ":"
-                    document.querySelector("#quoteContainer > h3").innerHTML = t
+                    console.log(node)
+                    if (isLeaf){
+                        // get entire "drilldown" leading up to this node
+                        let quoteFilters = {}
+                        quoteFilters["cat"+depth] = name
+                        let iter_node = node
+                        for (let lvl =  depth-1; lvl >= 1; lvl--){
+                            iter_node = iter_node.getParent()
+                            quoteFilters["cat"+lvl] = iter_node.la.longName
+                        }
+                        quoteFilters["graphName"] = iter_node.getParent().la.longName
+                        let fillcolor = iter_node.Bi.fill
+                        console.log(quoteFilters)
 
-                    document.querySelector("#listedQuotes").innerHTML = ""
-                    quoteList.forEach((quote)=>{
-                        let li = document.createElement("li")
-                        li.innerHTML = quote
-                        document.querySelector("#listedQuotes").appendChild(li)
-                    })
+                        // now, find the quotes that match
+                        let codings = quoteCollection.filter(row => {
+                            if (row["graphName"] != quoteFilters["graphName"]){
+                                return false
+                            }
+                            if (row["cat1_new"] != quoteFilters["cat1"]){
+                                return false
+                            }
+                            if (row["cat2_new"] != quoteFilters["cat2"]){
+                                return false
+                            }
+                            if (quoteFilters["cat3"] && row["cat3_new"] != quoteFilters["cat3"]){
+                                return false
+                            }
+                            if (quoteFilters["cat4"] && row["cat4_new"] != quoteFilters["cat4"]){
+                                return false
+                            }
+                            return true
+                        })
+                        
+                        let quoteList = codings.map(obj=>obj.quote)
+                        let path = [...Object.values(quoteFilters)].reverse()
+                        t = path.pop()
+                        if (document.querySelector("#quoteContainer").idx != node.Bi.index){
+                            document.querySelector("#quoteContainer").style.opacity = 1
+                            document.querySelector("#quoteContainer").style.background = fillcolor
+                            document.querySelector("#quoteContainer").idx = node.Bi.index
+                            document.querySelector("#quoteContainer > h4").innerHTML = path.join(" > ") + ":"
+                            document.querySelector("#quoteContainer > h3").innerHTML = t
+
+
+                            document.querySelector("#listedQuotes").innerHTML = ""
+                            quoteList.forEach((quote)=>{
+                                let li = document.createElement("li")
+                                li.innerHTML = quote
+                                document.querySelector("#listedQuotes").appendChild(li)
+                            })
+                        } else {
+                            document.querySelector("#quoteContainer").style.opacity = 0
+                            document.querySelector("#quoteContainer").idx = 0
+                        }
+                        
+                    }                    
+                } else {
+                    document.querySelector("#quoteContainer").style.opacity = 0
+                    document.querySelector("#quoteContainer").idx = 0
                 }
+
 
             })
         }
