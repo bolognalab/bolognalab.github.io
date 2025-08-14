@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>JavaScript Sunburst Chart</title>
+    <title>Lehrendenbefragung Hybride Lehre</title>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.csv.js"></script>
     <script src="assets/js/anychart-base.min.js"></script>
@@ -11,12 +11,14 @@
     <script src="assets/js/anychart-exports.min.js"></script>
     <link rel="stylesheet" href="../assets/css/umfrage.css" />
     <style type="text/css">      
+        
         html, body, #containerOfContainers { 
             width: 100%; 
             height: 100%; 
             margin: 0; 
             padding: 0; 
             font-family: 'D-DIN', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         } 
         #header {
             margin-left: 5%;
@@ -30,8 +32,7 @@
             box-sizing: border-box;
         }
         #container { 
-            width: 60%; 
-            min-width: 600px;
+            width: 100%;
             aspect-ratio: 1;
             margin: 0; 
             padding: 0; 
@@ -39,10 +40,19 @@
         #quoteContainer {
             box-sizing: border-box;
             padding: 1em 1em;
-            min-width: 300px;
-            width: 40%;
+            width: 100%;
             background: rgb(117, 117, 210);
             font-family: Helvetica;
+        }
+        @media only screen and (min-width: 1000px){
+            #container {
+                width: 60%;
+                min-width: 600px
+            }
+            #quoteContainer {
+                width: 40%;
+                min-width: 300px;
+            }
         }
         #quoteContainer > h4 {
             color: rgba(255,255,255,0.8);
@@ -70,8 +80,11 @@
   </head>
   <body>
     <div id="header">
+        <h2>Lehrendenbefragung Hybride Lehre 2024</h2>
+        <p style="margin-bottom: 2em;">Stichprobe: 124 Lehrende der HU-Berlin</p>
         <h3>Rad der Herausforderungen</h3>
         <ul>
+            <li>Die Namen mancher Kategorien sind gekürzt oder zu klein geschrieben. Sie können den vollständigen Namen jeder Kategorie sehen, indem Sie mit dem Maus darüber fahren.</li>
             <li>Klicken Sie auf eine Kategorie <b>im inneren Bereich</b> des Rads, um ihre <b>Unterkategorien</b> in Detail zu sehen.</li>
             <li>Klicken Sie auf eine Kategorie <b>im außeren Bereich</b> des Rads, um <b>relevante Aussagen</b> von Lehrenden zu lesen.</li>
             <li>Hinweis: viele der Aussagen wurden mehr als einer Kategorie zugeordnet.</li>
@@ -141,8 +154,8 @@
             // - Level 3
             data[0].children[0].children[0].children[3].children[0]["name"] = "Qualitätsverlust"
             data[0].children[1].children[0].children[3].children[0]["name"] = "Qualitätsverlust"
-            data[0].children[0].children[0].children[3].children[1]["name"] = "Gleichstellung"
-            data[0].children[1].children[0].children[3].children[1]["name"] = "Gleichstellung"
+            data[0].children[0].children[0].children[3].children[1]["name"] = "Gleichbehandlung"
+            data[0].children[1].children[0].children[3].children[1]["name"] = "Gleichbehandlung"
             data[0].children[0].children[0].children[3].children[2]["name"] = "Lernerfolg"
             // data[0].children[1].children[0].children[3].children[2]["name"] = "Lernerfolg"
 
@@ -216,6 +229,7 @@
 
 
             plotSunburst(data)
+            document.querySelector(".anychart-credits-text").innerHTML = "Erstellt mit <b>AnyChart</b>"
         })
 
 
@@ -341,8 +355,8 @@
             chart.labels().fontFamily("D-DIN")
             
             chart.selected().fill(function(){
-                if (this.level >= 4){
-                    return "#e8fffe"
+                if (this.level >= 3){
+                    return "#585858"
                 } else {
                     return
                 }
@@ -444,8 +458,8 @@
                             document.querySelector("#quoteContainer").idx = node.Ci.index
                             document.querySelector("#quoteContainer > h4").innerHTML = path.join(" > ") + ":"
                             document.querySelector("#quoteContainer > h3").innerHTML = t
-
-
+                            document.querySelector("#quoteContainer").scrollIntoViewIfNeeded(false, {"behavior": "smooth"})
+                            
                             document.querySelector("#listedQuotes").innerHTML = ""
                             quoteList.forEach((quote)=>{
                                 let li = document.createElement("li")
