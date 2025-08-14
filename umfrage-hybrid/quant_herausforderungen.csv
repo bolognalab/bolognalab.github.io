@@ -1,6 +1,6 @@
 ﻿graphID;graphName;cat1;cat2;cat3;cat4;count;percent
 all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Planung;;;14;
-all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Qualität der Lehre;;;15;
+all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Qualitätsverlust;;;15;
 all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Engagement & Aufmerksamkeit Studierender;;;24;
 all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Interaktion & Kommunikation;;;25;
 all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Soziales;;;12;
@@ -14,7 +14,7 @@ all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Technik 
 all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Störungen & Qualität;;;21;
 all_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Alle Herausforderungen;Technik & ihre Nutzung;Sonstiges;;;6;
 all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Planung;;;10;
-all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Qualität der Lehre;;;5;
+all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Qualitätsverlust;;;5;
 all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Engagement & Aufmerksamkeit Studierender;;;18;
 all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Interaktion & Kommunikation;;;19;
 all_hybrid-lehrende;Hybrid-Lehrende: Alle Herausforderungen;Didaktik & Menschliche Kommunikation;Soziales;;;1;
@@ -32,18 +32,18 @@ did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;E
 did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Interaktion & Kommunikation;;;;25;
 did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Planung;neue Methoden;;;9;
 did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Planung;Inhalte abdecken;;;5;
-did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualität der Lehre;Sorge um Qualitätsverlulst;;;5;
-did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualität der Lehre;Gleichstellung der Gruppen;;;4;
-did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualität der Lehre;niedriger Lernerfolg;;;4;
-did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualität der Lehre;Selbstreguliertes Lernen;;;2;
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Sorge um Qualitätsverlulst;;;5;
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Gleichstellung der Gruppen;;;4;
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;niedriger Lernerfolg;;;4;
+did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Selbstreguliertes Lernen;;;2;
 did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Soziales;Soziale Präsenz;;;9;
 did_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Didaktische Herausforderungen;Soziales;Sozialisation;;;3;
 did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Engagement & Aufmerksamkeit Studierender;;;;18;
 did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Interaktion & Kommunikation;;;;19;
 did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Planung;neue Methoden;;;8;
 did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Planung;Inhalte abdecken;;;2;
-did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Qualität der Lehre;Sorge um Qualitätsverlulst;;;1;
-did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Qualität der Lehre;Gleichstellung der Gruppen;;;4;
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Sorge um Qualitätsverlulst;;;1;
+did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Qualitätsverlust;Gleichstellung der Gruppen;;;4;
 did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Sonstiges;Unklar;;;3;
 did_hybrid-lehrende;Hybrid-Lehrende: Didaktische Herausforderungen;Soziales;Soziale Präsenz;;;1;
 tech_nicht-hybrid-lehrende;Nicht-Hybrid-Lehrende: Technische Herausforderungen;Ausstattung;Allgemein;;;7;
@@ -103,10 +103,10 @@ supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Engagement
 supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Planung;neue Methoden;;9;4
 supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Planung;Inhalte abdecken;;5;2,2
 supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Interaktion & Kommunikation;;;25;11,2
-supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualität der Lehre;Sorge um Qualitätsverlulst;;5;2,2
-supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualität der Lehre;Gleichstellung der Gruppen;;4;1,8
-supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualität der Lehre;niedriger Lernerfolg;;4;1,8
-supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualität der Lehre;Selbstreguliertes Lernen;;2;0,9
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Sorge um Qualitätsverlulst;;5;2,2
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Gleichstellung der Gruppen;;4;1,8
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;niedriger Lernerfolg;;4;1,8
+supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Selbstreguliertes Lernen;;2;0,9
 supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Soziales;Soziale Präsenz;;9;4
 supergraph;Nicht-Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Soziales;Sozialisation;;3;1,3
 supergraph;Nicht-Hybrid-Lehrende;Technik & ihre Nutzung;Ausstattung;Allgemein;;7;3,1
@@ -141,8 +141,8 @@ supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Engagement & Auf
 supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Planung;neue Methoden;;8;3,9
 supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Planung;Inhalte abdecken;;2;1
 supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Interaktion & Kommunikation;;;19;9,3
-supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualität der Lehre;Sorge um Qualitätsverlulst;;1;0,5
-supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualität der Lehre;Gleichstellung der Gruppen;;4;2
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Sorge um Qualitätsverlulst;;1;0,5
+supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Qualitätsverlust;Gleichstellung der Gruppen;;4;2
 supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Sonstiges;Unklar;;3;1,5
 supergraph;Hybrid-Lehrende;Didaktik & Menschliche Kommunikation;Soziales;Soziale Präsenz;;1;0,5
 supergraph;Hybrid-Lehrende;Technik & ihre Nutzung;Ausstattung;Allgemein;;7;3,4
