@@ -6,15 +6,17 @@
     <title>JavaScript Sunburst Chart</title>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.csv.js"></script>
-    <script src="assets/js/anychart-core.min.js"></script>
+    <script src="assets/js/anychart-base.min.js"></script>
     <script src="assets/js/anychart-sunburst.min.js"></script>
+    <script src="assets/js/anychart-exports.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/umfrage.css" />
     <style type="text/css">      
         html, body, #containerOfContainers { 
             width: 100%; 
             height: 100%; 
             margin: 0; 
             padding: 0; 
-            font-family: Source Sans Pro;
+            font-family: 'D-DIN', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         } 
         #header {
             margin-left: 5%;
@@ -92,6 +94,7 @@
         var csvData, quoteCollection
         var data
         var chart
+        const defaultExportParameters = {"width": 1000, "height": 1000, "quality": 1, "filename": "chart"}
 
         $.get("alle_codierten_herausforderungen.csv", function(CSVdata){
             quoteCollection = $.csv.toObjects(CSVdata, {separator:';'});
@@ -143,7 +146,7 @@
             data[0].children[0].children[0].children[3].children[2]["name"] = "Lernerfolg"
             // data[0].children[1].children[0].children[3].children[2]["name"] = "Lernerfolg"
 
-            data[0].children[0].children[2].children[0].children[0]["name"] = "Anw. sinkt"
+            data[0].children[0].children[2].children[0].children[0]["name"] = "Sinkende Anw."
 
             // CHANGING COLORS
             // Center
@@ -163,8 +166,8 @@
             data[0].children[0].children[1].children[2]["normal"] = {fill: "#5f91c7"}
             data[0].children[1].children[1].children[2]["normal"] = {fill: "#5f91c7"}
             // -- Usability
-            data[0].children[0].children[1].children[3]["normal"] = {fill: "#5B9BD5"}
-            data[0].children[1].children[1].children[3]["normal"] = {fill: "#5B9BD5"}            
+            data[0].children[0].children[1].children[3]["normal"] = {fill: "#3584CB"}
+            data[0].children[1].children[1].children[3]["normal"] = {fill: "#3584CB"}            
              // -- Sonstiges
             data[0].children[0].children[1].children[4]["normal"] = {fill: "#AFCEEB"}
             data[0].children[0].children[1].children[4]["label"] = {fontColor: "#333333"}  
@@ -181,11 +184,11 @@
             data[0].children[0].children[0].children[2]["normal"] = {fill: "#5f933b"}
             data[0].children[1].children[0].children[2]["normal"] = {fill: "#5f933b"}
             // -- Planung
-            data[0].children[0].children[0].children[1]["normal"] = {fill: "#88b76e"}
-            data[0].children[1].children[0].children[1]["normal"] = {fill: "#88b76e"}
+            data[0].children[0].children[0].children[1]["normal"] = {fill: "#618F47"}
+            data[0].children[1].children[0].children[1]["normal"] = {fill: "#618F47"}
             // -- Qualität
-            data[0].children[0].children[0].children[3]["normal"] = {fill: "#81ad6d"}
-            data[0].children[1].children[0].children[3]["normal"] = {fill: "#81ad6d"}
+            data[0].children[0].children[0].children[3]["normal"] = {fill: "#72A45C"}
+            data[0].children[1].children[0].children[3]["normal"] = {fill: "#72A45C"}
             // -- Soziales
             data[0].children[0].children[0].children[4]["normal"] = {fill: "#6ba543"}
             data[0].children[1].children[0].children[5]["normal"] = {fill: "#6ba543"}
@@ -194,14 +197,14 @@
             data[0].children[1].children[0].children[4]["label"] = {fontColor: "#333333"}  
 
             // Organisation
-            data[0].children[0].children[2]["normal"] = {fill: "#de752d"}
-            data[0].children[1].children[2]["normal"] = {fill: "#de752d"}            
+            data[0].children[0].children[2]["normal"] = {fill: "#D07644"}
+            data[0].children[1].children[2]["normal"] = {fill: "#D07644"}            
             // -- Anwesenheit
-            data[0].children[0].children[2].children[0]["normal"] = {fill: "#f09971"}
-            data[0].children[1].children[2].children[0]["normal"] = {fill: "#f09971"}
+            data[0].children[0].children[2].children[0]["normal"] = {fill: "#ED8759"}
+            data[0].children[1].children[2].children[0]["normal"] = {fill: "#ED8759"}
             // -- Belastung
-            data[0].children[0].children[2].children[1]["normal"] = {fill: "#cb7e48"}
-            data[0].children[1].children[2].children[1]["normal"] = {fill: "#cb7e48"}
+            data[0].children[0].children[2].children[1]["normal"] = {fill: "#de752d"}
+            data[0].children[1].children[2].children[1]["normal"] = {fill: "#de752d"}
             // -- Durchführung 
             data[0].children[0].children[2].children[2]["normal"] = {fill: "#e18342"}
             data[0].children[1].children[2].children[2]["normal"] = {fill: "#e18342"}
@@ -317,6 +320,7 @@
         function plotSunburst(data){
             chart = anychart.sunburst(data, "as-tree")
             chart.container("container");
+            chart.background().fill("rgba(0,0,0,0)")
             chart.draw();
             chart.tooltip().useHtml(true);
             chart.tooltip().format(function(){
@@ -332,9 +336,9 @@
             // styling
             chart.stroke("0.3 black")
             chart.level(1).labels().fontColor("#333333")
-            chart.level(4).labels().fontColor("#333333")
+            // chart.level(3).labels().fontColor("#333333")
             chart.level(5).labels().fontColor("#333333")
-            chart.labels().fontFamily("Source Sans Pro")
+            chart.labels().fontFamily("D-DIN")
             
             chart.selected().fill(function(){
                 if (this.level >= 4){
@@ -375,17 +379,30 @@
                     return anychart.color.lighten(this.parentColor, 0.4);
                 return this.mainColor;
             });
-
-            chart.listen("pointClick", function(e){
-                e.preventDefault()
-                if (e.point){
-                    let node = e.point.node
+            // chart.interactivity().selectionMode("single")
+            chart.listen("click", function(){
+                let pt = chart.getSelectedPoints()[0]
+                
+                if (pt){
+                    let node = pt.node
+                    console.log(node)
                     let name = node.la.longName
                     let value = node.la.value                
-                    let depth = node.Bi.depth - 1
-                    let isLeaf = node.Bi.isLeaf
+                    let depth = node.Ci.depth - 1
+                    let isLeaf = node.Ci.isLeaf
                     
-                    console.log(node)
+                    let parentName =  node.getParent().la.longName
+                    let parentValue = node.getParent().la.value
+                    let grandparentName = node.getParent().getParent().la.longName
+                    let grandparentValue = node.getParent().getParent().la.value
+
+                    let percentParent = value/parentValue*100
+                    let percentGrandparent = parentValue/grandparentValue*100
+
+                    let group = node.getParent().getParent().getParent().la.longName
+
+                    console.log(`'${name}' is ${percentParent.toFixed(1)}\% of '${parentName}', which is ${percentGrandparent.toFixed(1)}\% of '${grandparentName}' für ${group}.`)
+                    
                     if (isLeaf){
                         // get entire "drilldown" leading up to this node
                         let quoteFilters = {}
@@ -396,8 +413,7 @@
                             quoteFilters["cat"+lvl] = iter_node.la.longName
                         }
                         quoteFilters["graphName"] = iter_node.getParent().la.longName
-                        let fillcolor = iter_node.Bi.fill
-                        console.log(quoteFilters)
+                        let fillcolor = iter_node.Ci.fill
 
                         // now, find the quotes that match
                         let codings = quoteCollection.filter(row => {
@@ -422,10 +438,10 @@
                         let quoteList = codings.map(obj=>obj.quote)
                         let path = [...Object.values(quoteFilters)].reverse()
                         t = path.pop()
-                        if (document.querySelector("#quoteContainer").idx != node.Bi.index){
+                        if (document.querySelector("#quoteContainer").idx != node.Ci.index){
                             document.querySelector("#quoteContainer").style.opacity = 1
                             document.querySelector("#quoteContainer").style.background = fillcolor
-                            document.querySelector("#quoteContainer").idx = node.Bi.index
+                            document.querySelector("#quoteContainer").idx = node.Ci.index
                             document.querySelector("#quoteContainer > h4").innerHTML = path.join(" > ") + ":"
                             document.querySelector("#quoteContainer > h3").innerHTML = t
 

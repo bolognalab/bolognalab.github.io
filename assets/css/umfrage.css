@@ -1,0 +1,73 @@
+/* basic */
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DIN.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DIN.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DIN.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DIN.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DIN-Bold.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DIN-Bold.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DIN-Bold.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DIN-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DIN-Italic.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DIN-Italic.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DIN-Italic.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DIN-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINCondensed.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINCondensed.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINCondensed.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINCondensed.woff2') format('woff2');
+    font-stretch: condensed;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINCondensed-Bold.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINCondensed-Bold.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINCondensed-Bold.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINCondensed-Bold.woff2') format('woff2');
+    font-stretch: condensed;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINExp.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINExp.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINExp.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINExp.woff2') format('woff2');
+    font-weight: normal;
+    font-stretch: expanded;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINExp-Bold.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINExp-Bold.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINExp-Bold.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINExp-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-stretch: expanded;
+}
+@font-face {
+    font-family: 'D-DIN';
+    src: url('../webfonts/D-DIN/D-DINExp-Italic.ttf') format('truetype'),
+    url('../webfonts/D-DIN/D-DINExp-Italic.otf') format('opentype'),
+    url('../webfonts/D-DIN/D-DINExp-Italic.woff') format('woff'),
+    url('../webfonts/D-DIN/D-DINExp-Italic.woff2') format('woff2');
+    font-stretch: expanded;
+    font-style: italic;
+}
