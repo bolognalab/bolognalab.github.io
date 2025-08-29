@@ -458,7 +458,7 @@
                             document.querySelector("#quoteContainer").idx = node.Ci.index
                             document.querySelector("#quoteContainer > h4").innerHTML = path.join(" > ") + ":"
                             document.querySelector("#quoteContainer > h3").innerHTML = t
-                            document.querySelector("#quoteContainer").scrollIntoViewIfNeeded(false, {"behavior": "smooth"})
+                            document.querySelector("#quoteContainer").scrollIntoView(false, {"behavior": "smooth"})
                             
                             document.querySelector("#listedQuotes").innerHTML = ""
                             quoteList.forEach((quote)=>{
