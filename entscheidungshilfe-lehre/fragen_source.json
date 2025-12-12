@@ -408,9 +408,6 @@
             }
         },
 
-
-        
-
         "exkurMittel": {
             "condition": "exkur=ja",
             "text": "Verfügen Sie über ausreichende Ressourcen, damit alle Studierenden an einer Exkursion teilnehmen können?",
