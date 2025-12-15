@@ -38,6 +38,13 @@
             margin-top: 0.5em;
             line-height: 1.5;
         }
+        #scenarioList {
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        #scenarioList.minimized {
+            height: 0;
+        }
         #scenarioList button {
             margin-left: 1em;
             margin-right: 1em;
@@ -47,6 +54,22 @@
                 color: #3c9;
                 display: none;
             }
+            .sCode {
+                color: #888;
+            }
+        #scenarioTitle {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        #scenarioTitle.active {
+            opacity: 1;
+        }
+        #scenarioTitle > * {
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -59,6 +82,10 @@
         <ul id="scenarioList"></ul>
     </div>
     <!-- Container where Editor.js will appear -->
+    <div id="scenarioTitle">
+        <h3></h3>
+        <p>(Titel kann direkt in der CSV-Datei bearbeitet werden)</p>
+    </div>
     <div id="editorjs"></div>
     <div id = "editorButtons" style="display:none">
         <button id="cancelEditBtn">Abbrechen</button>
@@ -516,8 +543,21 @@
             // convert to blocks for EditorJS
             const initialBlocks = []
             nodes.forEach(node =>{
-                if (node.nodeType !== 1) return 
+                if (node.nodeType !==1 && node.nodeType !==3) return 
+                if (node.nodeType == 3){
+                    // text nodes
+                    initialBlocks.push({
+                        type: "paragraph",
+                        data: {
+                            text: node.textContent.trim()
+                        }
+                    })
+                    return
+                }
                 switch (node.tagName.toLowerCase()) {
+                    case "br":
+                        break
+
                     case "p":
                         initialBlocks.push({
                             type: "paragraph",
@@ -552,6 +592,9 @@
             activeField = field
             let initialData = getBlocksFromCSV(upToDateRows, "wert", scenarioCode, field)
 
+            let scenarioTitle = upToDateRows.find(r => r["wert"] === scenarioCode).name
+            document.querySelector("#scenarioTitle h3").innerHTML = scenarioTitle
+            document.querySelector("#scenarioTitle").classList.add("active")
             const editor = new EditorJS({
                 holder: 'editorjs',
                 autofocus: true,
@@ -651,55 +694,49 @@
                     }
                     let updatedRows = updateRow(rows, "wert", scenarioCode, field, htmlOutput)
                     upToDateRows = updatedRows
-                    // $.get( "editor-testcsv.csv", function(CSVdata) {
-                    //     let rows = $.csv.toObjects(CSVdata, {separator: ";"})
-                    //     console.log(rows)
-                    //     updateRow(rows, "wert", scenarioCode, "text_overview", htmlOutput)
-                    //     console.log(rows)
-                    // })
-                    
-
-                    // const json = JSON.stringify(output, null, 2); // Format JSON
-
-                    // // Create a downloadable file
-                    // const blob = new Blob([json], { type: 'application/json' });
-                    // const url = URL.createObjectURL(blob);
-
-                    // const a = document.createElement('a');
-                    // a.href = url;
-                    // a.download = 'editor-content.json';          // File name
-                    // a.click();
-
-                    // URL.revokeObjectURL(url);
                 } catch (error) {
                 console.error('Saving failed:', error);
                 }            
             }
+            
             document.querySelector("#saveBtn").disabled = true
             document.querySelector('#saveBtn').addEventListener('click', ()=>{
                 saveChanges(activeScenarioCode, activeField)
                 closeEditor()
+                document.querySelector("#scenarioList").classList.remove("minimized")
+                document.querySelector("#scenarioTitle h3").innerHTML = ""
+                document.querySelector("#scenarioTitle").classList.remove("active")
+
+
                 document.querySelector("#downloadBtn").disabled = false
-                console.log()
+                document.querySelector("#downloadBtn").addEventListener("click", ()=>{
+                    downloadNewCSV()
+                })
                 // adding scenario to the list of changed scenarios
                 if (!changedScenarioCodes.includes(activeScenarioCode)){changedScenarioCodes.push(activeScenarioCode)}
                 changedScenarioCodes.forEach((s)=>{document.querySelector("#changes_" + s).style.display="inline"})
                 })
             document.querySelector("#cancelEditBtn").addEventListener('click', ()=>{
                 closeEditor()
+                document.querySelector("#scenarioList").classList.remove("minimized")
+                document.querySelector("#scenarioTitle h3").innerHTML = ""
+                document.querySelector("#scenarioTitle").classList.remove("active")
             })
+            document.querySelector("#editorjs").focus()
         }     
 
         function closeEditor(){
             document.querySelector("#editorjs").innerHTML = ""
             document.querySelectorAll("#scenarioList button").forEach((b)=>{b.style.display="inline"})
             document.querySelector("#editorButtons").style.display="none"
+            document.querySelector("#scenarioList").focus()
         }
         
         function startEdit(scenarioCode){
             openEditor(scenarioCode, "text_overview")
             document.querySelectorAll("#scenarioList button").forEach((b)=>{b.style.display="none"})
             document.querySelectorAll(".hasChanged").forEach((b)=>{b.style.display="none"})
+            document.querySelector("#scenarioList").classList.add("minimized")
             document.querySelector("#editorButtons").style.display="block"
         }
         
@@ -709,21 +746,33 @@
                 delimiter: '"'
             });
 
-            const blob = new Blob([updatedCSV], {type: 'text/csv;charset=utf-8;'});
-            const url = URL.createObjectURL(blob);
+            try {
+                const BOM = "\uFEFF";
+                const csvWithBom = BOM + updatedCSV;
+                const blob = new Blob([csvWithBom], {type: 'text/csv;charset=utf-8;'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'text-tips-matrix (NEW - PLEASE RENAME).csv';
+                a.click();
 
+                URL.revokeObjectURL(url)
+
+            } catch (error) {
+                console.error("Saving failed:", error)
+            }
         }
 
         // Main functions start here
-        $.get( "editor-testcsv.csv", function(CSVdata) {
+        $.get( "texts_tips_matrix.csv", function(CSVdata) {
             rows = $.csv.toObjects(CSVdata, {separator: ";"})
             upToDateRows = rows.map((x)=>x) // copy
 
             // make list of scenarios to choose from
             rows.forEach((row, idx)=>{
-                if (idx==0) return
+                // if (idx==0) return
                 let li = document.createElement("li")
-                li.innerHTML = `${row.wert} (${row.name})<button id='edit_${row.wert}' onclick=startEdit('${row.wert}')>Bearbeiten</button><span class='hasChanged' id='changes_${row.wert}'>--> Änderungen gespeichert!</span>`
+                li.innerHTML = `<span class='sCode'>${row.wert}</span> (${row.name})<button id='edit_${row.wert}' onclick=startEdit('${row.wert}')>Bearbeiten</button><span class='hasChanged' id='changes_${row.wert}'>--> Änderungen gespeichert!</span>`
                 document.querySelector("#scenarioList").appendChild(li)
             }
             )
