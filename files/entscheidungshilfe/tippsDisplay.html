@@ -22,11 +22,29 @@
         margin-top: 0;
         margin-bottom: 1.5em;
     }
+    .block {
+        padding: 0 0
+    }
+    .block h3, #introInfos {
+        background: white;
+        padding: 0 15px 15px 15px;
+    }
+    .tip {
+        padding: 0 15px 15px 15px;
+    }
+    .tip:nth-child(2n){
+        background: white;
+    }
   </style>
 </head>
 <body class="is-preload resultBg" lang="de">
 <div id="result" class="rCont">
-    <h1>Alle Tipps</h1>
+    <div id="introInfos">
+    <h1>Alle Tipps und ihre Zuordnung</h1>
+    <h2>Entscheidungshilfe Online und Hybride Lehre</h2>
+    <p>Die Texte der Tipps können in der Datei <em>tips_source.json</em> bearbeitet werden. Die Zuordnung der Tipps kann in der Datei <em>texts_tips_matrix.csv</em> bearbeitet werden.</p>
+    </div>
+
     <div id="resSync" class="block sync">
         <h3>Synchron</h3>
         <ul class="tCont"></ul>
