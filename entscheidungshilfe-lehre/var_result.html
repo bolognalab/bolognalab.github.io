@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/eb.css" />
   <link rel="stylesheet" href="assets/css/eb_app.css" />
   <link rel="stylesheet" href="assets/css/eb_result.css">
-    <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
   <script async src="https://tally.so/widgets/embed.js"></script>
   <style>
@@ -103,7 +103,7 @@
                 <h4 id="scenarioSubtitle">mit asynchroner Teilnahme-Alternative</h4>
                 <div class="blockContent">
                     <img id="descImg" class="descImg" src="images/blurry/pic05.jpg"/>
-                    <p class="descText"></p>
+                    <div class="descText"></div>
                 </div>
             </div>
             <div id="resTechn" class="block techn">
@@ -319,7 +319,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     }
 
     let raumLink = tech_links[scenarioValue]['raum-' + syncIntValue]
-    if (raumLink == "COMINGSOON"){
+    if (raumLink == "<<COMING SOON>>"){
         document.querySelector("#refToRaumkonzept").innerHTML = "Ein interaktives Raummodell mit Empfehlungen folgt bald."
         if (asyncIntValue != "asyncInt-x"){
             document.querySelector(".RKlink").style.display="none"
@@ -329,7 +329,11 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             
         }
             
-    } else if (raumLink != "digital"){
+    } else if (raumLink.includes("<<FULLIMG>>")){
+        let imageURL = raumLink.split("<<FULLIMG>>")[1]
+        document.querySelector("#resTechn .RKlink").style.display = "none"
+
+    } else if (raumLink != "<<DIGITAL>>"){
         document.querySelector("#raumIFrame").src = raumLink
         let techButton = document.createElement("button")
         techButton.innerHTML = "Interaktives Raummodell"
@@ -365,7 +369,13 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let overviewText = theseTexts['overviewText']
     let overviewAsyncTNText = theseTexts['overviewAsyncTNText']
     let technPoints = theseTexts['technikText']
-    let fullTechnList = technPoints.split(',')
+    let fullTechnList
+    if (!technPoints.includes("<<HTML>>")){
+        fullTechnList = technPoints.split(',')
+    } else {
+        fullTechnList = [technPoints]
+    }
+
     let syncIntText =  theseTexts[syncIntValue + "Text"]
     let asyncTNText =  theseTexts[asyncTNValue + "Text"]
     let asyncIntText =  theseTexts[asyncIntValue + "Text"]
@@ -594,15 +604,20 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     // Medientechnik block
     fullTechnList.forEach(function(s){
-        let li = document.createElement('li')
-        li.innerHTML = s
-        document.querySelector("#propertyList").appendChild(li)
-        if (s == 'COMINGSOON'){
-            document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4> Die medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
-        } else if (s == 'digital'){
-            document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4>Dieses Lehrszenario findet in rein-digitalem Format statt.</p>'
-            document.querySelector(".techn.block").parentNode.removeChild(document.querySelector(".techn.block"))
+        if (!s.includes("<<HTML>>")){
+            let li = document.createElement('li')
+            li.innerHTML = s
+            document.querySelector("#propertyList").appendChild(li)
+            if (s == '<<COMING SOON>>'){
+                document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4> Die medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
+            } else if (s == '<<DIGITAL>>'){
+                document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4>Dieses Lehrszenario findet in rein-digitalem Format statt.</p>'
+                document.querySelector(".techn.block").parentNode.removeChild(document.querySelector(".techn.block"))
+            }            
+        } else {
+            document.querySelector("#resTechn > .blockContent > div.descText").innerHTML = fullTechnList[0].split("<<HTML>>")[1]
         }
+
     }
 
     )

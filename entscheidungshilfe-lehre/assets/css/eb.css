@@ -694,6 +694,13 @@ h2.active {
 .tech .blockContent {
     transition: all 0.5s ease;
 }
+.techn .blockContent .descText h5 {
+    font-size: 14px;
+    opacity: 0.7;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 0.5em;
+}
  .techn.maxed .descText {
     max-width: 0;
     height: 0;
