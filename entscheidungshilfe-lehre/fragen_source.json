@@ -433,6 +433,29 @@
                 "nein": "Nein",
                 "ja": "Ja"
                 
+            },
+        "labFormat": {
+            "condition": "artLV=PR",
+            "text": "Die Entscheidung, ob und wie ein laborbasiertes Format hybrid oder digital umgesetzt werden kann, hängt stark von der vorhandenen Infrastruktur sowie von den Kompetenzen ab, die im Laborkurs vermittelt werden sollen. Einheitliche Entscheidungskriterien – wie sie für Vorlesungen oder Seminare existieren – lassen sich daher kaum festlegen. Stattdessen stellen wir Ihnen bewährte Praxisbeispiele digital erweiterter Laborformate vor und hoffen, dass diese Sie bei der Entwicklung eigener Lösungen inspirieren. Der Fantasie sind dabei keine Grenzen gesetzt!",
+            "antworten": {
+                "hyb": "Hybride Laborkonzepte",
+                "onl": "Online Laborkonzepte"
+                
+            },
+        "labsHyb": {
+            "condition": "labFormat=hyb",
+            "text": "Über welches hybride Laborkonzept möchten Sie mehr erfahren?",
+            "antworten": {
+                "hyb1": "Labor-Tandem",
+                "hyb2": "Labor mit digitalen Zwillingen"
+                
+            },
+        "labsOnl": {
+            "condition": "labFormat=Onl",
+            "text": "Über welches Online-Laborkonzept möchten Sie mehr erfahren?",
+            "antworten": {
+                "onl1": "Remote Lab"
+                
             }
         }
     }

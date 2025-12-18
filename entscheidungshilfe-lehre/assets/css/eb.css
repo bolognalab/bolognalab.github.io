@@ -7,7 +7,7 @@
     --vibrantBlue: #0F70B7;
     --vibrantBlueFilter: brightness(0) saturate(100%) invert(31%) sepia(100%) saturate(948%) hue-rotate(178deg) brightness(92%) contrast(93%);
     --networkTurqoiseFilter: brightness(0) saturate(100%) invert(38%) sepia(69%) saturate(568%) hue-rotate(128deg) brightness(105%) contrast(87%);
-    --backgroundLightBlue: hsl(205, 56%, 93%);
+    --backgroundLightBlue: hsl(205, 56%, 97%);
     --backgroundLightGreen: #d8f3f2;
 }
 
@@ -490,7 +490,7 @@ ul.tCont, ul.altCont {
 }
 #credits a {
     color: inherit;
-    border-bottom: solid 1px
+    /* border-bottom: solid 1px */
 }
 @media only screen and (min-width: 800px) {
     #credits p {

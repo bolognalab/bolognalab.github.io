@@ -1,6 +1,18 @@
 # Entscheidungshilfe Online & Hybride Lehre
 *ein Tool des Berliner Netzwerks Hybride Lehre*
 
+## Impressum
+Software-Programmierung: Natalia Spitha*
+Fragenkatalog & Didaktik: Natalia Spitha & Judith Stelter**
+Raumkonzepte: Philipp Kapser*
+
+*Humboldt-Universität zu Berlin
+**Berliner Hochschule für Technik
+
+Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)
+
+Der Quellcode ist unter der GNU General Public License Version 3.0 (GPL-3.0) lizenziert. Alle originalen Texte und Bilder stehen – sofern nicht anders angegeben – unter der Creative Commons Namensnennung – Weitergabe unter gleichen Bedingungen 4.0 International Lizenz (CC BY-SA 4.0).
+
 ## Zielgruppe
 ### Ziel und Zielgruppe des Tools
 

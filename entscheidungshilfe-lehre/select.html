@@ -140,6 +140,9 @@
             transition: all 0.4s ease;
             cursor: pointer;
         }
+        #questionSpecialConditions.disabled {
+            color: rgb(180, 180, 180)
+        }
     </style>
     <style>
         body {
@@ -219,7 +222,7 @@
                 <select id="artLV" name="artLV" required>
                     <option value="vl" selected>Vorlesung</option>
                     <option value="se">Seminar/Übung</option>
-                    <option value="pr" disabled>Coming soon: Laborbasiertes Format</option>
+                    <option value="pr">Laborbasiertes Format</option>
                 </select>
         
                 <!-- Format -->
@@ -229,6 +232,9 @@
                     <option value="praes">Präsenz</option>
                     <option value="onl">Online</option>
                     <option value="hyb" selected>Hybrid</option>
+                    <option value="onl1">Online (Remote Lab)</option>
+                    <option value="hyb1">Hybrid (Labor-Tandem)</option>
+                    <option value="hyb2">Hybrid (Digitaler Zwilling)</option>
                 </select>
         
                 <!-- Interaktionsgrad -->
@@ -253,7 +259,7 @@
         
                 <!-- Zusätzliche Informationen -->
                 <h3>Sonderbedingungen</h3>
-                <p>Möchten Sie zusätzliche Tipps zu folgenden Aspekten der Kursplanung und -durchführung erhalten?</p>
+                <p id="questionSpecialConditions">Möchten Sie zusätzliche Tipps zu folgenden Aspekten der Kursplanung und -durchführung erhalten?</p>
                 <input type="checkbox" id="async3" name="extras" value="async3">
                 <label for="async3">Ermöglichung asynchroner Teilnahmealternativen für Studierende</label><br>
     
@@ -297,7 +303,63 @@
     const optExkur = document.getElementById("exkur")
     const optIntKoll = document.getElementById("intKoll")
 
+    optArtLV.value = "vl"
+    optFormat.value = "hyb"
+    optSyncInt.value = "1"
+
+    let nonLabFormats = ["praes", "onl", "hyb"]
+    let labFormats = ["hyb1", "hyb2", "onl1"]
+    labFormats.forEach((o)=>{
+        document.querySelector(`#format option[value='${o}']`).style.display = "none"
+    })
+
     // disable some option combinations
+    optArtLV.addEventListener("change", ()=>{
+        if (optArtLV.value == "se"){
+            $("#syncInt option[value='0']").attr("disabled", "disabled")
+            if (optSyncInt.value == "0"){
+                optSyncInt.value = "1"
+            }
+        } else {
+            $("#syncInt option[value='0']").removeAttr("disabled")
+        }
+        if (optArtLV.value == "pr"){
+            $("#syncInt option[value='0']").attr("disabled", "disabled")
+            $("#syncInt option[value='1']").attr("disabled", "disabled")
+            document.querySelector("#format option[value='praes']").style.display = "none"
+            optSyncInt.value = "2"
+            labFormats.forEach((o)=>{
+                document.querySelector(`#format option[value='${o}']`).style.display = "block"
+            })
+            nonLabFormats.forEach((o)=>{
+                document.querySelector(`#format option[value='${o}']`).style.display = "none"
+            })
+            optFormat.value = "hyb1"
+            optAsync3.classList.add("disabled")
+            optGaesteOnl.classList.add("disabled")
+            optExkur.classList.add("disabled")
+            optIntKoll.classList.add("disabled")
+            document.querySelector("#questionSpecialConditions").classList.add("disabled")
+        } else {
+            $("#syncInt option[value='1']").removeAttr("disabled")
+            if (optArtLV.value != "se"){
+                $("#syncInt option[value='0']").removeAttr("disabled")
+            }
+            labFormats.forEach((o)=>{
+                document.querySelector(`#format option[value='${o}']`).style.display = "none"
+            })
+            nonLabFormats.forEach((o)=>{
+                document.querySelector(`#format option[value='${o}']`).style.display = "block"
+            })
+            optFormat.value = "hyb"
+            optAsync3.classList.remove("disabled")
+            optGaesteOnl.classList.remove("disabled")
+            optExkur.classList.remove("disabled")
+            optIntKoll.classList.remove("disabled")
+            document.querySelector("#questionSpecialConditions").classList.remove("disabled")
+        }
+    })
+
     optFormat.addEventListener("change", ()=>{
         if (optFormat.value != "hyb"){
             optExkur.classList.add("disabled")
@@ -318,16 +380,7 @@
             optIntKoll.classList.remove("disabled")
         }
     })
-    optArtLV.addEventListener("change", ()=>{
-        if (optArtLV.value == "se"){
-            $("#syncInt option[value='0']").attr("disabled", "disabled")
-            if (optSyncInt.value == "0"){
-                optSyncInt.value = "1"
-            }
-        } else {
-            $("#syncInt option[value='0']").removeAttr("disabled")
-        }
-    })
+
     
 
     function selectConcept(){
