@@ -371,7 +371,8 @@
         }
     })
     optFormat.addEventListener("change", ()=>{
-        if (optFormat.value == "praes"){
+        let noIntKoll = ["praes", "onl1", "hyb1", "hyb2"]
+        if (noIntKoll.includes(optFormat.value)){
             optIntKoll.classList.add("disabled")
             optIntKoll.disabled=true
             optIntKoll.checked=false
