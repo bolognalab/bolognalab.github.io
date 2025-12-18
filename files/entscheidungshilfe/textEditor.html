@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor.js Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.csv.js"></script>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 15px;
+            background: #fff;
+        }
+        .instructions {
+            max-width: 800px;
+            margin: auto; 
+        }
+        #editorjs {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: 20px auto;
+            /* background: #fffcbb; */
+        }
+        #editorButtons {
+            text-align: center;
+        }
+        #scenarioList li {
+            margin-bottom: 0.5em;
+            margin-top: 0.5em;
+            line-height: 1.5;
+        }
+        #scenarioList {
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        #scenarioList.minimized {
+            height: 0;
+        }
+        #scenarioList button {
+            margin-left: 1em;
+            margin-right: 1em;
+            line-height: 1.5;
+        }
+            .hasChanged {
+                color: #3c9;
+                display: none;
+            }
+            .sCode {
+                color: #888;
+            }
+        #scenarioTitle {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+        #scenarioTitle.active {
+            opacity: 1;
+        }
+        #scenarioTitle > * {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align:center;">Szenariobeschreibungen bearbeiten</h2>
+    <div class="instructions">
+        <p>Hiermit können Sie die Beschreibungstexte zu jedem Szenario des Entscheidungstools mithilfe eines Text-Editors bearbeiten. Um Ihre Änderungen in das Entscheidungstool zu integrieren, müssen Sie anschließend eine neue <b>texts_tips_matrix.csv</b>-Datei herunterladen, und dann die Originaldatei im Github-Repositorium mit der neuen Datei ersetzen.</p>
+        <h3>Schritt #1</h3>
+        <p>Klicken Sie auf "Bearbeiten" neben einem Szenario auf der Liste, um den Überblickstext zu bearbeiten. Sie können mehrere Szenarien nacheinander bearbeiten. Ihre Änderungen werden temporär in ihrem Browser gespeichert (solange diese Seite auf ist!), bis Sie die neue Datei heruntergeladen.</p>
+        <ul id="scenarioList"></ul>
+    </div>
+    <!-- Container where Editor.js will appear -->
+    <div id="scenarioTitle">
+        <h3></h3>
+        <p>(Titel kann direkt in der CSV-Datei bearbeitet werden)</p>
+    </div>
+    <div id="editorjs"></div>
+    <div id = "editorButtons" style="display:none">
+        <button id="cancelEditBtn">Abbrechen</button>
+        <button id="saveBtn">Speichern und Schließen</button>
+    </div>
+    <div class="instructions">
+        <h3>Schritt #2</h3>
+        <p>Wenn Sie mit allen Änderungen fertig sind, klicken Sie hier auf "CSV herunterladen".</p>
+        <button id="downloadBtn" disabled="true">CSV Herunterladen</button>
+        <h3>Schritt #3</h3>
+        <p>Ersetzen Sie die <b>texts_tips_matrix.csv</b>-Datei im <a href="https://github.com/bolognalab/bolognalab.github.io/tree/main/entscheidungshilfe-lehre" aria-label="Github-Repositorium für das Entsheidungstool">Github-Repositorium</a>. Bitte überprüfen Sie lokal, dass die betroffenen Seiten richtig funktionieren, bevor Sie veruschen, Ihre Änderungen ins Remote zu pushen!</p>
+    </div>
+    <script>
+    // Custom Inline Link Tool with Aria-Label (for accessibility)
+    class LinkBreakerTool {
+        /**
+         * Defines this tool as an Inline Tool.
+         */
+        static get isInline() {
+            return true;
+        }
+
+        /**
+         * Title for the hover tooltip.
+         * @returns {string}
+         */
+        static get title() {
+            return 'Break Link';
+        }
+
+        /**
+         * A tool that modifies the DOM should not require sanitize rules, 
+         * but we define it to ensure no unwanted attributes remain if the original link had them.
+         */
+        static get sanitize() {
+            return {}; // No special rules needed as we are removing the tag.
+        }
+
+
+        /**
+         * Determines if the tool's icon should be visible in the Inline Toolbar.
+         * This is the function you need to control visibility.
+         * @returns {boolean}
+         */
+        static get isApplicable() {
+            console.log('Static Getter: isApplicable() - LinkBreakerTool');
+            // Return a function that accepts the selection object and returns true/false
+            return (selection) => {
+                const api = editor.api; // Access the Editor.js API globally or pass it if possible
+                if (!api || !api.selection) {
+                    return false;
+                }
+
+                // Check if the current selection has a parent <a> tag
+                const isLink = !!api.selection.findParentTag('A');
+                console.log(`  -> isApplicable result: ${isLink}`);
+                return isLink;
+            };
+        }
+
+        /**
+         * Custom tag property for finding parent elements.
+         */
+        constructor({ api }) {
+            console.log('Constructor: LinkBreakerTool');
+            this.api = api;
+            this.tag = 'A';
+            this.CSS = {
+            button: this.api.styles.inlineToolButton,
+            // Use a custom class to change the icon color to red, suggesting 'delete'
+            deleteButton: 'cdx-link-breaker-tool--delete' 
+            };
+        }
+
+        /**
+         * Creates the button icon for the inline toolbar.
+         * We will use a 'unlink' or 'break' icon.
+         * @returns {HTMLElement}
+         */
+        render() {
+            console.log('Function: render() - LinkBreakerTool');
+            const button = document.createElement('button');
+            button.classList.add(this.CSS.button);
+            // Add the delete class for visual cue
+            button.classList.add(this.CSS.deleteButton); 
+
+            // Icon for breaking a link (e.g., a broken chain or 'x')
+            button.innerHTML = this.getToolbarIcon(); 
+
+            return button;
+        }
+
+        /**
+         * Defines when this tool should be visible.
+         * It should only appear if the selected text is part of an existing link.
+         * @param {Selection} selection
+         * @returns {boolean}
+         */
+        checkState(selection) {
+            console.log('Function: checkState() - LinkBreakerTool');
+            // The tool is active/visible only if the current selection is inside an <a> tag.
+            // return !!this.api.selection.findParentTag(this.tag);
+            return false
+        }
+
+        /**
+         * This is the function called when the user clicks the icon.
+         * It must find the link tag and remove it, then close the toolbar.
+         * @param {Range} range - The current selection range (ignored, as we use findParentTag)
+         */
+        surround(range) {
+            console.log('Function: surround() - LinkBreakerTool (Break)');
+            const aTag = this.api.selection.findParentTag(this.tag);
+
+            if (aTag) {
+            this.unwrap(aTag);
+            }
+
+            // Close the toolbar immediately after action
+            this.api.inlineToolbar.close(); 
+        }
+
+        /**
+         * Helper function to remove the <a> tag and restore text content.
+         * @param {HTMLElement} aTag
+         */
+        unwrap(aTag) {
+            console.log('Function: unwrap() - LinkBreakerTool');
+            // 1. Expand selection to cover the entire link tag content
+            this.api.selection.expandToTag(aTag);
+            const range = window.getSelection().getRangeAt(0);
+
+            // 2. Extract the text content
+            const text = range.extractContents();
+
+            // 3. Remove the tag container
+            aTag.remove();
+
+            // 4. Insert the text back into the DOM
+            range.insertNode(text);
+
+            // 5. Restore selection
+            this.api.selection.restore();
+        }
+
+        /**
+         * Icon for the Link Breaker Tool (A simple 'X' or broken chain)
+         */
+        getToolbarIcon() {
+            // This SVG represents a broken chain/unlink symbol
+            return `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.9 11.1L11.1 12.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11.1 11.1L12.9 12.9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12.986 6.941c1.233 0 2.228 1.006 2.228 2.246 0 1.24-.995 2.246-2.228 2.246H11.09c-.494 0-.895-.406-.895-.905s.401-.905.895-.905h1.896c.247 0 .445-.201.445-.448 0-.247-.198-.448-.445-.448H4.72c-.247 0-.445.201-.445.448 0 .247.198.448.445.448h1.492c.494 0 .895.406.895.905s-.401.905-.895.905H4.72c-1.233 0-2.228-1.006-2.228-2.246 0-1.24.995-2.246 2.228-2.246h8.266zm-5.022 4.965H4.72c-.247 0-.445-.201-.445-.448 0-.247.198-.448.445-.448h3.244c.494 0 .895-.406.895-.905s-.401-.905-.895-.905H4.72c-1.233 0-2.228-1.006-2.228-2.246 0-1.24.995-2.246 2.228-2.246h8.266c1.233 0 2.228 1.006 2.228 2.246 0 1.24-.995 2.246-2.228 2.246h-1.896c-.494 0-.895.406-.895.905s.401.905.895.905h1.896c.247 0 .445.201.445.448 0 .247-.198.448-.445.448H7.964z" fill="none"/></svg>`;
+        }
+    }
+
+    class LinkWithAriaTool {
+        /**
+         * Static property to specify this is an Inline Tool
+         * @returns {boolean}
+         */
+        static get isInline() {
+            return true;
+        }
+
+        /**
+         * Title for the hover tooltip
+         * @returns {string}
+         */
+        static get title() {
+            return 'Link (Aria)';
+        }
+
+        /**
+         * Sanitizer Rule: Allow <a> tags with specific attributes.
+         * NOTE: 'aria-label' must be explicitly whitelisted.
+         * @returns {object}
+         */
+        static get sanitize() {
+            return {
+            a: {
+                href: true,
+                'aria-label': true, // <--- IMPORTANT: Allow aria-label attribute
+                target: true,
+                rel: ['nofollow', 'noopener'],
+            },
+            };
+        }
+
+        /**
+         * Class constructor
+         * @param {object} param0
+         * @param {object} param0.api - Editor.js API
+         */
+        constructor({ api }) {
+            this.api = api;
+            this.tag = 'A';
+            this.CSS = {
+            button: this.api.styles.inlineToolButton,
+            input: this.api.styles.input,
+            inputShowed: 'ce-inline-tool-input--showed',
+            linkWithAriaContainer: 'ce-link-aria-container', // Custom class for the UI container
+            };
+
+            // Keep track of the nodes for the URL and aria-label inputs
+            this.nodes = {
+            container: null,
+            urlInput: null,
+            ariaLabelInput: null,
+            submitButton: null,
+            };
+        }
+
+        /**
+         * Create button for Inline Toolbar.
+         * This is the icon the user clicks to open the prompt.
+         * @returns {HTMLElement}
+         */
+        render() {
+            console.log("render")
+            const button = document.createElement('button');
+            button.classList.add(this.CSS.button);
+            button.innerHTML = this.getToolbarIcon(); // Custom icon, or use a default one
+
+            return button;
+        }
+
+        /**
+         * Creates the elements for the URL and aria-label inputs that appear
+         * when the tool button is clicked.
+         * @returns {HTMLElement}
+         */
+        renderActions() {
+            console.log("renderActions")
+            // 1. Create the main container for the inputs
+            this.nodes.container = document.createElement('div');
+            this.nodes.container.classList.add(this.CSS.linkWithAriaContainer);
+            this.nodes.container.classList.add(this.CSS.input);
+
+            // 2. Create the URL input
+            this.nodes.urlInput = document.createElement('input');
+            this.nodes.urlInput.classList.add(this.CSS.input);
+            this.nodes.urlInput.placeholder = 'Enter URL...';
+
+            // 3. Create the Aria-Label input
+            this.nodes.ariaLabelInput = document.createElement('input');
+            this.nodes.ariaLabelInput.classList.add(this.CSS.input);
+            this.nodes.ariaLabelInput.placeholder = 'Enter Aria-Label (Optional)';
+
+            // 4. Create a submit button
+            this.nodes.submitButton = document.createElement('button');
+            this.nodes.submitButton.innerText = 'Apply';
+            this.nodes.submitButton.classList.add(this.api.styles.button);
+            this.nodes.submitButton.style.marginTop = '10px';
+            this.nodes.submitButton.style.display = 'block';
+
+
+            // 5. Add a click handler to the button to apply the style
+            this.nodes.submitButton.addEventListener('click', () => {
+                this.dataEntered();
+            });
+
+            // Append elements to the container
+            this.nodes.container.appendChild(this.nodes.urlInput);
+            this.nodes.container.appendChild(this.nodes.ariaLabelInput);
+            this.nodes.container.appendChild(this.nodes.submitButton);
+
+
+            return this.nodes.container;
+        }
+
+        /**
+         * Called each time the actions panel becomes opened.
+         * FIX: This forces focus, preventing the panel from immediately closing.
+         */
+        onToolbarOpen() {
+            console.log("onToolbarOpen")
+            // Check if the URL input exists before trying to focus it
+            if (this.nodes.urlInput) {
+            this.nodes.urlInput.focus();
+            }
+        }
+
+
+        /**
+         * Callback executed when the Tool is added to the selected text.
+         * @param {Range} range - selection range
+         */
+        surround(range) {
+            console.log('Function: surround()');
+            if (!range) {
+                return;
+            }
+
+            // Store the range for later use in dataEntered()
+            this.currentRange = range;
+            console.log('  -> Range stored in this.currentRange (ready to create/edit)');
+
+            // NO link-breaking/unwrap logic here anymore.
+        }
+
+        /**
+         * Clean-up function when the toolbar closes
+         */
+        clear() {
+            console.log("clear")
+            // Clear the input fields when the tool is closed
+            if (this.nodes.urlInput) {
+                this.nodes.urlInput.value = '';
+            }
+            if (this.nodes.ariaLabelInput) {
+                this.nodes.ariaLabelInput.value = '';
+            }
+        }
+
+        /**
+         * Check whether the selected text is already a link.
+         * @param {Selection} selection
+         * @returns {boolean}
+         */
+        checkState(selection) {
+            console.log('Function: checkState()');
+            const aTag = this.api.selection.findParentTag(this.tag);
+
+            // If a link exists, we need to temporarily store the range for the modification
+            if (aTag) {
+            try {
+                // Get the current range (before inputs are focused)
+                const currentSelection = window.getSelection();
+                if (currentSelection.rangeCount > 0) {
+                    this.currentRange = currentSelection.getRangeAt(0);
+                    console.log('  -> Link found. Storing current range for modification.');
+                }
+            } catch (e) {
+                // If accessing selection fails, ignore it, but keep aTag active
+            }
+            }
+
+            // If a link tag is found, populate the input fields for editing
+            if (aTag && this.nodes.urlInput) {
+            this.nodes.urlInput.value = aTag.href.replace(/^.*:\/\//i, '//') || '';
+            this.nodes.ariaLabelInput.value = aTag.getAttribute('aria-label') || '';
+            console.log(`  -> Link found. Populating inputs (href: ${aTag.href}).`);
+            } else if (this.nodes.urlInput) {
+            // Clear inputs if no link is found
+            this.nodes.urlInput.value = '';
+            this.nodes.ariaLabelInput.value = '';
+            console.log('  -> No link found. Clearing inputs.');
+            }
+
+            return !!aTag;
+        }
+
+        /**
+         * Wraps the selected range with an <a> tag.
+         * @param {Range} range
+         * @param {HTMLElement} wrapper
+         */
+        wrap(range, wrapper) {
+            console.log("wrap")
+            range.surroundContents(wrapper);
+            this.api.selection.restore();
+        }
+
+/**
+         * Handler for applying the URL and aria-label to the selected link.
+         */
+        dataEntered() {
+            console.log('Function: dataEntered() (Apply button handler)');
+            const url = this.nodes.urlInput.value || '';
+            const ariaLabel = this.nodes.ariaLabelInput.value || '';
+
+            let aTag = this.api.selection.findParentTag(this.tag);
+
+            // Define if we are in an editing/creation state where we should proceed
+            const isCreatingNewLink = !aTag && url && this.currentRange;
+            const isModifyingExistingLink = !!aTag; 
+
+            // Proceed if we are creating a new link, or if we are modifying an existing one.
+            if (isCreatingNewLink || isModifyingExistingLink) {
+
+                // --- Link Creation/Modification Logic ---
+                if (isCreatingNewLink) {
+                    // 1. New link: use the stored range to wrap the text
+                    aTag = document.createElement(this.tag);
+                    this.currentRange.surroundContents(aTag);
+                    console.log('  -> New link created and text wrapped.');
+                } else {
+                    console.log('  -> Existing link being modified.');
+                }
+
+                // 2. Set Attributes
+                if (url) {
+                    // Only set/update the href if the URL input is not empty
+                    let finalUrl = url.startsWith('http') || url.startsWith('mailto') || url.startsWith('tel') ? url : `https://${url}`;
+                    aTag.setAttribute('href', finalUrl);
+                    aTag.setAttribute('target', '_blank'); 
+                    aTag.setAttribute('rel', 'nofollow noopener'); 
+                } else if (isModifyingExistingLink) {
+                    // If existing link and user cleared the URL, the link should stay (use the breaker tool to remove)
+                    // However, for good UX, if they clear the URL on an *existing* link, we should probably remove it.
+                    // Sticking to the requirement: Removal is for the breaker tool. We only modify attributes here.
+                    console.log('  -> Existing link edited, URL field cleared. Href attribute unchanged.');
+                }
+
+                if (ariaLabel) {
+                    aTag.setAttribute('aria-label', ariaLabel);
+                } else {
+                    aTag.removeAttribute('aria-label');
+                }
+
+                // 3. Clean up and Close
+                this.api.selection.restore(); 
+                this.api.inlineToolbar.close(); 
+
+            } else {
+                // This runs if: !aTag AND (!url OR !this.currentRange)
+                // (Attempted new link without URL or valid range)
+                console.log('  -> No action taken. Closing toolbar.');
+                this.api.inlineToolbar.close(); 
+            }
+
+            // Clear the stored range regardless of the outcome
+            this.currentRange = null; 
+        }
+
+        /**
+         * Helper function to get the link icon (Standard Link icon)
+         * @returns {string}
+         */
+        getToolbarIcon() {
+            console.log("getToolbarIcon")
+            return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M7.69998 12.6L7.67896 12.62C6.53993 13.7048 6.52012 15.5155 7.63516 16.625V16.625C8.72293 17.7073 10.4799 17.7102 11.5712 16.6314L13.0263 15.193C14.0703 14.1609 14.2141 12.525 13.3662 11.3266L13.22 11.12"></path><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16.22 11.12L16.3564 10.9805C17.2895 10.0265 17.3478 8.5207 16.4914 7.49733V7.49733C15.5691 6.39509 13.9269 6.25143 12.8271 7.17675L11.3901 8.38588C10.0935 9.47674 9.95706 11.4241 11.0888 12.6852L11.12 12.72"></path></svg>`;
+        }
+        }
+
+
+    </script>
+    <script>
+        var activeScenarioCode = ''
+        var activeField = ''
+        var rows
+        var upToDateRows // stored in memory while the page is used, eventually downloaded as CSV file
+        var changedScenarioCodes = [] // keeping track of which scnearios have been changed in this session
+
+        function getBlocksFromCSV(rows, rowHeaderKey, rowHeaderValue, colName){
+            console.log(rowHeaderKey, rowHeaderValue, colName)
+            const row = rows.find(r => r[rowHeaderKey] === rowHeaderValue);
+            if (!row) return
+            let htmlInput = row[colName]
+            console.log(htmlInput)
+            // create an initial array of objects based on the HTML elements
+            const parser = new DOMParser()
+            const doc = parser.parseFromString(htmlInput, "text/html")
+            let nodes = Array.from(doc.body.childNodes)
+
+            // convert to blocks for EditorJS
+            const initialBlocks = []
+            nodes.forEach(node =>{
+                if (node.nodeType !==1 && node.nodeType !==3) return 
+                if (node.nodeType == 3){
+                    // text nodes
+                    initialBlocks.push({
+                        type: "paragraph",
+                        data: {
+                            text: node.textContent.trim()
+                        }
+                    })
+                    return
+                }
+                switch (node.tagName.toLowerCase()) {
+                    case "br":
+                        break
+
+                    case "p":
+                        initialBlocks.push({
+                            type: "paragraph",
+                            data: {
+                                text: node.innerHTML.trim()
+                            }
+                        })
+                        break
+
+                    case "ul":
+                    case "ol":
+                        const lis = Array.from(node.querySelectorAll("li")).map(li => li.innerHTML.trim())
+                        initialBlocks.push({
+                            type: "list",
+                            data: {
+                                style: node.tagName.toLowerCase() === "ul" ? "unordered" : "ordered",
+                                items: lis
+                            }
+                        })
+                        break
+
+                    default:
+                        console.warn("Unsupported tag:", node.tagName, "... Only paragraphs and lists are currently supported.")
+
+                }
+            })
+            return {blocks: initialBlocks}
+        }
+
+        function openEditor(scenarioCode, field){
+            activeScenarioCode = scenarioCode
+            activeField = field
+            let initialData = getBlocksFromCSV(upToDateRows, "wert", scenarioCode, field)
+
+            let scenarioTitle = upToDateRows.find(r => r["wert"] === scenarioCode).name
+            document.querySelector("#scenarioTitle h3").innerHTML = scenarioTitle
+            document.querySelector("#scenarioTitle").classList.add("active")
+            const editor = new EditorJS({
+                holder: 'editorjs',
+                autofocus: true,
+                tools: {
+                    // header: {
+                    //     class: Header,
+                    //     inlineToolbar: true,
+                    //     config: {
+                    //     levels: [3],
+                    //     defaultLevel: 3
+                    //     }
+                    // },
+
+                    list: {
+                        class: EditorjsList,
+                        inlineToolbar: true,
+                        config: {checklist: false}
+                    },
+
+                    // table: {
+                    //     class: Table,
+                    //     inlineToolbar: true,
+                    //     config: {
+                    //     rows: 2,
+                    //     cols: 2
+                    //     }
+                    // },
+
+                    linkAria: {
+                        class: LinkWithAriaTool,
+                        inlineToolbar: true,
+                    },
+
+                    linkBreaker: {
+                        class: LinkBreakerTool,
+                        inlineToolbar: true,
+                    },
+
+                    paragraph: {
+                        class: Paragraph,
+                        inlineToolbar: ['linkAria', 'linkBreaker', 'bold', 'italic']
+                    },
+
+
+                },
+
+                /** Initial content (optional) */
+                data: initialData,
+
+                /** Simple configuration */
+                onReady: () => {
+                    console.log("Editor.js is ready!");
+                },
+                onChange: () => {
+                    document.querySelector("#saveBtn").disabled = false
+                    console.log("Content changed.");
+                }
+            });
+
+            async function saveChanges(scenarioCode, field){
+                try {
+                    const output = await editor.save();          // Get the editor content
+                    const blocks = output["blocks"]
+                    let htmlOutput = ""
+                    blocks.forEach((obj)=>{
+                        console.log(obj)
+                        if (obj.type == "paragraph"){
+                            htmlOutput += "<p>" + obj.data.text + "</p>"
+                        } else if (obj.type == "list"){
+                            // determine type of lilst
+                            let listType = obj.data.style == "unordered"? "ul" : obj.data.style == "ordered"? "ol" : obj.data.style == "checklist" ? "ul" : false
+                            htmlOutput += "<" + listType + ">"
+                            // collect items
+                            let listItems = obj.data.items.map(item => item.content)
+                            listItems.forEach((itemText, idx)=>{
+                                htmlOutput += "<li>" + itemText + "</li>"
+                                if (idx == listItems.length - 1){
+                                    htmlOutput += "</" + listType + ">"
+                                }
+                            })
+                        }
+                    })
+                    console.log(htmlOutput)
+                    // modify CSV file
+                    function updateRow(rows, rowHeaderKey, rowHeaderValue, colName, newValue) {
+                        return rows.map(row => {
+                            if (row[rowHeaderKey] === rowHeaderValue) {
+                                // create a new object with updated column
+                                return {
+                                    ...row,
+                                    [colName]: newValue
+                                };
+                            }
+                            // leave other rows unchanged
+                            return row;
+                        });
+                    }
+                    let updatedRows = updateRow(rows, "wert", scenarioCode, field, htmlOutput)
+                    upToDateRows = updatedRows
+                } catch (error) {
+                console.error('Saving failed:', error);
+                }            
+            }
+
+            document.querySelector("#saveBtn").disabled = true
+            document.querySelector('#saveBtn').addEventListener('click', ()=>{
+                saveChanges(activeScenarioCode, activeField)
+                closeEditor()
+                document.querySelector("#scenarioList").classList.remove("minimized")
+                document.querySelector("#scenarioTitle h3").innerHTML = ""
+                document.querySelector("#scenarioTitle").classList.remove("active")
+
+
+                document.querySelector("#downloadBtn").disabled = false
+                document.querySelector("#downloadBtn").addEventListener("click", ()=>{
+                    downloadNewCSV()
+                })
+                // adding scenario to the list of changed scenarios
+                if (!changedScenarioCodes.includes(activeScenarioCode)){changedScenarioCodes.push(activeScenarioCode)}
+                changedScenarioCodes.forEach((s)=>{document.querySelector("#changes_" + s).style.display="inline"})
+                })
+            document.querySelector("#cancelEditBtn").addEventListener('click', ()=>{
+                closeEditor()
+                document.querySelector("#scenarioList").classList.remove("minimized")
+                document.querySelector("#scenarioTitle h3").innerHTML = ""
+                document.querySelector("#scenarioTitle").classList.remove("active")
+            })
+            document.querySelector("#editorjs").focus()
+        }     
+
+        function closeEditor(){
+            document.querySelector("#editorjs").innerHTML = ""
+            document.querySelectorAll("#scenarioList button").forEach((b)=>{b.style.display="inline"})
+            document.querySelector("#editorButtons").style.display="none"
+            document.querySelector("#scenarioList").focus()
+        }
+
+        function startEdit(scenarioCode){
+            openEditor(scenarioCode, "text_overview")
+            document.querySelectorAll("#scenarioList button").forEach((b)=>{b.style.display="none"})
+            document.querySelectorAll(".hasChanged").forEach((b)=>{b.style.display="none"})
+            document.querySelector("#scenarioList").classList.add("minimized")
+            document.querySelector("#editorButtons").style.display="block"
+        }
+
+        function downloadNewCSV(){
+            let updatedCSV = $.csv.fromObjects(upToDateRows, {
+                separator: ";",
+                delimiter: '"'
+            });
+
+            try {
+                const BOM = "\uFEFF";
+                const csvWithBom = BOM + updatedCSV;
+                const blob = new Blob([csvWithBom], {type: 'text/csv;charset=utf-8;'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'text-tips-matrix (NEW - PLEASE RENAME).csv';
+                a.click();
+
+                URL.revokeObjectURL(url)
+
+            } catch (error) {
+                console.error("Saving failed:", error)
+            }
+        }
+
+        // Main functions start here
+        $.get( "../../Entscheidungshilfe-Lehre/texts_tips_matrix.csv", function(CSVdata) {
+            rows = $.csv.toObjects(CSVdata, {separator: ";"})
+            upToDateRows = rows.map((x)=>x) // copy
+
+            // make list of scenarios to choose from
+            rows.forEach((row, idx)=>{
+                // if (idx==0) return
+                let li = document.createElement("li")
+                li.innerHTML = `<span class='sCode'>${row.wert}</span> (${row.name})<button id='edit_${row.wert}' onclick=startEdit('${row.wert}')>Bearbeiten</button><span class='hasChanged' id='changes_${row.wert}'>--> Änderungen gespeichert!</span>`
+                document.querySelector("#scenarioList").appendChild(li)
+            }
+            )
+        })
+
+  </script>
+
+</body>
+</html>
