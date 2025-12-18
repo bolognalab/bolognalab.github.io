@@ -427,7 +427,9 @@
         let sc = JSON.stringify(specialCases)
         // combining everything into a result
         let URLstring = `?shownScenario=${artLV}-${adjFormat}-${syncInt}-${asyncTN}-x@[${specialCases}]`
-
+        if (artLV == "pr"){
+            URLstring = `?shownScenario=${artLV}-${adjFormat}-2-2-2@[${specialCases}]`
+        }
         console.log(URLstring)
         window.open("var_result.html"+URLstring, "_self")
     }
