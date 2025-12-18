@@ -218,13 +218,19 @@
         "hinweiseOnl": {
             "type": "asynchron",
             "title": "Hinweise zur Online-Teilnahme anbieten",
-            "content": "Studierende, die wenig Erfahrung mit Online-Veranstaltungen oder mit bestimmten Tools haben, können von Hinweisen für die Online-Teilnahme profitieren. Solche Tipps könnten u. a. umfassen:<ul><li>Mindestanforderungen und Empfehlungen für die Geräte und die Internetverbindung, die der/die Student:in für eine reibungslose Online-Teilnahme benötigt</li><li>die Auswahl eines ruhigen und privaten Orts für die Online-Teilnahme, wo die Person trotzdem laut sprechen darf</li><li>Verschiedene Ansichtsoptionen des Webkonferenzsystems (z. B. „Aufmerksamkeitsmodus“)</li><li>Anleitungen zu verschiedenen Tools und Funktionen</li><li>Unterschiedliche Modi der namentlichen Adressierung in Webkonferenzen - jeweils in Absprache mit den übrigen Teilnehmenden und gemäß institutionellen Vorgaben</li></ul>"
+            "content": "Studierende, die wenig Erfahrung mit Online-Veranstaltungen oder mit bestimmten Tools haben, können von Hinweisen für die Online-Teilnahme (z.B. als Checkliste) profitieren. Solche Tipps könnten u. a. umfassen:<ul><li>Mindestanforderungen und Empfehlungen für die Geräte und die Internetverbindung, die der/die Student:in für eine reibungslose Online-Teilnahme benötigt</li><li>die Auswahl eines ruhigen und privaten Orts für die Online-Teilnahme, wo die Person trotzdem laut sprechen darf</li><li>Verschiedene Ansichtsoptionen des Webkonferenzsystems (z. B. „Aufmerksamkeitsmodus“)</li><li>Anleitungen zu verschiedenen Tools und Funktionen</li><li>Unterschiedliche Modi der namentlichen Adressierung in Webkonferenzen - jeweils in Absprache mit den übrigen Teilnehmenden und gemäß institutionellen Vorgaben</li></ul>"
         },
         "hinweiseHyb": {
             "type": "asynchron",
             "title": "Hinweise zur hybriden Teilnahme anbieten",
-            "content": "Studierende, die wenig Erfahrung mit hybriden Veranstaltungen oder mit bestimmten Tools haben, können von Hinweisen für die Teilnahme an hybriden Kursen profitieren. Solche Tipps könnten u. a. umfassen:<ul><li>Mindestanforderungen und Empfehlungen für die Geräte und die Internetverbindung</li><li>die Auswahl eines ruhigen und privaten Orts für die Online-Teilnahme, wo die Person trotzdem laut sprechen darf</li><li>Anleitungen zu verschiedenen Tools und Funktionen</li><li>Für Online-Teilnehmende: Auf verschiedene Ansichtsoptionen des Webkonferenzsystems hinweisen (z. B. „Aufmerksamkeitsmodus“); Vorstellung und Absprache der unterschiedlichen Anrede-Modi im Online-Kontext</li><li>Für Präsenz-Teilnehmende: Kommunikationstipps für hybride Veranstaltungen, Namensschilder erstellen</li></ul><a href='https://www.uni-konstanz.de/en/asd/infopool/toolbox-lehre/hybride-lehre#c583034' aria-label='Beispiel: Checkliste für Studierende für die hybride Teilnahme'>Beispiel (Uni Kostanz): Checkliste Teilnahme an einer hybriden Veranstaltung</a>"
+            "content": "Studierende, die wenig Erfahrung mit hybriden Veranstaltungen oder mit bestimmten Tools haben, können von Hinweisen für die Teilnahme an hybriden Kursen (z.B. als Checkliste) profitieren. Solche Tipps könnten u. a. umfassen:<ul><li>Mindestanforderungen und Empfehlungen für die Geräte und die Internetverbindung</li><li>die Auswahl eines ruhigen und privaten Orts für die Online-Teilnahme, wo die Person trotzdem laut sprechen darf</li><li>Anleitungen zu verschiedenen Tools und Funktionen</li><li>Für Online-Teilnehmende: Auf verschiedene Ansichtsoptionen des Webkonferenzsystems hinweisen (z. B. „Aufmerksamkeitsmodus“); Vorstellung und Absprache der unterschiedlichen Anrede-Modi im Online-Kontext</li><li>Für Präsenz-Teilnehmende: Kommunikationstipps für hybride Veranstaltungen, Namensschilder erstellen</li></ul><a href='https://www.uni-konstanz.de/en/asd/infopool/toolbox-lehre/hybride-lehre#c583034' aria-label='Beispiel: Checkliste für Studierende für die hybride Teilnahme'>Beispiel (Uni Kostanz): Checkliste Teilnahme an einer hybriden Veranstaltung</a>"
         },
+        "hinweiseLabHyb": {
+            "type": "asynchron",
+            "title": "Hinweise zum Teilnahmemodus anbieten",
+            "content": "Aufgrund der Komplexität von Online- und Hybrid-Laborumgebungen haben Studierende neben dem Erwerb der fachlichen Kompetenzen oft auch Schwierigkeiten mit der Navigation im Format selbst. Hinweise (z. B. in Form einer Checkliste) zum Laborformat können den Studierenden helfen, eine gemeinsame Basis zu finden, sodass sie sich auf das Lernen konzentrieren können. Solche Tipps könnten technische Voraussetzungen, Softwarezugänge, Ablaufpläne enthalten sowie Hinweise darauf, wie man bei Bedarf Hilfe bekommt. Darüber Hinaus könnte ein kurzer technischer Testlauf zu Semesterbeginn – ein sogenannter „Dry Run“ mit einem vereinfachten Versuch – Hemmschwellen sowie technische Unsicherheiten reduzieren."
+        },
+        
         "notHyFlex": {
             "type": "asynchron",
             "title": "Hybrid ≠ HyFlex",
@@ -308,7 +314,7 @@
         "teamcharta": {
             "type": "asynchron",
             "title": "Ein Vertrag für Gruppenprojekte?",
-            "content": "Im Vorfeld eines längerfristigen Gruppenprojekts (z.B. forschendes Lernen, Laborarbeit, Arbeit im Feld usw.) können Gruppenmitglieder eine „Teamcharta“ (eine Art von „Gruppenvertrag“) nutzen, um gemeinsam die Normen, Ziele und Erwartungen für ihr Team festzulegen. Als Lehrperson können Sie den Studierenden eine Vorlage der Teamcharta (mit vordefinierten Fragen) zur Verfügung stellen und ihnen Anweisungen geben, warum und wie sie diese ausfüllen sollen. Die Anleitung zum Ausfüllen der Teamcharta sollte am besten projektspezifische Informationen enthalten (z. B. die erwarteten Leistungen am Ende des Gruppenprojekts). Auf dieser Grundlage ist es den Studierenden möglich,  sich Gedanken über die Aufteilung der Aufgaben zu machen. Die Gruppe kann die Teamcharta zu bestimmten Zeitpunkten während des Semesters oder bei auftretenden Konflikten überarbeiten und situationsbedingt anpassen.<br><a href='files/Exemplarische%20Teamcharta.pdf'>Beispiel: Exemplarische Teamcharta-Aktivität</a>"
+            "content": "Im Vorfeld eines längerfristigen Gruppenprojekts (z.B. forschendes Lernen, Laborarbeit, Arbeit im Feld usw.) können Gruppenmitglieder eine „Teamcharta“ (eine Art von Gruppenvertrag) nutzen, um gemeinsam die Normen, Ziele und Erwartungen für ihr Team festzulegen. Als Lehrperson können Sie den Studierenden eine Vorlage der Teamcharta (mit vordefinierten Fragen) zur Verfügung stellen und ihnen Anweisungen geben, warum und wie sie diese ausfüllen sollen. Die Anleitung zum Ausfüllen der Teamcharta sollte am besten projektspezifische Informationen enthalten (z. B. die erwarteten Leistungen am Ende des Gruppenprojekts). Auf dieser Grundlage ist es den Studierenden möglich,  sich Gedanken über die Aufteilung der Aufgaben zu machen. Die Gruppe kann die Teamcharta zu bestimmten Zeitpunkten während des Semesters oder bei auftretenden Konflikten überarbeiten und situationsbedingt anpassen.<br><a href='files/Exemplarische%20Teamcharta.pdf'>Beispiel: Exemplarische Teamcharta-Aktivität</a>"
         },
         "asyncGaeste": {
             "type": "asynchron",
@@ -329,6 +335,76 @@
             "type": "international",
             "title": "Sprachbarrieren abbauen",
             "content": "In einer internationalen Kurskollaboration kann die Muttersprache einiger Studierenden von der Unterrichtssprache abweichen. In diesem Fall kann die Verwendung mehrerer Darstellungsformen in Präsentationen (z. B. die Wiederholung der mündlich vermittelten Informationen in Textform) viel dazu beitragen, Sprachbarrieren abzubauen. Darüber hinaus kann es sinnvoll sein, Diskussionen in der Klasse stärker zu strukturieren (z. B. durch die Verwendung von <a class='inl' href='https://www.gse.harvard.edu/ideas/usable-knowledge/17/05/starting-conversation'>Diskussionsskripten</a>), damit diejenigen, die ihre Gedanken aufgrund einer Sprachbarriere langsamer äußern können, nicht ungerechtfertigt benachteiligt werden."
+        },
+        "digKollaborationLabSync": {
+            "type": "synchron",
+            "title": "Digitale Kollaboration systematisieren",
+            "content": "Wenn das Tandemsystem im Labor weit verbreitet ist, ist es sinnvoll, spezifische (digitale) Tools für die hybride Zusammenarbeit zu definieren: Innerhalb von Webkonferenzsystemen können Videokonferenzen und Breakout-Räume für die Teamarbeit im Voraus terminiert werden; digitale und frei zugängliche, datenschutzkonforme digitale Platformen und Tools (z. B. Nextcloud, CryptPad, OnlyOffice, oder Whiteboards) können für gemeinsames Mindmapping, Skizzieren oder Diagrammerstellung verwendet werden. Eine kursspezifische LMS-Domain ist hilfreich, um allgemeine Informationen, Richtlinien und Teamergebnisse für alle sichtbar zu speichern. Wichtig ist auch, immer eine Backup-Lösung parat zu haben, falls die Videokonferenz einmal ausfällt: Das können ein anderes Webkonferenzsystem oder das bevorzugte Lernmanagementsystem sein."
+        },
+        "digKollaborationLabAsync": {
+            "type": "asynchron",
+            "title": "Studierende bei der Strukturierung ihrer Zusammenarbeit unterstützen ",
+            "content": "Es bietet sich an, die experimentellen Aufgaben im Voraus (z.B. als Handout auf gemeinsamen LMS) klar und spezifisch zu benennen und die Rolle einer gelungenen Kooperation zwischen den Tandempartner:innen zu verdeutlichen. Eine Checkliste zum Abhaken ist ein einfaches, visuell unterstützendes Werkzeug. Ist diese Checkliste in einem gemeinsam bearbeitbaren Dokument, kann jedes Teammitglied im Tandem zu jeder Zeit den Stand nachverfolgen und ggf. Einfluss nehmen. Für die langfristige Zusammenarbeit zwischen Studierendengruppen bietet auch eine <a href='files/Exemplarische%20Teamcharta.pdf' class='inl' title='Beispiel einer Teamcharta (PDF)'>Teamcharta (Beispiel)</a> auch die Möglichkeit, die Normen, Ziele und Erwartungen für ihr Team festzulegen."
+        },
+        "rollenverteilungLabV1": {
+            "type": "synchron",
+            "title": "Sinnvolle Rollen- und Aufgabenverteilungen entwickeln",
+            "content": "Für die Teamarbeit zwischen vor Ort- und Remote-Teilnehmenden sollten die Rollen (1) klar definiert und kommuniziert werden und (2) inhaltlich so gestaltet werden, dass sie vergleichbar anspruchsvoll und unverzichtbar für das Endergebnis sind. Hier hilft es klar schriftlich und mündlich zu kommunizieren, dass sowohl die theoretischen Aufgaben (protokollieren, analysieren, dokumentieren) als auch die physische Durchführung eine bedeutende, verantwortungstragende Einheit bilden. Jedes Teammitglied muss also sich auf die gewissenhafte Bearbeitung des anderen verlassen können. Werden Sinn und Mehrwert jeder Rolle und Aufgabe offengelegt, können die Eigenverantwortung, die Motivation und die Kooperation gesteigert werden, sowie beide Team-Mitglieder gleichsam aktiviert und zur Mitarbeit angeregt."
+        },
+        "rollenverteilungLabV2": {
+            "type": "synchron",
+            "title": "Sinnvolle Rollen- und Aufgabenverteilungen entwickeln",
+            "content": "Zu jedem Zeitpunkt sollten die Rollen der Studierenden, Lehrenden und ggf. Tutor:innen klar sein. Während Präsenz-Studierende bei einer hybriden Durchführung die reale Anlage bedienen, können z.B. die Remote-Studierenden mit dem Zwilling arbeiten. Diese Rollen könnten sogar mithilfe einer <a href='files/Exemplarische%20Teamcharta.pdf' class='inl' title='Beispiel einer Teamcharta (PDF)'>Teamcharta (Beispiel)</a> von Gruppenmitglieder gemeinsam definiert werden. Sinnvoll ist auch, die Rollen mittels kleiner Aufgabenpakete zu definieren und zu strukturieren. So werden die Studierenden transparent durch die verschiedenen Phasen – Simulation, Experiment, Vergleich, Reflexion – begleitet. Nicht zuletzt ist es gut, die Bedeutung jeder Rolle für das Endergebnis klar zu kommunizieren; so können die Eigenverantwortung, die Motivation und die Kooperation aller Team-Mitglieder gesteigert werden."
+        },
+        "rollenverteilungLabV3": {
+            "type": "synchron",
+            "title": "Sinnvolle Rollen- und Aufgabenverteilungen entwickeln",
+            "content": "Die Arbeit in Tandems oder Kleingruppen von zwei bis drei Personen kann die Kooperation der Studierenden untereinander fördern. Die Rollendefinitionen und Aufgaben sowie die Bedeutung jeder Rolle für die Zusammenarbeit sollten klar (am besten schriftlich) kommuniziert werden. Hier könnte z.B. ein:e Operator:in die Steuerung der Versuchsanlage übernehmen, während ein:e Analyst:in die Dokumentation, Datenanalyse und theoretische Reflexion verantwortet und ein:e Kommunikator:in für die Aufbereitung und Präsentation der Ergebnisse zuständig ist. Diese Rollen könnten sogar mithilfe einer <a href='files/Exemplarische%20Teamcharta.pdf' class='inl' title='Beispiel einer Teamcharta (PDF)'>Teamcharta (Beispiel)</a> von Gruppenmitglieder gemeinsam definiert werden."
+        },
+        "zeitmanagementHybLab": {
+            "type": "synchron",
+            "title": "Zeitmanagement beachten",
+            "content": "Beim Zeitmanagement von hybriden Laboren lohnt sich realistischer Blick: Hybride Formate nehmen oft 10-20% mehr Zeit für Umschalten, Technikprobleme und Feedbackschleifen in Anspruch – daher unbedingt Pufferzeiten für einen entspannten Ablauf einplanen."
+        },
+        "warmupLab": {
+            "type": "synchron",
+            "title": "Hemmungen in der hybriden Umgebung abbauen",
+            "content": "Kurze Eisbrecher- oder Warm-up Einheiten wie beispielsweise eine kleine Probe-Übung können zu Beginn der Laboreinheit genutzt werden, um sich vorzustellen und erste Hemmungen im sozialen Kontakt und mit der Software abzubauen. Wichtig ist dies vor allem bei Studierenden, die sich nicht kennen und/oder welche das Webkonferenzsystem zum ersten Mal verwenden. Die Lehrperson kann ein einen kurzen Fragenkatalog oder Mini-Quests schriftlich vorbereiten und für diese Kennenlern- und Probe-Einheit verfügbar machen."
+        },
+        "feedbackLabHyb": {
+            "type": "synchron",
+            "title": "Feedback-Schleifen zwischen Lehrenden und Studierenden aufrechterhalten",
+            "content": "Trotz schriftlicher Anweisungen, Leitfäden, Handouts als Orientierungs- und Kontrollpunkte sollten alle Studierenden jederzeit das Gefühl haben, im Präsenz-Labor und online von Ihrer Lehrkraft betreut zu werden. Laborleitung und Tutor:innen rotieren virtuell zwischen den einzelnen Break out-Räumen mit den Tandems und sind auch im physischen Labor für Fragen und bei Problemen ansprechbar. Zusätzlich können vor allem in längeren Laborsitzungen kurze Zwischenstopps im Plenum mit gemeinsamer Ergebnisteilung angedacht und im Zeitplan festgehalten werden. Hier haben alle Studierenden die Möglichkeit, ihre Entwicklung zu präsentieren, aber auch Probleme oder Unsicherheiten zu diskutieren und ihre Ergebnisse mit jenen anderer Tandems abzugleichen."
+        },
+        "feedbackLabOnl": {
+            "type": "synchron",
+            "title": "Feedback-Schleifen zwischen Lehrenden und Studierenden aufrechterhalten",
+            "content": "Trotz schriftlicher Anweisungen, Leitfäden, Handouts als Orientierungs- und Kontrollpunkte sollten alle Studierenden während synchronen Laborsitzungen — wenn es sie gibt — das Gefühl haben, jederzeit von Ihrer Lehrkraft betreut zu werden. Formatives Feedback kann z.B. durch Zwischenstopps im Plenum oder durch Tutor:innen in den Breakout-Raum im Webkonferenzsystem gegeben werden.  Sinnvoll ist hier, den Fokus nicht auf perfekte Ergebnisse zu richten, sondern die Interpretation, Fehleranalyse, Problembehebung und Transfer auf andere Bereiche ins Zentrum zu rücken. Neben Plenumsdiskussionen oder Gruppendiskussionen lassen sich auch Lab Notebook-Modelle (z. B. OneNote, GitLab u. a.) in eine konstruktive Feedback-Kultur integrieren, in der Studierende in Peergruppen die Laborberichte und Ergebnispräsentationen anderer rückmelden."
+        },
+        "prePostLab": {
+            "type": "asynchron",
+            "title": "Pre- und Post-Lab wirksam einsetzen",
+            "content": "Eine Dreiteilung von Lehr-/Lernneinheiten (Pre-Lab → Laborsitzung → Post-Lab) stellt für die meisten Laborformate eine klare und effektive Struktur dar. Im sogenannten Pre-Lab eignen sich die Studierenden das notwendige Vorwissen durch Textlesen, interaktive Lernvideos, Simulationen oder auch Tests. Auch Sicherheitsunterweisungen können als Video und Quiz verpflichtend gemacht werden, bevor der Laborzugang gewährt wird. Während der synchronen Sitzungen wird die Laborarbeit durch Leitfragen und Arbeitsschritte strukturiert. Das Post-Lab fungiert als Raum für Auswertung, Reflexion und Transfer, indem Ergebnisse verglichen, Unsicherheiten diskutiert und Rückbezüge zur Theorie hergestellt werden. Insbesondere in hybriden oder Remote-Umgebungen ist es wichtig, den asynchronen Raum vor und nach dem Labor zu nutzen, um eine Gemeinschaft aufzubauen und die langfristige Zusammenarbeit zwischen Laborpartner:innen und -gruppen zu unterstützen."
+        },
+        "feedbackUmFormatLab": {
+            "type": "asynchron",
+            "title": "Nachbereitung um Feedback zum Format erweitern",
+            "content": "Nachbereitung bedeutet zum einen die Ergebnissicherung, etwa durch eine gemeinsame Datenbank oder ein digitales Laborjournal, zum anderen auch die Evaluation des Formats. Kurze Feedbackfragebögen oder strukturierte Reflexionsaufgaben geben Hinweise auf technische, didaktische und organisatorische Verbesserungsmöglichkeiten und erhöhen zugleich die Transparenz des Lernprozesses. Eine kontinuierliche Qualitätssicherung durch automatische Gerätetests, Logfiles und Nutzungsstatistiken unterstützt die nachhaltige Integration neuer Laborformate in das Curriculum."
+        },
+        "zwillingeVorNachBereitung": {
+            "type": "asynchron",
+            "title": "Digitale Zwillinge in die Vor- und Nachbereitung einbetten",
+            "content": "Im Vorfeld der Laborübung können Studierende mit dem digitalen Zwilling üben und Hypothesen entwickeln, bevor im Labor die Überprüfung an der realen Anlage erfolgt. So wird klar, dass die Arbeit mit dem digitalen Zwilling eine wichtige Voraussetzung für die praktische Übung und damit gleichwertig in Bezug auf Kompetenzentwicklung und Lernfortschritt ist. Darüber hinaus können andere für das Experiment benötigte Materialien (z. B. Versuchsanleitung, Messblätter, ausfüllbare Tabellen, Sicherheitsinformationen etc.) vorab digital bereitgestellt werden."
+        },       
+        "tipCode": {
+            "type": "asynchron",
+            "title": "Title",
+            "content": "tip"
+        },   
+        "simRealitaet": {
+            "type": "synchron",
+            "title": "Verknüpfung von Simulation und Realität",
+            "content": "Aus didaktischer Perspektive ist es sinnvoll, den digitalen Zwilling nicht als Ersatz, sondern als Ergänzung zum realen Experiment zu bewerten, etwa indem Hypothesen aufgestellt und anschließend Simulationsergebnisse mit realen Versuchsdaten verglichen werden. Außerdem eignen sich digitale Zwillinge für Szenarien-basiertes Lernen, bei dem sich Studierende mit vorgegebenen, konkreten Szenarien auseinandersetzen und somit die Hypothesenbildung und das kritische Denken gefördert wird. Dabei können die Szenarien und ihr Schwierigkeitsgrad vom Basismodell (z. B. Grundparameter verändern) bis hin zu komplexeren Aufbaumodellen (z. B. Störungssituationen, Optimierungsaufgaben) reichen."
         }
     }
 }

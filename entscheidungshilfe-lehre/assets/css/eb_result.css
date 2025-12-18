@@ -242,3 +242,14 @@ button:disabled {
         justify-content: space-between
     }
 }
+
+/* other relevant items on result page */
+.fullImg {
+    text-align: center;
+}
+.fullImg > img {
+    height: 25em;
+}
+.spacedList > li {
+    margin-bottom: 0.5em;
+}

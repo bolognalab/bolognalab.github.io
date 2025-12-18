@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/eb.css" />
   <link rel="stylesheet" href="assets/css/eb_app.css" />
   <link rel="stylesheet" href="assets/css/eb_result.css">
-    <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.csv.js"></script>
   <script async src="https://tally.so/widgets/embed.js"></script>
   <style>
@@ -103,7 +103,7 @@
                 <h4 id="scenarioSubtitle">mit asynchroner Teilnahme-Alternative</h4>
                 <div class="blockContent">
                     <img id="descImg" class="descImg" src="images/blurry/pic05.jpg"/>
-                    <p class="descText"></p>
+                    <div class="descText"></div>
                 </div>
             </div>
             <div id="resTechn" class="block techn">
@@ -304,7 +304,8 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     })
 
     // Angaben ändern usw.
-    if (asyncIntValue != "asyncInt-x"){
+    // Anmerkung: diese Option wird für Labore nicht angezeigt, sondern nur "Zurück zur Auswahl"
+    if (asyncIntValue != "asyncInt-x" && shownScenario.split("-")[0] != "pr"){
         showProvidedAnswers(previousAnswers)
     } else {
         let rcc = document.querySelector("#resultAndChangeContainer")
@@ -319,7 +320,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     }
 
     let raumLink = tech_links[scenarioValue]['raum-' + syncIntValue]
-    if (raumLink == "COMINGSOON"){
+    if (raumLink == "<<COMING SOON>>"){
         document.querySelector("#refToRaumkonzept").innerHTML = "Ein interaktives Raummodell mit Empfehlungen folgt bald."
         if (asyncIntValue != "asyncInt-x"){
             document.querySelector(".RKlink").style.display="none"
@@ -329,7 +330,10 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             
         }
             
-    } else if (raumLink != "digital"){
+    } else if (raumLink.includes("<<FULLIMG>>")){
+        document.querySelector("#resTechn .RKlink").style.display = "none"
+
+    } else if (raumLink != "<<DIGITAL>>"){
         document.querySelector("#raumIFrame").src = raumLink
         let techButton = document.createElement("button")
         techButton.innerHTML = "Interaktives Raummodell"
@@ -365,7 +369,13 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     let overviewText = theseTexts['overviewText']
     let overviewAsyncTNText = theseTexts['overviewAsyncTNText']
     let technPoints = theseTexts['technikText']
-    let fullTechnList = technPoints.split(',')
+    let fullTechnList
+    if (!technPoints.includes("<<HTML>>")){
+        fullTechnList = technPoints.split(',')
+    } else {
+        fullTechnList = [technPoints]
+    }
+
     let syncIntText =  theseTexts[syncIntValue + "Text"]
     let asyncTNText =  theseTexts[asyncTNValue + "Text"]
     let asyncIntText =  theseTexts[asyncIntValue + "Text"]
@@ -378,15 +388,49 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
 
     if (true){
         // gathering tips
+
+        // case where the tips that would be added by default need to be excluded (e.g. labs) -- in those cases "<excludeDefault>" is written in the cell of the CSV file
+        let tipsSyncIntNative, tipsSyncIntFromDefault, tipsAsyncIntNative, tipsAsyncIntFromDefault, tipsAsyncTNNative, tipsAsyncTNFromDefault
+        // console.log(tip_matching[scenarioValue]["tips_" + asyncIntValue].split(">"))
+        //--- syncInt
+        if (tip_matching[scenarioValue]["tips_" + syncIntValue].includes("<excludeDefault>")){
+            tipsSyncIntNative = tip_matching[scenarioValue]["tips_" + syncIntValue].split(">")[1]
+            tipsSyncIntFromDefault = "-"
+        } else {
+            tipsSyncIntNative = tip_matching[scenarioValue]["tips_" + syncIntValue]
+            tipsSyncIntFromDefault = tip_matching["de-default"]["tips_" + syncIntValue]
+        }
+        //--- asyncInt: handled later, because of the case asyncInt=x
+
+        //--- asyncTN
+        if (tip_matching[scenarioValue]["tips_" + asyncTNValue].includes("<excludeDefault>")){
+            tipsAsyncTNNative = tip_matching[scenarioValue]["tips_" + asyncTNValue].split(">")[1]
+            tipsAsyncTNFromDefault = "-"
+        } else {
+            tipsAsyncTNNative = tip_matching[scenarioValue]["tips_" + asyncTNValue]
+            tipsAsyncTNFromDefault = tip_matching["de-default"]["tips_" + asyncTNValue]
+        }
+
         syncTips = []
         tipsGeneral = tip_matching[scenarioValue]["tips_general"]
-        tipsSyncInt = tip_matching[scenarioValue]["tips_" + syncIntValue] + ", " + tip_matching["de-default"]["tips_" + syncIntValue]
-        tipsAsyncTN = tip_matching[scenarioValue]["tips_" + asyncTNValue] + ", " + tip_matching["de-default"]["tips_" + asyncTNValue]
+        tipsSyncInt = tipsSyncIntNative + ", " + tipsSyncIntFromDefault
+        tipsAsyncTN = tipsAsyncTNNative + ", " + tipsAsyncTNFromDefault
         if (asyncIntValue != "asyncInt-x"){
-            tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+            if (tip_matching[scenarioValue]["tips_" + asyncIntValue].includes('<excludeDefault>')){
+                tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue].split(">")[1]
+            } else {
+                tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+            }
+            
         } else {
-            tipsAsyncInt = tip_matching[scenarioValue]["tips_asyncInt-1"] + ", " + tip_matching["de-default"]["tips_asyncInt-1"]
+            // case where we arrive from direct filter; no info on asyncInt, default to asyncInt=1
+            if (tip_matching[scenarioValue]["tips_asyncInt-1"].includes('<excludeDefault>')){
+                tipsAsyncInt = tip_matching[scenarioValue]["tips_asyncInt-1"].split(">")[1]
+            } else {
+                tipsAsyncInt = tip_matching[scenarioValue]["tips_asyncInt-1"] + ", " + tip_matching["de-default"]["tips_asyncInt-1"]
+            }
         }
+        console.log(tipsGeneral, "-----", tipsSyncInt, "-----",  tipsAsyncTN, "-----", tipsAsyncInt)
         
         
 
@@ -473,6 +517,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
             fullTipList = fullTipList.filter( t => !["aufzNichtErsatzVL", "aufzErsatzVL", "aufzKurzvideosVL", "aufzNichtErsatzSE", "aufzErsatzSE", "aufzKurzvideosSE"].includes(t))
         }
         fullTipList = fullTipList.filter( t => !omittedTips.includes(t))
+        console.log(fullTipList)
         syncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "synchron")
         asyncTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "asynchron")
         intlTipList = fullTipList.filter((tipCode)=>all_tips[tipCode]["type"] == "international")
@@ -516,6 +561,10 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
     syncTipList.forEach(function(tipCode){
         addTip(tipCode, syncTipsCont)            
     })
+    // -- for labs (because there is no differentiation between synchronous variables): keep generic text:
+    if (shownScenario.split("-")[0] == "pr"){
+        document.querySelector("#resSync div.descText").innerHTML = "Die folgenden Tipps könnten Ihnen bei der Didaktik und Organisation von <b>synchronen</b> Laborsitzungen helfen:"
+    }
 
     // Async block
     if (asyncIntValue == "asyncInt-x"){
@@ -552,6 +601,11 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         }
     }
     
+    // -- for labs (because there is no differentiation between asynchronous and synchronous variables): keep generic text:
+    if (shownScenario.split("-")[0] == "pr"){
+        document.querySelector("#resAsync div.descText").innerHTML = "Die folgenden Tipps könnten Ihnen bei der <b>asynchronen</b> Kursgestaltung helfen:"
+    }
+
     let asyncTips = document.querySelector("#resAsync > .blockContent > .tCont")
     asyncTipList.forEach(function(tipCode){
         if (tipCode != scenario){
@@ -589,20 +643,28 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         // document.querySelector("#result").removeChild(document.querySelector("#resAsync"))
         // document.querySelector("#result").removeChild(document.querySelector("#resIntl"))
         document.querySelector("#result").removeChild(document.querySelector("#resMore"))
-        document.querySelector(".techn.block").classList.add("maxed")
+        if (!raumLink.includes("<<FULLIMG>>")){
+            document.querySelector(".techn.block").classList.add("maxed")
+        }
+        
     }
 
     // Medientechnik block
     fullTechnList.forEach(function(s){
-        let li = document.createElement('li')
-        li.innerHTML = s
-        document.querySelector("#propertyList").appendChild(li)
-        if (s == 'COMINGSOON'){
-            document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4> Die medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
-        } else if (s == 'digital'){
-            document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4>Dieses Lehrszenario findet in rein-digitalem Format statt.</p>'
-            document.querySelector(".techn.block").parentNode.removeChild(document.querySelector(".techn.block"))
+        if (!s.includes("<<HTML>>")){
+            let li = document.createElement('li')
+            li.innerHTML = s
+            document.querySelector("#propertyList").appendChild(li)
+            if (s == '<<COMING SOON>>'){
+                document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4> Die medientechnischen Voraussetzungen für dieses Szenario sind noch nicht veröffentlicht.</p>'
+            } else if (s == '<<DIGITAL>>'){
+                document.querySelector(".techn .descText").innerHTML = '<p><h4>Medientechnische Voraussetzungen</h4>Dieses Lehrszenario findet in rein-digitalem Format statt.</p>'
+                document.querySelector(".techn.block").parentNode.removeChild(document.querySelector(".techn.block"))
+            }            
+        } else {
+            document.querySelector("#resTechn > .blockContent > div.descText").innerHTML = fullTechnList[0].split("<<HTML>>")[1]
         }
+
     }
 
     )

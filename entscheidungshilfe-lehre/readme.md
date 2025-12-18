@@ -1,6 +1,18 @@
 # Entscheidungshilfe Online & Hybride Lehre
 *ein Tool des Berliner Netzwerks Hybride Lehre*
 
+## Impressum
+Software-Programmierung: Natalia Spitha*
+Fragenkatalog & Didaktik: Natalia Spitha & Judith Stelter**
+Raumkonzepte: Philipp Kapser*
+
+*Humboldt-Universität zu Berlin
+**Berliner Hochschule für Technik
+
+Entwickelt im Rahmen des berlinweiten Verbundprojekts "Netzwerk Hybride Lehre" (Land Berlin / QIO 2022-2025)
+
+Der Quellcode ist unter der GNU General Public License Version 3.0 (GPL-3.0) lizenziert. Alle originalen Texte und Bilder stehen – sofern nicht anders angegeben – unter der Creative Commons Namensnennung – Weitergabe unter gleichen Bedingungen 4.0 International Lizenz (CC BY-SA 4.0).
+
 ## Zielgruppe
 ### Ziel und Zielgruppe des Tools
 
@@ -51,6 +63,24 @@ Jedes mögliche Ergebnis wird im Programm mit einem Code \[xx-yy...y-#-#-#\] bes
 
 Die aktuelle Liste der Lernszenarien (alle Kombinationen) befindet sich in der Datei [**szenarien.csv**](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/szenarien.csv/).
 
+#### Ergebnisseiten direkt testen:
+Um eine Ergebnisseite direkt anzuzeigen (z.B. um zu überprüfen, ob sie ordnungsgemäß funktioniert), kann die URL der Ergebnisseite mit der Code eines Szenarios ergänzt werden, z.B.:
+```
+...entscheidungshilfe-lehre/var_result.html?shownScenario=se-hyb-2-2-2
+```
+
+Es ist auch möglich, die Anzeige der **Sonderbedingungen** (s.u.) auszulösen, indem Sie die entsprechenden Nummern wie folgt in eckige Klammern setzen. Zum Beispiel entspricht die nummer 0 die Sondernbedingung zur Internationalen Kollaboration:
+```
+...entscheidungshilfe-lehre/var_result.html?shownScenario=se-hyb-2-2-2@[0]
+```
+Die Nummer, die jeder Sondernbedingung zugeordnet sind, können in der Datei ``setQuestionsAndRules.py`` gesehen werden. Mehrere Sonderbedingungen können zur URL mit Kommas hinzugefügt werden, z.B. ``@[0,5]``.
+
+Nicht zuletzt können auch "Weitere Ergebnisse" gezeigt werden, indem ein "Top Tier" zur URL hinzugefügt werden, z.B.:
+
+```
+...entscheidungshilfe-lehre/var_result.html?shownScenario=se-hyb-2-2-2@[0]&topTier=["se-hyb-2-1-2@[0]", "se-hyb-2-2-2@[0]", "se-hybrem-2-1-2@[0]"]
+```
+
 #### Blöcke
 
 Jedes angezeigte Ergebnis des Entscheidungsbaums wird in mindestens **5 Blöcken** aufgeteilt (s. Abbildung), jeder mit einem kleinen Text und Inhalten wie Tipps. Die Blöcke sind folgende:  
@@ -59,30 +89,25 @@ Jedes angezeigte Ergebnis des Entscheidungsbaums wird in mindestens **5 Blöcken
     Der Titel des Lernszenarios wird wie von der Datei **texts_tips_matrix.xlsx** (im Programm ist das eine CSV-Datei, text_tips_matrix.csv) aufgerufen. Anmerkung: der Titel ändert sich in der Regel nicht, wenn die Variablen für synchrone Interaktion (_syncInt_), asynchrone Teilnahme (_syncTN_) oder asynchrone Interaktion (_asyncInt_) sich ändern – es hängt nur von der Art der LV und dem „Format“ ab, mit _einer Ausnahme:_ wenn die Variable für asynchrone Teilnahme den Wert von 3 hat („asynchrone Teilnahme als möglicher Ersatz der synchronen Teilnahme“), dann erscheint als Untertitel der Text „mit asynchroner Teilnahme-Alternative“, damit es für die Lehrperson deutlicher wird.  
 
 - **Block 1 - Übersicht:**  
-    Hier steht eine Beschreibung des Lehr-Lernszenarios und idealerweise auch ein schönes, repräsentatives Bild dazu.  
-    <br/>Noch nicht implementierte Idee: **Begründung der Wahl**. Es könnte nützlich für den User sein (in Use-Case 1) zu verstehen, wie die Beantwortung der Fragen das Ergebnis beeinflusst hat. Dafür müsste das Programm in ein paar Sätze erklären, warum für bestimmte Antworten ein bestimmter Vorschlag gemacht wird. Das zu automatisieren braucht aber zusätzliche Arbeit und könnte später in der Entwicklung passieren.  
+    Hier steht ein Beschreibungstext des Lehr-Lernszenarios und idealerweise auch ein schönes, repräsentatives Bild dazu. 
 
-- **Block 2 – Tipps für die synchrone Interaktion**  
+- **Block 2 – Medientechnische Voraussetzungen**
+    Hier werden in Textform wichtige Raum- und Medientechnikvoraussetzungen kurz beschrieben, die mithilfe von Bildern und 3D-Raummodellen abgebildet werden. Zusätzlich können für bestimmte Fälle Links zu interessanten Beispiele oder neue, inspirierende Raumkonzepte angegeben werden. In manchen Fällen (z.B. Labore hat dieser Block einen anderen Titel.)
+
+- **Block 3 – Tipps für die synchrone Interaktion**  
     Hier steht ein kleiner Text, der den Umfang der synchronen Interaktion (je nach den Angaben der Lehrenden) grob erklärt. Nebenbei erscheinen Tipps für die synchrone Interaktion. Die Inhalte dieses Blocks hängen hauptsächlich von dem Parameter „Synchrone Interaktion“ des Ergebnisses (erste der drei Zahlen im Code).  
 
-- **Block 3 – Tipps für die asynchrone Interaktion**
+- **Block 4 – Tipps für die Kursplanung**
     Hier wird ein Überblick der asynchronen Teilnahme und Interaktion gegeben zusammen mit Tipps für die Strukturierung der asynchronen Kurskomponenten. Die Inhalte dieses Blocks hängen sowohl von dem Parameter „Asynchrone Teilnahme“ und dem Parameter „Asynchrone Interaktion“ ab (zweite und dritte Zahl im Code).  
 
-- **Block 4 – Medientechnische Voraussetzungen**
-    Hier werden in Textform wichtige Raum- und Medientechnikvoraussetzungen kurz beschrieben, die dann in einem PDF-Dokument detailliert und abgebildet werden. Zusätzlich können für bestimmte Fälle Links zu interessanten Beispiele oder neue, inspirierende Raumkonzepte angegeben werden.   Die genaue Struktur der technischen Informationen steht noch nicht fest; die aktuelle Idee ist, dass auf einer Seite des PDFs die folgenden abgebildet werden:
-  - die notwendige Raumausstattung
-  - die technischen Komponenten und ihre Verbindung/Set-Up miteinander, und
-  - eine Liste von Tipps für Lehrende
 
 - **Block 5 – Weitere Ergebnisse**  
     Hier werden alternative Szenarien gezeigt, falls sie auch je nach den Angaben der Nutzer\*innen relevant sind. Der Text dazu ist immer gleich „Folgende Lehr-/Lernszenarien könnten auch für Sie passend sein:“
 
-![](dokumentation/img_5Blocks.png)
-*Abbildung 1. Die 5 Blöcke der Ergebnisseite*
 
 #### Texte und ihre Zuordnung
 
-Die Texte für Blöcke 1, 2 und 3 befinden sich in der Quelldatei [texts_tips_matrix.csv](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/texts_tips_matrix.csv) und werden automatisch je nach den Parametern des Ergebnisses abgerufen und angezeigt. In der Quelldatei enthalten die ersten zwei Spalten der Tabelle das allgemeine Format des Szenarios und die anderen Spalten die Texte, die in jedem Block passen. Weil der angezeigte Text von den Werten der Parameter ``syncInt``, ``asyncTN`` und ``asyncInt`` abhängt, gibt es für jedes allgemeine Format verschiedene Alternativen:
+Die Texte für Blöcke 1-4 (in HTML-Format, inkl. Tags) sowie die Information zur modularen Zuordnung der Tipps befinden sich in der Quelldatei [texts_tips_matrix.csv](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/texts_tips_matrix.csv) und werden automatisch je nach den Parametern des Ergebnisses abgerufen und angezeigt. In der Quelldatei enthalten die ersten zwei Spalten der Tabelle das allgemeine Format des Szenarios und die anderen Spalten (bis zur Spalte "raum_syncInt-2") die Texte bzw. Links, die in jedem Block passen. Weil der angezeigte Text von den Werten der Parameter ``syncInt``, ``asyncTN`` und ``asyncInt`` abhängt, gibt es für jedes allgemeine Format verschiedene Alternativen, die angezeigt werden, wenn eine bestimmte Variable einen bestimmten Wert hat, z.B.:
 
 Tabelle 1 - Struktur der Datei "texts_tips_matrix" (für Texte) mit einem Beispiel
 
@@ -93,15 +118,20 @@ Tabelle 1 - Struktur der Datei "texts_tips_matrix" (für Texte) mit einem Beispi
 | vl-rem | Standort-übergreifende Kollaborative Vorlesung (Partnerkurse) | Dieser Text wird für alle Ergebnisse mit „vl-rem-#-#-#“ in Block 1 erscheinen. | \-  | …   | Dieser Text wird den oberen Text überschreiben. | …   |
 | …   | …   | …   | …   | …   | …   | …   |
 
-Wenn man also den Inhalt der Texte korrigieren oder ergänzen möchte, würde man die Quelldatei [texts_tips_matrix.csv](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/texts_tips_matrix.csv) bearbeiten.
 
-Anmerkung: weil die Parameter ``asyncTN`` und ``asyncInt`` sich beide auf dem Block 3 beziehen, werden die beiden Texte nebeneinander gezeigt (s. [Abbildung: Beispiel Szenario und Quellen verschiedener Inhalte](#contentSrcs) ).
+Im Quellcode werden unterschiedliche Teile der Datei "texts_tips_matrix" unterschiedlich behandelt, weshalb die Information in der CSV-Datei nicht immer ohne Kontext gut zu verstehen ist. Manchmal werden z.B. bei den mit dem medientechnischen Block bezogenen Spalten Formulierungen in spitzen Klammern verwendet; die spezielle Funktionen des Programms "aktivieren", e.g. 
+* *\<\<COMING SOON\>\>* = hier muss ein bestimmter Text angezeigt werden, der sagt, dass Information folgt
+* *\<\<FULLIMG\>\>* = hier muss ein Bild anstatt von einem Sketchfab Link angezeigt werden, oder 
+* *\<\<DIGITAL\>\>* = hier handelt es sich um ein Online-Konzept (ohne medientechnischen Block)
+
+Wenn man also den Inhalt der Texte korrigieren oder ergänzen möchte, würde man die Quelldatei [texts_tips_matrix.csv](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/texts_tips_matrix.csv) bearbeiten und **IMMER am Ende lokal testen**, dass alles richtig angezeigt wird. 
+
 
 #### Tipps und ihre Zuordnung
 
 Für jedes Lehr-/Lernszenario erscheinen im Ergebnis eine bestimmte Reihe von didaktischen Tipps. Die Tipps sind in zwei Blöcken kategorisiert, einer „für die synchrone Interaktion“ und einer „für die asynchrone Teilnahme.“ Unter bestimmten „Spezialfällen“ (s. unten) können auch zusätzliche Blöcke mit Tipps erscheinen.
 
-Der Inhalt jedes Tipps wird in einer Datei Namens [tips_source.json](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/tips_source.json) gespeichert. Die folgende Abbildung erklärt (hoffentlich!) den Aufbau dieser Datei.
+Der Inhalt jedes Tipps wird in einer Datei Namens [tips_source.json](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/tips_source.json) gespeichert. Die folgende Abbildung erklärt (hoffentlich!) den Aufbau dieser Datei. Wenn man diese Datei ändern möchte, könnte lokal die HTML-Datei [files/entscheidungshilfe/tippsDisplay.html]((https://github.com/bolognalab/bolognalab.github.io/blob/main/files/entscheidungshilfe/tippsDisplay.html)) als Vorschau benutzt werden, die die Inhalte der json-Datei veranschaulicht. **Das ersetzt nicht die Notwendigkeit, nach jeder Bearbeitung der tips_source.json-Datei die Ergebnisseiten ausführlich zu testen!** :) 
 
 
 ![](dokumentation/img_tipStructure.png)
@@ -114,6 +144,7 @@ Tabelle 2. Struktur der Datei "texts_tips_matrix" (für Tipps)
 | A   | ... | O   | P   | _..._ | U   | _..._ |
 | --- | --- | --- | --- | --- | --- | --- |
 | **wert** | **…** | **tips_general** | **tips_syncInt-0** | **_…_** | **tips_asyncTN-2** | **_…_** |
+| de-default | ... | (nicht genutzt) | [TippCodes, die bei allen Ergebnissen erscheinen, wo syncInt=0] | ... | [TippCodes, die bei allen Ergebnissen erscheinen, wo asyncTN=0] | ... |
 | ... | ... | ... | ... | ... | ... | ... |
 | vl-rem | …   | \[Tippcodes von Tipps, die _immer_ bei diesem Lehrformat erscheinen sollen\] | \[Tippcodes, die bei diesem Lehrformat erscheinen sollen, wenn syncInt=0\] | …   | \[Tippcodes, die bei diesem Lehrformat erscheinen sollen, wenn asyncTN=2\] | …   |
 | …   | …   | …   | …   | …   | …   | …   |
@@ -122,21 +153,21 @@ Es ist wichtig für das Programm, dass die Tippcodes in einer Zelle der Tabelle 
 
 privateEcke, warteZeitHyb, darstellungsformen
 
+Hier werden ebenfalls spitze Klammern verwendet (*\<\<excludeDefault>>*), wenn man z.B. die von der *default*-Reihe zugeordneten Tipps ausnahmsweise deaktivieren will. 
+
 #### Medientechnische Voraussetzungen
-Die Organisation der Informationen zu Medientechnik in Dateien ist gerade in Entwicklung. Im Moment werden verschiedenen vor-Ort- und hybriden Szenarien Text und URL-Links für Raumkonzepte (die auf Sketchfab hochgeladen wurden) zugeordnet. Die Zuordnung wird in der Datei [texts_tips_matrix.csv](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/texts_tips_matrix.csv) definiert.
+Die Organisation der Informationen zu Medientechnik in Dateien unterscheidet sich zwischen Labor- und anderen Formaten. Im Moment werden verschiedenen vor-Ort- und hybriden Szenarien Text und URL-Links für Raumkonzepte (die auf Sketchfab hochgeladen wurden) zugeordnet. Die Zuordnung wird in der Datei [texts_tips_matrix.csv](https://github.com/bolognalab/bolognalab.github.io/blob/main/entscheidungshilfe-lehre/texts_tips_matrix.csv) definiert.
 
 #### Spezialfalle (Special Cases)
-Zwischen Blöcken 3 (Tipps für die asynchrone Teilnahme) und 4 (Medientechnik) können ggf. zusätzliche Tipps/Texte für bestimmte Sonderfallen angezeigt werden. Hier wird qualitativ beschrieben, was bei den verschiedenen Spezialfällen passieren sollte.
+Zwischen Blöcken 4 (Tipps für die asynchrone Teilnahme) und 5 (Weitere Ergebnisse) können ggf. zusätzliche Tipps/Texte für bestimmte Sonderfallen angezeigt werden. Hier wird qualitativ beschrieben, was bei den verschiedenen Spezialfällen passieren sollte.
 
-<table><tbody><tr><th><p><strong>Fall</strong></p></th><th><p><strong>Implementiert?</strong></p></th></tr><tr><td><p><strong>Internationale Kollaboration (hybride Exkursion)</strong></p><ul><li>Ein Zusätzlicher Block „Tipps für internationale Kollaboration“ soll erscheinen</li><li>In dem Block „Tipps für internationale Kollaboration“ werden Tipps hinzugefügt, die in der Datei <strong>tips_source.json</strong> mit „type“: „international“ bezeichnet werden.<ul><li>Mehrsprachigkeit: Für Videoaufzeichnungen wo möglich Live-Untertitelung nutzen (-&gt; viele VC Systeme können das, ob die Funktion nutzbar/aktiviert ist, muss mit IT Services geklärt werden). Englisch i.d.R. gut, Deutsch geht so, Wechsel zwischen zwei Sprachen schwierig.</li><li>Übersetzungen: Live Übersetzung sind meistens noch ein zusätzlicher, kostenpflichtiger Service oder datenschutzrechtlich problematisch. Dokumente können asynchron zur Sinnerfassung inzwischen gut mit DeepL übersetzt werden (https://www.deepl.com/de/translator)</li><li>Dokumentation: Die meisten VC Plattformen können inzwischen automatisch Transkripte von Videokonferenzen generieren. Das funktioniert mit Englisch ganz gut, mit anderen Sprachen mäßig. Achtung: Die Software kann nur Beiträge der Online-Teilnehmer:innen namentlich zuordnen; bei Aufnahmen aus dem analogen Raum fällt im Nachhinein die Unterscheidung zwischen verschiedenen Sprecher:innen/Beiträgen schwer. Als wörtliche Mitschrift sind die Skripte sehr umfangreich und aufwendig in der Überarbeitung.</li></ul></li></ul></td><td><p>Noch nicht</p></td></tr><tr><td><p><strong>Hybride Exkursion (hybrideExkursion)</strong></p><ul><li>Ein Zusätzlicher Block „Tipps für Hybride Exkursionen“ soll erscheinen</li><li>Tipps werden für den Fall geschrieben; Quelle; <a href="https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion">https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion</a></li></ul></td><td><p>Noch nicht</p></td></tr><tr><td><p><strong>Online-Zuschaltung Lehrperson<br></strong>(Die Lehrperson ist online zugeschaltet, während Studierende mit einer moderierenden Person im Lehrraum sind)</p><ul><li>Zusätzliche Tipps werden im Block für die synchrone Teilnahme hinzugefügt.<ul><li>Technik-Check vor der LV</li><li>Studierende als Moderator:innen vor Ort</li></ul></li></ul></td><td><p>noch nicht</p></td></tr></tbody></table>
+<table><tbody><tr><th><p><strong>Fall</strong></p></th><th><p><strong>Implementiert?</strong></p></th></tr><tr><td><p><strong>Internationale Kollaboration (hybride Exkursion)</strong></p><ul><li>Ein Zusätzlicher Block „Tipps für internationale Kollaboration“ soll erscheinen</li><li>In dem Block „Tipps für internationale Kollaboration“ werden Tipps hinzugefügt, die in der Datei <strong>tips_source.json</strong> mit „type“: „international“ bezeichnet werden.<ul><li>Mehrsprachigkeit: Für Videoaufzeichnungen wo möglich Live-Untertitelung nutzen (-&gt; viele VC Systeme können das, ob die Funktion nutzbar/aktiviert ist, muss mit IT Services geklärt werden). Englisch i.d.R. gut, Deutsch geht so, Wechsel zwischen zwei Sprachen schwierig.</li><li>Übersetzungen: Live Übersetzung sind meistens noch ein zusätzlicher, kostenpflichtiger Service oder datenschutzrechtlich problematisch. Dokumente können asynchron zur Sinnerfassung inzwischen gut mit DeepL übersetzt werden (https://www.deepl.com/de/translator)</li><li>Dokumentation: Die meisten VC Plattformen können inzwischen automatisch Transkripte von Videokonferenzen generieren. Das funktioniert mit Englisch ganz gut, mit anderen Sprachen mäßig. Achtung: Die Software kann nur Beiträge der Online-Teilnehmer:innen namentlich zuordnen; bei Aufnahmen aus dem analogen Raum fällt im Nachhinein die Unterscheidung zwischen verschiedenen Sprecher:innen/Beiträgen schwer. Als wörtliche Mitschrift sind die Skripte sehr umfangreich und aufwendig in der Überarbeitung.</li></ul></li></ul></td><td><p>Ja</p></td></tr><tr><td><p><strong>Hybride Exkursion (hybrideExkursion)</strong></p><ul><li>Ein Zusätzlicher Block „Tipps für Hybride Exkursionen“ soll erscheinen</li><li>Tipps werden für den Fall geschrieben; Quelle; <a href="https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion">https://www.e-teaching.org/praxis/hybride-lernraeume/stellvertreterexkursion</a></li></ul></td><td><p>Ja</p></td></tr><tr><td><p><strong>Online-Zuschaltung Lehrperson<br></strong>(Die Lehrperson ist online zugeschaltet, während Studierende mit einer moderierenden Person im Lehrraum sind)</p><ul><li>Zusätzliche Tipps werden im Block für die synchrone Teilnahme hinzugefügt.<ul><li>Technik-Check vor der LV</li><li>Studierende als Moderator:innen vor Ort</li></ul></li></ul></td><td><p>Ja</p></td></tr></tbody></table>
 
 <a id="contentSrcs"></a>
 #### Abbildung: Beispiel Szenario und Quellen verschiedener Inhalte
 
 Für das abgebildete Szenario **se-rem-1-1-0:**
 
-![](dokumentation/img_contentSources.png)
-*Abbildung 3. Quelle aller Texte und Tipps im Ergebnis*
 
 ### Fragen und Entscheidungen
 
@@ -166,5 +197,10 @@ Die Regeln, die festlegen, wie sich die Art der Beantwortung der einzelnen Frage
 
 Zusätzlich können auf der Seite <https://bolognalab.github.io/entscheidungshilfe-lehre/app-flow.html> die Regeln in Praxis getestet werden, indem man die Fragen beantwortet und gleich den Einfluss auf die Scores der Ergebnisse sehen kann (Abbildung 5). Auf dieser Seite gibt es auch eine Filter-Funktion, wenn man bestimmte Szenarien verfolgen möchte. Um den Namen eines Szenarios zu sehen, könnte man mit den Mauszeiger für ein paar Sekunden auf dem Code des Szenarios lassen - so erscheint der Titel des Szenarios als Tooltip.
 
+**Achtung:  nachdem die Dateiene scenarien.csv or fragen_source.json geändert werden muss noch das Skript setQuestionsAndRules.py ausgeführt werden, damit die Änderungen im Tool sichtbar sind!**
+
 ![](dokumentation/img_flowScreenshot.png)
 *Abbildung 5. Screenshot aus der Seite app-flow.html. Die mit gelb markierten Szenarien sind die, die durch die letzte Frage beeinflusst wurden.*
+
+#### Fragen zur Entwicklung?
+Wenn Sie Fragen zum Quellcode haben (der in dieser Dokumentation nicht im Fokus liegt) oder bei der Weiterentwicklung des Tools auf Probleme stoßen, zögern Sie nicht, Natalia zu kontaktieren (auch wenn sie nicht mehr formell im Netzwerk Hybride Lehre beschäftigt ist)! Sie hilft Ihnen gerne weiter, soweit sie kann. Ihre aktuellen Kontaktdaten finden Sie auf <https://naspitha.github.io/>.

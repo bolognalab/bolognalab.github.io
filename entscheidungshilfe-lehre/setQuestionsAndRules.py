@@ -92,7 +92,30 @@ for code in list_of_scenarios:
     if art != "so":
         setEffect("artLV", "SO", code, -100)
 
-
+    # ------------------------
+    # - labFormat, labsHyb, labsOnl
+    # ------------------------
+    # new hybrid lab formats should go in the list below
+    if art == "pr" and lehrform not in ["hyb1", "hyb2"]:
+        setEffect("labFormat", "hyb", code, -100)
+    # new online lab formats should go in the list below
+    if art == "pr" and lehrform not in ["onl1"]:
+        setEffect("labFormat", "onl", code, -100)
+    # Tandem Lab
+    if art == "pr" and lehrform == "hyb1":
+        pass
+    else:
+        setEffect("labsHyb", "hyb1", code, -100)
+    # Digital Twin Lab
+    if art == "pr" and lehrform == "hyb2":
+        pass
+    else:
+        setEffect("labsHyb", "hyb2", code, -100)
+    # Remote Lab
+    if art == "pr" and lehrform == "onl1":
+        pass
+    else:
+        setEffect("labsOnl", "onl1", code, -100)
     # ------------------------
     # - intSync
     # ------------------------

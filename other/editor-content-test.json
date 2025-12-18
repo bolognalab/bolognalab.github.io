@@ -1,0 +1,24 @@
+{
+  "time": 1765377385970,
+  "blocks": [
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "In diesem Lehrformat befindet sich die Lehrperson und mehrere Studierende in einem Hörsaal, während einzelne Studierende von verschiedenen Standorten aus über eine Webkonferenz den Unterricht verfolgen und dazu mithilfe digitaler Tools <a href=\"https://www.e-teaching.org/praxis/hybride-lernraeume/hybride-streaming-vorlesung\" target=\"_blank\" rel=\"nofollow noopener\" aria-label=\"E-Teaching.org (Quelle)\">beitragen</a>. Je nach verfügbarer (Raum-)technik kann eine hybride Vorlesung viele Formen annehmen, indem entweder festinstallierte oder mobile Technik verwendet wird. Idealerweise können beide Studierendengruppen (vor Ort und online) einander sehen und miteinander interagieren, auch wenn der Umfang und die Art der Interaktion variieren können. "
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Solange die Lernziele des Kurses gut online zu erreichen sind, bietet hybride Lehre den Studierenden einen riesigen Vorteil an Flexibilität: Studierende mit Familien- oder Care-Verpflichtungen, Mobilitätseinschränkungen oder einer Nebentätigkeit können den Kurs ohne Unterbrechung besuchen, während Studierende, die kurzfristig an der persönlichen Teilnahme gehindert werden (z. B. durch Verletzungen oder Krankheit), ebenfalls vermeiden können, Kursmaterial zu verpassen. Außerdem bietet das Format Flexibilität für die Lehrperson, da die Sitzungen in vielen Fällen auch dann ohne Unterbrechung stattfinden können, wenn sie nicht anwesend ist."
+      }
+    },
+    {
+      "type": "paragraph",
+      "data": {
+        "text": "Die am häufigsten genannten Herausforderungen beim hybriden Unterricht sind die das reibungslose Funktionieren der Technik während der Sitzung und die gleichzeitige Einbindung der Studierenden in den Online- und Präsenzraum. Oft können diese Herausforderungen überfordernd für eine einzelne Lehrperson sein, weshalb es empfohlen wird, während der Planung und Durchführung einer hybriden Vorlesung institutionelle und kollegiale Unterstützung in Anspruch zu nehmen.&nbsp;"
+      }
+    }
+  ],
+  "version": "2.31.0"
+}
