@@ -528,6 +528,12 @@
                     } else {
                         activeQ = "nieSync"
                     }
+                } else if (oneBefore == "labsOnl" && !answers["labsOnl"]){
+                    // 7. skip the lab questions if one goes back from the interactions question
+                    activeQ = "artLV"
+                } else if (oneBefore == "labsHyb" && !answers["labsHyb"]){
+                    // 8. skip the labsHyb question if coming from the labsOnl block
+                    activeQ = "labFormat"
                 } else {
                     // default
                     activeQ = oneBefore
@@ -752,14 +758,11 @@
     function includeCheck(qKey){
         // checks if a question should be displayed
         // assumes that questions have been ordered correctly, otherwise results may be unexpected
-        if (qKey.includes("TEXT_")){
-            
-            let condition = (qKey == "TEXT_labore") ? "artLV=PR" : true
-            if (condition == true){
-                return true
-            } else {
-                return andOrCheck(condition)
-            }
+        if (qKey == "TEXT_welcome" || qKey == "TEXT_group1"){
+            let condition = true
+        } else if (qKey == "TEXT_group2" || qKey == "TEXT_group3" || qKey == "TEXT_group4"){
+            let condition = "artLV!=PR"
+            return andOrCheck(condition)
         } else {
             let condition = questionInfo[qKey]["condition"]
             if (condition == true){

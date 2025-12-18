@@ -37,7 +37,7 @@
         },
 
         "interactions": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Welche Formen der Interaktion sind während der Lehrveranstaltung vorgesehen?",
             "antworten": {
                 "inputs": "Inputs oder Vorträge durch die Lehrperson",
@@ -52,7 +52,7 @@
             "addInfo": "Wählen Sie alle zutreffenden Punkte —<span id='selectAtLeastOne'> mindestens eine Option </span>— aus."
         },
         "inputs": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: inputs?",
             "antworten": {
                 "nein": "Nein",
@@ -60,7 +60,7 @@
             }
         },
         "plenum": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: plenum?",
             "antworten": {
                 "nein": "Nein",
@@ -68,7 +68,7 @@
             }
         },
         "gruppen": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: gruppen?",
             "antworten": {
                 "nein": "Nein",
@@ -76,7 +76,7 @@
             }
         },
         "intSync": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: intSync",
             "antworten": {
                 "0": "minimum",
@@ -85,7 +85,7 @@
             }
         },
         "leistungen": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Sind eine oder mehrere dieser Leistungen als <b>integrale Bestandteile des Kurses</b> vorgesehen? Wenn ja, welche?",
             "antworten": {
                 "referat": "Referat oder Projektvorstellung inkl. Q&A",
@@ -104,7 +104,7 @@
             "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
         },
         "referat": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: referat?",
             "antworten": {
                 "nein": "Nein",
@@ -112,7 +112,7 @@
             }
         },
         "debate": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: debate?",
             "antworten": {
                 "nein": "Nein",
@@ -120,7 +120,7 @@
             }
         },
         "praxis": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: praxis?",
             "antworten": {
                 "nein": "Nein",
@@ -128,7 +128,7 @@
             }
         },
         "privat": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: privat?",
             "antworten": {
                 "nein": "Nein",
@@ -136,7 +136,7 @@
             }
         },
         "LZiP":{
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: LZiP?",
             "antworten": {
                 "nein": "Nein", 
@@ -150,7 +150,7 @@
             ]
         },
         "keineLeistungen":{
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: keine der vorgenannten Leistungen?",
             "antworten": {
                 "nein": "Nein", 
@@ -159,7 +159,7 @@
         },
 
         "LZsy":{
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Wie wichtig ist die <b>synchrone Interaktion</b> zwischen Studierenden für die Ziele der Lehrveranstaltung?",
             "antworten": {
                 "0": "Nicht so wichtig - synchrone Interaktion ist zwar schön, aber die meisten Lernziele könnten auch asynchron erreicht werden.",
@@ -175,7 +175,7 @@
         },
 
         "niveauSt": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Auf welchem Niveau befinden sich die <b>meisten</b> Studierenden?",
             "antworten": {
                 "freshmen": "überwiegend Bachelor 1. - 2. Semester",
@@ -193,7 +193,7 @@
         },
 
         "limZPSt": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Ist ein großer Anteil Ihrer Studierenden aufgrund von Erwerbstätigkeit, Carearbeit, Krankheit etc. in der wöchentlichen Studienzeit eingeschränkt? (z.B. mehr als 15-20 Stunden Erwerbstätigkeit pro Woche)?",
             "antworten": {
                 "nein": "Nein",
@@ -213,7 +213,7 @@
         },
 
         "nieSync": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Gibt es Studierende, die <b>nie oder fast nie</b> am Kurs <b>synchron</b> teilnehmen können (z.B. wegen Überschneidungen oder Zeitzonen)?",
             "antworten": {
                 "nein": "Nein",
@@ -228,7 +228,7 @@
         },
 
         "niePr": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Gibt es Studierende, die <b>nie oder sehr schwierig in Präsenz</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
@@ -243,7 +243,7 @@
         },
 
         "regAbw": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Werden Sie als Lehrperson während des betreffenden Semesters oft vom Campus <b>abwesend</b> sein müssen?",
             "antworten": {
                 "nein": "Nein, ich werde immer anwesend sein",
@@ -258,7 +258,7 @@
         },
 
         "onlBereit": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "In welchem Umfang wären Sie bereit, den Kurs online zu unterrichten (d. h. nicht in einem Lehrraum, sondern vom Büro oder Home-Office aus)?",
             "antworten": {
                 "kein": "Gar nicht - ich möchte bzw. darf ausschließlich in Präsenz in einem Lehrraum unterrichten.",
@@ -278,7 +278,7 @@
         },
 
         "situations": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Trifft eine oder mehrere dieser Situationen auf Ihre Lehrveranstaltung zu?",
             "antworten": {
                 "gruppenarb": "Es gibt <b>langfristige Gruppenprojekte</b> in meinem Kurs",
@@ -295,7 +295,7 @@
             "addInfo": "Wählen Sie alle zutreffenden Punkte aus."
         },
         "gruppenarb": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: gruppenarb?",
             "antworten": {
                 "nein": "Nein",
@@ -303,7 +303,7 @@
             }
         },
         "exkur": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: exkur?",
             "antworten": {
                 "nein": "Nein",
@@ -311,7 +311,7 @@
             }
         },
         "intKoll": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: intKoll?",
             "antworten": {
                 "nein": "Nein",
@@ -320,7 +320,7 @@
             "addInfo": "z.B. Collaborative Online International Learning für alle oder ein Teil der Sitzungen"
         },
         "begrAnz": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Proxy-Frage: begrAnz?",
             "antworten": {
                 "nein": "Nein",
@@ -330,7 +330,7 @@
 
 
         "gaeste": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Planen Sie, <b>Gastvortragende</b> zu Ihrem Kurs einzuladen?",
             "antworten": {
                 "nein": "Nein.",
@@ -347,7 +347,7 @@
         },
 
         "studGeraete": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Könnten alle Studierenden ihre persönlichen (oder ausgeliehenen) Enderäte und die verfügbare Internetverbindung für die benötigte Interaktion bzw. Kollaboration <b>im Lehrraum</b> nutzen?",
             "antworten": {
                 "nein": "Nein",
@@ -357,7 +357,7 @@
         },
 
         "onlZugang": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Haben alle Studierenden <b>Zugang außerhalb des Lehrraums</b> zu einem Gerät und einer Umgebung, in der sie zuverlässig <b>online</b> am Kurs teilnehmen können?",
             "antworten": {
                 "nein": "Nein",
@@ -373,7 +373,7 @@
         },
 
         "aufzTech": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Wäre bei einer Präsenz- oder Hybridsitzung eine <br>Erfassung des ganzen Lehrraums mit klaren Bild und Ton</br> technisch möglich?",
             "antworten": {
                 "nein": "Nein",
@@ -384,7 +384,7 @@
         },
 
         "IntAsync": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Wie <b>strukturiert</b> sollte die studentische Interaktion <b>außerhalb der Kurssitzungen</b> sein?",
             "antworten": {
                 "0": "<b>Minimal</b> – ich möchte den Studierenden nicht vorschreiben, wie sie Kursmaterialien vor- und nacharbeiten sollen oder wie sie miteinander außerhalb der Sitzungen interagieren",
@@ -427,35 +427,34 @@
             }
         },
         "wohnLP": {
-            "condition": true,
+            "condition": "artLV!=PR",
             "text": "Wohnen Sie als Lehrperson während des betreffenden Semesters in derselben Stadt wie die Universität, an der Sie lehren (oder höchstens 90 Min. von der Universität entfernt)?",
             "antworten": {
                 "nein": "Nein",
                 "ja": "Ja"
-                
-            },
+            }
+        },
         "labFormat": {
             "condition": "artLV=PR",
-            "text": "Die Entscheidung, ob und wie ein laborbasiertes Format hybrid oder digital umgesetzt werden kann, hängt stark von der vorhandenen Infrastruktur sowie von den Kompetenzen ab, die im Laborkurs vermittelt werden sollen. Einheitliche Entscheidungskriterien – wie sie für Vorlesungen oder Seminare existieren – lassen sich daher kaum festlegen. Stattdessen stellen wir Ihnen bewährte Praxisbeispiele digital erweiterter Laborformate vor und hoffen, dass diese Sie bei der Entwicklung eigener Lösungen inspirieren. Der Fantasie sind dabei keine Grenzen gesetzt!",
+            "text": "<h2 class='sectionTitle'>Hybride und Online-Labormodelle</h2><p>Die Entscheidung, ob und wie ein laborbasiertes Format hybrid oder digital umgesetzt werden kann, <b>hängt stark von der vorhandenen Infrastruktur sowie von den Zielkompetenzen ab</b>, die im Laborkurs vermittelt werden sollen. Einheitliche Entscheidungskriterien – wie sie für Vorlesungen oder Seminare existieren – lassen sich daher kaum festlegen. Stattdessen stellen wir Ihnen hier <b>bewährte Praxisbeispiele und Tipps</b> für innovative Laborformate vor und hoffen, dass diese Sie bei der Entwicklung eigener Lösungen inspirieren. Der Fantasie sind dabei keine Grenzen gesetzt!</p>",
             "antworten": {
-                "hyb": "Hybride Laborkonzepte",
-                "onl": "Online Laborkonzepte"
-                
-            },
+                "hyb": "Ich will mehr über <b>Hybrid-Labormodelle</b> erfahren",
+                "onl": "Ich will mehr über <b>Online-Labormodelle</b> erfahren"
+            }    
+        },
         "labsHyb": {
             "condition": "labFormat=hyb",
-            "text": "Über welches hybride Laborkonzept möchten Sie mehr erfahren?",
+            "text": "Über welches hybride Labormodell möchten Sie mehr erfahren?",
             "antworten": {
                 "hyb1": "Labor-Tandem",
                 "hyb2": "Labor mit digitalen Zwillingen"
-                
-            },
+            }    
+        },
         "labsOnl": {
-            "condition": "labFormat=Onl",
-            "text": "Über welches Online-Laborkonzept möchten Sie mehr erfahren?",
+            "condition": "labFormat=onl",
+            "text": "Über welches Online-Labormodell möchten Sie mehr erfahren?",
             "antworten": {
                 "onl1": "Remote Lab"
-                
             }
         }
     }
