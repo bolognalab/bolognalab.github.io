@@ -764,7 +764,7 @@
         }
 
         // Main functions start here
-        $.get( "../../Entscheidungshilfe-Lehre/texts_tips_matrix.csv", function(CSVdata) {
+        $.get( "../../entscheidungshilfe-lehre/texts_tips_matrix.csv", function(CSVdata) {
             rows = $.csv.toObjects(CSVdata, {separator: ";"})
             upToDateRows = rows.map((x)=>x) // copy
 
