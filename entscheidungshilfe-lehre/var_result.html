@@ -403,7 +403,7 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         //--- asyncInt: handled later, because of the case asyncInt=x
 
         //--- asyncTN
-        if (tip_matching[scenarioValue]["tips_" + asyncTNValue].includes("<excludeDefault")){
+        if (tip_matching[scenarioValue]["tips_" + asyncTNValue].includes("<excludeDefault>")){
             tipsAsyncTNNative = tip_matching[scenarioValue]["tips_" + asyncTNValue].split(">")[1]
             tipsAsyncTNFromDefault = "-"
         } else {
@@ -416,7 +416,12 @@ function showResult(scenario='de-default-0-0-0', specialCases=[], topTier=[]){
         tipsSyncInt = tipsSyncIntNative + ", " + tipsSyncIntFromDefault
         tipsAsyncTN = tipsAsyncTNNative + ", " + tipsAsyncTNFromDefault
         if (asyncIntValue != "asyncInt-x"){
-            tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+            if (tip_matching[scenarioValue]["tips_" + asyncIntValue].includes('<excludeDefault>')){
+                tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue].split(">")[1]
+            } else {
+                tipsAsyncInt = tip_matching[scenarioValue]["tips_" + asyncIntValue] + ", " + tip_matching["de-default"]["tips_" + asyncIntValue]
+            }
+            
         } else {
             // case where we arrive from direct filter; no info on asyncInt, default to asyncInt=1
             if (tip_matching[scenarioValue]["tips_asyncInt-1"].includes('<excludeDefault>')){
