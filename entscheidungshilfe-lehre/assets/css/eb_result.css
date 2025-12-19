@@ -248,8 +248,15 @@ button:disabled {
     text-align: center;
 }
 .fullImg > img {
-    height: 25em;
+    width: 100%;
 }
+@media only screen and (min-width: 600px){
+    .fullImg > img {
+        width: auto;
+        height: 25em;
+    }
+}
+
 .spacedList > li {
     margin-bottom: 0.5em;
 }
