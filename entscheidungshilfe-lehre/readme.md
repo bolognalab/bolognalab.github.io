@@ -75,6 +75,18 @@ Es ist auch möglich, die Anzeige der **Sonderbedingungen** (s.u.) auszulösen, 
 ```
 Die Nummer, die jeder Sondernbedingung zugeordnet sind, können in der Datei ``setQuestionsAndRules.py`` gesehen werden. Mehrere Sonderbedingungen können zur URL mit Kommas hinzugefügt werden, z.B. ``@[0,5]``.
 
+```python
+special_cases =  {
+        "0": "international",
+        "1": "langfristGrupp",
+        "2": "hybrideExkursion",
+        "3": "onlineZuschaltungLP",
+        "4": "gastOnline",
+        "5": "gastVorOrtHyb",
+        "6": "keineAufzeichnung", #nur für den Technik-Pfad
+    }
+```
+
 Nicht zuletzt können auch "Weitere Ergebnisse" gezeigt werden, indem ein "Top Tier" zur URL hinzugefügt werden, z.B.:
 
 ```
